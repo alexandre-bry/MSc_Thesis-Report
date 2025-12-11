@@ -3,4 +3,4 @@ references/**.pdf
 /.quarto/
 **/*.quarto_ipynb
 index_files/
-docs/
+_site/
