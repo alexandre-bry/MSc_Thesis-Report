@@ -1,0 +1,53 @@
+---
+title: "2025/12/15"
+date: 2025-12-15
+tags: [weekly]
+meeting: []
+---
+
+## Previous week
+
+### Organise my notes
+
+- I created this repository to store and share my notes easily.
+- I will also use it to make slides/reports, so this will centralise most of the information I gather and make it easier to reuse it.
+
+### Get access to a cluster to train ML models
+
+- Jean Zay used by the IGN won't be available to me until my internship at the IGN officially starts
+- TU Delft has [DAIC](https://daic.tudelft.nl/docs/system/compute-nodes/) and [DelftBlue](https://doc.dhpc.tudelft.nl/delftblue/DHPC-hardware/), DAIC being probably the most promising since focussed on AI.
+I started talking with people at TU Delft to get access but don't have access yet.
+
+### Create our own point cloud dataset with AHN and 3DBAG
+
+- Looked at @Merizette2025 which explains how they created a new dataset for semantic segmentation of indoor TLS with two different processes: manual labelling and automatic generation of pseudo-labels from a BIM model of the objects.
+- Looked at the coherence between the LoD 2.2 buildings from 3DBAG with the AHN4 point cloud in the center of Delft.
+Most points in the dataset seem to be close and accurate, with different precision depending on the case:
+    - Roof points are mostly close to the building with 0.1 m precision
+    - For façades there is more variation, but mostly up to 0.5 m,
+    - Then there are more complex situations like balconys, chimneys and other details that are not represented in the 3DBAG and are therefore further away
+    - Monuments (such as churches and fancy buildings) and new buildings also give bad results
+
+::: {layout-ncol=3}
+![The buildings in LoD 2.2 from the 3DBAG.](./2025_12_15/General-Buildings.png)
+
+![The point cloud from AHN4 filtered to keep only "Not classified" (green) and "Building" (white). This especially filters out the ground, bridges and water.](./2025_12_15/General-Classification-White_building_Green_not_classified.png)
+
+![The distance to the closest building, with 0 m for blue, 0.333 m for green, 0.666 m for yellow and 1 m for red. Values higher than 1 m are grey.](./2025_12_15/General-Distance-Blue_0m_Red_1m.png)
+
+![The buildings in LoD 2.2 from the 3DBAG.](./2025_12_15/Complex_example-Buildings.png)
+
+![The point cloud from AHN4 filtered to keep only "Not classified" (green) and "Building" (white). This especially filters out the ground, bridges and water.](./2025_12_15/Complex_example-Classification-White_building_Green_not_classified.png)
+
+![The distance to the closest building, with 0 m for blue, 0.333 m for green, 0.666 m for yellow and 1 m for red. Values higher than 1 m are grey.](./2025_12_15/Complex_example-Distance-Blue_0m_Red_1m.png)
+
+Two examples of the coherence between the 3DBAG and the AHN4.
+:::
+
+## Discussion
+
+TODO
+
+## Next week
+
+TODO

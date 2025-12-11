@@ -1,0 +1,5 @@
+---
+title: "MSc Thesis - Website"
+---
+
+This website contains the notes and reports of my MSc Thesis with TU Delft and the IGN (*Institut national de l’information géographique et forestière*) from November 2025 to June 2026.

@@ -1,0 +1,24 @@
+---
+title: "2025/11/10"
+date: 2025-11-10
+tags: [weekly]
+meeting: [Hugo Ledoux, Bruno Vallet]
+---
+
+## Discussion
+
+- At least a full week on literature review would be beneficial
+- JabRef can be a great tool
+
+## Next week
+
+- Look for:
+    - Roofprint / footprint differentiation (probably not much)
+    - Extraction of roofprint / footprint from point clouds
+    - Point cloud semantic segmentation
+- For the literature review:
+    - <perplexity.ai> can be great to start
+    - Then use internet, especially Google Scholar is nice
+    - Look for new articles by searching for articles that cite interesting articles or were cited by interesting articles
+    - Write a small summary of every article I read with the things to remember, even if I don't understand anything
+    - Try to structure / categorise the methods I find

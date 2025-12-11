@@ -1,0 +1,47 @@
+---
+title: "2025/12/08"
+date: 2025-12-08
+tags: [weekly]
+meeting: [Hugo Ledoux, Bruno Vallet]
+---
+
+## Previous week
+
+- Looked at the [metadata of BD TOPO](https://geoservices.ign.fr/bd-topor-explorer-descriptif-de-contenu):
+    - There are a few interesting attributes, including the source of the polygon, which can be either aerial imagery or cadastre (terrain measures) with a horizontal precision of respectively 2.5 m and 3 m, and a vertical precision of respectively 1.5 m and 2.5 m
+    - There is a lot more metadata describing the attributes and how they were computed (especially the height for buildings), so that is not the problem
+- Looked at the LIDARHD dataset:
+    - Not aligned with the BD TOPO, which is a problem (due to the low precision of the BD TOPO)
+    - Similar to AHN latest versions so AHN could be used to help with similar point clouds but better linked datasets
+- Studied the difference between BAG and BGT, but sadly it seems that the BGT is mostly based on the BAG, meaning that we cannot find roof overhangs by comparing the two.
+The BGT adds a few more elements to buildings like balconies and awnings.
+
+::: {layout-ncol=2}
+
+![First example of misalignment with the LIDAR HD.](./2025_12_08/alignment_BD_TOPO-Example_1-LIDAR_HD.png)
+
+![First example of misalignment with the BD ORTHO.](./2025_12_08/alignment_BD_TOPO-Example_1-BD_ORTHO.png)
+
+![Second example of misalignment with the LIDAR HD.](./2025_12_08/alignment_BD_TOPO-Example_2-LIDAR_HD.png)
+
+![Second example of misalignment with the BD ORTHO.](./2025_12_08/alignment_BD_TOPO-Example_2-BD_ORTHO.png)
+
+Two examples of the misalignment of BD TOPO with other data.
+:::
+
+## Discussion
+
+- Balconies and awnings aren't really a focus of the project so the small differences between BAG and BGT are not really of use to us.
+- According to Bruno there hasn't been yet any ML model outputting polygons that gave convincing and robust results, so this solution doesn't seem to be a good bet, and computing a robust geometric solution at the end to compute the polygons seems more promising. I can still try to look at a few papers.
+
+## Next week
+
+- [x] Move the notes and structure them in the current repository to keep track of the progress and share it more easily
+- [x] Start documenting decisions and good examples that could be useful later for the report
+- [x] Try to get access to a computing cluster:
+    - [x] from the IGN: Jean Zay (ask Mathieu Brédif)
+    - [x] from TU Delft: DelftBlue or DAIC (ask Gina Stravopoulou et Hugo Ledoux)
+- [x] Explore whether classifying the AHN between roofs and façades using the reconstructed building of the 3DBAG could be possible (see [this paper about generating such a dataset programmatically](https://arxiv.org/abs/2501.17534))
+- [ ] Look at [one of the algorithms used by the IGN](https://github.com/IGNF/myria3d) to classify the LIDAR HD
+- [ ] Look at [this paper](https://arxiv.org/abs/2004.14875) that tried to get a polygonal footprint output from a ML model
+- [ ] Experiment with SOTA algorithms on interesting data

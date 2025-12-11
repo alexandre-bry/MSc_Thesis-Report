@@ -1,0 +1,25 @@
+---
+title: "2025/11/17"
+date: 2025-11-17
+tags: [weekly]
+meeting: [Hugo Ledoux, Bruno Vallet]
+---
+
+## Previous week
+
+- Looked for articles about roofprint / footprint differentiation but didn't really find anything
+- Started looking at a few articles about roofprint / footprint from LiDAR
+
+## Discussion
+
+- LiDARHD of IGN is already classified but there is no separation of façades and roofs
+- BAG + BGT + AHN4 could maybe be used to train a model
+- CloudCompare is nice to visualise point clouds
+
+## Next week
+
+- Look for articles about point cloud classification, especially roof/façades, because façades are not classified by default and are a rare class (tail distribution)
+- Look at point cloud semantic segmentation methods:
+    - [KPConv](https://github.com/HuguesTHOMAS/KPConv-PyTorch)
+    - MinkowskiNet
+    - PointTransformer

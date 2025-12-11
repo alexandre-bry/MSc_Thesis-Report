@@ -1,0 +1,24 @@
+---
+title: "2025/11/24"
+date: 2025-11-24
+tags: [weekly]
+meeting: [Hugo Ledoux, Bruno Vallet]
+---
+
+## Previous week
+
+- Looked at more articles about roofprint / footprint from LiDAR
+- The keywords footprint and roofprint don't seem really popular, but there are much more articles talking about "outline", which in the case of aerial data seems to mean footprint
+- Looked at a few articles about point cloud semantic segmentation
+
+## Discussion
+
+- Being able to use the direction of the LiDAR scan could be an interesting topic
+
+## Next week
+
+- Look at other papers:
+    - [Semantic3D](https://semantic3d.ethz.ch/)
+    - Tail distribution classification
+    - Bird's eye view, projection for classification
+    - Process point clouds in 2D: <https://arxiv.org/abs/1905.08748>

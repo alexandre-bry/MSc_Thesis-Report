@@ -1,0 +1,26 @@
+---
+title: "2025/12/01"
+date: 2025-12-01
+tags: [weekly]
+meeting: [Bruno Vallet]
+---
+
+## Previous week
+
+- Looked at more articles about point cloud semantic segmentation:
+    - Many different methods, but none gives perfect results yet, especially on rare classes
+- Looked for datasets of ALS semantic segmentation which differentiate façades and roofs, and found mainly two: the [Vaihingen dataset](https://www.isprs.org/resources/datasets/benchmarks/UrbanSemLab/3d-semantic-labeling.aspx) and the [DublinCity dataset](https://v-sense.scss.tcd.ie/DublinCity/) (which has a very dense point cloud)
+
+## Discussion
+
+- Clarification of the goal: the objective in the best situation would be to compute new footprints and roofprints using the LIDAR HD dataset, and if possible, to integrate the old footprints/roofprints in the process to improve the results
+- If we want to train a ML model, it is unclear where the data could come from
+- Simply tweaking the weights of the loss to put more weight on the classes of interest (façades and roofs) will probably not have any significant impact on the results, and this is why looking into imbalanced datasets training is important
+- Based on the literature review so far, the most interesting approach seems to use ML at least to some extent to classify point clouds
+
+## Next week
+
+- [x] Explore the metadata of the BD TOPO
+- [x] Explore the LIDAR HD dataset
+- [x] Read articles about tail distribution / imbalanced point clouds semantic segmentation
+- [x] Try to train KPConv on the Vaihingen dataset

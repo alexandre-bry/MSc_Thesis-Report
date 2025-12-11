@@ -1,0 +1,49 @@
+project:
+  type: website
+  output-dir: docs
+
+website:
+  title: "MSc Thesis - Website"
+  description: "Website for the MSc Thesis of Alexandre Bry for the MSc Geomatics"
+  repo-url: https://github.com/alexandre-bry/MSc_Thesis-Report
+  repo-actions: [edit, source, issue]
+  open-graph: true
+
+  navbar:
+    background: primary
+    search: true
+    left:
+      - text: "Weekly Meetings"
+        href: weekly_notes/index.qmd
+    tools:
+      - icon: github
+        href: https://github.com/alexandre-bry/MSc_Thesis-Report
+
+  sidebar:
+    - title: "Weekly Meetings"
+      style: "docked"
+      contents: 
+        - weekly_notes/index.qmd
+        - auto: "weekly_notes/*"
+
+  back-to-top-navigation: true
+  page-navigation: true
+
+lightbox: true
+bibliography: references/MSc_Thesis-Bibliography.bib
+author:
+  - name: Alexandre Bry
+    email: abry.pro@proton.me
+
+
+format:
+  html:
+    theme:
+      light: flatly
+      dark: darkly
+    css: styles.css
+    toc: true
+    toc-location: right
+
+
+

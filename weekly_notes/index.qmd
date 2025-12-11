@@ -1,0 +1,10 @@
+---
+title: "Weekly Meetings"
+---
+
+This section contains all the weekly notes of the project.
+These notes include for each week:
+
+- A summary of the work done during the previous week,
+- A summary of the weekly discussion that happened with the supervisors,
+- A summary of the tasks planned to be done for the week.
