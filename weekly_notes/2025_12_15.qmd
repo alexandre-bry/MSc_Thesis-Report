@@ -21,6 +21,8 @@ However, both are in maintenance so I won't be able to try until December 17th.
 
 ### Create our own point cloud dataset with AHN and 3DBAG
 
+#### Exploration
+
 - Looked at @Merizette2025 which explains how they created a new dataset for semantic segmentation of indoor TLS with two different processes: manual labelling and automatic generation of pseudo-labels from a BIM model of the objects.
 - Looked at the coherence between the LoD 2.2 buildings from 3DBAG with the AHN4 point cloud in the center of Delft.
 Most points in the dataset seem to be close and accurate, with different precision depending on the case:
@@ -44,6 +46,39 @@ Most points in the dataset seem to be close and accurate, with different precisi
 
 Two examples of the coherence between the 3DBAG and the AHN4.
 :::
+
+#### Implementation
+
+- Had quite a few issues in:
+    - *Handling the OBJ files from the 3DBAG*.
+    Is there a simple tool that could be used to simply merge multiple OBJ files?
+    I made a simple Python script with `trimesh` to separate the building faces per type (floor, façade, roof).
+    - *Handling the LAZ files from AHN4*.
+    AHN tiles are actually quite big so I couldn't load them entirely with `laspy`.
+    I tried to use `trimesh` in Python to compute the distance from point cloud to mesh for each class, but it was very slow compared to CloudCompare.
+    So I did all the computations using CloudCompare, and then classified with simple thresholds: 3 classes (roof, facade and other) with `roof` being assigned to the point $p$ if $$\text{distance}(p, \text{roof}) < \min(\text{distance}(p, \text{facade}), 1)$$
+- Still the results look promising, with a few edge cases, some of them that could be interesting:
+    - Most of what is not included in the LoD 2.2 models is not classified: balconies, chimneys, dormers and in general all the objects on the roofs or on the walls. 
+    - Roof overhangs and/or the boundaries of the roofs are sometimes/often classified as façades because the LoD 2.2 models don't expand far enough on the sides.
+    This could maybe be improved by expanding the roof polygons?
+    - As expected monuments and modified buildings also perform poorly
+
+::: {layout-ncol=2}
+![The buildings in LoD 2.2 from the 3DBAG.](./2025_12_15/Custom_class-Overview-Buildings.png)
+
+![The buildings in LoD 2.2 from the 3DBAG.](./2025_12_15/Custom_class-Overview-Classification.png)
+
+![The buildings in LoD 2.2 from the 3DBAG.](./2025_12_15/Custom_class-Closer-Buildings.png)
+
+![The buildings in LoD 2.2 from the 3DBAG.](./2025_12_15/Custom_class-Closer-Classification.png)
+:::
+
+### myria3d
+
+Looked quickly into [`myria3d`](https://github.com/IGNF/myria3d):
+
+- Could be quite interesting to train a custom model on custom data, since it seems like a nicely documented framework.
+- However, their model expects to have RGB values for the point cloud, which seems to be computed from aerial images, so AHN doesn't have it but we could maybe compute it.
 
 ## Discussion
 
