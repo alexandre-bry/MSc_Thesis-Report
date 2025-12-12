@@ -1,184 +1,46 @@
 [
   {
-    "objectID": "weekly_notes/index.html",
-    "href": "weekly_notes/index.html",
-    "title": "Weekly Meetings",
+    "objectID": "weekly_notes/2025_12_15.html",
+    "href": "weekly_notes/2025_12_15.html",
+    "title": "2025/12/15",
     "section": "",
-    "text": "This section contains all the weekly notes of the project. These notes include for each week:\n\nA summary of the work done during the previous week,\nA summary of the weekly discussion that happened with the supervisors,\nA summary of the tasks planned to be done for the week.\n\n\n\n\n Back to top",
-    "crumbs": [
-      "Weekly Meetings"
-    ]
-  },
-  {
-    "objectID": "weekly_notes/2025_12_08.html",
-    "href": "weekly_notes/2025_12_08.html",
-    "title": "2025/12/08",
-    "section": "",
-    "text": "Looked at the metadata of BD TOPO:\n\nThere are a few interesting attributes, including the source of the polygon, which can be either aerial imagery or cadastre (terrain measures) with a horizontal precision of respectively 2.5 m and 3 m, and a vertical precision of respectively 1.5 m and 2.5 m\nThere is a lot more metadata describing the attributes and how they were computed (especially the height for buildings), so that is not the problem\n\nLooked at the LIDARHD dataset:\n\nNot aligned with the BD TOPO, which is a problem (due to the low precision of the BD TOPO)\nSimilar to AHN latest versions so AHN could be used to help with similar point clouds but better linked datasets\n\nStudied the difference between BAG and BGT, but sadly it seems that the BGT is mostly based on the BAG, meaning that we cannot find roof overhangs by comparing the two. The BGT adds a few more elements to buildings like balconies and awnings.\n\n\n\n\n\n\n\nFirst example of misalignment with the LIDAR HD.\n\n\n\n\n\n\n\nFirst example of misalignment with the BD ORTHO.\n\n\n\n\n\n\n\n\n\nSecond example of misalignment with the LIDAR HD.\n\n\n\n\n\n\n\nSecond example of misalignment with the BD ORTHO.\n\n\n\n\n\n\nTwo examples of the misalignment of BD TOPO with other data.",
+    "text": "I created this repository to store and share my notes easily.\nI will also use it to make slides/reports, so this will centralise most of the information I gather and make it easier to reuse it.\n\n\n\n\n\nJean Zay used by the IGN won’t be available to me until my internship at the IGN officially starts\nTU Delft has DAIC and DelftBlue, DAIC being probably the most promising since focussed on AI. I filled the forms to get access and both of them were approved so I should now have access. However, both are in maintenance so I won’t be able to try until December 17th.\n\n\n\n\n\nLooked at Mérizette et al. (2025) which explains how they created a new dataset for semantic segmentation of indoor TLS with two different processes: manual labelling and automatic generation of pseudo-labels from a BIM model of the objects.\nLooked at the coherence between the LoD 2.2 buildings from 3DBAG with the AHN4 point cloud in the center of Delft. Most points in the dataset seem to be close and accurate, with different precision depending on the case:\n\nRoof points are mostly close to the building with 0.1 m precision\nFor façades there is more variation, but mostly up to 0.5 m,\nThen there are more complex situations like balconys, chimneys and other details that are not represented in the 3DBAG and are therefore further away\nMonuments (such as churches and fancy buildings) and new buildings also give bad results\n\n\n\n\n\n\n\n\nThe buildings in LoD 2.2 from the 3DBAG.\n\n\n\n\n\n\n\nThe point cloud from AHN4 filtered to keep only “Not classified” (green) and “Building” (white). This especially filters out the ground, bridges and water.\n\n\n\n\n\n\n\nThe distance to the closest building, with 0 m for blue, 0.333 m for green, 0.666 m for yellow and 1 m for red. Values higher than 1 m are grey.\n\n\n\n\n\n\n\n\n\nThe buildings in LoD 2.2 from the 3DBAG.\n\n\n\n\n\n\n\nThe point cloud from AHN4 filtered to keep only “Not classified” (green) and “Building” (white). This especially filters out the ground, bridges and water.\n\n\n\n\n\n\n\nThe distance to the closest building, with 0 m for blue, 0.333 m for green, 0.666 m for yellow and 1 m for red. Values higher than 1 m are grey.\n\n\n\n\n\n\nTwo examples of the coherence between the 3DBAG and the AHN4.",
     "crumbs": [
       "Weekly Meetings",
-      "2025/12/08"
+      "2025/12/15"
     ]
   },
   {
-    "objectID": "weekly_notes/2025_12_08.html#previous-week",
-    "href": "weekly_notes/2025_12_08.html#previous-week",
-    "title": "2025/12/08",
+    "objectID": "weekly_notes/2025_12_15.html#previous-week",
+    "href": "weekly_notes/2025_12_15.html#previous-week",
+    "title": "2025/12/15",
     "section": "",
-    "text": "Looked at the metadata of BD TOPO:\n\nThere are a few interesting attributes, including the source of the polygon, which can be either aerial imagery or cadastre (terrain measures) with a horizontal precision of respectively 2.5 m and 3 m, and a vertical precision of respectively 1.5 m and 2.5 m\nThere is a lot more metadata describing the attributes and how they were computed (especially the height for buildings), so that is not the problem\n\nLooked at the LIDARHD dataset:\n\nNot aligned with the BD TOPO, which is a problem (due to the low precision of the BD TOPO)\nSimilar to AHN latest versions so AHN could be used to help with similar point clouds but better linked datasets\n\nStudied the difference between BAG and BGT, but sadly it seems that the BGT is mostly based on the BAG, meaning that we cannot find roof overhangs by comparing the two. The BGT adds a few more elements to buildings like balconies and awnings.\n\n\n\n\n\n\n\nFirst example of misalignment with the LIDAR HD.\n\n\n\n\n\n\n\nFirst example of misalignment with the BD ORTHO.\n\n\n\n\n\n\n\n\n\nSecond example of misalignment with the LIDAR HD.\n\n\n\n\n\n\n\nSecond example of misalignment with the BD ORTHO.\n\n\n\n\n\n\nTwo examples of the misalignment of BD TOPO with other data.",
+    "text": "I created this repository to store and share my notes easily.\nI will also use it to make slides/reports, so this will centralise most of the information I gather and make it easier to reuse it.\n\n\n\n\n\nJean Zay used by the IGN won’t be available to me until my internship at the IGN officially starts\nTU Delft has DAIC and DelftBlue, DAIC being probably the most promising since focussed on AI. I filled the forms to get access and both of them were approved so I should now have access. However, both are in maintenance so I won’t be able to try until December 17th.\n\n\n\n\n\nLooked at Mérizette et al. (2025) which explains how they created a new dataset for semantic segmentation of indoor TLS with two different processes: manual labelling and automatic generation of pseudo-labels from a BIM model of the objects.\nLooked at the coherence between the LoD 2.2 buildings from 3DBAG with the AHN4 point cloud in the center of Delft. Most points in the dataset seem to be close and accurate, with different precision depending on the case:\n\nRoof points are mostly close to the building with 0.1 m precision\nFor façades there is more variation, but mostly up to 0.5 m,\nThen there are more complex situations like balconys, chimneys and other details that are not represented in the 3DBAG and are therefore further away\nMonuments (such as churches and fancy buildings) and new buildings also give bad results\n\n\n\n\n\n\n\n\nThe buildings in LoD 2.2 from the 3DBAG.\n\n\n\n\n\n\n\nThe point cloud from AHN4 filtered to keep only “Not classified” (green) and “Building” (white). This especially filters out the ground, bridges and water.\n\n\n\n\n\n\n\nThe distance to the closest building, with 0 m for blue, 0.333 m for green, 0.666 m for yellow and 1 m for red. Values higher than 1 m are grey.\n\n\n\n\n\n\n\n\n\nThe buildings in LoD 2.2 from the 3DBAG.\n\n\n\n\n\n\n\nThe point cloud from AHN4 filtered to keep only “Not classified” (green) and “Building” (white). This especially filters out the ground, bridges and water.\n\n\n\n\n\n\n\nThe distance to the closest building, with 0 m for blue, 0.333 m for green, 0.666 m for yellow and 1 m for red. Values higher than 1 m are grey.\n\n\n\n\n\n\nTwo examples of the coherence between the 3DBAG and the AHN4.",
     "crumbs": [
       "Weekly Meetings",
-      "2025/12/08"
+      "2025/12/15"
     ]
   },
   {
-    "objectID": "weekly_notes/2025_12_08.html#discussion",
-    "href": "weekly_notes/2025_12_08.html#discussion",
-    "title": "2025/12/08",
+    "objectID": "weekly_notes/2025_12_15.html#discussion",
+    "href": "weekly_notes/2025_12_15.html#discussion",
+    "title": "2025/12/15",
     "section": "Discussion",
-    "text": "Discussion\n\nBalconies and awnings aren’t really a focus of the project so the small differences between BAG and BGT are not really of use to us.\nAccording to Bruno there hasn’t been yet any ML model outputting polygons that gave convincing and robust results, so this solution doesn’t seem to be a good bet, and computing a robust geometric solution at the end to compute the polygons seems more promising. I can still try to look at a few papers.",
+    "text": "Discussion\nTODO",
     "crumbs": [
       "Weekly Meetings",
-      "2025/12/08"
+      "2025/12/15"
     ]
   },
   {
-    "objectID": "weekly_notes/2025_12_08.html#next-week",
-    "href": "weekly_notes/2025_12_08.html#next-week",
-    "title": "2025/12/08",
+    "objectID": "weekly_notes/2025_12_15.html#next-week",
+    "href": "weekly_notes/2025_12_15.html#next-week",
+    "title": "2025/12/15",
     "section": "Next week",
-    "text": "Next week\n\nMove the notes and structure them in the current repository to keep track of the progress and share it more easily\nStart documenting decisions and good examples that could be useful later for the report\nTry to get access to a computing cluster:\n\nfrom the IGN: Jean Zay (ask Mathieu Brédif)\nfrom TU Delft: DelftBlue or DAIC (ask Gina Stravopoulou et Hugo Ledoux)\n\nExplore whether classifying the AHN between roofs and façades using the reconstructed building of the 3DBAG could be possible (see this paper about generating such a dataset programmatically)\nLook at one of the algorithms used by the IGN to classify the LIDAR HD\nLook at this paper that tried to get a polygonal footprint output from a ML model\nExperiment with SOTA algorithms on interesting data",
+    "text": "Next week\nTODO",
     "crumbs": [
       "Weekly Meetings",
-      "2025/12/08"
-    ]
-  },
-  {
-    "objectID": "weekly_notes/2025_11_24.html",
-    "href": "weekly_notes/2025_11_24.html",
-    "title": "2025/11/24",
-    "section": "",
-    "text": "Looked at more articles about roofprint / footprint from LiDAR\nThe keywords footprint and roofprint don’t seem really popular, but there are much more articles talking about “outline”, which in the case of aerial data seems to mean footprint\nLooked at a few articles about point cloud semantic segmentation",
-    "crumbs": [
-      "Weekly Meetings",
-      "2025/11/24"
-    ]
-  },
-  {
-    "objectID": "weekly_notes/2025_11_24.html#previous-week",
-    "href": "weekly_notes/2025_11_24.html#previous-week",
-    "title": "2025/11/24",
-    "section": "",
-    "text": "Looked at more articles about roofprint / footprint from LiDAR\nThe keywords footprint and roofprint don’t seem really popular, but there are much more articles talking about “outline”, which in the case of aerial data seems to mean footprint\nLooked at a few articles about point cloud semantic segmentation",
-    "crumbs": [
-      "Weekly Meetings",
-      "2025/11/24"
-    ]
-  },
-  {
-    "objectID": "weekly_notes/2025_11_24.html#discussion",
-    "href": "weekly_notes/2025_11_24.html#discussion",
-    "title": "2025/11/24",
-    "section": "Discussion",
-    "text": "Discussion\n\nBeing able to use the direction of the LiDAR scan could be an interesting topic",
-    "crumbs": [
-      "Weekly Meetings",
-      "2025/11/24"
-    ]
-  },
-  {
-    "objectID": "weekly_notes/2025_11_24.html#next-week",
-    "href": "weekly_notes/2025_11_24.html#next-week",
-    "title": "2025/11/24",
-    "section": "Next week",
-    "text": "Next week\n\nLook at other papers:\n\nSemantic3D\nTail distribution classification\nBird’s eye view, projection for classification\nProcess point clouds in 2D: https://arxiv.org/abs/1905.08748",
-    "crumbs": [
-      "Weekly Meetings",
-      "2025/11/24"
-    ]
-  },
-  {
-    "objectID": "weekly_notes/2025_11_10.html",
-    "href": "weekly_notes/2025_11_10.html",
-    "title": "2025/11/10",
-    "section": "",
-    "text": "At least a full week on literature review would be beneficial\nJabRef can be a great tool",
-    "crumbs": [
-      "Weekly Meetings",
-      "2025/11/10"
-    ]
-  },
-  {
-    "objectID": "weekly_notes/2025_11_10.html#discussion",
-    "href": "weekly_notes/2025_11_10.html#discussion",
-    "title": "2025/11/10",
-    "section": "",
-    "text": "At least a full week on literature review would be beneficial\nJabRef can be a great tool",
-    "crumbs": [
-      "Weekly Meetings",
-      "2025/11/10"
-    ]
-  },
-  {
-    "objectID": "weekly_notes/2025_11_10.html#next-week",
-    "href": "weekly_notes/2025_11_10.html#next-week",
-    "title": "2025/11/10",
-    "section": "Next week",
-    "text": "Next week\n\nLook for:\n\nRoofprint / footprint differentiation (probably not much)\nExtraction of roofprint / footprint from point clouds\nPoint cloud semantic segmentation\n\nFor the literature review:\n\n&lt;perplexity.ai&gt; can be great to start\nThen use internet, especially Google Scholar is nice\nLook for new articles by searching for articles that cite interesting articles or were cited by interesting articles\nWrite a small summary of every article I read with the things to remember, even if I don’t understand anything\nTry to structure / categorise the methods I find",
-    "crumbs": [
-      "Weekly Meetings",
-      "2025/11/10"
-    ]
-  },
-  {
-    "objectID": "index.html",
-    "href": "index.html",
-    "title": "MSc Thesis - Website",
-    "section": "",
-    "text": "This website contains the notes and reports of my MSc Thesis with TU Delft and the IGN (Institut national de l’information géographique et forestière) from November 2025 to June 2026.\n\n\n\n Back to top"
-  },
-  {
-    "objectID": "weekly_notes/2025_11_17.html",
-    "href": "weekly_notes/2025_11_17.html",
-    "title": "2025/11/17",
-    "section": "",
-    "text": "Looked for articles about roofprint / footprint differentiation but didn’t really find anything\nStarted looking at a few articles about roofprint / footprint from LiDAR",
-    "crumbs": [
-      "Weekly Meetings",
-      "2025/11/17"
-    ]
-  },
-  {
-    "objectID": "weekly_notes/2025_11_17.html#previous-week",
-    "href": "weekly_notes/2025_11_17.html#previous-week",
-    "title": "2025/11/17",
-    "section": "",
-    "text": "Looked for articles about roofprint / footprint differentiation but didn’t really find anything\nStarted looking at a few articles about roofprint / footprint from LiDAR",
-    "crumbs": [
-      "Weekly Meetings",
-      "2025/11/17"
-    ]
-  },
-  {
-    "objectID": "weekly_notes/2025_11_17.html#discussion",
-    "href": "weekly_notes/2025_11_17.html#discussion",
-    "title": "2025/11/17",
-    "section": "Discussion",
-    "text": "Discussion\n\nLiDARHD of IGN is already classified but there is no separation of façades and roofs\nBAG + BGT + AHN4 could maybe be used to train a model\nCloudCompare is nice to visualise point clouds",
-    "crumbs": [
-      "Weekly Meetings",
-      "2025/11/17"
-    ]
-  },
-  {
-    "objectID": "weekly_notes/2025_11_17.html#next-week",
-    "href": "weekly_notes/2025_11_17.html#next-week",
-    "title": "2025/11/17",
-    "section": "Next week",
-    "text": "Next week\n\nLook for articles about point cloud classification, especially roof/façades, because façades are not classified by default and are a rare class (tail distribution)\nLook at point cloud semantic segmentation methods:\n\nKPConv\nMinkowskiNet\nPointTransformer",
-    "crumbs": [
-      "Weekly Meetings",
-      "2025/11/17"
+      "2025/12/15"
     ]
   },
   {
@@ -226,47 +88,185 @@
     ]
   },
   {
-    "objectID": "weekly_notes/2025_12_15.html",
-    "href": "weekly_notes/2025_12_15.html",
-    "title": "2025/12/15",
+    "objectID": "weekly_notes/2025_11_17.html",
+    "href": "weekly_notes/2025_11_17.html",
+    "title": "2025/11/17",
     "section": "",
-    "text": "I created this repository to store and share my notes easily.\nI will also use it to make slides/reports, so this will centralise most of the information I gather and make it easier to reuse it.\n\n\n\n\n\nJean Zay used by the IGN won’t be available to me until my internship at the IGN officially starts\nTU Delft has DAIC and DelftBlue, DAIC being probably the most promising since focussed on AI. I started talking with people at TU Delft to get access but don’t have access yet.\n\n\n\n\n\nLooked at Mérizette et al. (2025) which explains how they created a new dataset for semantic segmentation of indoor TLS with two different processes: manual labelling and automatic generation of pseudo-labels from a BIM model of the objects.\nLooked at the coherence between the LoD 2.2 buildings from 3DBAG with the AHN4 point cloud in the center of Delft. Most points in the dataset seem to be close and accurate, with different precision depending on the case:\n\nRoof points are mostly close to the building with 0.1 m precision\nFor façades there is more variation, but mostly up to 0.5 m,\nThen there are more complex situations like balconys, chimneys and other details that are not represented in the 3DBAG and are therefore further away\nMonuments (such as churches and fancy buildings) and new buildings also give bad results\n\n\n\n\n\n\n\n\nThe buildings in LoD 2.2 from the 3DBAG.\n\n\n\n\n\n\n\nThe point cloud from AHN4 filtered to keep only “Not classified” (green) and “Building” (white). This especially filters out the ground, bridges and water.\n\n\n\n\n\n\n\nThe distance to the closest building, with 0 m for blue, 0.333 m for green, 0.666 m for yellow and 1 m for red. Values higher than 1 m are grey.\n\n\n\n\n\n\n\n\n\nThe buildings in LoD 2.2 from the 3DBAG.\n\n\n\n\n\n\n\nThe point cloud from AHN4 filtered to keep only “Not classified” (green) and “Building” (white). This especially filters out the ground, bridges and water.\n\n\n\n\n\n\n\nThe distance to the closest building, with 0 m for blue, 0.333 m for green, 0.666 m for yellow and 1 m for red. Values higher than 1 m are grey.\n\n\n\n\n\n\nTwo examples of the coherence between the 3DBAG and the AHN4.",
+    "text": "Looked for articles about roofprint / footprint differentiation but didn’t really find anything\nStarted looking at a few articles about roofprint / footprint from LiDAR",
     "crumbs": [
       "Weekly Meetings",
-      "2025/12/15"
+      "2025/11/17"
     ]
   },
   {
-    "objectID": "weekly_notes/2025_12_15.html#previous-week",
-    "href": "weekly_notes/2025_12_15.html#previous-week",
-    "title": "2025/12/15",
+    "objectID": "weekly_notes/2025_11_17.html#previous-week",
+    "href": "weekly_notes/2025_11_17.html#previous-week",
+    "title": "2025/11/17",
     "section": "",
-    "text": "I created this repository to store and share my notes easily.\nI will also use it to make slides/reports, so this will centralise most of the information I gather and make it easier to reuse it.\n\n\n\n\n\nJean Zay used by the IGN won’t be available to me until my internship at the IGN officially starts\nTU Delft has DAIC and DelftBlue, DAIC being probably the most promising since focussed on AI. I started talking with people at TU Delft to get access but don’t have access yet.\n\n\n\n\n\nLooked at Mérizette et al. (2025) which explains how they created a new dataset for semantic segmentation of indoor TLS with two different processes: manual labelling and automatic generation of pseudo-labels from a BIM model of the objects.\nLooked at the coherence between the LoD 2.2 buildings from 3DBAG with the AHN4 point cloud in the center of Delft. Most points in the dataset seem to be close and accurate, with different precision depending on the case:\n\nRoof points are mostly close to the building with 0.1 m precision\nFor façades there is more variation, but mostly up to 0.5 m,\nThen there are more complex situations like balconys, chimneys and other details that are not represented in the 3DBAG and are therefore further away\nMonuments (such as churches and fancy buildings) and new buildings also give bad results\n\n\n\n\n\n\n\n\nThe buildings in LoD 2.2 from the 3DBAG.\n\n\n\n\n\n\n\nThe point cloud from AHN4 filtered to keep only “Not classified” (green) and “Building” (white). This especially filters out the ground, bridges and water.\n\n\n\n\n\n\n\nThe distance to the closest building, with 0 m for blue, 0.333 m for green, 0.666 m for yellow and 1 m for red. Values higher than 1 m are grey.\n\n\n\n\n\n\n\n\n\nThe buildings in LoD 2.2 from the 3DBAG.\n\n\n\n\n\n\n\nThe point cloud from AHN4 filtered to keep only “Not classified” (green) and “Building” (white). This especially filters out the ground, bridges and water.\n\n\n\n\n\n\n\nThe distance to the closest building, with 0 m for blue, 0.333 m for green, 0.666 m for yellow and 1 m for red. Values higher than 1 m are grey.\n\n\n\n\n\n\nTwo examples of the coherence between the 3DBAG and the AHN4.",
+    "text": "Looked for articles about roofprint / footprint differentiation but didn’t really find anything\nStarted looking at a few articles about roofprint / footprint from LiDAR",
     "crumbs": [
       "Weekly Meetings",
-      "2025/12/15"
+      "2025/11/17"
     ]
   },
   {
-    "objectID": "weekly_notes/2025_12_15.html#discussion",
-    "href": "weekly_notes/2025_12_15.html#discussion",
-    "title": "2025/12/15",
+    "objectID": "weekly_notes/2025_11_17.html#discussion",
+    "href": "weekly_notes/2025_11_17.html#discussion",
+    "title": "2025/11/17",
     "section": "Discussion",
-    "text": "Discussion\nTODO",
+    "text": "Discussion\n\nLiDARHD of IGN is already classified but there is no separation of façades and roofs\nBAG + BGT + AHN4 could maybe be used to train a model\nCloudCompare is nice to visualise point clouds",
     "crumbs": [
       "Weekly Meetings",
-      "2025/12/15"
+      "2025/11/17"
     ]
   },
   {
-    "objectID": "weekly_notes/2025_12_15.html#next-week",
-    "href": "weekly_notes/2025_12_15.html#next-week",
-    "title": "2025/12/15",
+    "objectID": "weekly_notes/2025_11_17.html#next-week",
+    "href": "weekly_notes/2025_11_17.html#next-week",
+    "title": "2025/11/17",
     "section": "Next week",
-    "text": "Next week\nTODO",
+    "text": "Next week\n\nLook for articles about point cloud classification, especially roof/façades, because façades are not classified by default and are a rare class (tail distribution)\nLook at point cloud semantic segmentation methods:\n\nKPConv\nMinkowskiNet\nPointTransformer",
     "crumbs": [
       "Weekly Meetings",
-      "2025/12/15"
+      "2025/11/17"
+    ]
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "MSc Thesis - Website",
+    "section": "",
+    "text": "This website contains the notes and reports of my MSc Thesis with TU Delft and the IGN (Institut national de l’information géographique et forestière) from November 2025 to June 2026.\n\n\n\n Back to top"
+  },
+  {
+    "objectID": "weekly_notes/2025_11_10.html",
+    "href": "weekly_notes/2025_11_10.html",
+    "title": "2025/11/10",
+    "section": "",
+    "text": "At least a full week on literature review would be beneficial\nJabRef can be a great tool",
+    "crumbs": [
+      "Weekly Meetings",
+      "2025/11/10"
+    ]
+  },
+  {
+    "objectID": "weekly_notes/2025_11_10.html#discussion",
+    "href": "weekly_notes/2025_11_10.html#discussion",
+    "title": "2025/11/10",
+    "section": "",
+    "text": "At least a full week on literature review would be beneficial\nJabRef can be a great tool",
+    "crumbs": [
+      "Weekly Meetings",
+      "2025/11/10"
+    ]
+  },
+  {
+    "objectID": "weekly_notes/2025_11_10.html#next-week",
+    "href": "weekly_notes/2025_11_10.html#next-week",
+    "title": "2025/11/10",
+    "section": "Next week",
+    "text": "Next week\n\nLook for:\n\nRoofprint / footprint differentiation (probably not much)\nExtraction of roofprint / footprint from point clouds\nPoint cloud semantic segmentation\n\nFor the literature review:\n\n&lt;perplexity.ai&gt; can be great to start\nThen use internet, especially Google Scholar is nice\nLook for new articles by searching for articles that cite interesting articles or were cited by interesting articles\nWrite a small summary of every article I read with the things to remember, even if I don’t understand anything\nTry to structure / categorise the methods I find",
+    "crumbs": [
+      "Weekly Meetings",
+      "2025/11/10"
+    ]
+  },
+  {
+    "objectID": "weekly_notes/2025_11_24.html",
+    "href": "weekly_notes/2025_11_24.html",
+    "title": "2025/11/24",
+    "section": "",
+    "text": "Looked at more articles about roofprint / footprint from LiDAR\nThe keywords footprint and roofprint don’t seem really popular, but there are much more articles talking about “outline”, which in the case of aerial data seems to mean footprint\nLooked at a few articles about point cloud semantic segmentation",
+    "crumbs": [
+      "Weekly Meetings",
+      "2025/11/24"
+    ]
+  },
+  {
+    "objectID": "weekly_notes/2025_11_24.html#previous-week",
+    "href": "weekly_notes/2025_11_24.html#previous-week",
+    "title": "2025/11/24",
+    "section": "",
+    "text": "Looked at more articles about roofprint / footprint from LiDAR\nThe keywords footprint and roofprint don’t seem really popular, but there are much more articles talking about “outline”, which in the case of aerial data seems to mean footprint\nLooked at a few articles about point cloud semantic segmentation",
+    "crumbs": [
+      "Weekly Meetings",
+      "2025/11/24"
+    ]
+  },
+  {
+    "objectID": "weekly_notes/2025_11_24.html#discussion",
+    "href": "weekly_notes/2025_11_24.html#discussion",
+    "title": "2025/11/24",
+    "section": "Discussion",
+    "text": "Discussion\n\nBeing able to use the direction of the LiDAR scan could be an interesting topic",
+    "crumbs": [
+      "Weekly Meetings",
+      "2025/11/24"
+    ]
+  },
+  {
+    "objectID": "weekly_notes/2025_11_24.html#next-week",
+    "href": "weekly_notes/2025_11_24.html#next-week",
+    "title": "2025/11/24",
+    "section": "Next week",
+    "text": "Next week\n\nLook at other papers:\n\nSemantic3D\nTail distribution classification\nBird’s eye view, projection for classification\nProcess point clouds in 2D: https://arxiv.org/abs/1905.08748",
+    "crumbs": [
+      "Weekly Meetings",
+      "2025/11/24"
+    ]
+  },
+  {
+    "objectID": "weekly_notes/2025_12_08.html",
+    "href": "weekly_notes/2025_12_08.html",
+    "title": "2025/12/08",
+    "section": "",
+    "text": "Looked at the metadata of BD TOPO:\n\nThere are a few interesting attributes, including the source of the polygon, which can be either aerial imagery or cadastre (terrain measures) with a horizontal precision of respectively 2.5 m and 3 m, and a vertical precision of respectively 1.5 m and 2.5 m\nThere is a lot more metadata describing the attributes and how they were computed (especially the height for buildings), so that is not the problem\n\nLooked at the LIDARHD dataset:\n\nNot aligned with the BD TOPO, which is a problem (due to the low precision of the BD TOPO)\nSimilar to AHN latest versions so AHN could be used to help with similar point clouds but better linked datasets\n\nStudied the difference between BAG and BGT, but sadly it seems that the BGT is mostly based on the BAG, meaning that we cannot find roof overhangs by comparing the two. The BGT adds a few more elements to buildings like balconies and awnings.\n\n\n\n\n\n\n\nFirst example of misalignment with the LIDAR HD.\n\n\n\n\n\n\n\nFirst example of misalignment with the BD ORTHO.\n\n\n\n\n\n\n\n\n\nSecond example of misalignment with the LIDAR HD.\n\n\n\n\n\n\n\nSecond example of misalignment with the BD ORTHO.\n\n\n\n\n\n\nTwo examples of the misalignment of BD TOPO with other data.",
+    "crumbs": [
+      "Weekly Meetings",
+      "2025/12/08"
+    ]
+  },
+  {
+    "objectID": "weekly_notes/2025_12_08.html#previous-week",
+    "href": "weekly_notes/2025_12_08.html#previous-week",
+    "title": "2025/12/08",
+    "section": "",
+    "text": "Looked at the metadata of BD TOPO:\n\nThere are a few interesting attributes, including the source of the polygon, which can be either aerial imagery or cadastre (terrain measures) with a horizontal precision of respectively 2.5 m and 3 m, and a vertical precision of respectively 1.5 m and 2.5 m\nThere is a lot more metadata describing the attributes and how they were computed (especially the height for buildings), so that is not the problem\n\nLooked at the LIDARHD dataset:\n\nNot aligned with the BD TOPO, which is a problem (due to the low precision of the BD TOPO)\nSimilar to AHN latest versions so AHN could be used to help with similar point clouds but better linked datasets\n\nStudied the difference between BAG and BGT, but sadly it seems that the BGT is mostly based on the BAG, meaning that we cannot find roof overhangs by comparing the two. The BGT adds a few more elements to buildings like balconies and awnings.\n\n\n\n\n\n\n\nFirst example of misalignment with the LIDAR HD.\n\n\n\n\n\n\n\nFirst example of misalignment with the BD ORTHO.\n\n\n\n\n\n\n\n\n\nSecond example of misalignment with the LIDAR HD.\n\n\n\n\n\n\n\nSecond example of misalignment with the BD ORTHO.\n\n\n\n\n\n\nTwo examples of the misalignment of BD TOPO with other data.",
+    "crumbs": [
+      "Weekly Meetings",
+      "2025/12/08"
+    ]
+  },
+  {
+    "objectID": "weekly_notes/2025_12_08.html#discussion",
+    "href": "weekly_notes/2025_12_08.html#discussion",
+    "title": "2025/12/08",
+    "section": "Discussion",
+    "text": "Discussion\n\nBalconies and awnings aren’t really a focus of the project so the small differences between BAG and BGT are not really of use to us.\nAccording to Bruno there hasn’t been yet any ML model outputting polygons that gave convincing and robust results, so this solution doesn’t seem to be a good bet, and computing a robust geometric solution at the end to compute the polygons seems more promising. I can still try to look at a few papers.",
+    "crumbs": [
+      "Weekly Meetings",
+      "2025/12/08"
+    ]
+  },
+  {
+    "objectID": "weekly_notes/2025_12_08.html#next-week",
+    "href": "weekly_notes/2025_12_08.html#next-week",
+    "title": "2025/12/08",
+    "section": "Next week",
+    "text": "Next week\n\nMove the notes and structure them in the current repository to keep track of the progress and share it more easily\nStart documenting decisions and good examples that could be useful later for the report\nTry to get access to a computing cluster:\n\nfrom the IGN: Jean Zay (ask Mathieu Brédif)\nfrom TU Delft: DelftBlue or DAIC (ask Gina Stravopoulou et Hugo Ledoux)\n\nExplore whether classifying the AHN between roofs and façades using the reconstructed building of the 3DBAG could be possible (see this paper about generating such a dataset programmatically)\nLook at one of the algorithms used by the IGN to classify the LIDAR HD\nLook at this paper that tried to get a polygonal footprint output from a ML model\nExperiment with SOTA algorithms on interesting data",
+    "crumbs": [
+      "Weekly Meetings",
+      "2025/12/08"
+    ]
+  },
+  {
+    "objectID": "weekly_notes/index.html",
+    "href": "weekly_notes/index.html",
+    "title": "Weekly Meetings",
+    "section": "",
+    "text": "This section contains all the weekly notes of the project. These notes include for each week:\n\nA summary of the work done during the previous week,\nA summary of the weekly discussion that happened with the supervisors,\nA summary of the tasks planned to be done for the week.\n\n\n\n\n Back to top",
+    "crumbs": [
+      "Weekly Meetings"
     ]
   }
 ]
