@@ -99,6 +99,35 @@ div.csl-indent {
   }
 }</script>
 
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
 
 <link rel="stylesheet" href="../styles.css">
 <meta property="og:title" content="2025/12/15 – MSc Thesis - Website">
@@ -390,6 +419,7 @@ div.csl-indent {
   <li><a href="#organise-my-notes" id="toc-organise-my-notes" class="nav-link" data-scroll-target="#organise-my-notes">Organise my notes</a></li>
   <li><a href="#get-access-to-a-cluster-to-train-ml-models" id="toc-get-access-to-a-cluster-to-train-ml-models" class="nav-link" data-scroll-target="#get-access-to-a-cluster-to-train-ml-models">Get access to a cluster to train ML models</a></li>
   <li><a href="#create-our-own-point-cloud-dataset-with-ahn-and-3dbag" id="toc-create-our-own-point-cloud-dataset-with-ahn-and-3dbag" class="nav-link" data-scroll-target="#create-our-own-point-cloud-dataset-with-ahn-and-3dbag">Create our own point cloud dataset with AHN and 3DBAG</a></li>
+  <li><a href="#myria3d" id="toc-myria3d" class="nav-link" data-scroll-target="#myria3d">myria3d</a></li>
   </ul></li>
   <li><a href="#discussion" id="toc-discussion" class="nav-link" data-scroll-target="#discussion">Discussion</a></li>
   <li><a href="#next-week" id="toc-next-week" class="nav-link" data-scroll-target="#next-week">Next week</a></li>
@@ -449,6 +479,8 @@ div.csl-indent {
 </section>
 <section id="create-our-own-point-cloud-dataset-with-ahn-and-3dbag" class="level3">
 <h3 class="anchored" data-anchor-id="create-our-own-point-cloud-dataset-with-ahn-and-3dbag">Create our own point cloud dataset with AHN and 3DBAG</h3>
+<section id="exploration" class="level4">
+<h4 class="anchored" data-anchor-id="exploration">Exploration</h4>
 <ul>
 <li>Looked at <span class="citation" data-cites="Merizette2025">Mérizette et al. (<a href="#ref-Merizette2025" role="doc-biblioref">2025</a>)</span> which explains how they created a new dataset for semantic segmentation of indoor TLS with two different processes: manual labelling and automatic generation of pseudo-labels from a BIM model of the objects.</li>
 <li>Looked at the coherence between the LoD 2.2 buildings from 3DBAG with the AHN4 point cloud in the center of Delft. Most points in the dataset seem to be close and accurate, with different precision depending on the case:
@@ -518,6 +550,69 @@ div.csl-indent {
 </div>
 </div>
 </div>
+</section>
+<section id="implementation" class="level4">
+<h4 class="anchored" data-anchor-id="implementation">Implementation</h4>
+<ul>
+<li>Had quite a few issues in:
+<ul>
+<li><em>Handling the OBJ files from the 3DBAG</em>. Is there a simple tool that could be used to simply merge multiple OBJ files? I made a simple Python script with <code>trimesh</code> to separate the building faces per type (floor, façade, roof).</li>
+<li><em>Handling the LAZ files from AHN4</em>. AHN tiles are actually quite big so I couldn’t load them entirely with <code>laspy</code>. I tried to use <code>trimesh</code> in Python to compute the distance from point cloud to mesh for each class, but it was very slow compared to CloudCompare. So I did all the computations using CloudCompare, and then classified with simple thresholds: 3 classes (roof, facade and other) with <code>roof</code> being assigned to the point <span class="math inline">\(p\)</span> if <span class="math display">\[\text{distance}(p, \text{roof}) &lt; \min(\text{distance}(p, \text{facade}), 1)\]</span></li>
+</ul></li>
+<li>Still the results look promising, with a few edge cases, some of them that could be interesting:
+<ul>
+<li>Most of what is not included in the LoD 2.2 models is not classified: balconies, chimneys, dormers and in general all the objects on the roofs or on the walls.</li>
+<li>Roof overhangs and/or the boundaries of the roofs are sometimes/often classified as façades because the LoD 2.2 models don’t expand far enough on the sides. This could maybe be improved by expanding the roof polygons?</li>
+<li>As expected monuments and modified buildings also perform poorly</li>
+</ul></li>
+</ul>
+<div class="quarto-layout-panel" data-layout-ncol="2">
+<div class="quarto-layout-row">
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="./2025_12_15/Custom_class-Overview-Buildings.png" class="lightbox" data-gallery="quarto-lightbox-gallery-7" title="The buildings in LoD 2.2 from the 3DBAG."><img src="./2025_12_15/Custom_class-Overview-Buildings.png" class="img-fluid figure-img" alt="The buildings in LoD 2.2 from the 3DBAG."></a></p>
+<figcaption>The buildings in LoD 2.2 from the 3DBAG.</figcaption>
+</figure>
+</div>
+</div>
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="./2025_12_15/Custom_class-Overview-Classification.png" class="lightbox" data-gallery="quarto-lightbox-gallery-8" title="The buildings in LoD 2.2 from the 3DBAG."><img src="./2025_12_15/Custom_class-Overview-Classification.png" class="img-fluid figure-img" alt="The buildings in LoD 2.2 from the 3DBAG."></a></p>
+<figcaption>The buildings in LoD 2.2 from the 3DBAG.</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<div class="quarto-layout-row">
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="./2025_12_15/Custom_class-Closer-Buildings.png" class="lightbox" data-gallery="quarto-lightbox-gallery-9" title="The buildings in LoD 2.2 from the 3DBAG."><img src="./2025_12_15/Custom_class-Closer-Buildings.png" class="img-fluid figure-img" alt="The buildings in LoD 2.2 from the 3DBAG."></a></p>
+<figcaption>The buildings in LoD 2.2 from the 3DBAG.</figcaption>
+</figure>
+</div>
+</div>
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="./2025_12_15/Custom_class-Closer-Classification.png" class="lightbox" data-gallery="quarto-lightbox-gallery-10" title="The buildings in LoD 2.2 from the 3DBAG."><img src="./2025_12_15/Custom_class-Closer-Classification.png" class="img-fluid figure-img" alt="The buildings in LoD 2.2 from the 3DBAG."></a></p>
+<figcaption>The buildings in LoD 2.2 from the 3DBAG.</figcaption>
+</figure>
+</div>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="myria3d" class="level3">
+<h3 class="anchored" data-anchor-id="myria3d">myria3d</h3>
+<p>Looked quickly into <a href="https://github.com/IGNF/myria3d"><code>myria3d</code></a>:</p>
+<ul>
+<li>Could be quite interesting to train a custom model on custom data, since it seems like a nicely documented framework.</li>
+<li>However, their model expects to have RGB values for the point cloud, which seems to be computed from aerial images, so AHN doesn’t have it but we could maybe compute it.</li>
+</ul>
 </section>
 </section>
 <section id="discussion" class="level2">
