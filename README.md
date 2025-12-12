@@ -1,4 +1,4 @@
-# MSc Thesis - Report
+# MSc Thesis - Website
 
 Author: Alexandre Bry
 
@@ -18,3 +18,5 @@ The current organization of the repository is the following:
 │   └── MSc_Thesis-Bibliography.bib
 └── weekly_notes/
 ```
+
+The website can be very easily published by running `quarto publish gh-pages`.

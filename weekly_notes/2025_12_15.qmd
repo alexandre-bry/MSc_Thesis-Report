@@ -16,7 +16,8 @@ meeting: []
 
 - Jean Zay used by the IGN won't be available to me until my internship at the IGN officially starts
 - TU Delft has [DAIC](https://daic.tudelft.nl/docs/system/compute-nodes/) and [DelftBlue](https://doc.dhpc.tudelft.nl/delftblue/DHPC-hardware/), DAIC being probably the most promising since focussed on AI.
-I started talking with people at TU Delft to get access but don't have access yet.
+I filled the forms to get access and both of them were approved so I should now have access.
+However, both are in maintenance so I won't be able to try until December 17th.
 
 ### Create our own point cloud dataset with AHN and 3DBAG
 
