@@ -113,8 +113,11 @@ However I don't know how this could help with the differentiation footprint/roof
 
 ## Discussion
 
-TODO
+- The automatic classification of AHN based on 3DBAG seems very pormising and we should try to make it happen
+- There is a large area in Marseille with hand-made 3D buildings based on LIDAR HD that I could use once I join the IGN for the internship (because it is closed data)
+- [Geotiles](https://geotiles.citg.tudelft.nl/index.tile.html) has AHN 4 et 5 with RGB values for orthophotos, but it is not really relevant in our case because it does not work well on façades
 
 ## Next week
 
-TODO
+- [ ] Try the solution of extending the roof surfaces to classify point clouds with CGAL (using Minkowski sums in 2D) on AHN 4 or 5
+- [ ] Try [PointTransformerv3](https://github.com/Pointcept/PointTransformerV3) or [PointVector](https://arxiv.org/abs/2205.10528)

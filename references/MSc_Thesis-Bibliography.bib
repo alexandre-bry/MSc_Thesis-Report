@@ -730,16 +730,17 @@ I haven't understood the technical details entirely though, and especially I'm w
 }
 
 @Article{Merizette2025,
-  author     = {Mérizette, Maxime and Audebert, Nicolas and Kervella, Pierre and Verdun, Jérôme},
-  title      = {3DSES: an indoor Lidar point cloud segmentation dataset with real and pseudo-labels from a 3D model},
-  year       = {2025},
-  copyright  = {arXiv.org perpetual, non-exclusive license},
-  doi        = {10.48550/ARXIV.2501.17534},
-  file       = {:Merizette2025 - 3DSES_ an Indoor Lidar Point Cloud Segmentation Dataset with Real and Pseudo Labels from a 3D Model.pdf:PDF},
-  groups     = {Benchmark or data, Read recently},
-  keywords   = {Computer Vision and Pattern Recognition (cs.CV), FOS: Computer and information sciences, FOS: Computer and information sciences},
-  publisher  = {arXiv},
-  readstatus = {read},
+  author            = {Mérizette, Maxime and Audebert, Nicolas and Kervella, Pierre and Verdun, Jérôme},
+  title             = {3DSES: an indoor Lidar point cloud segmentation dataset with real and pseudo-labels from a 3D model},
+  year              = {2025},
+  comment-alexandre = {Article where they explain how they created a new dataset for semantic segmentation of indoor TLS with two different processes: manual labelling and automatic generation of pseudo-labels from a BIM model of the objects. For the automatic generation, they basically made their own 3D BIM model of the rooms, and then used this data with the associated classifications of objects to classify points that were inside the BIM models to the corresponding category.},
+  copyright         = {arXiv.org perpetual, non-exclusive license},
+  doi               = {10.48550/ARXIV.2501.17534},
+  file              = {:Merizette2025 - 3DSES_ an Indoor Lidar Point Cloud Segmentation Dataset with Real and Pseudo Labels from a 3D Model.pdf:PDF},
+  groups            = {Benchmark or data, Read recently},
+  keywords          = {Computer Vision and Pattern Recognition (cs.CV), FOS: Computer and information sciences, FOS: Computer and information sciences},
+  publisher         = {arXiv},
+  readstatus        = {read},
 }
 
 @Misc{Girard2020,
@@ -785,7 +786,7 @@ However I don't know how this could help with the differentiation footprint/roof
   volume            = {13},
   comment-alexandre = {Potentially insteresting paper that uses both RGB orthoimages and LiDAR together},
   doi               = {10.3390/rs13040611},
-  groups            = {Read recently},
+  groups            = {Read recently, Footprint and roofprint},
   publisher         = {MDPI AG},
   readstatus        = {skimmed},
 }
@@ -806,8 +807,9 @@ However I don't know how this could help with the differentiation footprint/roof
 2. Regularizing the results using a residual autoencoder
 3. Transforming the masks into polygons},
   doi               = {10.3390/technologies13100452},
-  groups            = {Read recently},
+  groups            = {Read recently, Footprint and roofprint},
   publisher         = {MDPI AG},
+  readstatus        = {skimmed},
 }
 
 @Comment{jabref-meta: databaseType:bibtex;}

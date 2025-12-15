@@ -43,5 +43,4 @@ Two examples of the misalignment of BD TOPO with other data.
     - [x] from TU Delft: DelftBlue or DAIC (ask Gina Stravopoulou et Hugo Ledoux)
 - [x] Explore whether classifying the AHN between roofs and façades using the reconstructed building of the 3DBAG could be possible (see [this paper about generating such a dataset programmatically](https://arxiv.org/abs/2501.17534))
 - [x] Look at [one of the algorithms used by the IGN](https://github.com/IGNF/myria3d) to classify the LIDAR HD
-- [ ] Look at [this paper](https://arxiv.org/abs/2004.14875) that tried to get a polygonal footprint output from a ML model
-- [ ] Experiment with SOTA algorithms on interesting data
+- [x] Look at [this paper](https://arxiv.org/abs/2004.14875) that tried to get a polygonal footprint output from a ML model
