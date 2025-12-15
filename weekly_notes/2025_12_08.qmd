@@ -16,7 +16,7 @@ meeting: [Hugo Ledoux, Bruno Vallet]
 - Studied the difference between BAG and BGT, but sadly it seems that the BGT is mostly based on the BAG, meaning that we cannot find roof overhangs by comparing the two.
 The BGT adds a few more elements to buildings like balconies and awnings.
 
-::: {layout-ncol=2}
+::: {#fig-misalignment layout-ncol=2}
 
 ![First example of misalignment with the LIDAR HD.](./2025_12_08/alignment_BD_TOPO-Example_1-LIDAR_HD.png){group="misalignment"}
 

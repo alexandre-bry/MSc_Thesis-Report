@@ -31,7 +31,7 @@ Most points in the dataset seem to be close and accurate, with different precisi
     - Then there are more complex situations like balconys, chimneys and other details that are not represented in the 3DBAG and are therefore further away
     - Monuments (such as churches and fancy buildings) and new buildings also give bad results
 
-::: {layout-ncol=3}
+::: {#fig-coherence layout-ncol=3}
 ![The buildings in LoD 2.2 from the 3DBAG.](./2025_12_15/General-Buildings.png){group="coherence"}
 
 ![The point cloud from AHN4 filtered to keep only "Not classified" (green) and "Building" (white). This especially filters out the ground, bridges and water.](./2025_12_15/General-Classification-White_building_Green_not_classified.png){group="coherence"}
@@ -63,7 +63,7 @@ Two examples of the coherence between the 3DBAG and the AHN4.
     This could maybe be improved by expanding the roof polygons?
     - As expected monuments and modified buildings also perform poorly
 
-::: {layout-ncol=2}
+::: {#fig-classification layout-ncol=2}
 ![The buildings in LoD 2.2 from the 3DBAG.](./2025_12_15/Custom_class-Overview-Buildings.png){group="classification"}
 
 ![The classification of the points from AHN 4.](./2025_12_15/Custom_class-Overview-Classification.png){group="classification"}
