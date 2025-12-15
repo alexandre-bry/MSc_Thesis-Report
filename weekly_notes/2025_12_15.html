@@ -131,7 +131,6 @@ window.Quarto = {
 
 <link rel="stylesheet" href="../styles.css">
 <meta property="og:title" content="2025/12/15 – MSc Thesis - Website">
-<meta property="og:description" content="Website for the MSc Thesis of Alexandre Bry for the MSc Geomatics">
 <meta property="og:image" content="https://alexandre-bry.github.io/MSc_Thesis-Report/weekly_notes/2025_12_15/General-Buildings.png">
 <meta property="og:site_name" content="MSc Thesis - Website">
 <meta property="og:image:height" content="860">
@@ -658,11 +657,18 @@ Figure&nbsp;2: Example of classifying the AHN 4 points automatically based on th
 </section>
 <section id="discussion" class="level2">
 <h2 class="anchored" data-anchor-id="discussion">Discussion</h2>
-<p>TODO</p>
+<ul>
+<li>The automatic classification of AHN based on 3DBAG seems very pormising and we should try to make it happen</li>
+<li>There is a large area in Marseille with hand-made 3D buildings based on LIDAR HD that I could use once I join the IGN for the internship (because it is closed data)</li>
+<li><a href="https://geotiles.citg.tudelft.nl/index.tile.html">Geotiles</a> has AHN 4 et 5 with RGB values for orthophotos, but it is not really relevant in our case because it does not work well on façades</li>
+</ul>
 </section>
 <section id="next-week" class="level2">
 <h2 class="anchored" data-anchor-id="next-week">Next week</h2>
-<p>TODO</p>
+<ul class="task-list">
+<li><label><input type="checkbox">Try the solution of extending the roof surfaces to classify point clouds with CGAL (using Minkowski sums in 2D) on AHN 4 or 5</label></li>
+<li><label><input type="checkbox">Try <a href="https://github.com/Pointcept/PointTransformerV3">PointTransformerv3</a> or <a href="https://arxiv.org/abs/2205.10528">PointVector</a></label></li>
+</ul>
 
 
 

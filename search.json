@@ -26,7 +26,7 @@
     "href": "weekly_notes/2025_12_15.html#discussion",
     "title": "2025/12/15",
     "section": "Discussion",
-    "text": "Discussion\nTODO",
+    "text": "Discussion\n\nThe automatic classification of AHN based on 3DBAG seems very pormising and we should try to make it happen\nThere is a large area in Marseille with hand-made 3D buildings based on LIDAR HD that I could use once I join the IGN for the internship (because it is closed data)\nGeotiles has AHN 4 et 5 with RGB values for orthophotos, but it is not really relevant in our case because it does not work well on façades",
     "crumbs": [
       "Weekly Meetings",
       "2025/12/15"
@@ -37,7 +37,7 @@
     "href": "weekly_notes/2025_12_15.html#next-week",
     "title": "2025/12/15",
     "section": "Next week",
-    "text": "Next week\nTODO",
+    "text": "Next week\n\nTry the solution of extending the roof surfaces to classify point clouds with CGAL (using Minkowski sums in 2D) on AHN 4 or 5\nTry PointTransformerv3 or PointVector",
     "crumbs": [
       "Weekly Meetings",
       "2025/12/15"
@@ -253,7 +253,7 @@
     "href": "weekly_notes/2025_12_08.html#next-week",
     "title": "2025/12/08",
     "section": "Next week",
-    "text": "Next week\n\nMove the notes and structure them in the current repository to keep track of the progress and share it more easily\nStart documenting decisions and good examples that could be useful later for the report\nTry to get access to a computing cluster:\n\nfrom the IGN: Jean Zay (ask Mathieu Brédif)\nfrom TU Delft: DelftBlue or DAIC (ask Gina Stravopoulou et Hugo Ledoux)\n\nExplore whether classifying the AHN between roofs and façades using the reconstructed building of the 3DBAG could be possible (see this paper about generating such a dataset programmatically)\nLook at one of the algorithms used by the IGN to classify the LIDAR HD\nLook at this paper that tried to get a polygonal footprint output from a ML model\nExperiment with SOTA algorithms on interesting data",
+    "text": "Next week\n\nMove the notes and structure them in the current repository to keep track of the progress and share it more easily\nStart documenting decisions and good examples that could be useful later for the report\nTry to get access to a computing cluster:\n\nfrom the IGN: Jean Zay (ask Mathieu Brédif)\nfrom TU Delft: DelftBlue or DAIC (ask Gina Stravopoulou et Hugo Ledoux)\n\nExplore whether classifying the AHN between roofs and façades using the reconstructed building of the 3DBAG could be possible (see this paper about generating such a dataset programmatically)\nLook at one of the algorithms used by the IGN to classify the LIDAR HD\nLook at this paper that tried to get a polygonal footprint output from a ML model",
     "crumbs": [
       "Weekly Meetings",
       "2025/12/08"
