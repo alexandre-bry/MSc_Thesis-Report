@@ -32,17 +32,17 @@ Most points in the dataset seem to be close and accurate, with different precisi
     - Monuments (such as churches and fancy buildings) and new buildings also give bad results
 
 ::: {layout-ncol=3}
-![The buildings in LoD 2.2 from the 3DBAG.](./2025_12_15/General-Buildings.png)
+![The buildings in LoD 2.2 from the 3DBAG.](./2025_12_15/General-Buildings.png){group="coherence"}
 
-![The point cloud from AHN4 filtered to keep only "Not classified" (green) and "Building" (white). This especially filters out the ground, bridges and water.](./2025_12_15/General-Classification-White_building_Green_not_classified.png)
+![The point cloud from AHN4 filtered to keep only "Not classified" (green) and "Building" (white). This especially filters out the ground, bridges and water.](./2025_12_15/General-Classification-White_building_Green_not_classified.png){group="coherence"}
 
-![The distance to the closest building, with 0 m for blue, 0.333 m for green, 0.666 m for yellow and 1 m for red. Values higher than 1 m are grey.](./2025_12_15/General-Distance-Blue_0m_Red_1m.png)
+![The distance to the closest building, with 0 m for blue, 0.333 m for green, 0.666 m for yellow and 1 m for red. Values higher than 1 m are grey.](./2025_12_15/General-Distance-Blue_0m_Red_1m.png){group="coherence"}
 
-![The buildings in LoD 2.2 from the 3DBAG.](./2025_12_15/Complex_example-Buildings.png)
+![The buildings in LoD 2.2 from the 3DBAG.](./2025_12_15/Complex_example-Buildings.png){group="coherence"}
 
-![The point cloud from AHN4 filtered to keep only "Not classified" (green) and "Building" (white). This especially filters out the ground, bridges and water.](./2025_12_15/Complex_example-Classification-White_building_Green_not_classified.png)
+![The point cloud from AHN4 filtered to keep only "Not classified" (green) and "Building" (white). This especially filters out the ground, bridges and water.](./2025_12_15/Complex_example-Classification-White_building_Green_not_classified.png){group="coherence"}
 
-![The distance to the closest building, with 0 m for blue, 0.333 m for green, 0.666 m for yellow and 1 m for red. Values higher than 1 m are grey.](./2025_12_15/Complex_example-Distance-Blue_0m_Red_1m.png)
+![The distance to the closest building, with 0 m for blue, 0.333 m for green, 0.666 m for yellow and 1 m for red. Values higher than 1 m are grey.](./2025_12_15/Complex_example-Distance-Blue_0m_Red_1m.png){group="coherence"}
 
 Two examples of the coherence between the 3DBAG and the AHN4.
 :::
@@ -64,13 +64,15 @@ Two examples of the coherence between the 3DBAG and the AHN4.
     - As expected monuments and modified buildings also perform poorly
 
 ::: {layout-ncol=2}
-![The buildings in LoD 2.2 from the 3DBAG.](./2025_12_15/Custom_class-Overview-Buildings.png)
+![The buildings in LoD 2.2 from the 3DBAG.](./2025_12_15/Custom_class-Overview-Buildings.png){group="classification"}
 
-![The buildings in LoD 2.2 from the 3DBAG.](./2025_12_15/Custom_class-Overview-Classification.png)
+![The classification of the points from AHN 4.](./2025_12_15/Custom_class-Overview-Classification.png){group="classification"}
 
-![The buildings in LoD 2.2 from the 3DBAG.](./2025_12_15/Custom_class-Closer-Buildings.png)
+![The buildings in LoD 2.2 from the 3DBAG.](./2025_12_15/Custom_class-Closer-Buildings.png){group="classification"}
 
-![The buildings in LoD 2.2 from the 3DBAG.](./2025_12_15/Custom_class-Closer-Classification.png)
+![The classification of the points from AHN 4.](./2025_12_15/Custom_class-Closer-Classification.png){group="classification"}
+
+Example of classifying the AHN 4 points automatically based on the 3DBAG.
 :::
 
 ### myria3d

@@ -18,13 +18,13 @@ The BGT adds a few more elements to buildings like balconies and awnings.
 
 ::: {layout-ncol=2}
 
-![First example of misalignment with the LIDAR HD.](./2025_12_08/alignment_BD_TOPO-Example_1-LIDAR_HD.png)
+![First example of misalignment with the LIDAR HD.](./2025_12_08/alignment_BD_TOPO-Example_1-LIDAR_HD.png){group="misalignment"}
 
-![First example of misalignment with the BD ORTHO.](./2025_12_08/alignment_BD_TOPO-Example_1-BD_ORTHO.png)
+![First example of misalignment with the BD ORTHO.](./2025_12_08/alignment_BD_TOPO-Example_1-BD_ORTHO.png){group="misalignment"}
 
-![Second example of misalignment with the LIDAR HD.](./2025_12_08/alignment_BD_TOPO-Example_2-LIDAR_HD.png)
+![Second example of misalignment with the LIDAR HD.](./2025_12_08/alignment_BD_TOPO-Example_2-LIDAR_HD.png){group="misalignment"}
 
-![Second example of misalignment with the BD ORTHO.](./2025_12_08/alignment_BD_TOPO-Example_2-BD_ORTHO.png)
+![Second example of misalignment with the BD ORTHO.](./2025_12_08/alignment_BD_TOPO-Example_2-BD_ORTHO.png){group="misalignment"}
 
 Two examples of the misalignment of BD TOPO with other data.
 :::
