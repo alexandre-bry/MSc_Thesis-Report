@@ -420,6 +420,7 @@ window.Quarto = {
   <li><a href="#get-access-to-a-cluster-to-train-ml-models" id="toc-get-access-to-a-cluster-to-train-ml-models" class="nav-link" data-scroll-target="#get-access-to-a-cluster-to-train-ml-models">Get access to a cluster to train ML models</a></li>
   <li><a href="#create-our-own-point-cloud-dataset-with-ahn-and-3dbag" id="toc-create-our-own-point-cloud-dataset-with-ahn-and-3dbag" class="nav-link" data-scroll-target="#create-our-own-point-cloud-dataset-with-ahn-and-3dbag">Create our own point cloud dataset with AHN and 3DBAG</a></li>
   <li><a href="#myria3d" id="toc-myria3d" class="nav-link" data-scroll-target="#myria3d">myria3d</a></li>
+  <li><a href="#polygonal-output-for-ml-model" id="toc-polygonal-output-for-ml-model" class="nav-link" data-scroll-target="#polygonal-output-for-ml-model">Polygonal output for ML model</a></li>
   </ul></li>
   <li><a href="#discussion" id="toc-discussion" class="nav-link" data-scroll-target="#discussion">Discussion</a></li>
   <li><a href="#next-week" id="toc-next-week" class="nav-link" data-scroll-target="#next-week">Next week</a></li>
@@ -482,7 +483,7 @@ window.Quarto = {
 <section id="exploration" class="level4">
 <h4 class="anchored" data-anchor-id="exploration">Exploration</h4>
 <ul>
-<li>Looked at <span class="citation" data-cites="Merizette2025">Mérizette et al. (<a href="#ref-Merizette2025" role="doc-biblioref">2025</a>)</span> which explains how they created a new dataset for semantic segmentation of indoor TLS with two different processes: manual labelling and automatic generation of pseudo-labels from a BIM model of the objects.</li>
+<li>Looked at <span class="citation" data-cites="Merizette2025">(<a href="#ref-Merizette2025" role="doc-biblioref">Mérizette et al. 2025</a>)</span> which explains how they created a new dataset for semantic segmentation of indoor TLS with two different processes: manual labelling and automatic generation of pseudo-labels from a BIM model of the objects. For the automatic generation, they basically made their own 3D BIM model of the rooms, and then used this data with the associated classifications of objects to classify points that were inside the BIM models to the corresponding category.</li>
 <li>Looked at the coherence between the LoD 2.2 buildings from 3DBAG with the AHN4 point cloud in the center of Delft. Most points in the dataset seem to be close and accurate, with different precision depending on the case:
 <ul>
 <li>Roof points are mostly close to the building with 0.1&nbsp;m precision</li>
@@ -614,6 +615,29 @@ window.Quarto = {
 <li>However, their model expects to have RGB values for the point cloud, which seems to be computed from aerial images, so AHN doesn’t have it but we could maybe compute it.</li>
 </ul>
 </section>
+<section id="polygonal-output-for-ml-model" class="level3">
+<h3 class="anchored" data-anchor-id="polygonal-output-for-ml-model">Polygonal output for ML model</h3>
+<p>Looked at <span class="citation" data-cites="Girard2020">(<a href="#ref-Girard2020" role="doc-biblioref">Girard et al. 2020</a>)</span>, an interesting paper that tries to predict building edges as polygons using a ML model. To do so, their model takes a RGB image as input and outputs two things:</p>
+<ul>
+<li>2 values predicting:
+<ul>
+<li>if the pixel is in a building</li>
+<li>if the pixel is on the edge of a building</li>
+</ul></li>
+<li>4 values defining two complex numbers that define two directions for each pixel. All the pixel then make a frame field that defines tangents/normals of buildings</li>
+</ul>
+<p>Then, the frame field and the classification rasters are processed in different steps:</p>
+<ul>
+<li>ASM optimization to get a sub-pixel precision and straight edges aligned with the frame field</li>
+<li>Corner detection</li>
+<li>Corner-aware simplification</li>
+<li>Polygonization</li>
+<li>Polygon filtering</li>
+</ul>
+<p>I haven’t read all the gory details in the supplementary material but it is nice that it is there, and there is also a <a href="https://github.com/Lydorn/Polygonization-by-Frame-Field-Learning">repository</a>.</p>
+<p>They get nice results with clean polygons, and I think it could be extended to point clouds as the frame field could also make a lot of sense there, by also predicting a classification coupled with a frame field.</p>
+<p>However I don’t know how this could help with the differentiation footprint/roofprint if we don’t have any training data with both.</p>
+</section>
 </section>
 <section id="discussion" class="level2">
 <h2 class="anchored" data-anchor-id="discussion">Discussion</h2>
@@ -628,6 +652,9 @@ window.Quarto = {
 </section>
 
 <a onclick="window.scrollTo(0, 0); return false;" role="button" id="quarto-back-to-top"><i class="bi bi-arrow-up"></i> Back to top</a><div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" role="doc-bibliography" id="quarto-bibliography"><h2 class="anchored quarto-appendix-heading">References</h2><div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list">
+<div id="ref-Girard2020" class="csl-entry" role="listitem">
+Girard, Nicolas, Dmitriy Smirnov, Justin Solomon, and Yuliya Tarabalka. 2020. <span>“Polygonal Building Segmentation by Frame Field Learning.”</span> arXiv. <a href="https://doi.org/10.48550/ARXIV.2004.14875">https://doi.org/10.48550/ARXIV.2004.14875</a>.
+</div>
 <div id="ref-Merizette2025" class="csl-entry" role="listitem">
 Mérizette, Maxime, Nicolas Audebert, Pierre Kervella, and Jérôme Verdun. 2025. <span>“3DSES: An Indoor Lidar Point Cloud Segmentation Dataset with Real and Pseudo-Labels from a 3D Model.”</span> <a href="https://doi.org/10.48550/ARXIV.2501.17534">https://doi.org/10.48550/ARXIV.2501.17534</a>.
 </div>
