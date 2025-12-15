@@ -103,6 +103,12 @@ They get nice results with clean polygons, and I think it could be extended to p
 
 However I don't know how this could help with the differentiation footprint/roofprint if we don't have any training data with both.
 
+### Re-use of current BD TOPO building outlines
+
+- A simple way to re-use BD TOPO building outlines could be to use them to extract smaller point clouds (with a margin around the current outline like 5 m to take the current errors into account), that would be quicker and easier to process
+- Skimming through [@Wierzbicki2021] gave me the idea that images (which should be well geo-referenced), could maybe be used in combination with current outlines to extract regions of interest to process the point cloud
+- Skimming through [@Saadaoui2025] made me realize that the roofprints obtained from aerial images are not at the right position due to the angle of the camera, which could be part of the reason why the current outlines are not correct
+
 ## Discussion
 
 TODO
