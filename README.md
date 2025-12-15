@@ -19,4 +19,4 @@ The current organization of the repository is the following:
 └── weekly_notes/
 ```
 
-The website can be very easily published by running `quarto publish gh-pages`.
+The website can be very easily published by running `quarto publish gh-pages --no-prompt`.

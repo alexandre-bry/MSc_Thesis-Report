@@ -23,7 +23,7 @@ However, both are in maintenance so I won't be able to try until December 17th.
 
 #### Exploration
 
-- Looked at @Merizette2025 which explains how they created a new dataset for semantic segmentation of indoor TLS with two different processes: manual labelling and automatic generation of pseudo-labels from a BIM model of the objects.
+- Looked at [@Merizette2025] which explains how they created a new dataset for semantic segmentation of indoor TLS with two different processes: manual labelling and automatic generation of pseudo-labels from a BIM model of the objects. For the automatic generation, they basically made their own 3D BIM model of the rooms, and then used this data with the associated classifications of objects to classify points that were inside the BIM models to the corresponding category.
 - Looked at the coherence between the LoD 2.2 buildings from 3DBAG with the AHN4 point cloud in the center of Delft.
 Most points in the dataset seem to be close and accurate, with different precision depending on the case:
     - Roof points are mostly close to the building with 0.1 m precision
@@ -79,6 +79,29 @@ Looked quickly into [`myria3d`](https://github.com/IGNF/myria3d):
 
 - Could be quite interesting to train a custom model on custom data, since it seems like a nicely documented framework.
 - However, their model expects to have RGB values for the point cloud, which seems to be computed from aerial images, so AHN doesn't have it but we could maybe compute it.
+
+### Polygonal output for ML model
+
+Looked at [@Girard2020], an interesting paper that tries to predict building edges as polygons using a ML model. To do so, their model takes a RGB image as input and outputs two things:
+
+- 2 values predicting:
+	- if the pixel is in a building
+	- if the pixel is on the edge of a building
+- 4 values defining two complex numbers that define two directions for each pixel. All the pixel then make a frame field that defines tangents/normals of buildings
+
+Then, the frame field and the classification rasters are processed in different steps:
+
+- ASM optimization to get a sub-pixel precision and straight edges aligned with the frame field
+- Corner detection
+- Corner-aware simplification
+- Polygonization
+- Polygon filtering
+
+I haven't read all the gory details in the supplementary material but it is nice that it is there, and there is also a [repository](https://github.com/Lydorn/Polygonization-by-Frame-Field-Learning). 
+
+They get nice results with clean polygons, and I think it could be extended to point clouds as the frame field could also make a lot of sense there, by also predicting a classification coupled with a frame field.
+
+However I don't know how this could help with the differentiation footprint/roofprint if we don't have any training data with both.
 
 ## Discussion
 

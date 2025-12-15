@@ -742,6 +742,36 @@ I haven't understood the technical details entirely though, and especially I'm w
   readstatus = {read},
 }
 
+@Misc{Girard2020,
+  author            = {Girard, Nicolas and Smirnov, Dmitriy and Solomon, Justin and Tarabalka, Yuliya},
+  title             = {Polygonal Building Segmentation by Frame Field Learning},
+  year              = {2020},
+  comment-alexandre = {Interesting paper that tries to predict building edges as polygons using a ML model. To do so, their model takes a RGB image as input and outputs two things:
+- two scalars predicting:
+	- if the pixel is in a building
+	- if the pixel is on the edge of a building
+- 4 values defining two complex numbers that define two directions for each pixel. All the pixel then make a frame field that defines tangents/normals of buildings
+
+Then, the frame field and the classification rasters are processed in different steps:
+- ASM optimization to get a sub-pixel precision and straight edges aligned with the frame field
+- Corner detection
+- Corner-aware simplification
+- Polygonization
+- Polygon filtering
+
+I haven't read all the gory details in the supplementary material but it is nice that it is there, and there is also a repository: https://github.com/Lydorn/Polygonization-by-Frame-Field-Learning
+
+They get nice results with clean polygons, and I think it could be extended to point clouds as the frame field could also make a lot of sense there, by also predicting a classification coupled with a frame field.
+
+However I don't know how this could help with the differentiation footprint/roofprint if we don't have any training data with both.},
+  copyright         = {arXiv.org perpetual, non-exclusive license},
+  doi               = {10.48550/ARXIV.2004.14875},
+  file              = {:Girard2020 - Polygonal Building Segmentation by Frame Field Learning.pdf:PDF},
+  groups            = {Footprint and roofprint, Read recently},
+  keywords          = {Computer Vision and Pattern Recognition (cs.CV), Machine Learning (cs.LG), Image and Video Processing (eess.IV), FOS: Computer and information sciences, FOS: Computer and information sciences, FOS: Electrical engineering, electronic engineering, information engineering, FOS: Electrical engineering, electronic engineering, information engineering},
+  publisher         = {arXiv},
+}
+
 @Comment{jabref-meta: databaseType:bibtex;}
 
 @Comment{jabref-meta: grouping:
