@@ -421,6 +421,7 @@ window.Quarto = {
   <li><a href="#create-our-own-point-cloud-dataset-with-ahn-and-3dbag" id="toc-create-our-own-point-cloud-dataset-with-ahn-and-3dbag" class="nav-link" data-scroll-target="#create-our-own-point-cloud-dataset-with-ahn-and-3dbag">Create our own point cloud dataset with AHN and 3DBAG</a></li>
   <li><a href="#myria3d" id="toc-myria3d" class="nav-link" data-scroll-target="#myria3d">myria3d</a></li>
   <li><a href="#polygonal-output-for-ml-model" id="toc-polygonal-output-for-ml-model" class="nav-link" data-scroll-target="#polygonal-output-for-ml-model">Polygonal output for ML model</a></li>
+  <li><a href="#re-use-of-current-bd-topo-building-outlines" id="toc-re-use-of-current-bd-topo-building-outlines" class="nav-link" data-scroll-target="#re-use-of-current-bd-topo-building-outlines">Re-use of current BD TOPO building outlines</a></li>
   </ul></li>
   <li><a href="#discussion" id="toc-discussion" class="nav-link" data-scroll-target="#discussion">Discussion</a></li>
   <li><a href="#next-week" id="toc-next-week" class="nav-link" data-scroll-target="#next-week">Next week</a></li>
@@ -638,6 +639,14 @@ window.Quarto = {
 <p>They get nice results with clean polygons, and I think it could be extended to point clouds as the frame field could also make a lot of sense there, by also predicting a classification coupled with a frame field.</p>
 <p>However I don’t know how this could help with the differentiation footprint/roofprint if we don’t have any training data with both.</p>
 </section>
+<section id="re-use-of-current-bd-topo-building-outlines" class="level3">
+<h3 class="anchored" data-anchor-id="re-use-of-current-bd-topo-building-outlines">Re-use of current BD TOPO building outlines</h3>
+<ul>
+<li>A simple way to re-use BD TOPO building outlines could be to use them to extract smaller point clouds (with a margin around the current outline like 5&nbsp;m to take the current errors into account), that would be quicker and easier to process</li>
+<li>Skimming through <span class="citation" data-cites="Wierzbicki2021">(<a href="#ref-Wierzbicki2021" role="doc-biblioref">Wierzbicki, Matuk, and Bielecka 2021</a>)</span> gave me the idea that images (which should be well geo-referenced), could maybe be used in combination with current outlines to extract regions of interest to process the point cloud</li>
+<li>Skimming through <span class="citation" data-cites="Saadaoui2025">(<a href="#ref-Saadaoui2025" role="doc-biblioref">Saadaoui et al. 2025</a>)</span> made me realize that the roofprints obtained from aerial images are not at the right position due to the angle of the camera, which could be part of the reason why the current outlines are not correct</li>
+</ul>
+</section>
 </section>
 <section id="discussion" class="level2">
 <h2 class="anchored" data-anchor-id="discussion">Discussion</h2>
@@ -657,6 +666,12 @@ Girard, Nicolas, Dmitriy Smirnov, Justin Solomon, and Yuliya Tarabalka. 2020. <s
 </div>
 <div id="ref-Merizette2025" class="csl-entry" role="listitem">
 Mérizette, Maxime, Nicolas Audebert, Pierre Kervella, and Jérôme Verdun. 2025. <span>“3DSES: An Indoor Lidar Point Cloud Segmentation Dataset with Real and Pseudo-Labels from a 3D Model.”</span> <a href="https://doi.org/10.48550/ARXIV.2501.17534">https://doi.org/10.48550/ARXIV.2501.17534</a>.
+</div>
+<div id="ref-Saadaoui2025" class="csl-entry" role="listitem">
+Saadaoui, Hachem, Saad Farah, Hatim Lechgar, Abdellatif Ghennioui, and Hassan Rhinane. 2025. <span>“Advancing Urban Roof Segmentation: Transformative Deep Learning Models from CNNs to Transformers for Scalable and Accurate Urban Imaging Solutions—a Case Study in Ben Guerir City, Morocco.”</span> <em>Technologies</em> 13 (10): 452. <a href="https://doi.org/10.3390/technologies13100452">https://doi.org/10.3390/technologies13100452</a>.
+</div>
+<div id="ref-Wierzbicki2021" class="csl-entry" role="listitem">
+Wierzbicki, Damian, Olga Matuk, and Elzbieta Bielecka. 2021. <span>“Polish Cadastre Modernization with Remotely Extracted Buildings from High-Resolution Aerial Orthoimagery and Airborne LiDAR.”</span> <em>Remote Sensing</em> 13 (4): 611. <a href="https://doi.org/10.3390/rs13040611">https://doi.org/10.3390/rs13040611</a>.
 </div>
 </div></section></div></main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
