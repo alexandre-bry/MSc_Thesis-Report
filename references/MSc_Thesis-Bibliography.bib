@@ -230,6 +230,7 @@ The process is:
   doi               = {10.5194/isprs-archives-xlii-1-w1-465-2017},
   file              = {:Frommholz2017 - RECONSTRUCTING BUILDINGS wITH DISCONTINUITIES aND ROOF OVERHANGS fROM OBLIQUE AERIAL IMAGERY.pdf:PDF},
   groups            = {Footprint and roofprint},
+  priority          = {prio1},
   publisher         = {Copernicus GmbH},
   readstatus        = {read},
   relevance         = {relevant},
@@ -253,6 +254,7 @@ Steps:
   doi               = {10.5220/0011604200003417},
   file              = {:Goebbels2023 - Automatic Reconstruction of Roof Overhangs for 3D City Models.pdf:PDF},
   groups            = {Footprint and roofprint},
+  priority          = {prio2},
   readstatus        = {read},
 }
 
@@ -296,16 +298,17 @@ Steps:
   month             = sep,
   pages             = {233--238},
   volume            = {XXXVIII-4/W19},
-  comment-alexandre = {Relire pour en savoir plus
+  comment-alexandre = {Reread to know more
 
 This paper has nice illustrations and is interesting.
 
-The method for overhang estimation seems to be:
+The method for overhang estimation seems to be, using oblique images and an ALS point cloud:
 - Determine the edges of the roof
 - Find the corresponding wall by finding the best fit for a vertical plane aligned with each edge by sweeping the plane perpendicularly to the edge. Symmetry is also used to assume that the overhang will be the same on the other side and therefore have more samples to get a better result.},
   doi               = {10.5194/isprsarchives-xxxviii-4-w19-233-2011},
   file              = {:Panday2012 - FITTING oF PARAMETRIC BUILDING MODELS tO OBLIQUE AERIAL IMAGES.pdf:PDF},
   groups            = {Footprint and roofprint},
+  priority          = {prio2},
   publisher         = {Copernicus GmbH},
   readstatus        = {read},
 }
@@ -332,6 +335,7 @@ A method to improve the quality of 3D buildings made from ALS point clouds using
   doi               = {10.3390/rs9030282},
   file              = {:JarzabekRychard2017 - Geometric Refinement of ALS Data Derived Building Models Using Monoscopic Aerial Images.pdf:PDF},
   groups            = {Footprint and roofprint},
+  priority          = {prio1},
   publisher         = {MDPI AG},
   readstatus        = {read},
 }
@@ -420,7 +424,7 @@ A method to improve the quality of 3D buildings made from ALS point clouds using
   publisher = {MDPI AG},
 }
 
-@Misc{Wu2023,
+@Article{Wu2023,
   author            = {Wu, Xiaoyang and Jiang, Li and Wang, Peng-Shuai and Liu, Zhijian and Liu, Xihui and Qiao, Yu and Ouyang, Wanli and He, Tong and Zhao, Hengshuang},
   title             = {Point Transformer V3: Simpler, Faster, Stronger},
   year              = {2023},
@@ -432,6 +436,7 @@ This results in a smaller and faster model that achieves state-of-the-art result
   file              = {:Wu2023 - Point Transformer V3_ Simpler, Faster, Stronger.pdf:PDF},
   groups            = {Point cloud classification},
   keywords          = {Computer Vision and Pattern Recognition (cs.CV), FOS: Computer and information sciences, FOS: Computer and information sciences},
+  priority          = {prio1},
   publisher         = {arXiv},
   readstatus        = {read},
 }
@@ -448,13 +453,14 @@ This results in a smaller and faster model that achieves state-of-the-art result
   volume            = {6},
   comment-alexandre = {This paper is nice, but maybe a bit old?
 
-This paper deals with building reconstruction from a 3D point cloud made from oblique images. The methode is divided in 3 steps:
+This paper deals with building reconstruction from a 3D point cloud made from oblique images. The method is divided in 3 steps:
 1. Extract the footprint from façades after removing roof and ground points
 2. Segment and reconstruct the roof in 3D using planarity, region growing and edges with the façades
 3. Add roof overhangs using a DSM and the computed footprint. They look at the median height (in the DSM) along a line that is parallel to the façade at different distances (step of one DSM pixel), outside the building. They look up to 1.5 m away and the overall gradient should be at least 2 m. In the list of median heights, they use the highest gradient as a first approximation, and then fit a cubic polynomial function around that value to get a sub-pixel approximation.},
   doi               = {10.1080/19479832.2015.1071287},
   file              = {:19479832.2015.1071287.pdf:PDF},
   groups            = {Footprint and roofprint},
+  priority          = {prio1},
   publisher         = {Informa UK Limited},
   readstatus        = {read},
 }
@@ -472,6 +478,7 @@ This paper deals with building reconstruction from a 3D point cloud made from ob
   doi               = {10.1016/j.ophoto.2021.100001},
   file              = {:Koelle2021 - The Hessigheim 3D (H3D) Benchmark on Semantic Segmentation of High Resolution 3D Point Clouds and Textured Meshes from UAV LiDAR and Multi View Stereo.pdf:PDF},
   groups            = {Benchmark or data, Point cloud classification},
+  priority          = {prio1},
   publisher         = {Elsevier BV},
 }
 
@@ -484,12 +491,16 @@ This paper deals with building reconstruction from a 3D point cloud made from ob
   month             = jan,
   pages             = {152--165},
   volume            = {87},
-  comment-alexandre = {Benchmark for 3D Semantic Labeling. Classes include roofs and façades.
+  comment-alexandre = {I haven't read the paper but this is the paper that manually labelled the Vaihingen 3D (V3D) dataset.
+
+Benchmark for 3D Semantic Labeling. Classes include roofs and façades.
 Link: https://www.isprs.org/resources/datasets/benchmarks/UrbanSemLab/Default.aspx},
   doi               = {10.1016/j.isprsjprs.2013.11.001},
   file              = {:Niemeyer2014 - Contextual Classification of Lidar Data and Building Object Detection in Urban Areas.pdf:PDF},
   groups            = {Benchmark or data, Point cloud classification},
+  priority          = {prio1},
   publisher         = {Elsevier BV},
+  readstatus        = {skimmed},
 }
 
 @Article{Zachar2023,
@@ -501,15 +512,19 @@ Link: https://www.isprs.org/resources/datasets/benchmarks/UrbanSemLab/Default.as
   month             = oct,
   pages             = {227--234},
   volume            = {XLVIII-1/W3-2023},
-  comment-alexandre = {A recent benchmark for 3D point cloud classification with lots of classes and high density point cloud.
+  comment-alexandre = {ALS dataset with 550M points with 275 pts/m² on average.
+Separation of façade and roof and even stairs, balconeys, chimneys and other roof structures.
+
+A recent benchmark for 3D point cloud classification with lots of classes and high density point cloud.
 It also lists many existing benchmarks.},
   doi               = {10.5194/isprs-archives-xlviii-1-w3-2023-227-2023},
   file              = {:Zachar2023 - CENAGIS ALS BENCHMARK NEW PROPOSAL fOR DENSE ALS BENCHMARK BASED oN tHE REVIEW oF DATASETS aND BENCHMARKS fOR 3D POINT CLOUD SEGMENTATION.pdf:PDF},
   groups            = {Benchmark or data, Point cloud classification},
+  priority          = {prio1},
   publisher         = {Copernicus GmbH},
 }
 
-@Misc{Biasutti2019,
+@Article{Biasutti2019,
   author            = {Biasutti, Pierre and Bugeau, Aurélie and Aujol, Jean-François and Brédif, Mathieu},
   title             = {RIU-Net: Embarrassingly simple semantic segmentation of 3D LiDAR point cloud},
   year              = {2019},
@@ -521,11 +536,12 @@ Puts a simple U-Net on top of it, performing remarkably well on TLS data compare
   file              = {:Biasutti2019 - RIU Net_ Embarrassingly Simple Semantic Segmentation of 3D LiDAR Point Cloud.pdf:PDF},
   groups            = {Point cloud classification},
   keywords          = {Computer Vision and Pattern Recognition (cs.CV), FOS: Computer and information sciences, FOS: Computer and information sciences},
+  priority          = {prio2},
   publisher         = {arXiv},
   readstatus        = {read},
 }
 
-@Misc{Thomas2019,
+@Article{Thomas2019,
   author            = {Thomas, Hugues and Qi, Charles R. and Deschaud, Jean-Emmanuel and Marcotegui, Beatriz and Goulette, François and Guibas, Leonidas J.},
   title             = {KPConv: Flexible and Deformable Convolution for Point Clouds},
   year              = {2019},
@@ -535,6 +551,7 @@ Puts a simple U-Net on top of it, performing remarkably well on TLS data compare
   file              = {:Thomas2019 - KPConv_ Flexible and Deformable Convolution for Point Clouds.pdf:PDF},
   groups            = {Point cloud classification},
   keywords          = {Computer Vision and Pattern Recognition (cs.CV), FOS: Computer and information sciences, FOS: Computer and information sciences},
+  priority          = {prio1},
   publisher         = {arXiv},
   readstatus        = {read},
 }
@@ -553,6 +570,7 @@ This introduced mostly a new type of layer with a goal similar to dense convolut
   doi               = {10.1109/cvpr.2019.00319},
   file              = {:Choy2019 - 4D Spatio Temporal ConvNets_ Minkowski Convolutional Neural Networks.pdf:PDF},
   groups            = {Point cloud classification},
+  priority          = {prio3},
   readstatus        = {read},
 }
 
@@ -571,11 +589,12 @@ They use (x, y, z, intensity, return_number) as input for each point.},
   doi               = {10.1016/j.isprsjprs.2020.03.016},
   file              = {:Li2020 - A Geometry Attentional Network for ALS Point Cloud Classification.pdf:PDF},
   groups            = {Point cloud classification},
+  priority          = {prio1},
   publisher         = {Elsevier BV},
   readstatus        = {read},
 }
 
-@Misc{Zhao2020,
+@Article{Zhao2020,
   author            = {Zhao, Hengshuang and Jiang, Li and Jia, Jiaya and Torr, Philip and Koltun, Vladlen},
   title             = {Point Transformer},
   year              = {2020},
@@ -586,11 +605,12 @@ Unofficial implementation (couldn't find an official one): https://github.com/PO
   file              = {:Zhao2020 - Point Transformer.pdf:PDF},
   groups            = {Point cloud classification},
   keywords          = {Computer Vision and Pattern Recognition (cs.CV), FOS: Computer and information sciences, FOS: Computer and information sciences},
+  priority          = {prio2},
   publisher         = {arXiv},
   readstatus        = {read},
 }
 
-@Misc{Deng2022,
+@Article{Deng2022,
   author    = {Deng, Xin and Zhang, WenYu and Ding, Qing and Zhang, XinMing},
   title     = {PointVector: A Vector Representation In Point Cloud Analysis},
   year      = {2022},
@@ -602,7 +622,7 @@ Unofficial implementation (couldn't find an official one): https://github.com/PO
   publisher = {arXiv},
 }
 
-@Misc{Guo2019,
+@Article{Guo2019,
   author            = {Guo, Yulan and Wang, Hanyun and Hu, Qingyong and Liu, Hao and Liu, Li and Bennamoun, Mohammed},
   title             = {Deep Learning for 3D Point Clouds: A Survey},
   year              = {2019},
@@ -612,32 +632,43 @@ Unofficial implementation (couldn't find an official one): https://github.com/PO
   file              = {:Guo2019 - Deep Learning for 3D Point Clouds_ a Survey.pdf:PDF},
   groups            = {Point cloud classification, Benchmark or data},
   keywords          = {Computer Vision and Pattern Recognition (cs.CV), Machine Learning (cs.LG), Robotics (cs.RO), Image and Video Processing (eess.IV), FOS: Computer and information sciences, FOS: Computer and information sciences, FOS: Electrical engineering, electronic engineering, information engineering, FOS: Electrical engineering, electronic engineering, information engineering},
+  priority          = {prio3},
   publisher         = {arXiv},
+  readstatus        = {skimmed},
 }
 
-@Misc{Varney2020,
+@Article{Varney2020,
   author            = {Varney, Nina and Asari, Vijayan K. and Graehling, Quinn},
   title             = {DALES: A Large-scale Aerial LiDAR Data Set for Semantic Segmentation},
   year              = {2020},
-  comment-alexandre = {Links to get the data don't seem to work anymore},
+  comment-alexandre = {ALS dataset with 505M points with 50 pts/m² on average.
+No separation of façade and roof.
+
+Links to get the data don't seem to work anymore.},
   copyright         = {arXiv.org perpetual, non-exclusive license},
   doi               = {10.48550/ARXIV.2004.11985},
   file              = {:Varney2020 - DALES_ a Large Scale Aerial LiDAR Data Set for Semantic Segmentation.pdf:PDF},
-  groups            = {Benchmark or data},
+  groups            = {Benchmark or data, Point cloud classification},
   keywords          = {Computer Vision and Pattern Recognition (cs.CV), Machine Learning (cs.LG), Machine Learning (stat.ML), FOS: Computer and information sciences, FOS: Computer and information sciences},
+  priority          = {prio3},
   publisher         = {arXiv},
+  readstatus        = {skimmed},
 }
 
-@Misc{Hu2020,
+@Article{Hu2020,
   author            = {Hu, Qingyong and Yang, Bo and Khalid, Sheikh and Xiao, Wen and Trigoni, Niki and Markham, Andrew},
   title             = {Towards Semantic Segmentation of Urban-Scale 3D Point Clouds: A Dataset, Benchmarks and Challenges},
   year              = {2020},
-  comment-alexandre = {https://github.com/QingyongHu/SensatUrban},
+  comment-alexandre = {Point cloud from images dataset with 2847M points.
+No separation of façade and roof.
+
+https://github.com/QingyongHu/SensatUrban},
   copyright         = {arXiv.org perpetual, non-exclusive license},
   doi               = {10.48550/ARXIV.2009.03137},
   file              = {:Hu2020 - Towards Semantic Segmentation of Urban Scale 3D Point Clouds_ a Dataset, Benchmarks and Challenges.pdf:PDF},
-  groups            = {Benchmark or data},
+  groups            = {Benchmark or data, Point cloud classification},
   keywords          = {Computer Vision and Pattern Recognition (cs.CV), Artificial Intelligence (cs.AI), Robotics (cs.RO), FOS: Computer and information sciences, FOS: Computer and information sciences},
+  priority          = {prio3},
   publisher         = {arXiv},
 }
 
@@ -658,19 +689,22 @@ Unofficial implementation (couldn't find an official one): https://github.com/PO
 }
 
 @Article{Dai2025,
-  author     = {Dai, Hengming and Xu, Jiabo and Hu, Xiangyun and Shu, Zhen and Ma, Wei and Zhao, Zhifang},
-  journal    = {International Journal of Applied Earth Observation and Geoinformation},
-  title      = {Deep projective prediction of building facade footprints from ALS point cloud},
-  year       = {2025},
-  issn       = {1569-8432},
-  month      = may,
-  pages      = {104448},
-  volume     = {139},
-  doi        = {10.1016/j.jag.2025.104448},
-  file       = {:Dai2025 - Deep Projective Prediction of Building Facade Footprints from ALS Point Cloud.pdf:PDF},
-  groups     = {Footprint and roofprint},
-  publisher  = {Elsevier BV},
-  readstatus = {skimmed},
+  author            = {Dai, Hengming and Xu, Jiabo and Hu, Xiangyun and Shu, Zhen and Ma, Wei and Zhao, Zhifang},
+  journal           = {International Journal of Applied Earth Observation and Geoinformation},
+  title             = {Deep projective prediction of building facade footprints from ALS point cloud},
+  year              = {2025},
+  issn              = {1569-8432},
+  month             = may,
+  pages             = {104448},
+  volume            = {139},
+  comment-alexandre = {Uses a deep learning model that inputs a point cloud and outputs footprints as a binary raster.  
+The model uses sparse voxel representations for the point cloud and decoder/encoder architectures with a specific 3D attention module.},
+  doi               = {10.1016/j.jag.2025.104448},
+  file              = {:Dai2025 - Deep Projective Prediction of Building Facade Footprints from ALS Point Cloud.pdf:PDF},
+  groups            = {Footprint and roofprint, Benchmark or data},
+  priority          = {prio2},
+  publisher         = {Elsevier BV},
+  readstatus        = {skimmed},
 }
 
 @Article{Li2024,
@@ -687,6 +721,7 @@ I haven't understood the technical details entirely, but the main idea is to dec
   doi               = {10.1016/j.patcog.2024.110701},
   file              = {:Li2024 - Class Imbalanced Semi Supervised Learning for Large Scale Point Cloud Semantic Segmentation Via Decoupling Optimization.pdf:PDF},
   groups            = {Point cloud classification},
+  priority          = {prio2},
   publisher         = {Elsevier BV},
   readstatus        = {read},
 }
@@ -701,6 +736,7 @@ Code there: https://github.com/ivanzou29/SpatioTemporalSegmentation-ScanNet},
   file              = {:Zou2023 - Analysis of the Long Tail Problem in Semantic Segmentation with 3D Point Clouds.pdf:PDF},
   groups            = {Point cloud classification},
   language          = {en},
+  priority          = {prio3},
   publisher         = {ETH Zurich},
   readstatus        = {skimmed},
 }
@@ -725,6 +761,7 @@ I haven't understood the technical details entirely though, and especially I'm w
   doi               = {10.1609/aaai.v39i6.32680},
   file              = {:Pan2025 - Point Cloud Semantic Segmentation with Sparse and Inhomogeneous Annotations.pdf:PDF},
   groups            = {Point cloud classification},
+  priority          = {prio2},
   publisher         = {Association for the Advancement of Artificial Intelligence (AAAI)},
   readstatus        = {read},
 }
@@ -737,13 +774,14 @@ I haven't understood the technical details entirely though, and especially I'm w
   copyright         = {arXiv.org perpetual, non-exclusive license},
   doi               = {10.48550/ARXIV.2501.17534},
   file              = {:Merizette2025 - 3DSES_ an Indoor Lidar Point Cloud Segmentation Dataset with Real and Pseudo Labels from a 3D Model.pdf:PDF},
-  groups            = {Benchmark or data, Read recently},
+  groups            = {Benchmark or data, Point cloud classification},
   keywords          = {Computer Vision and Pattern Recognition (cs.CV), FOS: Computer and information sciences, FOS: Computer and information sciences},
+  priority          = {prio1},
   publisher         = {arXiv},
   readstatus        = {read},
 }
 
-@Misc{Girard2020,
+@Article{Girard2020,
   author            = {Girard, Nicolas and Smirnov, Dmitriy and Solomon, Justin and Tarabalka, Yuliya},
   title             = {Polygonal Building Segmentation by Frame Field Learning},
   year              = {2020},
@@ -768,8 +806,9 @@ However I don't know how this could help with the differentiation footprint/roof
   copyright         = {arXiv.org perpetual, non-exclusive license},
   doi               = {10.48550/ARXIV.2004.14875},
   file              = {:Girard2020 - Polygonal Building Segmentation by Frame Field Learning.pdf:PDF},
-  groups            = {Footprint and roofprint, Read recently},
+  groups            = {Footprint and roofprint},
   keywords          = {Computer Vision and Pattern Recognition (cs.CV), Machine Learning (cs.LG), Image and Video Processing (eess.IV), FOS: Computer and information sciences, FOS: Computer and information sciences, FOS: Electrical engineering, electronic engineering, information engineering, FOS: Electrical engineering, electronic engineering, information engineering},
+  priority          = {prio1},
   publisher         = {arXiv},
   readstatus        = {read},
 }
@@ -786,7 +825,9 @@ However I don't know how this could help with the differentiation footprint/roof
   volume            = {13},
   comment-alexandre = {Potentially insteresting paper that uses both RGB orthoimages and LiDAR together},
   doi               = {10.3390/rs13040611},
-  groups            = {Read recently, Footprint and roofprint},
+  file              = {:Wierzbicki2021 - Polish Cadastre Modernization with Remotely Extracted Buildings from High Resolution Aerial Orthoimagery and Airborne LiDAR.pdf:PDF},
+  groups            = {Footprint and roofprint},
+  priority          = {prio3},
   publisher         = {MDPI AG},
   readstatus        = {skimmed},
 }
@@ -801,15 +842,168 @@ However I don't know how this could help with the differentiation footprint/roof
   number            = {10},
   pages             = {452},
   volume            = {13},
-  comment-alexandre = {Recent article using a quite complex pipeline to produce polygons from RGB images by:
+  comment-alexandre = {Recent article using a quite complex pipeline to produce polygons from satellite RGB images by:
 
 1. Extracting a mask of buildings from images with a Transformer-based architecture on images
-2. Regularizing the results using a residual autoencoder
-3. Transforming the masks into polygons},
+2. Regularizing the results using a residual autoencoder trained with a reconstruction loss, a regularization loss and an adversarial loss.
+3. Extracting building corners with a lightweight CNN model before polygonization and filtering.},
   doi               = {10.3390/technologies13100452},
-  groups            = {Read recently, Footprint and roofprint},
+  file              = {:Saadaoui2025 - Advancing Urban Roof Segmentation_ Transformative Deep Learning Models from CNNs to Transformers for Scalable and Accurate Urban Imaging Solutions—A Case Study in Ben Guerir City, Morocco.pdf:PDF},
+  groups            = {Footprint and roofprint},
+  priority          = {prio2},
   publisher         = {MDPI AG},
   readstatus        = {skimmed},
+}
+
+@Misc{ignAppelCommuns,
+  author       = {IGN},
+  howpublished = {\url{https://www.ign.fr/appel-communs-jumeau-numerique-france-et-territoires}},
+  month        = oct,
+  note         = {[Accessed 30-12-2025]},
+  title        = {{U}n appel à communs pour la conception du {J}umeau numérique de la {F}rance et de ses territoires --- ign.fr},
+  year         = {2024},
+  groups       = {Project context},
+  readstatus   = {skimmed},
+}
+
+@Misc{ignRechercheDefi,
+  author       = {IGN},
+  howpublished = {\url{https://www.ign.fr/mag/la-recherche-au-defi-du-jumeau-numerique-de-la-france}},
+  month        = mar,
+  note         = {[Accessed 30-12-2025]},
+  title        = {{L}a recherche au défi du jumeau numérique de la {F}rance --- ign.fr},
+  year         = {2024},
+  groups       = {Project context},
+  readstatus   = {skimmed},
+}
+
+@Article{Peters22,
+  author    = {Ravi Peters and Bal{\'a}zs Dukai and Stelios Vitalis and {van Liempt}, Jordi and Jantien Stoter},
+  journal   = {Photogrammetric Engineering and Remote Sensing},
+  title     = {Automated {3D} reconstruction of {LoD2} and {LoD1} models for all 10 million buildings of the {Netherlands}},
+  year      = {2022},
+  number    = {3},
+  pages     = {165--170},
+  volume    = {88},
+  doi       = {10.14358/PERS.21-00032R2},
+  groups    = {Project context},
+  publisher = {American Society for Photogrammetry and Remote Sensing},
+}
+
+@Article{Xu2020,
+  author    = {Xu, Chenfeng and Wu, Bichen and Wang, Zining and Zhan, Wei and Vajda, Peter and Keutzer, Kurt and Tomizuka, Masayoshi},
+  title     = {SqueezeSegV3: Spatially-Adaptive Convolution for Efficient Point-Cloud Segmentation},
+  year      = {2020},
+  copyright = {arXiv.org perpetual, non-exclusive license},
+  doi       = {10.48550/ARXIV.2004.01803},
+  file      = {:Xu2020 - SqueezeSegV3_ Spatially Adaptive Convolution for Efficient Point Cloud Segmentation.pdf:PDF},
+  groups    = {Point cloud classification},
+  keywords  = {Computer Vision and Pattern Recognition (cs.CV), FOS: Computer and information sciences, FOS: Computer and information sciences},
+  priority  = {prio2},
+  publisher = {arXiv},
+}
+
+@Article{Cramer2010,
+  author            = {Cramer, Michael},
+  journal           = {Photogrammetrie - Fernerkundung - Geoinformation},
+  title             = {The DGPF-Test on Digital Airborne Camera Evaluation Overview and Test Design},
+  year              = {2010},
+  issn              = {1432-8364},
+  month             = may,
+  number            = {2},
+  pages             = {73--82},
+  volume            = {2010},
+  comment-alexandre = {I haven't read the paper but this is the paper that published the Vaihingen 3D (V3D) dataset (without classes).},
+  doi               = {10.1127/1432-8364/2010/0041},
+  groups            = {Benchmark or data, Point cloud classification},
+  priority          = {prio3},
+  publisher         = {Schweizerbart},
+}
+
+@InProceedings{Zolanvari2019,
+  author            = {Zolanvari, Iman and Ruano, Susana and Rana, Aakanksha and Cummins, Alan and Smolic, Aljosa and Da Silva, Rogerio and Rahbar, Morteza},
+  title             = {DublinCity: Annotated LiDAR Point Cloud and its Applications},
+  year              = {2019},
+  month             = sep,
+  comment-alexandre = {ALS dataset with 260M points with 348.43 pts/m² on average.
+Separation of façade and roof and even windows and doors.
+
+Link to data: https://v-sense.scss.tcd.ie/DublinCity/},
+  file              = {:inproceedings - DublinCity_ Annotated LiDAR Point Cloud and Its Applications.pdf:PDF},
+  groups            = {Benchmark or data, Point cloud classification},
+  priority          = {prio1},
+}
+
+@Article{Ye2020,
+  author            = {Ye, Zhen and Xu, Yusheng and Huang, Rong and Tong, Xiaohua and Li, Xin and Liu, Xiangfeng and Luan, Kuifeng and Hoegner, Ludwig and Stilla, Uwe},
+  journal           = {ISPRS International Journal of Geo-Information},
+  title             = {LASDU: A Large-Scale Aerial LiDAR Dataset for Semantic Labeling in Dense Urban Areas},
+  year              = {2020},
+  issn              = {2220-9964},
+  month             = jul,
+  number            = {7},
+  pages             = {450},
+  volume            = {9},
+  comment-alexandre = {ALS dataset with 3.12M points with 4 pts/m² on average.
+No separation of façade and roof.},
+  doi               = {10.3390/ijgi9070450},
+  file              = {:Ye2020 - LASDU_ a Large Scale Aerial LiDAR Dataset for Semantic Labeling in Dense Urban Areas.pdf:PDF},
+  groups            = {Benchmark or data, Point cloud classification},
+  priority          = {prio3},
+  publisher         = {MDPI AG},
+}
+
+@InProceedings{Li2020a,
+  author            = {Li, Xinke and Li, Chongshou and Tong, Zekun and Lim, Andrew and Yuan, Junsong and Wu, Yuwei and Tang, Jing and Huang, Raymond},
+  booktitle         = {Proceedings of the 28th ACM International Conference on Multimedia},
+  title             = {Campus3D: A Photogrammetry Point Cloud Benchmark for Hierarchical Understanding of Outdoor Scene},
+  year              = {2020},
+  month             = oct,
+  pages             = {238--246},
+  publisher         = {ACM},
+  series            = {MM ’20},
+  collection        = {MM ’20},
+  comment-alexandre = {Point cloud from images dataset with 937.1M points.
+Separation of façade and roof.
+
+Website: https://3d.nus.app},
+  doi               = {10.1145/3394171.3413661},
+  file              = {:Li2020a - Campus3D_ a Photogrammetry Point Cloud Benchmark for Hierarchical Understanding of Outdoor Scene.pdf:PDF},
+  groups            = {Benchmark or data, Point cloud classification},
+  priority          = {prio1},
+}
+
+@Article{Vijaywargiya2025,
+  author            = {Vijaywargiya, Jayati and Ramiya, Anandakumar M.},
+  journal           = {IEEE Access},
+  title             = {Thiruvananthapuram Aerial LiDAR Dataset (TALD): A Benchmark for Complex Urban Point Cloud},
+  year              = {2025},
+  issn              = {2169-3536},
+  pages             = {42350--42363},
+  volume            = {13},
+  comment-alexandre = {ALS dataset with 121M points and 12 pts/m² on average.
+No separation of façade and roof.},
+  doi               = {10.1109/access.2025.3546628},
+  file              = {:Vijaywargiya2025 - Thiruvananthapuram Aerial LiDAR Dataset (TALD)_ a Benchmark for Complex Urban Point Cloud.pdf:PDF},
+  groups            = {Benchmark or data, Point cloud classification},
+  priority          = {prio3},
+  publisher         = {Institute of Electrical and Electronics Engineers (IEEE)},
+}
+
+@Article{Gaydon2024,
+  author            = {Gaydon, Charles and Daab, Michel and Roche, Floryne},
+  title             = {FRACTAL: An Ultra-Large-Scale Aerial Lidar Dataset for 3D Semantic Segmentation of Diverse Landscapes},
+  year              = {2024},
+  comment-alexandre = {ALS dataset with 550M points with 275 pts/m² on average.
+No separation of façade and roof.
+Based on LiDAR HD},
+  copyright         = {Creative Commons Attribution 4.0 International},
+  doi               = {10.48550/ARXIV.2405.04634},
+  file              = {:Gaydon2024 - FRACTAL_ an Ultra Large Scale Aerial Lidar Dataset for 3D Semantic Segmentation of Diverse Landscapes.pdf:PDF},
+  groups            = {Benchmark or data, Point cloud classification},
+  keywords          = {Computer Vision and Pattern Recognition (cs.CV), Machine Learning (cs.LG), FOS: Computer and information sciences, FOS: Computer and information sciences},
+  priority          = {prio3},
+  publisher         = {arXiv},
 }
 
 @Comment{jabref-meta: databaseType:bibtex;}
@@ -817,7 +1011,8 @@ However I don't know how this could help with the differentiation footprint/roof
 @Comment{jabref-meta: grouping:
 0 AllEntriesGroup:;
 1 StaticGroup:Footprint and roofprint\;0\;1\;0x008000ff\;\;\;;
-1 StaticGroup:Point cloud classification\;0\;0\;0xff0000ff\;\;\;;
+1 StaticGroup:Point cloud classification\;0\;1\;0xff0000ff\;\;\;;
 1 StaticGroup:Read recently\;0\;1\;0x00ffffff\;CHAT_BUBBLE_OUTLINE\;\;;
-1 StaticGroup:Benchmark or data\;0\;0\;0xff00ffff\;\;\;;
+1 StaticGroup:Benchmark or data\;0\;1\;0xff00ffff\;\;\;;
+1 StaticGroup:Project context\;0\;1\;\;\;\;;
 }
