@@ -1,218 +1,12 @@
 [
   {
-    "objectID": "weekly_notes/2025_12_15.html",
-    "href": "weekly_notes/2025_12_15.html",
-    "title": "2025/12/15",
+    "objectID": "weekly_notes/index.html",
+    "href": "weekly_notes/index.html",
+    "title": "Weekly Meetings",
     "section": "",
-    "text": "I created this repository to store and share my notes easily.\nI will also use it to make slides/reports, so this will centralise most of the information I gather and make it easier to reuse it.\n\n\n\n\n\nJean Zay used by the IGN won’t be available to me until my internship at the IGN officially starts\nTU Delft has DAIC and DelftBlue, DAIC being probably the most promising since focussed on AI. I filled the forms to get access and both of them were approved so I should now have access. However, both are in maintenance so I won’t be able to try until December 17th.\n\n\n\n\n\n\n\nLooked at (Mérizette et al. 2025) which explains how they created a new dataset for semantic segmentation of indoor TLS with two different processes: manual labelling and automatic generation of pseudo-labels from a BIM model of the objects. For the automatic generation, they basically made their own 3D BIM model of the rooms, and then used this data with the associated classifications of objects to classify points that were inside the BIM models to the corresponding category.\nLooked at the coherence between the LoD 2.2 buildings from 3DBAG with the AHN4 point cloud in the center of Delft. Most points in the dataset seem to be close and accurate, with different precision depending on the case:\n\nRoof points are mostly close to the building with 0.1 m precision\nFor façades there is more variation, but mostly up to 0.5 m,\nThen there are more complex situations like balconys, chimneys and other details that are not represented in the 3DBAG and are therefore further away\nMonuments (such as churches and fancy buildings) and new buildings also give bad results\n\n\n\n\n\n\n\n\n\n\nThe buildings in LoD 2.2 from the 3DBAG.\n\n\n\n\n\n\n\nThe point cloud from AHN4 filtered to keep only “Not classified” (green) and “Building” (white). This especially filters out the ground, bridges and water.\n\n\n\n\n\n\n\nThe distance to the closest building, with 0 m for blue, 0.333 m for green, 0.666 m for yellow and 1 m for red. Values higher than 1 m are grey.\n\n\n\n\n\n\n\n\n\nThe buildings in LoD 2.2 from the 3DBAG.\n\n\n\n\n\n\n\nThe point cloud from AHN4 filtered to keep only “Not classified” (green) and “Building” (white). This especially filters out the ground, bridges and water.\n\n\n\n\n\n\n\nThe distance to the closest building, with 0 m for blue, 0.333 m for green, 0.666 m for yellow and 1 m for red. Values higher than 1 m are grey.\n\n\n\n\n\n\nFigure 1: Two examples of the coherence between the 3DBAG and the AHN4.\n\n\n\n\n\n\n\nHad quite a few issues in:\n\nHandling the OBJ files from the 3DBAG. Is there a simple tool that could be used to simply merge multiple OBJ files? I made a simple Python script with trimesh to separate the building faces per type (floor, façade, roof).\nHandling the LAZ files from AHN4. AHN tiles are actually quite big so I couldn’t load them entirely with laspy. I tried to use trimesh in Python to compute the distance from point cloud to mesh for each class, but it was very slow compared to CloudCompare. So I did all the computations using CloudCompare, and then classified with simple thresholds: 3 classes (roof, facade and other) with roof being assigned to the point \\(p\\) if \\[\\text{distance}(p, \\text{roof}) &lt; \\min(\\text{distance}(p, \\text{facade}), 1)\\]\n\nStill the results look promising, with a few edge cases, some of them that could be interesting:\n\nMost of what is not included in the LoD 2.2 models is not classified: balconies, chimneys, dormers and in general all the objects on the roofs or on the walls.\nRoof overhangs and/or the boundaries of the roofs are sometimes/often classified as façades because the LoD 2.2 models don’t expand far enough on the sides. This could maybe be improved by expanding the roof polygons?\nAs expected monuments and modified buildings also perform poorly\n\n\n\n\n\n\n\n\n\n\nThe buildings in LoD 2.2 from the 3DBAG.\n\n\n\n\n\n\n\nThe classification of the points from AHN 4.\n\n\n\n\n\n\n\n\n\nThe buildings in LoD 2.2 from the 3DBAG.\n\n\n\n\n\n\n\nThe classification of the points from AHN 4.\n\n\n\n\n\n\nFigure 2: Example of classifying the AHN 4 points automatically based on the 3DBAG.\n\n\n\n\n\n\n\nLooked quickly into myria3d:\n\nCould be quite interesting to train a custom model on custom data, since it seems like a nicely documented framework.\nHowever, their model expects to have RGB values for the point cloud, which seems to be computed from aerial images, so AHN doesn’t have it but we could maybe compute it.\n\n\n\n\nLooked at (Girard et al. 2020), an interesting paper that tries to predict building edges as polygons using a ML model. To do so, their model takes a RGB image as input and outputs two things:\n\n2 values predicting:\n\nif the pixel is in a building\nif the pixel is on the edge of a building\n\n4 values defining two complex numbers that define two directions for each pixel. All the pixel then make a frame field that defines tangents/normals of buildings\n\nThen, the frame field and the classification rasters are processed in different steps:\n\nASM optimization to get a sub-pixel precision and straight edges aligned with the frame field\nCorner detection\nCorner-aware simplification\nPolygonization\nPolygon filtering\n\nI haven’t read all the gory details in the supplementary material but it is nice that it is there, and there is also a repository.\nThey get nice results with clean polygons, and I think it could be extended to point clouds as the frame field could also make a lot of sense there, by also predicting a classification coupled with a frame field.\nHowever I don’t know how this could help with the differentiation footprint/roofprint if we don’t have any training data with both.\n\n\n\n\nA simple way to re-use BD TOPO building outlines could be to use them to extract smaller point clouds (with a margin around the current outline like 5 m to take the current errors into account), that would be quicker and easier to process\nSkimming through (Wierzbicki, Matuk, and Bielecka 2021) gave me the idea that images (which should be well geo-referenced), could maybe be used in combination with current outlines to extract regions of interest to process the point cloud\nSkimming through (Saadaoui et al. 2025) made me realize that the roofprints obtained from aerial images are not at the right position due to the angle of the camera, which could be part of the reason why the current outlines are not correct",
+    "text": "This section contains all the weekly notes of the project. These notes include for each week:\n\nA summary of the work done during the previous week,\nA summary of the weekly discussion that happened with the supervisors,\nA summary of the tasks planned to be done for the week.\n\n\n\n\n Back to top",
     "crumbs": [
-      "Weekly Meetings",
-      "2025/12/15"
-    ]
-  },
-  {
-    "objectID": "weekly_notes/2025_12_15.html#previous-week",
-    "href": "weekly_notes/2025_12_15.html#previous-week",
-    "title": "2025/12/15",
-    "section": "",
-    "text": "I created this repository to store and share my notes easily.\nI will also use it to make slides/reports, so this will centralise most of the information I gather and make it easier to reuse it.\n\n\n\n\n\nJean Zay used by the IGN won’t be available to me until my internship at the IGN officially starts\nTU Delft has DAIC and DelftBlue, DAIC being probably the most promising since focussed on AI. I filled the forms to get access and both of them were approved so I should now have access. However, both are in maintenance so I won’t be able to try until December 17th.\n\n\n\n\n\n\n\nLooked at (Mérizette et al. 2025) which explains how they created a new dataset for semantic segmentation of indoor TLS with two different processes: manual labelling and automatic generation of pseudo-labels from a BIM model of the objects. For the automatic generation, they basically made their own 3D BIM model of the rooms, and then used this data with the associated classifications of objects to classify points that were inside the BIM models to the corresponding category.\nLooked at the coherence between the LoD 2.2 buildings from 3DBAG with the AHN4 point cloud in the center of Delft. Most points in the dataset seem to be close and accurate, with different precision depending on the case:\n\nRoof points are mostly close to the building with 0.1 m precision\nFor façades there is more variation, but mostly up to 0.5 m,\nThen there are more complex situations like balconys, chimneys and other details that are not represented in the 3DBAG and are therefore further away\nMonuments (such as churches and fancy buildings) and new buildings also give bad results\n\n\n\n\n\n\n\n\n\n\nThe buildings in LoD 2.2 from the 3DBAG.\n\n\n\n\n\n\n\nThe point cloud from AHN4 filtered to keep only “Not classified” (green) and “Building” (white). This especially filters out the ground, bridges and water.\n\n\n\n\n\n\n\nThe distance to the closest building, with 0 m for blue, 0.333 m for green, 0.666 m for yellow and 1 m for red. Values higher than 1 m are grey.\n\n\n\n\n\n\n\n\n\nThe buildings in LoD 2.2 from the 3DBAG.\n\n\n\n\n\n\n\nThe point cloud from AHN4 filtered to keep only “Not classified” (green) and “Building” (white). This especially filters out the ground, bridges and water.\n\n\n\n\n\n\n\nThe distance to the closest building, with 0 m for blue, 0.333 m for green, 0.666 m for yellow and 1 m for red. Values higher than 1 m are grey.\n\n\n\n\n\n\nFigure 1: Two examples of the coherence between the 3DBAG and the AHN4.\n\n\n\n\n\n\n\nHad quite a few issues in:\n\nHandling the OBJ files from the 3DBAG. Is there a simple tool that could be used to simply merge multiple OBJ files? I made a simple Python script with trimesh to separate the building faces per type (floor, façade, roof).\nHandling the LAZ files from AHN4. AHN tiles are actually quite big so I couldn’t load them entirely with laspy. I tried to use trimesh in Python to compute the distance from point cloud to mesh for each class, but it was very slow compared to CloudCompare. So I did all the computations using CloudCompare, and then classified with simple thresholds: 3 classes (roof, facade and other) with roof being assigned to the point \\(p\\) if \\[\\text{distance}(p, \\text{roof}) &lt; \\min(\\text{distance}(p, \\text{facade}), 1)\\]\n\nStill the results look promising, with a few edge cases, some of them that could be interesting:\n\nMost of what is not included in the LoD 2.2 models is not classified: balconies, chimneys, dormers and in general all the objects on the roofs or on the walls.\nRoof overhangs and/or the boundaries of the roofs are sometimes/often classified as façades because the LoD 2.2 models don’t expand far enough on the sides. This could maybe be improved by expanding the roof polygons?\nAs expected monuments and modified buildings also perform poorly\n\n\n\n\n\n\n\n\n\n\nThe buildings in LoD 2.2 from the 3DBAG.\n\n\n\n\n\n\n\nThe classification of the points from AHN 4.\n\n\n\n\n\n\n\n\n\nThe buildings in LoD 2.2 from the 3DBAG.\n\n\n\n\n\n\n\nThe classification of the points from AHN 4.\n\n\n\n\n\n\nFigure 2: Example of classifying the AHN 4 points automatically based on the 3DBAG.\n\n\n\n\n\n\n\nLooked quickly into myria3d:\n\nCould be quite interesting to train a custom model on custom data, since it seems like a nicely documented framework.\nHowever, their model expects to have RGB values for the point cloud, which seems to be computed from aerial images, so AHN doesn’t have it but we could maybe compute it.\n\n\n\n\nLooked at (Girard et al. 2020), an interesting paper that tries to predict building edges as polygons using a ML model. To do so, their model takes a RGB image as input and outputs two things:\n\n2 values predicting:\n\nif the pixel is in a building\nif the pixel is on the edge of a building\n\n4 values defining two complex numbers that define two directions for each pixel. All the pixel then make a frame field that defines tangents/normals of buildings\n\nThen, the frame field and the classification rasters are processed in different steps:\n\nASM optimization to get a sub-pixel precision and straight edges aligned with the frame field\nCorner detection\nCorner-aware simplification\nPolygonization\nPolygon filtering\n\nI haven’t read all the gory details in the supplementary material but it is nice that it is there, and there is also a repository.\nThey get nice results with clean polygons, and I think it could be extended to point clouds as the frame field could also make a lot of sense there, by also predicting a classification coupled with a frame field.\nHowever I don’t know how this could help with the differentiation footprint/roofprint if we don’t have any training data with both.\n\n\n\n\nA simple way to re-use BD TOPO building outlines could be to use them to extract smaller point clouds (with a margin around the current outline like 5 m to take the current errors into account), that would be quicker and easier to process\nSkimming through (Wierzbicki, Matuk, and Bielecka 2021) gave me the idea that images (which should be well geo-referenced), could maybe be used in combination with current outlines to extract regions of interest to process the point cloud\nSkimming through (Saadaoui et al. 2025) made me realize that the roofprints obtained from aerial images are not at the right position due to the angle of the camera, which could be part of the reason why the current outlines are not correct",
-    "crumbs": [
-      "Weekly Meetings",
-      "2025/12/15"
-    ]
-  },
-  {
-    "objectID": "weekly_notes/2025_12_15.html#discussion",
-    "href": "weekly_notes/2025_12_15.html#discussion",
-    "title": "2025/12/15",
-    "section": "Discussion",
-    "text": "Discussion\n\nThe automatic classification of AHN based on 3DBAG seems very pormising and we should try to make it happen\nThere is a large area in Marseille with hand-made 3D buildings based on LIDAR HD that I could use once I join the IGN for the internship (because it is closed data)\nGeotiles has AHN 4 et 5 with RGB values for orthophotos, but it is not really relevant in our case because it does not work well on façades",
-    "crumbs": [
-      "Weekly Meetings",
-      "2025/12/15"
-    ]
-  },
-  {
-    "objectID": "weekly_notes/2025_12_15.html#next-week",
-    "href": "weekly_notes/2025_12_15.html#next-week",
-    "title": "2025/12/15",
-    "section": "Next week",
-    "text": "Next week\n\nTry the solution of extending the roof surfaces to classify point clouds with CGAL (using Minkowski sums in 2D) on AHN 4 or 5\nTry PointTransformerv3 or PointVector",
-    "crumbs": [
-      "Weekly Meetings",
-      "2025/12/15"
-    ]
-  },
-  {
-    "objectID": "weekly_notes/2025_12_01.html",
-    "href": "weekly_notes/2025_12_01.html",
-    "title": "2025/12/01",
-    "section": "",
-    "text": "Looked at more articles about point cloud semantic segmentation:\n\nMany different methods, but none gives perfect results yet, especially on rare classes\n\nLooked for datasets of ALS semantic segmentation which differentiate façades and roofs, and found mainly two: the Vaihingen dataset and the DublinCity dataset (which has a very dense point cloud)",
-    "crumbs": [
-      "Weekly Meetings",
-      "2025/12/01"
-    ]
-  },
-  {
-    "objectID": "weekly_notes/2025_12_01.html#previous-week",
-    "href": "weekly_notes/2025_12_01.html#previous-week",
-    "title": "2025/12/01",
-    "section": "",
-    "text": "Looked at more articles about point cloud semantic segmentation:\n\nMany different methods, but none gives perfect results yet, especially on rare classes\n\nLooked for datasets of ALS semantic segmentation which differentiate façades and roofs, and found mainly two: the Vaihingen dataset and the DublinCity dataset (which has a very dense point cloud)",
-    "crumbs": [
-      "Weekly Meetings",
-      "2025/12/01"
-    ]
-  },
-  {
-    "objectID": "weekly_notes/2025_12_01.html#discussion",
-    "href": "weekly_notes/2025_12_01.html#discussion",
-    "title": "2025/12/01",
-    "section": "Discussion",
-    "text": "Discussion\n\nClarification of the goal: the objective in the best situation would be to compute new footprints and roofprints using the LIDAR HD dataset, and if possible, to integrate the old footprints/roofprints in the process to improve the results\nIf we want to train a ML model, it is unclear where the data could come from\nSimply tweaking the weights of the loss to put more weight on the classes of interest (façades and roofs) will probably not have any significant impact on the results, and this is why looking into imbalanced datasets training is important\nBased on the literature review so far, the most interesting approach seems to use ML at least to some extent to classify point clouds",
-    "crumbs": [
-      "Weekly Meetings",
-      "2025/12/01"
-    ]
-  },
-  {
-    "objectID": "weekly_notes/2025_12_01.html#next-week",
-    "href": "weekly_notes/2025_12_01.html#next-week",
-    "title": "2025/12/01",
-    "section": "Next week",
-    "text": "Next week\n\nExplore the metadata of the BD TOPO\nExplore the LIDAR HD dataset\nRead articles about tail distribution / imbalanced point clouds semantic segmentation\nTry to train KPConv on the Vaihingen dataset",
-    "crumbs": [
-      "Weekly Meetings",
-      "2025/12/01"
-    ]
-  },
-  {
-    "objectID": "weekly_notes/2025_11_17.html",
-    "href": "weekly_notes/2025_11_17.html",
-    "title": "2025/11/17",
-    "section": "",
-    "text": "Looked for articles about roofprint / footprint differentiation but didn’t really find anything\nStarted looking at a few articles about roofprint / footprint from LiDAR",
-    "crumbs": [
-      "Weekly Meetings",
-      "2025/11/17"
-    ]
-  },
-  {
-    "objectID": "weekly_notes/2025_11_17.html#previous-week",
-    "href": "weekly_notes/2025_11_17.html#previous-week",
-    "title": "2025/11/17",
-    "section": "",
-    "text": "Looked for articles about roofprint / footprint differentiation but didn’t really find anything\nStarted looking at a few articles about roofprint / footprint from LiDAR",
-    "crumbs": [
-      "Weekly Meetings",
-      "2025/11/17"
-    ]
-  },
-  {
-    "objectID": "weekly_notes/2025_11_17.html#discussion",
-    "href": "weekly_notes/2025_11_17.html#discussion",
-    "title": "2025/11/17",
-    "section": "Discussion",
-    "text": "Discussion\n\nLiDARHD of IGN is already classified but there is no separation of façades and roofs\nBAG + BGT + AHN4 could maybe be used to train a model\nCloudCompare is nice to visualise point clouds",
-    "crumbs": [
-      "Weekly Meetings",
-      "2025/11/17"
-    ]
-  },
-  {
-    "objectID": "weekly_notes/2025_11_17.html#next-week",
-    "href": "weekly_notes/2025_11_17.html#next-week",
-    "title": "2025/11/17",
-    "section": "Next week",
-    "text": "Next week\n\nLook for articles about point cloud classification, especially roof/façades, because façades are not classified by default and are a rare class (tail distribution)\nLook at point cloud semantic segmentation methods:\n\nKPConv\nMinkowskiNet\nPointTransformer",
-    "crumbs": [
-      "Weekly Meetings",
-      "2025/11/17"
-    ]
-  },
-  {
-    "objectID": "index.html",
-    "href": "index.html",
-    "title": "MSc Thesis - Website",
-    "section": "",
-    "text": "This website contains the notes and reports of my MSc Thesis with TU Delft and the IGN (Institut national de l’information géographique et forestière) from November 2025 to June 2026.\n\n\n\n Back to top"
-  },
-  {
-    "objectID": "weekly_notes/2025_11_10.html",
-    "href": "weekly_notes/2025_11_10.html",
-    "title": "2025/11/10",
-    "section": "",
-    "text": "At least a full week on literature review would be beneficial\nJabRef can be a great tool",
-    "crumbs": [
-      "Weekly Meetings",
-      "2025/11/10"
-    ]
-  },
-  {
-    "objectID": "weekly_notes/2025_11_10.html#discussion",
-    "href": "weekly_notes/2025_11_10.html#discussion",
-    "title": "2025/11/10",
-    "section": "",
-    "text": "At least a full week on literature review would be beneficial\nJabRef can be a great tool",
-    "crumbs": [
-      "Weekly Meetings",
-      "2025/11/10"
-    ]
-  },
-  {
-    "objectID": "weekly_notes/2025_11_10.html#next-week",
-    "href": "weekly_notes/2025_11_10.html#next-week",
-    "title": "2025/11/10",
-    "section": "Next week",
-    "text": "Next week\n\nLook for:\n\nRoofprint / footprint differentiation (probably not much)\nExtraction of roofprint / footprint from point clouds\nPoint cloud semantic segmentation\n\nFor the literature review:\n\n&lt;perplexity.ai&gt; can be great to start\nThen use internet, especially Google Scholar is nice\nLook for new articles by searching for articles that cite interesting articles or were cited by interesting articles\nWrite a small summary of every article I read with the things to remember, even if I don’t understand anything\nTry to structure / categorise the methods I find",
-    "crumbs": [
-      "Weekly Meetings",
-      "2025/11/10"
-    ]
-  },
-  {
-    "objectID": "weekly_notes/2025_11_24.html",
-    "href": "weekly_notes/2025_11_24.html",
-    "title": "2025/11/24",
-    "section": "",
-    "text": "Looked at more articles about roofprint / footprint from LiDAR\nThe keywords footprint and roofprint don’t seem really popular, but there are much more articles talking about “outline”, which in the case of aerial data seems to mean footprint\nLooked at a few articles about point cloud semantic segmentation",
-    "crumbs": [
-      "Weekly Meetings",
-      "2025/11/24"
-    ]
-  },
-  {
-    "objectID": "weekly_notes/2025_11_24.html#previous-week",
-    "href": "weekly_notes/2025_11_24.html#previous-week",
-    "title": "2025/11/24",
-    "section": "",
-    "text": "Looked at more articles about roofprint / footprint from LiDAR\nThe keywords footprint and roofprint don’t seem really popular, but there are much more articles talking about “outline”, which in the case of aerial data seems to mean footprint\nLooked at a few articles about point cloud semantic segmentation",
-    "crumbs": [
-      "Weekly Meetings",
-      "2025/11/24"
-    ]
-  },
-  {
-    "objectID": "weekly_notes/2025_11_24.html#discussion",
-    "href": "weekly_notes/2025_11_24.html#discussion",
-    "title": "2025/11/24",
-    "section": "Discussion",
-    "text": "Discussion\n\nBeing able to use the direction of the LiDAR scan could be an interesting topic",
-    "crumbs": [
-      "Weekly Meetings",
-      "2025/11/24"
-    ]
-  },
-  {
-    "objectID": "weekly_notes/2025_11_24.html#next-week",
-    "href": "weekly_notes/2025_11_24.html#next-week",
-    "title": "2025/11/24",
-    "section": "Next week",
-    "text": "Next week\n\nLook at other papers:\n\nSemantic3D\nTail distribution classification\nBird’s eye view, projection for classification\nProcess point clouds in 2D: https://arxiv.org/abs/1905.08748",
-    "crumbs": [
-      "Weekly Meetings",
-      "2025/11/24"
+      "Weekly Meetings"
     ]
   },
   {
@@ -260,13 +54,263 @@
     ]
   },
   {
-    "objectID": "weekly_notes/index.html",
-    "href": "weekly_notes/index.html",
-    "title": "Weekly Meetings",
+    "objectID": "weekly_notes/2025_11_24.html",
+    "href": "weekly_notes/2025_11_24.html",
+    "title": "2025/11/24",
     "section": "",
-    "text": "This section contains all the weekly notes of the project. These notes include for each week:\n\nA summary of the work done during the previous week,\nA summary of the weekly discussion that happened with the supervisors,\nA summary of the tasks planned to be done for the week.\n\n\n\n\n Back to top",
+    "text": "Looked at more articles about roofprint / footprint from LiDAR\nThe keywords footprint and roofprint don’t seem really popular, but there are much more articles talking about “outline”, which in the case of aerial data seems to mean footprint\nLooked at a few articles about point cloud semantic segmentation",
     "crumbs": [
-      "Weekly Meetings"
+      "Weekly Meetings",
+      "2025/11/24"
+    ]
+  },
+  {
+    "objectID": "weekly_notes/2025_11_24.html#previous-week",
+    "href": "weekly_notes/2025_11_24.html#previous-week",
+    "title": "2025/11/24",
+    "section": "",
+    "text": "Looked at more articles about roofprint / footprint from LiDAR\nThe keywords footprint and roofprint don’t seem really popular, but there are much more articles talking about “outline”, which in the case of aerial data seems to mean footprint\nLooked at a few articles about point cloud semantic segmentation",
+    "crumbs": [
+      "Weekly Meetings",
+      "2025/11/24"
+    ]
+  },
+  {
+    "objectID": "weekly_notes/2025_11_24.html#discussion",
+    "href": "weekly_notes/2025_11_24.html#discussion",
+    "title": "2025/11/24",
+    "section": "Discussion",
+    "text": "Discussion\n\nBeing able to use the direction of the LiDAR scan could be an interesting topic",
+    "crumbs": [
+      "Weekly Meetings",
+      "2025/11/24"
+    ]
+  },
+  {
+    "objectID": "weekly_notes/2025_11_24.html#next-week",
+    "href": "weekly_notes/2025_11_24.html#next-week",
+    "title": "2025/11/24",
+    "section": "Next week",
+    "text": "Next week\n\nLook at other papers:\n\nSemantic3D\nTail distribution classification\nBird’s eye view, projection for classification\nProcess point clouds in 2D: https://arxiv.org/abs/1905.08748",
+    "crumbs": [
+      "Weekly Meetings",
+      "2025/11/24"
+    ]
+  },
+  {
+    "objectID": "weekly_notes/2025_11_10.html",
+    "href": "weekly_notes/2025_11_10.html",
+    "title": "2025/11/10",
+    "section": "",
+    "text": "At least a full week on literature review would be beneficial\nJabRef can be a great tool",
+    "crumbs": [
+      "Weekly Meetings",
+      "2025/11/10"
+    ]
+  },
+  {
+    "objectID": "weekly_notes/2025_11_10.html#discussion",
+    "href": "weekly_notes/2025_11_10.html#discussion",
+    "title": "2025/11/10",
+    "section": "",
+    "text": "At least a full week on literature review would be beneficial\nJabRef can be a great tool",
+    "crumbs": [
+      "Weekly Meetings",
+      "2025/11/10"
+    ]
+  },
+  {
+    "objectID": "weekly_notes/2025_11_10.html#next-week",
+    "href": "weekly_notes/2025_11_10.html#next-week",
+    "title": "2025/11/10",
+    "section": "Next week",
+    "text": "Next week\n\nLook for:\n\nRoofprint / footprint differentiation (probably not much)\nExtraction of roofprint / footprint from point clouds\nPoint cloud semantic segmentation\n\nFor the literature review:\n\n&lt;perplexity.ai&gt; can be great to start\nThen use internet, especially Google Scholar is nice\nLook for new articles by searching for articles that cite interesting articles or were cited by interesting articles\nWrite a small summary of every article I read with the things to remember, even if I don’t understand anything\nTry to structure / categorise the methods I find",
+    "crumbs": [
+      "Weekly Meetings",
+      "2025/11/10"
+    ]
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "MSc Thesis - Website",
+    "section": "",
+    "text": "This website contains the notes and reports of my MSc Thesis with TU Delft and the IGN (Institut national de l’information géographique et forestière) from November 2025 to June 2026.\n\n\n\n Back to top"
+  },
+  {
+    "objectID": "weekly_notes/2025_11_17.html",
+    "href": "weekly_notes/2025_11_17.html",
+    "title": "2025/11/17",
+    "section": "",
+    "text": "Looked for articles about roofprint / footprint differentiation but didn’t really find anything\nStarted looking at a few articles about roofprint / footprint from LiDAR",
+    "crumbs": [
+      "Weekly Meetings",
+      "2025/11/17"
+    ]
+  },
+  {
+    "objectID": "weekly_notes/2025_11_17.html#previous-week",
+    "href": "weekly_notes/2025_11_17.html#previous-week",
+    "title": "2025/11/17",
+    "section": "",
+    "text": "Looked for articles about roofprint / footprint differentiation but didn’t really find anything\nStarted looking at a few articles about roofprint / footprint from LiDAR",
+    "crumbs": [
+      "Weekly Meetings",
+      "2025/11/17"
+    ]
+  },
+  {
+    "objectID": "weekly_notes/2025_11_17.html#discussion",
+    "href": "weekly_notes/2025_11_17.html#discussion",
+    "title": "2025/11/17",
+    "section": "Discussion",
+    "text": "Discussion\n\nLiDARHD of IGN is already classified but there is no separation of façades and roofs\nBAG + BGT + AHN4 could maybe be used to train a model\nCloudCompare is nice to visualise point clouds",
+    "crumbs": [
+      "Weekly Meetings",
+      "2025/11/17"
+    ]
+  },
+  {
+    "objectID": "weekly_notes/2025_11_17.html#next-week",
+    "href": "weekly_notes/2025_11_17.html#next-week",
+    "title": "2025/11/17",
+    "section": "Next week",
+    "text": "Next week\n\nLook for articles about point cloud classification, especially roof/façades, because façades are not classified by default and are a rare class (tail distribution)\nLook at point cloud semantic segmentation methods:\n\nKPConv\nMinkowskiNet\nPointTransformer",
+    "crumbs": [
+      "Weekly Meetings",
+      "2025/11/17"
+    ]
+  },
+  {
+    "objectID": "weekly_notes/2025_12_01.html",
+    "href": "weekly_notes/2025_12_01.html",
+    "title": "2025/12/01",
+    "section": "",
+    "text": "Looked at more articles about point cloud semantic segmentation:\n\nMany different methods, but none gives perfect results yet, especially on rare classes\n\nLooked for datasets of ALS semantic segmentation which differentiate façades and roofs, and found mainly two: the Vaihingen dataset and the DublinCity dataset (which has a very dense point cloud)",
+    "crumbs": [
+      "Weekly Meetings",
+      "2025/12/01"
+    ]
+  },
+  {
+    "objectID": "weekly_notes/2025_12_01.html#previous-week",
+    "href": "weekly_notes/2025_12_01.html#previous-week",
+    "title": "2025/12/01",
+    "section": "",
+    "text": "Looked at more articles about point cloud semantic segmentation:\n\nMany different methods, but none gives perfect results yet, especially on rare classes\n\nLooked for datasets of ALS semantic segmentation which differentiate façades and roofs, and found mainly two: the Vaihingen dataset and the DublinCity dataset (which has a very dense point cloud)",
+    "crumbs": [
+      "Weekly Meetings",
+      "2025/12/01"
+    ]
+  },
+  {
+    "objectID": "weekly_notes/2025_12_01.html#discussion",
+    "href": "weekly_notes/2025_12_01.html#discussion",
+    "title": "2025/12/01",
+    "section": "Discussion",
+    "text": "Discussion\n\nClarification of the goal: the objective in the best situation would be to compute new footprints and roofprints using the LIDAR HD dataset, and if possible, to integrate the old footprints/roofprints in the process to improve the results\nIf we want to train a ML model, it is unclear where the data could come from\nSimply tweaking the weights of the loss to put more weight on the classes of interest (façades and roofs) will probably not have any significant impact on the results, and this is why looking into imbalanced datasets training is important\nBased on the literature review so far, the most interesting approach seems to use ML at least to some extent to classify point clouds",
+    "crumbs": [
+      "Weekly Meetings",
+      "2025/12/01"
+    ]
+  },
+  {
+    "objectID": "weekly_notes/2025_12_01.html#next-week",
+    "href": "weekly_notes/2025_12_01.html#next-week",
+    "title": "2025/12/01",
+    "section": "Next week",
+    "text": "Next week\n\nExplore the metadata of the BD TOPO\nExplore the LIDAR HD dataset\nRead articles about tail distribution / imbalanced point clouds semantic segmentation\nTry to train KPConv on the Vaihingen dataset",
+    "crumbs": [
+      "Weekly Meetings",
+      "2025/12/01"
+    ]
+  },
+  {
+    "objectID": "weekly_notes/2025_12_15.html",
+    "href": "weekly_notes/2025_12_15.html",
+    "title": "2025/12/15",
+    "section": "",
+    "text": "I created this repository to store and share my notes easily.\nI will also use it to make slides/reports, so this will centralise most of the information I gather and make it easier to reuse it.\n\n\n\n\n\nJean Zay used by the IGN won’t be available to me until my internship at the IGN officially starts\nTU Delft has DAIC and DelftBlue, DAIC being probably the most promising since focussed on AI. I filled the forms to get access and both of them were approved so I should now have access. However, both are in maintenance so I won’t be able to try until December 17th.\n\n\n\n\n\n\n\nLooked at (Mérizette et al. 2025) which explains how they created a new dataset for semantic segmentation of indoor TLS with two different processes: manual labelling and automatic generation of pseudo-labels from a BIM model of the objects. For the automatic generation, they basically made their own 3D BIM model of the rooms, and then used this data with the associated classifications of objects to classify points that were inside the BIM models to the corresponding category.\nLooked at the coherence between the LoD 2.2 buildings from 3DBAG with the AHN4 point cloud in the center of Delft. Most points in the dataset seem to be close and accurate, with different precision depending on the case:\n\nRoof points are mostly close to the building with 0.1 m precision\nFor façades there is more variation, but mostly up to 0.5 m,\nThen there are more complex situations like balconys, chimneys and other details that are not represented in the 3DBAG and are therefore further away\nMonuments (such as churches and fancy buildings) and new buildings also give bad results\n\n\n\n\n\n\n\n\n\n\nThe buildings in LoD 2.2 from the 3DBAG.\n\n\n\n\n\n\n\nThe point cloud from AHN4 filtered to keep only “Not classified” (green) and “Building” (white). This especially filters out the ground, bridges and water.\n\n\n\n\n\n\n\nThe distance to the closest building, with 0 m for blue, 0.333 m for green, 0.666 m for yellow and 1 m for red. Values higher than 1 m are grey.\n\n\n\n\n\n\n\n\n\nThe buildings in LoD 2.2 from the 3DBAG.\n\n\n\n\n\n\n\nThe point cloud from AHN4 filtered to keep only “Not classified” (green) and “Building” (white). This especially filters out the ground, bridges and water.\n\n\n\n\n\n\n\nThe distance to the closest building, with 0 m for blue, 0.333 m for green, 0.666 m for yellow and 1 m for red. Values higher than 1 m are grey.\n\n\n\n\n\n\nFigure 1: Two examples of the coherence between the 3DBAG and the AHN4.\n\n\n\n\n\n\n\nHad quite a few issues in:\n\nHandling the OBJ files from the 3DBAG. Is there a simple tool that could be used to simply merge multiple OBJ files? I made a simple Python script with trimesh to separate the building faces per type (floor, façade, roof).\nHandling the LAZ files from AHN4. AHN tiles are actually quite big so I couldn’t load them entirely with laspy. I tried to use trimesh in Python to compute the distance from point cloud to mesh for each class, but it was very slow compared to CloudCompare. So I did all the computations using CloudCompare, and then classified with simple thresholds: 3 classes (roof, facade and other) with roof being assigned to the point \\(p\\) if \\[\\text{distance}(p, \\text{roof}) &lt; \\min(\\text{distance}(p, \\text{facade}), 1)\\]\n\nStill the results look promising, with a few edge cases, some of them that could be interesting:\n\nMost of what is not included in the LoD 2.2 models is not classified: balconies, chimneys, dormers and in general all the objects on the roofs or on the walls.\nRoof overhangs and/or the boundaries of the roofs are sometimes/often classified as façades because the LoD 2.2 models don’t expand far enough on the sides. This could maybe be improved by expanding the roof polygons?\nAs expected monuments and modified buildings also perform poorly\n\n\n\n\n\n\n\n\n\n\nThe buildings in LoD 2.2 from the 3DBAG.\n\n\n\n\n\n\n\nThe classification of the points from AHN 4.\n\n\n\n\n\n\n\n\n\nThe buildings in LoD 2.2 from the 3DBAG.\n\n\n\n\n\n\n\nThe classification of the points from AHN 4.\n\n\n\n\n\n\nFigure 2: Example of classifying the AHN 4 points automatically based on the 3DBAG.\n\n\n\n\n\n\n\nLooked quickly into myria3d:\n\nCould be quite interesting to train a custom model on custom data, since it seems like a nicely documented framework.\nHowever, their model expects to have RGB values for the point cloud, which seems to be computed from aerial images, so AHN doesn’t have it but we could maybe compute it.\n\n\n\n\nLooked at (Girard et al. 2020), an interesting paper that tries to predict building edges as polygons using a ML model. To do so, their model takes a RGB image as input and outputs two things:\n\n2 values predicting:\n\nif the pixel is in a building\nif the pixel is on the edge of a building\n\n4 values defining two complex numbers that define two directions for each pixel. All the pixel then make a frame field that defines tangents/normals of buildings\n\nThen, the frame field and the classification rasters are processed in different steps:\n\nASM optimization to get a sub-pixel precision and straight edges aligned with the frame field\nCorner detection\nCorner-aware simplification\nPolygonization\nPolygon filtering\n\nI haven’t read all the gory details in the supplementary material but it is nice that it is there, and there is also a repository.\nThey get nice results with clean polygons, and I think it could be extended to point clouds as the frame field could also make a lot of sense there, by also predicting a classification coupled with a frame field.\nHowever I don’t know how this could help with the differentiation footprint/roofprint if we don’t have any training data with both.\n\n\n\n\nA simple way to re-use BD TOPO building outlines could be to use them to extract smaller point clouds (with a margin around the current outline like 5 m to take the current errors into account), that would be quicker and easier to process\nSkimming through (Wierzbicki, Matuk, and Bielecka 2021) gave me the idea that images (which should be well geo-referenced), could maybe be used in combination with current outlines to extract regions of interest to process the point cloud\nSkimming through (Saadaoui et al. 2025) made me realize that the roofprints obtained from aerial images are not at the right position due to the angle of the camera, which could be part of the reason why the current outlines are not correct",
+    "crumbs": [
+      "Weekly Meetings",
+      "2025/12/15"
+    ]
+  },
+  {
+    "objectID": "weekly_notes/2025_12_15.html#previous-week",
+    "href": "weekly_notes/2025_12_15.html#previous-week",
+    "title": "2025/12/15",
+    "section": "",
+    "text": "I created this repository to store and share my notes easily.\nI will also use it to make slides/reports, so this will centralise most of the information I gather and make it easier to reuse it.\n\n\n\n\n\nJean Zay used by the IGN won’t be available to me until my internship at the IGN officially starts\nTU Delft has DAIC and DelftBlue, DAIC being probably the most promising since focussed on AI. I filled the forms to get access and both of them were approved so I should now have access. However, both are in maintenance so I won’t be able to try until December 17th.\n\n\n\n\n\n\n\nLooked at (Mérizette et al. 2025) which explains how they created a new dataset for semantic segmentation of indoor TLS with two different processes: manual labelling and automatic generation of pseudo-labels from a BIM model of the objects. For the automatic generation, they basically made their own 3D BIM model of the rooms, and then used this data with the associated classifications of objects to classify points that were inside the BIM models to the corresponding category.\nLooked at the coherence between the LoD 2.2 buildings from 3DBAG with the AHN4 point cloud in the center of Delft. Most points in the dataset seem to be close and accurate, with different precision depending on the case:\n\nRoof points are mostly close to the building with 0.1 m precision\nFor façades there is more variation, but mostly up to 0.5 m,\nThen there are more complex situations like balconys, chimneys and other details that are not represented in the 3DBAG and are therefore further away\nMonuments (such as churches and fancy buildings) and new buildings also give bad results\n\n\n\n\n\n\n\n\n\n\nThe buildings in LoD 2.2 from the 3DBAG.\n\n\n\n\n\n\n\nThe point cloud from AHN4 filtered to keep only “Not classified” (green) and “Building” (white). This especially filters out the ground, bridges and water.\n\n\n\n\n\n\n\nThe distance to the closest building, with 0 m for blue, 0.333 m for green, 0.666 m for yellow and 1 m for red. Values higher than 1 m are grey.\n\n\n\n\n\n\n\n\n\nThe buildings in LoD 2.2 from the 3DBAG.\n\n\n\n\n\n\n\nThe point cloud from AHN4 filtered to keep only “Not classified” (green) and “Building” (white). This especially filters out the ground, bridges and water.\n\n\n\n\n\n\n\nThe distance to the closest building, with 0 m for blue, 0.333 m for green, 0.666 m for yellow and 1 m for red. Values higher than 1 m are grey.\n\n\n\n\n\n\nFigure 1: Two examples of the coherence between the 3DBAG and the AHN4.\n\n\n\n\n\n\n\nHad quite a few issues in:\n\nHandling the OBJ files from the 3DBAG. Is there a simple tool that could be used to simply merge multiple OBJ files? I made a simple Python script with trimesh to separate the building faces per type (floor, façade, roof).\nHandling the LAZ files from AHN4. AHN tiles are actually quite big so I couldn’t load them entirely with laspy. I tried to use trimesh in Python to compute the distance from point cloud to mesh for each class, but it was very slow compared to CloudCompare. So I did all the computations using CloudCompare, and then classified with simple thresholds: 3 classes (roof, facade and other) with roof being assigned to the point \\(p\\) if \\[\\text{distance}(p, \\text{roof}) &lt; \\min(\\text{distance}(p, \\text{facade}), 1)\\]\n\nStill the results look promising, with a few edge cases, some of them that could be interesting:\n\nMost of what is not included in the LoD 2.2 models is not classified: balconies, chimneys, dormers and in general all the objects on the roofs or on the walls.\nRoof overhangs and/or the boundaries of the roofs are sometimes/often classified as façades because the LoD 2.2 models don’t expand far enough on the sides. This could maybe be improved by expanding the roof polygons?\nAs expected monuments and modified buildings also perform poorly\n\n\n\n\n\n\n\n\n\n\nThe buildings in LoD 2.2 from the 3DBAG.\n\n\n\n\n\n\n\nThe classification of the points from AHN 4.\n\n\n\n\n\n\n\n\n\nThe buildings in LoD 2.2 from the 3DBAG.\n\n\n\n\n\n\n\nThe classification of the points from AHN 4.\n\n\n\n\n\n\nFigure 2: Example of classifying the AHN 4 points automatically based on the 3DBAG.\n\n\n\n\n\n\n\nLooked quickly into myria3d:\n\nCould be quite interesting to train a custom model on custom data, since it seems like a nicely documented framework.\nHowever, their model expects to have RGB values for the point cloud, which seems to be computed from aerial images, so AHN doesn’t have it but we could maybe compute it.\n\n\n\n\nLooked at (Girard et al. 2020), an interesting paper that tries to predict building edges as polygons using a ML model. To do so, their model takes a RGB image as input and outputs two things:\n\n2 values predicting:\n\nif the pixel is in a building\nif the pixel is on the edge of a building\n\n4 values defining two complex numbers that define two directions for each pixel. All the pixel then make a frame field that defines tangents/normals of buildings\n\nThen, the frame field and the classification rasters are processed in different steps:\n\nASM optimization to get a sub-pixel precision and straight edges aligned with the frame field\nCorner detection\nCorner-aware simplification\nPolygonization\nPolygon filtering\n\nI haven’t read all the gory details in the supplementary material but it is nice that it is there, and there is also a repository.\nThey get nice results with clean polygons, and I think it could be extended to point clouds as the frame field could also make a lot of sense there, by also predicting a classification coupled with a frame field.\nHowever I don’t know how this could help with the differentiation footprint/roofprint if we don’t have any training data with both.\n\n\n\n\nA simple way to re-use BD TOPO building outlines could be to use them to extract smaller point clouds (with a margin around the current outline like 5 m to take the current errors into account), that would be quicker and easier to process\nSkimming through (Wierzbicki, Matuk, and Bielecka 2021) gave me the idea that images (which should be well geo-referenced), could maybe be used in combination with current outlines to extract regions of interest to process the point cloud\nSkimming through (Saadaoui et al. 2025) made me realize that the roofprints obtained from aerial images are not at the right position due to the angle of the camera, which could be part of the reason why the current outlines are not correct",
+    "crumbs": [
+      "Weekly Meetings",
+      "2025/12/15"
+    ]
+  },
+  {
+    "objectID": "weekly_notes/2025_12_15.html#discussion",
+    "href": "weekly_notes/2025_12_15.html#discussion",
+    "title": "2025/12/15",
+    "section": "Discussion",
+    "text": "Discussion\n\nThe automatic classification of AHN based on 3DBAG seems very pormising and we should try to make it happen\nThere is a large area in Marseille with hand-made 3D buildings based on LIDAR HD that I could use once I join the IGN for the internship (because it is closed data)\nGeotiles has AHN 4 et 5 with RGB values for orthophotos, but it is not really relevant in our case because it does not work well on façades",
+    "crumbs": [
+      "Weekly Meetings",
+      "2025/12/15"
+    ]
+  },
+  {
+    "objectID": "weekly_notes/2025_12_15.html#next-week",
+    "href": "weekly_notes/2025_12_15.html#next-week",
+    "title": "2025/12/15",
+    "section": "Next week",
+    "text": "Next week\n\nTry the solution of extending the roof surfaces to classify point clouds with CGAL (using Minkowski sums in 2D) on AHN 4 or 5\nTry PointTransformerv3 or PointVector",
+    "crumbs": [
+      "Weekly Meetings",
+      "2025/12/15"
+    ]
+  },
+  {
+    "objectID": "weekly_notes/2026_01_12.html",
+    "href": "weekly_notes/2026_01_12.html",
+    "title": "2026/01/12",
+    "section": "",
+    "text": "DAIC is out of maintenance and I could check that I have access.\nIdea: use the directions of edges of the existing footprints/roofprints as likely first good guesses\nWrote the “Project Proposal”\nStarted working with CGAL on extending roof planes and computing distance from point cloud to buildings",
+    "crumbs": [
+      "Weekly Meetings",
+      "2026/01/12"
+    ]
+  },
+  {
+    "objectID": "weekly_notes/2026_01_12.html#previous-weeks",
+    "href": "weekly_notes/2026_01_12.html#previous-weeks",
+    "title": "2026/01/12",
+    "section": "",
+    "text": "DAIC is out of maintenance and I could check that I have access.\nIdea: use the directions of edges of the existing footprints/roofprints as likely first good guesses\nWrote the “Project Proposal”\nStarted working with CGAL on extending roof planes and computing distance from point cloud to buildings",
+    "crumbs": [
+      "Weekly Meetings",
+      "2026/01/12"
+    ]
+  },
+  {
+    "objectID": "weekly_notes/2026_01_12.html#discussion",
+    "href": "weekly_notes/2026_01_12.html#discussion",
+    "title": "2026/01/12",
+    "section": "Discussion",
+    "text": "Discussion\n\nWe discussed things to add/modify in the “Project Proposal”\nIf datasets are too dense, it could be possible to reduce the density by simply picking every n-th point and the distribution will be fine if the order is the original one\nWe could produce fake ground-truth data by simulating LiDAR on top of LoD 2.3 buildings, with tools like helios or equivalents at the IGN, which could be useful for results assessment",
+    "crumbs": [
+      "Weekly Meetings",
+      "2026/01/12"
+    ]
+  },
+  {
+    "objectID": "weekly_notes/2026_01_12.html#next-week",
+    "href": "weekly_notes/2026_01_12.html#next-week",
+    "title": "2026/01/12",
+    "section": "Next week",
+    "text": "Next week\n\nThings to add to the “Project Proposal”:\n\nRoof overhangs are the distinction between LoD 2.2 and 2.3\nAdd images and tables for the datasets mentioned in the literature review\nModify the research question:\n\nTalk about characteristics instead of situation\nBe more progressive (less binary)\nMention outlines as a possibility, and add a sub-question about it\n\nMention that we could use existing outlines which provide information about the shape, the distances and the angles, even if they are translated\nAdd a subtitle\nTalk about what I am currently working on.\nAdd an illustration for footprint and roofprint\n\nLook for data about roof overhangs in general in France, in the Netherlands and more generally in Europe. This could be data about actual buildings, guidelines for the construction of buildings, or anything else.",
+    "crumbs": [
+      "Weekly Meetings",
+      "2026/01/12"
     ]
   }
 ]
