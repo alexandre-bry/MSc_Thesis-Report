@@ -277,6 +277,10 @@ ul.task-list li input[type="checkbox"] {
     <a class="nav-link active" href="../weekly_notes/index.html" aria-current="page"> 
 <span class="menu-text">Weekly Meetings</span></a>
   </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../reports/index.html"> 
+<span class="menu-text">Reports</span></a>
+  </li>  
 </ul>
           </div> <!-- /navcollapse -->
             <div class="quarto-navbar-tools">
@@ -535,6 +539,8 @@ ul.task-list li input[type="checkbox"] {
           if (link.dataset.originalHref !== undefined) {
             link.href = link.dataset.originalHref;
           }
+            // default icon
+            link.classList.add("external");
         }
       }
     function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {

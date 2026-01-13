@@ -1,6 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
+    <loc>https://alexandre-bry.github.io/MSc_Thesis-Report/reports/Project_proposal.html</loc>
+    <lastmod>2026-01-13T15:00:52.238Z</lastmod>
+  </url>
+  <url>
     <loc>https://alexandre-bry.github.io/MSc_Thesis-Report/weekly_notes/index.html</loc>
     <lastmod>2025-12-11T15:39:57.401Z</lastmod>
   </url>
@@ -35,5 +39,9 @@
   <url>
     <loc>https://alexandre-bry.github.io/MSc_Thesis-Report/weekly_notes/2026_01_12.html</loc>
     <lastmod>2026-01-13T13:49:44.676Z</lastmod>
+  </url>
+  <url>
+    <loc>https://alexandre-bry.github.io/MSc_Thesis-Report/reports/index.html</loc>
+    <lastmod>2026-01-13T14:38:28.505Z</lastmod>
   </url>
 </urlset>

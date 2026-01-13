@@ -1,5 +1,16 @@
 [
   {
+    "objectID": "reports/Project_proposal.html",
+    "href": "reports/Project_proposal.html",
+    "title": "Project Proposal",
+    "section": "",
+    "text": "The project proposal corresponds to the kick-off of the MSc Thesis, presenting the topic and the planning of the project. It consists of a report and a presentation, both available below.\nDownload the report\n\n\n\n Back to top",
+    "crumbs": [
+      "Reports",
+      "Project Proposal"
+    ]
+  },
+  {
     "objectID": "weekly_notes/index.html",
     "href": "weekly_notes/index.html",
     "title": "Weekly Meetings",
@@ -311,6 +322,16 @@
     "crumbs": [
       "Weekly Meetings",
       "2026/01/12"
+    ]
+  },
+  {
+    "objectID": "reports/index.html",
+    "href": "reports/index.html",
+    "title": "Reports",
+    "section": "",
+    "text": "This section contains all the reports of the project.\n\n\n\n Back to top",
+    "crumbs": [
+      "Reports"
     ]
   }
 ]
