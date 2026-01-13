@@ -45,6 +45,12 @@
       description: [An algorithm to reconstruct a 3D building model from a point cloud and a 2D roofprint polygon in different @lod:pl up to 2.2.],
       url: "https://github.com/3DBAG/roofer",
     ),
+    helios: (
+      short: "HELIOS++",
+      long: "Heidelberg LiDAR Operations Simulator ++",
+      description: [A general-purpose Python package for simulation of terrestrial, mobile and airborne laser scanning surveys.],
+      url: "https://github.com/3dgeo-heidelberg/helios",
+    ),
   ),
   "Entities": (
     tudelft: (
@@ -93,12 +99,12 @@
     footprint: (
       short: "footprint",
       plural: "footprints",
-      description: [The outer boundary defined by the walls of a building.],
+      description: [The 2D outer boundary defined by the vertical projection of the outer walls/façades of a building.],
     ),
     roofprint: (
       short: "roofprint",
       plural: "roofprints",
-      description: [The outer boundary defined by the roof of a building.],
+      description: [The 2D outer boundary defined by the vertical projection of the roof of a building.],
     ),
     outline: (
       short: "outline",
@@ -144,7 +150,7 @@
     dsm: (
       short: "DSM",
       long: "Digital Surface Model",
-      description: [A digital representation of the highest point at every pixel location, including all natural and man-made features such as vegetation, buildings, and other above-ground objects.],
+      description: [A gridded digital representation of the highest point at every cell location, including all natural and man-made features such as vegetation, buildings, and other above-ground objects.],
     ),
   ),
 )
@@ -159,4 +165,11 @@
     term.group = group
     glossaryTerms.insert(key, term)
   }
+}
+
+#let gloss-url(key) = {
+  return glossaryTerms.at(key).url
+}
+#let gloss-ref-and-footnote(key) = {
+  [#ref(label(key))#footnote[#link(gloss-url(key))]]
 }

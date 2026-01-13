@@ -7,7 +7,7 @@
 
 
 // Glossary
-#import "@preview/glossy:0.8.0": *
+#import "@preview/glossy:0.9.0": *
 #import "glossary-definition.typ": glossaryTerms
 #show: init-glossary.with(glossaryTerms)
 
@@ -46,8 +46,14 @@
   #set par(justify: false)
 
   #cover.cover(
-    title: text(size: 30pt)[#title],
-    subtitle: text(size: 20pt)[#subtitle],
+    title: [#text(size: 30pt)[#title]#v(1em, weak: true)#text(
+        size: 18pt,
+        weight: "semibold",
+        style: "italic",
+      )[Generation of building @roofprint:pl:noindex and @footprint:pl:noindex from @als:short:noindex point clouds]#v(
+        1em,
+      )],
+    subtitle: text(size: 22pt)[#subtitle],
     authors-names: authors-names,
     authors-data: authors-data,
     full-page: true,
@@ -59,9 +65,9 @@
         row-gutter: 1em,
         column-gutter: 0.5em,
         stroke: none,
-        [@ign:short supervisor:], [Bruno Vallet],
-        [1st @tudelft:short supervisor:], [Hugo Ledoux],
-        [2nd @tudelft:short supervisor:], [Ravi Peters],
+        [@ign:short:noindex supervisor:], [Bruno Vallet],
+        [1st @tudelft:short:noindex supervisor:], [Hugo Ledoux],
+        [2nd @tudelft:short:noindex supervisor:], [Ravi Peters],
       )
 
       #v(5em)

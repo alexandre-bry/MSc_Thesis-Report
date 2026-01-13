@@ -1,6 +1,7 @@
 #import "@preview/subpar:0.2.2"
 
 #import "../other-tools/styled-blocks.typ": block-discussion, block-todo
+#import "./glossary-definition.typ": gloss-ref-and-footnote, gloss-url
 
 // Uncomment the following line to hide the comments in the final document
 #let block-todo = block-todo.with(render: false)
@@ -33,26 +34,37 @@
   - Assess the possibility of identifying and differentiating the footprint and the roofprint
 ]
 
-In 2024, the @ign and two other French public entities have launched an initiative to bring together partners who can contribute to the development of a nation-wide digital twin @ignAppelCommuns.
+In 2024, the #gloss-ref-and-footnote("ign") and two other French public entities have launched an initiative to bring together partners who can contribute to the development of a nation-wide digital twin @ignAppelCommuns.
 In the same blog post, the @ign mentions ecological planning and sustainable land use as some of the priorities this project should accommodate.
-In @ignRechercheDefi, it is explained how the @lidarhd --- the first project to collect high-density point clouds on almost the whole territory of France --- is central to the future digital twin.
+In a different post, it is explained how the @lidarhd --- the first project to collect high-density point clouds on almost the whole territory of France --- is central to the future digital twin #cite(<ignRechercheDefi>).
 This comes from the unprecedented precision that it brings compared to previous data used and maintained by the @ign.
 
-In this context, one of the many parts of the future digital twin is buildings.
+In this context, one of the many components of the future digital twin is buildings.
 Many algorithms have been developed to try to reconstruct simple but accurate 3D building models from various data sources, including point clouds.
-Some researchers from @tudelft especially developed an algorithm called @roofer which produced great results and was then applied to the whole of the Netherlands.
-This successfully created the @3dbag, the first complete dataset of Dutch buildings @Peters22.
+Some researchers from @tudelft especially developed an algorithm called #gloss-ref-and-footnote("roofer") which produced great results and was then applied to the whole of the Netherlands.
+This successfully created the @3dbag, the first complete dataset of Dutch buildings in @lod 2.2 @Peters22.
 This algorithm however requires two input data: a dense 3D point cloud and 2D building @roofprint:pl.
 In the Netherlands, the @ahn was used for the point cloud and the @bag was used for the @roofprint:pl.
 
 This is where things become more technical and where the precision provided by @lidarhd becomes interesting.
-There are mainly two kinds of 2D building @outline:pl, which are often used interchangeably, even though they can be significantly different once reaching the scale of centimers or decimeters:
+There are mainly two kinds of 2D building @outline:pl, which are often used interchangeably, even though they can be significantly different once reaching the scale of centimetres or decimetres:
 - #strong[@footprint:cap:pl]: the 2D outer boundary defined by the vertical projection of the #emph[outer walls/façades] of a building.
-- #strong[@roofprint:cap:pl]: the outer boundary defined by the vertical projection of the #emph[roof] of a building.
+- #strong[@roofprint:cap:pl]: the 2D outer boundary defined by the vertical projection of the #emph[roof] of a building.
 Usually, due to roof overhangs and gutters, the roof extends further than the walls, meaning that the @footprint is included in the @roofprint.
 In the rest of this document, I will use the terms @roofprint and @footprint when possible, and otherwise talk about @outline when talking about any of them or when the differentiation was not made.
-Since @roofer uses the points from the roof to reconstruct buildings, it requires a @roofprint to work properly.
+As an example, the roofprint is what matters in estimating solar energy potential --- in combination with other factors such as roof orientation and angle.
 But in many other applications --- such as taxes or energy consumption --- an accurate estimation of the area of buildings is necessary, which will be better with a @footprint.
+
+Adding this distinction to models is also what makes the difference between @lod 2.2 and @lod 2.3, as shown in @fig:lods-illustration.
+Since @roofer uses the points from the roof to reconstruct buildings, it requires a @roofprint to work properly, but therefore reconstructs the buildings in @lod 2.2.
+
+#figure(
+  image("../images/LoDs_illustration-Filip_Biljecki.jpg"),
+  caption: [Visual example of the refined @lod:pl for a residential building #cite(<Biljecki2016>, form: "normal").],
+  placement: auto,
+) <fig:lods-illustration>
+
+
 Moreover, different sources of data often make it easier to get either of the two:
 - Experts on the field mostly use the walls and therefore measure the @footprint.
 - Experts working on aerial imagery can only use the roof as some walls will not be visible, meaning that they measure the @roofprint.
@@ -62,8 +74,8 @@ Moreover, different sources of data often make it easier to get either of the tw
 The @ign already has a dataset containing building @outline:pl, called @bdtopo.
 However this dataset has some issues, that can be explained by how it was historically built from different sources.
 First, some @outline:pl come from terrain measurements and are therefore @footprint:pl, while others come from aerial image detection and are therefore @roofprint:pl.
-This information is contained in the dataset, although it is missing for some buildings.
-Then, the georeferencing of these building @outline:pl is often wrong by up to a few meters.
+The dataset contains a column specifying for each @outline which of the two it is, but it is missing for some buildings.
+Then, the georeferencing of these building @outline:pl is often wrong by up to a few meters (see @fig:outlines-misalignment).
 This makes combining them with correctly georeferenced point clouds more complicated.
 
 All in all, the current context combines:
@@ -94,34 +106,12 @@ I could only find a few research papers about identifying or reconstructing roof
 The difference between @footprint:pl and @roofprint:pl is often not acknowledged, and most papers talk about @outline:pl.
 In the few papers that try to find and compute roof overhangs, the methods are often similar.
 
-#block-discussion[Roof overhangs][
-  In @Panday2012, roof overhangs are estimated by sweeping vertical planes perpendicularly to the roof edges.
-  A correlation score is computed for each plane, and the best result is kept only if it is a sharp enough peak.
-
-  In @Dahlke2015, a very precise @dsm is used in combination with known or pre-computed @footprint:pl.
-  For each edge of the @footprint, the median height on segments parallel to the edge is computed, and the inflection point of the height variation is used as the roofprint edge.
-
-  In @Frommholz2017, the @roofprint is projected onto the @dsm and the zero-crossings of the second-order derivative of height variation is used to estimate the size of the roof overhang.
-
-  #cite(<Goebbels2023>, form: "prose") extends @lod 2 models by identifying potential overhang edges from the @footprint:pl and computing the size of the overhangs from either images or point clouds.
-
-  #cite(<Girard2020>, form: "prose") uses a machine learning model to compute for each pixel of a RGB aerial image a classification of building and building edges, as well as a frame field defining tangents and normals of the buildings.
-  Then a complex process is used to construct @roofprint:pl as polygons.
-
-  #cite(<Dai2025>, form: "prose") uses a deep learning model that inputs a point cloud and outputs @footprint:pl as a binary raster.
-  The model uses sparse voxel representations for the point cloud and decoder/encoder architectures with a specific 3D attention module.
-
-  #cite(<Saadaoui2025>, form: "prose") uses a full deep learning pipeline that inputs satellite images and outputs @roofprint:pl as polygons.
-  A first model identifies building pixels, followed by a residual autoencoder to regularize the segmentation, and finally a lightweight CNN that extract building corners that can be used for polygonization.
-
-]
-
 The most common method consists in sweeping vertical planes perpendicularly to the @roofprint edges or to the @footprint edges depending on what was computed first.
 Then, a best-fitting plane is determined among these planes with different criteria.
 In @Panday2012, a correlation score is computed for each plane, and the best result is kept only if it represents a sharp enough peak compared to its neighbours.
-For each edge of the @footprint, #cite(<Dahlke2015>, form: "prose") computes the median height on segments parallel to the edge using a precise @dsm.
+For each edge of the @footprint, #cite(<Dahlke2015>, form: "prose") computes the median height on segments parallel to the edge using a precise 2.5D @dsm with a resolution between 5 and 20 cm.
 Then, they use the inflection point of the height variation as the roofprint edge.
-In #cite(<Frommholz2017>, form: "normal"), the @roofprint is projected onto the @dsm and the zero-crossings of the second-order derivative of height variation are used to estimate the size of the roof overhang.
+In #cite(<Frommholz2017>, form: "normal"), the @roofprint is projected onto the 5 cm resolution @dsm and the zero-crossings of the second-order derivative of height variation are used to estimate the size of the roof overhang.
 
 Other methods are proposed by #cite(<Goebbels2023>, form: "prose") to extend @lod 2 models by identifying potential overhang edges from the @footprint:pl and computing the size of the overhangs from either oblique images or point clouds.
 Using obliques images and assuming angles of 45°, they identify the roof overhang in the texture using either edges detection or colour regions, and compute the size of the overhang from this.
@@ -156,7 +146,7 @@ Other models extend 2D convolutions to 3D in different ways.
 With farthest point sampling and trilinear interpolation it allows to build a U-net architecture called PointTransformer that outperformed other models at that time in semantic segmentation.
 Its latest iteration PointTransformerv3 improved accuracy, speed and memory usage by getting rid of costly 3D operations like neighbourhood queries which were replaced by serialization of the point clouds using space-filling curves #cite(<Wu2023>, form: "normal").
 
-Since @als point clouds can also be very imbalanced, especially with roof points being easier to get than façade points, I also looked into papers dealing with class-imbalanced datasets.
+Since @als point clouds can also be very imbalanced, especially with roof points being easier to acquire than façade points, I also looked into papers dealing with class-imbalanced datasets.
 #cite(<Li2024>, form: "prose") advocated to decouple the optimization of the backbone and the classifier, by alternating them.
 Optimization of the backbone happens on a rebalanced set of points, using ground-truth points and pseudo-labelled points, and a custom loss is added against imbalance.
 #cite(<Pan2025>, form: "prose") proposed a framework to deal with sparse and inhomogeneous annotations, with a label-aware downsampling strategy and a gradient calibration function to compensate the bias introduced by annotation inhomogeneity.
@@ -167,26 +157,42 @@ To be able to train a model and/or to evaluate the results, it would be useful t
 Therefore, I looked for @als datasets with semantic segmentation classes differentiating façades and roofs; and for datasets containing both @footprint:pl and @roofprint:pl.
 
 Regarding building outlines, #cite(<Dai2025>, form: "prose") should publish a dataset with more than 3000 building @footprint:pl based on the @als dataset called DALES #cite(<Varney2020>, form: "normal").
+This one would be interested as @footprint:pl are the most difficult thing to extract from @als point clouds as explained before.
 However, it is not yet available.
+Besides this one, I did not find other interesting datasets of @footprint:pl or @roofprint:pl.
 
-Regarding @als datasets, a few of them make the distinction between roof and façades.
-#cite(<Koelle2021>, form: "prose") published the Hessigheim 3D (H3D) dataset which is much denser than @lidarhd (800 pts/m² on average _versus_ 40 pts/m²) #cite(<Gaydon2024>, form: "normal").
-There is also the Vaihingen 3D (V3D) dataset acquired by #cite(<Cramer2010>, form: "prose") and then manually labelled by #cite(<Niemeyer2014>, form: "prose") with 780,879 points and a closer average density of 8 pts/m².
-Then, there is DublinCity with 260M points and 348 pts/m² on average which even classified windows and doors #cite(<Zolanvari2019>, form: "normal").
-The Campus3D dataset contains 937.1M points generated from aerial images #cite(<Li2020a>, form: "normal").
-Finally, #cite(<Zachar2023>, form: "prose") proposed the CENAGIS-ALS benchmark, with 550M points and 275 pts/m² on average, classifying stairs, balconeys and chimneys as well as roof and façades.
+#[
+  #set par(justify: false)
+  #figure(
+    table(
+      table.header([Name], [Number of points], [Point density (pts/m²)], [Classes for roof/façade], [Source], [Paper]),
+      columns: (7em, 5.5em, 7.5em, 6.5em, 4em, 1fr),
+      [H3D], [74M], [800], [Yes], [@als], [@Koelle2021],
+      [V3D], [0.78M], [8], [Yes], [@als], [@Cramer2010 @Niemeyer2014],
+      [DublinCity], [260M], [348], [Yes], [@als], [@Zolanvari2019],
+      [Campus3D], [937.1M], [], [Yes], [Aerial images], [@Li2020a],
+      [CENAGIS-ALS], [550M], [275], [Yes], [@als], [@Zachar2023],
+      [DALES], [505M], [50], [No], [@als], [@Varney2020],
+      [SensatUrban], [2847M], [], [No], [Aerial images], [@Hu2020],
+      [LASDU], [3.12M], [4], [No], [@als], [@Ye2020],
+      [TALD], [121M], [12], [No], [@als], [@Vijaywargiya2025],
+      [FRACTAL], [9261M], [37], [No], [@als], [@Gaydon2024],
+    ),
+    caption: [List of point cloud datasets for semantic segmentation of point clouds.],
+    placement: auto,
+  )  <tab:point-clouds-datasets>
+]
 
-Then, there are @als datasets which put all the points belonging to buildings in a single class.
-Many papers mention the DALES dataset published by #cite(<Varney2020>, form: "prose"), which contains 505M points with 50 pts/m² on average.
-Other examples are SensatUrban by #cite(<Hu2020>, form: "prose") which contains 2847M points generated from aerial images, LASDU with 3.12M points with 4 pts/m² on average by #cite(<Ye2020>, form: "prose").
-A more recent example is TALD, featuring 121M points and 12 pts/m² on average #cite(<Vijaywargiya2025>, form: "normal").
-
-There is also a very large dataset called FRACTAL, which was made by the @ign with the @lidarhd #cite(<Gaydon2024>, form: "normal").
-It contains 9261M points with an average density of 37 pts/m², but unfortunately does not differentiate between roof and façade points.
+Regarding @als datasets, a list of the datasets I found are shown in @tab:point-clouds-datasets.
+They vary significantly in size and point density, and only some of them have separate classes for roof and façade points.
+Some of them even have more precise classes than roof and façades, such as CENAGIS-ALS benchmark, which classifies separately stairs, balconies and chimneys as well, or DublinCity with windows and doors @Zachar2023 @Zolanvari2019.
+Some of them are generated from images using computer vision techniques.
+The one called FRACTAL is interesting because it was made by the @ign with the @lidarhd, even if it does not separate roofs and façades #cite(<Gaydon2024>, form: "normal").
 The paper also explains how other French datasets such as @bdtopo were used to select the areas to include in order to reduce class imbalance.
 
 Finally, to be able to create a dataset more quickly, #cite(<Merizette2025>, form: "prose") explained how they created a new dataset for semantic segmentation of indoor TLS with two different processes: manual labelling and automatic generation of pseudo-labels from a BIM model of the objects.
 For the automatic generation, they had experts make a 3D BIM model of the rooms, and then used this model to classify points in the class of the closest object if close enough.
+
 
 = Research questions
 
@@ -194,16 +200,6 @@ For the automatic generation, they had experts make a 3D BIM model of the rooms,
   The research questions are clearly defined, along with the scope (ie what you will not be doing).
 
   To help you define a "good" research question, read https://geomatics.bk.tudelft.nl/geo2021/templates/Research-Questions_WS-handout.pdf.
-]
-
-#block-discussion[Ideas][
-  Something like:
-
-  #emph[In which conditions can ALS point clouds be used to generate accurate building @roofprint:pl and @footprint:pl in combination with existing but inaccurate building @outline:pl?]
-
-  Should I mention more specific things about @lidarhd for example?
-
-  Do I need specific sub-questions?
 ]
 
 The research question of this thesis will be:
@@ -214,15 +210,16 @@ The research question of this thesis will be:
   ),
   [#text(
     weight: 600,
-    emph[In which conditions can @als point clouds be used to generate accurate building @roofprint:pl and @footprint:pl in combination with existing but inaccurate building @outline:pl?],
+    emph[What characteristics of @als point clouds influence the ability to generate accurate building @roofprint:pl and @footprint:pl?],
   )],
 )
 
 I will also try to look into the following sub-questions:
 
-- How do the characteristics of the point cloud (geometry of the scanning device, trajectory of the flying vehicle) impact the whole process?
-- Can other characteristics of buildings help compensate the lack of points on the façades?
+- How do the characteristics of the point cloud acquisition (geometry of the scanning device, trajectory of the flying vehicle) impact the whole process?
+- Are there common characteristics of buildings that can help compensate the lack of points on some façades?
 - How meaningful are the differences obtained between roofprints and footprints in France in terms of distances and areas?
+- Can existing but inaccurate building @outline:pl be helpful in guiding the creation of new accurate @footprint:pl and @roofprint:pl?
 
 = Methodology <sec:methodology>
 
@@ -259,10 +256,13 @@ How this will be done exactly will depend on the quality of the point cloud sema
 Once the @roofprint will be computed, I will use it to identify the best vertical plane to match the façade points, parallel to each edge of the @roofprint.
 The details still need to be decided and tested, but I hope that this method will work on façades even if they contain few points, and other principles such as symmetry, or the orientation of the roof planes could help to make the best guesses possible with façades containing too few points or no point at all.
 This combination of logical decisions and geometric computations should ensure that I can get a realistic result in every situation, compared to using machine learning.
+Moreover, I will try to integrate the existing @outline:pl from @bag in the Netherlands and from @bdtopo in France to guide the reconstruction process.
+This could help because even though they are shifted in @bdtopo, they still provide interesting information in terms of shape, length of edges and angles between the edges.
 
 Finally, assessing the results may be a difficult task.
 Any dataset with correctly modelled roof overhangs would be useful both in training the semantic segmentation model and in evaluating the method.
 However, without such high-quality ground-truths, I may have to build my own dataset of @footprint:pl and @roofprint:pl, in areas of varying difficulty, to assess the accuracy of the algorithm in different scenarios.
+One solution could be to generate buildings with overhangs by extending the roof planes of @lod 2.2 buildings, and then use a tool such as #gloss-ref-and-footnote("helios") to simulate an @als point cloud acquired on these buildings in different scenarios.
 The robustness of not using machine learning for the last part could also mean that the focus should be on assessing how the algorithm performs when the classification given by the model on the point cloud is inaccurate or even misleading.
 Therefore, there will likely be several iterations to get a robust algorithm in every possible configuration of point cloud and semantic segmentation.
 
@@ -314,6 +314,7 @@ This is visible in @fig:outlines-misalignment, especially compared to the point 
   columns: 2,
   caption: [The misalignment of the outlines (in purple) with aerial images and @lidarhd.],
   label: <fig:outlines-misalignment>,
+  placement: auto,
 )
 
 Then, before starting to implement the classification of the @ahn with the @3dbag, I tried it with CloudCompare on a subset to check if it seemed reasonable and feasible.
@@ -364,9 +365,10 @@ The results are displayed in @fig:ahn-3dbag-distance, and show that the results 
   columns: (1.1fr, 1fr),
   caption: [Experiment with the distances between @ahn 4 points and @3dbag buildings in @lod 2.2.],
   label: <fig:ahn-3dbag-distance>,
+  placement: auto,
 )
 
-Finally, I tried to classify the points based on distances to the @3dbag with 3 classes (roof, facade and other) with `roof` being assigned to the point $p$ if $ "distance" (p, "roof") < min("distance"(p, "facade"), 1) $
+Finally, I tried to classify the points based on distances to the @3dbag with 3 classes (roof, facade and other) with roof being assigned to the point $p$ if $ "distance" (p, "roof") < min("distance"(p, "facade"), 1) $
 This is possible because each polygon in the @3dbag buildings is classified as either roof, wall, or ground surface.
 This gave the results shown in @fig:ahn-3dbag-classification.
 This shows that this method is promising to automatically produce a training dataset, and it also raises a few caveats:
@@ -406,9 +408,17 @@ This shows that this method is promising to automatically produce a training dat
   columns: (1fr, 1fr),
   caption: [Experiment with classifying @ahn 4 points into façade, roof and other from @3dbag buildings in @lod 2.2.],
   label: <fig:ahn-3dbag-classification>,
+  placement: auto,
 )
 
-
+Currently, I am working on automating this process with @cpp and @cgal, in order to actually build a large enough dataset.
+The process will be:
++ Download the @3dbag and @ahn for a region
++ Separate the roof, façade and floor from the @3dbag
++ Extract the points classified as "Building" or "No classification" in the @ahn
++ Extend the polygons of the roofs downwards by a fixed amount to be determined
++ Compute for each point its distance to the roofs and to the façades
++ Classify the points based these distances
 
 #set page(flipped: true)
 

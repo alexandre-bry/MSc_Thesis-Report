@@ -1,4 +1,4 @@
-#import "@preview/glossy:0.8.0": *
+#import "@preview/glossy:0.9.0": *
 
 #let my-theme = (
   section: (title, body) => {
@@ -40,13 +40,14 @@
             columns: (6fr, 1fr),
             align: (left, right),
             gutter: 1em,
-            [#short-display#long-display#description#entry.label], text(fill: rgb("#666666"), entry.pages),
+            [#short-display#long-display#description#entry.label], text(fill: rgb("#666666"), entry.pages.join(", ")),
           )
         },
       ),
     )
   },
 )
+
 
 #glossary(
   title: "Glossary",
