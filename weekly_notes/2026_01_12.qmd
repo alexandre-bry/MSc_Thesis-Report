@@ -1,0 +1,35 @@
+---
+title: "2026/01/12"
+date: 2026-01-12
+tags: [weekly]
+meeting: [Hugo Ledoux]
+---
+
+## Previous weeks
+
+- DAIC is out of maintenance and I could check that I have access.
+- Idea: use the directions of edges of the existing footprints/roofprints as likely first good guesses
+- Wrote the "Project Proposal"
+- Started working with CGAL on extending roof planes and computing distance from point cloud to buildings
+
+## Discussion
+
+- We discussed things to add/modify in the "Project Proposal"
+- If datasets are too dense, it could be possible to reduce the density by simply picking every n-th point and the distribution will be fine if the order is the original one
+- We could produce fake ground-truth data by simulating LiDAR on top of LoD 2.3 buildings, with tools like [helios](https://github.com/3dgeo-heidelberg/helios) or equivalents at the IGN, which could be useful for results assessment
+
+## Next week
+
+- [ ] Things to add to the "Project Proposal":
+    - [x] Roof overhangs are the distinction between LoD 2.2 and 2.3
+    - [ ] Add images and tables for the datasets mentioned in the literature review
+    - [x] Modify the research question:
+        - Talk about characteristics instead of situation
+        - Be more progressive (less binary)
+        - Mention outlines as a possibility, and add a sub-question about it
+    - [x] Mention that we could use existing outlines which provide information about the shape, the distances and the angles, even if they are translated
+    - [x] Add a subtitle
+    - [x] Talk about what I am currently working on.
+    - [ ] Add an illustration for footprint and roofprint
+- [ ] Look for data about roof overhangs in general in France, in the Netherlands and more generally in Europe.
+  This could be data about actual buildings, guidelines for the construction of buildings, or anything else.
