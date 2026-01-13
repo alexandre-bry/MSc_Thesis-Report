@@ -14,6 +14,8 @@ website:
     left:
       - text: "Weekly Meetings"
         href: weekly_notes/index.qmd
+      - text: "Reports"
+        href: reports/index.qmd
     tools:
       - icon: github
         href: https://github.com/alexandre-bry/MSc_Thesis-Report
@@ -24,6 +26,11 @@ website:
       contents: 
         - weekly_notes/index.qmd
         - auto: "weekly_notes/*"
+    - title: "Reports"
+      style: "docked"
+      contents:
+        - reports/index.qmd
+        - reports/Project_proposal.qmd
 
   back-to-top-navigation: true
   page-navigation: true
@@ -44,6 +51,8 @@ format:
     css: styles.css
     toc: true
     toc-location: right
+    link-external-icon: true
+
 
 
 

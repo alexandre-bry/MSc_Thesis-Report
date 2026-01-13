@@ -4,3 +4,4 @@ references/**.pdf
 **/*.quarto_ipynb
 index_files/
 _site/
+**/.DS_Store
