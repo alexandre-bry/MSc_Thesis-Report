@@ -11,229 +11,47 @@
     ]
   },
   {
-    "objectID": "weekly_notes/index.html",
-    "href": "weekly_notes/index.html",
-    "title": "Weekly Meetings",
+    "objectID": "weekly_notes/2026_01_12.html",
+    "href": "weekly_notes/2026_01_12.html",
+    "title": "2026/01/12",
     "section": "",
-    "text": "This section contains all the weekly notes of the project. These notes include for each week:\n\nA summary of the work done during the previous week,\nA summary of the weekly discussion that happened with the supervisors,\nA summary of the tasks planned to be done for the week.\n\n\n\n\n Back to top",
-    "crumbs": [
-      "Weekly Meetings"
-    ]
-  },
-  {
-    "objectID": "weekly_notes/2025_12_08.html",
-    "href": "weekly_notes/2025_12_08.html",
-    "title": "2025/12/08",
-    "section": "",
-    "text": "Looked at the metadata of BD TOPO:\n\nThere are a few interesting attributes, including the source of the polygon, which can be either aerial imagery or cadastre (terrain measures) with a horizontal precision of respectively 2.5 m and 3 m, and a vertical precision of respectively 1.5 m and 2.5 m\nThere is a lot more metadata describing the attributes and how they were computed (especially the height for buildings), so that is not the problem\n\nLooked at the LIDARHD dataset:\n\nNot aligned with the BD TOPO, which is a problem (due to the low precision of the BD TOPO)\nSimilar to AHN latest versions so AHN could be used to help with similar point clouds but better linked datasets\n\nStudied the difference between BAG and BGT, but sadly it seems that the BGT is mostly based on the BAG, meaning that we cannot find roof overhangs by comparing the two. The BGT adds a few more elements to buildings like balconies and awnings.\n\n\n\n\n\n\n\n\n\nFirst example of misalignment with the LIDAR HD.\n\n\n\n\n\n\n\nFirst example of misalignment with the BD ORTHO.\n\n\n\n\n\n\n\n\n\nSecond example of misalignment with the LIDAR HD.\n\n\n\n\n\n\n\nSecond example of misalignment with the BD ORTHO.\n\n\n\n\n\n\nFigure 1: Two examples of the misalignment of BD TOPO with other data.",
+    "text": "DAIC is out of maintenance and I could check that I have access.\nIdea: use the directions of edges of the existing footprints/roofprints as likely first good guesses\nWrote the “Project Proposal”\nStarted working with CGAL on extending roof planes and computing distance from point cloud to buildings",
     "crumbs": [
       "Weekly Meetings",
-      "2025/12/08"
+      "2026/01/12"
     ]
   },
   {
-    "objectID": "weekly_notes/2025_12_08.html#previous-week",
-    "href": "weekly_notes/2025_12_08.html#previous-week",
-    "title": "2025/12/08",
+    "objectID": "weekly_notes/2026_01_12.html#previous-weeks",
+    "href": "weekly_notes/2026_01_12.html#previous-weeks",
+    "title": "2026/01/12",
     "section": "",
-    "text": "Looked at the metadata of BD TOPO:\n\nThere are a few interesting attributes, including the source of the polygon, which can be either aerial imagery or cadastre (terrain measures) with a horizontal precision of respectively 2.5 m and 3 m, and a vertical precision of respectively 1.5 m and 2.5 m\nThere is a lot more metadata describing the attributes and how they were computed (especially the height for buildings), so that is not the problem\n\nLooked at the LIDARHD dataset:\n\nNot aligned with the BD TOPO, which is a problem (due to the low precision of the BD TOPO)\nSimilar to AHN latest versions so AHN could be used to help with similar point clouds but better linked datasets\n\nStudied the difference between BAG and BGT, but sadly it seems that the BGT is mostly based on the BAG, meaning that we cannot find roof overhangs by comparing the two. The BGT adds a few more elements to buildings like balconies and awnings.\n\n\n\n\n\n\n\n\n\nFirst example of misalignment with the LIDAR HD.\n\n\n\n\n\n\n\nFirst example of misalignment with the BD ORTHO.\n\n\n\n\n\n\n\n\n\nSecond example of misalignment with the LIDAR HD.\n\n\n\n\n\n\n\nSecond example of misalignment with the BD ORTHO.\n\n\n\n\n\n\nFigure 1: Two examples of the misalignment of BD TOPO with other data.",
+    "text": "DAIC is out of maintenance and I could check that I have access.\nIdea: use the directions of edges of the existing footprints/roofprints as likely first good guesses\nWrote the “Project Proposal”\nStarted working with CGAL on extending roof planes and computing distance from point cloud to buildings",
     "crumbs": [
       "Weekly Meetings",
-      "2025/12/08"
+      "2026/01/12"
     ]
   },
   {
-    "objectID": "weekly_notes/2025_12_08.html#discussion",
-    "href": "weekly_notes/2025_12_08.html#discussion",
-    "title": "2025/12/08",
+    "objectID": "weekly_notes/2026_01_12.html#discussion",
+    "href": "weekly_notes/2026_01_12.html#discussion",
+    "title": "2026/01/12",
     "section": "Discussion",
-    "text": "Discussion\n\nBalconies and awnings aren’t really a focus of the project so the small differences between BAG and BGT are not really of use to us.\nAccording to Bruno there hasn’t been yet any ML model outputting polygons that gave convincing and robust results, so this solution doesn’t seem to be a good bet, and computing a robust geometric solution at the end to compute the polygons seems more promising. I can still try to look at a few papers.",
+    "text": "Discussion\n\nWe discussed things to add/modify in the “Project Proposal”\nIf datasets are too dense, it could be possible to reduce the density by simply picking every n-th point and the distribution will be fine if the order is the original one\nWe could produce fake ground-truth data by simulating LiDAR on top of LoD 2.3 buildings, with tools like helios or equivalents at the IGN, which could be useful for results assessment",
     "crumbs": [
       "Weekly Meetings",
-      "2025/12/08"
+      "2026/01/12"
     ]
   },
   {
-    "objectID": "weekly_notes/2025_12_08.html#next-week",
-    "href": "weekly_notes/2025_12_08.html#next-week",
-    "title": "2025/12/08",
+    "objectID": "weekly_notes/2026_01_12.html#next-week",
+    "href": "weekly_notes/2026_01_12.html#next-week",
+    "title": "2026/01/12",
     "section": "Next week",
-    "text": "Next week\n\nMove the notes and structure them in the current repository to keep track of the progress and share it more easily\nStart documenting decisions and good examples that could be useful later for the report\nTry to get access to a computing cluster:\n\nfrom the IGN: Jean Zay (ask Mathieu Brédif)\nfrom TU Delft: DelftBlue or DAIC (ask Gina Stravopoulou et Hugo Ledoux)\n\nExplore whether classifying the AHN between roofs and façades using the reconstructed building of the 3DBAG could be possible (see this paper about generating such a dataset programmatically)\nLook at one of the algorithms used by the IGN to classify the LIDAR HD\nLook at this paper that tried to get a polygonal footprint output from a ML model",
+    "text": "Next week\n\nThings to add to the “Project Proposal”:\n\nRoof overhangs are the distinction between LoD 2.2 and 2.3\nAdd images and tables for the datasets mentioned in the literature review\nModify the research question:\n\nTalk about characteristics instead of situation\nBe more progressive (less binary)\nMention outlines as a possibility, and add a sub-question about it\n\nMention that we could use existing outlines which provide information about the shape, the distances and the angles, even if they are translated\nAdd a subtitle\nTalk about what I am currently working on.\nAdd an illustration for footprint and roofprint\n\nLook for data about roof overhangs in general in France, in the Netherlands and more generally in Europe. This could be data about actual buildings, guidelines for the construction of buildings, or anything else.",
     "crumbs": [
       "Weekly Meetings",
-      "2025/12/08"
-    ]
-  },
-  {
-    "objectID": "weekly_notes/2025_11_24.html",
-    "href": "weekly_notes/2025_11_24.html",
-    "title": "2025/11/24",
-    "section": "",
-    "text": "Looked at more articles about roofprint / footprint from LiDAR\nThe keywords footprint and roofprint don’t seem really popular, but there are much more articles talking about “outline”, which in the case of aerial data seems to mean footprint\nLooked at a few articles about point cloud semantic segmentation",
-    "crumbs": [
-      "Weekly Meetings",
-      "2025/11/24"
-    ]
-  },
-  {
-    "objectID": "weekly_notes/2025_11_24.html#previous-week",
-    "href": "weekly_notes/2025_11_24.html#previous-week",
-    "title": "2025/11/24",
-    "section": "",
-    "text": "Looked at more articles about roofprint / footprint from LiDAR\nThe keywords footprint and roofprint don’t seem really popular, but there are much more articles talking about “outline”, which in the case of aerial data seems to mean footprint\nLooked at a few articles about point cloud semantic segmentation",
-    "crumbs": [
-      "Weekly Meetings",
-      "2025/11/24"
-    ]
-  },
-  {
-    "objectID": "weekly_notes/2025_11_24.html#discussion",
-    "href": "weekly_notes/2025_11_24.html#discussion",
-    "title": "2025/11/24",
-    "section": "Discussion",
-    "text": "Discussion\n\nBeing able to use the direction of the LiDAR scan could be an interesting topic",
-    "crumbs": [
-      "Weekly Meetings",
-      "2025/11/24"
-    ]
-  },
-  {
-    "objectID": "weekly_notes/2025_11_24.html#next-week",
-    "href": "weekly_notes/2025_11_24.html#next-week",
-    "title": "2025/11/24",
-    "section": "Next week",
-    "text": "Next week\n\nLook at other papers:\n\nSemantic3D\nTail distribution classification\nBird’s eye view, projection for classification\nProcess point clouds in 2D: https://arxiv.org/abs/1905.08748",
-    "crumbs": [
-      "Weekly Meetings",
-      "2025/11/24"
-    ]
-  },
-  {
-    "objectID": "weekly_notes/2025_11_10.html",
-    "href": "weekly_notes/2025_11_10.html",
-    "title": "2025/11/10",
-    "section": "",
-    "text": "At least a full week on literature review would be beneficial\nJabRef can be a great tool",
-    "crumbs": [
-      "Weekly Meetings",
-      "2025/11/10"
-    ]
-  },
-  {
-    "objectID": "weekly_notes/2025_11_10.html#discussion",
-    "href": "weekly_notes/2025_11_10.html#discussion",
-    "title": "2025/11/10",
-    "section": "",
-    "text": "At least a full week on literature review would be beneficial\nJabRef can be a great tool",
-    "crumbs": [
-      "Weekly Meetings",
-      "2025/11/10"
-    ]
-  },
-  {
-    "objectID": "weekly_notes/2025_11_10.html#next-week",
-    "href": "weekly_notes/2025_11_10.html#next-week",
-    "title": "2025/11/10",
-    "section": "Next week",
-    "text": "Next week\n\nLook for:\n\nRoofprint / footprint differentiation (probably not much)\nExtraction of roofprint / footprint from point clouds\nPoint cloud semantic segmentation\n\nFor the literature review:\n\n&lt;perplexity.ai&gt; can be great to start\nThen use internet, especially Google Scholar is nice\nLook for new articles by searching for articles that cite interesting articles or were cited by interesting articles\nWrite a small summary of every article I read with the things to remember, even if I don’t understand anything\nTry to structure / categorise the methods I find",
-    "crumbs": [
-      "Weekly Meetings",
-      "2025/11/10"
-    ]
-  },
-  {
-    "objectID": "index.html",
-    "href": "index.html",
-    "title": "MSc Thesis - Website",
-    "section": "",
-    "text": "This website contains the notes and reports of my MSc Thesis with TU Delft and the IGN (Institut national de l’information géographique et forestière) from November 2025 to June 2026.\n\n\n\n Back to top"
-  },
-  {
-    "objectID": "weekly_notes/2025_11_17.html",
-    "href": "weekly_notes/2025_11_17.html",
-    "title": "2025/11/17",
-    "section": "",
-    "text": "Looked for articles about roofprint / footprint differentiation but didn’t really find anything\nStarted looking at a few articles about roofprint / footprint from LiDAR",
-    "crumbs": [
-      "Weekly Meetings",
-      "2025/11/17"
-    ]
-  },
-  {
-    "objectID": "weekly_notes/2025_11_17.html#previous-week",
-    "href": "weekly_notes/2025_11_17.html#previous-week",
-    "title": "2025/11/17",
-    "section": "",
-    "text": "Looked for articles about roofprint / footprint differentiation but didn’t really find anything\nStarted looking at a few articles about roofprint / footprint from LiDAR",
-    "crumbs": [
-      "Weekly Meetings",
-      "2025/11/17"
-    ]
-  },
-  {
-    "objectID": "weekly_notes/2025_11_17.html#discussion",
-    "href": "weekly_notes/2025_11_17.html#discussion",
-    "title": "2025/11/17",
-    "section": "Discussion",
-    "text": "Discussion\n\nLiDARHD of IGN is already classified but there is no separation of façades and roofs\nBAG + BGT + AHN4 could maybe be used to train a model\nCloudCompare is nice to visualise point clouds",
-    "crumbs": [
-      "Weekly Meetings",
-      "2025/11/17"
-    ]
-  },
-  {
-    "objectID": "weekly_notes/2025_11_17.html#next-week",
-    "href": "weekly_notes/2025_11_17.html#next-week",
-    "title": "2025/11/17",
-    "section": "Next week",
-    "text": "Next week\n\nLook for articles about point cloud classification, especially roof/façades, because façades are not classified by default and are a rare class (tail distribution)\nLook at point cloud semantic segmentation methods:\n\nKPConv\nMinkowskiNet\nPointTransformer",
-    "crumbs": [
-      "Weekly Meetings",
-      "2025/11/17"
-    ]
-  },
-  {
-    "objectID": "weekly_notes/2025_12_01.html",
-    "href": "weekly_notes/2025_12_01.html",
-    "title": "2025/12/01",
-    "section": "",
-    "text": "Looked at more articles about point cloud semantic segmentation:\n\nMany different methods, but none gives perfect results yet, especially on rare classes\n\nLooked for datasets of ALS semantic segmentation which differentiate façades and roofs, and found mainly two: the Vaihingen dataset and the DublinCity dataset (which has a very dense point cloud)",
-    "crumbs": [
-      "Weekly Meetings",
-      "2025/12/01"
-    ]
-  },
-  {
-    "objectID": "weekly_notes/2025_12_01.html#previous-week",
-    "href": "weekly_notes/2025_12_01.html#previous-week",
-    "title": "2025/12/01",
-    "section": "",
-    "text": "Looked at more articles about point cloud semantic segmentation:\n\nMany different methods, but none gives perfect results yet, especially on rare classes\n\nLooked for datasets of ALS semantic segmentation which differentiate façades and roofs, and found mainly two: the Vaihingen dataset and the DublinCity dataset (which has a very dense point cloud)",
-    "crumbs": [
-      "Weekly Meetings",
-      "2025/12/01"
-    ]
-  },
-  {
-    "objectID": "weekly_notes/2025_12_01.html#discussion",
-    "href": "weekly_notes/2025_12_01.html#discussion",
-    "title": "2025/12/01",
-    "section": "Discussion",
-    "text": "Discussion\n\nClarification of the goal: the objective in the best situation would be to compute new footprints and roofprints using the LIDAR HD dataset, and if possible, to integrate the old footprints/roofprints in the process to improve the results\nIf we want to train a ML model, it is unclear where the data could come from\nSimply tweaking the weights of the loss to put more weight on the classes of interest (façades and roofs) will probably not have any significant impact on the results, and this is why looking into imbalanced datasets training is important\nBased on the literature review so far, the most interesting approach seems to use ML at least to some extent to classify point clouds",
-    "crumbs": [
-      "Weekly Meetings",
-      "2025/12/01"
-    ]
-  },
-  {
-    "objectID": "weekly_notes/2025_12_01.html#next-week",
-    "href": "weekly_notes/2025_12_01.html#next-week",
-    "title": "2025/12/01",
-    "section": "Next week",
-    "text": "Next week\n\nExplore the metadata of the BD TOPO\nExplore the LIDAR HD dataset\nRead articles about tail distribution / imbalanced point clouds semantic segmentation\nTry to train KPConv on the Vaihingen dataset",
-    "crumbs": [
-      "Weekly Meetings",
-      "2025/12/01"
+      "2026/01/12"
     ]
   },
   {
@@ -281,47 +99,284 @@
     ]
   },
   {
-    "objectID": "weekly_notes/2026_01_12.html",
-    "href": "weekly_notes/2026_01_12.html",
-    "title": "2026/01/12",
+    "objectID": "weekly_notes/2025_12_01.html",
+    "href": "weekly_notes/2025_12_01.html",
+    "title": "2025/12/01",
     "section": "",
-    "text": "DAIC is out of maintenance and I could check that I have access.\nIdea: use the directions of edges of the existing footprints/roofprints as likely first good guesses\nWrote the “Project Proposal”\nStarted working with CGAL on extending roof planes and computing distance from point cloud to buildings",
+    "text": "Looked at more articles about point cloud semantic segmentation:\n\nMany different methods, but none gives perfect results yet, especially on rare classes\n\nLooked for datasets of ALS semantic segmentation which differentiate façades and roofs, and found mainly two: the Vaihingen dataset and the DublinCity dataset (which has a very dense point cloud)",
     "crumbs": [
       "Weekly Meetings",
-      "2026/01/12"
+      "2025/12/01"
     ]
   },
   {
-    "objectID": "weekly_notes/2026_01_12.html#previous-weeks",
-    "href": "weekly_notes/2026_01_12.html#previous-weeks",
-    "title": "2026/01/12",
+    "objectID": "weekly_notes/2025_12_01.html#previous-week",
+    "href": "weekly_notes/2025_12_01.html#previous-week",
+    "title": "2025/12/01",
     "section": "",
-    "text": "DAIC is out of maintenance and I could check that I have access.\nIdea: use the directions of edges of the existing footprints/roofprints as likely first good guesses\nWrote the “Project Proposal”\nStarted working with CGAL on extending roof planes and computing distance from point cloud to buildings",
+    "text": "Looked at more articles about point cloud semantic segmentation:\n\nMany different methods, but none gives perfect results yet, especially on rare classes\n\nLooked for datasets of ALS semantic segmentation which differentiate façades and roofs, and found mainly two: the Vaihingen dataset and the DublinCity dataset (which has a very dense point cloud)",
     "crumbs": [
       "Weekly Meetings",
-      "2026/01/12"
+      "2025/12/01"
     ]
   },
   {
-    "objectID": "weekly_notes/2026_01_12.html#discussion",
-    "href": "weekly_notes/2026_01_12.html#discussion",
-    "title": "2026/01/12",
+    "objectID": "weekly_notes/2025_12_01.html#discussion",
+    "href": "weekly_notes/2025_12_01.html#discussion",
+    "title": "2025/12/01",
     "section": "Discussion",
-    "text": "Discussion\n\nWe discussed things to add/modify in the “Project Proposal”\nIf datasets are too dense, it could be possible to reduce the density by simply picking every n-th point and the distribution will be fine if the order is the original one\nWe could produce fake ground-truth data by simulating LiDAR on top of LoD 2.3 buildings, with tools like helios or equivalents at the IGN, which could be useful for results assessment",
+    "text": "Discussion\n\nClarification of the goal: the objective in the best situation would be to compute new footprints and roofprints using the LIDAR HD dataset, and if possible, to integrate the old footprints/roofprints in the process to improve the results\nIf we want to train a ML model, it is unclear where the data could come from\nSimply tweaking the weights of the loss to put more weight on the classes of interest (façades and roofs) will probably not have any significant impact on the results, and this is why looking into imbalanced datasets training is important\nBased on the literature review so far, the most interesting approach seems to use ML at least to some extent to classify point clouds",
     "crumbs": [
       "Weekly Meetings",
-      "2026/01/12"
+      "2025/12/01"
     ]
   },
   {
-    "objectID": "weekly_notes/2026_01_12.html#next-week",
-    "href": "weekly_notes/2026_01_12.html#next-week",
-    "title": "2026/01/12",
+    "objectID": "weekly_notes/2025_12_01.html#next-week",
+    "href": "weekly_notes/2025_12_01.html#next-week",
+    "title": "2025/12/01",
     "section": "Next week",
-    "text": "Next week\n\nThings to add to the “Project Proposal”:\n\nRoof overhangs are the distinction between LoD 2.2 and 2.3\nAdd images and tables for the datasets mentioned in the literature review\nModify the research question:\n\nTalk about characteristics instead of situation\nBe more progressive (less binary)\nMention outlines as a possibility, and add a sub-question about it\n\nMention that we could use existing outlines which provide information about the shape, the distances and the angles, even if they are translated\nAdd a subtitle\nTalk about what I am currently working on.\nAdd an illustration for footprint and roofprint\n\nLook for data about roof overhangs in general in France, in the Netherlands and more generally in Europe. This could be data about actual buildings, guidelines for the construction of buildings, or anything else.",
+    "text": "Next week\n\nExplore the metadata of the BD TOPO\nExplore the LIDAR HD dataset\nRead articles about tail distribution / imbalanced point clouds semantic segmentation\nTry to train KPConv on the Vaihingen dataset",
     "crumbs": [
       "Weekly Meetings",
-      "2026/01/12"
+      "2025/12/01"
+    ]
+  },
+  {
+    "objectID": "weekly_notes/2025_11_17.html",
+    "href": "weekly_notes/2025_11_17.html",
+    "title": "2025/11/17",
+    "section": "",
+    "text": "Looked for articles about roofprint / footprint differentiation but didn’t really find anything\nStarted looking at a few articles about roofprint / footprint from LiDAR",
+    "crumbs": [
+      "Weekly Meetings",
+      "2025/11/17"
+    ]
+  },
+  {
+    "objectID": "weekly_notes/2025_11_17.html#previous-week",
+    "href": "weekly_notes/2025_11_17.html#previous-week",
+    "title": "2025/11/17",
+    "section": "",
+    "text": "Looked for articles about roofprint / footprint differentiation but didn’t really find anything\nStarted looking at a few articles about roofprint / footprint from LiDAR",
+    "crumbs": [
+      "Weekly Meetings",
+      "2025/11/17"
+    ]
+  },
+  {
+    "objectID": "weekly_notes/2025_11_17.html#discussion",
+    "href": "weekly_notes/2025_11_17.html#discussion",
+    "title": "2025/11/17",
+    "section": "Discussion",
+    "text": "Discussion\n\nLiDARHD of IGN is already classified but there is no separation of façades and roofs\nBAG + BGT + AHN4 could maybe be used to train a model\nCloudCompare is nice to visualise point clouds",
+    "crumbs": [
+      "Weekly Meetings",
+      "2025/11/17"
+    ]
+  },
+  {
+    "objectID": "weekly_notes/2025_11_17.html#next-week",
+    "href": "weekly_notes/2025_11_17.html#next-week",
+    "title": "2025/11/17",
+    "section": "Next week",
+    "text": "Next week\n\nLook for articles about point cloud classification, especially roof/façades, because façades are not classified by default and are a rare class (tail distribution)\nLook at point cloud semantic segmentation methods:\n\nKPConv\nMinkowskiNet\nPointTransformer",
+    "crumbs": [
+      "Weekly Meetings",
+      "2025/11/17"
+    ]
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "MSc Thesis - Website",
+    "section": "",
+    "text": "This website contains the notes and reports of my MSc Thesis with TU Delft and the IGN (Institut national de l’information géographique et forestière) from November 2025 to June 2026.\n\n\n\n Back to top"
+  },
+  {
+    "objectID": "weekly_notes/2025_11_10.html",
+    "href": "weekly_notes/2025_11_10.html",
+    "title": "2025/11/10",
+    "section": "",
+    "text": "At least a full week on literature review would be beneficial\nJabRef can be a great tool",
+    "crumbs": [
+      "Weekly Meetings",
+      "2025/11/10"
+    ]
+  },
+  {
+    "objectID": "weekly_notes/2025_11_10.html#discussion",
+    "href": "weekly_notes/2025_11_10.html#discussion",
+    "title": "2025/11/10",
+    "section": "",
+    "text": "At least a full week on literature review would be beneficial\nJabRef can be a great tool",
+    "crumbs": [
+      "Weekly Meetings",
+      "2025/11/10"
+    ]
+  },
+  {
+    "objectID": "weekly_notes/2025_11_10.html#next-week",
+    "href": "weekly_notes/2025_11_10.html#next-week",
+    "title": "2025/11/10",
+    "section": "Next week",
+    "text": "Next week\n\nLook for:\n\nRoofprint / footprint differentiation (probably not much)\nExtraction of roofprint / footprint from point clouds\nPoint cloud semantic segmentation\n\nFor the literature review:\n\nperplexity.ai can be great to start\nThen use internet, especially Google Scholar is nice\nLook for new articles by searching for articles that cite interesting articles or were cited by interesting articles\nWrite a small summary of every article I read with the things to remember, even if I don’t understand anything\nTry to structure / categorise the methods I find",
+    "crumbs": [
+      "Weekly Meetings",
+      "2025/11/10"
+    ]
+  },
+  {
+    "objectID": "weekly_notes/2025_11_24.html",
+    "href": "weekly_notes/2025_11_24.html",
+    "title": "2025/11/24",
+    "section": "",
+    "text": "Looked at more articles about roofprint / footprint from LiDAR\nThe keywords footprint and roofprint don’t seem really popular, but there are much more articles talking about “outline”, which in the case of aerial data seems to mean footprint\nLooked at a few articles about point cloud semantic segmentation",
+    "crumbs": [
+      "Weekly Meetings",
+      "2025/11/24"
+    ]
+  },
+  {
+    "objectID": "weekly_notes/2025_11_24.html#previous-week",
+    "href": "weekly_notes/2025_11_24.html#previous-week",
+    "title": "2025/11/24",
+    "section": "",
+    "text": "Looked at more articles about roofprint / footprint from LiDAR\nThe keywords footprint and roofprint don’t seem really popular, but there are much more articles talking about “outline”, which in the case of aerial data seems to mean footprint\nLooked at a few articles about point cloud semantic segmentation",
+    "crumbs": [
+      "Weekly Meetings",
+      "2025/11/24"
+    ]
+  },
+  {
+    "objectID": "weekly_notes/2025_11_24.html#discussion",
+    "href": "weekly_notes/2025_11_24.html#discussion",
+    "title": "2025/11/24",
+    "section": "Discussion",
+    "text": "Discussion\n\nBeing able to use the direction of the LiDAR scan could be an interesting topic",
+    "crumbs": [
+      "Weekly Meetings",
+      "2025/11/24"
+    ]
+  },
+  {
+    "objectID": "weekly_notes/2025_11_24.html#next-week",
+    "href": "weekly_notes/2025_11_24.html#next-week",
+    "title": "2025/11/24",
+    "section": "Next week",
+    "text": "Next week\n\nLook at other papers:\n\nSemantic3D\nTail distribution classification\nBird’s eye view, projection for classification\nProcess point clouds in 2D: https://arxiv.org/abs/1905.08748",
+    "crumbs": [
+      "Weekly Meetings",
+      "2025/11/24"
+    ]
+  },
+  {
+    "objectID": "weekly_notes/2025_12_08.html",
+    "href": "weekly_notes/2025_12_08.html",
+    "title": "2025/12/08",
+    "section": "",
+    "text": "Looked at the metadata of BD TOPO:\n\nThere are a few interesting attributes, including the source of the polygon, which can be either aerial imagery or cadastre (terrain measures) with a horizontal precision of respectively 2.5 m and 3 m, and a vertical precision of respectively 1.5 m and 2.5 m\nThere is a lot more metadata describing the attributes and how they were computed (especially the height for buildings), so that is not the problem\n\nLooked at the LIDARHD dataset:\n\nNot aligned with the BD TOPO, which is a problem (due to the low precision of the BD TOPO)\nSimilar to AHN latest versions so AHN could be used to help with similar point clouds but better linked datasets\n\nStudied the difference between BAG and BGT, but sadly it seems that the BGT is mostly based on the BAG, meaning that we cannot find roof overhangs by comparing the two. The BGT adds a few more elements to buildings like balconies and awnings.\n\n\n\n\n\n\n\n\n\nFirst example of misalignment with the LIDAR HD.\n\n\n\n\n\n\n\nFirst example of misalignment with the BD ORTHO.\n\n\n\n\n\n\n\n\n\nSecond example of misalignment with the LIDAR HD.\n\n\n\n\n\n\n\nSecond example of misalignment with the BD ORTHO.\n\n\n\n\n\n\nFigure 1: Two examples of the misalignment of BD TOPO with other data.",
+    "crumbs": [
+      "Weekly Meetings",
+      "2025/12/08"
+    ]
+  },
+  {
+    "objectID": "weekly_notes/2025_12_08.html#previous-week",
+    "href": "weekly_notes/2025_12_08.html#previous-week",
+    "title": "2025/12/08",
+    "section": "",
+    "text": "Looked at the metadata of BD TOPO:\n\nThere are a few interesting attributes, including the source of the polygon, which can be either aerial imagery or cadastre (terrain measures) with a horizontal precision of respectively 2.5 m and 3 m, and a vertical precision of respectively 1.5 m and 2.5 m\nThere is a lot more metadata describing the attributes and how they were computed (especially the height for buildings), so that is not the problem\n\nLooked at the LIDARHD dataset:\n\nNot aligned with the BD TOPO, which is a problem (due to the low precision of the BD TOPO)\nSimilar to AHN latest versions so AHN could be used to help with similar point clouds but better linked datasets\n\nStudied the difference between BAG and BGT, but sadly it seems that the BGT is mostly based on the BAG, meaning that we cannot find roof overhangs by comparing the two. The BGT adds a few more elements to buildings like balconies and awnings.\n\n\n\n\n\n\n\n\n\nFirst example of misalignment with the LIDAR HD.\n\n\n\n\n\n\n\nFirst example of misalignment with the BD ORTHO.\n\n\n\n\n\n\n\n\n\nSecond example of misalignment with the LIDAR HD.\n\n\n\n\n\n\n\nSecond example of misalignment with the BD ORTHO.\n\n\n\n\n\n\nFigure 1: Two examples of the misalignment of BD TOPO with other data.",
+    "crumbs": [
+      "Weekly Meetings",
+      "2025/12/08"
+    ]
+  },
+  {
+    "objectID": "weekly_notes/2025_12_08.html#discussion",
+    "href": "weekly_notes/2025_12_08.html#discussion",
+    "title": "2025/12/08",
+    "section": "Discussion",
+    "text": "Discussion\n\nBalconies and awnings aren’t really a focus of the project so the small differences between BAG and BGT are not really of use to us.\nAccording to Bruno there hasn’t been yet any ML model outputting polygons that gave convincing and robust results, so this solution doesn’t seem to be a good bet, and computing a robust geometric solution at the end to compute the polygons seems more promising. I can still try to look at a few papers.",
+    "crumbs": [
+      "Weekly Meetings",
+      "2025/12/08"
+    ]
+  },
+  {
+    "objectID": "weekly_notes/2025_12_08.html#next-week",
+    "href": "weekly_notes/2025_12_08.html#next-week",
+    "title": "2025/12/08",
+    "section": "Next week",
+    "text": "Next week\n\nMove the notes and structure them in the current repository to keep track of the progress and share it more easily\nStart documenting decisions and good examples that could be useful later for the report\nTry to get access to a computing cluster:\n\nfrom the IGN: Jean Zay (ask Mathieu Brédif)\nfrom TU Delft: DelftBlue or DAIC (ask Gina Stravopoulou et Hugo Ledoux)\n\nExplore whether classifying the AHN between roofs and façades using the reconstructed building of the 3DBAG could be possible (see this paper about generating such a dataset programmatically)\nLook at one of the algorithms used by the IGN to classify the LIDAR HD\nLook at this paper that tried to get a polygonal footprint output from a ML model",
+    "crumbs": [
+      "Weekly Meetings",
+      "2025/12/08"
+    ]
+  },
+  {
+    "objectID": "weekly_notes/index.html",
+    "href": "weekly_notes/index.html",
+    "title": "Weekly Meetings",
+    "section": "",
+    "text": "This section contains all the weekly notes of the project. These notes include for each week:\n\nA summary of the work done during the previous week,\nA summary of the weekly discussion that happened with the supervisors,\nA summary of the tasks planned to be done for the week.\n\n\n\n\n Back to top",
+    "crumbs": [
+      "Weekly Meetings"
+    ]
+  },
+  {
+    "objectID": "weekly_notes/2026_01_19.html",
+    "href": "weekly_notes/2026_01_19.html",
+    "title": "2026/01/19",
+    "section": "",
+    "text": "Improved the project proposal based on the feedback, and put it on this website there\nLooked in more details into the definitions of footprint and roofprint",
+    "crumbs": [
+      "Weekly Meetings",
+      "2026/01/19"
+    ]
+  },
+  {
+    "objectID": "weekly_notes/2026_01_19.html#previous-week-results",
+    "href": "weekly_notes/2026_01_19.html#previous-week-results",
+    "title": "2026/01/19",
+    "section": "",
+    "text": "Improved the project proposal based on the feedback, and put it on this website there\nLooked in more details into the definitions of footprint and roofprint",
+    "crumbs": [
+      "Weekly Meetings",
+      "2026/01/19"
+    ]
+  },
+  {
+    "objectID": "weekly_notes/2026_01_19.html#material-for-discussion",
+    "href": "weekly_notes/2026_01_19.html#material-for-discussion",
+    "title": "2026/01/19",
+    "section": "Material for discussion",
+    "text": "Material for discussion\n\nDefinitions of footprints and roofprints\nHow could we define the footprints and roofprints more precisely? Here are some examples of buildings where defining them is not easy:\n\n\n\n\n\n\n\n\n3D model from Sketchfab\n\n\n\n\n\n\n\n3D model from Sketchfab\n\n\n\n\n\n\n\n\n\n3D model from Sketchfab\n\n\n\n\n\n\n\n3D model from Sketchfab\n\n\n\n\n\n\n\n\n\n3D model from Sketchfab\n\n\n\n\n\n\n\n3D model from Sketchfab\n\n\n\n\n\n\nFigure 1: Several models of realistic buildings where the roofprint and footprint are harder to define.\n\n\n\n\nIn BD TOPO, the definitions are the following.\n\nFor the buildings coming from the BD PARCELLAIRE:\n\nLa forme du contour est prise au sol. Le polygone est aplati c’est-à-dire que l’on affecte à chaque point du bâtiment unifié la même altitude toit (comme une « boîte à chaussures »). &gt; The shape of the outline is taken from the ground. The polygon is flattened, i.e. each point of the unified building is assigned the same roof height (like a ‘shoebox’).\n\nTranslated to English:\n\nThe shape of the outline is taken from the ground. The polygon is flattened, i.e. each point of the unified building is assigned the same roof height (like a ‘shoebox’).\n\nFor the buildings derived from photogrammetric restitution processes or captured on orthophotography:\n\nContour extérieur du bâtiment tel qu’il apparaît vu d’avion (le plus souvent, ce contour correspond à celui du toit); altitude correspondant à ce contour (généralement l’altitude des gouttières). Seules les cours intérieures de plus de 10 m de large sont représentées par un trou dans la surface bâtie.\n\nTranslated to English:\n\nOuter contour of the building as seen from the air (in most cases, this contour corresponds to the roof); altitude corresponding to this contour (usually the height of the gutters). Only inner courtyards wider than 10 m are represented by a hole in the built-up area.\n\n\nThe Merged Approved Documents (from UK Building Regulations):\n\nDefinition from Approved Document B Volume 2, 2019 edition, page 112\n\nThe footprint of the building is the maximum aggregate plan perimeter found by the vertical projection of any overhanging storey onto a ground storey\n\nApproved Document O, 2021 edition, page 6 mentions that to provide shading in “high risk location”, one solution is using\n\nOverhangs with 50 degrees altitude cut-off on due south-facing façades only\n\n\nINSPIRE D2.8.III.2 Data Specification on Buildings – Technical Guidelines has these examples:\n\n\n\nExample of building footprint and roofprint\n\n\nThis page from Law Insider gathers definitions of building footprints, with the second one being quite detailed:\n\nBuilding footprint means the horizontal area as seen in plan, measured from outside of all exterior walls and supporting columns. It includes dwellings and any area of attached garage that exceeds 200 square feet. It does not include detached garages or carports; accessory structures; trellises; patios; areas of porch, deck, and balcony less than 30 inches from finished grade; cantilevered covers, porches or projections; or ramps and stairways required for access.\n\nAn other different but interesting definition is:\n\nBuilding footprint means the two-dimensional configuration of an existing building’s perimeter boundaries as measured on a horizontal plane at ground level.\n\nor simply:\n\nBuilding footprint means the outline of a building, as measured around its foundation.\n\n\nThese two articles here and there explain that roof overhangs server mainly three purposes: - Protects materials against rain, snow and sunlight - Protects materials against UVs - Prevents overheating in summer The first one also provides a simple way to compute the roof overhang to protect from humidity or sun.\n\n\nA1 presentation\n\nWhat is the focus, the goal of the A1 presentation?\nWho will be there?\nShould I assume everyone read the project proposal?",
+    "crumbs": [
+      "Weekly Meetings",
+      "2026/01/19"
+    ]
+  },
+  {
+    "objectID": "weekly_notes/2026_01_19.html#discussion",
+    "href": "weekly_notes/2026_01_19.html#discussion",
+    "title": "2026/01/19",
+    "section": "Discussion",
+    "text": "Discussion",
+    "crumbs": [
+      "Weekly Meetings",
+      "2026/01/19"
+    ]
+  },
+  {
+    "objectID": "weekly_notes/2026_01_19.html#next-week",
+    "href": "weekly_notes/2026_01_19.html#next-week",
+    "title": "2026/01/19",
+    "section": "Next week",
+    "text": "Next week\n\nPrepare the A1 presentation",
+    "crumbs": [
+      "Weekly Meetings",
+      "2026/01/19"
     ]
   },
   {
