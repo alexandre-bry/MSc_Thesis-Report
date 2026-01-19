@@ -12,8 +12,6 @@ meeting: [Hugo Ledoux, Bruno Vallet]
 
 ## Material for discussion
 
-### Definitions of footprints and roofprints
-
 How could we define the footprints and roofprints more precisely?
 Here are some examples of buildings where defining them is not easy:
 
@@ -90,14 +88,13 @@ These two articles [here](https://www.pathnet.org/sp_id_14037/) and [there](http
     - Prevents overheating in summer
 The first one also provides a simple way to compute the roof overhang to protect from humidity or sun.
 
-### A1 presentation
-
-- What is the focus, the goal of the A1 presentation?
-- Who will be there?
-- Should I assume everyone read the project proposal? 
-
 ## Discussion
 
+- A1 presentation:
+    - What is the focus, the goal of the A1 presentation?
+    - Who will be there?
+    - Should I assume everyone read the project proposal?
+- Next week meeting is not possible for me
 
 
 ## Next week
