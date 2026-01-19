@@ -1,0 +1,105 @@
+---
+title: "2026/01/19"
+date: 2026-01-19
+tags: [weekly]
+meeting: [Hugo Ledoux, Bruno Vallet]
+---
+
+## Previous week results
+
+- Improved the project proposal based on the feedback, and put it on this website [there](../reports/Project_proposal.qmd)
+- Looked in more details into the definitions of footprint and roofprint
+
+## Material for discussion
+
+### Definitions of footprints and roofprints
+
+How could we define the footprints and roofprints more precisely?
+Here are some examples of buildings where defining them is not easy:
+
+::: {#fig-prints-definition layout="[[1,1.24], [1,1.12], [1.72,1]]"}
+
+![3D model from [Sketchfab](https://sketchfab.com/3d-models/haunted-house-f709acd09d9640698bfc5baa14f30fe9)](./2026_01_19/Prints_definitions-Example_1.png){group="prints-definition"}
+
+![3D model from [Sketchfab](https://sketchfab.com/3d-models/farm-house-nyxbdc5QCaccdzIQYaaKv1zxtTb)](./2026_01_19/Prints_definitions-Example_2.png){group="prints-definition"}
+
+![3D model from [Sketchfab](https://sketchfab.com/3d-models/fountains-abbey-house-f01b511fcb8c4570b80bf8e054191f1a)](./2026_01_19/Prints_definitions-Example_3.png){group="prints-definition"}
+
+![3D model from [Sketchfab](https://sketchfab.com/3d-models/fountains-abbey-house-f01b511fcb8c4570b80bf8e054191f1a)](./2026_01_19/Prints_definitions-Example_4.png){group="prints-definition"}
+
+![3D model from [Sketchfab](https://sketchfab.com/3d-models/classic-style-porch-house-without-furniture-df0c68a5e3d74c8393d9a2cd73044a22)](./2026_01_19/Prints_definitions-Example_5.png){group="prints-definition"}
+
+![3D model from [Sketchfab](https://sketchfab.com/3d-models/facade-of-an-art-nouveau-tenement-house-01-04caebf37130491aacbd272962d96ebc)](./2026_01_19/Prints_definitions-Example_6.png){group="prints-definition"}
+
+Several models of realistic buildings where the roofprint and footprint are harder to define.
+:::
+
+- In BD TOPO, the definitions are the following.
+    - For the buildings coming from the BD PARCELLAIRE:
+
+        > La forme du contour est prise au sol.
+        > Le polygone est aplati c’est-à-dire que l’on affecte à chaque point du bâtiment unifié la même altitude toit (comme une « boîte à chaussures »).    > The shape of the outline is taken from the ground.
+        > The polygon is flattened, i.e. each point of the unified building is assigned the same roof height (like a ‘shoebox’).
+
+
+        Translated to English:
+
+        > The shape of the outline is taken from the ground.
+        > The polygon is flattened, i.e. each point of the unified building is assigned the same roof height (like a ‘shoebox’).
+
+    - For the buildings derived from photogrammetric restitution processes or captured on orthophotography:
+
+        > Contour extérieur du bâtiment tel qu’il apparaît vu d’avion (le plus souvent, ce contour correspond à celui du toit); altitude correspondant à ce contour (généralement l’altitude des gouttières).
+        > Seules les cours intérieures de plus de 10 m de large sont représentées par un trou dans la surface bâtie.
+
+        Translated to English:
+
+        > Outer contour of the building as seen from the air (in most cases, this contour corresponds to the roof); altitude corresponding to this contour (usually the height of the gutters).
+        > Only inner courtyards wider than 10 m are represented by a hole in the built-up area.
+- [The Merged Approved Documents](https://www.gov.uk/guidance/building-regulations-and-approved-documents-index#approved-documents) (from UK Building Regulations):
+    - Definition from Approved Document B Volume 2, 2019 edition, page 112
+
+        > The footprint of the building is the maximum aggregate plan perimeter found by the vertical projection of any overhanging storey onto a ground storey
+
+    - Approved Document O, 2021 edition, page 6 mentions that to provide shading in "high risk location", one solution is using
+
+        > Overhangs with 50 degrees altitude cut-off on due south-facing façades only
+
+- INSPIRE [D2.8.III.2 Data Specification on Buildings – Technical Guidelines](https://inspire-mif.github.io/technical-guidelines/data/bu/dataspecification_bu.pdf) has these examples:
+
+    ![Example of building footprint and roofprint](./2026_01_19/Geometric_representations_INSPIRE.png){width=60%}
+
+
+- This [page from Law Insider](https://www.lawinsider.com/dictionary/building-footprint) gathers definitions of building footprints, with the second one being quite detailed: 
+
+    > Building footprint means the horizontal area as seen in plan, measured from outside of all exterior walls and supporting columns.
+    > It includes dwellings and any area of attached garage that exceeds 200 square feet.
+    > It does not include detached garages or carports; accessory structures; trellises; patios; areas of porch, deck, and balcony less than 30 inches from finished grade; cantilevered covers, porches or projections; or ramps and stairways required for access.
+
+    An other different but interesting definition is:
+
+    > Building footprint means the two-dimensional configuration of an existing building's perimeter boundaries as measured on a horizontal plane at ground level.
+
+    or simply:
+
+    > Building footprint means the outline of a building, as measured around its foundation.
+
+These two articles [here](https://www.pathnet.org/sp_id_14037/) and [there](https://spenglerindustries.com/the-importance-of-roof-overhangs-why-german-building-practices-lead-the-way/) explain that roof overhangs server mainly three purposes:
+    - Protects materials against rain, snow and sunlight
+    - Protects materials against UVs
+    - Prevents overheating in summer
+The first one also provides a simple way to compute the roof overhang to protect from humidity or sun.
+
+### A1 presentation
+
+- What is the focus, the goal of the A1 presentation?
+- Who will be there?
+- Should I assume everyone read the project proposal? 
+
+## Discussion
+
+
+
+## Next week
+
+- [ ] Prepare the A1 presentation

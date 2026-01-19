@@ -2,7 +2,7 @@
 title: "2026/01/12"
 date: 2026-01-12
 tags: [weekly]
-meeting: [Hugo Ledoux]
+meeting: [Hugo Ledoux, Bruno Vallet]
 ---
 
 ## Previous weeks
