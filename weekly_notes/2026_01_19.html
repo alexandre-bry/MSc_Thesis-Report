@@ -380,10 +380,10 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#previous-week-results" id="toc-previous-week-results" class="nav-link active" data-scroll-target="#previous-week-results">Previous week results</a></li>
+  <li><a href="#results-since-previous-meeting" id="toc-results-since-previous-meeting" class="nav-link active" data-scroll-target="#results-since-previous-meeting">Results since previous meeting</a></li>
   <li><a href="#material-for-discussion" id="toc-material-for-discussion" class="nav-link" data-scroll-target="#material-for-discussion">Material for discussion</a></li>
   <li><a href="#discussion" id="toc-discussion" class="nav-link" data-scroll-target="#discussion">Discussion</a></li>
-  <li><a href="#next-week" id="toc-next-week" class="nav-link" data-scroll-target="#next-week">Next week</a></li>
+  <li><a href="#work-until-next-meeting" id="toc-work-until-next-meeting" class="nav-link" data-scroll-target="#work-until-next-meeting">Work until next meeting</a></li>
   </ul>
 <div class="toc-actions"><ul><li><a href="https://github.com/alexandre-bry/MSc_Thesis-Report/edit/main/weekly_notes/2026_01_19.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/alexandre-bry/MSc_Thesis-Report/blob/main/weekly_notes/2026_01_19.qmd" class="toc-action"><i class="bi empty"></i>View source</a></li><li><a href="https://github.com/alexandre-bry/MSc_Thesis-Report/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
     </div>
@@ -422,8 +422,8 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<section id="previous-week-results" class="level2">
-<h2 class="anchored" data-anchor-id="previous-week-results">Previous week results</h2>
+<section id="results-since-previous-meeting" class="level2">
+<h2 class="anchored" data-anchor-id="results-since-previous-meeting">Results since previous meeting</h2>
 <ul>
 <li>Improved the project proposal based on the feedback, and put it on this website <a href="../reports/Project_proposal.html">there</a></li>
 <li>Looked in more details into the definitions of footprint and roofprint</li>
@@ -500,7 +500,7 @@ Figure&nbsp;1: Several models of realistic buildings where the roofprint and foo
 <ul>
 <li><p>For the buildings coming from the BD PARCELLAIRE:</p>
 <blockquote class="blockquote">
-<p>La forme du contour est prise au sol. Le polygone est aplati c’est-à-dire que l’on affecte à chaque point du bâtiment unifié la même altitude toit (comme une «&nbsp;boîte à chaussures&nbsp;»). &gt; The shape of the outline is taken from the ground. The polygon is flattened, i.e.&nbsp;each point of the unified building is assigned the same roof height (like a ‘shoebox’).</p>
+<p>La forme du contour est prise au sol. Le polygone est aplati c’est-à-dire que l’on affecte à chaque point du bâtiment unifié la même altitude toit (comme une «&nbsp;boîte à chaussures&nbsp;»).</p>
 </blockquote>
 <p>Translated to English:</p>
 <blockquote class="blockquote">
@@ -551,19 +551,25 @@ Figure&nbsp;1: Several models of realistic buildings where the roofprint and foo
 <section id="discussion" class="level2">
 <h2 class="anchored" data-anchor-id="discussion">Discussion</h2>
 <ul>
-<li>A1 presentation:
-<ul>
-<li>What is the focus, the goal of the A1 presentation?</li>
-<li>Who will be there?</li>
-<li>Should I assume everyone read the project proposal?</li>
-</ul></li>
-<li>Next week meeting is not possible for me</li>
+<li>A1 presentation: 15 min to Hugo, Ravi and Bruno. This doesn’t have to be formal but rather to show that I understand the topic, that it is well-defined, that I know how I am going to tackle it and have expectations about the method and the difficulties. This can be seen more as vulgarization and training for the subsequent presentations.</li>
+<li>The definition of the footprints and roofprints is indeed a difficult topic, especially because most buildings are similar but there will always be exceptions that will break some definitions. For this reason, since the main goal in my case is to be able to add details to some of the buildings with roof overhangs, my definition of footprints and roofprints should be coherent with the way the buildings should be modelled based on them. More specifically, the idea behind footprints is that they can be extruded vertically up to the roof, and in combination with the roofprint and roof planes, we can get an LoD 2.3 model of the building. Therefore, I should define footprints as <strong>the vertical projection of the main façades</strong> of the building. The idea of main façade still needs to be refined and specifically defined, but this captures the idea of what I hope to be able to achieve with the planned methodology.</li>
+<li>Regarding the lack of ground-truths, we discussed how I could generate a fake LoD 2.3 dataset from the LoD 2.2 dataset of the 3DBAG. Then, by simulating a LiDAR point cloud on this data, I would get a full dataset with ground-truths to evaluate the method. This would already be biased because the buildings would be much simpler and closer to the model that real buildings, but this is still interesting.</li>
 </ul>
 </section>
-<section id="next-week" class="level2">
-<h2 class="anchored" data-anchor-id="next-week">Next week</h2>
+<section id="work-until-next-meeting" class="level2">
+<h2 class="anchored" data-anchor-id="work-until-next-meeting">Work until next meeting</h2>
 <ul class="task-list">
 <li><label><input type="checkbox">Prepare the A1 presentation</label></li>
+<li><label><input type="checkbox" checked="">Send an email to get more details about the internship starting at the IGN</label></li>
+<li><label><input type="checkbox">Finalize the algorithm to add roof overhangs to LoD 2.2 buildings of the 3DBAG to classify the AHN 4/5/6:</label>
+<ul class="task-list">
+<li><label><input type="checkbox">Python script to download the AHN 4/5/6 for a given area</label></li>
+<li><label><input type="checkbox">Python script to download the corresponding buildings in the area with a buffer</label></li>
+<li><label><input type="checkbox">Python/C++ script to extract from the CityJSON file all the edges at the boundary between the façades polygons and the roof polygons, as well as the direction of the potential roof overhang</label></li>
+<li><label><input type="checkbox">Python/C++ script to create the roof overhangs in 3D based on the previous input as CityJSON</label></li>
+<li><label><input type="checkbox">Python/C++ script to transform CityJSON into OBJ (not triangulated)</label></li>
+<li><label><input type="checkbox">C++ script to compute the distance of each point to the closest polygon in the roof (including overhangs) and in the façades and use this to classify points with a threshold</label></li>
+</ul></li>
 </ul>
 
 
