@@ -5,7 +5,7 @@ tags: [weekly]
 meeting: [Hugo Ledoux, Bruno Vallet]
 ---
 
-## Previous week results
+## Results since previous meeting
 
 - Improved the project proposal based on the feedback, and put it on this website [there](../reports/Project_proposal.qmd)
 - Looked in more details into the definitions of footprint and roofprint
@@ -36,8 +36,7 @@ Several models of realistic buildings where the roofprint and footprint are hard
     - For the buildings coming from the BD PARCELLAIRE:
 
         > La forme du contour est prise au sol.
-        > Le polygone est aplati c’est-à-dire que l’on affecte à chaque point du bâtiment unifié la même altitude toit (comme une « boîte à chaussures »).    > The shape of the outline is taken from the ground.
-        > The polygon is flattened, i.e. each point of the unified building is assigned the same roof height (like a ‘shoebox’).
+        > Le polygone est aplati c’est-à-dire que l’on affecte à chaque point du bâtiment unifié la même altitude toit (comme une « boîte à chaussures »).
 
 
         Translated to English:
@@ -90,13 +89,26 @@ The first one also provides a simple way to compute the roof overhang to protect
 
 ## Discussion
 
-- A1 presentation:
-    - What is the focus, the goal of the A1 presentation?
-    - Who will be there?
-    - Should I assume everyone read the project proposal?
-- Next week meeting is not possible for me
+- A1 presentation: 15 min to Hugo, Ravi and Bruno.
+    This doesn't have to be formal but rather to show that I understand the topic, that it is well-defined, that I know how I am going to tackle it and have expectations about the method and the difficulties.
+    This can be seen more as vulgarization and training for the subsequent presentations.
+- The definition of the footprints and roofprints is indeed a difficult topic, especially because most buildings are similar but there will always be exceptions that will break some definitions.
+    For this reason, since the main goal in my case is to be able to add details to some of the buildings with roof overhangs, my definition of footprints and roofprints should be coherent with the way the buildings should be modelled based on them.
+    More specifically, the idea behind footprints is that they can be extruded vertically up to the roof, and in combination with the roofprint and roof planes, we can get an LoD 2.3 model of the building.
+    Therefore, I should define footprints as **the vertical projection of the main façades** of the building.
+    The idea of main façade still needs to be refined and specifically defined, but this captures the idea of what I hope to be able to achieve with the planned methodology.
+- Regarding the lack of ground-truths, we discussed how I could generate a fake LoD 2.3 dataset from the LoD 2.2 dataset of the 3DBAG.
+    Then, by simulating a LiDAR point cloud on this data, I would get a full dataset with ground-truths to evaluate the method.
+    This would already be biased because the buildings would be much simpler and closer to the model that real buildings, but this is still interesting.
 
-
-## Next week
+## Work until next meeting
 
 - [ ] Prepare the A1 presentation
+- [x] Send an email to get more details about the internship starting at the IGN
+- [ ] Finalize the algorithm to add roof overhangs to LoD 2.2 buildings of the 3DBAG to classify the AHN 4/5/6:
+    - [ ] Python script to download the AHN 4/5/6 for a given area
+    - [ ] Python script to download the corresponding buildings in the area with a buffer
+    - [ ] Python/C++ script to extract from the CityJSON file all the edges at the boundary between the façades polygons and the roof polygons, as well as the direction of the potential roof overhang
+    - [ ] Python/C++ script to create the roof overhangs in 3D based on the previous input as CityJSON
+    - [ ] Python/C++ script to transform CityJSON into OBJ (not triangulated)
+    - [ ] C++ script to compute the distance of each point to the closest polygon in the roof (including overhangs) and in the façades and use this to classify points with a threshold
