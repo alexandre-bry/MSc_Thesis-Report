@@ -1,0 +1,67 @@
+/* Apply common styles to all content blocks */
+.content-block {
+    padding: 10px;
+    margin: 40px 0 10px 0;
+    border-left: 6px solid;
+    border-radius: 5px;
+}
+
+.content-block p {
+    margin: 0;
+}
+
+/* Style the first child (title) */
+.content-block > :first-child {
+    font-weight: 800;
+    font-style: italic;
+    margin-bottom: 5px;
+}
+
+/* Indent all content except the first child */
+.content-block > :not(:first-child) {
+    padding-left: 30px;
+}
+
+.content-block {
+    background-color: #1e1e1e;
+    border-left-color: #bbbbbb;
+}
+
+.definition-block {
+    background-color: #102b33;
+    border-left-color: #26c6da;
+}
+
+.theorem-block {
+    background-color: #2a1214;
+    border-left-color: #ef5350;
+}
+
+.example-block {
+    background-color: #142a12;
+    border-left-color: #66bb6a;
+}
+
+.remark-block {
+    background-color: #2d2a11;
+    border-left-color: #ffeb3b;
+}
+
+iframe.full {
+    width: 100%;
+    height: 600px;
+}
+
+figcaption,
+p.caption {
+    font-style: italic;
+    text-align: center;
+}
+
+.quarto-figure {
+    margin-bottom: 0 !important;
+}
+
+.reveal .slide figure > figcaption {
+    font-size: 0.7em !important;
+}

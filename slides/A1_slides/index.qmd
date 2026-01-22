@@ -1,0 +1,237 @@
+---
+title: "From Points to Prints"
+subtitle: "Generation of building roofprints and footprints from ALS point clouds"
+---
+
+# Context
+
+## Reconstruction of 3D buildings
+
+::: {.incremental}
+- Many applications of 3D buildings: visualization, simulations, solar potential, etc.
+- Different levels of detail required
+:::
+
+::: {.notes}
+- Visualization -> multiple levels of details for different distances
+- Simulations -> simple models for quicker computations
+- Solar potential -> care about the roofs mostly
+- Tax estimation -> care about the floor space mostly
+:::
+
+## Levels of detail
+
+![Visual example of the refined LoDs for a residential building [@Biljecki2016].](../../images/LoDs_illustration-Filip_Biljecki.jpg){.r-stretch}
+
+::: {.notes}
+- Differentiation between footprints and roofprints is the required step to go from LoD 2.2 to 2.3.
+- Definitions of footprints and roofprints are not always straightforward.
+:::
+
+## 3DBAG example
+
+![Screenshot from the [online viewer of the 3DBAG](https://3dbag.nl/en/viewer?rdx=85202.42204919437&rdy=446838.496813776&ox=-0.00010789974476210773&oy=247.78640814561538&oz=255.13012753776275).](../../images/3DBAG_viewer_screenshot.png){.r-stretch}
+
+::: {.notes}
+Example of a great method to reconstruct 3D buildings in LoD 2.2 using point clouds and roofprints.
+:::
+
+## French context
+
+::: {.incremental}
+- [BD TOPO](https://geoservices.ign.fr/bdtopo): building outlines in France
+- [LiDAR HD](https://www.ign.fr/institut/programme-lidar-hd-vers-une-nouvelle-cartographie-3d-du-territoire): first nationwide ALS LiDAR dataset of France
+- [Jumeau numérique de la France](https://www.ign.fr/institut/un-jumeau-numerique-de-la-france-pour-piloter-la-transition-ecologique): future digital twin of France
+:::
+
+::: {.notes}
+- BD TOPO:
+    - Contains building outlines with poor georeferencing
+- LiDAR HD:
+    - The first project to collect high-density point clouds on the whole territory of France
+    - Similar nature and density to the AHN used for the 3DBAG
+:::
+
+## What about façade points?
+
+::: {.fragment}
+- ALS point clouds give high density of points on roofs and low density on façades
+:::
+
+::: {.fragment style="text-align: center; margin-top: 2em; font-size: 130%;"}
+**_What characteristics of ALS point clouds influence the ability to generate accurate building roofprints and footprints?_**
+:::
+
+::: {.notes}
+- We know that roof points can be used to reconstruct buildings, with a limitation to LoD 2.2
+- Can we use façade points?
+- Sub-questions:
+    - Point cloud acquisition (geometry of the scanning device, trajectory of the flying vehicle)
+    - Differences obtained between footprints and roofprints
+    - Potential usage of existing shifted outlines
+:::
+
+# Definitions
+
+## Building elements
+
+::: {.content-block .definition-block .fragment}
+Roof overhangs (eaves)
+
+The portion of a roof that extends beyond the exterior walls of a building.
+:::
+
+::: {.content-block .definition-block .fragment}
+Roofprint
+
+The vertical projection of all the roof components of a building.
+:::
+
+::: {.content-block .definition-block .fragment}
+Footprint
+
+The vertical projection of the main façades of a building.
+:::
+
+## Illustrations {.scrollable}
+
+::: {#fig-prints-definition layout="[[-0.2, 1, -0.2, 1, -0.2], [-0.2, 1, -0.2, 1, -0.2]]"}
+![3D model from [Sketchfab](https://sketchfab.com/3d-models/haunted-house-f709acd09d9640698bfc5baa14f30fe9).](../../weekly_notes/2026_01_19/Prints_definitions-Example_1.png){group="prints-definition"}
+
+![Footprint and roofprint (before vertical projection).](../../weekly_notes/2026_01_19/Prints_definitions-Example_1-Annotated.png){group="prints-definition"}
+
+![3D model from [Sketchfab](https://sketchfab.com/3d-models/facade-of-an-art-nouveau-tenement-house-01-04caebf37130491aacbd272962d96ebc).](../../weekly_notes/2026_01_19/Prints_definitions-Example_6.png){group="prints-definition"}
+
+![Footprint and roofprint (before vertical projection).](../../weekly_notes/2026_01_19/Prints_definitions-Example_6-Annotated.png){group="prints-definition"}
+
+Examples of footprints (in blue) and roofprints (in red) for complex buildings.
+:::
+
+# Research context
+
+## Roof overhangs
+
+::: {.incremental}
+- Sweeping vertical planes:
+    - Using a 2.5D DSM and a footprint [@Dahlke2015; @Frommholz2017]
+    - Using a point cloud and a roofprint [@Panday2012]
+- Extending the roof planes [@Goebbels2023]
+:::
+
+::: {.notes}
+Describe more precisely
+:::
+
+## Point cloud semantic segmentation
+
+::: {.incremental}
+- Range-images as input [@Biasutti2019; @Xu2020]
+- 3D convolutions (KPConv, PointTransformerv3, etc) [@Thomas2019; @Li2020; @Zhao2020; @Wu2023]
+- Class imbalance [@Li2024; @Pan2025]
+:::
+
+::: {.notes}
+- Range-images:
+    - Represent the 3D points clouds in 2D by looking at them from the viewpoint of the sensor, which often scans point clouds in lines with almost uniform angular steps.
+    - Useful for speed
+- 3D convolutions:
+    - KPConv: weights carried by points correlated with the neighbourhoods
+    - PointTransformer: transformer for points using self-attention
+    - PointTransformerv3: serialization of points with space-filling curves
+- Class imbalance: deal with sparse and inhomogeneous annotations
+:::
+
+## Datasets {.scrollable}
+
+::: {#tbl-datasets style="font-size: 80%"}
+| Name | Number of points | Point density (pts/m²) | Classes for roof/façade | Source | Paper |
+| ------- | ----- | ------ | ---- | ------- | ---------- |
+| H3D | 74M | 800 | Yes | ALS | @Koelle2021 |
+| V3D | 0.78M | 8 | Yes | ALS | @Cramer2010 @Niemeyer2014 |
+| DublinCity | 260M | 348 | Yes | ALS | @Zolanvari2019 |
+| Campus3D | 937.1M |  | Yes | Aerial images | @Li2020a |
+| CENAGIS-ALS | 550M | 275 | Yes | ALS | @Zachar2023 |
+| DALES | 505M | 50 | No | ALS | @Varney2020 |
+| SensatUrban | 2847M |  | No | Aerial images | @Hu2020 |
+| LASDU | 3.12M | 4 | No | ALS | @Ye2020 |
+| TALD | 121M | 12 | No | ALS | @Vijaywargiya2025 |
+| FRACTAL | 9261M | 37 | No | ALS | @Gaydon2024 |
+
+List of point cloud datasets for semantic segmentation of point clouds.
+:::
+
+# Methodology
+
+## Overview
+
+1. Train a machine learning model to isolate roof and façade points
+2. Use the segmented point cloud to compute roofprints
+3. Use the segmented point cloud and the roofprints to compute footprints
+4. Evaluate the method with generated data and hopefully real data
+
+## Semantic segmentation
+
+::: {.columns}
+::: {.column width="70%"}
+1. Generate a ground-truth dataset using 3DBAG and AHN4
+    1. Download all data per tiles,
+    2. Extend the roofs of buildings with fake overhangs,
+    3. Compute the distances of each point to the set of roofs and to the set of façades,
+    4. Classify the points based on these distances between roof, façade and other.
+2. Train a ML model on the data:
+    1. Try different models (PointTransformerv3, KPConv, etc)
+    2. Select and run the best one
+:::
+::: {.column width="30%"}
+::: {#fig-3dbag-ahn-segmentation layout="[[1], [1]]"}
+![LoD 2.2 buildings from the 3DBAG.](../../weekly_notes/2025_12_15/Custom_class-Closer-Buildings.png){group="3dbag-ahn-segmentation" width="250px"}
+
+![The classification of the points from AHN 4.](../../weekly_notes/2025_12_15/Custom_class-Closer-Classification.png){group="3dbag-ahn-segmentation"  width="250px"}
+
+Example of classifying the AHN 4 with the 3DBAG.
+:::
+:::
+:::
+
+::: {.notes}
+- 3DBAG is based on AHN3 + AHN4
+:::
+
+## Roofprints
+
+- The method still needs to be determined
+- It will depend on the results of semantic segmentation
+
+## Footprints
+
+- Sweep vertical planes parallel to the roofprint edges
+- Identify the best one or none at all
+- Potential to use symmetry of roofs
+
+## Assessment
+
+::: {.incremental}
+- Create a fake ground-truth dataset:
+    - Create a fake LoD 2.3 dataset from 3DBAG LoD 2.2 by randomly extending the roof planes
+    - Simulate an ALS point cloud with tools such as [HELIOS++](https://github.com/3dgeo-heidelberg/helios)
+- Evaluate the method on this dataset
+- Some annotations of real data for better assessment?
+:::
+
+# Current and future work
+
+## Until now
+
+::: {.incremental}
+- Literature review
+- Explored French and Dutch datasets and their metadata
+- Started the work on classifying AHN 4 using 3DBAG
+:::
+
+## From now on
+
+![Project planning](../../images/Time_planning.png){.r-stretch}
+
+## Thank you.
+
+## References

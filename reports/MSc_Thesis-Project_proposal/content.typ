@@ -59,7 +59,7 @@ Adding this distinction to models is also what makes the difference between @lod
 Since @roofer uses the points from the roof to reconstruct buildings, it requires a @roofprint to work properly, but therefore reconstructs the buildings in @lod 2.2.
 
 #figure(
-  image("../images/LoDs_illustration-Filip_Biljecki.jpg"),
+  image("../../images/LoDs_illustration-Filip_Biljecki.jpg"),
   caption: [Visual example of the refined @lod:pl for a residential building #cite(<Biljecki2016>, form: "normal").],
   placement: auto,
 ) <fig:lods-illustration>
@@ -538,6 +538,8 @@ The process will be:
   )
   let gantt-tasks-formatted = (
     show-today: false,
+    start: "2025-11-10",
+    end: "2026-06-30",
     headers: ("month", "week"),
     tasks: gantt-tasks,
     milestones: gantt-milestones,

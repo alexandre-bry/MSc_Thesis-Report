@@ -20,4 +20,4 @@ The current organization of the repository is the following:
 ```
 
 The website can be very easily published by running `quarto publish gh-pages --no-prompt`.
-I use one extension to embed PDFs ([embedpdf](https://github.com/jmgirard/embedpdf)).
+I use one extension to embed PDFs ([embedpdf](https://github.com/jmgirard/embedpdf)) and one to embed RevealJS presentations ([embedio](https://github.com/coatless-quarto/embedio)).
