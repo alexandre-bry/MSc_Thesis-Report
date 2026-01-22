@@ -4,14 +4,14 @@
     "href": "slides/A1_slides/index.html",
     "title": "From Points to Prints",
     "section": "",
-    "text": "Many applications of 3D buildings: visualization, simulations, solar potential, etc.\nDifferent levels of detail required\n\n\n\n\nVisualization -&gt; multiple levels of details for different distances\nSimulations -&gt; simple models for quicker computations\nSolar potential -&gt; care about the roofs mostly\nTax estimation -&gt; care about the floor space mostly\n\n\n\n\n\n\n\n\nVisual example of the refined LoDs for a residential building (Biljecki, Ledoux, and Stoter 2016).\n\n\n\n\nDifferentiation between footprints and roofprints is the required step to go from LoD 2.2 to 2.3.\nDefinitions of footprints and roofprints are not always straightforward.\n\n\n\n\n\n\n\n\nScreenshot from the online viewer of the 3DBAG.\n\n\n\nExample of a great method to reconstruct 3D buildings in LoD 2.2 using point clouds and roofprints.\n\n\n\n\n\n\nBD TOPO: building outlines in France\nLiDAR HD: first nationwide ALS LiDAR dataset of France\nJumeau numérique de la France: future digital twin of France\n\n\n\n\nBD TOPO:\n\nContains building outlines with poor georeferencing\n\nLiDAR HD:\n\nThe first project to collect high-density point clouds on the whole territory of France\nSimilar nature and density to the AHN used for the 3DBAG\n\n\n\n\n\n\n\n\nALS point clouds give high density of points on roofs and low density on façades\n\n\n\nWhat characteristics of ALS point clouds influence the ability to generate accurate building roofprints and footprints?\n\n\n\nWe know that roof points can be used to reconstruct buildings, with a limitation to LoD 2.2\nCan we use façade points?\nSub-questions:\n\nPoint cloud acquisition (geometry of the scanning device, trajectory of the flying vehicle)\nDifferences obtained between footprints and roofprints\nPotential usage of existing shifted outlines"
+    "text": "Many applications of 3D buildings: visualization, simulations, solar potential, etc.\nDifferent levels of detail required\n\n\n\nVisualization -&gt; multiple levels of details for different distances\nSimulations -&gt; simple models for quicker computations\nSolar potential -&gt; care about the roofs mostly\nTax estimation -&gt; care about the floor space mostly\n\n\n\n\n\n\n\n\nVisual example of the refined LoDs for a residential building (Biljecki, Ledoux, and Stoter 2016).\n\n\n\n\nDifferentiation between footprints and roofprints is the required step to go from LoD 2.2 to 2.3.\nDefinitions of footprints and roofprints are not always straightforward.\n\n\n\n\n\n\n\n\nScreenshot from the online viewer of the 3DBAG.\n\n\n\nExample of a great method to reconstruct 3D buildings in LoD 2.2 using point clouds and roofprints.\n\n\n\n\n\nBD TOPO: building outlines in France\nLiDAR HD: first nationwide ALS LiDAR dataset of France\nJumeau numérique de la France: future digital twin of France\n\n\n\nBD TOPO:\n\nDifferent sources: aerial images or terrain measurements\nContains building outlines with poor georeferencing\n\nLiDAR HD:\n\nThe first project to collect high-density point clouds on the whole territory of France\nSimilar nature and density to the AHN used for the 3DBAG\n\n\n\n\n\n\n\nALS point clouds give high density of points on roofs and low density on façades\n\n\nWhat characteristics of ALS point clouds influence the ability to generate accurate building roofprints and footprints?\n\n\n\nWe know that roof points can be used to reconstruct buildings, with a limitation to LoD 2.2\nCan we use façade points?\nSub-questions:\n\nPoint cloud acquisition (geometry of the scanning device, trajectory of the flying vehicle)\nDifferences obtained between footprints and roofprints\nPotential usage of existing shifted outlines"
   },
   {
     "objectID": "slides/A1_slides/index.html#reconstruction-of-3d-buildings",
     "href": "slides/A1_slides/index.html#reconstruction-of-3d-buildings",
     "title": "From Points to Prints",
     "section": "",
-    "text": "Many applications of 3D buildings: visualization, simulations, solar potential, etc.\nDifferent levels of detail required\n\n\n\n\nVisualization -&gt; multiple levels of details for different distances\nSimulations -&gt; simple models for quicker computations\nSolar potential -&gt; care about the roofs mostly\nTax estimation -&gt; care about the floor space mostly"
+    "text": "Many applications of 3D buildings: visualization, simulations, solar potential, etc.\nDifferent levels of detail required\n\n\n\nVisualization -&gt; multiple levels of details for different distances\nSimulations -&gt; simple models for quicker computations\nSolar potential -&gt; care about the roofs mostly\nTax estimation -&gt; care about the floor space mostly"
   },
   {
     "objectID": "slides/A1_slides/index.html#levels-of-detail",
@@ -32,14 +32,14 @@
     "href": "slides/A1_slides/index.html#french-context",
     "title": "From Points to Prints",
     "section": "",
-    "text": "BD TOPO: building outlines in France\nLiDAR HD: first nationwide ALS LiDAR dataset of France\nJumeau numérique de la France: future digital twin of France\n\n\n\n\nBD TOPO:\n\nContains building outlines with poor georeferencing\n\nLiDAR HD:\n\nThe first project to collect high-density point clouds on the whole territory of France\nSimilar nature and density to the AHN used for the 3DBAG"
+    "text": "BD TOPO: building outlines in France\nLiDAR HD: first nationwide ALS LiDAR dataset of France\nJumeau numérique de la France: future digital twin of France\n\n\n\nBD TOPO:\n\nDifferent sources: aerial images or terrain measurements\nContains building outlines with poor georeferencing\n\nLiDAR HD:\n\nThe first project to collect high-density point clouds on the whole territory of France\nSimilar nature and density to the AHN used for the 3DBAG"
   },
   {
     "objectID": "slides/A1_slides/index.html#what-about-façade-points",
     "href": "slides/A1_slides/index.html#what-about-façade-points",
     "title": "From Points to Prints",
     "section": "",
-    "text": "ALS point clouds give high density of points on roofs and low density on façades\n\n\n\nWhat characteristics of ALS point clouds influence the ability to generate accurate building roofprints and footprints?\n\n\n\nWe know that roof points can be used to reconstruct buildings, with a limitation to LoD 2.2\nCan we use façade points?\nSub-questions:\n\nPoint cloud acquisition (geometry of the scanning device, trajectory of the flying vehicle)\nDifferences obtained between footprints and roofprints\nPotential usage of existing shifted outlines"
+    "text": "ALS point clouds give high density of points on roofs and low density on façades\n\n\nWhat characteristics of ALS point clouds influence the ability to generate accurate building roofprints and footprints?\n\n\n\nWe know that roof points can be used to reconstruct buildings, with a limitation to LoD 2.2\nCan we use façade points?\nSub-questions:\n\nPoint cloud acquisition (geometry of the scanning device, trajectory of the flying vehicle)\nDifferences obtained between footprints and roofprints\nPotential usage of existing shifted outlines"
   },
   {
     "objectID": "slides/A1_slides/index.html#building-elements",
@@ -109,14 +109,14 @@
     "href": "slides/A1_slides/index.html#assessment",
     "title": "From Points to Prints",
     "section": "Assessment",
-    "text": "Assessment\n\n\nCreate a fake ground-truth dataset:\n\nCreate a fake LoD 2.3 dataset from 3DBAG LoD 2.2 by randomly extending the roof planes\nSimulate an ALS point cloud with tools such as HELIOS++\n\nEvaluate the method on this dataset\nSome annotations of real data for better assessment?"
+    "text": "Assessment\n\nCreate a fake ground-truth dataset:\n\nCreate a fake LoD 2.3 dataset from 3DBAG LoD 2.2 by randomly extending the roof planes\nSimulate an ALS point cloud with tools such as HELIOS++\n\nEvaluate the method on this dataset\nSome annotations of real data for better assessment?"
   },
   {
     "objectID": "slides/A1_slides/index.html#until-now",
     "href": "slides/A1_slides/index.html#until-now",
     "title": "From Points to Prints",
     "section": "Until now",
-    "text": "Until now\n\n\nLiterature review\nExplored French and Dutch datasets and their metadata\nStarted the work on classifying AHN 4 using 3DBAG"
+    "text": "Until now\n\nLiterature review\nExplored French and Dutch datasets and their metadata\nStarted the work on classifying AHN 4 using 3DBAG"
   },
   {
     "objectID": "slides/A1_slides/index.html#from-now-on",

@@ -393,12 +393,10 @@ div.csl-indent {
 <h1>Context</h1>
 <section id="reconstruction-of-3d-buildings" class="level2">
 <h2 class="anchored" data-anchor-id="reconstruction-of-3d-buildings">Reconstruction of 3D buildings</h2>
-<div class="incremental">
-<ul class="incremental">
+<ul>
 <li>Many applications of 3D buildings: visualization, simulations, solar potential, etc.</li>
 <li>Different levels of detail required</li>
 </ul>
-</div>
 <div class="notes">
 <ul>
 <li>Visualization -&gt; multiple levels of details for different distances</li>
@@ -437,17 +435,16 @@ div.csl-indent {
 </section>
 <section id="french-context" class="level2">
 <h2 class="anchored" data-anchor-id="french-context">French context</h2>
-<div class="incremental">
-<ul class="incremental">
+<ul>
 <li><a href="https://geoservices.ign.fr/bdtopo">BD TOPO</a>: building outlines in France</li>
 <li><a href="https://www.ign.fr/institut/programme-lidar-hd-vers-une-nouvelle-cartographie-3d-du-territoire">LiDAR HD</a>: first nationwide ALS LiDAR dataset of France</li>
 <li><a href="https://www.ign.fr/institut/un-jumeau-numerique-de-la-france-pour-piloter-la-transition-ecologique">Jumeau numérique de la France</a>: future digital twin of France</li>
 </ul>
-</div>
 <div class="notes">
 <ul>
 <li>BD TOPO:
 <ul>
+<li>Different sources: aerial images or terrain measurements</li>
 <li>Contains building outlines with poor georeferencing</li>
 </ul></li>
 <li>LiDAR HD:
@@ -460,11 +457,9 @@ div.csl-indent {
 </section>
 <section id="what-about-façade-points" class="level2">
 <h2 class="anchored" data-anchor-id="what-about-façade-points">What about façade points?</h2>
-<div class="fragment">
 <ul>
 <li>ALS point clouds give high density of points on roofs and low density on façades</li>
 </ul>
-</div>
 <div class="fragment" style="text-align: center; margin-top: 2em; font-size: 130%;">
 <p><strong><em>What characteristics of ALS point clouds influence the ability to generate accurate building roofprints and footprints?</em></strong></p>
 </div>
@@ -809,30 +804,26 @@ Figure&nbsp;2: Example of classifying the AHN 4 with the 3DBAG.
 </section>
 <section id="assessment" class="level2">
 <h2 class="anchored" data-anchor-id="assessment">Assessment</h2>
-<div class="incremental">
-<ul class="incremental">
+<ul>
 <li>Create a fake ground-truth dataset:
-<ul class="incremental">
+<ul>
 <li>Create a fake LoD 2.3 dataset from 3DBAG LoD 2.2 by randomly extending the roof planes</li>
 <li>Simulate an ALS point cloud with tools such as <a href="https://github.com/3dgeo-heidelberg/helios">HELIOS++</a></li>
 </ul></li>
 <li>Evaluate the method on this dataset</li>
 <li>Some annotations of real data for better assessment?</li>
 </ul>
-</div>
 </section>
 </section>
 <section id="current-and-future-work" class="level1">
 <h1>Current and future work</h1>
 <section id="until-now" class="level2">
 <h2 class="anchored" data-anchor-id="until-now">Until now</h2>
-<div class="incremental">
-<ul class="incremental">
+<ul>
 <li>Literature review</li>
 <li>Explored French and Dutch datasets and their metadata</li>
 <li>Started the work on classifying AHN 4 using 3DBAG</li>
 </ul>
-</div>
 </section>
 <section id="from-now-on" class="level2">
 <h2 class="anchored" data-anchor-id="from-now-on">From now on</h2>
