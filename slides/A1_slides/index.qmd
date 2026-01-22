@@ -7,10 +7,8 @@ subtitle: "Generation of building roofprints and footprints from ALS point cloud
 
 ## Reconstruction of 3D buildings
 
-::: {.incremental}
 - Many applications of 3D buildings: visualization, simulations, solar potential, etc.
 - Different levels of detail required
-:::
 
 ::: {.notes}
 - Visualization -> multiple levels of details for different distances
@@ -38,11 +36,9 @@ Example of a great method to reconstruct 3D buildings in LoD 2.2 using point clo
 
 ## French context
 
-::: {.incremental}
 - [BD TOPO](https://geoservices.ign.fr/bdtopo): building outlines in France
 - [LiDAR HD](https://www.ign.fr/institut/programme-lidar-hd-vers-une-nouvelle-cartographie-3d-du-territoire): first nationwide ALS LiDAR dataset of France
 - [Jumeau numérique de la France](https://www.ign.fr/institut/un-jumeau-numerique-de-la-france-pour-piloter-la-transition-ecologique): future digital twin of France
-:::
 
 ::: {.notes}
 - BD TOPO:
@@ -54,9 +50,7 @@ Example of a great method to reconstruct 3D buildings in LoD 2.2 using point clo
 
 ## What about façade points?
 
-::: {.fragment}
 - ALS point clouds give high density of points on roofs and low density on façades
-:::
 
 ::: {.fragment style="text-align: center; margin-top: 2em; font-size: 130%;"}
 **_What characteristics of ALS point clouds influence the ability to generate accurate building roofprints and footprints?_**
@@ -210,23 +204,19 @@ Example of classifying the AHN 4 with the 3DBAG.
 
 ## Assessment
 
-::: {.incremental}
 - Create a fake ground-truth dataset:
     - Create a fake LoD 2.3 dataset from 3DBAG LoD 2.2 by randomly extending the roof planes
     - Simulate an ALS point cloud with tools such as [HELIOS++](https://github.com/3dgeo-heidelberg/helios)
 - Evaluate the method on this dataset
 - Some annotations of real data for better assessment?
-:::
 
 # Current and future work
 
 ## Until now
 
-::: {.incremental}
 - Literature review
 - Explored French and Dutch datasets and their metadata
 - Started the work on classifying AHN 4 using 3DBAG
-:::
 
 ## From now on
 
