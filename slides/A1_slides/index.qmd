@@ -42,6 +42,7 @@ Example of a great method to reconstruct 3D buildings in LoD 2.2 using point clo
 
 ::: {.notes}
 - BD TOPO:
+    - Different sources: aerial images or terrain measurements
     - Contains building outlines with poor georeferencing
 - LiDAR HD:
     - The first project to collect high-density point clouds on the whole territory of France

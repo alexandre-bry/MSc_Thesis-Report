@@ -103,11 +103,11 @@ The first one also provides a simple way to compute the roof overhang to protect
 
 ## Work until next meeting
 
-- [ ] Prepare the A1 presentation
+- [x] Prepare the A1 presentation
 - [x] Send an email to get more details about the internship starting at the IGN
 - [ ] Finalize the algorithm to add roof overhangs to LoD 2.2 buildings of the 3DBAG to classify the AHN 4/5/6:
-    - [ ] Python script to download the AHN 4/5/6 for a given area
-    - [ ] Python script to download the corresponding buildings in the area with a buffer
+    - [x] Python script to download the AHN 4/5/6 for a given area
+    - [x] Python script to download the corresponding buildings in the area with a buffer
     - [ ] Python/C++ script to extract from the CityJSON file all the edges at the boundary between the façades polygons and the roof polygons, as well as the direction of the potential roof overhang
     - [ ] Python/C++ script to create the roof overhangs in 3D based on the previous input as CityJSON
     - [ ] Python/C++ script to transform CityJSON into OBJ (not triangulated)

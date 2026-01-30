@@ -1,0 +1,123 @@
+---
+title: "2026/02/02"
+date: 2026-02-02
+tags: [weekly]
+meeting: [Hugo Ledoux, Bruno Vallet]
+---
+
+## Results since previous meeting
+
+### Feedback about A1
+
+This part contains the feedback received after the [A1 presentation](../reports/Project_proposal.qmd).
+
+#### Ravi
+
+Questions:
+
+1. Can you not infer facades fairly easy from the general building class if your input point cloud has that? Is sem classification of facade/roof really necessary or perhaps overkill?
+    - Ie. In methodology you want to train with 3dbag, but this roof/facade information is derived from fairly basic plane segmentation + normal angle thresholds. Much simpler and easier than semantic classification
+2. Assumptions about building symmetry for overhangs, could be interesting but might not work for all buildings? 
+    - Expect any drawbacks? Could it also negatively affect results in cases without symmetry, where you try to enforce a symmetry anyways?
+    - How can you evaluate If the assumption of symmetry is valid for a given building.
+    - Similarities inside one building vs between different buildings
+    - Could an alternative be to use something like point cloud completion method (deep learning) or something similar to Roofdiffusion method to improve input elevation data, so that detection of outlines becomes easier from such enhanced data, and symmetry assumptions are no longer necessary to make up for poor quality data?
+3. What about improving existing outlines, ie to extend to become a more accurate roofprint polygon. Mentioned in results, but is this also a secondary goal? not clear from research questions
+    - Usecase: improving outline for 3DBAG reconstruction? Low hanging fruit with real impact, if you find a cheap and robust method. Does probably require pretty good outlines to start with, that only have fairly small errors?
+4. What is ultimately the input data that your method would require? Unclassified pointcloud without outlines? Or Pointcloud + rough outlines? Or …
+    - Try to describe that more clearly in your reports
+5. In Assessment, synthesising ground truth. Will you also simulate imperfections such as occlusion to find the ‘breaking point’ of your method?
+
+Other remarks:
+
+1. Getting good consistent facades one all sides of a building will be tricky from ALS. Risk Maybe focus on roofprint?  With some overhangs, where you have good enough data to detect it, but don’t focus too much on it, because if the data isn’t good enough you can spend a lot of time without much progress. More useful in practice is perhaps: reliable outline detection, with nice looking polygons, from unclassified pointcloud.
+2. I would like to see a bit better the scope of your research. Eg.
+    1. Type of data that you will consider, and exactly what are the goals and what is out of scope. 
+    2. Risks, what if a certain idea won’t work out, can you in your planning easily switch to another idea to explore?
+3. I notice that in some cases the terrain/ground points may also be helpful to calculate the overhang. See eg.  https://fsn1.your-objectstorage.com/hwh-ahn/AHN_POTREE/index.html?position=[167518.33;435756.42;14.95;]&target=[166613.07;435785.67;-408.90;]&ahn=ahn5&style=elevation . This building has quite some roof overhang, no facade points on the sides, but terrain points are valuable here as they clearly indicate there is quite some overhang here. AHN5 seems to best capture this, for other versions of AHN the overhang appears smaller based on the offset between terrain and roof edge. The particular building in the link above is present in all of AHN3,4,5, and 6. And you see interesting variances in occlusion effects, and the resulting completeness in the pointclouds. Maybe there it is also worth considering the position of the scanner during acquisition of a facade, it might tell you something about how confident you can be that the point cloud (in particular facade and terrain points) is complete. Of course a facade is a better signal for determining the footprint, but since we are dealing with cases that have so little data in some cases, maybe it is worth also looking at the terrain points.
+
+#### Hugo
+
+In general your plan and your presentation were what we expected, and I had already commented on drafts, so I have little feedback. Ravi already gave you extended feedback/ideas. Some points of attention:
+
+- what you plan to do with the existing IGN outlines wasn't 100% clear, I think the plan is to use them as "guide" to identify symmetry, but this should be made clearer.
+- is the symmetry in 2D or 3D? As we discussed, perhaps in both: using the outline first, and then the shape of the extracted roof
+- you spoke a lot with your hands to explain the configuration of buildings and overhangs and etc ==> too many hands means you should have made a figure! Often a simple figures would have helped your presentation greatly.
+- I think using auxiliary datasets (year-construction, type-building) could maybe be useful to identify some characteristics of the building. Or do you want only from the PC? I don't know, but good to explore this (later in the project)
+- As Ravi mentions, the scope of the research (what will you ignore?) should be clearly defined. But I guess it will become a bit clearer when you start work with the data at the IGN. You don't need to update the A1, but keep all the comments in mind for the research and the final thesis.
+
+### Answers to feedback from A1
+
+#### Ravi
+
+Questions:
+
+1. After thinking more about it, I agree that semantic segmentation may actually not be worth the time it would take to get an performant model.
+    - The LiDAR HD point cloud indeed contains classification for buildings, and even if it is not perfect, it should be usable as a good basis to identify points that can be used for the roof.
+        With these points as a basis, the potentially wrongly classified roof points could be detected with using geometrical properties, to ensure the whole roof is found.
+    - Then, based on the assumptions I make that we are looking for roof overhangs, the horizontal limit of the roof gives us everything we should need.
+        So even without identifying façade points beforehand, we should not miss any of them
+    - Also, I think that I have been too harsh with the current BD TOPO.
+        Even though it is clearly not perfect, it is still good enough to serve as a basis to isolate single buildings and process them with some margin.
+2. About symmetry, my idea is to assume it by default, and then check if it seems relevant for each building.
+    There are probably many criteria I could use to make informed guesses, but here are some ideas:
+    - If there are points of both sides of the building, the overhang would be computed on both sides, and then there are many possible cases.
+        If the two overhangs have a high likelihood of being correct (based on criteria to determine), then we could keep them as-is, or combine them if they are close.
+        If one of them has a low likelihood, the one with the high likelihood could be tested on the other side to see if it is a good guess or not.
+        If they both have low likelihood but are the same, we could argue that this increases their likelihood.
+        In the end, I think the problem boils down to a large extent to the criteria that I can come up with to decide how good a façade plane is.
+    - If there are points only on one side, and there is no way to get any information about the other side, then it is mostly a matter of choice.
+        In that case I think that assuming symmetry is reasonable.
+        If more information is available based on the buildings in the neighbourhood, this could also help taking a decision.
+        But if all buildings are oriented in the same direction, it is unlikely that buildings in the neighbourhood will give more information.
+    - In the end, I think that the decision process should be clearly stated in the output data.
+        The output data should state for each edge if it comes for example from matching LiDAR points or from symmetry assumptions.
+    - A final idea that could potentially be very helpful is using the polar angle of the roof at different levels.
+        A roof with all roof pieces having the same polar angle is likely to have similar roof overhangs.
+        Moreover, overhangs are less likely on roof edges that are not horizontal.
+    - RoofDiffusion [@Lo2024] looks quite impressive, but I do not think that we have that many issues with sparsity or noise.
+        Points on the roofs should hopefully already be usable in most cases, and dense enough to compute the roofprint.
+        I also do not really see how this is related to symmetry.
+        If we assume that the model would add points on the façades and then use this completed point cloud to create a 3D model, we lose control over the assumptions that are made and I am not sure if this is what we want.
+        Training such a model to add points in 3D also raises the question of the data that could be used.
+3. About improving existing outlines, I am increasingly considering this as a more reasonable approach to roofprint extraction.
+    Especially in the case of France, assuming that existing outline edges have correct directions could help creating roofprints/footprints with accurate angles, despite having only few points.
+4. The way I now consider the method, the input of the pipeline would be:
+    1. A point cloud with classes for buildings and for the ground.
+        Enough information to infer the trajectory of each point could also be useful, but it is unclear to me for now how this could be used exactly.
+    2. Initial outlines of buildings with correct angles.
+        Working without outlines could also be doable, by isolating separate buildings geometrically and using only the point cloud to create the roofprint.
+        But this would likely give worse results.
+5. About what how complex the assessment on a synthetized dataset could be, I think that this will depend on the time I have for it.
+    The goal is at least to try different parameters for the acquisition of the point cloud (flight lines, scanner geometry).
+    I hope to find a tool allowing to also control the noise, and then being able to test with more complex occlusion from other objects such as trees would be great but not a priority.
+
+Other remarks:
+
+1. I agree that the scope could be too big if starting only from unclassified point cloud and trying to go up to the precise footprint.
+    But I think that the original and interesting part of this topic is rather the focus on roof overhangs, roofprints and footprints, so I'd rather assume a classified point cloud and potential imperfect outlines as an input.
+2. I agree that the scope needs some refinement, and I hope this whole things helps.
+    It still needs to be cleaned up and organised in a clearer way.
+    I will also think about alternatives in case something goes wrong, but removing the machine learning parts should already remove some uncertainties.
+3. I completely agree that terrain points could be really useful.
+    This is also the case for some of the buildings I saw with balconies, where the flat part of balconies gets many points and the edge of this flat part could also be used as an indication.
+    So there are potentially many ways to use this and to look into occlusion, and I really hope to have time to look into this.
+
+#### Hugo
+
+- I hope the existing outlines could be used to guide the process of identifying edges in the footprints, but they should at least be usable to isolate more or less one building and work on it.
+    Then, even if the outline is incorrect in its position, I hope to reuse the angles of the edges to refine the edges detected on the footprint and enforce better angles.
+- I agree that I need more figures.
+- Using auxiliary data about the figures is a good idea.
+
+## Material for discussion
+
+- Ravi had interesting comments and questions during A1, should we invite him to these meetings to get his feedback more regularly?
+    It was a bit overlooked at first for no real reason. 
+
+## Discussion
+
+## Work until next meeting
+
+- [ ] Clean up the scope.
+- [ ] Need more figures.
