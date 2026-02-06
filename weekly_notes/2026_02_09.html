@@ -7,9 +7,9 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="Alexandre Bry">
-<meta name="dcterms.date" content="2025-11-10">
+<meta name="dcterms.date" content="2026-02-09">
 
-<title>2025/11/10 – MSc Thesis - Website</title>
+<title>2026/02/09 – MSc Thesis - Website</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -32,8 +32,7 @@ ul.task-list li input[type="checkbox"] {
 <script src="../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../">
-<link href="../weekly_notes/2025_11_17.html" rel="next">
-<link href="../weekly_notes/index.html" rel="prev">
+<link href="../weekly_notes/2026_02_02.html" rel="prev">
 <script src="../site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
 <script src="../site_libs/quarto-html/axe/axe-check.js" type="module"></script>
@@ -49,6 +48,9 @@ ul.task-list li input[type="checkbox"] {
 <link href="../site_libs/bootstrap/bootstrap-504c28765da3c5fe8be1145bd84b607a.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
 <link href="../site_libs/bootstrap/bootstrap-dark-c984b6bbaec8b13f797d8859fb459451.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
 <link href="../site_libs/bootstrap/bootstrap-504c28765da3c5fe8be1145bd84b607a.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
+<script src="../site_libs/quarto-contrib/glightbox/glightbox.min.js"></script>
+<link href="../site_libs/quarto-contrib/glightbox/glightbox.min.css" rel="stylesheet">
+<link href="../site_libs/quarto-contrib/glightbox/lightbox.css" rel="stylesheet">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -77,10 +79,42 @@ ul.task-list li input[type="checkbox"] {
   }
 }</script>
 
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
 
 <link rel="stylesheet" href="../styles.css">
-<meta property="og:title" content="2025/11/10 – MSc Thesis - Website">
+<meta property="og:title" content="2026/02/09 – MSc Thesis - Website">
+<meta property="og:image" content="https://alexandre-bry.github.io/MSc_Thesis-Report/weekly_notes/2026_02_09/Examples-Min_signed_vertical_distance-Histogram.png">
 <meta property="og:site_name" content="MSc Thesis - Website">
+<meta property="og:image:height" content="575">
+<meta property="og:image:width" content="753">
 </head>
 
 <body class="nav-sidebar docked nav-fixed quarto-light"><script id="quarto-html-before-body" type="application/javascript">
@@ -294,7 +328,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../weekly_notes/2025_11_10.html">2025/11/10</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../weekly_notes/2026_02_09.html">2026/02/09</a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
     </div>
@@ -318,7 +352,7 @@ ul.task-list li input[type="checkbox"] {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../weekly_notes/2025_11_10.html" class="sidebar-item-text sidebar-link active">
+  <a href="../weekly_notes/2025_11_10.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">2025/11/10</span></a>
   </div>
 </li>
@@ -372,7 +406,7 @@ ul.task-list li input[type="checkbox"] {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../weekly_notes/2026_02_09.html" class="sidebar-item-text sidebar-link">
+  <a href="../weekly_notes/2026_02_09.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text">2026/02/09</span></a>
   </div>
 </li>
@@ -386,10 +420,16 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#discussion" id="toc-discussion" class="nav-link active" data-scroll-target="#discussion">Discussion</a></li>
-  <li><a href="#next-week" id="toc-next-week" class="nav-link" data-scroll-target="#next-week">Next week</a></li>
+  <li><a href="#results-since-previous-meeting" id="toc-results-since-previous-meeting" class="nav-link active" data-scroll-target="#results-since-previous-meeting">Results since previous meeting</a></li>
+  <li><a href="#material-for-discussion" id="toc-material-for-discussion" class="nav-link" data-scroll-target="#material-for-discussion">Material for discussion</a>
+  <ul class="collapse">
+  <li><a href="#definition-of-the-minimummaximum-signed-vertical-distance-to-the-neighbours" id="toc-definition-of-the-minimummaximum-signed-vertical-distance-to-the-neighbours" class="nav-link" data-scroll-target="#definition-of-the-minimummaximum-signed-vertical-distance-to-the-neighbours">Definition of the minimum/maximum signed vertical distance to the neighbours</a></li>
+  <li><a href="#examples" id="toc-examples" class="nav-link" data-scroll-target="#examples">Examples</a></li>
+  </ul></li>
+  <li><a href="#discussion" id="toc-discussion" class="nav-link" data-scroll-target="#discussion">Discussion</a></li>
+  <li><a href="#work-until-next-meeting" id="toc-work-until-next-meeting" class="nav-link" data-scroll-target="#work-until-next-meeting">Work until next meeting</a></li>
   </ul>
-<div class="toc-actions"><ul><li><a href="https://github.com/alexandre-bry/MSc_Thesis-Report/edit/main/weekly_notes/2025_11_10.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/alexandre-bry/MSc_Thesis-Report/blob/main/weekly_notes/2025_11_10.qmd" class="toc-action"><i class="bi empty"></i>View source</a></li><li><a href="https://github.com/alexandre-bry/MSc_Thesis-Report/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
+<div class="toc-actions"><ul><li><a href="https://github.com/alexandre-bry/MSc_Thesis-Report/edit/main/weekly_notes/2026_02_09.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/alexandre-bry/MSc_Thesis-Report/blob/main/weekly_notes/2026_02_09.qmd" class="toc-action"><i class="bi empty"></i>View source</a></li><li><a href="https://github.com/alexandre-bry/MSc_Thesis-Report/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
@@ -397,7 +437,7 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">2025/11/10</h1>
+<h1 class="title">2026/02/09</h1>
 </div>
 
 
@@ -414,7 +454,7 @@ ul.task-list li input[type="checkbox"] {
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">November 10, 2025</p>
+      <p class="date">February 9, 2026</p>
     </div>
   </div>
   
@@ -426,31 +466,154 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
+<section id="results-since-previous-meeting" class="level2">
+<h2 class="anchored" data-anchor-id="results-since-previous-meeting">Results since previous meeting</h2>
+</section>
+<section id="material-for-discussion" class="level2">
+<h2 class="anchored" data-anchor-id="material-for-discussion">Material for discussion</h2>
+<section id="definition-of-the-minimummaximum-signed-vertical-distance-to-the-neighbours" class="level3">
+<h3 class="anchored" data-anchor-id="definition-of-the-minimummaximum-signed-vertical-distance-to-the-neighbours">Definition of the minimum/maximum signed vertical distance to the neighbours</h3>
+<p>I computed for each point <span class="math inline">\(p\)</span> in the point clouds two signed distances, that I call <strong>minimum/maximum signed vertical distance to the neighbours</strong> (<span class="math inline">\(\text{misvdtn(p)}\)</span> and <span class="math inline">\(\text{masvdtn(p)}\)</span>). These distances are computed through the following process:</p>
+<ol type="1">
+<li>Order the points in the point cloud using their GPS time. Multiple returns give multiple points with the same GPS time, but the order between them does not matter.</li>
+<li>For each point <span class="math inline">\(p_1\)</span> of GPS time <span class="math inline">\(t_1\)</span>:
+<ol type="1">
+<li>Find the previous (<span class="math inline">\(t_0\)</span>) and the next (<span class="math inline">\(t_2\)</span>) GPS times in the data, with all the associated points (<span class="math inline">\(S_0 = \{p_{00}, ..., p_{0k}\}\)</span>, <span class="math inline">\(S_2 = \{p_{20}, ..., p_{2k}\}\)</span>).</li>
+<li>If <span class="math inline">\(|t_2 - t_1| \gt \text{MAX\_TIME\_DIFF}\)</span>, set <span class="math inline">\(S_2 = \emptyset\)</span>. Same for <span class="math inline">\(t_0\)</span> This avoids computing the distance between two points that were simply the last and first point of consecutive scans.</li>
+<li>Compute the signed vertical distance <span class="math inline">\(\text{svd}(p_1, p)\)</span> from <span class="math inline">\(p_1(x_1, y_1, z_1)\)</span> to each point <span class="math inline">\(p(x, y, z)\)</span> in <span class="math inline">\(S = S_0 \cup S_2\)</span>, i.e.&nbsp;<span class="math display">\[\text{svd}(p_1, p) = z - z_1\]</span></li>
+<li>Then, <span class="math display">\[\text{misvdtn}(p_1) = \begin{cases} 0 &amp; \text{if } S=\emptyset \\ \min(\text{svd}(p_1, p) \; \forall p \in S) &amp; \text{otherwise} \end{cases}\]</span> and <span class="math display">\[\text{masvdtn}(p_1) = \begin{cases} 0 &amp; \text{if } S=\emptyset \\ \max(\text{svd}(p_1, p) \; \forall p \in S) &amp; \text{otherwise} \end{cases}\]</span></li>
+</ol></li>
+</ol>
+<p>As a result, <span class="math inline">\(\text{misvdtn}(p)\)</span> allows to identify points that are significantly higher than one of their neighbours, and <span class="math inline">\(\text{masvdtn}(p)\)</span> allows to identify points that are significantly lower than one of their neighbours. Therefore, both values are expected to be high in absolute value on the boundaries of roofs, with <span class="math inline">\(\text{misvdtn}(p)\)</span> being low (high in absolute value) for the first/last point on the roof, and <span class="math inline">\(\text{masvdtn}(p)\)</span> being high (high in absolute value) for the last/first point on the ground before the roof.</p>
+</section>
+<section id="examples" class="level3">
+<h3 class="anchored" data-anchor-id="examples">Examples</h3>
+<p>I computed these two values for an area in Ozoir-la-Ferrière, France with the LiDAR HD. Below are a few interesting examples of buildings. Based on <a href="https://lidarmag.com/2025/12/28/airborne-lidar-a-tutorial-for-2025-4/">this classification</a>, the scanner geometry of the LiDAR HD in this area is similar to the Palmer scanner, giving circular scans with a radius of around 500&nbsp;m. Below in <a href="#fig-examples-legends" class="quarto-xref">Figure&nbsp;1</a> are the legends for the values of the minimum/maximum signed vertical distance to the neighbours, with a colour scale limited respectively to <span class="math inline">\([-10, 0]\)</span> and <span class="math inline">\([0, 10]\)</span>&nbsp;meters for better visualisation.</p>
+<div id="fig-examples-legends" class="quarto-layout-panel">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-examples-legends-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div class="quarto-layout-row">
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="./2026_02_09/Examples-Min_signed_vertical_distance-Histogram.png" class="lightbox" data-gallery="examples-legends" title="Legend for the minimum signed vertical distance to neighbours."><img src="./2026_02_09/Examples-Min_signed_vertical_distance-Histogram.png" class="img-fluid figure-img"></a></p>
+<figcaption>Legend for the minimum signed vertical distance to neighbours.</figcaption>
+</figure>
+</div>
+</div>
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="./2026_02_09/Examples-Max_signed_vertical_distance-Histogram.png" class="lightbox" data-gallery="examples-legends" title="Legend for the maximum signed vertical distance to neighbours."><img src="./2026_02_09/Examples-Max_signed_vertical_distance-Histogram.png" class="img-fluid figure-img"></a></p>
+<figcaption>Legend for the maximum signed vertical distance to neighbours.</figcaption>
+</figure>
+</div>
+</div>
+</div>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-examples-legends-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;1: Legends for figures below.
+</figcaption>
+</figure>
+</div>
+<p>To get an idea of the footprint and roofprint that could be built based on these values, the points in yellow/green should be used, but the outer boundary of these points should be used for <span class="math inline">\(\text{misvdtn}\)</span> to give the roofprint, and the inner boundary for <span class="math inline">\(\text{masvdtn}\)</span> to give the footprint.</p>
+<div id="fig-example-1" class="quarto-layout-panel">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-example-1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div class="quarto-layout-row">
+<div class="quarto-layout-cell" style="flex-basis: 60.0%;justify-content: flex-start;">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="./2026_02_09/Example_1-Street_view.png" class="lightbox" data-gallery="examples-1" title="Screenshot from Google Maps."><img src="./2026_02_09/Example_1-Street_view.png" class="img-fluid figure-img"></a></p>
+<figcaption>Screenshot from <a href="https://www.google.com/maps/@48.7704107,2.6786522,3a,61.1y,157.53h,99.82t/data=!3m7!1e1!3m5!1stZa0slZuYWEXt4MwuA2edw!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-9.824007970541615%26panoid%3DtZa0slZuYWEXt4MwuA2edw%26yaw%3D157.52726140446157!7i16384!8i8192?entry=ttu&amp;g_ep=EgoyMDI2MDIwMy4wIKXMDSoKLDEwMDc5MjA3MUgBUAM%3D">Google Maps</a>.</figcaption>
+</figure>
+</div>
+</div>
+<div class="quarto-layout-cell" style="flex-basis: 40.0%;justify-content: flex-start;">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="./2026_02_09/Example_1-BD_TOPO.png" class="lightbox" data-gallery="examples-1" title="Screenshot of the “BD TOPO” and “Photographies aériennes” from the IGN."><img src="./2026_02_09/Example_1-BD_TOPO.png" class="img-fluid figure-img"></a></p>
+<figcaption>Screenshot of the “BD TOPO” and “Photographies aériennes” from the IGN.</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<div class="quarto-layout-row">
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="./2026_02_09/Example_1-Min_signed_vertical_distance.png" class="lightbox" data-gallery="examples-1" title="Screenshot of the minimum signed vertical distance to neighbours."><img src="./2026_02_09/Example_1-Min_signed_vertical_distance.png" class="img-fluid figure-img"></a></p>
+<figcaption>Screenshot of the minimum signed vertical distance to neighbours.</figcaption>
+</figure>
+</div>
+</div>
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="./2026_02_09/Example_1-Max_signed_vertical_distance.png" class="lightbox" data-gallery="examples-1" title="Screenshot of the maximum signed vertical distance to neighbours."><img src="./2026_02_09/Example_1-Max_signed_vertical_distance.png" class="img-fluid figure-img"></a></p>
+<figcaption>Screenshot of the maximum signed vertical distance to neighbours.</figcaption>
+</figure>
+</div>
+</div>
+</div>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-example-1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;2: First example (address: 52 Av. Mellerio, 77330 Ozoir-la-Ferrière; coordinates: (676390, 6852281))
+</figcaption>
+</figure>
+</div>
+<div id="fig-example-2" class="quarto-layout-panel">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-example-2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div class="quarto-layout-row">
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="./2026_02_09/Example_2-Street_view.png" class="lightbox" data-gallery="examples-2" title="Screenshot from Google Maps."><img src="./2026_02_09/Example_2-Street_view.png" class="img-fluid figure-img"></a></p>
+<figcaption>Screenshot from <a href="https://www.google.com/maps/@48.770615,2.6746377,3a,58.5y,93.71h,91.28t/data=!3m7!1e1!3m5!1s08isS5suBHMtCgyfhOAy6g!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-1.2800386943688835%26panoid%3D08isS5suBHMtCgyfhOAy6g%26yaw%3D93.71045003614621!7i16384!8i8192?entry=ttu&amp;g_ep=EgoyMDI2MDIwMy4wIKXMDSoKLDEwMDc5MjA3MUgBUAM%3D">Google Maps</a>.</figcaption>
+</figure>
+</div>
+</div>
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="./2026_02_09/Example_2-BD_TOPO.png" class="lightbox" data-gallery="examples-2" title="Screenshot of the “BD TOPO” and “Photographies aériennes” from the IGN."><img src="./2026_02_09/Example_2-BD_TOPO.png" class="img-fluid figure-img"></a></p>
+<figcaption>Screenshot of the “BD TOPO” and “Photographies aériennes” from the IGN.</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<div class="quarto-layout-row">
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="./2026_02_09/Example_2-Min_signed_vertical_distance.png" class="lightbox" data-gallery="examples-2" title="Screenshot of the minimum signed vertical distance to neighbours."><img src="./2026_02_09/Example_2-Min_signed_vertical_distance.png" class="img-fluid figure-img"></a></p>
+<figcaption>Screenshot of the minimum signed vertical distance to neighbours.</figcaption>
+</figure>
+</div>
+</div>
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="./2026_02_09/Example_2-Max_signed_vertical_distance.png" class="lightbox" data-gallery="examples-2" title="Screenshot of the maximum signed vertical distance to neighbours."><img src="./2026_02_09/Example_2-Max_signed_vertical_distance.png" class="img-fluid figure-img"></a></p>
+<figcaption>Screenshot of the maximum signed vertical distance to neighbours.</figcaption>
+</figure>
+</div>
+</div>
+</div>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-example-2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;3: Second example (address: 58 Av. du Général Leclerc, 77330 Ozoir-la-Ferrière; coordinates: (676104, 6852326))
+</figcaption>
+</figure>
+</div>
+</section>
+</section>
 <section id="discussion" class="level2">
 <h2 class="anchored" data-anchor-id="discussion">Discussion</h2>
-<ul>
-<li>At least a full week on literature review would be beneficial</li>
-<li>JabRef can be a great tool</li>
-</ul>
 </section>
-<section id="next-week" class="level2">
-<h2 class="anchored" data-anchor-id="next-week">Next week</h2>
-<ul>
-<li>Look for:
-<ul>
-<li>Roofprint / footprint differentiation (probably not much)</li>
-<li>Extraction of roofprint / footprint from point clouds</li>
-<li>Point cloud semantic segmentation</li>
-</ul></li>
-<li>For the literature review:
-<ul>
-<li><a href="https://www.perplexity.ai/">perplexity.ai</a> can be great to start</li>
-<li>Then use internet, especially Google Scholar is nice</li>
-<li>Look for new articles by searching for articles that cite interesting articles or were cited by interesting articles</li>
-<li>Write a small summary of every article I read with the things to remember, even if I don’t understand anything</li>
-<li>Try to structure / categorise the methods I find</li>
-</ul></li>
-</ul>
+<section id="work-until-next-meeting" class="level2">
+<h2 class="anchored" data-anchor-id="work-until-next-meeting">Work until next meeting</h2>
 
 
 </section>
@@ -873,19 +1036,48 @@ ul.task-list li input[type="checkbox"] {
   </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="../weekly_notes/index.html" class="pagination-link" aria-label="Weekly Meetings">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Weekly Meetings</span>
+      <a href="../weekly_notes/2026_02_02.html" class="pagination-link" aria-label="2026/02/02">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">2026/02/02</span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="../weekly_notes/2025_11_17.html" class="pagination-link" aria-label="2025/11/17">
-        <span class="nav-page-text">2025/11/17</span> <i class="bi bi-arrow-right-short"></i>
-      </a>
   </div>
 </nav>
 </div> <!-- /content -->
+<footer class="footer"><div class="nav-footer"><div class="nav-footer-center"><div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/alexandre-bry/MSc_Thesis-Report/edit/main/weekly_notes/2026_02_09.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/alexandre-bry/MSc_Thesis-Report/blob/main/weekly_notes/2026_02_09.qmd" class="toc-action"><i class="bi empty"></i>View source</a></li><li><a href="https://github.com/alexandre-bry/MSc_Thesis-Report/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div></div></footer><script>var lightboxQuarto = GLightbox({"closeEffect":"zoom","descPosition":"bottom","loop":false,"openEffect":"zoom","selector":".lightbox"});
+(function() {
+  let previousOnload = window.onload;
+  window.onload = () => {
+    if (previousOnload) {
+      previousOnload();
+    }
+    lightboxQuarto.on('slide_before_load', (data) => {
+      const { slideIndex, slideNode, slideConfig, player, trigger } = data;
+      const href = trigger.getAttribute('href');
+      if (href !== null) {
+        const imgEl = window.document.querySelector(`a[href="${href}"] img`);
+        if (imgEl !== null) {
+          const srcAttr = imgEl.getAttribute("src");
+          if (srcAttr && srcAttr.startsWith("data:")) {
+            slideConfig.href = srcAttr;
+          }
+        }
+      } 
+    });
+  
+    lightboxQuarto.on('slide_after_load', (data) => {
+      const { slideIndex, slideNode, slideConfig, player, trigger } = data;
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(slideNode);
+      }
+    });
+  
+  };
+  
+})();
+          </script>
 
 
 
 
-<footer class="footer"><div class="nav-footer"><div class="nav-footer-center"><div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/alexandre-bry/MSc_Thesis-Report/edit/main/weekly_notes/2025_11_10.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/alexandre-bry/MSc_Thesis-Report/blob/main/weekly_notes/2025_11_10.qmd" class="toc-action"><i class="bi empty"></i>View source</a></li><li><a href="https://github.com/alexandre-bry/MSc_Thesis-Report/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div></div></footer></body></html>
+</body></html>
