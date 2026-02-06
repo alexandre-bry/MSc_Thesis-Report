@@ -1,0 +1,78 @@
+---
+title: "2026/02/09"
+date: 2026-02-09
+tags: [weekly]
+meeting: [Hugo Ledoux, Bruno Vallet]
+---
+
+## Results since previous meeting
+
+## Material for discussion
+
+### Definition of the minimum/maximum signed vertical distance to the neighbours
+
+I computed for each point $p$ in the point clouds two signed distances, that I call **minimum/maximum signed vertical distance to the neighbours** ($\text{misvdtn(p)}$ and $\text{masvdtn(p)}$).
+These distances are computed through the following process:
+
+1. Order the points in the point cloud using their GPS time.
+    Multiple returns give multiple points with the same GPS time, but the order between them does not matter.
+2. For each point $p_1$ of GPS time $t_1$:
+    1. Find the previous ($t_0$) and the next ($t_2$) GPS times in the data, with all the associated points ($S_0 = \{p_{00}, ..., p_{0k}\}$, $S_2 = \{p_{20}, ..., p_{2k}\}$).
+    2. If $|t_2 - t_1| \gt \text{MAX\_TIME\_DIFF}$, set $S_2 = \emptyset$.
+        Same for $t_0$
+        This avoids computing the distance between two points that were simply the last and first point of consecutive scans.
+    3. Compute the signed vertical distance $\text{svd}(p_1, p)$ from $p_1(x_1, y_1, z_1)$ to each point $p(x, y, z)$ in $S = S_0 \cup S_2$, i.e. $$\text{svd}(p_1, p) = z - z_1$$
+    4. Then, $$\text{misvdtn}(p_1) = \begin{cases} 0 & \text{if } S=\emptyset \\ \min(\text{svd}(p_1, p) \; \forall p \in S) & \text{otherwise} \end{cases}$$ and $$\text{masvdtn}(p_1) = \begin{cases} 0 & \text{if } S=\emptyset \\ \max(\text{svd}(p_1, p) \; \forall p \in S) & \text{otherwise} \end{cases}$$
+
+As a result, $\text{misvdtn}(p)$ allows to identify points that are significantly higher than one of their neighbours, and $\text{masvdtn}(p)$ allows to identify points that are significantly lower than one of their neighbours.
+Therefore, both values are expected to be high in absolute value on the boundaries of roofs, with $\text{misvdtn}(p)$ being low (high in absolute value) for the first/last point on the roof, and $\text{masvdtn}(p)$ being high (high in absolute value) for the last/first point on the ground before the roof.
+
+### Examples
+
+I computed these two values for an area in Ozoir-la-Ferrière, France with the LiDAR HD.
+Below are a few interesting examples of buildings.
+Based on [this classification](https://lidarmag.com/2025/12/28/airborne-lidar-a-tutorial-for-2025-4/), the scanner geometry of the LiDAR HD in this area is similar to the Palmer scanner, giving circular scans with a radius of around 500 m.
+Below in @fig-examples-legends are the legends for the values of the minimum/maximum signed vertical distance to the neighbours, with a colour scale limited respectively to $[-10, 0]$ and $[0, 10]$ meters for better visualisation.
+
+
+::: {#fig-examples-legends layout="[[1,1]]"}
+
+![Legend for the minimum signed vertical distance to neighbours.](./2026_02_09/Examples-Min_signed_vertical_distance-Histogram.png){group="examples-legends"}
+
+![Legend for the maximum signed vertical distance to neighbours.](./2026_02_09/Examples-Max_signed_vertical_distance-Histogram.png){group="examples-legends"}
+
+Legends for figures below.
+:::
+
+To get an idea of the footprint and roofprint that could be built based on these values, the points in yellow/green should be used, but the outer boundary of these points should be used for $\text{misvdtn}$ to give the roofprint, and the inner boundary for $\text{masvdtn}$ to give the footprint.
+
+::: {#fig-example-1 layout="[[1.5,1], [1,1]]"}
+
+![Screenshot from [Google Maps](https://www.google.com/maps/@48.7704107,2.6786522,3a,61.1y,157.53h,99.82t/data=!3m7!1e1!3m5!1stZa0slZuYWEXt4MwuA2edw!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-9.824007970541615%26panoid%3DtZa0slZuYWEXt4MwuA2edw%26yaw%3D157.52726140446157!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI2MDIwMy4wIKXMDSoKLDEwMDc5MjA3MUgBUAM%3D).](./2026_02_09/Example_1-Street_view.png){group="examples-1"}
+
+![Screenshot of the "BD TOPO" and "Photographies aériennes" from the IGN.](./2026_02_09/Example_1-BD_TOPO.png){group="examples-1"}
+
+![Screenshot of the minimum signed vertical distance to neighbours.](./2026_02_09/Example_1-Min_signed_vertical_distance.png){group="examples-1"}
+
+![Screenshot of the maximum signed vertical distance to neighbours.](./2026_02_09/Example_1-Max_signed_vertical_distance.png){group="examples-1"}
+
+First example (address: 52 Av. Mellerio, 77330 Ozoir-la-Ferrière; coordinates: (676390, 6852281))
+:::
+
+::: {#fig-example-2 layout="[[1,1], [1,1]]"}
+
+![Screenshot from [Google Maps](https://www.google.com/maps/@48.770615,2.6746377,3a,58.5y,93.71h,91.28t/data=!3m7!1e1!3m5!1s08isS5suBHMtCgyfhOAy6g!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-1.2800386943688835%26panoid%3D08isS5suBHMtCgyfhOAy6g%26yaw%3D93.71045003614621!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI2MDIwMy4wIKXMDSoKLDEwMDc5MjA3MUgBUAM%3D).](./2026_02_09/Example_2-Street_view.png){group="examples-2"}
+
+![Screenshot of the "BD TOPO" and "Photographies aériennes" from the IGN.](./2026_02_09/Example_2-BD_TOPO.png){group="examples-2"}
+
+![Screenshot of the minimum signed vertical distance to neighbours.](./2026_02_09/Example_2-Min_signed_vertical_distance.png){group="examples-2"}
+
+![Screenshot of the maximum signed vertical distance to neighbours.](./2026_02_09/Example_2-Max_signed_vertical_distance.png){group="examples-2"}
+
+Second example (address: 58 Av. du Général Leclerc, 77330 Ozoir-la-Ferrière; coordinates: (676104, 6852326))
+:::
+
+## Discussion
+
+## Work until next meeting
+
