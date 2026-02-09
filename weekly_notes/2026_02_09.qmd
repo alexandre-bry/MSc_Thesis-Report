@@ -7,6 +7,9 @@ meeting: [Hugo Ledoux, Bruno Vallet]
 
 ## Results since previous meeting
 
+- Worked on the computation of a meaningful distance in point acquisition order to identify roof edges
+- Tried to set up the laptop provided by the IGN (not working yet)
+
 ## Material for discussion
 
 ### Definition of the minimum/maximum signed vertical distance to the neighbours
@@ -33,7 +36,6 @@ I computed these two values for an area in Ozoir-la-Ferrière, France with the L
 Below are a few interesting examples of buildings.
 Based on [this classification](https://lidarmag.com/2025/12/28/airborne-lidar-a-tutorial-for-2025-4/), the scanner geometry of the LiDAR HD in this area is similar to the Palmer scanner, giving circular scans with a radius of around 500 m.
 Below in @fig-examples-legends are the legends for the values of the minimum/maximum signed vertical distance to the neighbours, with a colour scale limited respectively to $[-10, 0]$ and $[0, 10]$ meters for better visualisation.
-
 
 ::: {#fig-examples-legends layout="[[1,1]]"}
 
@@ -72,7 +74,24 @@ First example (address: 52 Av. Mellerio, 77330 Ozoir-la-Ferrière; coordinates: 
 Second example (address: 58 Av. du Général Leclerc, 77330 Ozoir-la-Ferrière; coordinates: (676104, 6852326))
 :::
 
+### Questions
+
+- Having many points on a façade is annoying in our case because it means that the distances between them will be smaller.
+    How to solve this issue?
+- How to set up the monthly meetings with more people (Ravi, people from IGN)?
+
 ## Discussion
+
+- The values are computed seem promising but to identify the roof edges more precisely, we need to only identify the point at boundary for each line of points, and not all the points that are significantly higher/lower than their neighbours. 
+    Then, an estimation of a point on the roof edge can be computed, depending on whether the point is multi-echo or not
+- It would be great if there was a simple way to identify whether each façade is seen or not, to then use different strategies to identify the footprint.
+    For this purpose, getting the optical centres of the scanner would be very useful.
+- In cases where there is a dense set of points on a façade, the methods based on distances won't work, so another strategy will be needed.
+    One solution could be to compute the normal vector of the points to identify the points on the façade.
 
 ## Work until next meeting
 
+- [ ] Separate the multi-echo from the single echo points to precisely estimate the roof edges
+- [ ] Separate the cases where the façade is seen or not
+- [ ] Retrieve the optical centres (ask Wu Teng)
+- [x] Send an invitation to the monthly meeting to Ravi, people from the IGN, etc

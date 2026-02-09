@@ -7,6 +7,8 @@ meeting: [Hugo Ledoux, Bruno Vallet]
 
 ## Results since previous meeting
 
+## Material for discussion
+
 ### Feedback about A1
 
 This part contains the feedback received after the [A1 presentation](../reports/Project_proposal.qmd).
@@ -54,7 +56,7 @@ Questions:
 
 1. After thinking more about it, I agree that semantic segmentation may actually not be worth the time it would take to get an performant model.
     - The LiDAR HD point cloud indeed contains classification for buildings, and even if it is not perfect, it should be usable as a good basis to identify points that can be used for the roof.
-        With these points as a basis, the potentially wrongly classified roof points could be detected with using geometrical properties, to ensure the whole roof is found.
+        With these points as a basis, the potentially wrongly classified roof points could be detected using geometrical properties, to ensure the whole roof is found.
     - Then, based on the assumptions I make that we are looking for roof overhangs, the horizontal limit of the roof gives us everything we should need.
         So even without identifying façade points beforehand, we should not miss any of them
     - Also, I think that I have been too harsh with the current BD TOPO.
@@ -88,7 +90,7 @@ Questions:
     2. Initial outlines of buildings with correct angles.
         Working without outlines could also be doable, by isolating separate buildings geometrically and using only the point cloud to create the roofprint.
         But this would likely give worse results.
-5. About what how complex the assessment on a synthetized dataset could be, I think that this will depend on the time I have for it.
+5. About how complex the assessment on a synthetized dataset could be, I think that this will depend on the time I have for it.
     The goal is at least to try different parameters for the acquisition of the point cloud (flight lines, scanner geometry).
     I hope to find a tool allowing to also control the noise, and then being able to test with more complex occlusion from other objects such as trees would be great but not a priority.
 
@@ -108,16 +110,20 @@ Other remarks:
 - I hope the existing outlines could be used to guide the process of identifying edges in the footprints, but they should at least be usable to isolate more or less one building and work on it.
     Then, even if the outline is incorrect in its position, I hope to reuse the angles of the edges to refine the edges detected on the footprint and enforce better angles.
 - I agree that I need more figures.
-- Using auxiliary data about the figures is a good idea.
+- Using auxiliary data about the buildings is a good idea.
 
-## Material for discussion
+### Inviting Ravi
 
 - Ravi had interesting comments and questions during A1, should we invite him to these meetings to get his feedback more regularly?
     It was a bit overlooked at first for no real reason. 
 
 ## Discussion
 
+
 ## Work until next meeting
 
+- [ ] Add Ravi and some people from IGN to Monday's meetings every 4 weeks.
+- [ ] Look at the classification of LiDAR HD and AHN for the roof and façade points, and see if they are usually well classified, or for example for façade points if they can still be found if not correctly classified.
+- [x] Work on identifying the discontinuities in the point clouds by working in the order of the scan.
 - [ ] Clean up the scope.
 - [ ] Need more figures.
