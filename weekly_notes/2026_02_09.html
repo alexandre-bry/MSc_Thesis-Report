@@ -618,15 +618,25 @@ Figure&nbsp;3: Second example (address: 58 Av. du Général Leclerc, 77330 Ozoir
 <ul>
 <li>Having many points on a façade is annoying in our case because it means that the distances between them will be smaller. How to solve this issue?</li>
 <li>How to set up the monthly meetings with more people (Ravi, people from IGN)?</li>
-<li>Administrative procedures to work from home (with the laptop provided by the IGN?)</li>
 </ul>
 </section>
 </section>
 <section id="discussion" class="level2">
 <h2 class="anchored" data-anchor-id="discussion">Discussion</h2>
+<ul>
+<li>The values are computed seem promising but to identify the roof edges more precisely, we need to only identify the point at boundary for each line of points, and not all the points that are significantly higher/lower than their neighbours. Then, an estimation of a point on the roof edge can be computed, depending on whether the point is multi-echo or not</li>
+<li>It would be great if there was a simple way to identify whether each façade is seen or not, to then use different strategies to identify the footprint. For this purpose, getting the optical centres of the scanner would be very useful.</li>
+<li>In cases where there is a dense set of points on a façade, the methods based on distances won’t work, so another strategy will be needed. One solution could be to compute the normal vector of the points to identify the points on the façade.</li>
+</ul>
 </section>
 <section id="work-until-next-meeting" class="level2">
 <h2 class="anchored" data-anchor-id="work-until-next-meeting">Work until next meeting</h2>
+<ul class="task-list">
+<li><label><input type="checkbox">Separate the multi-echo from the single echo points to precisely estimate the roof edges</label></li>
+<li><label><input type="checkbox">Separate the cases where the façade is seen or not</label></li>
+<li><label><input type="checkbox">Retrieve the optical centres (ask Wu Teng)</label></li>
+<li><label><input type="checkbox" checked="">Send an invitation to the monthly meeting to Ravi, people from the IGN, etc</label></li>
+</ul>
 
 
 </section>
