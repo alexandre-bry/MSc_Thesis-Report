@@ -91,7 +91,7 @@ Second example (address: 58 Av. du Général Leclerc, 77330 Ozoir-la-Ferrière; 
 
 ## Work until next meeting
 
-- [ ] Separate the multi-echo from the single echo points to precisely estimate the roof edges
+- [x] Separate the multi-echo from the single echo points to precisely estimate the roof edges
 - [ ] Separate the cases where the façade is seen or not
-- [ ] Retrieve the optical centres (ask Wu Teng)
+- [x] Retrieve the optical centres (ask Wu Teng)
 - [x] Send an invitation to the monthly meeting to Ravi, people from the IGN, etc
