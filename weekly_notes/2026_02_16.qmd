@@ -31,3 +31,6 @@ meeting: [Hugo Ledoux, Bruno Vallet]
 ## Discussion
 
 ## Work until next meeting
+
+- [ ] Separation of cases based on the angle of the points
+- [x] Find situations with missing points of multiple returns and successive points which hit the roof and the ground
