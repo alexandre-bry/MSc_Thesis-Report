@@ -485,7 +485,7 @@ window.Quarto = {
 <li>I now use either of these two methods to compute a theoretical edge point <span class="math inline">\(p_e\)</span> in case of a single echo giving a point <span class="math inline">\(p\)</span>:
 <ul>
 <li>If the three previous points are almost aligned, I add half of the vector between the last and the previous last points to the last point to get my theoretical edge point <span class="math inline">\(p_e\)</span>. This assumes that the previous points are on the roof and the roof is flat so we can simply follow the direction of the roof.</li>
-<li>Otherwise, we use the calculated trajectory of the scanning vehicle to approximate the position <span class="math inline">\(p_s\)</span> of the scanner at the GPS time of the point of interest <span class="math inline">\(p\)</span>. Then, the average direction between the real edge point <span class="math inline">\(p\)</span> and the ground point <span class="math inline">\(p_g\)</span> is calculated: <span class="math display">\[ v_e = \text{normalize}(\frac{\text{normalize}(p - p_s) + \text{normalize}(p_g - p_s)}{2}) \]</span> Finally, the theoretical point on the edge <span class="math inline">\(p_e\)</span> is taken in this direction at the same distance as the point on the roof <span class="math inline">\(p\)</span>: <span class="math display">\[ p_e = p_s + \text{norm}(p - p_s) v_e \]</span></li>
+<li>Otherwise, we use the calculated trajectory of the scanning vehicle to approximate the position <span class="math inline">\(p_s\)</span> of the scanner at the GPS time of the point of interest <span class="math inline">\(p\)</span>. Then, the average direction between the real edge point <span class="math inline">\(p\)</span> and the ground point <span class="math inline">\(p_g\)</span> is calculated: <span class="math display">\[ v_e = \text{normalize}\left(\frac{\text{normalize}(p - p_s) + \text{normalize}(p_g - p_s)}{2}\right) \]</span> Finally, the theoretical point on the edge <span class="math inline">\(p_e\)</span> is taken in this direction at the same distance as the point on the roof <span class="math inline">\(p\)</span>: <span class="math display">\[ p_e = p_s + \text{norm}(p - p_s) v_e \]</span></li>
 </ul></li>
 <li>I also looked into computing normals and planarity measures on the point cloud to see whether these could be used, but I was not really convinced by results. It looked to me as if small imprecisions prevented flat objects to be really flat in the point cloud, which is surprising.</li>
 <li>Finally I made a Python script to download the tiles corresponding to a bounding box.</li>
@@ -533,9 +533,20 @@ Figure&nbsp;1: Extracts of the computed edge points for a single flight axis. Th
 </section>
 <section id="discussion" class="level2">
 <h2 class="anchored" data-anchor-id="discussion">Discussion</h2>
+<ul>
+<li>I need to find ways to identify points that are really on the roof in order to be able to identify the roof edges and discard points that were on balconies, on trees, etc</li>
+</ul>
 </section>
 <section id="work-until-next-meeting" class="level2">
 <h2 class="anchored" data-anchor-id="work-until-next-meeting">Work until next meeting</h2>
+<ul class="task-list">
+<li><label><input type="checkbox">Try to group edges with angles too close to 180° to match them together (see the code from Amine)</label></li>
+<li><label><input type="checkbox">Look into ways to properly identify the points on the roof edges</label>
+<ul class="task-list">
+<li><label><input type="checkbox">Use the alignment of the point with the previous points to determine how certain it is that the point is a roof edge.</label></li>
+</ul></li>
+<li><label><input type="checkbox">Ask Wu Teng about sensor topology (regular 2D structure on a point cloud based on acquisition regularity). Compare the results with ScanAngle and using the estimated position of the scanner.</label></li>
+</ul>
 
 
 </section>
