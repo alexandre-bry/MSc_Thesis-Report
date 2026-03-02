@@ -7,9 +7,9 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="Alexandre Bry">
-<meta name="dcterms.date" content="2026-02-16">
+<meta name="dcterms.date" content="2026-03-02">
 
-<title>2026/02/16 – MSc Thesis - Website</title>
+<title>2026/03/02 – MSc Thesis - Website</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -32,8 +32,7 @@ ul.task-list li input[type="checkbox"] {
 <script src="../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../">
-<link href="../weekly_notes/2026_02_23.html" rel="next">
-<link href="../weekly_notes/2026_02_09.html" rel="prev">
+<link href="../weekly_notes/2026_02_23.html" rel="prev">
 <script src="../site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
 <script src="../site_libs/quarto-html/axe/axe-check.js" type="module"></script>
@@ -80,13 +79,42 @@ ul.task-list li input[type="checkbox"] {
   }
 }</script>
 
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
 
 <link rel="stylesheet" href="../styles.css">
-<meta property="og:title" content="2026/02/16 – MSc Thesis - Website">
-<meta property="og:image" content="https://alexandre-bry.github.io/MSc_Thesis-Report/diagrams/Overview_of_pipeline.drawio.png">
+<meta property="og:title" content="2026/03/02 – MSc Thesis - Website">
+<meta property="og:image" content="https://alexandre-bry.github.io/MSc_Thesis-Report/weekly_notes/2026_03_02/Edge_points-Clean.png">
 <meta property="og:site_name" content="MSc Thesis - Website">
-<meta property="og:image:height" content="724">
-<meta property="og:image:width" content="1422">
+<meta property="og:image:height" content="656">
+<meta property="og:image:width" content="1134">
 </head>
 
 <body class="nav-sidebar docked nav-fixed quarto-light"><script id="quarto-html-before-body" type="application/javascript">
@@ -298,7 +326,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../weekly_notes/2026_02_16.html">2026/02/16</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../weekly_notes/2026_03_02.html">2026/03/02</a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
     </div>
@@ -378,7 +406,7 @@ ul.task-list li input[type="checkbox"] {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../weekly_notes/2026_02_16.html" class="sidebar-item-text sidebar-link active">
+  <a href="../weekly_notes/2026_02_16.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">2026/02/16</span></a>
   </div>
 </li>
@@ -390,7 +418,7 @@ ul.task-list li input[type="checkbox"] {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../weekly_notes/2026_03_02.html" class="sidebar-item-text sidebar-link">
+  <a href="../weekly_notes/2026_03_02.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text">2026/03/02</span></a>
   </div>
 </li>
@@ -407,13 +435,13 @@ ul.task-list li input[type="checkbox"] {
   <li><a href="#results-since-previous-meeting" id="toc-results-since-previous-meeting" class="nav-link active" data-scroll-target="#results-since-previous-meeting">Results since previous meeting</a></li>
   <li><a href="#material-for-discussion" id="toc-material-for-discussion" class="nav-link" data-scroll-target="#material-for-discussion">Material for discussion</a>
   <ul class="collapse">
-  <li><a href="#overview-of-the-pipeline" id="toc-overview-of-the-pipeline" class="nav-link" data-scroll-target="#overview-of-the-pipeline">Overview of the pipeline</a></li>
-  <li><a href="#questions" id="toc-questions" class="nav-link" data-scroll-target="#questions">Questions</a></li>
+  <li><a href="#edge-extraction-in-3d" id="toc-edge-extraction-in-3d" class="nav-link" data-scroll-target="#edge-extraction-in-3d">Edge extraction in 3D</a></li>
+  <li><a href="#ideas" id="toc-ideas" class="nav-link" data-scroll-target="#ideas">Ideas</a></li>
   </ul></li>
   <li><a href="#discussion" id="toc-discussion" class="nav-link" data-scroll-target="#discussion">Discussion</a></li>
   <li><a href="#work-until-next-meeting" id="toc-work-until-next-meeting" class="nav-link" data-scroll-target="#work-until-next-meeting">Work until next meeting</a></li>
   </ul>
-<div class="toc-actions"><ul><li><a href="https://github.com/alexandre-bry/MSc_Thesis-Report/edit/main/weekly_notes/2026_02_16.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/alexandre-bry/MSc_Thesis-Report/blob/main/weekly_notes/2026_02_16.qmd" class="toc-action"><i class="bi empty"></i>View source</a></li><li><a href="https://github.com/alexandre-bry/MSc_Thesis-Report/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
+<div class="toc-actions"><ul><li><a href="https://github.com/alexandre-bry/MSc_Thesis-Report/edit/main/weekly_notes/2026_03_02.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/alexandre-bry/MSc_Thesis-Report/blob/main/weekly_notes/2026_03_02.qmd" class="toc-action"><i class="bi empty"></i>View source</a></li><li><a href="https://github.com/alexandre-bry/MSc_Thesis-Report/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
@@ -421,7 +449,7 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">2026/02/16</h1>
+<h1 class="title">2026/03/02</h1>
 </div>
 
 
@@ -438,7 +466,7 @@ ul.task-list li input[type="checkbox"] {
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">February 16, 2026</p>
+      <p class="date">March 2, 2026</p>
     </div>
   </div>
   
@@ -453,38 +481,53 @@ ul.task-list li input[type="checkbox"] {
 <section id="results-since-previous-meeting" class="level2">
 <h2 class="anchored" data-anchor-id="results-since-previous-meeting">Results since previous meeting</h2>
 <ul>
-<li>Improved the setup of the project (mainly C++ and its dependencies)</li>
-<li>Installed and set up the IGN laptop</li>
-<li>Improved the process of identifying roof edges, separating multi-echo from single echo</li>
-<li>Created a script to extract single scanner lines randomly from an input LAS file (for visualization purposes)</li>
-<li>Made a small script to read the BD TOPO as GeoParquet</li>
+<li>I was sick last week so I was not very efficient and did not work at all on Friday.</li>
+<li>I now use either of these two methods to compute a theoretical edge point <span class="math inline">\(p_e\)</span> in case of a single echo giving a point <span class="math inline">\(p\)</span>:
+<ul>
+<li>If the three previous points are almost aligned, I add half of the vector between the last and the previous last points to the last point to get my theoretical edge point <span class="math inline">\(p_e\)</span>. This assumes that the previous points are on the roof and the roof is flat so we can simply follow the direction of the roof.</li>
+<li>Otherwise, we use the calculated trajectory of the scanning vehicle to approximate the position <span class="math inline">\(p_s\)</span> of the scanner at the GPS time of the point of interest <span class="math inline">\(p\)</span>. Then, the average direction between the real edge point <span class="math inline">\(p\)</span> and the ground point <span class="math inline">\(p_g\)</span> is calculated: <span class="math display">\[ v_e = \text{normalize}(\frac{\text{normalize}(p - p_s) + \text{normalize}(p_g - p_s)}{2}) \]</span> Finally, the theoretical point on the edge <span class="math inline">\(p_e\)</span> is taken in this direction at the same distance as the point on the roof <span class="math inline">\(p\)</span>: <span class="math display">\[ p_e = p_s + \text{norm}(p - p_s) v_e \]</span></li>
+</ul></li>
+<li>I also looked into computing normals and planarity measures on the point cloud to see whether these could be used, but I was not really convinced by results. It looked to me as if small imprecisions prevented flat objects to be really flat in the point cloud, which is surprising.</li>
+<li>Finally I made a Python script to download the tiles corresponding to a bounding box.</li>
 </ul>
 </section>
 <section id="material-for-discussion" class="level2">
 <h2 class="anchored" data-anchor-id="material-for-discussion">Material for discussion</h2>
-<section id="overview-of-the-pipeline" class="level3">
-<h3 class="anchored" data-anchor-id="overview-of-the-pipeline">Overview of the pipeline</h3>
-<div id="fig-overview-pipeline" class="quarto-float quarto-figure quarto-figure-center anchored">
+<section id="edge-extraction-in-3d" class="level3">
+<h3 class="anchored" data-anchor-id="edge-extraction-in-3d">Edge extraction in 3D</h3>
+<p>I tried to look into extracting edges in 3D without the BD TOPO as a guide but I am not sure how to do it. I have mostly thought about RANSAC and Region Growing but I am not sure which one to try. In many situations there are clear and visible lines of points, so RANSAC seems too complex for what we really need. In others there are many other points that we need to ignore for the edges. I think that weighing the points for methods like RANSAC based on their classification could help (more weight for class Building than for Unassigned)</p>
+<div id="fig-edge-points" class="quarto-layout-panel">
 <figure class="quarto-float quarto-float-fig figure">
-<div aria-describedby="fig-overview-pipeline-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div aria-describedby="fig-edge-points-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div class="quarto-layout-row">
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><a href="../diagrams/Overview_of_pipeline.drawio.png" class="lightbox" data-gallery="quarto-lightbox-gallery-1" title="Overview of the pipeline"><img src="../diagrams/Overview_of_pipeline.drawio.png" class="img-fluid figure-img"></a></p>
-<figcaption>Overview of the pipeline</figcaption>
+<p><a href="./2026_03_02/Edge_points-Clean.png" class="lightbox" data-gallery="edge-point" title="Simple cases where points are well aligned and there is not much noise."><img src="./2026_03_02/Edge_points-Clean.png" class="img-fluid figure-img"></a></p>
+<figcaption>Simple cases where points are well aligned and there is not much noise.</figcaption>
 </figure>
 </div>
 </div>
-<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig quarto-uncaptioned" id="fig-overview-pipeline-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;1
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="./2026_03_02/Edge_points-More_complex.png" class="lightbox" data-gallery="edge-point" title="More complex case with a lot of noise"><img src="./2026_03_02/Edge_points-More_complex.png" class="img-fluid figure-img"></a></p>
+<figcaption>More complex case with a lot of noise</figcaption>
+</figure>
+</div>
+</div>
+</div>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-edge-points-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;1: Extracts of the computed edge points for a single flight axis. The colour corresponds to the type of points: blue points are real points from the input (multi-echo) while red and green points were computed from single echo points as explained above. Green corresponds to the alignment method and red to the half-angle method.
 </figcaption>
 </figure>
 </div>
 </section>
-<section id="questions" class="level3">
-<h3 class="anchored" data-anchor-id="questions">Questions</h3>
+<section id="ideas" class="level3">
+<h3 class="anchored" data-anchor-id="ideas">Ideas</h3>
 <ul>
-<li>There are often points with a number of returns higher than 1, except the other returns are missing. How is this possible?</li>
-<li>Sometimes we have two successive points with a number of returns higher than 1 on the roof. How is that possible?</li>
+<li>Consider neighbours in the direction of the flying vehicle, in order to handle situations where the ray is parallel to the façades.</li>
 </ul>
 </section>
 </section>
@@ -493,10 +536,6 @@ Figure&nbsp;1
 </section>
 <section id="work-until-next-meeting" class="level2">
 <h2 class="anchored" data-anchor-id="work-until-next-meeting">Work until next meeting</h2>
-<ul class="task-list">
-<li><label><input type="checkbox">Separation of cases based on the angle of the points</label></li>
-<li><label><input type="checkbox" checked="">Find situations with missing points of multiple returns and successive points which hit the roof and the ground</label></li>
-</ul>
 
 
 </section>
@@ -919,18 +958,15 @@ Figure&nbsp;1
   </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="../weekly_notes/2026_02_09.html" class="pagination-link" aria-label="2026/02/09">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">2026/02/09</span>
+      <a href="../weekly_notes/2026_02_23.html" class="pagination-link" aria-label="2026/02/23">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">2026/02/23</span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="../weekly_notes/2026_02_23.html" class="pagination-link" aria-label="2026/02/23">
-        <span class="nav-page-text">2026/02/23</span> <i class="bi bi-arrow-right-short"></i>
-      </a>
   </div>
 </nav>
 </div> <!-- /content -->
-<footer class="footer"><div class="nav-footer"><div class="nav-footer-center"><div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/alexandre-bry/MSc_Thesis-Report/edit/main/weekly_notes/2026_02_16.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/alexandre-bry/MSc_Thesis-Report/blob/main/weekly_notes/2026_02_16.qmd" class="toc-action"><i class="bi empty"></i>View source</a></li><li><a href="https://github.com/alexandre-bry/MSc_Thesis-Report/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div></div></footer><script>var lightboxQuarto = GLightbox({"closeEffect":"zoom","descPosition":"bottom","loop":false,"openEffect":"zoom","selector":".lightbox"});
+<footer class="footer"><div class="nav-footer"><div class="nav-footer-center"><div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/alexandre-bry/MSc_Thesis-Report/edit/main/weekly_notes/2026_03_02.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/alexandre-bry/MSc_Thesis-Report/blob/main/weekly_notes/2026_03_02.qmd" class="toc-action"><i class="bi empty"></i>View source</a></li><li><a href="https://github.com/alexandre-bry/MSc_Thesis-Report/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div></div></footer><script>var lightboxQuarto = GLightbox({"closeEffect":"zoom","descPosition":"bottom","loop":false,"openEffect":"zoom","selector":".lightbox"});
 (function() {
   let previousOnload = window.onload;
   window.onload = () => {
