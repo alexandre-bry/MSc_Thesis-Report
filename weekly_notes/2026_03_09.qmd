@@ -74,11 +74,28 @@ And there is no obvious solution to this, because trying to project the points i
 
 - Do we want to be able to process any type of LiDAR scanner?
   Do we want to start with one or more specific types and set these as the priorities?
+- Should I start looking into point cloud semantic segmentation now or soon?
 
 ## Discussion
 
-TODO
+- My vision of the point cloud topoloy as a set of neighbours for each point (therefore defining an oriented graph) instead of a plain raster can be a good idea to get two mostly perpendicular directions for every point, especially on the sides of ellipsoidal LiDAR scans.
+- Adding a penalty to offsetting the edges could help preventing moving the edge a lot when the certainty is low.
+- Running the matching algorithm multiple times could help too.
+- No need to try to handle $\mathcal{C}^1$ discontinuities in roofs, even if the BD TOPO has such differentiations.
+  In this case, the penality added to the offset could be helpful.
+- Since we do not care about $\mathcal{C}^1$ discontinuities, the algorithm of Wu Teng with Cross-Line Elements seems a bit redundant.
+- Computing the score of the offset for a given edge by also adding the score of its two neighbours could help positioning small segments better, because even if these don't see a big difference, their potentially longer neighbours could.
+- In cases where the edges are shifted like the algorithm we do, the simplest way to get topologically correct polygons again is to shift vertices by the sum of the two computed shifts
 
 ## Work until next meeting
 
 - [ ] Gather somewhere all the ideas I have/had to get a better overview
+- [x] Ask about going to Saint-Mandé on Wednesday
+- [ ] Try to experiment with the new ideas for the matching algorithm:
+  - [ ] Penalty to offsetting the edge
+  - [ ] Computing the metric for multiple edges grouped together
+  - [ ] Running the algorithm multiple times in a row
+  - [ ] Adding the two neighbours to the metric computation
+  - [ ] Properly join neighbour edges that are almost collinear
+  - [ ] Add as a criterion to the line coverage, especially for the neighbours
+- [ ] Process the point cloud in perpendicular direction to the scan lines as well
