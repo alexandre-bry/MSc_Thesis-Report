@@ -60,14 +60,14 @@ div.csl-indent {
 <script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="../site_libs/quarto-html/anchor.min.js"></script>
 <link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-ed96de9b727972fe78a7b5d16c58bf87.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-dark-4d9afe2b8d18ee9fa5d0d57b5ed4214d.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-ed96de9b727972fe78a7b5d16c58bf87.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-99e777b2b3262cb0e1538bc5fc5de7fc.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-dark-3b164a37270e39dc3a94abe50fbe3df8.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-99e777b2b3262cb0e1538bc5fc5de7fc.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap-be0001012b4f5f66d6e5f1f595422864.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="../site_libs/bootstrap/bootstrap-dark-89479c97176ac12c6528a7f9cf140a02.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
-<link href="../site_libs/bootstrap/bootstrap-be0001012b4f5f66d6e5f1f595422864.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-747bbb0e02e83d2e76c50fb3fc0c4d93.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-dark-b52596d9f92af721301f8edc390bd1a3.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="../site_libs/bootstrap/bootstrap-747bbb0e02e83d2e76c50fb3fc0c4d93.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
 <script src="../site_libs/quarto-contrib/glightbox/glightbox.min.js"></script>
 <link href="../site_libs/quarto-contrib/glightbox/glightbox.min.css" rel="stylesheet">
 <link href="../site_libs/quarto-contrib/glightbox/lightbox.css" rel="stylesheet">
@@ -101,6 +101,7 @@ div.csl-indent {
 
 
 <meta property="og:title" content="2026/03/09 – MSc Thesis - Website">
+<meta property="og:description" content="Website for the MSc Thesis of Alexandre Bry for the MSc Geomatics">
 <meta property="og:image" content="https://alexandre-bry.github.io/MSc_Thesis-Report/weekly_notes/2026_03_09/Sliver_roofprint-Point_cloud.png">
 <meta property="og:site_name" content="MSc Thesis - Website">
 <meta property="og:image:height" content="586">
@@ -438,6 +439,7 @@ div.csl-indent {
   <li><a href="#ideas" id="toc-ideas" class="nav-link" data-scroll-target="#ideas">Ideas</a></li>
   <li><a href="#sliver-roofprints" id="toc-sliver-roofprints" class="nav-link" data-scroll-target="#sliver-roofprints">Sliver roofprints</a></li>
   <li><a href="#plane-detection" id="toc-plane-detection" class="nav-link" data-scroll-target="#plane-detection">Plane detection</a></li>
+  <li><a href="#questions" id="toc-questions" class="nav-link" data-scroll-target="#questions">Questions</a></li>
   </ul></li>
   <li><a href="#discussion" id="toc-discussion" class="nav-link" data-scroll-target="#discussion">Discussion</a></li>
   <li><a href="#work-until-next-meeting" id="toc-work-until-next-meeting" class="nav-link" data-scroll-target="#work-until-next-meeting">Work until next meeting</a></li>
@@ -482,8 +484,11 @@ div.csl-indent {
 <section id="results-since-previous-meeting" class="level2">
 <h2 class="anchored" data-anchor-id="results-since-previous-meeting">Results since previous meeting</h2>
 <ul>
-<li>Fitting a line with PCA makes the result worse in many cases, because it is difficult to identify the exact points we want and it is very sensible to outliers</li>
-<li>Fixed the issue with the many bad edge points created on the sides of the point clouds (due to the ellipsoidal geometry having a density per scan line that decreases towards the sides)</li>
+<li><strong>Reorganized a lot of code</strong> to use CGAL geometry capabilities and to allow for processing <strong>point cloud topology in different directions</strong>.</li>
+<li>Fixed the issue with the <strong>many bad edge points</strong> created on the sides of the point clouds (due to the ellipsoidal geometry having a density per scan line that decreases towards the sides).</li>
+<li>Discussion with Wu Teng lead to <strong>new ideas to identify roof plane edges</strong> (see <a href="#plane-detection">Plane detection</a> below).</li>
+<li>Tried fitting a line with <strong>PCA without success</strong>, because it was difficult to identify the points we want to use a a neighbourhood and it is very sensible to outliers. However, separating flight axes and using topology could make it better, because mixed flight axes seem to contribute to the issue.</li>
+<li>Using the <strong>height of a point</strong> to give it <strong>more weight</strong> in fitting the roof edges seems to improve the results. However, it can also introduce issues where the edge of a neighbouring building is more likely to be selected if it is higher</li>
 </ul>
 </section>
 <section id="material-for-discussion" class="level2">
@@ -491,15 +496,18 @@ div.csl-indent {
 <section id="ideas" class="level3">
 <h3 class="anchored" data-anchor-id="ideas">Ideas</h3>
 <ul>
-<li>Points classified as building that are neighbours to a point not classified as buildings are potential roof edges</li>
-<li>Use the height as a weight to give more weight to higher points (more likely to be roof points)</li>
-<li>Matching longer edges first may help matching the smaller edges properly -&gt; I tried this but it made the results worse</li>
-<li>Use the repartition of points on the line to weigh the points as well</li>
+<li>Process points in <strong>other directions</strong> than scan order (such as perpendicularly to it)</li>
+<li>Matching <strong>longer edges first</strong> may help matching the smaller edges properly, if we shift the starting point of the neighbouring edges</li>
+<li>Use the <strong>classification</strong> of the points in combination with the outlines to <strong>crop</strong> the point clouds better.</li>
+<li>Use some kind of RANSAC locally for each edge to be able to locate edges in 3D. This can be especially useful for high buildings which give many edge points at every level due to balconies.</li>
+<li>For visualization of results, possibility to use iTowns to visualize the point cloud and the roofprints?</li>
 </ul>
 </section>
 <section id="sliver-roofprints" class="level3">
 <h3 class="anchored" data-anchor-id="sliver-roofprints">Sliver roofprints</h3>
-<p>Some combinatorial optimization could help to get a correct output in some cases, especially for small buildings where otherwise you can easily match two opposite edges to the same spot.</p>
+<section id="combinatorial-optimization" class="level4">
+<h4 class="anchored" data-anchor-id="combinatorial-optimization">Combinatorial optimization</h4>
+<p>Some <strong>combinatorial optimization</strong> could help to get a correct output in some cases, especially for small buildings where otherwise you can easily match two opposite edges to the same spot.</p>
 <div id="fig-sliver-roofprints" class="quarto-layout-panel">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-sliver-roofprints-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
@@ -527,12 +535,21 @@ Figure&nbsp;1: Example of a computed roofprint where both opposite edges matched
 </figcaption>
 </figure>
 </div>
-<p>It could also help to prevent matching an edge to points that are further away simply because the score is slightly higher. Here is a list of potential measures that could help guide the optimization process:</p>
+<p>It could also help to prevent matching an edge to points that are further away simply because the score is higher. Here is a list of potential measures that could help guide the optimization process:</p>
 <ul>
 <li>Total score of the edge (computed in a RANSAC-like way with inliers and weights given to points)</li>
 <li>Preservation of the area / coherence of the individual shifts</li>
 <li>Proximity of the edges that should be connected</li>
 </ul>
+<p>Such an optimization <strong>could be costly for large buildings</strong>, but if we only take only the possibilities that reach a <strong>minimum score</strong> such as 50% of the best, with a <strong>minimum distance</strong> between the propositions that could be something like 30&nbsp;cm, we should get 1 proposition for most edges and <strong>we can hope that it does not explode</strong>.</p>
+</section>
+<section id="other-ideas" class="level4">
+<h4 class="anchored" data-anchor-id="other-ideas">Other ideas</h4>
+<ul>
+<li>Using the <strong>repartition of points on the line</strong> as an indication could help as well. This could prevent getting high scores somewhere because there is a high concentration of points to prefer a better and more reliable distribution on the whole edge.</li>
+<li>Being able to tell <strong>where the matched segments start and end</strong> could also help, because it would allow to check how close they are to reconstruct a better building.</li>
+</ul>
+</section>
 </section>
 <section id="plane-detection" class="level3">
 <h3 class="anchored" data-anchor-id="plane-detection">Plane detection</h3>
@@ -540,18 +557,28 @@ Figure&nbsp;1: Example of a computed roofprint where both opposite edges matched
 <p>His method is close to the idea I had to approximate a line around each point in scan line order (take previous and next). Variations of this line could then indicate limits of roof planes.</p>
 <p>However it is unclear if and how to handle the point clouds with ellipsoidal topology. Because in this case the points are not really aligned, so handling lines in this case would be slightly different. I can first assume that the variation is small enough and it should not matter, but for large buildings it may matter. And there is no obvious solution to this, because trying to project the points in some way to have them in the cone defined by the scanner would likely lose the planarity of the points (i.e.&nbsp;coplanar points in 3D would not be aligned in this new 2D space).</p>
 </section>
+<section id="questions" class="level3">
+<h3 class="anchored" data-anchor-id="questions">Questions</h3>
+<ul>
+<li>Do we want to be able to process any type of LiDAR scanner? Do we want to start with one or more specific types and set these as the priorities?</li>
+</ul>
+</section>
 </section>
 <section id="discussion" class="level2">
 <h2 class="anchored" data-anchor-id="discussion">Discussion</h2>
+<p>TODO</p>
 </section>
 <section id="work-until-next-meeting" class="level2">
-
+<h2 class="anchored" data-anchor-id="work-until-next-meeting">Work until next meeting</h2>
+<ul class="task-list">
+<li><label><input type="checkbox">Gather somewhere all the ideas I have/had to get a better overview</label></li>
+</ul>
 
 
 
 </section>
 
-<a onclick="window.scrollTo(0, 0); return false;" role="button" id="quarto-back-to-top"><i class="bi bi-arrow-up"></i> Back to top</a><div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" role="doc-bibliography" id="quarto-bibliography"><h2 class="anchored quarto-appendix-heading">Work until next meeting</h2><div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list">
+<a onclick="window.scrollTo(0, 0); return false;" role="button" id="quarto-back-to-top"><i class="bi bi-arrow-up"></i> Back to top</a><div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" role="doc-bibliography" id="quarto-bibliography"><h2 class="anchored quarto-appendix-heading">References</h2><div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list">
 <div id="ref-Wu2016" class="csl-entry" role="listitem">
 Wu, Teng, Xiangyun Hu, and Lizhi Ye. 2016. <span>“Fast and Accurate Plane Segmentation of Airborne LiDAR Point Cloud Using Cross-Line Elements.”</span> <em>Remote Sensing</em> 8 (5): 383. <a href="https://doi.org/10.3390/rs8050383">https://doi.org/10.3390/rs8050383</a>.
 </div>
