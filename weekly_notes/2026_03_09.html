@@ -99,9 +99,37 @@ div.csl-indent {
   }
 }</script>
 
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
 
 <meta property="og:title" content="2026/03/09 – MSc Thesis - Website">
-<meta property="og:description" content="Website for the MSc Thesis of Alexandre Bry for the MSc Geomatics">
 <meta property="og:image" content="https://alexandre-bry.github.io/MSc_Thesis-Report/weekly_notes/2026_03_09/Sliver_roofprint-Point_cloud.png">
 <meta property="og:site_name" content="MSc Thesis - Website">
 <meta property="og:image:height" content="586">
@@ -567,13 +595,31 @@ Figure&nbsp;1: Example of a computed roofprint where both opposite edges matched
 </section>
 <section id="discussion" class="level2">
 <h2 class="anchored" data-anchor-id="discussion">Discussion</h2>
-<p>TODO</p>
+<ul>
+<li>My vision of the point cloud topoloy as a set of neighbours for each point (therefore defining an oriented graph) instead of a plain raster can be a good idea to get two mostly perpendicular directions for every point, especially on the sides of ellipsoidal LiDAR scans.</li>
+<li>Adding a penalty to offsetting the edges could help preventing moving the edge a lot when the certainty is low.</li>
+<li>Running the matching algorithm multiple times could help too.</li>
+<li>No need to try to handle <span class="math inline">\(\mathcal{C}^1\)</span> discontinuities in roofs, even if the BD TOPO has such differentiations. In this case, the penality added to the offset could be helpful.</li>
+<li>Since we do not care about <span class="math inline">\(\mathcal{C}^1\)</span> discontinuities, the algorithm of Wu Teng with Cross-Line Elements seems a bit redundant.</li>
+<li>Computing the score of the offset for a given edge by also adding the score of its two neighbours could help positioning small segments better, because even if these don’t see a big difference, their potentially longer neighbours could.</li>
+<li>In cases where the edges are shifted like the algorithm we do, the simplest way to get topologically correct polygons again is to shift vertices by the sum of the two computed shifts</li>
+</ul>
 </section>
 <section id="work-until-next-meeting" class="level2">
 <h2 class="anchored" data-anchor-id="work-until-next-meeting">Work until next meeting</h2>
 <ul class="task-list">
 <li><label><input type="checkbox">Gather somewhere all the ideas I have/had to get a better overview</label></li>
-<li><label><input type="checkbox">Ask about going to Saint-Mandé on Wednesday</label></li>
+<li><label><input type="checkbox" checked="">Ask about going to Saint-Mandé on Wednesday</label></li>
+<li><label><input type="checkbox">Try to experiment with the new ideas for the matching algorithm:</label>
+<ul class="task-list">
+<li><label><input type="checkbox">Penalty to offsetting the edge</label></li>
+<li><label><input type="checkbox">Computing the metric for multiple edges grouped together</label></li>
+<li><label><input type="checkbox">Running the algorithm multiple times in a row</label></li>
+<li><label><input type="checkbox">Adding the two neighbours to the metric computation</label></li>
+<li><label><input type="checkbox">Properly join neighbour edges that are almost collinear</label></li>
+<li><label><input type="checkbox">Add as a criterion to the line coverage, especially for the neighbours</label></li>
+</ul></li>
+<li><label><input type="checkbox">Process the point cloud in perpendicular direction to the scan lines as well</label></li>
 </ul>
 
 

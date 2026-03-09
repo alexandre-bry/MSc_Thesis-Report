@@ -816,7 +816,7 @@
     "href": "weekly_notes/2026_03_09.html#discussion",
     "title": "2026/03/09",
     "section": "Discussion",
-    "text": "Discussion\nTODO",
+    "text": "Discussion\n\nMy vision of the point cloud topoloy as a set of neighbours for each point (therefore defining an oriented graph) instead of a plain raster can be a good idea to get two mostly perpendicular directions for every point, especially on the sides of ellipsoidal LiDAR scans.\nAdding a penalty to offsetting the edges could help preventing moving the edge a lot when the certainty is low.\nRunning the matching algorithm multiple times could help too.\nNo need to try to handle \\(\\mathcal{C}^1\\) discontinuities in roofs, even if the BD TOPO has such differentiations. In this case, the penality added to the offset could be helpful.\nSince we do not care about \\(\\mathcal{C}^1\\) discontinuities, the algorithm of Wu Teng with Cross-Line Elements seems a bit redundant.\nComputing the score of the offset for a given edge by also adding the score of its two neighbours could help positioning small segments better, because even if these don’t see a big difference, their potentially longer neighbours could.\nIn cases where the edges are shifted like the algorithm we do, the simplest way to get topologically correct polygons again is to shift vertices by the sum of the two computed shifts",
     "crumbs": [
       "Weekly Meetings",
       "2026/03/09"
@@ -827,7 +827,7 @@
     "href": "weekly_notes/2026_03_09.html#work-until-next-meeting",
     "title": "2026/03/09",
     "section": "Work until next meeting",
-    "text": "Work until next meeting\n\nGather somewhere all the ideas I have/had to get a better overview\nAsk about going to Saint-Mandé on Wednesday",
+    "text": "Work until next meeting\n\nGather somewhere all the ideas I have/had to get a better overview\nAsk about going to Saint-Mandé on Wednesday\nTry to experiment with the new ideas for the matching algorithm:\n\nPenalty to offsetting the edge\nComputing the metric for multiple edges grouped together\nRunning the algorithm multiple times in a row\nAdding the two neighbours to the metric computation\nProperly join neighbour edges that are almost collinear\nAdd as a criterion to the line coverage, especially for the neighbours\n\nProcess the point cloud in perpendicular direction to the scan lines as well",
     "crumbs": [
       "Weekly Meetings",
       "2026/03/09"
