@@ -7,21 +7,30 @@ meeting: [Bruno Vallet]
 
 ## Results since previous meeting
 
-- Fitting a line with PCA makes the result worse in many cases, because it is difficult to identify the exact points we want and it is very sensible to outliers
-- Fixed the issue with the many bad edge points created on the sides of the point clouds (due to the ellipsoidal geometry having a density per scan line that decreases towards the sides)
+- **Reorganized a lot of code** to use CGAL geometry capabilities and to allow for processing **point cloud topology in different directions**.
+- Fixed the issue with the **many bad edge points** created on the sides of the point clouds (due to the ellipsoidal geometry having a density per scan line that decreases towards the sides).
+- Discussion with Wu Teng lead to **new ideas to identify roof plane edges** (see [Plane detection](#plane-detection) below).
+- Tried fitting a line with **PCA without success**, because it was difficult to identify the points we want to use a a neighbourhood and it is very sensible to outliers.
+  However, separating flight axes and using topology could make it better, because mixed flight axes seem to contribute to the issue.
+- Using the **height of a point** to give it **more weight** in fitting the roof edges seems to improve the results.
+  However, it can also introduce issues where the edge of a neighbouring building is more likely to be selected if it is higher
 
 ## Material for discussion
 
 ### Ideas
 
-- Points classified as building that are neighbours to a point not classified as buildings are potential roof edges
-- Use the height as a weight to give more weight to higher points (more likely to be roof points)
-- Matching longer edges first may help matching the smaller edges properly -\> I tried this but it made the results worse
-- Use the repartition of points on the line to weigh the points as well
+- Process points in **other directions** than scan order (such as perpendicularly to it)
+- Matching **longer edges first** may help matching the smaller edges properly, if we shift the starting point of the neighbouring edges
+- Use the **classification** of the points in combination with the outlines to **crop** the point clouds better.
+- Use some kind of RANSAC locally for each edge to be able to locate edges in 3D.
+  This can be especially useful for high buildings which give many edge points at every level due to balconies.
+- For visualization of results, possibility to use iTowns to visualize the point cloud and the roofprints?
 
 ### Sliver roofprints
 
-Some combinatorial optimization could help to get a correct output in some cases, especially for small buildings where otherwise you can easily match two opposite edges to the same spot.
+#### Combinatorial optimization
+
+Some **combinatorial optimization** could help to get a correct output in some cases, especially for small buildings where otherwise you can easily match two opposite edges to the same spot.
 
 :::: {#fig-sliver-roofprints layout="[[1,1]]"}
 ![With the LiDAR HD as background, coloured with the Z value.](./2026_03_09/Sliver_roofprint-Point_cloud.png){group="sliver-roofprints"}
@@ -31,11 +40,20 @@ Some combinatorial optimization could help to get a correct output in some cases
 Example of a computed roofprint where both opposite edges matched the same set of points. The black lines come from BD TOPO and the blue lines from the algorithm.
 :::
 
-It could also help to prevent matching an edge to points that are further away simply because the score is slightly higher. Here is a list of potential measures that could help guide the optimization process:
+It could also help to prevent matching an edge to points that are further away simply because the score is higher.
+Here is a list of potential measures that could help guide the optimization process:
 
 - Total score of the edge (computed in a RANSAC-like way with inliers and weights given to points)
 - Preservation of the area / coherence of the individual shifts
 - Proximity of the edges that should be connected
+
+Such an optimization **could be costly for large buildings**, but if we only take only the possibilities that reach a **minimum score** such as 50% of the best, with a **minimum distance** between the propositions that could be something like 30 cm, we should get 1 proposition for most edges and **we can hope that it does not explode**.
+
+#### Other ideas
+
+- Using the **repartition of points on the line** as an indication could help as well.
+  This could prevent getting high scores somewhere because there is a high concentration of points to prefer a better and more reliable distribution on the whole edge.
+- Being able to tell **where the matched segments start and end** could also help, because it would allow to check how close they are to reconstruct a better building.
 
 ### Plane detection
 
@@ -52,6 +70,15 @@ Because in this case the points are not really aligned, so handling lines in thi
 I can first assume that the variation is small enough and it should not matter, but for large buildings it may matter.
 And there is no obvious solution to this, because trying to project the points in some way to have them in the cone defined by the scanner would likely lose the planarity of the points (i.e. coplanar points in 3D would not be aligned in this new 2D space).
 
+### Questions
+
+- Do we want to be able to process any type of LiDAR scanner?
+  Do we want to start with one or more specific types and set these as the priorities?
+
 ## Discussion
 
+TODO
+
 ## Work until next meeting
+
+- [ ] Gather somewhere all the ideas I have/had to get a better overview

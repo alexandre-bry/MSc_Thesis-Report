@@ -25,7 +25,7 @@ website:
   sidebar:
     - title: "Weekly Meetings"
       style: "docked"
-      contents: 
+      contents:
         - weekly_notes/index.qmd
         - auto: "weekly_notes/*"
     - title: "Monthly Meetings"
@@ -48,18 +48,12 @@ author:
   - name: Alexandre Bry
     email: abry.pro@proton.me
 
-
 format:
   html:
     theme:
-      light: flatly
-      dark: darkly
+      light: [flatly, theme_custom.scss]
+      dark: [darkly, theme_custom.scss]
     respect-user-color-scheme: true
-    # css: styles.css
     toc: true
     toc-location: right
     link-external-icon: true
-
-
-
-
