@@ -8,7 +8,7 @@ meeting: [Bruno Vallet]
 ## Previous week
 
 - Looked at more articles about point cloud semantic segmentation:
-    - Many different methods, but none gives perfect results yet, especially on rare classes
+  - Many different methods, but none gives perfect results yet, especially on rare classes
 - Looked for datasets of ALS semantic segmentation which differentiate façades and roofs, and found mainly two: the [Vaihingen dataset](https://www.isprs.org/resources/datasets/benchmarks/UrbanSemLab/3d-semantic-labeling.aspx) and the [DublinCity dataset](https://v-sense.scss.tcd.ie/DublinCity/) (which has a very dense point cloud)
 
 ## Discussion

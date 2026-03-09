@@ -17,7 +17,7 @@ meeting: [Hugo Ledoux, Bruno Vallet]
 
 ### Overview of the pipeline
 
-::: {#fig-overview-pipeline}
+:::: {#fig-overview-pipeline}
 ![Overview of the pipeline](../diagrams/Overview_of_pipeline.drawio.png)
 :::
 

@@ -26,12 +26,12 @@ However, both are in maintenance so I won't be able to try until December 17th.
 - Looked at [@Merizette2025] which explains how they created a new dataset for semantic segmentation of indoor TLS with two different processes: manual labelling and automatic generation of pseudo-labels from a BIM model of the objects. For the automatic generation, they basically made their own 3D BIM model of the rooms, and then used this data with the associated classifications of objects to classify points that were inside the BIM models to the corresponding category.
 - Looked at the coherence between the LoD 2.2 buildings from 3DBAG with the AHN4 point cloud in the center of Delft.
 Most points in the dataset seem to be close and accurate, with different precision depending on the case:
-    - Roof points are mostly close to the building with 0.1 m precision
-    - For façades there is more variation, but mostly up to 0.5 m,
-    - Then there are more complex situations like balconys, chimneys and other details that are not represented in the 3DBAG and are therefore further away
-    - Monuments (such as churches and fancy buildings) and new buildings also give bad results
+  - Roof points are mostly close to the building with 0.1 m precision
+  - For façades there is more variation, but mostly up to 0.5 m,
+  - Then there are more complex situations like balconys, chimneys and other details that are not represented in the 3DBAG and are therefore further away
+  - Monuments (such as churches and fancy buildings) and new buildings also give bad results
 
-::: {#fig-coherence layout-ncol=3}
+:::: {#fig-coherence layout-ncol=3}
 ![The buildings in LoD 2.2 from the 3DBAG.](./2025_12_15/General-Buildings.png){group="coherence"}
 
 ![The point cloud from AHN4 filtered to keep only "Not classified" (green) and "Building" (white). This especially filters out the ground, bridges and water.](./2025_12_15/General-Classification-White_building_Green_not_classified.png){group="coherence"}
@@ -50,20 +50,20 @@ Two examples of the coherence between the 3DBAG and the AHN4.
 #### Implementation
 
 - Had quite a few issues in:
-    - *Handling the OBJ files from the 3DBAG*.
+  - *Handling the OBJ files from the 3DBAG*.
     Is there a simple tool that could be used to simply merge multiple OBJ files?
     I made a simple Python script with `trimesh` to separate the building faces per type (floor, façade, roof).
-    - *Handling the LAZ files from AHN4*.
+  - *Handling the LAZ files from AHN4*.
     AHN tiles are actually quite big so I couldn't load them entirely with `laspy`.
     I tried to use `trimesh` in Python to compute the distance from point cloud to mesh for each class, but it was very slow compared to CloudCompare.
     So I did all the computations using CloudCompare, and then classified with simple thresholds: 3 classes (roof, facade and other) with `roof` being assigned to the point $p$ if $$\text{distance}(p, \text{roof}) < \min(\text{distance}(p, \text{facade}), 1)$$
 - Still the results look promising, with a few edge cases, some of them that could be interesting:
-    - Most of what is not included in the LoD 2.2 models is not classified: balconies, chimneys, dormers and in general all the objects on the roofs or on the walls. 
-    - Roof overhangs and/or the boundaries of the roofs are sometimes/often classified as façades because the LoD 2.2 models don't expand far enough on the sides.
+  - Most of what is not included in the LoD 2.2 models is not classified: balconies, chimneys, dormers and in general all the objects on the roofs or on the walls.
+  - Roof overhangs and/or the boundaries of the roofs are sometimes/often classified as façades because the LoD 2.2 models don't expand far enough on the sides.
     This could maybe be improved by expanding the roof polygons?
-    - As expected monuments and modified buildings also perform poorly
+  - As expected monuments and modified buildings also perform poorly
 
-::: {#fig-classification layout-ncol=2}
+:::: {#fig-classification layout-ncol=2}
 ![The buildings in LoD 2.2 from the 3DBAG.](./2025_12_15/Custom_class-Overview-Buildings.png){group="classification"}
 
 ![The classification of the points from AHN 4.](./2025_12_15/Custom_class-Overview-Classification.png){group="classification"}
@@ -87,8 +87,8 @@ Looked quickly into [`myria3d`](https://github.com/IGNF/myria3d):
 Looked at [@Girard2020], an interesting paper that tries to predict building edges as polygons using a ML model. To do so, their model takes a RGB image as input and outputs two things:
 
 - 2 values predicting:
-	- if the pixel is in a building
-	- if the pixel is on the edge of a building
+  - if the pixel is in a building
+  - if the pixel is on the edge of a building
 - 4 values defining two complex numbers that define two directions for each pixel. All the pixel then make a frame field that defines tangents/normals of buildings
 
 Then, the frame field and the classification rasters are processed in different steps:
@@ -99,7 +99,7 @@ Then, the frame field and the classification rasters are processed in different 
 - Polygonization
 - Polygon filtering
 
-I haven't read all the gory details in the supplementary material but it is nice that it is there, and there is also a [repository](https://github.com/Lydorn/Polygonization-by-Frame-Field-Learning). 
+I haven't read all the gory details in the supplementary material but it is nice that it is there, and there is also a [repository](https://github.com/Lydorn/Polygonization-by-Frame-Field-Learning).
 
 They get nice results with clean polygons, and I think it could be extended to point clouds as the frame field could also make a lot of sense there, by also predicting a classification coupled with a frame field.
 

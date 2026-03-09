@@ -10,7 +10,7 @@ subtitle: "Generation of building roofprints and footprints from ALS point cloud
 - Many applications of 3D buildings: visualization, simulations, solar potential, etc.
 - Different levels of detail required
 
-::: {.notes}
+:::: {.notes}
 - Visualization -> multiple levels of details for different distances
 - Simulations -> simple models for quicker computations
 - Solar potential -> care about the roofs mostly
@@ -21,7 +21,7 @@ subtitle: "Generation of building roofprints and footprints from ALS point cloud
 
 ![Visual example of the refined LoDs for a residential building [@Biljecki2016].](../../images/LoDs_illustration-Filip_Biljecki.jpg){.r-stretch}
 
-::: {.notes}
+:::: {.notes}
 - Differentiation between footprints and roofprints is the required step to go from LoD 2.2 to 2.3.
 - Definitions of footprints and roofprints are not always straightforward.
 :::
@@ -30,7 +30,7 @@ subtitle: "Generation of building roofprints and footprints from ALS point cloud
 
 ![Screenshot from the [online viewer of the 3DBAG](https://3dbag.nl/en/viewer?rdx=85202.42204919437&rdy=446838.496813776&ox=-0.00010789974476210773&oy=247.78640814561538&oz=255.13012753776275).](../../images/3DBAG_viewer_screenshot.png){.r-stretch}
 
-::: {.notes}
+:::: {.notes}
 Example of a great method to reconstruct 3D buildings in LoD 2.2 using point clouds and roofprints.
 :::
 
@@ -40,7 +40,7 @@ Example of a great method to reconstruct 3D buildings in LoD 2.2 using point clo
 - [LiDAR HD](https://www.ign.fr/institut/programme-lidar-hd-vers-une-nouvelle-cartographie-3d-du-territoire): first nationwide ALS LiDAR dataset of France
 - [Jumeau numérique de la France](https://www.ign.fr/institut/un-jumeau-numerique-de-la-france-pour-piloter-la-transition-ecologique): future digital twin of France
 
-::: {.notes}
+:::: {.notes}
 - BD TOPO:
     - Different sources: aerial images or terrain measurements
     - Contains building outlines with poor georeferencing
@@ -53,11 +53,11 @@ Example of a great method to reconstruct 3D buildings in LoD 2.2 using point clo
 
 - ALS point clouds give high density of points on roofs and low density on façades
 
-::: {.fragment style="text-align: center; margin-top: 2em; font-size: 130%;"}
+:::: {.fragment style="text-align: center; margin-top: 2em; font-size: 130%;"}
 **_What characteristics of ALS point clouds influence the ability to generate accurate building roofprints and footprints?_**
 :::
 
-::: {.notes}
+:::: {.notes}
 - We know that roof points can be used to reconstruct buildings, with a limitation to LoD 2.2
 - Can we use façade points?
 - Sub-questions:
@@ -70,19 +70,19 @@ Example of a great method to reconstruct 3D buildings in LoD 2.2 using point clo
 
 ## Building elements
 
-::: {.content-block .definition-block .fragment}
+:::: {.content-block .definition-block .fragment}
 Roof overhangs (eaves)
 
 The portion of a roof that extends beyond the exterior walls of a building.
 :::
 
-::: {.content-block .definition-block .fragment}
+:::: {.content-block .definition-block .fragment}
 Roofprint
 
 The vertical projection of all the roof components of a building.
 :::
 
-::: {.content-block .definition-block .fragment}
+:::: {.content-block .definition-block .fragment}
 Footprint
 
 The vertical projection of the main façades of a building.
@@ -90,7 +90,7 @@ The vertical projection of the main façades of a building.
 
 ## Illustrations {.scrollable}
 
-::: {#fig-prints-definition layout="[[-0.2, 1, -0.2, 1, -0.2], [-0.2, 1, -0.2, 1, -0.2]]"}
+:::: {#fig-prints-definition layout="[[-0.2, 1, -0.2, 1, -0.2], [-0.2, 1, -0.2, 1, -0.2]]"}
 ![3D model from [Sketchfab](https://sketchfab.com/3d-models/haunted-house-f709acd09d9640698bfc5baa14f30fe9).](../../weekly_notes/2026_01_19/Prints_definitions-Example_1.png){group="prints-definition"}
 
 ![Footprint and roofprint (before vertical projection).](../../weekly_notes/2026_01_19/Prints_definitions-Example_1-Annotated.png){group="prints-definition"}
@@ -106,26 +106,26 @@ Examples of footprints (in blue) and roofprints (in red) for complex buildings.
 
 ## Roof overhangs
 
-::: {.incremental}
+:::: {.incremental}
 - Sweeping vertical planes:
     - Using a 2.5D DSM and a footprint [@Dahlke2015; @Frommholz2017]
     - Using a point cloud and a roofprint [@Panday2012]
 - Extending the roof planes [@Goebbels2023]
 :::
 
-::: {.notes}
+:::: {.notes}
 Describe more precisely
 :::
 
 ## Point cloud semantic segmentation
 
-::: {.incremental}
+:::: {.incremental}
 - Range-images as input [@Biasutti2019; @Xu2020]
 - 3D convolutions (KPConv, PointTransformerv3, etc) [@Thomas2019; @Li2020; @Zhao2020; @Wu2023]
 - Class imbalance [@Li2024; @Pan2025]
 :::
 
-::: {.notes}
+:::: {.notes}
 - Range-images:
     - Represent the 3D points clouds in 2D by looking at them from the viewpoint of the sensor, which often scans point clouds in lines with almost uniform angular steps.
     - Useful for speed
@@ -138,7 +138,7 @@ Describe more precisely
 
 ## Datasets {.scrollable}
 
-::: {#tbl-datasets style="font-size: 80%"}
+:::: {#tbl-datasets style="font-size: 80%"}
 | Name | Number of points | Point density (pts/m²) | Classes for roof/façade | Source | Paper |
 | ------- | ----- | ------ | ---- | ------- | ---------- |
 | H3D | 74M | 800 | Yes | ALS | @Koelle2021 |
@@ -166,8 +166,8 @@ List of point cloud datasets for semantic segmentation of point clouds.
 
 ## Semantic segmentation
 
-::: {.columns}
-::: {.column width="70%"}
+:::: {.columns}
+:::: {.column width="70%"}
 1. Generate a ground-truth dataset using 3DBAG and AHN4
     1. Download all data per tiles,
     2. Extend the roofs of buildings with fake overhangs,
@@ -177,18 +177,18 @@ List of point cloud datasets for semantic segmentation of point clouds.
     1. Try different models (PointTransformerv3, KPConv, etc)
     2. Select and run the best one
 :::
-::: {.column width="30%"}
-::: {#fig-3dbag-ahn-segmentation layout="[[1], [1]]"}
+:::: {.column width="30%"}
+:::: {#fig-3dbag-ahn-segmentation layout="[[1], [1]]"}
 ![LoD 2.2 buildings from the 3DBAG.](../../weekly_notes/2025_12_15/Custom_class-Closer-Buildings.png){group="3dbag-ahn-segmentation" width="250px"}
 
-![The classification of the points from AHN 4.](../../weekly_notes/2025_12_15/Custom_class-Closer-Classification.png){group="3dbag-ahn-segmentation"  width="250px"}
+![The classification of the points from AHN 4.](../../weekly_notes/2025_12_15/Custom_class-Closer-Classification.png){group="3dbag-ahn-segmentation" width="250px"}
 
 Example of classifying the AHN 4 with the 3DBAG.
 :::
 :::
 :::
 
-::: {.notes}
+:::: {.notes}
 - 3DBAG is based on AHN3 + AHN4
 :::
 

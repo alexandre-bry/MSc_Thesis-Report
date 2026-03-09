@@ -21,15 +21,15 @@ meeting: [Hugo Ledoux, Bruno Vallet]
 ## Next week
 
 - [ ] Things to add to the "Project Proposal":
-    - [x] Roof overhangs are the distinction between LoD 2.2 and 2.3
-    - [ ] Add images and tables for the datasets mentioned in the literature review
-    - [x] Modify the research question:
-        - Talk about characteristics instead of situation
-        - Be more progressive (less binary)
-        - Mention outlines as a possibility, and add a sub-question about it
-    - [x] Mention that we could use existing outlines which provide information about the shape, the distances and the angles, even if they are translated
-    - [x] Add a subtitle
-    - [x] Talk about what I am currently working on.
-    - [ ] Add an illustration for footprint and roofprint
+  - [x] Roof overhangs are the distinction between LoD 2.2 and 2.3
+  - [ ] Add images and tables for the datasets mentioned in the literature review
+  - [x] Modify the research question:
+    - Talk about characteristics instead of situation
+    - Be more progressive (less binary)
+    - Mention outlines as a possibility, and add a sub-question about it
+  - [x] Mention that we could use existing outlines which provide information about the shape, the distances and the angles, even if they are translated
+  - [x] Add a subtitle
+  - [x] Talk about what I am currently working on.
+  - [ ] Add an illustration for footprint and roofprint
 - [ ] Look for data about roof overhangs in general in France, in the Netherlands and more generally in Europe.
   This could be data about actual buildings, guidelines for the construction of buildings, or anything else.

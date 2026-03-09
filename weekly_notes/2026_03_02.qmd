@@ -30,7 +30,7 @@ In many situations there are clear and visible lines of points, so RANSAC seems 
 In others there are many other points that we need to ignore for the edges.
 I think that weighing the points for methods like RANSAC based on their classification could help (more weight for class Building than for Unassigned)
 
-::: {#fig-edge-points layout="[[1,1]]"}
+:::: {#fig-edge-points layout="[[1,1]]"}
 ![Simple cases where points are well aligned and there is not much noise.](./2026_03_02/Edge_points-Clean.png){group="edge-point"}
 
 ![More complex case with a lot of noise](./2026_03_02/Edge_points-More_complex.png){group="edge-point"}

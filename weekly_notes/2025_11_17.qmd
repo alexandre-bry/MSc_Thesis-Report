@@ -20,6 +20,6 @@ meeting: [Hugo Ledoux, Bruno Vallet]
 
 - Look for articles about point cloud classification, especially roof/façades, because façades are not classified by default and are a rare class (tail distribution)
 - Look at point cloud semantic segmentation methods:
-    - [KPConv](https://github.com/HuguesTHOMAS/KPConv-PyTorch)
-    - MinkowskiNet
-    - PointTransformer
+  - [KPConv](https://github.com/HuguesTHOMAS/KPConv-PyTorch)
+  - MinkowskiNet
+  - PointTransformer

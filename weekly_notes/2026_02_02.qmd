@@ -19,7 +19,7 @@ Questions:
 
 1. Can you not infer facades fairly easy from the general building class if your input point cloud has that? Is sem classification of facade/roof really necessary or perhaps overkill?
     - Ie. In methodology you want to train with 3dbag, but this roof/facade information is derived from fairly basic plane segmentation + normal angle thresholds. Much simpler and easier than semantic classification
-2. Assumptions about building symmetry for overhangs, could be interesting but might not work for all buildings? 
+2. Assumptions about building symmetry for overhangs, could be interesting but might not work for all buildings?
     - Expect any drawbacks? Could it also negatively affect results in cases without symmetry, where you try to enforce a symmetry anyways?
     - How can you evaluate If the assumption of symmetry is valid for a given building.
     - Similarities inside one building vs between different buildings
@@ -34,9 +34,9 @@ Other remarks:
 
 1. Getting good consistent facades one all sides of a building will be tricky from ALS. Risk Maybe focus on roofprint?  With some overhangs, where you have good enough data to detect it, but don’t focus too much on it, because if the data isn’t good enough you can spend a lot of time without much progress. More useful in practice is perhaps: reliable outline detection, with nice looking polygons, from unclassified pointcloud.
 2. I would like to see a bit better the scope of your research. Eg.
-    1. Type of data that you will consider, and exactly what are the goals and what is out of scope. 
+    1. Type of data that you will consider, and exactly what are the goals and what is out of scope.
     2. Risks, what if a certain idea won’t work out, can you in your planning easily switch to another idea to explore?
-3. I notice that in some cases the terrain/ground points may also be helpful to calculate the overhang. See eg.  https://fsn1.your-objectstorage.com/hwh-ahn/AHN_POTREE/index.html?position=[167518.33;435756.42;14.95;]&target=[166613.07;435785.67;-408.90;]&ahn=ahn5&style=elevation . This building has quite some roof overhang, no facade points on the sides, but terrain points are valuable here as they clearly indicate there is quite some overhang here. AHN5 seems to best capture this, for other versions of AHN the overhang appears smaller based on the offset between terrain and roof edge. The particular building in the link above is present in all of AHN3,4,5, and 6. And you see interesting variances in occlusion effects, and the resulting completeness in the pointclouds. Maybe there it is also worth considering the position of the scanner during acquisition of a facade, it might tell you something about how confident you can be that the point cloud (in particular facade and terrain points) is complete. Of course a facade is a better signal for determining the footprint, but since we are dealing with cases that have so little data in some cases, maybe it is worth also looking at the terrain points.
+3. I notice that in some cases the terrain/ground points may also be helpful to calculate the overhang. See eg.  <https://fsn1.your-objectstorage.com/hwh-ahn/AHN_POTREE/index.html?position=[167518.33;435756.42;14.95;]&target=[166613.07;435785.67;-408.90;]&ahn=ahn5&style=elevation> . This building has quite some roof overhang, no facade points on the sides, but terrain points are valuable here as they clearly indicate there is quite some overhang here. AHN5 seems to best capture this, for other versions of AHN the overhang appears smaller based on the offset between terrain and roof edge. The particular building in the link above is present in all of AHN3,4,5, and 6. And you see interesting variances in occlusion effects, and the resulting completeness in the pointclouds. Maybe there it is also worth considering the position of the scanner during acquisition of a facade, it might tell you something about how confident you can be that the point cloud (in particular facade and terrain points) is complete. Of course a facade is a better signal for determining the footprint, but since we are dealing with cases that have so little data in some cases, maybe it is worth also looking at the terrain points.
 
 #### Hugo
 
@@ -115,10 +115,9 @@ Other remarks:
 ### Inviting Ravi
 
 - Ravi had interesting comments and questions during A1, should we invite him to these meetings to get his feedback more regularly?
-    It was a bit overlooked at first for no real reason. 
+    It was a bit overlooked at first for no real reason.
 
 ## Discussion
-
 
 ## Work until next meeting
 

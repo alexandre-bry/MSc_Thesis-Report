@@ -14,6 +14,8 @@ website:
     left:
       - text: "Weekly Meetings"
         href: weekly_notes/index.qmd
+      - text: "Monthly Meetings"
+        href: monthly_notes/index.qmd
       - text: "Reports"
         href: reports/index.qmd
     tools:
@@ -26,6 +28,11 @@ website:
       contents: 
         - weekly_notes/index.qmd
         - auto: "weekly_notes/*"
+    - title: "Monthly Meetings"
+      style: "docked"
+      contents:
+        - monthly_notes/index.qmd
+        - auto: "monthly_notes/*"
     - title: "Reports"
       style: "docked"
       contents:
@@ -48,7 +55,7 @@ format:
       light: flatly
       dark: darkly
     respect-user-color-scheme: true
-    css: styles.css
+    # css: styles.css
     toc: true
     toc-location: right
     link-external-icon: true

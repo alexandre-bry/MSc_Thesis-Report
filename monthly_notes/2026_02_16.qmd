@@ -1,0 +1,14 @@
+---
+title: "2026/02/16"
+date: 2026-02-16
+tags: [monthly]
+meeting: [Hugo Ledoux, Bruno Vallet, Ravi Peters, Emmanuel Séguin, François Becirspahic, Antoine Lavenant, Benoit Fredericque, Nicolas Bellaiche, Etienne Le-Bihan, Franck Fuchs]
+---
+
+:::: {.callout-tip}
+
+## Page in construction
+
+This page is in the process of being written.
+It should be released soon!
+:::

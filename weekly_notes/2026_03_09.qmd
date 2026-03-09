@@ -16,14 +16,14 @@ meeting: [Bruno Vallet]
 
 - Points classified as building that are neighbours to a point not classified as buildings are potential roof edges
 - Use the height as a weight to give more weight to higher points (more likely to be roof points)
-- Matching longer edges first may help matching the smaller edges properly -> I tried this but it made the results worse
+- Matching longer edges first may help matching the smaller edges properly -\> I tried this but it made the results worse
 - Use the repartition of points on the line to weigh the points as well
 
 ### Sliver roofprints
 
 Some combinatorial optimization could help to get a correct output in some cases, especially for small buildings where otherwise you can easily match two opposite edges to the same spot.
 
-::: {#fig-sliver-roofprints layout="[[1,1]]"}
+:::: {#fig-sliver-roofprints layout="[[1,1]]"}
 ![With the LiDAR HD as background, coloured with the Z value.](./2026_03_09/Sliver_roofprint-Point_cloud.png){group="sliver-roofprints"}
 
 ![With the aerial photos as background.](./2026_03_09/Sliver_roofprint-Image.png){group="sliver-roofprints"}
@@ -31,8 +31,7 @@ Some combinatorial optimization could help to get a correct output in some cases
 Example of a computed roofprint where both opposite edges matched the same set of points. The black lines come from BD TOPO and the blue lines from the algorithm.
 :::
 
-It could also help to prevent matching an edge to points that are further away simply because the score is slightly higher.
-Here is a list of potential measures that could help guide the optimization process:
+It could also help to prevent matching an edge to points that are further away simply because the score is slightly higher. Here is a list of potential measures that could help guide the optimization process:
 
 - Total score of the edge (computed in a RANSAC-like way with inliers and weights given to points)
 - Preservation of the area / coherence of the individual shifts
@@ -42,7 +41,7 @@ Here is a list of potential measures that could help guide the optimization proc
 
 Detecting planes in some way could be very beneficial to identify edge points, split roof planes and exclude points on façades for roofprints.
 I first thought about using something like RANSAC or RegionGrowing, and I expect that using the point cloud topology cound help in determining which points to use to compute normals and find seeds, which are crucial parts of these algorithms.
-Then Wu Teng told me about his paper using Cross-Line Elements, which could be a very good method to identify the edges of any plane and not only the edges of the roofs. [@Wu2016]
+Then Wu Teng told me about his paper using Cross-Line Elements, which could be a very good method to identify the edges of any plane and not only the edges of the roofs [@Wu2016].
 Combining this method and my current method could help identifying the most promising points.
 
 His method is close to the idea I had to approximate a line around each point in scan line order (take previous and next).
