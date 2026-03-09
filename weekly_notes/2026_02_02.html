@@ -98,7 +98,6 @@ div.csl-indent {
 }</script>
 
 
-<link rel="stylesheet" href="../styles.css">
 <meta property="og:title" content="2026/02/02 – MSc Thesis - Website">
 <meta property="og:site_name" content="MSc Thesis - Website">
 </head>
@@ -294,6 +293,10 @@ div.csl-indent {
   <li class="nav-item">
     <a class="nav-link active" href="../weekly_notes/index.html" aria-current="page"> 
 <span class="menu-text">Weekly Meetings</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../monthly_notes/index.html"> 
+<span class="menu-text">Monthly Meetings</span></a>
   </li>  
   <li class="nav-item">
     <a class="nav-link" href="../reports/index.html"> 
@@ -512,7 +515,7 @@ div.csl-indent {
 <li>Type of data that you will consider, and exactly what are the goals and what is out of scope.</li>
 <li>Risks, what if a certain idea won’t work out, can you in your planning easily switch to another idea to explore?</li>
 </ol></li>
-<li>I notice that in some cases the terrain/ground points may also be helpful to calculate the overhang. See eg. https://fsn1.your-objectstorage.com/hwh-ahn/AHN_POTREE/index.html?position=[167518.33;435756.42;14.95;]&amp;target=[166613.07;435785.67;-408.90;]&amp;ahn=ahn5&amp;style=elevation . This building has quite some roof overhang, no facade points on the sides, but terrain points are valuable here as they clearly indicate there is quite some overhang here. AHN5 seems to best capture this, for other versions of AHN the overhang appears smaller based on the offset between terrain and roof edge. The particular building in the link above is present in all of AHN3,4,5, and 6. And you see interesting variances in occlusion effects, and the resulting completeness in the pointclouds. Maybe there it is also worth considering the position of the scanner during acquisition of a facade, it might tell you something about how confident you can be that the point cloud (in particular facade and terrain points) is complete. Of course a facade is a better signal for determining the footprint, but since we are dealing with cases that have so little data in some cases, maybe it is worth also looking at the terrain points.</li>
+<li>I notice that in some cases the terrain/ground points may also be helpful to calculate the overhang. See eg. <a href="https://fsn1.your-objectstorage.com/hwh-ahn/AHN_POTREE/index.html?position=%5B167518.33;435756.42;14.95;%5D&amp;target=%5B166613.07;435785.67;-408.90;%5D&amp;ahn=ahn5&amp;style=elevation" class="uri">https://fsn1.your-objectstorage.com/hwh-ahn/AHN_POTREE/index.html?position=[167518.33;435756.42;14.95;]&amp;target=[166613.07;435785.67;-408.90;]&amp;ahn=ahn5&amp;style=elevation</a> . This building has quite some roof overhang, no facade points on the sides, but terrain points are valuable here as they clearly indicate there is quite some overhang here. AHN5 seems to best capture this, for other versions of AHN the overhang appears smaller based on the offset between terrain and roof edge. The particular building in the link above is present in all of AHN3,4,5, and 6. And you see interesting variances in occlusion effects, and the resulting completeness in the pointclouds. Maybe there it is also worth considering the position of the scanner during acquisition of a facade, it might tell you something about how confident you can be that the point cloud (in particular facade and terrain points) is complete. Of course a facade is a better signal for determining the footprint, but since we are dealing with cases that have so little data in some cases, maybe it is worth also looking at the terrain points.</li>
 </ol>
 </section>
 <section id="hugo" class="level4">

@@ -100,7 +100,6 @@ div.csl-indent {
 }</script>
 
 
-<link rel="stylesheet" href="../styles.css">
 <meta property="og:title" content="2026/03/09 – MSc Thesis - Website">
 <meta property="og:image" content="https://alexandre-bry.github.io/MSc_Thesis-Report/weekly_notes/2026_03_09/Sliver_roofprint-Point_cloud.png">
 <meta property="og:site_name" content="MSc Thesis - Website">
@@ -299,6 +298,10 @@ div.csl-indent {
   <li class="nav-item">
     <a class="nav-link active" href="../weekly_notes/index.html" aria-current="page"> 
 <span class="menu-text">Weekly Meetings</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../monthly_notes/index.html"> 
+<span class="menu-text">Monthly Meetings</span></a>
   </li>  
   <li class="nav-item">
     <a class="nav-link" href="../reports/index.html"> 
@@ -533,7 +536,7 @@ Figure&nbsp;1: Example of a computed roofprint where both opposite edges matched
 </section>
 <section id="plane-detection" class="level3">
 <h3 class="anchored" data-anchor-id="plane-detection">Plane detection</h3>
-<p>Detecting planes in some way could be very beneficial to identify edge points, split roof planes and exclude points on façades for roofprints. I first thought about using something like RANSAC or RegionGrowing, and I expect that using the point cloud topology cound help in determining which points to use to compute normals and find seeds, which are crucial parts of these algorithms. Then Wu Teng told me about his paper using Cross-Line Elements, which could be a very good method to identify the edges of any plane and not only the edges of the roofs. <span class="citation" data-cites="Wu2016">(<a href="#ref-Wu2016" role="doc-biblioref">Wu, Hu, and Ye 2016</a>)</span> Combining this method and my current method could help identifying the most promising points.</p>
+<p>Detecting planes in some way could be very beneficial to identify edge points, split roof planes and exclude points on façades for roofprints. I first thought about using something like RANSAC or RegionGrowing, and I expect that using the point cloud topology cound help in determining which points to use to compute normals and find seeds, which are crucial parts of these algorithms. Then Wu Teng told me about his paper using Cross-Line Elements, which could be a very good method to identify the edges of any plane and not only the edges of the roofs <span class="citation" data-cites="Wu2016">(<a href="#ref-Wu2016" role="doc-biblioref">Wu, Hu, and Ye 2016</a>)</span>. Combining this method and my current method could help identifying the most promising points.</p>
 <p>His method is close to the idea I had to approximate a line around each point in scan line order (take previous and next). Variations of this line could then indicate limits of roof planes.</p>
 <p>However it is unclear if and how to handle the point clouds with ellipsoidal topology. Because in this case the points are not really aligned, so handling lines in this case would be slightly different. I can first assume that the variation is small enough and it should not matter, but for large buildings it may matter. And there is no obvious solution to this, because trying to project the points in some way to have them in the cone defined by the scanner would likely lose the planarity of the points (i.e.&nbsp;coplanar points in 3D would not be aligned in this new 2D space).</p>
 </section>
