@@ -1,0 +1,22 @@
+---
+title: "2026/03/16"
+date: 2026-03-16
+tags: [weekly]
+meeting: [Bruno Vallet, Hugo Ledoux]
+---
+
+## Results since previous meeting
+
+- Large buildings with glass create points inside them, meaning that these points cannot be used to compute the footprint
+
+## Material for discussion
+
+### Ideas
+
+### Questions
+
+- Roofprints of different buildings should be able to intersect.
+
+## Discussion
+
+## Work until next meeting
