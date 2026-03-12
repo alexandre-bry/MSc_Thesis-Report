@@ -1,0 +1,7 @@
+{
+  "description": "GPS time values used to split the flight strip",
+  "values": [
+    361730210.76710409, 361730221.78750247, 361730226.04098958,
+    361730237.06138796
+  ]
+}

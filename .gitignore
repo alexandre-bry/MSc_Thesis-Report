@@ -5,3 +5,6 @@ references/**.pdf
 index_files/
 _site/
 **/.DS_Store
+
+# CloudCompare entities
+*.bin
