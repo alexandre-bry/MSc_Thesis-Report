@@ -1,0 +1,25 @@
+{
+  "type": "FeatureCollection",
+  "crs": {
+    "type": "name",
+    "properties": { "name": "EPSG:2154" }
+  },
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {},
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [676232.0, 6852389.0],
+            [676252.0, 6852389.0],
+            [676252.0, 6852412.0],
+            [676232.0, 6852412.0],
+            [676232.0, 6852389.0]
+          ]
+        ]
+      }
+    }
+  ]
+}

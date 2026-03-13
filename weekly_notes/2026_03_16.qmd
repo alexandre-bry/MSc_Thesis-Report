@@ -8,6 +8,7 @@ meeting: [Bruno Vallet, Hugo Ledoux]
 ## Results since previous meeting
 
 - Large buildings with glass create points inside them, meaning that these points cannot be used to compute the footprint
+- Possibility to open point clouds with custom attributes in QGIS by first converting the point cloud to EPT with Entwine: `entwine build -i input.laz -o output_folder_ept --deep --srs EPSG:2154`
 
 ## Material for discussion
 

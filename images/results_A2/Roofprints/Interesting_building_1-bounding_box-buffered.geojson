@@ -1,0 +1,8 @@
+{
+"type": "FeatureCollection",
+"name": "Interesting_building_1-bounding_box-buffered",
+"crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:EPSG::2154" } },
+"features": [
+{ "type": "Feature", "properties": { }, "geometry": { "type": "MultiPolygon", "coordinates": [ [ [ [ 676231.0, 6852388.0 ], [ 676231.0, 6852413.0 ], [ 676253.0, 6852413.0 ], [ 676253.0, 6852388.0 ], [ 676231.0, 6852388.0 ] ] ] ] } }
+]
+}
