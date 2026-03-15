@@ -1,66 +1,53 @@
-#import "@preview/calmly-touying:0.2.0": *
+#import "ign_theme/theme.typ": *
+
 #import "@preview/lilaq:0.5.0" as lq
 #import "@preview/subpar:0.2.2"
 
 #import "illustrations.typ": *
 
-#let colortheme = "paper"
-#let variant = "light"
-
-#show: calmly.with(
+#show: ign-theme.with(
   config-info(
     title: [From Points to Prints],
     subtitle: [Monthly Presentation (2)],
     author: [Alexandre Bry],
     date: datetime(day: 16, month: 3, year: 2026),
-    institution: [IGN],
-    logo: image("../../images/IGN_logo.svg"),
+    institution: [IGN, TU Delft],
   ),
   config-common(show-notes-on-second-screen: right),
-  variant: variant,
-  colortheme: colortheme,
+  variant: "light",
+  colortheme: "ign",
   progressbar: "foot",
   header-style: "moloch",
 )
 
-#set text(font: "Overpass")
-#show raw: set text(font: "Overpass Mono")
 #set par(justify: true)
-
-#let colors = get-theme-colors(theme: colortheme, variant: variant)
-#let list-marker-shift = 0.25em
-#set list(
-  marker: (
-    box(bullet-circle(color: colors.accent-secondary), inset: (y: list-marker-shift)),
-    box(bullet-square(color: colors.accent-secondary), inset: (y: list-marker-shift)),
-    box(bullet-dash(color: colors.accent-secondary), inset: (y: 1.2 * list-marker-shift)),
-  ),
-  indent: spacing-md,
-  body-indent: spacing-sm,
-)
-#set enum(
-  numbering: n => text(fill: colors.accent-secondary)[#n.],
-  indent: spacing-md,
-  body-indent: spacing-sm,
-)
-
-#show figure.caption: set text(size: 14pt)
 
 #let SHOW-FIGURES = true
 
-#title-slide(layout: "centered")
+= Title <touying:hidden>
 
-== Outline <touying:hidden>
+#title-slide(layout: "centered", logos: (
+  place(
+    bottom + left,
+    image("../../images/IGN_logo-cropped.svg", width: 5em),
+    dx: -2em,
+    dy: 2em,
+  ),
+  place(
+    bottom + right,
+    image("../../images/TU_Delft_logo-cropped.svg", width: 9em),
+    dx: 2em,
+    dy: 2em,
+  ),
+))
 
-#v(1fr)
+= Outline <touying:hidden>
 
-#components.adaptive-columns(outline(title: none, indent: 1em, depth: 1))
-
-#v(1fr)
+#outline-slide(title: "Outline")
 
 = Context
 
-== Goal
+== Planned pipeline
 
 #image("../../diagrams/Overview_of_pipeline.drawio.png")
 
@@ -97,7 +84,7 @@
   + Scan lines: using the *GPS Time* field and the *Scan Direction Flag* field
   + Pulses: using the *GPS Time* field
 
-#only("2-")[
+#uncover("2-")[
   #alert-box()[
     The *Number of Returns* field is not reliable for pulses in the LiDAR HD dataset, as it is not updated when points are filtered out during the processing of the raw data.
   ]
@@ -154,7 +141,7 @@
 - Trajectory computed using *multi-echo pulses*
 - Necessity to *rebuild the flight strips* for better precision
 
-#only("2-")[
+#uncover("2-")[
   #highlight-box()[
     This method allows to use the trajectory *without relying on its availability*.
   ]
@@ -175,7 +162,7 @@
   + Compute the *height difference* ($Delta h$) between the point and this lowest point
   + Set the point as a *potential edge point* if $Delta h > (Delta h)_(min) = 2$ in metres
 ][
-  #only("2-")[
+  #uncover("2-")[
     === Single-echo pulse
 
     + Find the *lowest point* in the previous and next pulses
@@ -198,36 +185,36 @@
   ]
 ]
 
----
+#slide[
+  #{
+    let fig-height = 40%
+    let line-width = 0.1em
+    let images = (
+      image("images/Scan_line-Vertical_gain-1.png"),
+      image("images/Scan_line-Vertical_gain-3.png"),
+    )
+    figure(
+      grid(
+        rows: fig-height,
+        inset: (x, y) => {
+          let res = (top: 0em, bottom: 0em)
+          if (y > 0) { res.top = line-width / 2 }
+          if (y < images.len() - 1) { res.bottom = line-width / 2 }
+          res
+        },
+        stroke: (x, y) => { if (y > 0) { (top: black + line-width) } },
+        ..images
+      ),
+      caption: [Two examples of the height differences obtained on a scan line. Black points are vegetation points, and for the other points the color represents the value of $Delta h$, with blue-green-yellow-red from low to high values.],
+    )
+  }
 
-#{
-  let fig-height = 40%
-  let line-width = 0.1em
-  let images = (
-    image("images/Scan_line-Vertical_gain-1.png"),
-    image("images/Scan_line-Vertical_gain-3.png"),
-  )
-  figure(
-    grid(
-      rows: fig-height,
-      inset: (x, y) => {
-        let res = (top: 0em, bottom: 0em)
-        if (y > 0) { res.top = line-width / 2 }
-        if (y < images.len() - 1) { res.bottom = line-width / 2 }
-        res
-      },
-      stroke: (x, y) => { if (y > 0) { (top: black + line-width) } },
-      ..images
-    ),
-    caption: [Two examples of the height differences obtained on a scan line. Black points are vegetation points, and for the other points the color represents the value of $Delta h$, with blue-green-yellow-red from low to high values.],
-  )
-}
-
-#speaker-note[
-  - Points at the edges of what looks like building roofs have *high values of $Delta h$*
-  - Other points get *low values* of $Delta h$
-  - Points classified as *vegetation* would have gotten high values if not excluded
-  - These scan lines are actually *curved* when looked at from above, but this is not a problem as the *angle is very small* between consecutive pulses
+  #speaker-note[
+    - Points at the edges of what looks like building roofs have *high values of $Delta h$*
+    - Other points get *low values* of $Delta h$
+    - Points classified as *vegetation* would have gotten high values if not excluded
+    - These scan lines are actually *curved* when looked at from above, but this is not a problem as the *angle is very small* between consecutive pulses
+  ]
 ]
 
 == Placement of potential edge points
@@ -238,22 +225,22 @@ TODO
 
 Potential edge points are weighted using:
 
-#only("1-")[
+#uncover("1-")[
   + Their *height* (normalized over the area of the building) to a factor $w_h in [1.0, 3.0]$
 ]
-#only("2-")[
+#uncover("2-")[
   + Their *origin* to a factor $w_o in {0.1, 0.5, 1.0}$:
     - Multi-echo: 1.0
     - Single echo with good estimation of position: 0.5
     - Single echo with less precise estimation of position: 0.1
 ]
-#only("3-")[
+#uncover("3-")[
   + Their *classification* to a factor $w_c in {1.0, 2.0}$:
     - Building: 2.0
     - Other: 1.0
 ]
 
-#only("4-")[These values were picked arbitrarily and would need to be optimized.
+#uncover("4-")[These values were picked arbitrarily and would need to be optimized.
   The final weight $w$ is given by: $ w = w_h times w_o times w_c $
 ]
 
@@ -279,7 +266,7 @@ Potential edge points are weighted using:
 
     lq.plot((0, 0.3, 1), (1, 0, 0), mark: none),
   ))][
-  #only(
+  #uncover(
     "2-",
   )[This distance is evaluated by projecting the point onto the edge, keeping only the points that project on the segment.
 
@@ -442,7 +429,9 @@ Potential edge points are weighted using:
 
 = Next objectives
 
+== TODO
 
+TODO
 
 #ending-slide(
   title: [Thank You],
