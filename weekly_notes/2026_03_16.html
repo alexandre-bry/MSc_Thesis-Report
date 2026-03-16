@@ -478,9 +478,9 @@ ul.task-list li input[type="checkbox"] {
 <section id="list-of-ideas-from-previous-weeks-that-have-not-been-tested-yet" class="level3">
 <h3 class="anchored" data-anchor-id="list-of-ideas-from-previous-weeks-that-have-not-been-tested-yet">List of ideas from previous weeks that have not been tested yet</h3>
 <ul>
+<li>Separate the cases where the <strong>façade is seen or not</strong>.</li>
 <li>Identification and construction of edge points
 <ul>
-<li>Separate the cases where the <strong>façade is seen or not</strong>.</li>
 <li>Identify cases with a <strong>dense set of points on a façade</strong>. Possibility to compute normals to identify these cases.</li>
 <li>Consider <strong>neighbours in other directions</strong> than scan order (such as perpendicularly to it)</li>
 <li>Identify lines in the point cloud topology with Wu Teng’s method (see <a href="./2026_03_09#plane-detection">these comments from last week</a>):
@@ -492,23 +492,23 @@ ul.task-list li input[type="checkbox"] {
 <li>Construction of roof edges:
 <ul>
 <li>Use <strong>regularization</strong> on BD TOPO before matching edges or on the results afterwards.</li>
+<li>Use the <strong>classification</strong> of the points in combination with the outlines to crop the point clouds better. This could help prevent matching edges from other buildings.</li>
 <li>Try to make better edges:
 <ul>
-<li>With a <strong>RANSAC-like</strong> approach (potentially using the BD TOPO to guide the process) in <strong>2D or 3D</strong></li>
+<li>With a <strong>RANSAC-like</strong> approach (potentially using the BD TOPO to guide the process) in <strong>2D or 3D</strong>.</li>
 <li>By other means in 3D?</li>
-<li>By <strong>recomputing the edge</strong> after identifying the inlier points with the current process</li>
+<li>By <strong>recomputing the edge</strong> after identifying the inlier points with the current process.</li>
+<li>Try to estimate <strong>where the edge starts and stops</strong> from the point cloud.</li>
 </ul></li>
 <li>Matching process:
 <ul>
-<li><strong>Group edges</strong> with angles <strong>close to 180°</strong> (instead of currently merging them)</li>
-<li>Matching <strong>longer edges first</strong> may help matching the smaller edges properly, if we shift the starting point of the neighbouring edges</li>
-<li>Use the <strong>classification</strong> of the points in combination with the outlines to crop the point clouds better. This could help prevent matching edges from other buildings.</li>
-<li>Try to estimate <strong>where the edge starts and stops</strong> from the point cloud</li>
-<li>Try to use the <strong>distance to the current edge</strong> as an indication as well (not sure about this because the assumption that a closer edge is better is often wrong due to the shift in BD TOPO). A simple solution would be to add a penalty proportional to the distance.</li>
-<li>Use combinatorial optimization to pick the best set of edges with multiple solutions for difficult edges (see <a href="./2026_03_09#combinatorial-optimization">these comments from last week</a>)</li>
-<li>Use the <strong>repartition of points</strong> on the edge in their score. The simplest solution is to divide the score by the length of the edge. We could also look into a histogram-like metric to <strong>reward uniform distribution</strong> of points along the edge.</li>
-<li>Run the matching <strong>algorithm multiple times in a row</strong>, or until it converges.</li>
+<li><strong>Group edges</strong> with angles <strong>close to 180°</strong> (instead of currently merging them).</li>
 <li>Match each edge by also moving and computing the <strong>score of its two (or more) neighbours</strong>. This could improve results for tiny edges and prevent matching edges from other buildings.</li>
+<li>Use the <strong>repartition of points</strong> on the edge in their score. The simplest solution is to divide the score by the length of the edge. We could also look into a histogram-like metric to <strong>reward uniform distribution</strong> of points along the edge.</li>
+<li>Try to use the <strong>distance to the current edge</strong> as an indication as well (not sure about this because the assumption that a closer edge is better is often wrong due to the shift in BD TOPO). A simple solution would be to add a penalty proportional to the distance.</li>
+<li>Matching <strong>longer edges first</strong> may help matching the smaller edges properly, if we shift the starting point of the neighbouring edges.</li>
+<li>Run the matching <strong>algorithm multiple times in a row</strong>, or until it converges.</li>
+<li>Use <strong>combinatorial optimization</strong> to pick the best set of edges with multiple solutions for difficult edges (see <a href="./2026_03_09#combinatorial-optimization">these comments from last week</a>).</li>
 </ul></li>
 </ul></li>
 </ul>
