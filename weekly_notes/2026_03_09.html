@@ -52,6 +52,7 @@ div.csl-indent {
 <script src="../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../">
+<link href="../weekly_notes/2026_03_16.html" rel="next">
 <link href="../weekly_notes/2026_03_02.html" rel="prev">
 <script src="../site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
@@ -451,6 +452,12 @@ window.Quarto = {
  <span class="menu-text">2026/03/09</span></a>
   </div>
 </li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../weekly_notes/2026_03_16.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">2026/03/16</span></a>
+  </div>
+</li>
     </ul>
     </div>
 </nav>
@@ -528,7 +535,6 @@ window.Quarto = {
 <li>Matching <strong>longer edges first</strong> may help matching the smaller edges properly, if we shift the starting point of the neighbouring edges</li>
 <li>Use the <strong>classification</strong> of the points in combination with the outlines to <strong>crop</strong> the point clouds better.</li>
 <li>Use some kind of RANSAC locally for each edge to be able to locate edges in 3D. This can be especially useful for high buildings which give many edge points at every level due to balconies.</li>
-<li>For visualization of results, possibility to use iTowns to visualize the point cloud and the roofprints?</li>
 </ul>
 </section>
 <section id="sliver-roofprints" class="level3">
@@ -569,7 +575,7 @@ Figure&nbsp;1: Example of a computed roofprint where both opposite edges matched
 <li>Preservation of the area / coherence of the individual shifts</li>
 <li>Proximity of the edges that should be connected</li>
 </ul>
-<p>Such an optimization <strong>could be costly for large buildings</strong>, but if we only take only the possibilities that reach a <strong>minimum score</strong> such as 50% of the best, with a <strong>minimum distance</strong> between the propositions that could be something like 30&nbsp;cm, we should get 1 proposition for most edges and <strong>we can hope that it does not explode</strong>.</p>
+<p>Such an optimization <strong>could be costly for large buildings</strong>, but if we only take the possibilities that reach a <strong>minimum score</strong> such as 50% of the best, with a <strong>minimum distance</strong> between the propositions that could be something like 30&nbsp;cm, we should get 1 proposition for most edges and <strong>we can hope that it does not explode</strong>.</p>
 </section>
 <section id="other-ideas" class="level4">
 <h4 class="anchored" data-anchor-id="other-ideas">Other ideas</h4>
@@ -608,7 +614,7 @@ Figure&nbsp;1: Example of a computed roofprint where both opposite edges matched
 <section id="work-until-next-meeting" class="level2">
 <h2 class="anchored" data-anchor-id="work-until-next-meeting">Work until next meeting</h2>
 <ul class="task-list">
-<li><label><input type="checkbox">Gather somewhere all the ideas I have/had to get a better overview</label></li>
+<li><label><input type="checkbox" checked="">Gather somewhere all the ideas I have/had to get a better overview</label></li>
 <li><label><input type="checkbox" checked="">Ask about going to Saint-Mandé on Wednesday</label></li>
 <li><label><input type="checkbox">Try to experiment with the new ideas for the matching algorithm:</label>
 <ul class="task-list">
@@ -1053,6 +1059,9 @@ Wu, Teng, Xiangyun Hu, and Lizhi Ye. 2016. <span>“Fast and Accurate Plane Segm
       </a>          
   </div>
   <div class="nav-page nav-page-next">
+      <a href="../weekly_notes/2026_03_16.html" class="pagination-link" aria-label="2026/03/16">
+        <span class="nav-page-text">2026/03/16</span> <i class="bi bi-arrow-right-short"></i>
+      </a>
   </div>
 </nav>
 </div> <!-- /content -->
