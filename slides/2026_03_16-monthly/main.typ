@@ -297,7 +297,7 @@ Edge points are weighted using:
 ]
 
 #speaker-note[
-  + The *height* is a *simple but effective* metric to give more weight to points a roof edge than to the points on the façade below it.
+  + The *height* is a *simple but effective* metric to give more weight to points on a roof edge than to the points on the façade below it.
   + The *origin* gives more weight to real points that are *less likely to be imprecisely positioned*.
   + The *classification* gives more weight to points classified as building, which are *less likely to actually be something else such as vegetation*.
     This is important because many points are unclassified.
@@ -544,8 +544,14 @@ Edge points are weighted using:
   ]
 ]
 
+== Rest of the pipeline
+
+#image("../../diagrams/Overview_of_pipeline.drawio.png")
+
+= The end <touying:hidden>
+
 #ending-slide(
-  title: [Thank You],
+  title: [Thank you for your attention!],
   subtitle: [Any questions?],
   contact: ("alexandre.bry@ign.fr",),
 )
