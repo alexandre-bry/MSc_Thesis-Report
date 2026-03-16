@@ -7,16 +7,54 @@ meeting: [Bruno Vallet, Hugo Ledoux]
 
 ## Results since previous meeting
 
-- Large buildings with glass create points inside them, meaning that these points cannot be used to compute the footprint
+- I mostly worked this week on preparing the slides for today's monthly meeting, and by doing so making figures that I'll be able to use for the A2 presentation and the final report
 - Possibility to open point clouds with custom attributes in QGIS by first converting the point cloud to EPT with Entwine: `entwine build -i input.laz -o output_folder_ept --deep --srs EPSG:2154`
 
 ## Material for discussion
 
 ### Ideas
 
+- Large buildings with glass create points inside them, meaning that these points cannot be used to compute the footprint
+- For visualization of results, possibility to use iTowns to visualize the point cloud and the roofprints?
+
+### List of ideas from previous weeks that have not been tested yet
+
+- Separate the cases where the **façade is seen or not**.
+- Identification and construction of edge points
+  - Identify cases with a **dense set of points on a façade**.
+    Possibility to compute normals to identify these cases.
+  - Consider **neighbours in other directions** than scan order (such as perpendicularly to it)
+  - Identify lines in the point cloud topology with Wu Teng's method (see [these comments from last week](./2026_03_09#plane-detection)):
+    - Could be used to identify the breaks of roof planes (out of scope for now)
+    - Could be used to estimate the normals locally in cases where segments are found to estimate if points are on façades or on roofs
+- Construction of roof edges:
+  - Use **regularization** on BD TOPO before matching edges or on the results afterwards.
+  - Use the **classification** of the points in combination with the outlines to crop the point clouds better.
+    This could help prevent matching edges from other buildings.
+  - Try to make better edges:
+    - With a **RANSAC-like** approach (potentially using the BD TOPO to guide the process) in **2D or 3D**.
+    - By other means in 3D?
+    - By **recomputing the edge** after identifying the inlier points with the current process.
+    - Try to estimate **where the edge starts and stops** from the point cloud.
+  - Matching process:
+    - **Group edges** with angles **close to 180°** (instead of currently merging them).
+    - Match each edge by also moving and computing the **score of its two (or more) neighbours**.
+      This could improve results for tiny edges and prevent matching edges from other buildings. 
+    - Use the **repartition of points** on the edge in their score.
+      The simplest solution is to divide the score by the length of the edge.
+      We could also look into a histogram-like metric to **reward uniform distribution** of points along the edge.
+    - Try to use the **distance to the current edge** as an indication as well (not sure about this because the assumption that a closer edge is better is often wrong due to the shift in BD TOPO).
+      A simple solution would be to add a penalty proportional to the distance.
+    - Matching **longer edges first** may help matching the smaller edges properly, if we shift the starting point of the neighbouring edges.
+    - Run the matching **algorithm multiple times in a row**, or until it converges.
+    - Use **combinatorial optimization** to pick the best set of edges with multiple solutions for difficult edges (see [these comments from last week](./2026_03_09#combinatorial-optimization)).
+
 ### Questions
 
-- Roofprints of different buildings should be able to intersect.
+- When should I switch to another part of the pipeline? And which one should I start with?
+- Should roofprints of different buildings be able to cover each other? Because in real life this should happen, even if in practice with our method we probably won't be able to identify it.
+- I wrote last week: "*In cases where the edges are shifted like the algorithm we do, the simplest way to get topologically correct polygons again is to shift vertices by the sum of the two computed shifts*".
+  But this is not correct right?
 
 ## Discussion
 

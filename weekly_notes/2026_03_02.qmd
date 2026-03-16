@@ -49,7 +49,7 @@ Extracts of the computed edge points for a single flight axis. The colour corres
 ## Work until next meeting
 
 - [ ] Try to group edges with angles too close to 180° to match them together (see the code from Amine)
-- [ ] Look into ways to properly identify the points on the roof edges
-  - [ ] Use the alignment of the point with the previous points to determine how certain it is that the point is a roof edge.
-- [ ] Ask Wu Teng about sensor topology (regular 2D structure on a point cloud based on acquisition regularity).
-  Compare the results with ScanAngle and using the estimated position of the scanner.
+- [x] Look into ways to properly identify the points on the roof edges
+- [ ] Use the alignment of the point with the previous points to determine how certain it is that the point is a roof edge.
+- [x] Ask Wu Teng about sensor topology (regular 2D structure on a point cloud based on acquisition regularity).
+- [ ] Compare the results with ScanAngle and using the estimated position of the scanner.
