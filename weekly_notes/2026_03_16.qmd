@@ -58,4 +58,9 @@ meeting: [Bruno Vallet, Hugo Ledoux]
 
 ## Discussion
 
+- It is fine if different roofprints have overlap at the end of the pipeline
+- When I'm done with implementing the improvements to the edge matching pipeline, I should look into extracting the footprints
+
 ## Work until next meeting
+
+- [ ] Implement the changes to the edge matching pipeline mentioned [above](#list-of-ideas-from-previous-weeks-that-have-not-been-tested-yet)
