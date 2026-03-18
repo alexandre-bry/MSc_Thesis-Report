@@ -7,6 +7,7 @@
 
 #let handout = sys.inputs.at("handout", default: "false") == "true"
 #let notes = sys.inputs.at("notes", default: "true") == "true"
+#let theme = sys.inputs.at("theme", default: "ign")
 
 #show: slides-theme.with(
   config-info(
@@ -22,7 +23,7 @@
     notes: notes,
   ),
   variant: "light",
-  colortheme: "ign",
+  colortheme: theme,
   progressbar: "foot",
   header-style: "moloch",
 )

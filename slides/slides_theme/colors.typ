@@ -316,7 +316,7 @@
   header-text: rgb("#282A36"),
 )
 
-// Paper theme (high contrast, academic) - Light variant
+// IGN theme - Light variant
 #let ign-light = (
   accent-primary: rgb("#1A1A1A"),
   accent-secondary: rgb("#8FBF4A"),
@@ -345,15 +345,13 @@
   example-text: rgb("#486125"),
   focus-bg: rgb("#8FBF4A"),
   focus-text: rgb("#FFFFFF"),
-  // Standout slide
   standout-bg: rgb("#000000"),
   standout-text: rgb("#FFFFFF"),
-  // Header bar - blue accent for paper theme
   header-bg: rgb("#8FBF4A"),
   header-text: rgb("#FFFFFF"),
 )
 
-// Paper theme - Dark variant
+// IGN theme - Dark variant
 #let ign-dark = (
   accent-primary: rgb("#FFFFFF"),
   accent-secondary: rgb("#8FBF4A"),
@@ -377,17 +375,85 @@
   alert-bg: rgb("#450A0A"),
   alert-border: rgb("#F87171"),
   alert-text: rgb("#FCA5A5"),
-  example-bg: rgb("#172554"),
-  example-border: rgb("#60A5FA"),
-  example-text: rgb("#93C5FD"),
+  example-bg: rgb("#486125"),
+  example-border: rgb("#8FBF4A"),
+  example-text: rgb("#F1F7E8"),
   focus-bg: rgb("#60A5FA"),
   focus-text: rgb("#0A0A0A"),
-  // Standout slide
   standout-bg: rgb("#FFFFFF"),
   standout-text: rgb("#0A0A0A"),
-  // Header bar - lighter blue on dark paper
   header-bg: rgb("#8FBF4A"),
-  header-text: rgb("#0A0A0A"),
+  header-text: rgb("#FFFFFF"),
+)
+
+// TU Delft theme - Light variant
+#let tu-delft-light = (
+  accent-primary: rgb("#1A1A1A"),
+  accent-secondary: rgb("#00A6D6"),
+  accent-subtle: rgb("#F5F5F5"),
+  accent-glow: rgb("#3B82F6"),
+  accent-deep: rgb("#0F172A"),
+  bg-base: rgb("#FFFFFF"),
+  bg-elevated: rgb("#FFFFFF"),
+  bg-muted: rgb("#F8F8F8"),
+  bg-surface: rgb("#F3F3F3"),
+  bg-wash: rgb("#FAFAFA"),
+  text-primary: rgb("#000000"),
+  text-secondary: rgb("#333333"),
+  text-muted: rgb("#666666"),
+  text-light: rgb("#999999"),
+  text-subtle: rgb("#808080"),
+  border-subtle: rgb("#E5E5E5"),
+  border-soft: rgb("#D4D4D4"),
+  border-medium: rgb("#A3A3A3"),
+  progress-track: rgb("#E5E5E5"),
+  alert-bg: rgb("#FEF2F2"),
+  alert-border: rgb("#EF4444"),
+  alert-text: rgb("#DC2626"),
+  example-bg: rgb("#E6F6FA"),
+  example-border: rgb("#00A6D6"),
+  example-text: rgb("#0C2340"),
+  focus-bg: rgb("#00A6D6"),
+  focus-text: rgb("#FFFFFF"),
+  standout-bg: rgb("#000000"),
+  standout-text: rgb("#FFFFFF"),
+  header-bg: rgb("#00A6D6"),
+  header-text: rgb("#FFFFFF"),
+)
+
+// TU Delft theme - Dark variant
+#let tu-delft-dark = (
+  accent-primary: rgb("#FFFFFF"),
+  accent-secondary: rgb("#00A6D6"),
+  accent-subtle: rgb("#262626"),
+  accent-glow: rgb("#93C5FD"),
+  accent-deep: rgb("#F8FAFC"),
+  bg-base: rgb("#0A0A0A"),
+  bg-elevated: rgb("#171717"),
+  bg-muted: rgb("#0F0F0F"),
+  bg-surface: rgb("#1A1A1A"),
+  bg-wash: rgb("#141414"),
+  text-primary: rgb("#FFFFFF"),
+  text-secondary: rgb("#E5E5E5"),
+  text-muted: rgb("#A3A3A3"),
+  text-light: rgb("#737373"),
+  text-subtle: rgb("#525252"),
+  border-subtle: rgb("#262626"),
+  border-soft: rgb("#404040"),
+  border-medium: rgb("#525252"),
+  progress-track: rgb("#262626"),
+  alert-bg: rgb("#450A0A"),
+  alert-border: rgb("#F87171"),
+  alert-text: rgb("#FCA5A5"),
+  example-bg: rgb("#0C2340"),
+  example-border: rgb("#00A6D6"),
+  example-text: rgb("#E6F6FA"),
+  focus-bg: rgb("#00A6D6"),
+  focus-text: rgb("#0A0A0A"),
+  standout-bg: rgb("#FFFFFF"),
+  standout-text: rgb("#0A0A0A"),
+  header-bg: rgb("#00A6D6"),
+  header-text: rgb("#FFFFFF"),
 )
 
 
@@ -403,6 +469,7 @@
     "paper": (light: paper-light, dark: paper-dark),
     "dracula": (light: dracula-light, dark: dracula-dark),
     "ign": (light: ign-light, dark: ign-dark),
+    "tu-delft": (light: tu-delft-light, dark: tu-delft-dark),
   )
 
   let selected-theme = themes.at(theme, default: themes.warm-amber)
