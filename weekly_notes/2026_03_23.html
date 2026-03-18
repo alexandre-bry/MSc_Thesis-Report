@@ -7,9 +7,9 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="Alexandre Bry">
-<meta name="dcterms.date" content="2026-03-02">
+<meta name="dcterms.date" content="2026-03-23">
 
-<title>2026/03/02 – MSc Thesis - Website</title>
+<title>2026/03/23 – MSc Thesis - Website</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -32,8 +32,7 @@ ul.task-list li input[type="checkbox"] {
 <script src="../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../">
-<link href="../weekly_notes/2026_03_09.html" rel="next">
-<link href="../weekly_notes/2026_02_23.html" rel="prev">
+<link href="../weekly_notes/2026_03_16.html" rel="prev">
 <script src="../site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
 <script src="../site_libs/quarto-html/axe/axe-check.js" type="module"></script>
@@ -80,41 +79,13 @@ ul.task-list li input[type="checkbox"] {
   }
 }</script>
 
-  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
-  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
 
-<script type="text/javascript">
-const typesetMath = (el) => {
-  if (window.MathJax) {
-    // MathJax Typeset
-    window.MathJax.typeset([el]);
-  } else if (window.katex) {
-    // KaTeX Render
-    var mathElements = el.getElementsByClassName("math");
-    var macros = [];
-    for (var i = 0; i < mathElements.length; i++) {
-      var texText = mathElements[i].firstChild;
-      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
-        window.katex.render(texText.data, mathElements[i], {
-          displayMode: mathElements[i].classList.contains('display'),
-          throwOnError: false,
-          macros: macros,
-          fleqn: false
-        });
-      }
-    }
-  }
-}
-window.Quarto = {
-  typesetMath
-};
-</script>
-
-<meta property="og:title" content="2026/03/02 – MSc Thesis - Website">
-<meta property="og:image" content="https://alexandre-bry.github.io/MSc_Thesis-Report/weekly_notes/2026_03_02/Edge_points-Clean.png">
+<meta property="og:title" content="2026/03/23 – MSc Thesis - Website">
+<meta property="og:image" content="https://alexandre-bry.github.io/MSc_Thesis-Report/weekly_notes/2026_03_23/Potential_topology_loss_when_translating_edges.png">
 <meta property="og:site_name" content="MSc Thesis - Website">
-<meta property="og:image:height" content="656">
-<meta property="og:image:width" content="1134">
+<meta property="og:image:alt" content="Illustration of the problem of loss of topology with the current edge translation algorithm">
+<meta property="og:image:height" content="434">
+<meta property="og:image:width" content="477">
 </head>
 
 <body class="nav-sidebar docked nav-fixed quarto-light"><script id="quarto-html-before-body" type="application/javascript">
@@ -330,7 +301,7 @@ window.Quarto = {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../weekly_notes/2026_03_02.html">2026/03/02</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../weekly_notes/2026_03_23.html">2026/03/23</a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
     </div>
@@ -422,7 +393,7 @@ window.Quarto = {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../weekly_notes/2026_03_02.html" class="sidebar-item-text sidebar-link active">
+  <a href="../weekly_notes/2026_03_02.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">2026/03/02</span></a>
   </div>
 </li>
@@ -440,7 +411,7 @@ window.Quarto = {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../weekly_notes/2026_03_23.html" class="sidebar-item-text sidebar-link">
+  <a href="../weekly_notes/2026_03_23.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text">2026/03/23</span></a>
   </div>
 </li>
@@ -457,13 +428,14 @@ window.Quarto = {
   <li><a href="#results-since-previous-meeting" id="toc-results-since-previous-meeting" class="nav-link active" data-scroll-target="#results-since-previous-meeting">Results since previous meeting</a></li>
   <li><a href="#material-for-discussion" id="toc-material-for-discussion" class="nav-link" data-scroll-target="#material-for-discussion">Material for discussion</a>
   <ul class="collapse">
-  <li><a href="#edge-extraction-in-3d" id="toc-edge-extraction-in-3d" class="nav-link" data-scroll-target="#edge-extraction-in-3d">Edge extraction in 3D</a></li>
+  <li><a href="#potential-loss-of-topology-with-the-edge-translations" id="toc-potential-loss-of-topology-with-the-edge-translations" class="nav-link" data-scroll-target="#potential-loss-of-topology-with-the-edge-translations">Potential loss of topology with the edge translations</a></li>
   <li><a href="#ideas" id="toc-ideas" class="nav-link" data-scroll-target="#ideas">Ideas</a></li>
+  <li><a href="#questions" id="toc-questions" class="nav-link" data-scroll-target="#questions">Questions</a></li>
   </ul></li>
   <li><a href="#discussion" id="toc-discussion" class="nav-link" data-scroll-target="#discussion">Discussion</a></li>
   <li><a href="#work-until-next-meeting" id="toc-work-until-next-meeting" class="nav-link" data-scroll-target="#work-until-next-meeting">Work until next meeting</a></li>
   </ul>
-<div class="toc-actions"><ul><li><a href="https://github.com/alexandre-bry/MSc_Thesis-Report/edit/main/weekly_notes/2026_03_02.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/alexandre-bry/MSc_Thesis-Report/blob/main/weekly_notes/2026_03_02.qmd" class="toc-action"><i class="bi empty"></i>View source</a></li><li><a href="https://github.com/alexandre-bry/MSc_Thesis-Report/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
+<div class="toc-actions"><ul><li><a href="https://github.com/alexandre-bry/MSc_Thesis-Report/edit/main/weekly_notes/2026_03_23.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/alexandre-bry/MSc_Thesis-Report/blob/main/weekly_notes/2026_03_23.qmd" class="toc-action"><i class="bi empty"></i>View source</a></li><li><a href="https://github.com/alexandre-bry/MSc_Thesis-Report/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
@@ -471,7 +443,7 @@ window.Quarto = {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">2026/03/02</h1>
+<h1 class="title">2026/03/23</h1>
 </div>
 
 
@@ -488,7 +460,7 @@ window.Quarto = {
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">March 2, 2026</p>
+      <p class="date">March 23, 2026</p>
     </div>
   </div>
   
@@ -502,72 +474,34 @@ window.Quarto = {
 
 <section id="results-since-previous-meeting" class="level2">
 <h2 class="anchored" data-anchor-id="results-since-previous-meeting">Results since previous meeting</h2>
-<ul>
-<li>I was sick last week so I was not very efficient and did not work at all on Friday.</li>
-<li>I now use either of these two methods to compute a theoretical edge point <span class="math inline">\(p_e\)</span> in case of a single echo giving a point <span class="math inline">\(p\)</span>:
-<ul>
-<li>If the three previous points are almost aligned, I add half of the vector between the last and the previous last points to the last point to get my theoretical edge point <span class="math inline">\(p_e\)</span>. This assumes that the previous points are on the roof and the roof is flat so we can simply follow the direction of the roof.</li>
-<li>Otherwise, we use the calculated trajectory of the scanning vehicle to approximate the position <span class="math inline">\(p_s\)</span> of the scanner at the GPS time of the point of interest <span class="math inline">\(p\)</span>. Then, the average direction between the real edge point <span class="math inline">\(p\)</span> and the ground point <span class="math inline">\(p_g\)</span> is calculated: <span class="math display">\[ v_e = \text{normalize}\left(\frac{\text{normalize}(p - p_s) + \text{normalize}(p_g - p_s)}{2}\right) \]</span> Finally, the theoretical point on the edge <span class="math inline">\(p_e\)</span> is taken in this direction at the same distance as the point on the roof <span class="math inline">\(p\)</span>: <span class="math display">\[ p_e = p_s + \text{norm}(p - p_s) v_e \]</span></li>
-</ul></li>
-<li>I also looked into computing normals and planarity measures on the point cloud to see whether these could be used, but I was not really convinced by results. It looked to me as if small imprecisions prevented flat objects to be really flat in the point cloud, which is surprising.</li>
-<li>Finally I made a Python script to download the tiles corresponding to a bounding box.</li>
-</ul>
 </section>
 <section id="material-for-discussion" class="level2">
 <h2 class="anchored" data-anchor-id="material-for-discussion">Material for discussion</h2>
-<section id="edge-extraction-in-3d" class="level3">
-<h3 class="anchored" data-anchor-id="edge-extraction-in-3d">Edge extraction in 3D</h3>
-<p>I tried to look into extracting edges in 3D without the BD TOPO as a guide but I am not sure how to do it. I have mostly thought about RANSAC and Region Growing but I am not sure which one to try. In many situations there are clear and visible lines of points, so RANSAC seems too complex for what we really need. In others there are many other points that we need to ignore for the edges. I think that weighing the points for methods like RANSAC based on their classification could help (more weight for class Building than for Unassigned)</p>
-<div id="fig-edge-points" class="quarto-layout-panel">
-<figure class="quarto-float quarto-float-fig figure">
-<div aria-describedby="fig-edge-points-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<div class="quarto-layout-row">
-<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
+<section id="potential-loss-of-topology-with-the-edge-translations" class="level3">
+<h3 class="anchored" data-anchor-id="potential-loss-of-topology-with-the-edge-translations">Potential loss of topology with the edge translations</h3>
+<p>I found a situation where my current algorithm to translate edges would result in a loss of topology. The illustration below show a situation where the problems occurs twice for the same pair of buildings.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><a href="./2026_03_02/Edge_points-Clean.png" class="lightbox" data-gallery="edge-point" title="Simple cases where points are well aligned and there is not much noise."><img src="./2026_03_02/Edge_points-Clean.png" class="img-fluid figure-img"></a></p>
-<figcaption>Simple cases where points are well aligned and there is not much noise.</figcaption>
+<p><a href="./2026_03_23/Potential_topology_loss_when_translating_edges.png" class="lightbox" data-gallery="loss-topology" title="Illustration of the problem of loss of topology with the current edge translation algorithm"><img src="./2026_03_23/Potential_topology_loss_when_translating_edges.png" class="img-fluid figure-img" alt="Illustration of the problem of loss of topology with the current edge translation algorithm"></a></p>
+<figcaption>Illustration of the problem of loss of topology with the current edge translation algorithm</figcaption>
 </figure>
 </div>
-</div>
-<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><a href="./2026_03_02/Edge_points-More_complex.png" class="lightbox" data-gallery="edge-point" title="More complex case with a lot of noise"><img src="./2026_03_02/Edge_points-More_complex.png" class="img-fluid figure-img"></a></p>
-<figcaption>More complex case with a lot of noise</figcaption>
-</figure>
-</div>
-</div>
-</div>
-</div>
-<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-edge-points-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;1: Extracts of the computed edge points for a single flight axis. The colour corresponds to the type of points: blue points are real points from the input (multi-echo) while red and green points were computed from single echo points as explained above. Green corresponds to the alignment method and red to the half-angle method.
-</figcaption>
-</figure>
-</div>
+<p>In this figure, the initial buildings are shown in light colours. They share a common edge, so two vertices. When translating the edges, the points follow the directions of the neighbouring edges, which mean that if the neighbouring edges are not collinear, the points will be translated in different directions for the two buildings. This results in each shared vertex not being shared any more at the end of the process.</p>
+<p>One solution to keeping the topology would be to also translate the neighbouring edges. However, this would also require to look into the constraints of the neighbouring edges, and potentially keep going further and further if the neighbours also have constraints, which could be costly and complex to implement.</p>
+<p>The potential good news is that if the process runs correctly until the end, and if the edges vertices are actually shared, then they should end up relatively close to each other, and we could potentially merge them back together if they are within a certain distance. Therefore I don’t think that this issue is worth trying to fix, as it would only add complexity without a guarantee of success.</p>
 </section>
 <section id="ideas" class="level3">
 <h3 class="anchored" data-anchor-id="ideas">Ideas</h3>
-<ul>
-<li>Consider neighbours in the direction of the flying vehicle, in order to handle situations where the ray is parallel to the façades.</li>
-</ul>
+</section>
+<section id="questions" class="level3">
+<h3 class="anchored" data-anchor-id="questions">Questions</h3>
 </section>
 </section>
 <section id="discussion" class="level2">
 <h2 class="anchored" data-anchor-id="discussion">Discussion</h2>
-<ul>
-<li>I need to find ways to identify points that are really on the roof in order to be able to identify the roof edges and discard points that were on balconies, on trees, etc</li>
-</ul>
 </section>
 <section id="work-until-next-meeting" class="level2">
 <h2 class="anchored" data-anchor-id="work-until-next-meeting">Work until next meeting</h2>
-<ul class="task-list">
-<li><label><input type="checkbox">Try to group edges with angles too close to 180° to match them together (see the code from Amine)</label></li>
-<li><label><input type="checkbox" checked="">Look into ways to properly identify the points on the roof edges</label></li>
-<li><label><input type="checkbox">Use the alignment of the point with the previous points to determine how certain it is that the point is a roof edge.</label></li>
-<li><label><input type="checkbox" checked="">Ask Wu Teng about sensor topology (regular 2D structure on a point cloud based on acquisition regularity).</label></li>
-<li><label><input type="checkbox">Compare the results with ScanAngle and using the estimated position of the scanner.</label></li>
-</ul>
 
 
 </section>
@@ -990,18 +924,15 @@ Figure&nbsp;1: Extracts of the computed edge points for a single flight axis. Th
   </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="../weekly_notes/2026_02_23.html" class="pagination-link" aria-label="2026/02/23">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">2026/02/23</span>
+      <a href="../weekly_notes/2026_03_16.html" class="pagination-link" aria-label="2026/03/16">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">2026/03/16</span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="../weekly_notes/2026_03_09.html" class="pagination-link" aria-label="2026/03/09">
-        <span class="nav-page-text">2026/03/09</span> <i class="bi bi-arrow-right-short"></i>
-      </a>
   </div>
 </nav>
 </div> <!-- /content -->
-<footer class="footer"><div class="nav-footer"><div class="nav-footer-center"><div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/alexandre-bry/MSc_Thesis-Report/edit/main/weekly_notes/2026_03_02.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/alexandre-bry/MSc_Thesis-Report/blob/main/weekly_notes/2026_03_02.qmd" class="toc-action"><i class="bi empty"></i>View source</a></li><li><a href="https://github.com/alexandre-bry/MSc_Thesis-Report/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div></div></footer><script>var lightboxQuarto = GLightbox({"closeEffect":"zoom","descPosition":"bottom","loop":false,"openEffect":"zoom","selector":".lightbox"});
+<footer class="footer"><div class="nav-footer"><div class="nav-footer-center"><div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/alexandre-bry/MSc_Thesis-Report/edit/main/weekly_notes/2026_03_23.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/alexandre-bry/MSc_Thesis-Report/blob/main/weekly_notes/2026_03_23.qmd" class="toc-action"><i class="bi empty"></i>View source</a></li><li><a href="https://github.com/alexandre-bry/MSc_Thesis-Report/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div></div></footer><script>var lightboxQuarto = GLightbox({"closeEffect":"zoom","descPosition":"bottom","loop":false,"openEffect":"zoom","selector":".lightbox"});
 (function() {
   let previousOnload = window.onload;
   window.onload = () => {
