@@ -7,7 +7,24 @@ meeting: [Bruno Vallet, Hugo Ledoux]
 
 ## Results since previous meeting
 
+- Re-implemented the edge translation algorithm, to add all the improvements we discussed previously.
+  Since this new version is more complex, it takes longer to run, but it should be more robust and give better results.
+- Got the code from Wu Teng to compute trajectories
+- Used DuckDB to group buildings that intersect (even with only a point)
+
 ## Material for discussion
+
+### Difficulties
+
+I had difficulties to find a good way to represent and handle the edges in order to translate them properly.
+
+I first tried to represent edges as points and it worked but required to make sure to translate the points in the right direction and to apply the translation to the point for both of its edges.
+There was also a difficulty that if a translation led to reducing the length of an edge to zero, we would lose the direction of the edge, even though we would still like to be able to make it re-appear.
+
+Therefore, I tried to represent edges as lines instead of points.
+This allows to keep the direction of the edge even if its length is reduced to zero.
+Translating the edges becomes much easier more robust as we only move the point that defines the line, not its direction.
+However, for all the operations that require to know the position of the vertices, it becomes necessary to also use the neighbouring edges.
 
 ### Potential loss of topology with the edge translations
 
@@ -29,8 +46,18 @@ Therefore I don't think that this issue is worth trying to fix, as it would only
 
 ### Ideas
 
+- Assign a direction to each edge point in order to use it for matching edges better, potentially preventing matching to the wrong edge
+
 ### Questions
 
 ## Discussion
 
+- Good idea to use the orientation of the scan line
+- To weight the points, I should also try to compute their normals locally (using for example the 10 closest neighbours) and then compare the oriented normal obtained with the scan line orientation to weight the points based on the angle between the oriented normal and the oriented edge normal
+- Possibility to not handle the topological issues but handle the potential issues at the end.
+  One way would be to extract all the closed surfaces and only keep the biggest one, since the smaller ones would likely be the result of the self-intersections
+
 ## Work until next meeting
+
+- [ ] Keep working on implementing the changes to the edge translation algorithm
+- [ ] Add the computation of the trajectories to the pipeline to test it on different areas
