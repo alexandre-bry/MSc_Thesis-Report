@@ -300,7 +300,7 @@
     "href": "weekly_notes/2026_03_23.html#discussion",
     "title": "2026/03/23",
     "section": "Discussion",
-    "text": "Discussion",
+    "text": "Discussion\n\nGood idea to use the orientation of the scan line\nTo weight the points, I should also try to compute their normals locally (using for example the 10 closest neighbours) and then compare the oriented normal obtained with the scan line orientation to weight the points based on the angle between the oriented normal and the oriented edge normal\nPossibility to not handle the topological issues but handle the potential issues at the end. One way would be to extract all the closed surfaces and only keep the biggest one, since the smaller ones would likely be the result of the self-intersections",
     "crumbs": [
       "Weekly Meetings",
       "2026/03/23"
@@ -311,7 +311,7 @@
     "href": "weekly_notes/2026_03_23.html#work-until-next-meeting",
     "title": "2026/03/23",
     "section": "Work until next meeting",
-    "text": "Work until next meeting",
+    "text": "Work until next meeting\n\nKeep working on implementing the changes to the edge translation algorithm\nAdd the computation of the trajectories to the pipeline to test it on different areas",
     "crumbs": [
       "Weekly Meetings",
       "2026/03/23"
