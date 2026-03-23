@@ -428,6 +428,7 @@ ul.task-list li input[type="checkbox"] {
   <li><a href="#results-since-previous-meeting" id="toc-results-since-previous-meeting" class="nav-link active" data-scroll-target="#results-since-previous-meeting">Results since previous meeting</a></li>
   <li><a href="#material-for-discussion" id="toc-material-for-discussion" class="nav-link" data-scroll-target="#material-for-discussion">Material for discussion</a>
   <ul class="collapse">
+  <li><a href="#difficulties" id="toc-difficulties" class="nav-link" data-scroll-target="#difficulties">Difficulties</a></li>
   <li><a href="#potential-loss-of-topology-with-the-edge-translations" id="toc-potential-loss-of-topology-with-the-edge-translations" class="nav-link" data-scroll-target="#potential-loss-of-topology-with-the-edge-translations">Potential loss of topology with the edge translations</a></li>
   <li><a href="#ideas" id="toc-ideas" class="nav-link" data-scroll-target="#ideas">Ideas</a></li>
   <li><a href="#questions" id="toc-questions" class="nav-link" data-scroll-target="#questions">Questions</a></li>
@@ -474,9 +475,20 @@ ul.task-list li input[type="checkbox"] {
 
 <section id="results-since-previous-meeting" class="level2">
 <h2 class="anchored" data-anchor-id="results-since-previous-meeting">Results since previous meeting</h2>
+<ul>
+<li>Re-implemented the edge translation algorithm, to add all the improvements we discussed previously. Since this new version is more complex, it takes longer to run, but it should be more robust and give better results.</li>
+<li>Got the code from Wu Teng to compute trajectories</li>
+<li>Used DuckDB to group buildings that intersect (even with only a point)</li>
+</ul>
 </section>
 <section id="material-for-discussion" class="level2">
 <h2 class="anchored" data-anchor-id="material-for-discussion">Material for discussion</h2>
+<section id="difficulties" class="level3">
+<h3 class="anchored" data-anchor-id="difficulties">Difficulties</h3>
+<p>I had difficulties to find a good way to represent and handle the edges in order to translate them properly.</p>
+<p>I first tried to represent edges as points and it worked but required to make sure to translate the points in the right direction and to apply the translation to the point for both of its edges. There was also a difficulty that if a translation led to reducing the length of an edge to zero, we would lose the direction of the edge, even though we would still like to be able to make it re-appear.</p>
+<p>Therefore, I tried to represent edges as lines instead of points. This allows to keep the direction of the edge even if its length is reduced to zero. Translating the edges becomes much easier more robust as we only move the point that defines the line, not its direction. However, for all the operations that require to know the position of the vertices, it becomes necessary to also use the neighbouring edges.</p>
+</section>
 <section id="potential-loss-of-topology-with-the-edge-translations" class="level3">
 <h3 class="anchored" data-anchor-id="potential-loss-of-topology-with-the-edge-translations">Potential loss of topology with the edge translations</h3>
 <p>I found a situation where my current algorithm to translate edges would result in a loss of topology. The illustration below show a situation where the problems occurs twice for the same pair of buildings.</p>
@@ -492,6 +504,9 @@ ul.task-list li input[type="checkbox"] {
 </section>
 <section id="ideas" class="level3">
 <h3 class="anchored" data-anchor-id="ideas">Ideas</h3>
+<ul>
+<li>Assign a direction to each edge point in order to use it for matching edges better, potentially preventing matching to the wrong edge</li>
+</ul>
 </section>
 <section id="questions" class="level3">
 <h3 class="anchored" data-anchor-id="questions">Questions</h3>

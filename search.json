@@ -263,11 +263,33 @@
     ]
   },
   {
+    "objectID": "weekly_notes/2026_03_23.html",
+    "href": "weekly_notes/2026_03_23.html",
+    "title": "2026/03/23",
+    "section": "",
+    "text": "Re-implemented the edge translation algorithm, to add all the improvements we discussed previously. Since this new version is more complex, it takes longer to run, but it should be more robust and give better results.\nGot the code from Wu Teng to compute trajectories\nUsed DuckDB to group buildings that intersect (even with only a point)",
+    "crumbs": [
+      "Weekly Meetings",
+      "2026/03/23"
+    ]
+  },
+  {
+    "objectID": "weekly_notes/2026_03_23.html#results-since-previous-meeting",
+    "href": "weekly_notes/2026_03_23.html#results-since-previous-meeting",
+    "title": "2026/03/23",
+    "section": "",
+    "text": "Re-implemented the edge translation algorithm, to add all the improvements we discussed previously. Since this new version is more complex, it takes longer to run, but it should be more robust and give better results.\nGot the code from Wu Teng to compute trajectories\nUsed DuckDB to group buildings that intersect (even with only a point)",
+    "crumbs": [
+      "Weekly Meetings",
+      "2026/03/23"
+    ]
+  },
+  {
     "objectID": "weekly_notes/2026_03_23.html#material-for-discussion",
     "href": "weekly_notes/2026_03_23.html#material-for-discussion",
     "title": "2026/03/23",
     "section": "Material for discussion",
-    "text": "Material for discussion\n\nPotential loss of topology with the edge translations\nI found a situation where my current algorithm to translate edges would result in a loss of topology. The illustration below show a situation where the problems occurs twice for the same pair of buildings.\n\n\n\nIllustration of the problem of loss of topology with the current edge translation algorithm\n\n\nIn this figure, the initial buildings are shown in light colours. They share a common edge, so two vertices. When translating the edges, the points follow the directions of the neighbouring edges, which mean that if the neighbouring edges are not collinear, the points will be translated in different directions for the two buildings. This results in each shared vertex not being shared any more at the end of the process.\nOne solution to keeping the topology would be to also translate the neighbouring edges. However, this would also require to look into the constraints of the neighbouring edges, and potentially keep going further and further if the neighbours also have constraints, which could be costly and complex to implement.\nThe potential good news is that if the process runs correctly until the end, and if the edges vertices are actually shared, then they should end up relatively close to each other, and we could potentially merge them back together if they are within a certain distance. Therefore I don’t think that this issue is worth trying to fix, as it would only add complexity without a guarantee of success.\n\n\nIdeas\n\n\nQuestions",
+    "text": "Material for discussion\n\nDifficulties\nI had difficulties to find a good way to represent and handle the edges in order to translate them properly.\nI first tried to represent edges as points and it worked but required to make sure to translate the points in the right direction and to apply the translation to the point for both of its edges. There was also a difficulty that if a translation led to reducing the length of an edge to zero, we would lose the direction of the edge, even though we would still like to be able to make it re-appear.\nTherefore, I tried to represent edges as lines instead of points. This allows to keep the direction of the edge even if its length is reduced to zero. Translating the edges becomes much easier more robust as we only move the point that defines the line, not its direction. However, for all the operations that require to know the position of the vertices, it becomes necessary to also use the neighbouring edges.\n\n\nPotential loss of topology with the edge translations\nI found a situation where my current algorithm to translate edges would result in a loss of topology. The illustration below show a situation where the problems occurs twice for the same pair of buildings.\n\n\n\nIllustration of the problem of loss of topology with the current edge translation algorithm\n\n\nIn this figure, the initial buildings are shown in light colours. They share a common edge, so two vertices. When translating the edges, the points follow the directions of the neighbouring edges, which mean that if the neighbouring edges are not collinear, the points will be translated in different directions for the two buildings. This results in each shared vertex not being shared any more at the end of the process.\nOne solution to keeping the topology would be to also translate the neighbouring edges. However, this would also require to look into the constraints of the neighbouring edges, and potentially keep going further and further if the neighbours also have constraints, which could be costly and complex to implement.\nThe potential good news is that if the process runs correctly until the end, and if the edges vertices are actually shared, then they should end up relatively close to each other, and we could potentially merge them back together if they are within a certain distance. Therefore I don’t think that this issue is worth trying to fix, as it would only add complexity without a guarantee of success.\n\n\nIdeas\n\nAssign a direction to each edge point in order to use it for matching edges better, potentially preventing matching to the wrong edge\n\n\n\nQuestions",
     "crumbs": [
       "Weekly Meetings",
       "2026/03/23"
