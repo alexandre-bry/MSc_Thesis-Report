@@ -1,0 +1,98 @@
+---
+title: "2026/03/30"
+date: 2026-03-30
+tags: [weekly]
+meeting: [Bruno Vallet, Hugo Ledoux]
+---
+
+## Results since previous meeting
+
+## Material for discussion
+
+### Issue with cyclic adjacent buildings
+
+I realized that there could be too many constraints when trying to move multiple edges from multiple buildings at the same time, if we combine grouping almost collinear edges and grouping intersecting buildings.
+Below is an illustration of a situation where this issue occurs.
+
+![Illustration of the issue with cyclic adjacent buildings](./2026_03_30/Issue_with_cyclic_adjacent_buildings.png){group="cyclic-adjacent-buildings"}
+
+In this figure you can see three buildings that are adjacent to each other, and that share edges with each other.
+If we decide that the direction for the green building is towards the inside, then the direction for the blue building will be towards the outside.
+But then the direction for the red building cannot be decided.
+
+#### First idea to solve the issue: use a factor for the offset of each edge
+
+I don't think that there is a good solution to this problem.
+A potential solution I can think of would be to reduce the constraint that all offsets should have the same length, and use a factor to apply to the offset for each edge.
+The factor would be defined as:
+- 1 if the edge is part of the main building (the one that we focus on)
+- 1 if the edge is part of another building and intersects the main building
+- 0 if the edge is part of another building and intersects with another building that is oriented in the same direction.
+  Orientation (outside/inside) can be defined as outside for the main building, inside for the buildings that intersect the main building, outside for the buildings that intersect the buildings that intersect the main building, and so on.
+  It is like a parity of the distance to the main building, where the distance is defined as the number of buildings in-between.
+- For the other edges, a linear interpolation giving a number between 0 and 1 based on the closest 0 and 1 factors.
+
+#### Second idea to solve the issue: rethink the way to group edges and buildings
+
+After thinking more about it I realized that this issue comes from the definition that we use to group edges and buildings.
+Currently, we create fixed groups of edges based on the angles between consecutive edges and the intersections between buildings, and we translate groups of edges together.
+This is the reason why if a building is circular enough, the whole building can end up in one group, limiting the possibilities to translate the whole building in one direction.
+
+A solution to this would be to create a neighbourhood for each edge, instead of creating fixed groups of edges.
+The neighbourhood of an edge would be defined by going through the graph of edges (where edges are connected if they are consecutive in a building or intersect in different buildings), and adding all the edges until we reach an edge which makes an angle bigger than a certain threshold with the initial edge.
+If we set the angle to 45 degrees for example, then all the edges in the group would be relatively aligned (no more than 90 degrees between two of them), and we would also ensure that the edges connected to our neighbourhood have at least 45 degrees with the main edge.
+This way, we would ensure to have some freedom to move in the direction perpendicular to the main edge.
+Finally, to ensure that we don't break the polygons, we would move the edges in a neighbourhood in the same direction, but with a factor that depends on the angle between the edge and the main edge.
+This factor would go from 1 for edges that are parallel to the main edge, to 0 for edges that are at the defined threshold angle with the main edge.
+
+Another good property of this solution is that it prevents grouping incompatible buildings.
+In the scenario of the figure above, if the main edge is one of the two central edges of the green building, then only a few edges of the blue and red buildings would be in the neighbourhood, and especially not the ones that intersect between the blue and red buildings, which are the ones that create the issue.
+It is still possible to imagine scenarios where three buildings could look like they give this cyclic issue, as in the figure below.
+
+![Illustration of seemingly cyclic adjacent buildings](./2026_03_30/New_local_neighbourhood_definition-Seemingly_cyclic_adjacent_buildings.png){group="seemingly-cyclic-adjacent-buildings"}
+
+However, in this case, there is a gap of connectivity in the yellow building: the two edges at the top are connected to the blue building, while the two edges at the bottom are connected to the red building.
+And there is no connection in the neighbourhood between the two, except the one that goes through the blue and red buildings, so there is so cycle.
+Therefore, if the direction of the main edge is towards the inside, then:
+
+- the direction of the edges in the blue building is towards the inside (connectivity 0),
+- the direction of the two edges at the top of the yellow building is towards the outside (connectivity 1),
+- the direction of the edges in the red building is towards the outside (connectivity 1),
+- the direction of the edges in the yellow building at the bottom is towards the inside (connectivity 2).
+
+We keep this good property as long as the threshold is set to less than 90 degrees.
+But this is fine because we probably don't want to group edges that are more than 90 degrees apart anyway.
+
+However, defining the groups/neighbourhoods like this requires to rethink the way we translate the edges, as we cannot anymore translate all the edges in a group with the same offset in their own direction, due to the fact they the last edge in the neighbourhood can be very close in direction to the next edge outside of the neighbourhood.
+
+Therefore, I think have two ideas about how to translate neighbourhoods:
+
+1. Translate all the edges with the same offset and direction.
+  Then, if this breaks the topology, move the neighbours where it breaks in the same direction by what is needed to fix the topology, until we don't have any more topology issues.
+2. For each building, translate the line that connects both sides of the edge group in the building.
+  Then, intersect the translated line with the neighbouring edges to get the new position of the vertices.
+  Finally, scale up/down all the edges in the group to fit into the new position of the vertices.
+
+Let's say that we have three edges in the neighbourhood $e_1$, $e_2$, and $e_3$ which make angles $\alpha_1$, $\alpha_2$, and $\alpha_3$ respectively with the main edge $e_M$.
+Let's say that we translate all edges in the direction $e_{m\perp}$ perpendicular to $e_M$ with an offset of length $d$ for the main edge $e_M$.
+Then, if we keep the same offset and direction for all edges, we actually translate $e_i \; \forall i \in \{1,2,3\}$ with an offset of length $d \cdot \cos(\alpha_i)$ in its respective directions $e_{i\perp}$, which is perpendicular to $e_i$.
+
+Let's call $e_M$ the main edge.
+Let's assume that $\forall i$, $e_i$ is the edge between $e_{i-1}$ and $e_{i+1}$, and that the angle between $e_i$ and $e_M$ is $\alpha_i$.
+Let's call $\forall i$ $p_{i-1, i}$ and $p_{i, i+1}$ the two vertices of $e_i$, which are also the vertices of $e_{i-1}$ and $e_{i+1}$ respectively.
+Let's call $l_i$ the line that contains $e_i$, and $v_{i\perp}$ the unit vector perpendicular to $l_i$.
+We define the translated line $l'_i$ for each edge $l_i$ as $l'_i = l_i + d \cos(\alpha_i) f_i v_{i\perp}$ where $f_i$ is a custom factor that we want to determine.
+Therefore, the translated vertex $p'_{i, i+1}$ is defined as the intersection between the translated lines $l'_i$ and $l'_{i+1}$, which means that it is equal to:
+$$ p'_{i, i+1} = ??? $$
+There is a real problem if and only if there is a intersection between the translated edges $e'_{i-1}$ and $e'_{i+1}$, which would mean that:
+???
+
+$$ L_i + \frac{ d \cos(\alpha_{i+1}) f_{i+1}  -  \cos(\alpha_{i+1} - \alpha_i) d \cos(\alpha_i) f_i }{ \sin(\alpha_{i+1} - \alpha_i) } $$
+
+### Ideas
+
+### Questions
+
+## Discussion
+
+## Work until next meeting
