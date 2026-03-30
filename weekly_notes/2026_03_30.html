@@ -7,9 +7,9 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="Alexandre Bry">
-<meta name="dcterms.date" content="2026-03-23">
+<meta name="dcterms.date" content="2026-03-30">
 
-<title>2026/03/23 – MSc Thesis - Website</title>
+<title>2026/03/30 – MSc Thesis - Website</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -32,8 +32,7 @@ ul.task-list li input[type="checkbox"] {
 <script src="../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../">
-<link href="../weekly_notes/2026_03_30.html" rel="next">
-<link href="../weekly_notes/2026_03_16.html" rel="prev">
+<link href="../weekly_notes/2026_03_23.html" rel="prev">
 <script src="../site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
 <script src="../site_libs/quarto-html/axe/axe-check.js" type="module"></script>
@@ -81,12 +80,12 @@ ul.task-list li input[type="checkbox"] {
 }</script>
 
 
-<meta property="og:title" content="2026/03/23 – MSc Thesis - Website">
-<meta property="og:image" content="https://alexandre-bry.github.io/MSc_Thesis-Report/weekly_notes/2026_03_23/Potential_topology_loss_when_translating_edges.png">
+<meta property="og:title" content="2026/03/30 – MSc Thesis - Website">
+<meta property="og:image" content="https://alexandre-bry.github.io/MSc_Thesis-Report/weekly_notes/2026_03_30/Issue_with_cyclic_adjacent_buildings.png">
 <meta property="og:site_name" content="MSc Thesis - Website">
-<meta property="og:image:alt" content="Illustration of the problem of loss of topology with the current edge translation algorithm">
-<meta property="og:image:height" content="434">
-<meta property="og:image:width" content="477">
+<meta property="og:image:alt" content="Illustration of the issue with cyclic adjacent buildings">
+<meta property="og:image:height" content="711">
+<meta property="og:image:width" content="534">
 </head>
 
 <body class="nav-sidebar docked nav-fixed quarto-light"><script id="quarto-html-before-body" type="application/javascript">
@@ -302,7 +301,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../weekly_notes/2026_03_23.html">2026/03/23</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../weekly_notes/2026_03_30.html">2026/03/30</a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
     </div>
@@ -412,13 +411,13 @@ ul.task-list li input[type="checkbox"] {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../weekly_notes/2026_03_23.html" class="sidebar-item-text sidebar-link active">
+  <a href="../weekly_notes/2026_03_23.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">2026/03/23</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../weekly_notes/2026_03_30.html" class="sidebar-item-text sidebar-link">
+  <a href="../weekly_notes/2026_03_30.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text">2026/03/30</span></a>
   </div>
 </li>
@@ -435,15 +434,15 @@ ul.task-list li input[type="checkbox"] {
   <li><a href="#results-since-previous-meeting" id="toc-results-since-previous-meeting" class="nav-link active" data-scroll-target="#results-since-previous-meeting">Results since previous meeting</a></li>
   <li><a href="#material-for-discussion" id="toc-material-for-discussion" class="nav-link" data-scroll-target="#material-for-discussion">Material for discussion</a>
   <ul class="collapse">
-  <li><a href="#difficulties" id="toc-difficulties" class="nav-link" data-scroll-target="#difficulties">Difficulties</a></li>
-  <li><a href="#potential-loss-of-topology-with-the-edge-translations" id="toc-potential-loss-of-topology-with-the-edge-translations" class="nav-link" data-scroll-target="#potential-loss-of-topology-with-the-edge-translations">Potential loss of topology with the edge translations</a></li>
+  <li><a href="#issue-with-cyclic-adjacent-buildings" id="toc-issue-with-cyclic-adjacent-buildings" class="nav-link" data-scroll-target="#issue-with-cyclic-adjacent-buildings">Issue with cyclic adjacent buildings</a></li>
+  <li><a href="#new-edge-matching-algorithm" id="toc-new-edge-matching-algorithm" class="nav-link" data-scroll-target="#new-edge-matching-algorithm">New edge matching algorithm</a></li>
   <li><a href="#ideas" id="toc-ideas" class="nav-link" data-scroll-target="#ideas">Ideas</a></li>
   <li><a href="#questions" id="toc-questions" class="nav-link" data-scroll-target="#questions">Questions</a></li>
   </ul></li>
   <li><a href="#discussion" id="toc-discussion" class="nav-link" data-scroll-target="#discussion">Discussion</a></li>
   <li><a href="#work-until-next-meeting" id="toc-work-until-next-meeting" class="nav-link" data-scroll-target="#work-until-next-meeting">Work until next meeting</a></li>
   </ul>
-<div class="toc-actions"><ul><li><a href="https://github.com/alexandre-bry/MSc_Thesis-Report/edit/main/weekly_notes/2026_03_23.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/alexandre-bry/MSc_Thesis-Report/blob/main/weekly_notes/2026_03_23.qmd" class="toc-action"><i class="bi empty"></i>View source</a></li><li><a href="https://github.com/alexandre-bry/MSc_Thesis-Report/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
+<div class="toc-actions"><ul><li><a href="https://github.com/alexandre-bry/MSc_Thesis-Report/edit/main/weekly_notes/2026_03_30.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/alexandre-bry/MSc_Thesis-Report/blob/main/weekly_notes/2026_03_30.qmd" class="toc-action"><i class="bi empty"></i>View source</a></li><li><a href="https://github.com/alexandre-bry/MSc_Thesis-Report/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
@@ -451,7 +450,7 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">2026/03/23</h1>
+<h1 class="title">2026/03/30</h1>
 </div>
 
 
@@ -468,7 +467,7 @@ ul.task-list li input[type="checkbox"] {
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">March 23, 2026</p>
+      <p class="date">March 30, 2026</p>
     </div>
   </div>
   
@@ -483,37 +482,91 @@ ul.task-list li input[type="checkbox"] {
 <section id="results-since-previous-meeting" class="level2">
 <h2 class="anchored" data-anchor-id="results-since-previous-meeting">Results since previous meeting</h2>
 <ul>
-<li>Re-implemented the edge translation algorithm, to add all the improvements we discussed previously. Since this new version is more complex, it takes longer to run, but it should be more robust and give better results.</li>
-<li>Got the code from Wu Teng to compute trajectories</li>
-<li>Used DuckDB to group buildings that intersect (even with only a point)</li>
+<li>Rethought the way edges are grouped and moved together</li>
+<li>Made a Python script to experiment with the edge matching algorithm</li>
 </ul>
 </section>
 <section id="material-for-discussion" class="level2">
 <h2 class="anchored" data-anchor-id="material-for-discussion">Material for discussion</h2>
-<section id="difficulties" class="level3">
-<h3 class="anchored" data-anchor-id="difficulties">Difficulties</h3>
-<p>I had difficulties to find a good way to represent and handle the edges in order to translate them properly.</p>
-<p>I first tried to represent edges as points and it worked but required to make sure to translate the points in the right direction and to apply the translation to the point for both of its edges. There was also a difficulty that if a translation led to reducing the length of an edge to zero, we would lose the direction of the edge, even though we would still like to be able to make it re-appear.</p>
-<p>Therefore, I tried to represent edges as lines instead of points. This allows to keep the direction of the edge even if its length is reduced to zero. Translating the edges becomes much easier more robust as we only move the point that defines the line, not its direction. However, for all the operations that require to know the position of the vertices, it becomes necessary to also use the neighbouring edges.</p>
-</section>
-<section id="potential-loss-of-topology-with-the-edge-translations" class="level3">
-<h3 class="anchored" data-anchor-id="potential-loss-of-topology-with-the-edge-translations">Potential loss of topology with the edge translations</h3>
-<p>I found a situation where my current algorithm to translate edges would result in a loss of topology. The illustration below show a situation where the problems occurs twice for the same pair of buildings.</p>
+<section id="issue-with-cyclic-adjacent-buildings" class="level3">
+<h3 class="anchored" data-anchor-id="issue-with-cyclic-adjacent-buildings">Issue with cyclic adjacent buildings</h3>
+<p>I realized that there could be too many constraints when trying to move multiple edges from multiple buildings at the same time, if we combine grouping almost collinear edges and grouping intersecting buildings. Below is an illustration of a situation where this issue occurs.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><a href="./2026_03_23/Potential_topology_loss_when_translating_edges.png" class="lightbox" data-gallery="loss-topology" title="Illustration of the problem of loss of topology with the current edge translation algorithm"><img src="./2026_03_23/Potential_topology_loss_when_translating_edges.png" class="img-fluid figure-img" alt="Illustration of the problem of loss of topology with the current edge translation algorithm"></a></p>
-<figcaption>Illustration of the problem of loss of topology with the current edge translation algorithm</figcaption>
+<p><a href="./2026_03_30/Issue_with_cyclic_adjacent_buildings.png" class="lightbox" data-gallery="cyclic-adjacent-buildings" title="Illustration of the issue with cyclic adjacent buildings"><img src="./2026_03_30/Issue_with_cyclic_adjacent_buildings.png" height="400" alt="Illustration of the issue with cyclic adjacent buildings" class="figure-img"></a></p>
+<figcaption>Illustration of the issue with cyclic adjacent buildings</figcaption>
 </figure>
 </div>
-<p>In this figure, the initial buildings are shown in light colours. They share a common edge, so two vertices. When translating the edges, the points follow the directions of the neighbouring edges, which mean that if the neighbouring edges are not collinear, the points will be translated in different directions for the two buildings. This results in each shared vertex not being shared any more at the end of the process.</p>
-<p>One solution to keeping the topology would be to also translate the neighbouring edges. However, this would also require to look into the constraints of the neighbouring edges, and potentially keep going further and further if the neighbours also have constraints, which could be costly and complex to implement.</p>
-<p>The potential good news is that if the process runs correctly until the end, and if the edges vertices are actually shared, then they should end up relatively close to each other, and we could potentially merge them back together if they are within a certain distance. Therefore I don’t think that this issue is worth trying to fix, as it would only add complexity without a guarantee of success.</p>
+<p>In this figure you can see three buildings that are adjacent to each other, and that share edges with each other. If we decide that the direction for the green building is towards the inside, then the direction for the blue building will be towards the outside. But then the direction for the red building cannot be decided.</p>
+<section id="first-idea-to-solve-the-issue-use-a-factor-for-the-offset-of-each-edge" class="level4">
+<h4 class="anchored" data-anchor-id="first-idea-to-solve-the-issue-use-a-factor-for-the-offset-of-each-edge">First idea to solve the issue: use a factor for the offset of each edge</h4>
+<p>I don’t think that there is a good solution to this problem. A potential solution I can think of would be to reduce the constraint that all offsets should have the same length, and use a factor to apply to the offset for each edge. The factor would be defined as:</p>
+<ul>
+<li>1 if the edge is part of the main building (the one that we focus on)</li>
+<li>1 if the edge is part of another building and intersects the main building</li>
+<li>0 if the edge is part of another building and intersects with another building that is oriented in the same direction. Orientation (outside/inside) can be defined as outside for the main building, inside for the buildings that intersect the main building, outside for the buildings that intersect the buildings that intersect the main building, and so on. It is like a parity of the distance to the main building, where the distance is defined as the number of buildings in-between.</li>
+<li>For the other edges, a linear interpolation giving a number between 0 and 1 based on the closest 0 and 1 factors.</li>
+</ul>
+</section>
+<section id="second-idea-to-solve-the-issue-rethink-the-way-to-group-edges-and-buildings" class="level4">
+<h4 class="anchored" data-anchor-id="second-idea-to-solve-the-issue-rethink-the-way-to-group-edges-and-buildings">Second idea to solve the issue: rethink the way to group edges and buildings</h4>
+<p>After thinking more about it I realized that this issue comes from the definition that we use to group edges and buildings. Currently, we create fixed groups of edges based on the angles between consecutive edges and the intersections between buildings, and we translate groups of edges together. This is the reason why if a building is circular enough, the whole building can end up in one group, limiting the possibilities to translate the whole building in one direction.</p>
+<p>A solution to this would be to create a neighbourhood for each edge, instead of creating fixed groups of edges. The neighbourhood of an edge would be defined by going through the graph of edges (where edges are connected if they are consecutive in a building or intersect in different buildings), and adding all the edges until we reach an edge which makes an angle bigger than a certain threshold with the initial edge. If we set the angle to 45 degrees for example, then all the edges in the group would be relatively aligned (no more than 90 degrees between two of them), and we would also ensure that the edges connected to our neighbourhood have at least 45 degrees with the main edge. This way, we would ensure to have some freedom to move in the direction perpendicular to the main edge. Finally, to ensure that we don’t break the polygons, we would move the edges in a neighbourhood in the same direction, but with a factor that depends on the angle between the edge and the main edge. This factor would go from 1 for edges that are parallel to the main edge, to 0 for edges that are at the defined threshold angle with the main edge.</p>
+<p>Another good property of this solution is that it prevents grouping incompatible buildings. In the scenario of the figure above, if the main edge is one of the two central edges of the green building, then only a few edges of the blue and red buildings would be in the neighbourhood, and especially not the ones that intersect between the blue and red buildings, which are the ones that create the issue. It is still possible to imagine scenarios where three buildings could look like they give this cyclic issue, as in the figure below.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="./2026_03_30/New_local_neighbourhood_definition-Seemingly_cyclic_adjacent_buildings.png" class="lightbox" data-gallery="seemingly-cyclic-adjacent-buildings" title="Illustration of seemingly cyclic adjacent buildings"><img src="./2026_03_30/New_local_neighbourhood_definition-Seemingly_cyclic_adjacent_buildings.png" height="400" alt="Illustration of seemingly cyclic adjacent buildings" class="figure-img"></a></p>
+<figcaption>Illustration of seemingly cyclic adjacent buildings</figcaption>
+</figure>
+</div>
+<p>However, in this case, there is a gap of connectivity in the yellow building: the two edges at the top are connected to the blue building, while the two edges at the bottom are connected to the red building. And there is no connection in the neighbourhood between the two, except the one that goes through the blue and red buildings, so there is no cycle. Therefore, if the direction of the main edge is towards the inside, then:</p>
+<ul>
+<li>the direction of the edges in the blue building is towards the inside (connectivity 0),</li>
+<li>the direction of the two edges at the top of the yellow building is towards the outside (connectivity 1),</li>
+<li>the direction of the edges in the red building is towards the outside (connectivity 1),</li>
+<li>the direction of the edges in the yellow building at the bottom is towards the inside (connectivity 2).</li>
+</ul>
+<p>We keep this good property as long as the threshold is set to less than 90 degrees. But this is fine because we probably don’t want to group edges that are more than 90 degrees apart anyway.</p>
+<p>However, defining the groups/neighbourhoods like this requires to rethink the way we translate the edges, as we cannot anymore translate all the edges in a group with the same offset in their own direction, due to the fact they the last edge in the neighbourhood can be very close in direction to the next edge outside of the neighbourhood.</p>
+<p>Therefore, I think have two ideas about how to translate neighbourhoods:</p>
+<ol type="1">
+<li>Translate all the edges with the same offset and direction. Then, if this breaks the topology, move the neighbours where it breaks in the same direction by what is needed to fix the topology, until we don’t have any more topology issues.</li>
+<li>For each building, translate the line that connects both sides of the edge group in the building. Then, intersect the translated line with the neighbouring edges to get the new position of the vertices. Finally, scale up/down all the edges in the group to fit into the new position of the vertices.</li>
+</ol>
+</section>
+</section>
+<section id="new-edge-matching-algorithm" class="level3">
+<h3 class="anchored" data-anchor-id="new-edge-matching-algorithm">New edge matching algorithm</h3>
+<p>The final version of the edge matching algorithm that I have in mind is the following. Each edge is represented by an oriented line segment. Its orientation is defined by the order of the edge segments in the polygon that it belongs to. Each edge is considered individually when matching edges but since moving it can break the topology, its neighbours may also move with it.</p>
+<p>When considering a given edge to move, the direction to move it is defined as the direction perpendicular to the edge. All the neighbours that may move with it also move in the same direction, even though in practice this means moving them in their own perpendicular direction with a factor that depends on the angle between the edge and the neighbour. Each neighbour may only move in the same direction with a length that is equal or smaller than the length of the offset of the main edge. Moreover, we try to minimize how many neighbours we move, and how much we move them, as they will all be considered individually and the goal is mainly to move the main edge. without constraints from the neighbours.</p>
+<p>The goal is still to maximize the score of the final configuration, taking into account all the edges that we move, and not only the main edge. Before explaining the algorithm, here are a few interesting facts about this method:</p>
+<ul>
+<li>This method allows to move all the edges in the same direction by the same factor in worst case, which simply results in a full translation of the polygon, which is the best we can do an extreme case.</li>
+<li>Self-intersections create flipped edges, meaning that looking for flipped edges (which is quite easy if the initial orientation of the edges is known) allows to detect when the topology is broken. This assumes however that the topology was correct initially.</li>
+<li>Handling touching polygons becomes quite easy, as there is only one direction, and if two edges are touching, they can simply be moved together.</li>
+</ul>
+<p>The idea of the algorithm is:</p>
+<ol type="1">
+<li>Move the main edge with the full given offset in the direction perpendicular to the edge.</li>
+<li><strong>Check for flipped edges</strong>:
+<ol type="1">
+<li>If there is no flipped edge, then leave.</li>
+<li>If the main edge is flipped, move both its neighbours by the same offset in the same direction, and continue.</li>
+<li>If a neighbour edge is flipped, move it in the same direction with the same offset, and continue.</li>
+</ol></li>
+<li>Go through the edges in the polygon in <strong>backward direction</strong>, and while an edge (previous or current) is flipped, move it in the same direction with the same offset.</li>
+<li>Go through the edges in the polygon in <strong>forward direction</strong>, and while an edge (previous or current) is flipped, move it in the same direction with the same offset.</li>
+</ol>
+<p>I am still trying to figure out a way to improve this algorithm by moving the edges by smaller offsets if possible, but even without this improvement, the algorithm already gives good results, as shown in the example below.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="./2026_03_30/New_algorithm-Example_complex_case.png" class="lightbox" data-gallery="new-algorithm-example" title="Example showing the results with the new edge matching algorithm"><img src="./2026_03_30/New_algorithm-Example_complex_case.png" height="400" alt="Example showing the results with the new edge matching algorithm" class="figure-img"></a></p>
+<figcaption>Example showing the results with the new edge matching algorithm</figcaption>
+</figure>
+</div>
 </section>
 <section id="ideas" class="level3">
 <h3 class="anchored" data-anchor-id="ideas">Ideas</h3>
-<ul>
-<li>Assign a direction to each edge point in order to use it for matching edges better, potentially preventing matching to the wrong edge</li>
-</ul>
 </section>
 <section id="questions" class="level3">
 <h3 class="anchored" data-anchor-id="questions">Questions</h3>
@@ -521,18 +574,9 @@ ul.task-list li input[type="checkbox"] {
 </section>
 <section id="discussion" class="level2">
 <h2 class="anchored" data-anchor-id="discussion">Discussion</h2>
-<ul>
-<li>Good idea to use the orientation of the scan line</li>
-<li>To weight the points, I should also try to compute their normals locally (using for example the 10 closest neighbours) and then compare the oriented normal obtained with the scan line orientation to weight the points based on the angle between the oriented normal and the oriented edge normal</li>
-<li>Possibility to not handle the topological issues but handle the potential issues at the end. One way would be to extract all the closed surfaces and only keep the biggest one, since the smaller ones would likely be the result of the self-intersections</li>
-</ul>
 </section>
 <section id="work-until-next-meeting" class="level2">
 <h2 class="anchored" data-anchor-id="work-until-next-meeting">Work until next meeting</h2>
-<ul class="task-list">
-<li><label><input type="checkbox">Keep working on implementing the changes to the edge translation algorithm</label></li>
-<li><label><input type="checkbox">Add the computation of the trajectories to the pipeline to test it on different areas</label></li>
-</ul>
 
 
 </section>
@@ -955,18 +999,15 @@ ul.task-list li input[type="checkbox"] {
   </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="../weekly_notes/2026_03_16.html" class="pagination-link" aria-label="2026/03/16">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">2026/03/16</span>
+      <a href="../weekly_notes/2026_03_23.html" class="pagination-link" aria-label="2026/03/23">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">2026/03/23</span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="../weekly_notes/2026_03_30.html" class="pagination-link" aria-label="2026/03/30">
-        <span class="nav-page-text">2026/03/30</span> <i class="bi bi-arrow-right-short"></i>
-      </a>
   </div>
 </nav>
 </div> <!-- /content -->
-<footer class="footer"><div class="nav-footer"><div class="nav-footer-center"><div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/alexandre-bry/MSc_Thesis-Report/edit/main/weekly_notes/2026_03_23.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/alexandre-bry/MSc_Thesis-Report/blob/main/weekly_notes/2026_03_23.qmd" class="toc-action"><i class="bi empty"></i>View source</a></li><li><a href="https://github.com/alexandre-bry/MSc_Thesis-Report/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div></div></footer><script>var lightboxQuarto = GLightbox({"closeEffect":"zoom","descPosition":"bottom","loop":false,"openEffect":"zoom","selector":".lightbox"});
+<footer class="footer"><div class="nav-footer"><div class="nav-footer-center"><div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/alexandre-bry/MSc_Thesis-Report/edit/main/weekly_notes/2026_03_30.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/alexandre-bry/MSc_Thesis-Report/blob/main/weekly_notes/2026_03_30.qmd" class="toc-action"><i class="bi empty"></i>View source</a></li><li><a href="https://github.com/alexandre-bry/MSc_Thesis-Report/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div></div></footer><script>var lightboxQuarto = GLightbox({"closeEffect":"zoom","descPosition":"bottom","loop":false,"openEffect":"zoom","selector":".lightbox"});
 (function() {
   let previousOnload = window.onload;
   window.onload = () => {
