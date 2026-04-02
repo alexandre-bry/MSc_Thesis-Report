@@ -1,28 +1,28 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://alexandre-bry.github.io/MSc_Thesis-Report/reports/index.html</loc>
-    <lastmod>2026-02-16T08:59:27.223Z</lastmod>
+    <loc>https://alexandre-bry.github.io/MSc_Thesis-Report/Further_work.html</loc>
+    <lastmod>2026-04-02T12:25:56.305Z</lastmod>
   </url>
   <url>
-    <loc>https://alexandre-bry.github.io/MSc_Thesis-Report/monthly_notes/index.html</loc>
-    <lastmod>2026-03-09T09:42:22.258Z</lastmod>
+    <loc>https://alexandre-bry.github.io/MSc_Thesis-Report/reports/Project_proposal.html</loc>
+    <lastmod>2026-02-16T08:59:27.207Z</lastmod>
   </url>
   <url>
-    <loc>https://alexandre-bry.github.io/MSc_Thesis-Report/monthly_notes/2026_02_16.html</loc>
-    <lastmod>2026-03-09T09:42:28.186Z</lastmod>
+    <loc>https://alexandre-bry.github.io/MSc_Thesis-Report/monthly_notes/2026_03_16.html</loc>
+    <lastmod>2026-03-18T10:25:53.439Z</lastmod>
   </url>
   <url>
-    <loc>https://alexandre-bry.github.io/MSc_Thesis-Report/slides/A1_slides/index.html</loc>
-    <lastmod>2026-03-09T09:17:54.803Z</lastmod>
+    <loc>https://alexandre-bry.github.io/MSc_Thesis-Report/index.html</loc>
+    <lastmod>2026-03-09T09:43:13.886Z</lastmod>
   </url>
   <url>
-    <loc>https://alexandre-bry.github.io/MSc_Thesis-Report/weekly_notes/2026_02_09.html</loc>
-    <lastmod>2026-03-09T09:37:19.761Z</lastmod>
+    <loc>https://alexandre-bry.github.io/MSc_Thesis-Report/weekly_notes/2026_03_09.html</loc>
+    <lastmod>2026-03-16T10:08:47.077Z</lastmod>
   </url>
   <url>
-    <loc>https://alexandre-bry.github.io/MSc_Thesis-Report/weekly_notes/2025_12_08.html</loc>
-    <lastmod>2026-03-09T09:40:55.084Z</lastmod>
+    <loc>https://alexandre-bry.github.io/MSc_Thesis-Report/weekly_notes/2025_11_10.html</loc>
+    <lastmod>2026-03-09T09:40:19.685Z</lastmod>
   </url>
   <url>
     <loc>https://alexandre-bry.github.io/MSc_Thesis-Report/weekly_notes/2026_03_23.html</loc>
@@ -30,7 +30,7 @@
   </url>
   <url>
     <loc>https://alexandre-bry.github.io/MSc_Thesis-Report/weekly_notes/2026_03_30.html</loc>
-    <lastmod>2026-03-30T12:56:59.210Z</lastmod>
+    <lastmod>2026-04-02T12:37:44.266Z</lastmod>
   </url>
   <url>
     <loc>https://alexandre-bry.github.io/MSc_Thesis-Report/weekly_notes/2026_01_12.html</loc>
@@ -81,23 +81,31 @@
     <lastmod>2026-03-09T09:56:06.002Z</lastmod>
   </url>
   <url>
-    <loc>https://alexandre-bry.github.io/MSc_Thesis-Report/weekly_notes/2025_11_10.html</loc>
-    <lastmod>2026-03-09T09:40:19.685Z</lastmod>
+    <loc>https://alexandre-bry.github.io/MSc_Thesis-Report/weekly_notes/2026_04_06.html</loc>
+    <lastmod>2026-04-02T13:55:14.098Z</lastmod>
   </url>
   <url>
-    <loc>https://alexandre-bry.github.io/MSc_Thesis-Report/weekly_notes/2026_03_09.html</loc>
-    <lastmod>2026-03-16T10:08:47.077Z</lastmod>
+    <loc>https://alexandre-bry.github.io/MSc_Thesis-Report/weekly_notes/2025_12_08.html</loc>
+    <lastmod>2026-03-09T09:40:55.084Z</lastmod>
   </url>
   <url>
-    <loc>https://alexandre-bry.github.io/MSc_Thesis-Report/index.html</loc>
-    <lastmod>2026-03-09T09:43:13.886Z</lastmod>
+    <loc>https://alexandre-bry.github.io/MSc_Thesis-Report/weekly_notes/2026_02_09.html</loc>
+    <lastmod>2026-03-09T09:37:19.761Z</lastmod>
   </url>
   <url>
-    <loc>https://alexandre-bry.github.io/MSc_Thesis-Report/monthly_notes/2026_03_16.html</loc>
-    <lastmod>2026-03-18T10:25:53.439Z</lastmod>
+    <loc>https://alexandre-bry.github.io/MSc_Thesis-Report/slides/A1_slides/index.html</loc>
+    <lastmod>2026-03-09T09:17:54.803Z</lastmod>
   </url>
   <url>
-    <loc>https://alexandre-bry.github.io/MSc_Thesis-Report/reports/Project_proposal.html</loc>
-    <lastmod>2026-02-16T08:59:27.207Z</lastmod>
+    <loc>https://alexandre-bry.github.io/MSc_Thesis-Report/monthly_notes/2026_02_16.html</loc>
+    <lastmod>2026-03-09T09:42:28.186Z</lastmod>
+  </url>
+  <url>
+    <loc>https://alexandre-bry.github.io/MSc_Thesis-Report/monthly_notes/index.html</loc>
+    <lastmod>2026-03-09T09:42:22.258Z</lastmod>
+  </url>
+  <url>
+    <loc>https://alexandre-bry.github.io/MSc_Thesis-Report/reports/index.html</loc>
+    <lastmod>2026-02-16T08:59:27.223Z</lastmod>
   </url>
 </urlset>
