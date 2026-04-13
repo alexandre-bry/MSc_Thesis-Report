@@ -1,0 +1,1383 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.8.25">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="author" content="Alexandre Bry">
+
+<title>From Points to Prints – MSc Thesis - Website</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for citations */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+  margin-bottom: 0em;
+}
+.hanging-indent div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}</style>
+
+
+<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../">
+<script src="../../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../../site_libs/quarto-html/axe/axe-check.js" type="module"></script>
+<script src="../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-7b89279ff1a6dce999919e0e67d4d9ec.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-dark-707d8167ce6003fca903bfe2be84ab7f.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-7b89279ff1a6dce999919e0e67d4d9ec.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
+<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../site_libs/bootstrap/bootstrap-504c28765da3c5fe8be1145bd84b607a.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="../../site_libs/bootstrap/bootstrap-dark-c984b6bbaec8b13f797d8859fb459451.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="../../site_libs/bootstrap/bootstrap-504c28765da3c5fe8be1145bd84b607a.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
+<script src="../../site_libs/quarto-contrib/glightbox/glightbox.min.js"></script>
+<link href="../../site_libs/quarto-contrib/glightbox/glightbox.min.css" rel="stylesheet">
+<link href="../../site_libs/quarto-contrib/glightbox/lightbox.css" rel="stylesheet">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+
+
+<link rel="stylesheet" href="../../styles.css">
+<meta property="og:title" content="From Points to Prints – MSc Thesis - Website">
+<meta property="og:description" content="Generation of building roofprints and footprints from ALS point clouds">
+<meta property="og:image" content="../../images/LoDs_illustration-Filip_Biljecki.jpg">
+<meta property="og:site_name" content="MSc Thesis - Website">
+<meta property="og:image:alt" content="Visual example of the refined LoDs for a residential building (Biljecki, Ledoux, and Stoter 2016).">
+</head>
+
+<body class="nav-fixed quarto-light"><script id="quarto-html-before-body" type="application/javascript">
+    const toggleBodyColorMode = (bsSheetEl) => {
+      const mode = bsSheetEl.getAttribute("data-mode");
+      const bodyEl = window.document.querySelector("body");
+      if (mode === "dark") {
+        bodyEl.classList.add("quarto-dark");
+        bodyEl.classList.remove("quarto-light");
+      } else {
+        bodyEl.classList.add("quarto-light");
+        bodyEl.classList.remove("quarto-dark");
+      }
+    }
+    const toggleBodyColorPrimary = () => {
+      const bsSheetEl = window.document.querySelector("link#quarto-bootstrap:not([rel=disabled-stylesheet])");
+      if (bsSheetEl) {
+        toggleBodyColorMode(bsSheetEl);
+      }
+    }
+    const setColorSchemeToggle = (alternate) => {
+      const toggles = window.document.querySelectorAll('.quarto-color-scheme-toggle');
+      for (let i=0; i < toggles.length; i++) {
+        const toggle = toggles[i];
+        if (toggle) {
+          if (alternate) {
+            toggle.classList.add("alternate");
+          } else {
+            toggle.classList.remove("alternate");
+          }
+        }
+      }
+    };
+    const toggleColorMode = (alternate) => {
+      // Switch the stylesheets
+      const primaryStylesheets = window.document.querySelectorAll('link.quarto-color-scheme:not(.quarto-color-alternate)');
+      const alternateStylesheets = window.document.querySelectorAll('link.quarto-color-scheme.quarto-color-alternate');
+      manageTransitions('#quarto-margin-sidebar .nav-link', false);
+      if (alternate) {
+        // note: dark is layered on light, we don't disable primary!
+        enableStylesheet(alternateStylesheets);
+        for (const sheetNode of alternateStylesheets) {
+          if (sheetNode.id === "quarto-bootstrap") {
+            toggleBodyColorMode(sheetNode);
+          }
+        }
+      } else {
+        disableStylesheet(alternateStylesheets);
+        enableStylesheet(primaryStylesheets)
+        toggleBodyColorPrimary();
+      }
+      manageTransitions('#quarto-margin-sidebar .nav-link', true);
+      // Switch the toggles
+      setColorSchemeToggle(alternate)
+      // Hack to workaround the fact that safari doesn't
+      // properly recolor the scrollbar when toggling (#1455)
+      if (navigator.userAgent.indexOf('Safari') > 0 && navigator.userAgent.indexOf('Chrome') == -1) {
+        manageTransitions("body", false);
+        window.scrollTo(0, 1);
+        setTimeout(() => {
+          window.scrollTo(0, 0);
+          manageTransitions("body", true);
+        }, 40);
+      }
+    }
+    const disableStylesheet = (stylesheets) => {
+      for (let i=0; i < stylesheets.length; i++) {
+        const stylesheet = stylesheets[i];
+        stylesheet.rel = 'disabled-stylesheet';
+      }
+    }
+    const enableStylesheet = (stylesheets) => {
+      for (let i=0; i < stylesheets.length; i++) {
+        const stylesheet = stylesheets[i];
+        if(stylesheet.rel !== 'stylesheet') { // for Chrome, which will still FOUC without this check
+          stylesheet.rel = 'stylesheet';
+        }
+      }
+    }
+    const manageTransitions = (selector, allowTransitions) => {
+      const els = window.document.querySelectorAll(selector);
+      for (let i=0; i < els.length; i++) {
+        const el = els[i];
+        if (allowTransitions) {
+          el.classList.remove('notransition');
+        } else {
+          el.classList.add('notransition');
+        }
+      }
+    }
+    const isFileUrl = () => {
+      return window.location.protocol === 'file:';
+    }
+    const hasAlternateSentinel = () => {
+      let styleSentinel = getColorSchemeSentinel();
+      if (styleSentinel !== null) {
+        return styleSentinel === "alternate";
+      } else {
+        return false;
+      }
+    }
+    const setStyleSentinel = (alternate) => {
+      const value = alternate ? "alternate" : "default";
+      if (!isFileUrl()) {
+        window.localStorage.setItem("quarto-color-scheme", value);
+      } else {
+        localAlternateSentinel = value;
+      }
+    }
+    const getColorSchemeSentinel = () => {
+      if (!isFileUrl()) {
+        const storageValue = window.localStorage.getItem("quarto-color-scheme");
+        return storageValue != null ? storageValue : localAlternateSentinel;
+      } else {
+        return localAlternateSentinel;
+      }
+    }
+    const toggleGiscusIfUsed = (isAlternate, darkModeDefault) => {
+      const baseTheme = document.querySelector('#giscus-base-theme')?.value ?? 'light';
+      const alternateTheme = document.querySelector('#giscus-alt-theme')?.value ?? 'dark';
+      let newTheme = '';
+      if(authorPrefersDark) {
+        newTheme = isAlternate ? baseTheme : alternateTheme;
+      } else {
+        newTheme = isAlternate ? alternateTheme : baseTheme;
+      }
+      const changeGiscusTheme = () => {
+        // From: https://github.com/giscus/giscus/issues/336
+        const sendMessage = (message) => {
+          const iframe = document.querySelector('iframe.giscus-frame');
+          if (!iframe) return;
+          iframe.contentWindow.postMessage({ giscus: message }, 'https://giscus.app');
+        }
+        sendMessage({
+          setConfig: {
+            theme: newTheme
+          }
+        });
+      }
+      const isGiscussLoaded = window.document.querySelector('iframe.giscus-frame') !== null;
+      if (isGiscussLoaded) {
+        changeGiscusTheme();
+      }
+    };
+    const authorPrefersDark = false;
+    const queryPrefersDark = window.matchMedia('(prefers-color-scheme: dark)');
+    const darkModeDefault = queryPrefersDark.matches;
+      document.querySelector('link#quarto-text-highlighting-styles.quarto-color-scheme-extra').rel = 'disabled-stylesheet';
+      document.querySelector('link#quarto-bootstrap.quarto-color-scheme-extra').rel = 'disabled-stylesheet';
+    let localAlternateSentinel = darkModeDefault ? 'alternate' : 'default';
+    // Dark / light mode switch
+    window.quartoToggleColorScheme = () => {
+      // Read the current dark / light value
+      let toAlternate = !hasAlternateSentinel();
+      toggleColorMode(toAlternate);
+      setStyleSentinel(toAlternate);
+      toggleGiscusIfUsed(toAlternate, darkModeDefault);
+      window.dispatchEvent(new Event('resize'));
+    };
+    queryPrefersDark.addEventListener("change", e => {
+      if(window.localStorage.getItem("quarto-color-scheme") !== null)
+        return;
+      const alternate = e.matches
+      toggleColorMode(alternate);
+      localAlternateSentinel = e.matches ? 'alternate' : 'default'; // this is used alongside local storage!
+      toggleGiscusIfUsed(alternate, darkModeDefault);
+    });
+    // Switch to dark mode if need be
+    if (hasAlternateSentinel()) {
+      toggleColorMode(true);
+    } else {
+      toggleColorMode(false);
+    }
+  </script>
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a href="../../index.html" class="navbar-brand navbar-brand-logo">
+    </a>
+    <a class="navbar-brand" href="../../index.html">
+    <span class="navbar-title">MSc Thesis - Website</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Search"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="../../weekly_notes/index.html"> 
+<span class="menu-text">Weekly Meetings</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../reports/index.html"> 
+<span class="menu-text">Reports</span></a>
+  </li>  
+</ul>
+          </div> <!-- /navcollapse -->
+            <div class="quarto-navbar-tools">
+    <a href="https://github.com/alexandre-bry/MSc_Thesis-Report" title="" class="quarto-navigation-tool px-1" aria-label=""><i class="bi bi-github"></i></a>
+  <a href="" class="quarto-color-scheme-toggle quarto-navigation-tool  px-1" onclick="window.quartoToggleColorScheme(); return false;" title="Toggle dark mode"><i class="bi"></i></a>
+</div>
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#context" id="toc-context" class="nav-link active" data-scroll-target="#context">Context</a>
+  <ul class="collapse">
+  <li><a href="#reconstruction-of-3d-buildings" id="toc-reconstruction-of-3d-buildings" class="nav-link" data-scroll-target="#reconstruction-of-3d-buildings">Reconstruction of 3D buildings</a></li>
+  <li><a href="#levels-of-detail" id="toc-levels-of-detail" class="nav-link" data-scroll-target="#levels-of-detail">Levels of detail</a></li>
+  <li><a href="#dbag-example" id="toc-dbag-example" class="nav-link" data-scroll-target="#dbag-example">3DBAG example</a></li>
+  <li><a href="#french-context" id="toc-french-context" class="nav-link" data-scroll-target="#french-context">French context</a></li>
+  <li><a href="#what-about-façade-points" id="toc-what-about-façade-points" class="nav-link" data-scroll-target="#what-about-façade-points">What about façade points?</a></li>
+  </ul></li>
+  <li><a href="#definitions" id="toc-definitions" class="nav-link" data-scroll-target="#definitions">Definitions</a>
+  <ul class="collapse">
+  <li><a href="#building-elements" id="toc-building-elements" class="nav-link" data-scroll-target="#building-elements">Building elements</a></li>
+  <li><a href="#illustrations" id="toc-illustrations" class="nav-link" data-scroll-target="#illustrations">Illustrations</a></li>
+  </ul></li>
+  <li><a href="#research-context" id="toc-research-context" class="nav-link" data-scroll-target="#research-context">Research context</a>
+  <ul class="collapse">
+  <li><a href="#roof-overhangs" id="toc-roof-overhangs" class="nav-link" data-scroll-target="#roof-overhangs">Roof overhangs</a></li>
+  <li><a href="#point-cloud-semantic-segmentation" id="toc-point-cloud-semantic-segmentation" class="nav-link" data-scroll-target="#point-cloud-semantic-segmentation">Point cloud semantic segmentation</a></li>
+  <li><a href="#datasets" id="toc-datasets" class="nav-link" data-scroll-target="#datasets">Datasets</a></li>
+  </ul></li>
+  <li><a href="#methodology" id="toc-methodology" class="nav-link" data-scroll-target="#methodology">Methodology</a>
+  <ul class="collapse">
+  <li><a href="#overview" id="toc-overview" class="nav-link" data-scroll-target="#overview">Overview</a></li>
+  <li><a href="#semantic-segmentation" id="toc-semantic-segmentation" class="nav-link" data-scroll-target="#semantic-segmentation">Semantic segmentation</a></li>
+  <li><a href="#roofprints" id="toc-roofprints" class="nav-link" data-scroll-target="#roofprints">Roofprints</a></li>
+  <li><a href="#footprints" id="toc-footprints" class="nav-link" data-scroll-target="#footprints">Footprints</a></li>
+  <li><a href="#assessment" id="toc-assessment" class="nav-link" data-scroll-target="#assessment">Assessment</a></li>
+  </ul></li>
+  <li><a href="#current-and-future-work" id="toc-current-and-future-work" class="nav-link" data-scroll-target="#current-and-future-work">Current and future work</a>
+  <ul class="collapse">
+  <li><a href="#until-now" id="toc-until-now" class="nav-link" data-scroll-target="#until-now">Until now</a></li>
+  <li><a href="#from-now-on" id="toc-from-now-on" class="nav-link" data-scroll-target="#from-now-on">From now on</a></li>
+  <li><a href="#thank-you." id="toc-thank-you." class="nav-link" data-scroll-target="#thank-you.">Thank you.</a></li>
+  <li><a href="#references" id="toc-references" class="nav-link" data-scroll-target="#references">References</a></li>
+  </ul></li>
+  </ul>
+<div class="toc-actions"><ul><li><a href="https://github.com/alexandre-bry/MSc_Thesis-Report/edit/main/slides/A1_slides/slides.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/alexandre-bry/MSc_Thesis-Report/blob/main/slides/A1_slides/slides.qmd" class="toc-action"><i class="bi empty"></i>View source</a></li><li><a href="https://github.com/alexandre-bry/MSc_Thesis-Report/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">From Points to Prints</h1>
+<p class="subtitle lead">Generation of building roofprints and footprints from ALS point clouds</p>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    <div>
+    <div class="quarto-title-meta-heading">Author</div>
+    <div class="quarto-title-meta-contents">
+             <p>Alexandre Bry <a href="mailto:abry.pro@proton.me" class="quarto-title-author-email"><i class="bi bi-envelope"></i></a> </p>
+          </div>
+  </div>
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<section id="context" class="level1">
+<h1>Context</h1>
+<section id="reconstruction-of-3d-buildings" class="level2">
+<h2 class="anchored" data-anchor-id="reconstruction-of-3d-buildings">Reconstruction of 3D buildings</h2>
+<div class="incremental">
+<ul class="incremental">
+<li>Many applications of 3D buildings: visualization, simulations, solar potential, etc.</li>
+<li>Different levels of detail required</li>
+</ul>
+</div>
+<div class="notes">
+<ul>
+<li>Visualization -&gt; multiple levels of details for different distances</li>
+<li>Simulations -&gt; simple models for quicker computations</li>
+<li>Solar potential -&gt; care about the roofs mostly</li>
+<li>Tax estimation -&gt; care about the floor space mostly</li>
+</ul>
+</div>
+</section>
+<section id="levels-of-detail" class="level2">
+<h2 class="anchored" data-anchor-id="levels-of-detail">Levels of detail</h2>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="../../images/LoDs_illustration-Filip_Biljecki.jpg" class="lightbox" data-gallery="quarto-lightbox-gallery-1" title="Visual example of the refined LoDs for a residential building [@Biljecki2016]."><img src="../../images/LoDs_illustration-Filip_Biljecki.jpg" class="r-stretch img-fluid figure-img" alt="Visual example of the refined LoDs for a residential building (Biljecki, Ledoux, and Stoter 2016)."></a></p>
+<figcaption>Visual example of the refined LoDs for a residential building <span class="citation" data-cites="Biljecki2016">(<a href="#ref-Biljecki2016" role="doc-biblioref">Biljecki, Ledoux, and Stoter 2016</a>)</span>.</figcaption>
+</figure>
+</div>
+<div class="notes">
+<ul>
+<li>Differentiation between footprints and roofprints is the required step to go from LoD 2.2 to 2.3.</li>
+<li>Definitions of footprints and roofprints are not always straightforward.</li>
+</ul>
+</div>
+</section>
+<section id="dbag-example" class="level2">
+<h2 class="anchored" data-anchor-id="dbag-example">3DBAG example</h2>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="../../images/3DBAG_viewer_screenshot.png" class="lightbox" data-gallery="quarto-lightbox-gallery-2" title="Screenshot from the online viewer of the 3DBAG."><img src="../../images/3DBAG_viewer_screenshot.png" class="r-stretch img-fluid figure-img" alt="Screenshot from the online viewer of the 3DBAG."></a></p>
+<figcaption>Screenshot from the <a href="https://3dbag.nl/en/viewer?rdx=85202.42204919437&amp;rdy=446838.496813776&amp;ox=-0.00010789974476210773&amp;oy=247.78640814561538&amp;oz=255.13012753776275">online viewer of the 3DBAG</a>.</figcaption>
+</figure>
+</div>
+<div class="notes">
+<p>Example of a great method to reconstruct 3D buildings in LoD 2.2 using point clouds and roofprints.</p>
+</div>
+</section>
+<section id="french-context" class="level2">
+<h2 class="anchored" data-anchor-id="french-context">French context</h2>
+<div class="incremental">
+<ul class="incremental">
+<li><a href="https://geoservices.ign.fr/bdtopo">BD TOPO</a>: building outlines in France</li>
+<li><a href="https://www.ign.fr/institut/programme-lidar-hd-vers-une-nouvelle-cartographie-3d-du-territoire">LiDAR HD</a>: first nationwide ALS LiDAR dataset of France</li>
+<li><a href="https://www.ign.fr/institut/un-jumeau-numerique-de-la-france-pour-piloter-la-transition-ecologique">Jumeau numérique de la France</a>: future digital twin of France</li>
+</ul>
+</div>
+<div class="notes">
+<ul>
+<li>BD TOPO:
+<ul>
+<li>Contains building outlines with poor georeferencing</li>
+</ul></li>
+<li>LiDAR HD:
+<ul>
+<li>The first project to collect high-density point clouds on the whole territory of France</li>
+<li>Similar nature and density to the AHN used for the 3DBAG</li>
+</ul></li>
+</ul>
+</div>
+</section>
+<section id="what-about-façade-points" class="level2">
+<h2 class="anchored" data-anchor-id="what-about-façade-points">What about façade points?</h2>
+<div class="fragment">
+<ul>
+<li>ALS point clouds give high density of points on roofs and low density on façades</li>
+</ul>
+</div>
+<div class="fragment" style="text-align: center; margin-top: 2em; font-size: 130%;">
+<p><strong><em>What characteristics of ALS point clouds influence the ability to generate accurate building roofprints and footprints?</em></strong></p>
+</div>
+<div class="notes">
+<ul>
+<li>We know that roof points can be used to reconstruct buildings, with a limitation to LoD 2.2</li>
+<li>Can we use façade points?</li>
+<li>Sub-questions:
+<ul>
+<li>Point cloud acquisition (geometry of the scanning device, trajectory of the flying vehicle)</li>
+<li>Differences obtained between footprints and roofprints</li>
+<li>Potential usage of existing shifted outlines</li>
+</ul></li>
+</ul>
+</div>
+</section>
+</section>
+<section id="definitions" class="level1">
+<h1>Definitions</h1>
+<section id="building-elements" class="level2">
+<h2 class="anchored" data-anchor-id="building-elements">Building elements</h2>
+<div class="content-block definition-block fragment">
+<p>Roof overhangs (eaves)</p>
+<p>The portion of a roof that extends beyond the exterior walls of a building.</p>
+</div>
+<div class="content-block definition-block fragment">
+<p>Roofprint</p>
+<p>The vertical projection of all the roof components of a building.</p>
+</div>
+<div class="content-block definition-block fragment">
+<p>Footprint</p>
+<p>The vertical projection of the main façades of a building.</p>
+</div>
+</section>
+<section id="illustrations" class="level2 scrollable">
+<h2 class="scrollable anchored" data-anchor-id="illustrations">Illustrations</h2>
+<div id="fig-prints-definition" class="quarto-layout-panel">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-prints-definition-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div class="quarto-layout-row">
+<div class="quarto-figure-spacer quarto-layout-cell" style="flex-basis: 7.7%;justify-content: flex-start;">
+<p>&nbsp;</p>
+</div>
+<div class="quarto-layout-cell" style="flex-basis: 38.5%;justify-content: flex-start;">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="../../weekly_notes/2026_01_19/Prints_definitions-Example_1.png" class="lightbox" data-gallery="prints-definition" title="3D model from Sketchfab."><img src="../../weekly_notes/2026_01_19/Prints_definitions-Example_1.png" class="img-fluid figure-img"></a></p>
+<figcaption>3D model from <a href="https://sketchfab.com/3d-models/haunted-house-f709acd09d9640698bfc5baa14f30fe9">Sketchfab</a>.</figcaption>
+</figure>
+</div>
+</div>
+<div class="quarto-figure-spacer quarto-layout-cell" style="flex-basis: 7.7%;justify-content: flex-start;">
+<p>&nbsp;</p>
+</div>
+<div class="quarto-layout-cell" style="flex-basis: 38.5%;justify-content: flex-start;">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="../../weekly_notes/2026_01_19/Prints_definitions-Example_1-Annotated.png" class="lightbox" data-gallery="prints-definition" title="Footprint and roofprint (before vertical projection)."><img src="../../weekly_notes/2026_01_19/Prints_definitions-Example_1-Annotated.png" class="img-fluid figure-img"></a></p>
+<figcaption>Footprint and roofprint (before vertical projection).</figcaption>
+</figure>
+</div>
+</div>
+<div class="quarto-figure-spacer quarto-layout-cell" style="flex-basis: 7.7%;justify-content: flex-start;">
+<p>&nbsp;</p>
+</div>
+</div>
+<div class="quarto-layout-row">
+<div class="quarto-figure-spacer quarto-layout-cell" style="flex-basis: 7.7%;justify-content: flex-start;">
+<p>&nbsp;</p>
+</div>
+<div class="quarto-layout-cell" style="flex-basis: 38.5%;justify-content: flex-start;">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="../../weekly_notes/2026_01_19/Prints_definitions-Example_6.png" class="lightbox" data-gallery="prints-definition" title="3D model from Sketchfab."><img src="../../weekly_notes/2026_01_19/Prints_definitions-Example_6.png" class="img-fluid figure-img"></a></p>
+<figcaption>3D model from <a href="https://sketchfab.com/3d-models/facade-of-an-art-nouveau-tenement-house-01-04caebf37130491aacbd272962d96ebc">Sketchfab</a>.</figcaption>
+</figure>
+</div>
+</div>
+<div class="quarto-figure-spacer quarto-layout-cell" style="flex-basis: 7.7%;justify-content: flex-start;">
+<p>&nbsp;</p>
+</div>
+<div class="quarto-layout-cell" style="flex-basis: 38.5%;justify-content: flex-start;">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="../../weekly_notes/2026_01_19/Prints_definitions-Example_6-Annotated.png" class="lightbox" data-gallery="prints-definition" title="Footprint and roofprint (before vertical projection)."><img src="../../weekly_notes/2026_01_19/Prints_definitions-Example_6-Annotated.png" class="img-fluid figure-img"></a></p>
+<figcaption>Footprint and roofprint (before vertical projection).</figcaption>
+</figure>
+</div>
+</div>
+<div class="quarto-figure-spacer quarto-layout-cell" style="flex-basis: 7.7%;justify-content: flex-start;">
+<p>&nbsp;</p>
+</div>
+</div>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-prints-definition-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;1: Examples of footprints (in blue) and roofprints (in red) for complex buildings.
+</figcaption>
+</figure>
+</div>
+</section>
+</section>
+<section id="research-context" class="level1">
+<h1>Research context</h1>
+<section id="roof-overhangs" class="level2">
+<h2 class="anchored" data-anchor-id="roof-overhangs">Roof overhangs</h2>
+<div class="incremental">
+<ul class="incremental">
+<li>Sweeping vertical planes:
+<ul class="incremental">
+<li>Using a 2.5D DSM and a footprint <span class="citation" data-cites="Dahlke2015 Frommholz2017">(<a href="#ref-Dahlke2015" role="doc-biblioref">Dahlke, Linkiewicz, and Meissner 2015</a>; <a href="#ref-Frommholz2017" role="doc-biblioref">Frommholz et al. 2017</a>)</span></li>
+<li>Using a point cloud and a roofprint <span class="citation" data-cites="Panday2012">(<a href="#ref-Panday2012" role="doc-biblioref">Panday and Gerke 2012</a>)</span></li>
+</ul></li>
+<li>Extending the roof planes <span class="citation" data-cites="Goebbels2023">(<a href="#ref-Goebbels2023" role="doc-biblioref">Goebbels and Pohle-Fröhlich 2023</a>)</span></li>
+</ul>
+</div>
+<div class="notes">
+<p>Describe more precisely</p>
+</div>
+</section>
+<section id="point-cloud-semantic-segmentation" class="level2">
+<h2 class="anchored" data-anchor-id="point-cloud-semantic-segmentation">Point cloud semantic segmentation</h2>
+<div class="incremental">
+<ul class="incremental">
+<li>Range-images as input <span class="citation" data-cites="Biasutti2019 Xu2020">(<a href="#ref-Biasutti2019" role="doc-biblioref">Biasutti et al. 2019</a>; <a href="#ref-Xu2020" role="doc-biblioref">Xu et al. 2020</a>)</span></li>
+<li>3D convolutions (KPConv, PointTransformerv3, etc) <span class="citation" data-cites="Thomas2019 Li2020 Zhao2020 Wu2023">(<a href="#ref-Thomas2019" role="doc-biblioref">Thomas et al. 2019</a>; <a href="#ref-Li2020" role="doc-biblioref">W. Li, Wang, and Xia 2020</a>; <a href="#ref-Zhao2020" role="doc-biblioref">Zhao et al. 2020</a>; <a href="#ref-Wu2023" role="doc-biblioref">Wu et al. 2023</a>)</span></li>
+<li>Class imbalance <span class="citation" data-cites="Li2024 Pan2025">(<a href="#ref-Li2024" role="doc-biblioref">M. Li et al. 2024</a>; <a href="#ref-Pan2025" role="doc-biblioref">Pan et al. 2025</a>)</span></li>
+</ul>
+</div>
+<div class="notes">
+<ul>
+<li>Range-images:
+<ul>
+<li>Represent the 3D points clouds in 2D by looking at them from the viewpoint of the sensor, which often scans point clouds in lines with almost uniform angular steps.</li>
+<li>Useful for speed</li>
+</ul></li>
+<li>3D convolutions:
+<ul>
+<li>KPConv: weights carried by points correlated with the neighbourhoods</li>
+<li>PointTransformer: transformer for points using self-attention</li>
+<li>PointTransformerv3: serialization of points with space-filling curves</li>
+</ul></li>
+<li>Class imbalance: deal with sparse and inhomogeneous annotations</li>
+</ul>
+</div>
+</section>
+<section id="datasets" class="level2 scrollable">
+<h2 class="scrollable anchored" data-anchor-id="datasets">Datasets</h2>
+<div id="tbl-datasets" class="quarto-float quarto-figure quarto-figure-center anchored" style="font-size: 80%">
+<figure class="quarto-float quarto-float-tbl figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-datasets-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Table&nbsp;1: List of point cloud datasets for semantic segmentation of point clouds.
+</figcaption>
+<div aria-describedby="tbl-datasets-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<table class="caption-top table">
+<colgroup>
+<col style="width: 17%">
+<col style="width: 12%">
+<col style="width: 15%">
+<col style="width: 10%">
+<col style="width: 17%">
+<col style="width: 25%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Name</th>
+<th>Number of points</th>
+<th>Point density (pts/m²)</th>
+<th>Classes for roof/façade</th>
+<th>Source</th>
+<th>Paper</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>H3D</td>
+<td>74M</td>
+<td>800</td>
+<td>Yes</td>
+<td>ALS</td>
+<td><span class="citation" data-cites="Koelle2021">Kölle et al. (<a href="#ref-Koelle2021" role="doc-biblioref">2021</a>)</span></td>
+</tr>
+<tr class="even">
+<td>V3D</td>
+<td>0.78M</td>
+<td>8</td>
+<td>Yes</td>
+<td>ALS</td>
+<td><span class="citation" data-cites="Cramer2010">Cramer (<a href="#ref-Cramer2010" role="doc-biblioref">2010</a>)</span> <span class="citation" data-cites="Niemeyer2014">Niemeyer, Rottensteiner, and Soergel (<a href="#ref-Niemeyer2014" role="doc-biblioref">2014</a>)</span></td>
+</tr>
+<tr class="odd">
+<td>DublinCity</td>
+<td>260M</td>
+<td>348</td>
+<td>Yes</td>
+<td>ALS</td>
+<td><span class="citation" data-cites="Zolanvari2019">Zolanvari et al. (<a href="#ref-Zolanvari2019" role="doc-biblioref">2019</a>)</span></td>
+</tr>
+<tr class="even">
+<td>Campus3D</td>
+<td>937.1M</td>
+<td></td>
+<td>Yes</td>
+<td>Aerial images</td>
+<td><span class="citation" data-cites="Li2020a">X. Li et al. (<a href="#ref-Li2020a" role="doc-biblioref">2020</a>)</span></td>
+</tr>
+<tr class="odd">
+<td>CENAGIS-ALS</td>
+<td>550M</td>
+<td>275</td>
+<td>Yes</td>
+<td>ALS</td>
+<td><span class="citation" data-cites="Zachar2023">Zachar, Bakuła, and Ostrowski (<a href="#ref-Zachar2023" role="doc-biblioref">2023</a>)</span></td>
+</tr>
+<tr class="even">
+<td>DALES</td>
+<td>505M</td>
+<td>50</td>
+<td>No</td>
+<td>ALS</td>
+<td><span class="citation" data-cites="Varney2020">Varney, Asari, and Graehling (<a href="#ref-Varney2020" role="doc-biblioref">2020</a>)</span></td>
+</tr>
+<tr class="odd">
+<td>SensatUrban</td>
+<td>2847M</td>
+<td></td>
+<td>No</td>
+<td>Aerial images</td>
+<td><span class="citation" data-cites="Hu2020">Hu et al. (<a href="#ref-Hu2020" role="doc-biblioref">2020</a>)</span></td>
+</tr>
+<tr class="even">
+<td>LASDU</td>
+<td>3.12M</td>
+<td>4</td>
+<td>No</td>
+<td>ALS</td>
+<td><span class="citation" data-cites="Ye2020">Ye et al. (<a href="#ref-Ye2020" role="doc-biblioref">2020</a>)</span></td>
+</tr>
+<tr class="odd">
+<td>TALD</td>
+<td>121M</td>
+<td>12</td>
+<td>No</td>
+<td>ALS</td>
+<td><span class="citation" data-cites="Vijaywargiya2025">Vijaywargiya and Ramiya (<a href="#ref-Vijaywargiya2025" role="doc-biblioref">2025</a>)</span></td>
+</tr>
+<tr class="even">
+<td>FRACTAL</td>
+<td>9261M</td>
+<td>37</td>
+<td>No</td>
+<td>ALS</td>
+<td><span class="citation" data-cites="Gaydon2024">Gaydon, Daab, and Roche (<a href="#ref-Gaydon2024" role="doc-biblioref">2024</a>)</span></td>
+</tr>
+</tbody>
+</table>
+</div>
+</figure>
+</div>
+</section>
+</section>
+<section id="methodology" class="level1">
+<h1>Methodology</h1>
+<section id="overview" class="level2">
+<h2 class="anchored" data-anchor-id="overview">Overview</h2>
+<ol type="1">
+<li>Train a machine learning model to isolate roof and façade points</li>
+<li>Use the segmented point cloud to compute roofprints</li>
+<li>Use the segmented point cloud and the roofprints to compute footprints</li>
+<li>Evaluate the method with generated data and hopefully real data</li>
+</ol>
+</section>
+<section id="semantic-segmentation" class="level2">
+<h2 class="anchored" data-anchor-id="semantic-segmentation">Semantic segmentation</h2>
+<div class="columns">
+<div class="column" style="width:70%;">
+<ol type="1">
+<li>Generate a ground-truth dataset using 3DBAG and AHN4
+<ol type="1">
+<li>Download all data per tiles,</li>
+<li>Extend the roofs of buildings with fake overhangs,</li>
+<li>Compute the distances of each point to the set of roofs and to the set of façades,</li>
+<li>Classify the points based on these distances between roof, façade and other.</li>
+</ol></li>
+<li>Train a ML model on the data:
+<ol type="1">
+<li>Try different models (PointTransformerv3, KPConv, etc)</li>
+<li>Select and run the best one</li>
+</ol></li>
+</ol>
+</div><div class="column" style="width:30%;">
+<div id="fig-3dbag-ahn-segmentation" class="quarto-layout-panel">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-3dbag-ahn-segmentation-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div class="quarto-layout-row">
+<div class="quarto-layout-cell" style="flex-basis: 100.0%;justify-content: flex-start;">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="../../weekly_notes/2025_12_15/Custom_class-Closer-Buildings.png" class="lightbox" data-gallery="3dbag-ahn-segmentation" title="LoD 2.2 buildings from the 3DBAG."><img src="../../weekly_notes/2025_12_15/Custom_class-Closer-Buildings.png" class="img-fluid figure-img" width="250"></a></p>
+<figcaption>LoD 2.2 buildings from the 3DBAG.</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<div class="quarto-layout-row">
+<div class="quarto-layout-cell" style="flex-basis: 100.0%;justify-content: flex-start;">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="../../weekly_notes/2025_12_15/Custom_class-Closer-Classification.png" class="lightbox" data-gallery="3dbag-ahn-segmentation" title="The classification of the points from AHN 4."><img src="../../weekly_notes/2025_12_15/Custom_class-Closer-Classification.png" class="img-fluid figure-img" width="250"></a></p>
+<figcaption>The classification of the points from AHN 4.</figcaption>
+</figure>
+</div>
+</div>
+</div>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-3dbag-ahn-segmentation-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;2: Example of classifying the AHN 4 with the 3DBAG.
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<div class="notes">
+<ul>
+<li>3DBAG is based on AHN3 + AHN4</li>
+</ul>
+</div>
+</section>
+<section id="roofprints" class="level2">
+<h2 class="anchored" data-anchor-id="roofprints">Roofprints</h2>
+<ul>
+<li>The method still needs to be determined</li>
+<li>It will depend on the results of semantic segmentation</li>
+</ul>
+</section>
+<section id="footprints" class="level2">
+<h2 class="anchored" data-anchor-id="footprints">Footprints</h2>
+<ul>
+<li>Sweep vertical planes parallel to the roofprint edges</li>
+<li>Identify the best one or none at all</li>
+<li>Potential to use symmetry of roofs</li>
+</ul>
+</section>
+<section id="assessment" class="level2">
+<h2 class="anchored" data-anchor-id="assessment">Assessment</h2>
+<div class="incremental">
+<ul class="incremental">
+<li>Create a fake ground-truth dataset:
+<ul class="incremental">
+<li>Create a fake LoD 2.3 dataset from 3DBAG LoD 2.2 by randomly extending the roof planes</li>
+<li>Simulate an ALS point cloud with tools such as <a href="https://github.com/3dgeo-heidelberg/helios">HELIOS++</a></li>
+</ul></li>
+<li>Evaluate the method on this dataset</li>
+<li>Some annotations of real data for better assessment?</li>
+</ul>
+</div>
+</section>
+</section>
+<section id="current-and-future-work" class="level1">
+<h1>Current and future work</h1>
+<section id="until-now" class="level2">
+<h2 class="anchored" data-anchor-id="until-now">Until now</h2>
+<div class="incremental">
+<ul class="incremental">
+<li>Literature review</li>
+<li>Explored French and Dutch datasets and their metadata</li>
+<li>Started the work on classifying AHN 4 using 3DBAG</li>
+</ul>
+</div>
+</section>
+<section id="from-now-on" class="level2">
+<h2 class="anchored" data-anchor-id="from-now-on">From now on</h2>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="../../images/Time_planning.png" class="lightbox" data-gallery="quarto-lightbox-gallery-9" title="Project planning"><img src="../../images/Time_planning.png" class="r-stretch img-fluid figure-img" alt="Project planning"></a></p>
+<figcaption>Project planning</figcaption>
+</figure>
+</div>
+</section>
+<section id="thank-you." class="level2">
+<h2 class="anchored" data-anchor-id="thank-you.">Thank you.</h2>
+</section>
+<section id="references" class="level2">
+
+
+
+
+</section>
+</section>
+
+<a onclick="window.scrollTo(0, 0); return false;" role="button" id="quarto-back-to-top"><i class="bi bi-arrow-up"></i> Back to top</a><div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" role="doc-bibliography" id="quarto-bibliography"><h2 class="anchored quarto-appendix-heading">References</h2><div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list">
+<div id="ref-Biasutti2019" class="csl-entry" role="listitem">
+Biasutti, Pierre, Aurélie Bugeau, Jean-François Aujol, and Mathieu Brédif. 2019. <span>“RIU-Net: Embarrassingly Simple Semantic Segmentation of 3D LiDAR Point Cloud.”</span> <a href="https://doi.org/10.48550/ARXIV.1905.08748">https://doi.org/10.48550/ARXIV.1905.08748</a>.
+</div>
+<div id="ref-Biljecki2016" class="csl-entry" role="listitem">
+Biljecki, Filip, Hugo Ledoux, and Jantien Stoter. 2016. <span>“An Improved LOD Specification for 3D Building Models.”</span> <em>Computers, Environment and Urban Systems</em> 59 (September): 25–37. <a href="https://doi.org/10.1016/j.compenvurbsys.2016.04.005">https://doi.org/10.1016/j.compenvurbsys.2016.04.005</a>.
+</div>
+<div id="ref-Cramer2010" class="csl-entry" role="listitem">
+Cramer, Michael. 2010. <span>“The DGPF-Test on Digital Airborne Camera Evaluation Overview and Test Design.”</span> <em>Photogrammetrie - Fernerkundung - Geoinformation</em> 2010 (2): 73–82. <a href="https://doi.org/10.1127/1432-8364/2010/0041">https://doi.org/10.1127/1432-8364/2010/0041</a>.
+</div>
+<div id="ref-Dahlke2015" class="csl-entry" role="listitem">
+Dahlke, Dennis, Magdalena Linkiewicz, and Henry Meissner. 2015. <span>“True 3D Building Reconstruction: Façade, Roof and Overhang Modelling from Oblique and Vertical Aerial Imagery.”</span> <em>International Journal of Image and Data Fusion</em> 6 (4): 314–29. <a href="https://doi.org/10.1080/19479832.2015.1071287">https://doi.org/10.1080/19479832.2015.1071287</a>.
+</div>
+<div id="ref-Frommholz2017" class="csl-entry" role="listitem">
+Frommholz, D., M. Linkiewicz, H. Meissner, and D. Dahlke. 2017. <span>“Reconstructing Buildings with Discontinuities and Roof Overhangs from Oblique Aerial Imagery.”</span> <em>The International Archives of the Photogrammetry, Remote Sensing and Spatial Information Sciences</em> XLII-1/W1 (May): 465–71. <a href="https://doi.org/10.5194/isprs-archives-xlii-1-w1-465-2017">https://doi.org/10.5194/isprs-archives-xlii-1-w1-465-2017</a>.
+</div>
+<div id="ref-Gaydon2024" class="csl-entry" role="listitem">
+Gaydon, Charles, Michel Daab, and Floryne Roche. 2024. <span>“FRACTAL: An Ultra-Large-Scale Aerial Lidar Dataset for 3D Semantic Segmentation of Diverse Landscapes.”</span> <a href="https://doi.org/10.48550/ARXIV.2405.04634">https://doi.org/10.48550/ARXIV.2405.04634</a>.
+</div>
+<div id="ref-Goebbels2023" class="csl-entry" role="listitem">
+Goebbels, Steffen, and Regina Pohle-Fröhlich. 2023. <span>“Automatic Reconstruction of Roof Overhangs for 3D City Models.”</span> In <em>Proceedings of the 18th International Joint Conference on Computer Vision, Imaging and Computer Graphics Theory and Applications</em>, 145–52. SCITEPRESS - Science; Technology Publications. <a href="https://doi.org/10.5220/0011604200003417">https://doi.org/10.5220/0011604200003417</a>.
+</div>
+<div id="ref-Hu2020" class="csl-entry" role="listitem">
+Hu, Qingyong, Bo Yang, Sheikh Khalid, Wen Xiao, Niki Trigoni, and Andrew Markham. 2020. <span>“Towards Semantic Segmentation of Urban-Scale 3D Point Clouds: A Dataset, Benchmarks and Challenges.”</span> <a href="https://doi.org/10.48550/ARXIV.2009.03137">https://doi.org/10.48550/ARXIV.2009.03137</a>.
+</div>
+<div id="ref-Koelle2021" class="csl-entry" role="listitem">
+Kölle, Michael, Dominik Laupheimer, Stefan Schmohl, Norbert Haala, Franz Rottensteiner, Jan Dirk Wegner, and Hugo Ledoux. 2021. <span>“The Hessigheim 3D (H3D) Benchmark on Semantic Segmentation of High-Resolution 3D Point Clouds and Textured Meshes from UAV LiDAR and Multi-View-Stereo.”</span> <em>ISPRS Open Journal of Photogrammetry and Remote Sensing</em> 1 (October): 100001. <a href="https://doi.org/10.1016/j.ophoto.2021.100001">https://doi.org/10.1016/j.ophoto.2021.100001</a>.
+</div>
+<div id="ref-Li2024" class="csl-entry" role="listitem">
+Li, Mengtian, Shaohui Lin, Zihan Wang, Yunhang Shen, Baochang Zhang, and Lizhuang Ma. 2024. <span>“Class-Imbalanced Semi-Supervised Learning for Large-Scale Point Cloud Semantic Segmentation via Decoupling Optimization.”</span> <em>Pattern Recognition</em> 156 (December): 110701. <a href="https://doi.org/10.1016/j.patcog.2024.110701">https://doi.org/10.1016/j.patcog.2024.110701</a>.
+</div>
+<div id="ref-Li2020" class="csl-entry" role="listitem">
+Li, Wuzhao, Fu-Dong Wang, and Gui-Song Xia. 2020. <span>“A Geometry-Attentional Network for ALS Point Cloud Classification.”</span> <em>ISPRS Journal of Photogrammetry and Remote Sensing</em> 164 (June): 26–40. <a href="https://doi.org/10.1016/j.isprsjprs.2020.03.016">https://doi.org/10.1016/j.isprsjprs.2020.03.016</a>.
+</div>
+<div id="ref-Li2020a" class="csl-entry" role="listitem">
+Li, Xinke, Chongshou Li, Zekun Tong, Andrew Lim, Junsong Yuan, Yuwei Wu, Jing Tang, and Raymond Huang. 2020. <span>“Campus3D: A Photogrammetry Point Cloud Benchmark for Hierarchical Understanding of Outdoor Scene.”</span> In <em>Proceedings of the 28th ACM International Conference on Multimedia</em>, 238–46. MM ’20. ACM. <a href="https://doi.org/10.1145/3394171.3413661">https://doi.org/10.1145/3394171.3413661</a>.
+</div>
+<div id="ref-Niemeyer2014" class="csl-entry" role="listitem">
+Niemeyer, Joachim, Franz Rottensteiner, and Uwe Soergel. 2014. <span>“Contextual Classification of Lidar Data and Building Object Detection in Urban Areas.”</span> <em>ISPRS Journal of Photogrammetry and Remote Sensing</em> 87 (January): 152–65. <a href="https://doi.org/10.1016/j.isprsjprs.2013.11.001">https://doi.org/10.1016/j.isprsjprs.2013.11.001</a>.
+</div>
+<div id="ref-Pan2025" class="csl-entry" role="listitem">
+Pan, Zhiyi, Nan Zhang, Wei Gao, Shan Liu, and Ge Li. 2025. <span>“Point Cloud Semantic Segmentation with Sparse and Inhomogeneous Annotations.”</span> <em>Proceedings of the AAAI Conference on Artificial Intelligence</em> 39 (6): 6354–62. <a href="https://doi.org/10.1609/aaai.v39i6.32680">https://doi.org/10.1609/aaai.v39i6.32680</a>.
+</div>
+<div id="ref-Panday2012" class="csl-entry" role="listitem">
+Panday, U. S., and M. Gerke. 2012. <span>“Fitting of Parametric Building Models to Oblique Aerial Images.”</span> <em>The International Archives of the Photogrammetry, Remote Sensing and Spatial Information Sciences</em> XXXVIII-4/W19 (September): 233–38. <a href="https://doi.org/10.5194/isprsarchives-xxxviii-4-w19-233-2011">https://doi.org/10.5194/isprsarchives-xxxviii-4-w19-233-2011</a>.
+</div>
+<div id="ref-Thomas2019" class="csl-entry" role="listitem">
+Thomas, Hugues, Charles R. Qi, Jean-Emmanuel Deschaud, Beatriz Marcotegui, François Goulette, and Leonidas J. Guibas. 2019. <span>“KPConv: Flexible and Deformable Convolution for Point Clouds.”</span> <a href="https://doi.org/10.48550/ARXIV.1904.08889">https://doi.org/10.48550/ARXIV.1904.08889</a>.
+</div>
+<div id="ref-Varney2020" class="csl-entry" role="listitem">
+Varney, Nina, Vijayan K. Asari, and Quinn Graehling. 2020. <span>“DALES: A Large-Scale Aerial LiDAR Data Set for Semantic Segmentation.”</span> <a href="https://doi.org/10.48550/ARXIV.2004.11985">https://doi.org/10.48550/ARXIV.2004.11985</a>.
+</div>
+<div id="ref-Vijaywargiya2025" class="csl-entry" role="listitem">
+Vijaywargiya, Jayati, and Anandakumar M. Ramiya. 2025. <span>“Thiruvananthapuram Aerial LiDAR Dataset (TALD): A Benchmark for Complex Urban Point Cloud.”</span> <em>IEEE Access</em> 13: 42350–63. <a href="https://doi.org/10.1109/access.2025.3546628">https://doi.org/10.1109/access.2025.3546628</a>.
+</div>
+<div id="ref-Wu2023" class="csl-entry" role="listitem">
+Wu, Xiaoyang, Li Jiang, Peng-Shuai Wang, Zhijian Liu, Xihui Liu, Yu Qiao, Wanli Ouyang, Tong He, and Hengshuang Zhao. 2023. <span>“Point Transformer V3: Simpler, Faster, Stronger.”</span> <a href="https://doi.org/10.48550/ARXIV.2312.10035">https://doi.org/10.48550/ARXIV.2312.10035</a>.
+</div>
+<div id="ref-Xu2020" class="csl-entry" role="listitem">
+Xu, Chenfeng, Bichen Wu, Zining Wang, Wei Zhan, Peter Vajda, Kurt Keutzer, and Masayoshi Tomizuka. 2020. <span>“SqueezeSegV3: Spatially-Adaptive Convolution for Efficient Point-Cloud Segmentation.”</span> <a href="https://doi.org/10.48550/ARXIV.2004.01803">https://doi.org/10.48550/ARXIV.2004.01803</a>.
+</div>
+<div id="ref-Ye2020" class="csl-entry" role="listitem">
+Ye, Zhen, Yusheng Xu, Rong Huang, Xiaohua Tong, Xin Li, Xiangfeng Liu, Kuifeng Luan, Ludwig Hoegner, and Uwe Stilla. 2020. <span>“LASDU: A Large-Scale Aerial LiDAR Dataset for Semantic Labeling in Dense Urban Areas.”</span> <em>ISPRS International Journal of Geo-Information</em> 9 (7): 450. <a href="https://doi.org/10.3390/ijgi9070450">https://doi.org/10.3390/ijgi9070450</a>.
+</div>
+<div id="ref-Zachar2023" class="csl-entry" role="listitem">
+Zachar, P., K. Bakuła, and W. Ostrowski. 2023. <span>“CENAGIS-ALS Benchmark - New Proposal for Dense ALS Benchmark Based on the Review of Datasets and Benchmarks for 3D Point Cloud Segmentation.”</span> <em>The International Archives of the Photogrammetry, Remote Sensing and Spatial Information Sciences</em> XLVIII-1/W3-2023 (October): 227–34. <a href="https://doi.org/10.5194/isprs-archives-xlviii-1-w3-2023-227-2023">https://doi.org/10.5194/isprs-archives-xlviii-1-w3-2023-227-2023</a>.
+</div>
+<div id="ref-Zhao2020" class="csl-entry" role="listitem">
+Zhao, Hengshuang, Li Jiang, Jiaya Jia, Philip Torr, and Vladlen Koltun. 2020. <span>“Point Transformer.”</span> <a href="https://doi.org/10.48550/ARXIV.2012.09164">https://doi.org/10.48550/ARXIV.2012.09164</a>.
+</div>
+<div id="ref-Zolanvari2019" class="csl-entry" role="listitem">
+Zolanvari, Iman, Susana Ruano, Aakanksha Rana, Alan Cummins, Aljosa Smolic, Rogerio Da Silva, and Morteza Rahbar. 2019. <span>“DublinCity: Annotated LiDAR Point Cloud and Its Applications.”</span> In.
+</div>
+</div></section></div></main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    // Ensure there is a toggle, if there isn't float one in the top right
+    if (window.document.querySelector('.quarto-color-scheme-toggle') === null) {
+      const a = window.document.createElement('a');
+      a.classList.add('top-right');
+      a.classList.add('quarto-color-scheme-toggle');
+      a.href = "";
+      a.onclick = function() { try { window.quartoToggleColorScheme(); } catch {} return false; };
+      const i = window.document.createElement("i");
+      i.classList.add('bi');
+      a.appendChild(i);
+      window.document.body.appendChild(a);
+    }
+    setColorSchemeToggle(hasAlternateSentinel())
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp('/' + window.location.host + '/');
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+            // default icon
+            link.classList.add("external");
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+</div> <!-- /content -->
+<footer class="footer"><div class="nav-footer"><div class="nav-footer-center"><div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/alexandre-bry/MSc_Thesis-Report/edit/main/slides/A1_slides/slides.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/alexandre-bry/MSc_Thesis-Report/blob/main/slides/A1_slides/slides.qmd" class="toc-action"><i class="bi empty"></i>View source</a></li><li><a href="https://github.com/alexandre-bry/MSc_Thesis-Report/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div></div></footer><script>var lightboxQuarto = GLightbox({"closeEffect":"zoom","descPosition":"bottom","loop":false,"openEffect":"zoom","selector":".lightbox"});
+(function() {
+  let previousOnload = window.onload;
+  window.onload = () => {
+    if (previousOnload) {
+      previousOnload();
+    }
+    lightboxQuarto.on('slide_before_load', (data) => {
+      const { slideIndex, slideNode, slideConfig, player, trigger } = data;
+      const href = trigger.getAttribute('href');
+      if (href !== null) {
+        const imgEl = window.document.querySelector(`a[href="${href}"] img`);
+        if (imgEl !== null) {
+          const srcAttr = imgEl.getAttribute("src");
+          if (srcAttr && srcAttr.startsWith("data:")) {
+            slideConfig.href = srcAttr;
+          }
+        }
+      } 
+    });
+  
+    lightboxQuarto.on('slide_after_load', (data) => {
+      const { slideIndex, slideNode, slideConfig, player, trigger } = data;
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(slideNode);
+      }
+    });
+  
+  };
+  
+})();
+          </script>
+
+
+
+
+</body></html>
