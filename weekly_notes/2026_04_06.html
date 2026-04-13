@@ -32,6 +32,7 @@ ul.task-list li input[type="checkbox"] {
 <script src="../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../">
+<link href="../weekly_notes/2026_04_13.html" rel="next">
 <link href="../weekly_notes/2026_03_30.html" rel="prev">
 <script src="../site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
@@ -81,6 +82,7 @@ ul.task-list li input[type="checkbox"] {
 
 
 <meta property="og:title" content="2026/04/06 – MSc Thesis - Website">
+<meta property="og:description" content="Website for the MSc Thesis of Alexandre Bry for the MSc Geomatics">
 <meta property="og:image" content="https://alexandre-bry.github.io/MSc_Thesis-Report/weekly_notes/2026_04_06/Edge_matching-Square.gif">
 <meta property="og:site_name" content="MSc Thesis - Website">
 </head>
@@ -424,6 +426,12 @@ ul.task-list li input[type="checkbox"] {
  <span class="menu-text">2026/04/06</span></a>
   </div>
 </li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../weekly_notes/2026_04_13.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">2026/04/13</span></a>
+  </div>
+</li>
     </ul>
     </div>
 </nav>
@@ -508,6 +516,7 @@ ul.task-list li input[type="checkbox"] {
 <h2 class="anchored" data-anchor-id="material-for-discussion">Material for discussion</h2>
 <section id="results-edge-matching-algorithm" class="level3">
 <h3 class="anchored" data-anchor-id="results-edge-matching-algorithm">Results edge matching algorithm</h3>
+<p>As it is shown below, the new algorithm works very well in these toy examples. However, it still needs to be tested in actual noisy conditions with more complex examples. Moreover, as can be seen in the circle example, the algorithm can end up reducing some edges to zero even though it does not add much to the score, so it could be interesting to look into adding to the metric something that encourages keeping the relative lengths of the edges.</p>
 <div id="fig-examples-matching" class="quarto-layout-panel">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-examples-matching-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
@@ -530,11 +539,15 @@ ul.task-list li input[type="checkbox"] {
 </div>
 </div>
 <div class="quarto-layout-row">
-<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><a href="./2026_04_06/Edge_matching-Circle.gif" class="lightbox" data-gallery="examples-matching" title="Circle."><img src="./2026_04_06/Edge_matching-Circle.gif" class="img-fluid figure-img"></a></p>
-<figcaption>Circle.</figcaption>
+<div class="quarto-layout-cell-subref quarto-layout-cell" data-ref-parent="fig-examples-matching" style="flex-basis: 50.0%;justify-content: flex-start;">
+<div id="fig-examples-matching_circle" class="quarto-float quarto-figure quarto-figure-center anchored" data-group="examples-matching">
+<figure class="quarto-float quarto-subfloat-fig figure">
+<div aria-describedby="fig-examples-matching_circle-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<a href="./2026_04_06/Edge_matching-Circle.gif" class="lightbox" data-gallery="examples-matching" title="Figure&nbsp;1&nbsp;(a): Circle."><img src="./2026_04_06/Edge_matching-Circle.gif" class="img-fluid figure-img" data-ref-parent="fig-examples-matching"></a>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-subfloat-caption quarto-subfloat-fig" id="fig-examples-matching_circle-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+(a) Circle.
+</figcaption>
 </figure>
 </div>
 </div>
@@ -557,6 +570,7 @@ Figure&nbsp;1
 </section>
 <section id="discussion" class="level2">
 <h2 class="anchored" data-anchor-id="discussion">Discussion</h2>
+<p>Meeting did not happen as it was Easter Monday.</p>
 </section>
 <section id="work-until-next-meeting" class="level2">
 <h2 class="anchored" data-anchor-id="work-until-next-meeting">Work until next meeting</h2>
@@ -987,6 +1001,9 @@ Figure&nbsp;1
       </a>          
   </div>
   <div class="nav-page nav-page-next">
+      <a href="../weekly_notes/2026_04_13.html" class="pagination-link" aria-label="2026/04/13">
+        <span class="nav-page-text">2026/04/13</span> <i class="bi bi-arrow-right-short"></i>
+      </a>
   </div>
 </nav>
 </div> <!-- /content -->
