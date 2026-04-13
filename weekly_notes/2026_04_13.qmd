@@ -68,4 +68,21 @@ There are different ways to look at it:
 
 ## Discussion
 
+- Three ideas to fix the issues of self-intersections:
+  1. Start with a global translation for the whole building unit in order to have less problems later
+  2. Add to the energy a metric that tries to preserve the length of edges
+  3. Compute intersections on the whole building.
+    Since this is potentially costly, it may help to do it only on the best solution if it is possible?
+- Documenting extensively the limitations and potential solutions of the method is an important part of the process
+- If we actually want to find optimal solutions when computing configurations of the polygons, we could try to solve linear systems that have the individual shift of each line as variables, and inequations enforcing a minimum size for each edge.
+- To start working on the façade points:
+  - Use the first point after roof edge points
+  - Try to use the vertical change in acquisition order to identify vertical structures
+  - See if machine learning would be necessary and possible
+
 ## Work until next meeting
+
+- Try bracketing in 2D to identify a good first global translation
+- Try a metric to preserve the length of edges
+- Look into detecting façades
+- Prepare the next monthly meeting
