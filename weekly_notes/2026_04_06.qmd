@@ -2,7 +2,7 @@
 title: "2026/04/06"
 date: 2026-04-06
 tags: [weekly]
-meeting: [Bruno Vallet, Hugo Ledoux]
+meeting: []
 ---
 
 ## Results since previous meeting
@@ -27,18 +27,24 @@ meeting: [Bruno Vallet, Hugo Ledoux]
 
 ### Results edge matching algorithm
 
+As it is shown below, the new algorithm works very well in these toy examples.
+However, it still needs to be tested in actual noisy conditions with more complex examples.
+Moreover, as can be seen in the circle example, the algorithm can end up reducing some edges to zero even though it does not add much to the score, so it could be interesting to look into adding to the metric something that encourages keeping the relative lengths of the edges. 
+
 :::: {#fig-examples-matching layout="[[1,1], [1,1]]"}
 
 ![Simple square.](./2026_04_06/Edge_matching-Square.gif){group="examples-matching"}
 
 ![Square with missing edges.](./2026_04_06/Edge_matching-Square_missing_edges.gif){group="examples-matching"}
 
-![Circle.](./2026_04_06/Edge_matching-Circle.gif){group="examples-matching"}
+![Circle.](./2026_04_06/Edge_matching-Circle.gif){group="examples-matching" #fig-examples-matching_circle}
 
 ![Polygon with many edges.](./2026_04_06/Edge_matching-Weird_shape.gif){group="examples-matching"}
 
 :::
 
 ## Discussion
+
+Meeting did not happen as it was Easter Monday.
 
 ## Work until next meeting
