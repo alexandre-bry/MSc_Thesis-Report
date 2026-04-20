@@ -1,0 +1,25 @@
+---
+title: "2026/04/20"
+date: 2026-04-20
+tags: [weekly]
+meeting: [Bruno Vallet]
+---
+
+## Results since previous meeting
+
+- Implemented the energy metric with two components: proximity to the points and difference between the initial and new length of each edge.
+  This gave great results.
+- Prepared the slides for the monthly meeting, with illustrations and limitations.
+
+## Material for discussion
+
+## Discussion
+
+## Work until next meeting
+
+- [ ] Try to find a good initial translation for the whole outline.
+- [ ] Start working on the footprints:
+  - [ ] Try to transfer the information of roof edges to the points to identify the points that were actually roof edges, and then use this to identify façade points.
+  - [ ] Filter rays based on their angle and source compared to the façade normal.
+- [ ] Find dates for presentations for other people at IGN, one that would be technical and one that would be more high-level.
+  We were thinking of having the non-technical one on June 22nd and the other one before the A3 presentation for TU Delft which is on June 12th.

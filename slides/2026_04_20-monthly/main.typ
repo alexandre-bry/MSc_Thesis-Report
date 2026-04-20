@@ -60,6 +60,18 @@
 
 #image("../../diagrams/Overview_of_pipeline.drawio.png")
 
+== General structure
+
+General structure of the method:
+- *Identifications of points* to deform the polygons on.
+- *Creation of a set of candidate configurations*:
+  - By translating each edge perpendicularly to itself.
+  - The other edges are translated if necessary to keep the same topology.
+- *Definition of a criterion to evaluate the quality of each configuration*, based on:
+  - The position of the points.
+  - Weights computed for the points.
+  - The initial configuration of the edges.
+
 = Point cloud topology
 
 == Point cloud topology
@@ -162,42 +174,21 @@ We use the *height differences between consecutive points* on the same scan line
   - These scan lines are actually *curved* when looked at from above, but this is not a problem as the *angle is very small* between consecutive pulses
 ]
 
-= Edge matching
-
-== General structure
-
-- TODO: Explain the general structure of the edge matching process:
-  - Identifications of points to align the edges to.
-  - Definition of a criterion to evaluate the quality of an edge position, based on:
-    - The position of the points.
-    - Weights computed for the points.
-    - The initial configuration of the edges.
-  - Creation of a set of candidate configurations for set of connected edges:
-    - By translating each edge perpendicularly to itself.
-    - The other edges are translated if necessary to keep the same topology.
-
-== New algorithm
-
-- Improvements:
-  - Points are now weighted by multiplying three different weights:
-    - Real points get 1.0 and generated points get 0.5
-    - Points classified as building get 1.0 and other points get 0.3
-    - The dot product of the inward vector with the normal of the edge oriented towards the inside of the building.
-      Note that the inward vector is not normalized, because its magnitude is an indication of the confidence of the direction, and we want to take this into account in the score.
-  - Each point can only count for one edge
-  - The neighbours of each moving edge also count in the score since moving one edge impacts the neighbours as well even if they are not moved
-  - We added to the energy a simple component that entices edges to keep their initial length.
-  It is computed as the sum of the squares of the relative change in length of each edge.
+= Candidate roofprint configurations
 
 == Constraints over the movements
 
 We modify the polygons by applying the following rules:
 - *Never rotate an edge.*
 - *Never flip an edge.*
-- *Move overlapping edges together.*.
+- *Move overlapping edges together.*
+
+#pause
 
 This ensures that we *preserve some topology* while keeping a *lot of freedom* for the edges to move.
 However, this *does not ensure that we preserve the same topology*, as can be seen in the examples in the next slides.
+
+#pause
 
 In practice, we only ensure that:
 - At the level of one polygon, for each edge:
@@ -276,7 +267,7 @@ In practice, we only ensure that:
 
   #speaker-note[
     - Here, the issue comes from the fact that the shared vertex is considered separately for each building.
-    Therefore, moving the edge of the building on the right does not move the edge of the building on the left.
+      Therefore, moving the edge of the building on the right does not move the edge of the building on the left.
     - Like the previous examples, this could be fixed by *rebuilding the actual topology including shared vertices*, instead of only polygons and shared edges.
   ]
 ]
@@ -333,21 +324,26 @@ In practice, we only ensure that:
   ]
 ]
 
-== Polygon deformation algorithm
+== General idea
 
-=== General idea
+#uncover("1-")[
+  We focus on *edges one by one*, except for overlapping edges which are treated together.
+  Edges are treated as *directed lines*, which can be translated in any direction, but not rotated.
+]
 
-We focus on *edges one by one*, except for overlapping edges which are treated together.
-Edges are treated as *directed lines*, which can be translated in any direction, but not rotated.
-Therefore, to satisfy the constraints described previously, there is only one property $cal(P)(l)$ that we need to preserve for each line $l$, regarding its previous line $l^-$ and next line $l^+$:
+#uncover("2-")[
+  Therefore, to satisfy the constraints described previously, there is only one property $cal(P)(l)$ that we need to preserve for each line $l$, regarding its previous line $l^-$ and next line $l^+$:
 
-#align(center, strong(emph(
-  [The intersection between $l$ and $l^-$ should occur before the intersection between $l$ and $l^+$.],
-)))
+  #align(center, strong(emph(
+    [The intersection between $l$ and $l^-$ should occur before the intersection between $l$ and $l^+$.],
+  )))
 
-This property is equivalent to not flipping the edge $l$.
+  This property is *equivalent to not flipping the edge $l$*.
+]
 
-Moreover, we know that if we shift $l$, $l^-$ and $l^+$ by the *same extent in the same direction*, this property will still hold for $l$.
+#uncover("3-")[
+  Moreover, we know that if we shift $l$, $l^-$ and $l^+$ by the *same extent in the same direction*, this property will still hold for $l$.
+]
 
 #speaker-note[
   The ideas behind this slide is actually quite simple:
@@ -358,87 +354,110 @@ Moreover, we know that if we shift $l$, $l^-$ and $l^+$ by the *same extent in t
 
 ---
 
-=== Simple approach
+== Our simple approach
 
-Simple algorithm to find a correct configuration given a line $l_0$ to move by an extent $delta$:
+#uncover("1-")[
+  Simple algorithm to find a correct configuration given a line $l_0$ to move by an extent $delta$:
 
-1. Compute the shift direction as the normal $arrow(n)$ of $l_0$.
-2. Move $l_0$ by $delta arrow(n)$.
-3. If $cal(P)(l_0)$ is not satisfied, move $l_0^-$ and $l_0^+$ by $delta arrow(n)$ as well.
-  This ensures that $cal(P)(l_0)$ is satisfied.
-4. Set $l_p = l_0^-$.
-  While $cal(P)(l_p)$ is not satisfied, move $l_p$ by $delta arrow(n)$ (if not already moved) and set $l_p = l_p^-$.
-5. Set $l_n = l_0^+$.
-  While $cal(P)(l_n)$ is not satisfied, move $l_n$ by $delta arrow(n)$ (if not already moved) and set $l_n = l_n^+$.
-
-#alert-box[
-  The only guarantees of this algorithm is that it will *terminate* and that the resulting configuration will *satisfy the constraints*.
-
-  However, it will *not find an optimal solution*, and in particular, it is *not continuous* with respect to $delta$.
+  1. Compute the shift direction as the normal $arrow(n)$ of $l_0$.
+  2. Move $l_0$ by $delta arrow(n)$.
+  3. If $cal(P)(l_0)$ is not satisfied, move $l_0^-$ and $l_0^+$ by $delta arrow(n)$ as well.
+    This ensures that $cal(P)(l_0)$ is satisfied.
+  4. Set $l_p = l_0^-$.
+    While either of $cal(P)(l_p)$, $cal(P)(l_p^-)$ or $cal(P)(l_p^+)$ is not satisfied, move $l_p$ by $delta arrow(n)$ (if not already moved) and set $l_p = l_p^-$.
+  5. Set $l_n = l_0^+$.
+    While either of $cal(P)(l_n)$, $cal(P)(l_n^-)$ or $cal(P)(l_n^+)$ is not satisfied, move $l_n$ by $delta arrow(n)$ (if not already moved) and set $l_n = l_n^+$.
 ]
+
+#uncover("2-")[#alert-box[
+    The only guarantees of this algorithm is that it will *terminate* and that the resulting configuration will *satisfy the constraints*.
+
+    However, it will *not find an optimal solution*, and in particular, it is *not continuous* with respect to $delta$.
+  ]
+]
+
 ---
 
-#slide[
-  === Illustrations
+== Illustrations
 
+#slide[
   #v(1fr)
   #let image-width = 85%
   #subpar.grid(
     columns: (1fr, 1fr),
     align: center + horizon,
-    image("../../images/results-2026_04_20/Polygon_deformation/circle.gif", width: image-width),
-    image("../../images/results-2026_04_20/Polygon_deformation/polygon_simple.gif", width: image-width),
+    link(
+      "https://alexandre-bry.github.io/MSc_Thesis-Report/images/results-2026_04_20/Polygon_deformation/circle.gif",
+      image("../../images/results-2026_04_20/Polygon_deformation/circle.gif", width: image-width),
+    ),
+    link(
+      "https://alexandre-bry.github.io/MSc_Thesis-Report/images/results-2026_04_20/Polygon_deformation/polygon_simple.gif",
+      image("../../images/results-2026_04_20/Polygon_deformation/polygon_simple.gif", width: image-width),
+    ),
 
-    caption: [Simple illustrations of the polygon deformation algorithm.],
+    caption: [Simple illustrations of the polygon deformation algorithm (click to view the animated versions).],
   )
   #v(1fr)
 ]
 
 #slide[
-  === Illustrations
-
   #v(1fr)
   #let image-width = 90%
   #subpar.grid(
     columns: (1fr, 1fr),
     align: center + horizon,
-    image("../../images/results-2026_04_20/Polygon_deformation/polygon_simple_noisy-0.gif", width: image-width),
-    image("../../images/results-2026_04_20/Polygon_deformation/polygon_2-0.gif", width: image-width),
+    link(
+      "https://alexandre-bry.github.io/MSc_Thesis-Report/images/results-2026_04_20/Polygon_deformation/polygon_simple_noisy-0.gif",
+      image("../../images/results-2026_04_20/Polygon_deformation/polygon_simple_noisy-0.gif", width: image-width),
+    ),
+    link(
+      "https://alexandre-bry.github.io/MSc_Thesis-Report/images/results-2026_04_20/Polygon_deformation/polygon_2-0.gif",
+      image("../../images/results-2026_04_20/Polygon_deformation/polygon_2-0.gif", width: image-width),
+    ),
 
-    caption: [More complex illustrations of the polygon deformation algorithm.],
+    caption: [More complex illustrations of the polygon deformation algorithm (click to view the animated versions).],
   )
   #v(1fr)
 ]
 
 #slide[
-  === Self-intersection issue
-
   #v(1fr)
   #let image-width = 90%
   #subpar.grid(
     columns: (1fr, 1fr),
     align: center + horizon,
-    image("../../images/results-2026_04_20/Polygon_deformation/polygon_simple_noisy-4.gif", width: image-width),
-    image("../../images/results-2026_04_20/Polygon_deformation/polygon_3-13.gif", width: image-width),
+    link(
+      "https://alexandre-bry.github.io/MSc_Thesis-Report/images/results-2026_04_20/Polygon_deformation/polygon_simple_noisy-4.gif",
+      image("../../images/results-2026_04_20/Polygon_deformation/polygon_simple_noisy-4.gif", width: image-width),
+    ),
+    link(
+      "https://alexandre-bry.github.io/MSc_Thesis-Report/images/results-2026_04_20/Polygon_deformation/polygon_3-13.gif",
+      image("../../images/results-2026_04_20/Polygon_deformation/polygon_3-13.gif", width: image-width),
+    ),
 
-    caption: [Illustrations of self-intersections with the polygon deformation algorithm.],
+    caption: [Illustrations of self-intersections with the polygon deformation algorithm (click to view the animated versions).],
   )
   #v(1fr)
+
+  #speaker-note[
+    There we can see two different examples of how the algorithm can create configurations with *self-intersections*.
+  ]
 ]
 
-== Criterion
+= Criterion
 
-=== Definition
+== Total energy to minimize
 
 The energy that we try to minimize for each group of roofprints is the following:
 
 $
-  E = underbrace(- sum_(i in cal(P)) w_i min_(j in cal(L)) {"score"(p_i, l_j)}, "proximity to the points") + alpha underbrace(sum_(j in cal(L)) (|l_j| - |l_j^0|)^2, "similarity to the initial edges")
+  E = underbrace(- sum_(i in cal(P)) w_i max_(j in cal(L)) {"score"(p_i, l_j)}, "proximity to the points") + alpha underbrace(sum_(j in cal(L)) (|l_j| - |l_j^0|)^2, "similarity to the initial edges")
 $
 
 Where:
 
 - $cal(P)$ is the set of points, and $cal(L)$ is the set of edges (lines).
+  $cal(L)$ contains all the edges moved in any configuration and their neighbours.
 - $w_i$ is the weight of point $p_i$, which is independent of the lines.
 - $"score"(p_i, l_j)$ is the score of point $p_i$ for edge $l_j$, which is defined in the next slide.
 - $|l_j|$ is the length of edge $l_j$ in the current configuration, and $|l_j^0|$ is its initial length.
@@ -455,9 +474,10 @@ Where:
 
 ---
 
+== Definition of the proximity score
+
 #let figure-width = 6cm
 #slide(composer: (1fr, figure-width))[
-  === Score of a point for an edge
 
   The score of a point $p_i$ for an edge $l_j$ is defined as follows:
   - The score is 0 if any of the following conditions is true:
@@ -501,14 +521,14 @@ Where:
   }
 ]
 
-#slide[
-  === Definition of the inward direction
+== Definition of the inward direction
 
+#slide[
   The goal of the *inward direction* is to be as close as possible to the 2D normal of the roof edge, pointing towards the inside of the building.
   To compute it for a given point $p_i$, we use the following method:
   1. Identify all the points $p_j$ that are less than a certain distance $delta$ from $p_i$.
   2. For each point $p_j$, compute the vector from $p_i$ to $p_j$, and normalize it into a unit vector $u_(i -> j)$.
-  3. Compute the inward vector $v_i$ as the average of the vectors $u_(i -> j)$.
+  3. Compute the inward vector $v_i$ as the average of the vectors $u_(i -> j)$: $ v_i = 1/ (|cal(B)(p_i, delta)|) sum_(p_j in cal(B)(p_i, delta)) (p_j - p_i) / (|p_j - p_i|) $
 
   We use $delta = 2 "metres"$.
 
@@ -519,24 +539,39 @@ Where:
   ]
 ]
 
+== Illustrations
+
 #slide[
   #v(1fr)
   #let image-width = 85%
   #subpar.grid(
     columns: (1fr, 1fr),
     align: center + horizon,
-    image(
-      "../../images/results-2026_04_20/Criterion_toy_results/circle-default/alpha=0_20-iterations.gif",
-      width: image-width,
+    link(
+      "https://alexandre-bry.github.io/MSc_Thesis-Report/images/results-2026_04_20/Criterion_toy_results/circle-default/alpha=0_20-iterations.gif",
+      image(
+        "../../images/results-2026_04_20/Criterion_toy_results/circle-default/alpha=0_20-iterations.gif",
+        width: image-width,
+      ),
     ),
-    image(
-      "../../images/results-2026_04_20/Criterion_toy_results/weird_polygon-default/alpha=0_20-iterations.gif",
-      width: image-width,
+    link(
+      "https://alexandre-bry.github.io/MSc_Thesis-Report/images/results-2026_04_20/Criterion_toy_results/weird_polygon-default/alpha=0_20-iterations.gif",
+      image(
+        "../../images/results-2026_04_20/Criterion_toy_results/weird_polygon-default/alpha=0_20-iterations.gif",
+        width: image-width,
+      ),
     ),
 
-    caption: [Simple illustrations of the full polygon deformation algorithm.],
+    caption: [Simple illustrations of the full polygon deformation algorithm (click to view the animated versions).],
   )
   #v(1fr)
+
+  #speaker-note[
+    Here and in the following, this figures show:
+    - In blue, the points we match to
+    - In red, the current version of the polygon, with each edge numbered and vertices shown in orange
+    - At the top, the number of iterations (i.e. the number of times we went through all the edges) and the sum of the shifts performed during the last iteration, which is an indication of the convergence of the algorithm.
+  ]
 ]
 
 #slide[
@@ -592,61 +627,10 @@ Where:
     caption: [Matching a circle to a half-circle of points with different values of the regularization parameter $alpha$.],
   )
   #v(1fr)
-]
 
-#slide[
-  #v(1fr)
-  #let image-width = 60%
-  #subpar.grid(
-    columns: (1fr, 1fr, 1fr),
-    align: center + horizon,
-    figure(
-      image(
-        "../../images/results-2026_04_20/Criterion_toy_results/square-half-large/alpha=0_00-initial.png",
-        width: image-width,
-      ),
-      caption: [Initial state],
-    ),
-    figure(
-      image(
-        "../../images/results-2026_04_20/Criterion_toy_results/square-half-large/alpha=0_00-final.png",
-        width: image-width,
-      ),
-      caption: [$alpha = 0.00$ (no regularization)],
-    ),
-    figure(
-      image(
-        "../../images/results-2026_04_20/Criterion_toy_results/square-half-large/alpha=0_05-final.png",
-        width: image-width,
-      ),
-      caption: [$alpha = 0.05$],
-    ),
-
-    figure(
-      image(
-        "../../images/results-2026_04_20/Criterion_toy_results/square-half-large/alpha=0_20-final.png",
-        width: image-width,
-      ),
-      caption: [$alpha = 0.20$],
-    ),
-    figure(
-      image(
-        "../../images/results-2026_04_20/Criterion_toy_results/square-half-large/alpha=0_50-final.png",
-        width: image-width,
-      ),
-      caption: [$alpha = 0.50$],
-    ),
-    figure(
-      image(
-        "../../images/results-2026_04_20/Criterion_toy_results/square-half-large/alpha=1_00-final.png",
-        width: image-width,
-      ),
-      caption: [$alpha = 1.00$],
-    ),
-
-    caption: [Matching a square to points along two sides of a smaller square with different values of the regularization parameter $alpha$.],
-  )
-  #v(1fr)
+  #speaker-note[
+    We can see how regularization helps to get a shape more similar to the target even with half of the points missing.
+  ]
 ]
 
 #slide[
@@ -705,6 +689,66 @@ Where:
 
   #speaker-note[
     $alpha > 0$ encourages the shape to be closer to the initial one, which is better than $alpha = 0$, until a certain point where the regularization is too strong and prevents the shape from extending to capture all the points.
+  ]
+]
+
+#slide[
+  #v(1fr)
+  #let image-width = 60%
+  #subpar.grid(
+    columns: (1fr, 1fr, 1fr),
+    align: center + horizon,
+    figure(
+      image(
+        "../../images/results-2026_04_20/Criterion_toy_results/square-half-large/alpha=0_00-initial.png",
+        width: image-width,
+      ),
+      caption: [Initial state],
+    ),
+    figure(
+      image(
+        "../../images/results-2026_04_20/Criterion_toy_results/square-half-large/alpha=0_00-final.png",
+        width: image-width,
+      ),
+      caption: [$alpha = 0.00$ (no regularization)],
+    ),
+    figure(
+      image(
+        "../../images/results-2026_04_20/Criterion_toy_results/square-half-large/alpha=0_05-final.png",
+        width: image-width,
+      ),
+      caption: [$alpha = 0.05$],
+    ),
+
+    figure(
+      image(
+        "../../images/results-2026_04_20/Criterion_toy_results/square-half-large/alpha=0_20-final.png",
+        width: image-width,
+      ),
+      caption: [$alpha = 0.20$],
+    ),
+    figure(
+      image(
+        "../../images/results-2026_04_20/Criterion_toy_results/square-half-large/alpha=0_50-final.png",
+        width: image-width,
+      ),
+      caption: [$alpha = 0.50$],
+    ),
+    figure(
+      image(
+        "../../images/results-2026_04_20/Criterion_toy_results/square-half-large/alpha=1_00-final.png",
+        width: image-width,
+      ),
+      caption: [$alpha = 1.00$],
+    ),
+
+    caption: [Matching a square to points along two sides of a smaller square with different values of the regularization parameter $alpha$.],
+  )
+  #v(1fr)
+
+  #speaker-note[
+    $alpha > 0$ encourages the shape to be closer to the initial one, which is again better than $alpha = 0$, but this time even the smallest value of $alpha$ already keeps the shape the same size.
+    The shape has no reason to be smaller: it would not give it a better proximity score, and it would give it a worse regularization score, so the algorithm converges to the same shape for all values of $alpha > 0$.
   ]
 ]
 
@@ -828,7 +872,7 @@ Where:
 ]
 
 
-= News results
+= Last results
 
 == Computation of roofprints from BD TOPO
 
@@ -909,77 +953,52 @@ Where:
   - Identify *lines in the point cloud topology* with Wu Teng's method:
     - Could be used to estimate the *normals locally* in cases where segments are found to estimate if points are on façades or on roofs.
     - Could be used to identify the breaks of roof planes (out of scope for now).
+
+  #speaker-note[
+    - To create a dataset to train a deep learning model, we were thinking of using the *AHN* and the *3DBAG*, which are the Dutch equivalents of the LiDAR HD and the BD TOPO in 3D, and split the points between the different classes based on the *3DBAG building models*.
+  ]
 ]
 
-
-== Edge matching
+== Roofprint generation
 
 #slide[
   === Planned
 
-
+  - Experiment with the order of edge processing.
+    For now it is *longer edges first*, but we could try random order.
+  - Start with a single 2D translation for all edges, to see if it can improve the results.
+  - (Maybe) run the *whole pipeline multiple times* with different conditions (different orders, different initial shifts, etc.) and pick the best result.
 ][
   === Not planned
 
   - Use the *repartition of points* on the edge in their score to prioritize a less points with a uniform repartition over a lot of points clustered on one side of the edge.
-
-  #speaker-note[
-    #set text(size: 20pt)
-    - Two ideas to use the repartition of points on the edge:
-      - Divide the score by the *length* of the edge.
-      - *Reward uniform distribution* of points along the edge with a histogram-like metric.
-    - Not sure about using the distance to the current edge as an indication, because the assumption that a closer edge is better is often wrong due to the shift in BD TOPO.
-      If we still decide to try it, a simple solution would be to add a penalty proportional to the distance, but this would need to be tested.
-  ]
-]
-
-#slide[
-  === For each edge
-
-  - Try (maybe) to use the *distance to the current edge* as an indication as well.
-
-  #speaker-note[
-    #set text(size: 20pt)
-    - Matching with the two neighbours could improve results for *tiny edges* and prevent matching edges from *other buildings*.
-    - Two ideas to use the repartition of points on the edge:
-      - Divide the score by the *length* of the edge.
-      - *Reward uniform distribution* of points along the edge with a histogram-like metric.
-    - Not sure about using the distance to the current edge as an indication, because the assumption that a closer edge is better is often wrong due to the shift in BD TOPO.
-      If we still decide to try it, a simple solution would be to add a penalty proportional to the distance, but this would need to be tested.
-  ]
-]
-
-#slide[
-  === For the whole building
-
-  - Matching *longer edges first*.
-  - Run the matching *algorithm multiple times in a row*, or until it converges.
   - Use *combinatorial optimization* to pick the best set of edges with multiple solutions for difficult edges.
+  - Allow for small *rotations* of the edges.
+  - Look at edges in *3D* instead of 2D.
 
   #speaker-note[
-    - Matching longer edges first may help matching the *smaller edges* properly, if we shift the starting point of the neighbouring edges.
-    - Running the matching algorithm multiple times in a row may help for *small edges*, where a translation along the direction of the edge is problematic.
-      It could also allow for *more iterations with smaller frames*.
-    - Combinatorial optimization would be a more complex solution, but it would allow to *globally optimize* the matching of all edges together, to avoid local mistakes.
+    #set text(size: 19pt)
+    - Different orders and especially changing orders could help untangling some situations.
+    - *Different conditions* could really lead to *different results*, so it could be interesting, but it may be *difficult to pick the best result*.
+    - *Reward uniform distribution* of points along the edge with a histogram-like metric.
+    - Small rotations of the edges could drastically improve the results in some cases, but it makes preserving the topology more complex and goes against our assumption that angles are great in the initial outlines.
+    - Looking at edges in 3D could help a lot to separate points on roof edges from points on façades or vegetation.
+      But is much more complex because it adds two new dimensions: the base height and the angle of the edge.
+      Moreover, what is one straight edge in 2D may be multiple segments in 3D.
   ]
 ]
 
-== Edge matching - Other ideas
+== Footprint generation
 
 #slide[
-  - Use *regularization* before or after.
-  - Use the *classification* of the points in combination with the outlines to crop the point clouds better.
-  - Try to make better edges:
-    - With a *RANSAC-like* approach (potentially using the BD TOPO to guide the process) in *2D or 3D*.
-    - By other means in 3D?
-    - By *recomputing the edge* after identifying the inlier points with the current process.
-    - Try to estimate *where the edge starts and stops* from the point cloud.
+  === Planned
 
-  #speaker-note[
-    - *Regularization before* could help removing small artefacts in the edges due to touching buildings and ensure right angles.
-    - *Regularization after* could be necessary if computing edges not parallel to the initial edges.
-    - Using the *classification* of the points to crop could prevent matching edges from other buildings.
-  ]
+  - Find criteria to differentiate between roof edges and façade points (including training a deep learning model if needed).
+  - Use the *height variations in acquisition order* with different thresholds.
+  - Use *rays directions* to count points on potential façades *positively* and *negatively*.
+  - *Adapt the matching criterion* to the façades:
+    - Not easy to compute the *inward vector* (potentially with the ground points).
+    - Care even more about *distribution of points along the Z axis* to avoid matching to roof edges or vegetation.
 ]
 
 == Rest of the pipeline
