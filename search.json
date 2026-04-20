@@ -432,7 +432,7 @@
     "href": "weekly_notes/2026_04_20.html#material-for-discussion",
     "title": "2026/04/20",
     "section": "Material for discussion",
-    "text": "Material for discussion\n\nIdeas for the façade points",
+    "text": "Material for discussion",
     "crumbs": [
       "Weekly Meetings",
       "2026/04/20"
@@ -454,7 +454,7 @@
     "href": "weekly_notes/2026_04_20.html#work-until-next-meeting",
     "title": "2026/04/20",
     "section": "Work until next meeting",
-    "text": "Work until next meeting",
+    "text": "Work until next meeting\n\nTry to find a good initial translation for the whole outline.\nStart working on the footprints:\n\nTry to transfer the information of roof edges to the points to identify the points that were actually roof edges, and then use this to identify façade points.\nFilter rays based on their angle and source compared to the façade normal.\n\nFind dates for presentations for other people at IGN, one that would be technical and one that would be more high-level. We were thinking of having the non-technical one on June 22nd and the other one before the A3 presentation for TU Delft which is on June 12th.",
     "crumbs": [
       "Weekly Meetings",
       "2026/04/20"
