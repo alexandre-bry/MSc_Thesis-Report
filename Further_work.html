@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.8.25">
+<meta name="generator" content="quarto-1.8.27">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -38,14 +38,14 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="site_libs/quarto-html/anchor.min.js"></script>
 <link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-bf77a05ce6ba3f5649b1c5bec9928afc.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-dark-709f5aa5aa6a95674750e60a60b86f5a.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-bf77a05ce6ba3f5649b1c5bec9928afc.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-99e777b2b3262cb0e1538bc5fc5de7fc.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-dark-3b164a37270e39dc3a94abe50fbe3df8.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-99e777b2b3262cb0e1538bc5fc5de7fc.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-f5706ebdaf6496508347bd3665b7ff5d.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="site_libs/bootstrap/bootstrap-dark-5c9c144ff9c7027cedcee2c38b4704c5.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
-<link href="site_libs/bootstrap/bootstrap-f5706ebdaf6496508347bd3665b7ff5d.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-747bbb0e02e83d2e76c50fb3fc0c4d93.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-dark-b52596d9f92af721301f8edc390bd1a3.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="site_libs/bootstrap/bootstrap-747bbb0e02e83d2e76c50fb3fc0c4d93.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -74,35 +74,6 @@ ul.task-list li input[type="checkbox"] {
   }
 }</script>
 
-  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
-  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
-
-<script type="text/javascript">
-const typesetMath = (el) => {
-  if (window.MathJax) {
-    // MathJax Typeset
-    window.MathJax.typeset([el]);
-  } else if (window.katex) {
-    // KaTeX Render
-    var mathElements = el.getElementsByClassName("math");
-    var macros = [];
-    for (var i = 0; i < mathElements.length; i++) {
-      var texText = mathElements[i].firstChild;
-      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
-        window.katex.render(texText.data, mathElements[i], {
-          displayMode: mathElements[i].classList.contains('display'),
-          throwOnError: false,
-          macros: macros,
-          fleqn: false
-        });
-      }
-    }
-  }
-}
-window.Quarto = {
-  typesetMath
-};
-</script>
 
 <meta property="og:title" content="MSc Thesis - Website">
 <meta property="og:site_name" content="MSc Thesis - Website">
@@ -286,8 +257,6 @@ window.Quarto = {
     <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
-    <a href="./index.html" class="navbar-brand navbar-brand-logo">
-    </a>
     <a class="navbar-brand" href="./index.html">
     <span class="navbar-title">MSc Thesis - Website</span>
     </a>
@@ -330,13 +299,8 @@ window.Quarto = {
   <ul>
   <li><a href="#further-work" id="toc-further-work" class="nav-link active" data-scroll-target="#further-work">Further work</a>
   <ul class="collapse">
-  <li><a href="#mathematical-considerations-for-moving-an-edge-in-a-polygon" id="toc-mathematical-considerations-for-moving-an-edge-in-a-polygon" class="nav-link" data-scroll-target="#mathematical-considerations-for-moving-an-edge-in-a-polygon">Mathematical considerations for moving an edge in a polygon</a></li>
-  <li><a href="#introduction" id="toc-introduction" class="nav-link" data-scroll-target="#introduction">Introduction</a>
-  <ul class="collapse">
-  <li><a href="#moving-edges" id="toc-moving-edges" class="nav-link" data-scroll-target="#moving-edges">Moving edges</a></li>
-  <li><a href="#validity-of-polygons" id="toc-validity-of-polygons" class="nav-link" data-scroll-target="#validity-of-polygons">Validity of polygons</a></li>
-  <li><a href="#solutions-of-interest" id="toc-solutions-of-interest" class="nav-link" data-scroll-target="#solutions-of-interest">Solutions of interest</a></li>
-  </ul></li>
+  <li><a href="#tomorrow" id="toc-tomorrow" class="nav-link" data-scroll-target="#tomorrow">Tomorrow</a></li>
+  <li><a href="#futurenever" id="toc-futurenever" class="nav-link" data-scroll-target="#futurenever">Future/never</a></li>
   </ul></li>
   </ul>
 <div class="toc-actions"><ul><li><a href="https://github.com/alexandre-bry/MSc_Thesis-Report/edit/main/Further_work.md" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/alexandre-bry/MSc_Thesis-Report/blob/main/Further_work.md" class="toc-action"><i class="bi empty"></i>View source</a></li><li><a href="https://github.com/alexandre-bry/MSc_Thesis-Report/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
@@ -371,38 +335,40 @@ window.Quarto = {
 
 <section id="further-work" class="level1">
 <h1>Further work</h1>
+<section id="tomorrow" class="level2">
+<h2 class="anchored" data-anchor-id="tomorrow">Tomorrow</h2>
+<p>Things to do tomorrow:</p>
+<ul>
+<li>Look into computing a better normal at each edge point -&gt; actually, I care about having a direction which is not really the normal but the direction opposite to where the closest points are, so I should look into that instead of the normal</li>
+<li>Quickly look into the easy improvements to the matching algorithm:
+<ul>
+<li>Order of processing the edges -&gt; OK</li>
+<li>Multiple iterations -&gt; OK</li>
+<li>First shift in one direction for all edges at once and/or try different seeds</li>
+</ul></li>
+<li>Start thinking about ideas to identify points on the façades</li>
+<li>Prepare some illustrations for the next monthly meeting</li>
+</ul>
+<p>Current issues with the matching algorithm:</p>
+<ul>
+<li>For small elements that have no real points, more iterations means more problems</li>
+<li>I should look not only at neighbours but at everything that is impacted, including potentially neighbours of edge in the same group as the neighbour</li>
+</ul>
+<p>Ideas for the future:</p>
+<ul>
+<li>Use the area compared to the previous area in the energy</li>
+<li>Find good metrics to evaluate the results</li>
+<li>Speed up the computation of distances</li>
+</ul>
+</section>
+<section id="futurenever" class="level2">
+<h2 class="anchored" data-anchor-id="futurenever">Future/never</h2>
 <ul>
 <li>Identify incorrect buildings that don’t really match with the LiDAR HD data</li>
 <li>Improve the algorithm that adapts the polygons to shifting one edge to remove its current discontinuous aspect</li>
 </ul>
-<section id="mathematical-considerations-for-moving-an-edge-in-a-polygon" class="level2">
-<h2 class="anchored" data-anchor-id="mathematical-considerations-for-moving-an-edge-in-a-polygon">Mathematical considerations for moving an edge in a polygon</h2>
-</section>
-<section id="introduction" class="level2">
-<h2 class="anchored" data-anchor-id="introduction">Introduction</h2>
-<p>We define a polygon <span class="math inline">\(\mathcal{P}\)</span> as an ordered list of points <span class="math inline">\(\{p_i, i \in \llbracket 0, \dots, n-1 \rrbracket\}\)</span>, on which edges $e For the rest of the notations below, all indices are modulo <span class="math inline">\(n\)</span>, meaning that <span class="math inline">\(p_n\)</span> is <span class="math inline">\(p_0\)</span>. We define edges as <span class="math inline">\(e_i = (p_i, p_{i+1})\)</span>. We assume that connecting all edges in that order gives a close, counter-clockwise and valid polygon. Each pair of consecutive points <span class="math inline">\((p_i, p_{i+1})\)</span> defines a directed line <span class="math inline">\(l_i\)</span>. Its direction <span class="math inline">\(d_i\)</span> is from <span class="math inline">\(p_i\)</span> to <span class="math inline">\(p_{i+1}\)</span>. This also means that <span class="math inline">\(p_i\)</span> is defined by the intersection of <span class="math inline">\(l_{i-1}\)</span> and <span class="math inline">\(l_i\)</span>. The normal of each line <span class="math inline">\(l_i\)</span> is called <span class="math inline">\(n_i\)</span> and we assume that it points “outwards” meaning that the angle from <span class="math inline">\(n_i\)</span> to <span class="math inline">\(d_i\)</span> in <span class="math inline">\(\pi/2\)</span> in trigonometrical direction.</p>
-<p>We want to move each line <span class="math inline">\(l_i\)</span> by the distance <span class="math inline">\(h_i\)</span> in a specific direction <span class="math inline">\(m\)</span>, and we want to know how much this increases or decreases the length of the edge <span class="math inline">\(e_i\)</span>. Since the three lines that define an edge can move independently but a tuple <span class="math inline">\((h_{i-1}, h_{i}, h_{i+1})\)</span> gives the same edge (but translated) as <span class="math inline">\((h_{i-1} - h_{i}, 0, h_{i+1} - h_{i})\)</span>, we actually care about the differences <span class="math inline">\(\Delta h_i =  h_i - h_{i-1}\)</span> and <span class="math inline">\(\Delta h_{i+1} = h_{i+1} - h_i\)</span>. Therefore, we want to find a function <span class="math inline">\(s(\Delta h_i, \Delta h_{i+1})\)</span> which defines the length (size) of the edge <span class="math inline">\(e_i\)</span> depending on the shifts.</p>
-<section id="moving-edges" class="level3">
-<h3 class="anchored" data-anchor-id="moving-edges">Moving edges</h3>
-<p>Let’s call <span class="math inline">\(\alpha_{i}\)</span> the angle from <span class="math inline">\(n_i\)</span> to <span class="math inline">\(n_{i+1}\)</span>, and <span class="math inline">\(\beta_{i}\)</span> the angle from <span class="math inline">\(m\)</span> to <span class="math inline">\(n_i\)</span>. Let’s call <span class="math inline">\(d^{+}_{i}\)</span> the impact of <span class="math inline">\(\Delta h_{i+1}\)</span> on <span class="math inline">\(l_i\)</span> and <span class="math inline">\(d^{-}_{i}\)</span> the impact of <span class="math inline">\(\Delta h_{i}\)</span> on <span class="math inline">\(l_i\)</span>. Therefore, we have <span class="math display">\[s(\Delta h_i, \Delta h_{i+1}) = s(0, 0) + d^{+}_{i} + d^{-}_{i}\]</span></p>
-<p>For computing these two values, we can assume that <span class="math inline">\(h_{i+1} = 0\)</span> and <span class="math inline">\(h_{i-1} = 0\)</span> respectively and therefore the deltas are only held by <span class="math inline">\(h_{i}\)</span>. Therefore, the shift in the direction of <span class="math inline">\(n_i\)</span> for <span class="math inline">\(d^{+}_{i}\)</span> is equal to <span class="math display">\[h^{+}_{i} = \cos(\beta_i) \Delta h_{i+1}\]</span> and same for <span class="math display">\[h^{-}_{i}= \cos(\beta_i) \Delta h_{i}\]</span> These values are signed, because the edge can grow or shrink. More precisely, <span class="math inline">\(d^{+}_{i}\)</span> is defined as the distance between the initial position of <span class="math inline">\(p_{i+1}\)</span> and the projection of the shifted <span class="math inline">\(p_{i+1}\)</span> on the initial line before it was shifted. We have different situations:</p>
-<ul>
-<li>If <span class="math inline">\(0 &lt; \alpha_{i-1} &lt; \frac{\pi}{2}\)</span>, <span class="math inline">\(\tan(\pi - \alpha_{i-1}) = -\frac{h^{-}_{i}}{d^{-}_{i}}\)</span> so <span class="math inline">\(d^{-}_{i} = -\frac{h^{-}_{i}}{\tan(\pi - \alpha_{i-1})} = \frac{h^{-}_{i}}{\tan(\alpha_{i-1})}\)</span>. It is negative because it shrinks if <span class="math inline">\(h^{-}_{i} &gt; 0\)</span>.</li>
-<li>Many other cases…</li>
-</ul>
-</section>
-<section id="validity-of-polygons" class="level3">
-<h3 class="anchored" data-anchor-id="validity-of-polygons">Validity of polygons</h3>
-<p>For a given set of <span class="math inline">\(\{h_{i} \;\forall i \in \llbracket 0, \dots, n-1 \rrbracket\}\)</span> the polygon is valid if and only if <span class="math display">\[\forall i \in \llbracket 0, \dots, n-1 \rrbracket, s(\Delta h_i, \Delta h_{i+1}) \geq 0\]</span></p>
-<p>This will give us a system of <span class="math inline">\(n\)</span> equations of the form <span class="math display">\[\lambda_i h_{i-1} + \mu_i h_{i} + \nu_i h_{i+1} \geq \omega_i\]</span> where we have <span class="math inline">\(n\)</span> variables which are the <span class="math inline">\(h_i\)</span> values.</p>
-</section>
-<section id="solutions-of-interest" class="level3">
-<h3 class="anchored" data-anchor-id="solutions-of-interest">Solutions of interest</h3>
-<p>This system of equations will have an infinite amount of solutions. We know this because setting all the <span class="math inline">\(h_i\)</span> to the same constant is equivalent to shifting the whole polygon and is therefore a solution. This also means that we can set <span class="math inline">\(h_{0} = H\)</span> and we know that there will be a solution to the subsequent system of equations even if we have only <span class="math inline">\(n-1\)</span> variables left</p>
-<p>However, these will still likely be an infinite amount of solutions, so we need to define which are the solutions we care about. In general, our goal for the polygons is to first minimize the number of lines that need to be moved, and then minimize the shift that is applied to each line. Moreover, we want that the impact of moving <span class="math inline">\(l_0\)</span> on <span class="math inline">\(l_i\)</span> decreases with the number of lines between <span class="math inline">\(l_0\)</span> and <span class="math inline">\(l_i\)</span>.</p>
 
 
-</section>
 </section>
 </section>
 
