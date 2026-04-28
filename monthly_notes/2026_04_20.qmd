@@ -12,6 +12,8 @@ meeting: [Bruno Vallet, Ravi Peters, François Becirspahic, Florent Geniet, Emma
 
 ### GIFs that could not be included in the slides
 
+#### Illustrations of the polygon deformation algorithm
+
 :::: {#fig-illustrations-deformation layout="[[1,1]]"}
 
 ![](../images/results-2026_04_20/Polygon_deformation/circle.gif){group="illustrations-deformation"}
@@ -38,6 +40,8 @@ More complex illustrations of the polygon deformation algorithm.
 
 Illustrations of self-intersections with the polygon deformation algorithm.
 :::
+
+#### Illustrations of the deformation with the energy metric
 
 :::: {#fig-illustrations-matching-points layout="[[1,1]]"}
 
