@@ -20,7 +20,7 @@
     // yaxis: (ticks: (-1, 0, 1), subticks: none),
 
     lq.plot(x-axis-values, y-axis-values-ground, mark: none, label: [Ground], stroke: stroke),
-    lq.plot(x-axis-values, y-axis-values-other, mark: none, label: [Other clases], stroke: stroke),
+    lq.plot(x-axis-values, y-axis-values-other, mark: none, label: [Other classes], stroke: stroke),
   )
 }
 
