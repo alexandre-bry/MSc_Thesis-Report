@@ -1,0 +1,1040 @@
+Li2022:
+  type: article
+  title: A Recursive Hull and Signal-Based Building Footprint Generation from Airborne LiDAR Data
+  author:
+  - Li, Xiao
+  - Qiu, Fang
+  - Shi, Fan
+  - Tang, Yunwei
+  date: 2022-11
+  page-range: '5892'
+  serial-number:
+    doi: 10.3390/rs14225892
+    issn: 2072-4292
+  parent:
+    type: periodical
+    title: Remote Sensing
+    publisher: MDPI AG
+    issue: 22
+    volume: 14
+Zhang2006:
+  type: article
+  title: Automatic Construction of Building Footprints From Airborne LIDAR Data
+  author:
+  - Zhang, K.
+  - Yan, J.
+  - Chen, S.-C.
+  date: 2006-09
+  page-range: 2523-2533
+  serial-number:
+    doi: 10.1109/tgrs.2006.874137
+    issn: 0196-2892
+  parent:
+    type: periodical
+    title: IEEE Transactions on Geoscience and Remote Sensing
+    publisher: Institute of Electrical, Electronics Engineers (IEEE)
+    issue: 9
+    volume: 44
+Chajaei2025:
+  type: article
+  title: 'LOD1 3D city model from LiDAR: The impact of segmentation accuracy on quality of urban 3D modeling and morphology extraction'
+  author:
+  - Chajaei, Fatemeh
+  - Bagheri, Hossein
+  date: 2025-04
+  page-range: '101534'
+  serial-number:
+    doi: 10.1016/j.rsase.2025.101534
+    issn: 2352-9385
+  parent:
+    type: periodical
+    title: 'Remote Sensing Applications: Society and Environment'
+    publisher: Elsevier BV
+    volume: 38
+Karsli2024:
+  type: article
+  title: Automatic building footprint extraction from photogrammetric and LiDAR point clouds using a novel improved-Octree approach
+  author:
+  - Karsli, Buray
+  - Yilmazturk, Ferruh
+  - Bahadir, Murat
+  - Karsli, Fevzi
+  - Ozdemir, Emirhan
+  date: 2024-04
+  page-range: '108281'
+  serial-number:
+    doi: 10.1016/j.jobe.2023.108281
+    issn: 2352-7102
+  parent:
+    type: periodical
+    title: Journal of Building Engineering
+    publisher: Elsevier BV
+    volume: 82
+Jifroudi2022:
+  type: article
+  title: A new approach to derive buildings footprint from light detection and ranging data using rule-based learning techniques and decision tree
+  author:
+  - Jifroudi, Hamidreza Maskani
+  - Mansor, Shattri B.
+  - Pradhan, Biswajeet
+  - Halin, Alfian Abdul
+  - Ahmad, Noordin
+  - Abdullah, Ahmad Fikri Bin
+  date: 2022-03
+  page-range: '110781'
+  serial-number:
+    doi: 10.1016/j.measurement.2022.110781
+    issn: 0263-2241
+  parent:
+    type: periodical
+    title: Measurement
+    publisher: Elsevier BV
+    volume: 192
+Haithcoat:
+  type: article
+  title: Building footprint extraction and 3-D reconstruction from LIDAR data
+  author:
+  - Haithcoat, T.L.
+  - Song, W.
+  - Hipple, J.D.
+  page-range: 74-78
+  serial-number:
+    doi: 10.1109/dfua.2001.985730
+  parent:
+    type: proceedings
+    title: IEEE/ISPRS Joint Workshop on Remote Sensing and Data Fusion over Urban Areas (Cat. No.01EX482)
+    publisher: IEEE
+    parent:
+      type: proceedings
+      title: DFUA-01
+Sampath2007:
+  type: article
+  title: Building Boundary Tracing and Regularization from Airborne Lidar Point Clouds
+  author:
+  - Sampath, Aparajithan
+  - Shan, Jie
+  date: 2007-07
+  page-range: 805-812
+  serial-number:
+    doi: 10.14358/pers.73.7.805
+    issn: 0099-1112
+  parent:
+    type: periodical
+    title: Photogrammetric Engineering &amp; Remote Sensing
+    publisher: American Society for Photogrammetry, Remote Sensing
+    issue: 7
+    volume: 73
+Li2025:
+  type: article
+  title: Primitive-Based Building Model Reconstruction from Point Clouds
+  author: Li, Zhixin
+  date: 2025
+  serial-number:
+    doi: 10.25394/PGS.28832294.V1
+  parent:
+    type: periodical
+    publisher: Purdue University Graduate School
+Awrangjeb2016:
+  type: article
+  title: Using point cloud data to identify, trace, and regularize the outlines of buildings
+  author: Awrangjeb, M.
+  date: 2016-01
+  page-range: 551-579
+  serial-number:
+    doi: 10.1080/01431161.2015.1131868
+    issn: 1366-5901
+  parent:
+    type: periodical
+    title: International Journal of Remote Sensing
+    publisher: Informa UK Limited
+    issue: 3
+    volume: 37
+Widyaningrum2019:
+  type: article
+  title: Automatic Building Outline Extraction from ALS Point Clouds by Ordered Points Aided Hough Transform
+  author:
+  - Widyaningrum, Elyta
+  - Gorte, Ben
+  - Lindenbergh, Roderik
+  date: 2019-07
+  page-range: '1727'
+  serial-number:
+    doi: 10.3390/rs11141727
+    issn: 2072-4292
+  parent:
+    type: periodical
+    title: Remote Sensing
+    publisher: MDPI AG
+    issue: 14
+    volume: 11
+Widyaningrum2020:
+  type: article
+  title: Building outline extraction from ALS point clouds using medial axis transform descriptors
+  author:
+  - Widyaningrum, Elyta
+  - Peters, Ravi Y.
+  - Lindenbergh, Roderik C.
+  date: 2020-10
+  page-range: '107447'
+  serial-number:
+    doi: 10.1016/j.patcog.2020.107447
+    issn: 0031-3203
+  parent:
+    type: periodical
+    title: Pattern Recognition
+    publisher: Elsevier BV
+    volume: 106
+Dorninger2008:
+  type: article
+  title: A Comprehensive Automated 3D Approach for Building Extraction, Reconstruction, and Regularization from Airborne Laser Scanning Point Clouds
+  author:
+  - Dorninger, Peter
+  - Pfeifer, Norbert
+  date: 2008-11
+  page-range: 7323-7343
+  serial-number:
+    doi: 10.3390/s8117323
+    issn: 1424-8220
+  parent:
+    type: periodical
+    title: Sensors
+    publisher: MDPI AG
+    issue: 11
+    volume: 8
+Kong2022:
+  type: article
+  title: Automatic building outline extraction from ALS point cloud data using generative adversarial network
+  author:
+  - Kong, Gefei
+  - Fan, Hongchao
+  - Lobaccaro, Gabriele
+  date: 2022-08
+  page-range: 15964-15981
+  serial-number:
+    doi: 10.1080/10106049.2022.2102246
+    issn: 1752-0762
+  parent:
+    type: periodical
+    title: Geocarto International
+    publisher: Informa UK Limited
+    issue: 27
+    volume: 37
+Albers2016:
+  type: article
+  title: Automatic Extraction and Regularization of Building Outlines from Airborne Lidar Point Clouds
+  author:
+  - Albers, Bastian
+  - Kada, Martin
+  - Wichmann, Andreas
+  date: 2016-06
+  page-range: 555-560
+  serial-number:
+    doi: 10.5194/isprs-archives-xli-b3-555-2016
+    issn: 2194-9034
+  parent:
+    type: periodical
+    title: The International Archives of the Photogrammetry, Remote Sensing and Spatial Information Sciences
+    publisher: Copernicus GmbH
+    volume: XLI-B3
+Frommholz2017:
+  type: article
+  title: Reconstructing Buildings with Discontinuities and Roof Overhangs from Oblique Aerial Imagery
+  author:
+  - Frommholz, D.
+  - Linkiewicz, M.
+  - Meissner, H.
+  - Dahlke, D.
+  date: 2017-05
+  page-range: 465-471
+  serial-number:
+    doi: 10.5194/isprs-archives-xlii-1-w1-465-2017
+    issn: 2194-9034
+  parent:
+    type: periodical
+    title: The International Archives of the Photogrammetry, Remote Sensing and Spatial Information Sciences
+    publisher: Copernicus GmbH
+    volume: XLII-1/W1
+Goebbels2023:
+  type: article
+  title: Automatic Reconstruction of Roof Overhangs for 3D City Models
+  author:
+  - Goebbels, Steffen
+  - Pohle-Fröhlich, Regina
+  date: 2023
+  page-range: 145-152
+  serial-number:
+    doi: 10.5220/0011604200003417
+  parent:
+    type: proceedings
+    title: Proceedings of the 18th International Joint Conference on Computer Vision, Imaging and Computer Graphics Theory and Applications
+    publisher: SCITEPRESS - Science, Technology Publications
+Wysocki2022:
+  type: article
+  title: Refinement of semantic 3D building models by reconstructing underpasses from MLS point clouds
+  author:
+  - Wysocki, Olaf
+  - Hoegner, Ludwig
+  - Stilla, Uwe
+  date: 2022-07
+  page-range: '102841'
+  serial-number:
+    doi: 10.1016/j.jag.2022.102841
+    issn: 1569-8432
+  parent:
+    type: periodical
+    title: International Journal of Applied Earth Observation and Geoinformation
+    publisher: Elsevier BV
+    volume: 111
+Wang2016:
+  type: article
+  title: Three-Dimensional Reconstruction of Building Roofs from Airborne LiDAR Data Based on a Layer Connection and Smoothness Strategy
+  author:
+  - Wang, Yongjun
+  - Xu, Hao
+  - Cheng, Liang
+  - Li, Manchun
+  - Wang, Yajun
+  - Xia, Nan
+  - Chen, Yanming
+  - Tang, Yong
+  date: 2016-05
+  page-range: '415'
+  serial-number:
+    doi: 10.3390/rs8050415
+    issn: 2072-4292
+  parent:
+    type: periodical
+    title: Remote Sensing
+    publisher: MDPI AG
+    issue: 5
+    volume: 8
+Panday2012:
+  type: article
+  title: Fitting of Parametric Building Models to Oblique Aerial Images
+  author:
+  - Panday, U. S.
+  - Gerke, M.
+  date: 2012-09
+  page-range: 233-238
+  serial-number:
+    doi: 10.5194/isprsarchives-xxxviii-4-w19-233-2011
+    issn: 2194-9034
+  parent:
+    type: periodical
+    title: The International Archives of the Photogrammetry, Remote Sensing and Spatial Information Sciences
+    publisher: Copernicus GmbH
+    volume: XXXVIII-4/W19
+JarzabekRychard2017:
+  type: article
+  title: Geometric Refinement of ALS-Data Derived Building Models Using Monoscopic Aerial Images
+  author:
+  - Jarząbek-Rychard, Małgorzata
+  - Maas, Hans-Gerd
+  date: 2017-03
+  page-range: '282'
+  serial-number:
+    doi: 10.3390/rs9030282
+    issn: 2072-4292
+  parent:
+    type: periodical
+    title: Remote Sensing
+    publisher: MDPI AG
+    issue: 3
+    volume: 9
+Zhang2020:
+  type: article
+  title: Building Footprint and Height Information Extraction from Airborne LiDAR and Aerial Imagery
+  author:
+  - Zhang, Su
+  - Han, Fei
+  - Bogus, Susan M.
+  date: 2020-11
+  page-range: 326-335
+  serial-number:
+    doi: 10.1061/9780784482865.035
+  parent:
+    type: proceedings
+    title: Construction Research Congress 2020
+    publisher: American Society of Civil Engineers
+Wang2006:
+  type: article
+  title: A Bayesian Approach to Building Footprint Extraction from Aerial LIDAR Data
+  author:
+  - Wang, Oliver
+  - Lodha, Suresh K.
+  - Helmbold, David P.
+  date: 2006-06
+  page-range: 192-199
+  serial-number:
+    doi: 10.1109/3dpvt.2006.9
+  parent:
+    type: proceedings
+    title: Third International Symposium on 3D Data Processing, Visualization, and Transmission (3DPVT’06)
+    publisher: IEEE
+hackel2017isprs:
+  type: article
+  title: '{SEMANTIC3D.NET: A new large-scale point cloud classification benchmark}'
+  author:
+  - Hackel, Timo
+  - Savinov, N.
+  - Ladicky, L.
+  - Wegner, Jan D.
+  - Schindler, K.
+  - Pollefeys, M.
+  date: 2017
+  page-range: 91-98
+  url: https://semantic3d.ethz.ch/index-2.html
+  parent:
+    type: proceedings
+    title: ISPRS Annals of the Photogrammetry, Remote Sensing and Spatial Information Sciences
+    volume: IV-1-W1
+Liu2025:
+  type: article
+  title: Building Outline Extraction via Topology-Aware Loop Parsing and Parallel Constraint from Airborne LiDAR
+  author:
+  - Liu, Ke
+  - Ma, Hongchao
+  - Li, Li
+  - Huang, Shixin
+  - Zhang, Liang
+  - Liang, Xiaoli
+  - Cai, Zhan
+  date: 2025-10
+  page-range: '3498'
+  serial-number:
+    doi: 10.3390/rs17203498
+    issn: 2072-4292
+  parent:
+    type: periodical
+    title: Remote Sensing
+    publisher: MDPI AG
+    issue: 20
+    volume: 17
+Kong2023:
+  type: article
+  title: 'PH-shape: an adaptive persistent homology-based approach for building outline extraction from ALS point cloud data'
+  author:
+  - Kong, Gefei
+  - Fan, Hongchao
+  date: 2023-12
+  page-range: 1107-1117
+  serial-number:
+    doi: 10.1080/10095020.2023.2280569
+    issn: 1993-5153
+  parent:
+    type: periodical
+    title: Geo-spatial Information Science
+    publisher: Informa UK Limited
+    issue: 4
+    volume: 27
+Hu2021:
+  type: article
+  title: Reconstruction of Complex Roof Semantic Structures from 3D Point Clouds Using Local Convexity and Consistency
+  author:
+  - Hu, Pingbo
+  - Miao, Yiming
+  - Hou, Miaole
+  date: 2021-05
+  page-range: '1946'
+  serial-number:
+    doi: 10.3390/rs13101946
+    issn: 2072-4292
+  parent:
+    type: periodical
+    title: Remote Sensing
+    publisher: MDPI AG
+    issue: 10
+    volume: 13
+Wu2023:
+  type: article
+  title: 'Point Transformer V3: Simpler, Faster, Stronger'
+  author:
+  - Wu, Xiaoyang
+  - Jiang, Li
+  - Wang, Peng-Shuai
+  - Liu, Zhijian
+  - Liu, Xihui
+  - Qiao, Yu
+  - Ouyang, Wanli
+  - He, Tong
+  - Zhao, Hengshuang
+  date: 2023
+  serial-number:
+    doi: 10.48550/ARXIV.2312.10035
+  parent:
+    type: periodical
+    publisher: arXiv
+Dahlke2015:
+  type: article
+  title: 'True 3D building reconstruction: façade, roof and overhang modelling from oblique and vertical aerial imagery'
+  author:
+  - Dahlke, Dennis
+  - Linkiewicz, Magdalena
+  - Meissner, Henry
+  date: 2015-08
+  page-range: 314-329
+  serial-number:
+    doi: 10.1080/19479832.2015.1071287
+    issn: 1947-9824
+  parent:
+    type: periodical
+    title: International Journal of Image and Data Fusion
+    publisher: Informa UK Limited
+    issue: 4
+    volume: 6
+Koelle2021:
+  type: article
+  title: The Hessigheim 3D (H3D) benchmark on semantic segmentation of high-resolution 3D point clouds and textured meshes from UAV LiDAR and Multi-View-Stereo
+  author:
+  - Kölle, Michael
+  - Laupheimer, Dominik
+  - Schmohl, Stefan
+  - Haala, Norbert
+  - Rottensteiner, Franz
+  - Wegner, Jan Dirk
+  - Ledoux, Hugo
+  date: 2021-10
+  page-range: '100001'
+  serial-number:
+    doi: 10.1016/j.ophoto.2021.100001
+    issn: 2667-3932
+  parent:
+    type: periodical
+    title: ISPRS Open Journal of Photogrammetry and Remote Sensing
+    publisher: Elsevier BV
+    volume: 1
+Niemeyer2014:
+  type: article
+  title: Contextual classification of lidar data and building object detection in urban areas
+  author:
+  - Niemeyer, Joachim
+  - Rottensteiner, Franz
+  - Soergel, Uwe
+  date: 2014-01
+  page-range: 152-165
+  serial-number:
+    doi: 10.1016/j.isprsjprs.2013.11.001
+    issn: 0924-2716
+  parent:
+    type: periodical
+    title: ISPRS Journal of Photogrammetry and Remote Sensing
+    publisher: Elsevier BV
+    volume: 87
+Zachar2023:
+  type: article
+  title: CENAGIS-ALS Benchmark - New Proposal for Dense ALS Benchmark Based on the Review of Datasets and Benchmarks for 3D Point Cloud Segmentation
+  author:
+  - Zachar, P.
+  - Bakuła, K.
+  - Ostrowski, W.
+  date: 2023-10
+  page-range: 227-234
+  serial-number:
+    doi: 10.5194/isprs-archives-xlviii-1-w3-2023-227-2023
+    issn: 2194-9034
+  parent:
+    type: periodical
+    title: The International Archives of the Photogrammetry, Remote Sensing and Spatial Information Sciences
+    publisher: Copernicus GmbH
+    volume: XLVIII-1/W3-2023
+Biasutti2019:
+  type: article
+  title: 'RIU-Net: Embarrassingly simple semantic segmentation of 3D LiDAR point cloud'
+  author:
+  - Biasutti, Pierre
+  - Bugeau, Aurélie
+  - Aujol, Jean-François
+  - Brédif, Mathieu
+  date: 2019
+  serial-number:
+    doi: 10.48550/ARXIV.1905.08748
+  parent:
+    type: periodical
+    publisher: arXiv
+Thomas2019:
+  type: article
+  title: 'KPConv: Flexible and Deformable Convolution for Point Clouds'
+  author:
+  - Thomas, Hugues
+  - Qi, Charles R.
+  - Deschaud, Jean-Emmanuel
+  - Marcotegui, Beatriz
+  - Goulette, François
+  - Guibas, Leonidas J.
+  date: 2019
+  serial-number:
+    doi: 10.48550/ARXIV.1904.08889
+  parent:
+    type: periodical
+    publisher: arXiv
+Choy2019:
+  type: article
+  title: '4D Spatio-Temporal ConvNets: Minkowski Convolutional Neural Networks'
+  author:
+  - Choy, Christopher
+  - Gwak, JunYoung
+  - Savarese, Silvio
+  date: 2019-06
+  page-range: 3070-3079
+  serial-number:
+    doi: 10.1109/cvpr.2019.00319
+  parent:
+    type: proceedings
+    title: 2019 IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR)
+    publisher: IEEE
+Li2020:
+  type: article
+  title: A geometry-attentional network for ALS point cloud classification
+  author:
+  - Li, Wuzhao
+  - Wang, Fu-Dong
+  - Xia, Gui-Song
+  date: 2020-06
+  page-range: 26-40
+  serial-number:
+    doi: 10.1016/j.isprsjprs.2020.03.016
+    issn: 0924-2716
+  parent:
+    type: periodical
+    title: ISPRS Journal of Photogrammetry and Remote Sensing
+    publisher: Elsevier BV
+    volume: 164
+Zhao2020:
+  type: article
+  title: Point Transformer
+  author:
+  - Zhao, Hengshuang
+  - Jiang, Li
+  - Jia, Jiaya
+  - Torr, Philip
+  - Koltun, Vladlen
+  date: 2020
+  serial-number:
+    doi: 10.48550/ARXIV.2012.09164
+  parent:
+    type: periodical
+    publisher: arXiv
+Deng2022:
+  type: article
+  title: 'PointVector: A Vector Representation In Point Cloud Analysis'
+  author:
+  - Deng, Xin
+  - Zhang, WenYu
+  - Ding, Qing
+  - Zhang, XinMing
+  date: 2022
+  serial-number:
+    doi: 10.48550/ARXIV.2205.10528
+  parent:
+    type: periodical
+    publisher: arXiv
+Guo2019:
+  type: article
+  title: 'Deep Learning for 3D Point Clouds: A Survey'
+  author:
+  - Guo, Yulan
+  - Wang, Hanyun
+  - Hu, Qingyong
+  - Liu, Hao
+  - Liu, Li
+  - Bennamoun, Mohammed
+  date: 2019
+  serial-number:
+    doi: 10.48550/ARXIV.1912.12033
+  parent:
+    type: periodical
+    publisher: arXiv
+Varney2020:
+  type: article
+  title: 'DALES: A Large-scale Aerial LiDAR Data Set for Semantic Segmentation'
+  author:
+  - Varney, Nina
+  - Asari, Vijayan K.
+  - Graehling, Quinn
+  date: 2020
+  serial-number:
+    doi: 10.48550/ARXIV.2004.11985
+  parent:
+    type: periodical
+    publisher: arXiv
+Hu2020:
+  type: article
+  title: 'Towards Semantic Segmentation of Urban-Scale 3D Point Clouds: A Dataset, Benchmarks and Challenges'
+  author:
+  - Hu, Qingyong
+  - Yang, Bo
+  - Khalid, Sheikh
+  - Xiao, Wen
+  - Trigoni, Niki
+  - Markham, Andrew
+  date: 2020
+  serial-number:
+    doi: 10.48550/ARXIV.2009.03137
+  parent:
+    type: periodical
+    publisher: arXiv
+Zhang2016:
+  type: article
+  title: A Multilevel Point-Cluster-Based Discriminative Feature for ALS Point Cloud Classification
+  author:
+  - Zhang, Zhenxin
+  - Zhang, Liqiang
+  - Tong, Xiaohua
+  - Mathiopoulos, P. Takis
+  - Guo, Bo
+  - Huang, Xianfeng
+  - Wang, Zhen
+  - Wang, Yuebin
+  date: 2016-06
+  page-range: 3309-3321
+  serial-number:
+    doi: 10.1109/tgrs.2016.2514508
+    issn: 1558-0644
+  parent:
+    type: periodical
+    title: IEEE Transactions on Geoscience and Remote Sensing
+    publisher: Institute of Electrical, Electronics Engineers (IEEE)
+    issue: 6
+    volume: 54
+Dai2025:
+  type: article
+  title: Deep projective prediction of building facade footprints from ALS point cloud
+  author:
+  - Dai, Hengming
+  - Xu, Jiabo
+  - Hu, Xiangyun
+  - Shu, Zhen
+  - Ma, Wei
+  - Zhao, Zhifang
+  date: 2025-05
+  page-range: '104448'
+  serial-number:
+    doi: 10.1016/j.jag.2025.104448
+    issn: 1569-8432
+  parent:
+    type: periodical
+    title: International Journal of Applied Earth Observation and Geoinformation
+    publisher: Elsevier BV
+    volume: 139
+Li2024:
+  type: article
+  title: Class-imbalanced semi-supervised learning for large-scale point cloud semantic segmentation via decoupling optimization
+  author:
+  - Li, Mengtian
+  - Lin, Shaohui
+  - Wang, Zihan
+  - Shen, Yunhang
+  - Zhang, Baochang
+  - Ma, Lizhuang
+  date: 2024-12
+  page-range: '110701'
+  serial-number:
+    doi: 10.1016/j.patcog.2024.110701
+    issn: 0031-3203
+  parent:
+    type: periodical
+    title: Pattern Recognition
+    publisher: Elsevier BV
+    volume: 156
+Zou2023:
+  type: article
+  title: Analysis of the Long Tail Problem in Semantic Segmentation with 3D Point Clouds
+  author: Zou, Yunfan
+  date: 2023
+  serial-number:
+    doi: 10.3929/ETHZ-B-000606777
+  parent:
+    type: periodical
+    publisher: ETH Zurich
+Pan2025:
+  type: article
+  title: Point Cloud Semantic Segmentation with Sparse and Inhomogeneous Annotations
+  author:
+  - Pan, Zhiyi
+  - Zhang, Nan
+  - Gao, Wei
+  - Liu, Shan
+  - Li, Ge
+  date: 2025-04
+  page-range: 6354-6362
+  serial-number:
+    doi: 10.1609/aaai.v39i6.32680
+    issn: 2159-5399
+  parent:
+    type: periodical
+    title: Proceedings of the AAAI Conference on Artificial Intelligence
+    publisher: Association for the Advancement of Artificial Intelligence (AAAI)
+    issue: 6
+    volume: 39
+Merizette2025:
+  type: article
+  title: '3DSES: an indoor Lidar point cloud segmentation dataset with real and pseudo-labels from a 3D model'
+  author:
+  - Mérizette, Maxime
+  - Audebert, Nicolas
+  - Kervella, Pierre
+  - Verdun, Jérôme
+  date: 2025
+  serial-number:
+    doi: 10.48550/ARXIV.2501.17534
+  parent:
+    type: periodical
+    publisher: arXiv
+Girard2020:
+  type: article
+  title: Polygonal Building Segmentation by Frame Field Learning
+  author:
+  - Girard, Nicolas
+  - Smirnov, Dmitriy
+  - Solomon, Justin
+  - Tarabalka, Yuliya
+  date: 2020
+  serial-number:
+    doi: 10.48550/ARXIV.2004.14875
+  parent:
+    type: periodical
+    publisher: arXiv
+Wierzbicki2021:
+  type: article
+  title: Polish Cadastre Modernization with Remotely Extracted Buildings from High-Resolution Aerial Orthoimagery and Airborne LiDAR
+  author:
+  - Wierzbicki, Damian
+  - Matuk, Olga
+  - Bielecka, Elzbieta
+  date: 2021-02
+  page-range: '611'
+  serial-number:
+    doi: 10.3390/rs13040611
+    issn: 2072-4292
+  parent:
+    type: periodical
+    title: Remote Sensing
+    publisher: MDPI AG
+    issue: 4
+    volume: 13
+Saadaoui2025:
+  type: article
+  title: 'Advancing Urban Roof Segmentation: Transformative Deep Learning Models from CNNs to Transformers for Scalable and Accurate Urban Imaging Solutions—A Case Study in Ben Guerir City, Morocco'
+  author:
+  - Saadaoui, Hachem
+  - Farah, Saad
+  - Lechgar, Hatim
+  - Ghennioui, Abdellatif
+  - Rhinane, Hassan
+  date: 2025-10
+  page-range: '452'
+  serial-number:
+    doi: 10.3390/technologies13100452
+    issn: 2227-7080
+  parent:
+    type: periodical
+    title: Technologies
+    publisher: MDPI AG
+    issue: 10
+    volume: 13
+ignAppelCommuns:
+  type: web
+  title: '{U}n appel à communs pour la conception du {J}umeau numérique de la {F}rance et de ses territoires'
+  author: IGN
+  date: 2024-10
+  url:
+    value: https://www.ign.fr/appel-communs-jumeau-numerique-france-et-territoires
+    date: 2025-12-30
+  note: '[Accessed 30-12-2025]'
+ignRechercheDefi:
+  type: web
+  title: '{L}a recherche au défi du jumeau numérique de la {F}rance'
+  author: IGN
+  date: 2024-03
+  url:
+    value: https://www.ign.fr/mag/la-recherche-au-defi-du-jumeau-numerique-de-la-france
+    date: 2025-12-30
+  note: '[Accessed 30-12-2025]'
+Peters22:
+  type: article
+  title: Automated {3D} reconstruction of {LoD2} and {LoD1} models for all 10 million buildings of the {Netherlands}
+  author:
+  - Peters, Ravi
+  - Dukai, Balázs
+  - Vitalis, Stelios
+  - van Liempt, Jordi
+  - Stoter, Jantien
+  date: 2022
+  page-range: 165-170
+  serial-number:
+    doi: 10.14358/PERS.21-00032R2
+  parent:
+    type: periodical
+    title: Photogrammetric Engineering and Remote Sensing
+    publisher: American Society for Photogrammetry, Remote Sensing
+    issue: 3
+    volume: 88
+Xu2020:
+  type: article
+  title: 'SqueezeSegV3: Spatially-Adaptive Convolution for Efficient Point-Cloud Segmentation'
+  author:
+  - Xu, Chenfeng
+  - Wu, Bichen
+  - Wang, Zining
+  - Zhan, Wei
+  - Vajda, Peter
+  - Keutzer, Kurt
+  - Tomizuka, Masayoshi
+  date: 2020
+  serial-number:
+    doi: 10.48550/ARXIV.2004.01803
+  parent:
+    type: periodical
+    publisher: arXiv
+Cramer2010:
+  type: article
+  title: The DGPF-Test on Digital Airborne Camera Evaluation Overview and Test Design
+  author: Cramer, Michael
+  date: 2010-05
+  page-range: 73-82
+  serial-number:
+    doi: 10.1127/1432-8364/2010/0041
+    issn: 1432-8364
+  parent:
+    type: periodical
+    title: Photogrammetrie - Fernerkundung - Geoinformation
+    publisher: Schweizerbart
+    issue: 2
+    volume: 2010
+Zolanvari2019:
+  type: article
+  title: 'DublinCity: Annotated LiDAR Point Cloud and its Applications'
+  author:
+  - Zolanvari, Iman
+  - Ruano, Susana
+  - Rana, Aakanksha
+  - Cummins, Alan
+  - Smolic, Aljosa
+  - Da Silva, Rogerio
+  - Rahbar, Morteza
+  date: 2019-09
+  parent:
+    type: proceedings
+Ye2020:
+  type: article
+  title: 'LASDU: A Large-Scale Aerial LiDAR Dataset for Semantic Labeling in Dense Urban Areas'
+  author:
+  - Ye, Zhen
+  - Xu, Yusheng
+  - Huang, Rong
+  - Tong, Xiaohua
+  - Li, Xin
+  - Liu, Xiangfeng
+  - Luan, Kuifeng
+  - Hoegner, Ludwig
+  - Stilla, Uwe
+  date: 2020-07
+  page-range: '450'
+  serial-number:
+    doi: 10.3390/ijgi9070450
+    issn: 2220-9964
+  parent:
+    type: periodical
+    title: ISPRS International Journal of Geo-Information
+    publisher: MDPI AG
+    issue: 7
+    volume: 9
+Li2020a:
+  type: article
+  title: 'Campus3D: A Photogrammetry Point Cloud Benchmark for Hierarchical Understanding of Outdoor Scene'
+  author:
+  - Li, Xinke
+  - Li, Chongshou
+  - Tong, Zekun
+  - Lim, Andrew
+  - Yuan, Junsong
+  - Wu, Yuwei
+  - Tang, Jing
+  - Huang, Raymond
+  date: 2020-10
+  page-range: 238-246
+  serial-number:
+    doi: 10.1145/3394171.3413661
+  parent:
+    type: proceedings
+    title: Proceedings of the 28th ACM International Conference on Multimedia
+    publisher: ACM
+    parent:
+      type: proceedings
+      title: MM ’20
+Vijaywargiya2025:
+  type: article
+  title: 'Thiruvananthapuram Aerial LiDAR Dataset (TALD): A Benchmark for Complex Urban Point Cloud'
+  author:
+  - Vijaywargiya, Jayati
+  - Ramiya, Anandakumar M.
+  date: 2025
+  page-range: 42350-42363
+  serial-number:
+    doi: 10.1109/access.2025.3546628
+    issn: 2169-3536
+  parent:
+    type: periodical
+    title: IEEE Access
+    publisher: Institute of Electrical, Electronics Engineers (IEEE)
+    volume: 13
+Gaydon2024:
+  type: article
+  title: 'FRACTAL: An Ultra-Large-Scale Aerial Lidar Dataset for 3D Semantic Segmentation of Diverse Landscapes'
+  author:
+  - Gaydon, Charles
+  - Daab, Michel
+  - Roche, Floryne
+  date: 2024
+  serial-number:
+    doi: 10.48550/ARXIV.2405.04634
+  parent:
+    type: periodical
+    publisher: arXiv
+Biljecki2016:
+  type: article
+  title: An improved LOD specification for 3D building models
+  author:
+  - Biljecki, Filip
+  - Ledoux, Hugo
+  - Stoter, Jantien
+  date: 2016-09
+  page-range: 25-37
+  serial-number:
+    doi: 10.1016/j.compenvurbsys.2016.04.005
+    issn: 0198-9715
+  parent:
+    type: periodical
+    title: Computers, Environment and Urban Systems
+    publisher: Elsevier BV
+    volume: 59
+Lo2024:
+  type: misc
+  title: 'RoofDiffusion: Constructing Roofs from Severely Corrupted Point Data via Diffusion'
+  author:
+  - Lo, Kyle Shih-Huang
+  - Peters, Jörg
+  - Spellman, Eric
+  date: 2024
+  publisher: arXiv
+  serial-number:
+    doi: 10.48550/ARXIV.2404.09290
+Wu2016:
+  type: article
+  title: Fast and Accurate Plane Segmentation of Airborne LiDAR Point Cloud Using Cross-Line Elements
+  author:
+  - Wu, Teng
+  - Hu, Xiangyun
+  - Ye, Lizhi
+  date: 2016-05
+  page-range: '383'
+  serial-number:
+    doi: 10.3390/rs8050383
+    issn: 2072-4292
+  parent:
+    type: periodical
+    title: Remote Sensing
+    publisher: MDPI AG
+    issue: 5
+    volume: 8
+

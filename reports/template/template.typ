@@ -538,13 +538,27 @@
   heading-numbering: numbly.numbly("Appendix {1:A}", "{1:A}.{2:1}.", "{1:A}.{2:1}.{3:a}.", none, none, none),
   /// @generic-container
   heading-supplement: (none, "Appendix", "Appendix", none, none, none),
+  /// Whether to use the special style for h1 headings
+  special-h1-heading: true,
 ) = {
   // Special style for h1 headings
-  show heading.where(level: 1): it => align(center)[
-    #let num = if it.numbering == none { none } else { numbering(it.numbering, ..counter(heading).at(it.location())) }
-    #block(below: 0.7em)[#num]
-    #block(above: 0em, below: 1em)[#it.body]
-  ]
+  show: all => {
+    if special-h1-heading {
+      all = {
+        show heading.where(level: 1): it => align(center)[
+          #let num = if it.numbering == none { none } else {
+            numbering(it.numbering, ..counter(heading).at(it.location()))
+          }
+          #block(below: 0.7em)[#num]
+          #block(above: 0em, below: 1em)[#it.body]
+        ]
+
+        all
+      }
+    }
+
+    all
+  }
 
   // Common sub-container
   show: generic-container.with(
