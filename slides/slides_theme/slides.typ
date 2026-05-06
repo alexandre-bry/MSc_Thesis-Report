@@ -697,6 +697,10 @@
     }
 
     v(1fr)
+
+    components.progressive-outline(depth: 1, title: none)
+
+    v(1fr)
   }
 
   touying-slide(self: self, config: config, content)

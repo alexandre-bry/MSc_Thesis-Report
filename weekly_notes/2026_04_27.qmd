@@ -2,7 +2,7 @@
 title: "2026/04/27"
 date: 2026-04-27
 tags: [weekly]
-meeting: [Hugo Ledoux]
+meeting: []
 ---
 
 ## Results since previous meeting
@@ -79,6 +79,6 @@ Below are a few illustrations of the results obtained with this method.
 
 ## Discussion
 
+- Meeting did not happen this week, so no discussion.
+
 ## Work until next meeting
-
-

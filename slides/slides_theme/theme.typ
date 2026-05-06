@@ -3,7 +3,7 @@
 // Supports: light/dark variants, multiple color themes, progress bar placement,
 // Moloch-style headers, title page variants, standout slides
 
-#import "@preview/touying:0.6.1": *
+#import "@preview/touying:0.7.3": *
 #import "colors.typ": *
 #import "typography.typ": *
 #import "components.typ": *
