@@ -113,7 +113,7 @@
 == Overview of the methodology
 
 #figure(
-  image("../../diagrams/Overview_of_pipeline-updated.drawio.svg", width: 70%),
+  image("../../diagrams/Overview_of_pipeline-updated.drawio.png", width: 70%),
   caption: [Overview of the pipeline.],
 )
 
@@ -642,10 +642,12 @@ Illustrations can be viewed by following this link: #link("https://alexandre-bry
 
 == Creation of the footprints
 
-- *Sweep each roof edge towards the inside* up to 1.5 metres and select the best scoring position
+- *Sweep each roof edge towards the inside* up to 1.5 metres and select the best scoring position #pause
 - The score has two components:
   + A *proximity term* that counts the number of points close to the edge
   + A *penalty term* that penalizes points that are behind the edge (inside the building)
+
+#pause
 
 #{
   import "../../figures/footprints/footprints-loss.typ": fig-footprints-loss
