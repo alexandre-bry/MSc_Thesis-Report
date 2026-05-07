@@ -1,0 +1,20 @@
+---
+title: "2026/05/11"
+date: 2026-05-11
+tags: [weekly]
+meeting: [Hugo Ledoux, Bruno Vallet]
+---
+
+## Results since previous meeting
+
+TODO
+
+## Material for discussion
+
+## Discussion
+
+- It seems better to do roofprint -> roof -> footprint instead of roofprint -> footprint -> roof, because it is easier to identify the points to use in the footprint once we have the roof.
+  Therefore, I should look into using roofer with my footprints to get roofs that I can use to filter the points I want to use for the footprints.
+  This could also help to actually produce 3D buildings, and I could then use my footprints to produce LoD 2.3 buildings!
+
+## Work until next meeting
