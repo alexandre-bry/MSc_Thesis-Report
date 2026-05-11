@@ -7,9 +7,25 @@ meeting: [Hugo Ledoux, Bruno Vallet]
 
 ## Results since previous meeting
 
-TODO
+- Mainly worked on the presentation and the report
+- Started experimenting on using roofer with my roofprints
 
 ## Material for discussion
+
+### Presentations of my work
+
+We previously discussed about making presentations for other people at IGN, one that would be technical and one that would be more high-level.
+We were thinking of having the non-technical one on June 22nd and the other one before the A3 presentation for TU Delft which is on June 12th.
+
+Also I was contacted by someone internally at IGN to discuss how I use the LiDAR HD dataset in my work. 
+
+It would be great if we could decide on dates for these presentations, keeping in mind that the current deadlines are:
+
+- May 6th for a short presentation for the LASTIG internal seminar (not too much details in it)
+- May 18th for a monthly presentation, but since new people were invited, **should we repurpose it to a general presentation**?
+- June 5th for the MSc thesis report (introduction + preliminary materials + paper + discussion)
+- June 12th for the A3 presentation for TU Delft (technical one)
+- June 26th for the A4 presentation for TU Delft (non-technical one)
 
 ## Discussion
 
