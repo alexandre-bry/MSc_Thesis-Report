@@ -19,18 +19,31 @@ We were thinking of having the non-technical one on June 22nd and the other one 
 
 Also I was contacted by someone internally at IGN to discuss how I use the LiDAR HD dataset in my work. 
 
-It would be great if we could decide on dates for these presentations, keeping in mind that the current deadlines are:
+It would be great if we could decide on dates for these presentations, keeping in mind that the deadlines for May and June are as follows:
 
-- May 6th for a short presentation for the LASTIG internal seminar (not too much details in it)
-- May 18th for a monthly presentation, but since new people were invited, **should we repurpose it to a general presentation**?
-- June 5th for the MSc thesis report (introduction + preliminary materials + paper + discussion)
-- June 12th for the A3 presentation for TU Delft (technical one)
-- June 26th for the A4 presentation for TU Delft (non-technical one)
+- May 6th: a short presentation for the LASTIG internal seminar (not too much details in it)
+- May 18th: a monthly presentation, but since new people were invited, **should we repurpose it to a general presentation**?
+- June 5th: the MSc thesis report (introduction + preliminary materials + paper + discussion)
+- June 12th: the A3 presentation for TU Delft (technical one)
+- June 26th: the A4 presentation for TU Delft (non-technical one)
 
 ## Discussion
 
 - It seems better to do roofprint -> roof -> footprint instead of roofprint -> footprint -> roof, because it is easier to identify the points to use in the footprint once we have the roof.
   Therefore, I should look into using roofer with my footprints to get roofs that I can use to filter the points I want to use for the footprints.
   This could also help to actually produce 3D buildings, and I could then use my footprints to produce LoD 2.3 buildings!
+- It could be useful to have a look at the arguments of roofer for the complexity of the roofs in order to get roofs that are better to filter out the points for the footprints.
+- We should have a discussion during the monthly meeting on May 18th to decide whether a potential technical presentation in June would be useful, and if so, when it should be.
+- We see two main ways to evaluate the algorithm for the footprints:
+  - Create a ground-truth dataset of roofprints (and potentially footprints) and compare these to the results of the algorithm, using metrics such as IoU or Chamfer distance
+  - Generate a synthetic dataset of LoD 2.3 buildings from an internal roof dataset using HELIOS++, and then perform the whole process on this dataset to see if we can get good roofprints and footprints.
+    Roof overhangs could be simulated by moving the roofprints towards the inside of the building by a random amount.
 
 ## Work until next meeting
+
+- [ ] Prepare the presentation for the monthly meeting on May 18th
+- [ ] Look at the two ideas to evaluate the algorithm:
+  - [ ] Ground-truth dataset of roofprints and footprints
+  - [ ] Synthetic dataset of LoD 2.3 buildings
+- [ ] Integrate roofer into the process to filter the points for the footprints
+- [ ] Improve the footprint generation algorithm to handle the whole building at once 
