@@ -1049,10 +1049,10 @@
       tracking: tracking-tight,
     )[#title]
 
-    // Accent line
-    v(spacing-lg)
-    accent-line(width: 48pt, colors: c)
-    v(spacing-lg)
+    // // Accent line
+    // v(spacing-lg)
+    // accent-line(width: 48pt, colors: c)
+    // v(spacing-lg)
 
     // Subtitle
     if subtitle != none {
@@ -1065,10 +1065,9 @@
 
     // Contact info
     if contact.len() > 0 {
-      v(spacing-2xl)
+      v(spacing-lg)
       for item in contact {
         text(fill: c.text-light, size: size-caption, weight: "light")[#item]
-        v(spacing-2xs)
       }
     }
 
