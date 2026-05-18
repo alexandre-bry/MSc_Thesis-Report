@@ -14,7 +14,7 @@
 #show: slides-theme.with(
   config-info(
     title: [From Points to Prints],
-    subtitle: [Monthly Meeting (3)],
+    subtitle: [Monthly Meeting (4)],
     author: [Alexandre Bry],
     date: datetime(day: 18, month: 5, year: 2026),
     institution: [IGN, TU Delft],
