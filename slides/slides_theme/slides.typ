@@ -1065,7 +1065,7 @@
 
     // Contact info
     if contact.len() > 0 {
-      v(spacing-lg)
+      v(spacing-sm)
       for item in contact {
         text(fill: c.text-light, size: size-caption, weight: "light")[#item]
       }

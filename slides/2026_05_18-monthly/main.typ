@@ -294,6 +294,25 @@ This ensures that we *preserve some topology* while keeping a *lot of freedom* f
 
 == General idea
 
+#uncover("1-")[
+  We focus on *edges one by one*, except for overlapping edges which are treated together.
+  Edges are treated as *directed lines*, which can be translated in any direction, but not rotated.
+]
+
+#uncover("2-")[
+  Therefore, to satisfy the constraints described previously, there is only one property $cal(P)(l)$ that we need to preserve for each line $l$, regarding its previous line $l^-$ and next line $l^+$:
+
+  #align(center, strong(emph(
+    [The intersection between $l$ and $l^-$ should occur before the intersection between $l$ and $l^+$.],
+  )))
+
+  This property is *equivalent to not flipping the edge $l$*.
+]
+
+#uncover("3-")[
+  Moreover, we know that if we shift $l$, $l^-$ and $l^+$ by the *same extent in the same direction*, this property will still hold for $l$.
+]
+
 #speaker-note[
   The ideas behind this slide is actually quite simple:
   - We want to *move edges* without rotating them, so it is easier to simply consider them as *lines* that we shift
@@ -301,41 +320,9 @@ This ensures that we *preserve some topology* while keeping a *lot of freedom* f
   - Translating the whole polygon in one direction preserves the topology completely, so we know that there will be a *solution for any shift applied to the focus edge*.
 ]
 
-We modify the polygons by applying the following rules:
-- *Never rotate an edge.*
-- *Never flip an edge.*
-- *Move overlapping edges together.*
-
-#pause
-
-We focus on *edges one by one*, except for overlapping edges which are treated together.
-Edges are treated as *directed lines*, which can be translated in any direction, but not rotated.
-
-#pause
-
-Therefore, to satisfy the constraints described previously, there is only one property $cal(P)(l)$ that we need to preserve for each line $l$, regarding its previous line $l^-$ and next line $l^+$:
-
-#align(center, strong(emph(
-  [The intersection between $l$ and $l^-$ should occur before the intersection between $l$ and $l^+$.],
-)))
-
-This property is *equivalent to not flipping the edge $l$*.
-
-#pause
-
-Moreover, we know that if we shift $l$, $l^-$ and $l^+$ by the *same extent in the same direction*, this property will still hold for $l$.
-
 ---
 
 == Our simple approach
-
-#speaker-note[
-  The general idea behind this algorithm is simple.
-  The only configuration where we know for sure that three lines satisfy the property $cal(P)$ is when they are all shifted by the same extent in the same direction.
-  Therefore, as soon as we have an issue somewhere, we move into this configuration, and keep iterating over the consecutive edges until there is no issue any more.
-
-  This is not optimal at all, but trying to shift the edges exactly by the extent needed to satisfy the property $cal(P)$ turned out to be much more complex and difficult when experimenting with it.
-]
 
 Simple algorithm to find a correct configuration given a line $l_0$ to move by an extent $delta$:
 
@@ -358,7 +345,7 @@ Simple algorithm to find a correct configuration given a line $l_0$ to move by a
 
 == Illustrations of the polygon deformation algorithm
 
-Illustrations can be viewed by following this link: #link("https://alexandre-bry.github.io/MSc_Thesis-Report/monthly_notes/2026_04_20.html#gifs-that-could-not-be-included-in-the-slides")
+Illustrations can be viewed by following this link: #link("https://alexandre-bry.github.io/MSc_Thesis-Report/monthly_notes/2026_05_18.html#gifs-that-could-not-be-included-in-the-slides")
 
 == Total energy to minimize
 
@@ -386,19 +373,21 @@ Where:
     This is desired if we assume that the scaling that we need to perform is the same on both sides for a given direction, no matter the size of the edges, because the roof overhang is the same.
 ]
 
-== Definition of the proximity score
-
 #let figure-width = 6cm
 #slide(composer: (1fr, figure-width))[
 
-  The score of a point $p_i$ for an edge $l_j$ is defined as follows:
-  - The score is 0 if any of the following conditions is true:
-    - The orthogonal projection $p_(i perp j)$ of $p_i$ on the line supporting of $l_j$ is outside of the segment $l_j$.
-    - The distance from $p_i$ to $p_(i perp j)$ is greater than a certain threshold $epsilon$.
-    - The dot product of the inward vector $v_i$ of $p_i$ with the normal $n_j$ of $l_j$ oriented towards the inside of the building is negative.
-  - Otherwise, the score is: $ "score"(p_i, l_j) = underbrace((v_i dot n_j), "alignment of\npoint and edge\n'normals'") times underbrace((1 - (|p_i - p_(i perp j)|) / epsilon), "proximity to the edge") >= 0 $
+  #uncover("1-")[
+    The score of a point $p_i$ for an edge $l_j$ is defined as follows:
+    - The score is 0 if any of the following conditions is true:
+      - The orthogonal projection $p_(i perp j)$ of $p_i$ on the line supporting of $l_j$ is outside of the segment $l_j$.
+      - The distance from $p_i$ to $p_(i perp j)$ is greater than a certain threshold $epsilon$.
+      - The dot product of the inward vector $v_i$ of $p_i$ with the normal $n_j$ of $l_j$ oriented towards the inside of the building is negative.
+  ]
+  #uncover("2-")[
+    - Otherwise, the score is: $ "score"(p_i, l_j) = underbrace((v_i dot n_j), "alignment of\npoint and edge\n'normals'") times underbrace((1 - (|p_i - p_(i perp j)|) / epsilon), "proximity to the edge") >= 0 $
 
-  We use $epsilon = 30 "centimetres"$.
+    We use $epsilon = 30 "centimetres"$.
+  ]
 
   #speaker-note[
     - Any point *outside the rectangle* defined by extruding the edge along its normal by $epsilon$ has a score of 0.
@@ -406,54 +395,55 @@ Where:
     - Then, the dot product between the inward vector and the normal of the edge ensures that points that are part of a parallel but opposite edge will not count, *preventing matching to the neighbour building*.
   ]
 ][
-  #context {
-    let illustration = fig-edge-matching-criterion(
-      num-points-uniform: 100,
-      num-points-around: 40,
-      edge-start: (0, 0),
-      edge-end: (2, 6),
-      rand-seed: 1,
-    )
-    let fig = measure(illustration)
-    let factor = figure-width / fig.width * 100%
-    figure(
-      scale(
-        fig-edge-matching-criterion(
-          num-points-uniform: 50,
-          num-points-around: 30,
-          edge-start: (0, 0),
-          edge-end: (2, 6),
-          rand-seed: 1,
+  #uncover("1-")[#context {
+      let illustration = fig-edge-matching-criterion(
+        num-points-uniform: 100,
+        num-points-around: 40,
+        edge-start: (0, 0),
+        edge-end: (2, 6),
+        rand-seed: 1,
+      )
+      let fig = measure(illustration)
+      let factor = figure-width / fig.width * 100%
+      figure(
+        scale(
+          fig-edge-matching-criterion(
+            num-points-uniform: 50,
+            num-points-around: 30,
+            edge-start: (0, 0),
+            edge-end: (2, 6),
+            rand-seed: 1,
+          ),
+          factor,
+          reflow: true,
         ),
-        factor,
-        reflow: true,
-      ),
-      caption: [Illustration of the proximity score for an isolated edge.],
-    )
-  }
+        caption: [Illustration of the proximity score for an isolated edge.],
+      )
+    }
+  ]
 ]
 
 == Definition of the inward direction
 
 #slide[
-  The goal of the *inward direction* is to be as close as possible to the 2D normal of the roof edge, pointing towards the inside of the building.
-  To compute it for a given point $p_i$, we use the following method:
-  1. Identify all the points $p_j$ that are less than a certain distance $delta$ from $p_i$.
-  2. For each point $p_j$, compute the vector from $p_i$ to $p_j$, and normalize it into a unit vector $u_(i -> j)$.
-  3. Compute the inward vector $v_i$ as the average of the vectors $u_(i -> j)$: $ v_i = 1/ (|cal(B)(p_i, delta)|) sum_(p_j in cal(B)(p_i, delta)) (p_j - p_i) / (|p_j - p_i|) $
-
-  We use $delta = 2 "metres"$.
-
   #speaker-note[
-    - The idea behind this method is that points on the edge of the roof should have *many points towards the inside* of the building, and *few points towards the outside*.
+    - The idea behind this method is that points on the edge of the roof should have *many points towards the inside* of the building, and *few points towards the outside*.#pause#pause#pause
     - Using unit vectors and averaging them allows for all points in the neighbourhood to contribute equally, meaning that we are somewhat counting the *density of points* in each direction.
       Therefore, the *magnitude* of the inward vector is an indication of the confidence of the direction.
   ]
+
+  The goal of the *inward direction* is to be as close as possible to the 2D normal of the roof edge, pointing towards the inside of the building.#pause
+  To compute it for a given point $p_i$, we use the following method:
+  1. Identify all the points $p_j$ that are less than a certain distance $delta$ from $p_i$.#pause
+  2. For each point $p_j$, compute the vector from $p_i$ to $p_j$, and normalize it into a unit vector $u_(i -> j)$.#pause
+  3. Compute the inward vector $v_i$ as the average of the vectors $u_(i -> j)$: $ v_i = 1/ (|cal(B)(p_i, delta)|) sum_(p_j in cal(B)(p_i, delta)) (p_j - p_i) / (|p_j - p_i|) $
+
+  We use $delta = 2 "metres"$.
 ]
 
 == Illustrations of matching the edges to the points
 
-Illustrations can be viewed by following this link: #link("https://alexandre-bry.github.io/MSc_Thesis-Report/monthly_notes/2026_04_20.html#gifs-that-could-not-be-included-in-the-slides")
+Illustrations can be viewed by following this link: #link("https://alexandre-bry.github.io/MSc_Thesis-Report/monthly_notes/2026_05_18.html#gifs-that-could-not-be-included-in-the-slides")
 
 
 #slide[
@@ -760,40 +750,49 @@ Illustrations can be viewed by following this link: #link("https://alexandre-bry
 
 == Footprint points
 
-+ Move the 2D roofprints to 3D creating a *3D roof outline*
-+ Look for points *under* the 3D roof outline and *towards the inside* of the building
++ Build the roof in 3D using a 3D roof constructor (such as #link("https://github.com/3DBAG/roofer")[roofer]) with the roofprints as input
++ Select all the points *under* the 3D roof with a small horizontal buffer (for the scoring function) and a small vertical buffer (for roof points slightly below the roof)
 
-#alternatives[][#{
-    let fig-height = 67%
-    v(1fr)
-    subpar.grid(
-      columns: (auto, auto),
-      align: center + horizon,
-      caption: [Illustration of the 3D roof outline.],
-      image("../../images/2026_05_07/Example_building-3D_roofprints-1.png", height: fig-height),
-      image("../../images/2026_05_07/Example_building-3D_roofprints-2.png", height: fig-height),
-    )
-    v(1fr)
-  }
-][#{
-    let fig-height = 67%
-    v(1fr)
-    subpar.grid(
-      columns: (auto, auto),
-      align: center + horizon,
-      caption: [Illustration of the footprint points.],
-      image("../../images/2026_05_07/Example_building-Footprint_points-1.png", height: fig-height),
-      image("../../images/2026_05_07/Example_building-Footprint_points-2.png", height: fig-height),
-    )
-    v(1fr)
-  }
-]
+#{
+  let fig-height = 75%
+  let caption = [Illustration of the 3D roof structure and the selected points for the footprint computation.]
+  alternatives[][#{
+      v(1fr)
+      subpar.grid(
+        columns: (auto, auto),
+        align: center + horizon,
+        caption: caption,
+        image("../../images/2026_05_18/Example_building-3D_roof-1.png", height: fig-height),
+        image("../../images/2026_05_18/Example_building-Footprint_points-1.png", height: fig-height),
+      )
+    }
+  ][#{
+      v(1fr)
+      subpar.grid(
+        columns: (auto, auto),
+        align: center + horizon,
+        caption: caption,
+        image("../../images/2026_05_18/Example_building-3D_roof-2.png", height: fig-height),
+        image("../../images/2026_05_18/Example_building-Footprint_points-2.png", height: fig-height),
+      )
+    }
+  ]
+}
 
 = Creation of the footprints
 
 == Creation of the footprints
 
-- *Sweep each roof edge towards the inside* up to 1.5 metres and select the best scoring position #pause
+#speaker-note[
+  #set text(size: 22pt)
+  #pause
+  - The ideas behind the two terms of the score are simple:
+    - The proximity encourages finding a position with a concentration of points (likely to be the façade in 3D)
+    - The penalty term discourages positions that have points behind them (likely to be points on the façade or on the ground outside the building)#pause
+  - The difference between ground points and other classes of points comes from the ground points being very good indicators for the penalty term but much less for the proximity, while the others are assumed to be potential facade points, which are good indicators for the proximity but not necessarily for the penalty term.
+]
+
+- *Sweep each roof edge horizontally towards the inside* up to 1.5 metres and select the best scoring position #pause
 - The score has two components:
   + A *proximity term* that counts the number of points close to the edge
   + A *penalty term* that penalizes points that are behind the edge (inside the building)
@@ -804,7 +803,7 @@ Illustrations can be viewed by following this link: #link("https://alexandre-bry
   import "../../figures/footprints/footprints-loss.typ": fig-footprints-loss
 
   figure(
-    fig-footprints-loss(width: 65%, height: 65%, title: [Score of a point $p$ for a footprint edge $e$]),
+    fig-footprints-loss(width: 65%, height: 60%, title: [Score of a point $p$ for a footprint edge $e$]),
   )
 }
 
@@ -844,9 +843,16 @@ Illustrations can be viewed by following this link: #link("https://alexandre-bry
   title: [Thank you for your attention!],
   subtitle: [
     #import "@preview/tiaoma:0.3.0"
+    #let slides-link = "https://alexandre-bry.github.io/MSc_Thesis-Report/monthly_notes/2026_05_18.html"
 
-    #tiaoma.qrcode("https://alexandre-bry.github.io/MSc_Thesis-Report/monthly_notes/2026_05_18.html", options: (
-      scale: 3.5,
+    Link to the slides:
+
+    #link(slides-link)
+
+    #v(spacing-md)
+
+    #tiaoma.qrcode(slides-link, options: (
+      scale: 2.5,
       fg-color: theme-colors.header-bg,
       bg-color: theme-colors.header-text,
     ))
