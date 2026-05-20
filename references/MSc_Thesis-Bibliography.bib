@@ -1107,6 +1107,16 @@ Based on LiDAR HD},
   publisher = {American Society for Photogrammetry and Remote Sensing},
 }
 
+@Article{Wu2026,
+  author    = {Wu, Teng and Vallet, Bruno and Brédif, Mathieu and Caraffa, Laurent and Vosselman, George},
+  title     = {Reverse engineering LiDAR pulse emission points},
+  year      = {2026},
+  abstract  = {LiDAR sensors are a widely used source of information for 3D scene and object reconstruction. Similarly to image formation, which follows a specific geometry (typically a conical projection toward an optical center with a given focal length and distortions), LiDAR points are acquired from a specific location called the emission point. In practice, this emission point corresponds to the position where the laser beam is reflected by the last mirror before exiting the instrument. An important difference from image sensors is that this emission point moves during acquisition (except for static LiDARs), leading to a more complex acquisition geometry than a simple conical projection, closer to a push-broom geometry. Unfortunately, the acquisition geometry, and in particular the position of the emission point for each echo, is often lost when exporting data to standard file formats (.las, .laz, .ply, etc.). Recovering this information can therefore be challenging, even though it has been shown to be useful for surface reconstruction, change detection, and semantic segmentation. In this paper, we investigate the problem of recovering the position of the emission point for each echo when this information has been lost, across different types of LiDAR sensors, including dynamic systems (aerial, drone-based, and mobile terrestrial) as well as static terrestrial scanners. We study this problem under different levels of available information: GPS timestamps (or at least preserved point order), echo/pulse structure, intrinsic 2D sensor topology in raw acquisitions, or none of the above. For each scenario, we propose dedicated recovery methods. We evaluate our approach on several datasets, including simulated aerial data, terrestrial scans, LiDARHD, DublinCity, and TerraMobilita. The accuracy of emission point estimation reaches 0.2 m for aerial LiDAR scans, millimetric precision for static total station scans with GPS timestamps, and 20 cm for total station scans with unordered point clouds. Our code will be made publicly available at https://github.com/whuwuteng/LiDAR_Traj.},
+  booktitle = {(Manuscript under review) ISPRS Open Journal of Photogrammetry and Remote Sensing},
+  file      = {:Wu2026 - Reverse Engineering LiDAR Pulse Emission Points.pdf:PDF},
+  keywords  = {Reverse engineering, Sensor Topology, LiDAR, 3D Reconstruction, Point Cloud Processing},
+}
+
 @Comment{jabref-meta: databaseType:bibtex;}
 
 @Comment{jabref-meta: grouping:

@@ -379,7 +379,7 @@ Where:
   #uncover("1-")[
     The score of a point $p_i$ for an edge $l_j$ is defined as follows:
     - The score is 0 if any of the following conditions is true:
-      - The orthogonal projection $p_(i perp j)$ of $p_i$ on the line supporting of $l_j$ is outside of the segment $l_j$.
+      - The orthogonal projection $p_(i perp j)$ of $p_i$ on the supporting line of $l_j$ is outside of the segment $l_j$.
       - The distance from $p_i$ to $p_(i perp j)$ is greater than a certain threshold $epsilon$.
       - The dot product of the inward vector $v_i$ of $p_i$ with the normal $n_j$ of $l_j$ oriented towards the inside of the building is negative.
   ]

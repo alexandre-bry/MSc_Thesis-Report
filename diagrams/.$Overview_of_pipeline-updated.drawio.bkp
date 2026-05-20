@@ -91,17 +91,17 @@
         </mxCell>
         <mxCell id="-Hxjeo09Zu86llxm91xf-2" edge="1" parent="1" source="-Hxjeo09Zu86llxm91xf-3" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;strokeWidth=2;jumpStyle=line;fontFamily=Overpass;" target="-Hxjeo09Zu86llxm91xf-10">
           <mxGeometry relative="1" as="geometry">
-            <mxPoint x="490" as="targetPoint" />
+            <mxPoint x="240" y="-180" as="targetPoint" />
           </mxGeometry>
         </mxCell>
         <mxCell id="-Hxjeo09Zu86llxm91xf-3" parent="1" style="rounded=1;whiteSpace=wrap;html=1;spacing=4;fillColor=#d5e8d4;strokeColor=#82b366;fontFamily=Overpass;" value="Classified&amp;nbsp;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;ALS Point cloud (LiDAR HD)&lt;/span&gt;" vertex="1">
-          <mxGeometry height="40" width="120" x="320" y="-20" as="geometry" />
+          <mxGeometry height="40" width="120" x="70" y="-200" as="geometry" />
         </mxCell>
         <mxCell id="-Hxjeo09Zu86llxm91xf-4" edge="1" parent="1" source="-Hxjeo09Zu86llxm91xf-5" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;strokeWidth=2;jumpStyle=line;fontFamily=Overpass;" target="-Hxjeo09Zu86llxm91xf-12">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
         <mxCell id="-Hxjeo09Zu86llxm91xf-5" parent="1" style="rounded=1;whiteSpace=wrap;html=1;spacing=4;fillColor=#d5e8d4;strokeColor=#82b366;fontFamily=Overpass;" value="Building outlines (BD TOPO)" vertex="1">
-          <mxGeometry height="40" width="120" x="320" y="120" as="geometry" />
+          <mxGeometry height="40" width="120" x="70" y="-60" as="geometry" />
         </mxCell>
         <mxCell id="-Hxjeo09Zu86llxm91xf-6" edge="1" parent="1" source="-Hxjeo09Zu86llxm91xf-8" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;strokeWidth=2;jumpStyle=line;fontFamily=Overpass;" target="-Hxjeo09Zu86llxm91xf-12">
           <mxGeometry relative="1" as="geometry" />
@@ -110,19 +110,19 @@
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
         <mxCell id="-Hxjeo09Zu86llxm91xf-8" parent="1" style="rounded=1;whiteSpace=wrap;html=1;spacing=4;fillColor=#dae8fc;strokeColor=#6c8ebf;fontFamily=Overpass;" value="Set of potential roof edge points" vertex="1">
-          <mxGeometry height="40" width="140" x="480" y="50" as="geometry" />
+          <mxGeometry height="40" width="140" x="230" y="-130" as="geometry" />
         </mxCell>
         <mxCell id="-Hxjeo09Zu86llxm91xf-9" edge="1" parent="1" source="-Hxjeo09Zu86llxm91xf-10" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;strokeWidth=2;jumpStyle=line;fontFamily=Overpass;" target="-Hxjeo09Zu86llxm91xf-8">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
         <mxCell id="-Hxjeo09Zu86llxm91xf-10" parent="1" style="rounded=0;whiteSpace=wrap;html=1;spacing=4;fillColor=#dae8fc;strokeColor=#6c8ebf;fontFamily=Overpass;" value="Detection of potential roof edge points per flight strip" vertex="1">
-          <mxGeometry height="60" width="120" x="490" y="-30" as="geometry" />
+          <mxGeometry height="60" width="120" x="240" y="-210" as="geometry" />
         </mxCell>
         <mxCell id="-Hxjeo09Zu86llxm91xf-11" edge="1" parent="1" source="-Hxjeo09Zu86llxm91xf-12" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;strokeWidth=2;jumpStyle=line;fontFamily=Overpass;" target="-Hxjeo09Zu86llxm91xf-15">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
         <mxCell id="-Hxjeo09Zu86llxm91xf-12" parent="1" style="rounded=0;whiteSpace=wrap;html=1;spacing=4;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=12;fontFamily=Overpass;" value="Match initial edges to roof edge points in 2D (perpendicular sweeping)" vertex="1">
-          <mxGeometry height="60" width="120" x="490" y="110" as="geometry" />
+          <mxGeometry height="60" width="120" x="240" y="-70" as="geometry" />
         </mxCell>
         <mxCell id="-Hxjeo09Zu86llxm91xf-13" edge="1" parent="1" source="-Hxjeo09Zu86llxm91xf-15" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;strokeWidth=2;jumpStyle=line;fontFamily=Overpass;" target="-Hxjeo09Zu86llxm91xf-17">
           <mxGeometry relative="1" as="geometry" />
@@ -130,46 +130,46 @@
         <mxCell id="-Hxjeo09Zu86llxm91xf-14" edge="1" parent="1" source="-Hxjeo09Zu86llxm91xf-15" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;strokeWidth=2;jumpStyle=line;fontFamily=Overpass;" target="-Hxjeo09Zu86llxm91xf-25">
           <mxGeometry relative="1" as="geometry">
             <Array as="points">
-              <mxPoint x="660" y="210" />
-              <mxPoint x="660" y="70" />
+              <mxPoint x="410" y="30" />
+              <mxPoint x="410" y="-110" />
             </Array>
           </mxGeometry>
         </mxCell>
         <mxCell id="-Hxjeo09Zu86llxm91xf-15" parent="1" style="rounded=1;whiteSpace=wrap;html=1;spacing=4;fillColor=#fff2cc;strokeColor=#d6b656;fontFamily=Overpass;" value="Roofprints (2D polygons)" vertex="1">
-          <mxGeometry height="40" width="140" x="480" y="190" as="geometry" />
+          <mxGeometry height="40" width="140" x="230" y="10" as="geometry" />
         </mxCell>
         <mxCell id="-Hxjeo09Zu86llxm91xf-16" edge="1" parent="1" source="-Hxjeo09Zu86llxm91xf-17" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;strokeWidth=2;jumpStyle=line;fontFamily=Overpass;" target="-Hxjeo09Zu86llxm91xf-19">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
         <mxCell id="-Hxjeo09Zu86llxm91xf-17" parent="1" style="rounded=0;whiteSpace=wrap;html=1;spacing=4;fillColor=#f8cecc;strokeColor=#b85450;fontSize=12;fontFamily=Overpass;" value="Model the 2D roofprints in 3D" vertex="1">
-          <mxGeometry height="60" width="120" x="490" y="250" as="geometry" />
+          <mxGeometry height="60" width="120" x="240" y="70" as="geometry" />
         </mxCell>
         <mxCell id="-Hxjeo09Zu86llxm91xf-18" edge="1" parent="1" source="-Hxjeo09Zu86llxm91xf-19" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=0;exitDx=0;exitDy=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;strokeWidth=2;jumpStyle=line;fontFamily=Overpass;" target="-Hxjeo09Zu86llxm91xf-21">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
         <mxCell id="-Hxjeo09Zu86llxm91xf-19" parent="1" style="rounded=1;whiteSpace=wrap;html=1;spacing=4;fillColor=#f8cecc;strokeColor=#b85450;fontFamily=Overpass;" value="Roof outer edges (3D linestrings)" vertex="1">
-          <mxGeometry height="40" width="140" x="680" y="260" as="geometry" />
+          <mxGeometry height="40" width="140" x="430" y="80" as="geometry" />
         </mxCell>
         <mxCell id="-Hxjeo09Zu86llxm91xf-20" edge="1" parent="1" source="-Hxjeo09Zu86llxm91xf-21" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=1;entryDx=0;entryDy=0;strokeWidth=2;jumpStyle=line;fontFamily=Overpass;" target="-Hxjeo09Zu86llxm91xf-23">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
         <mxCell id="-Hxjeo09Zu86llxm91xf-21" parent="1" style="rounded=0;whiteSpace=wrap;html=1;spacing=4;fillColor=#f8cecc;strokeColor=#b85450;fontSize=12;fontFamily=Overpass;" value="Extract points on façades and on the ground below the roof" vertex="1">
-          <mxGeometry height="60" width="120" x="690" y="180" as="geometry" />
+          <mxGeometry height="60" width="120" x="440" as="geometry" />
         </mxCell>
         <mxCell id="-Hxjeo09Zu86llxm91xf-22" edge="1" parent="1" source="-Hxjeo09Zu86llxm91xf-23" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=0;exitDx=0;exitDy=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;strokeWidth=2;jumpStyle=line;fontFamily=Overpass;" target="-Hxjeo09Zu86llxm91xf-25">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
         <mxCell id="-Hxjeo09Zu86llxm91xf-23" parent="1" style="rounded=1;whiteSpace=wrap;html=1;spacing=4;fillColor=#f8cecc;strokeColor=#b85450;fontFamily=Overpass;" value="Points below the roof" vertex="1">
-          <mxGeometry height="40" width="140" x="680" y="120" as="geometry" />
+          <mxGeometry height="40" width="140" x="430" y="-60" as="geometry" />
         </mxCell>
         <mxCell id="-Hxjeo09Zu86llxm91xf-24" edge="1" parent="1" source="-Hxjeo09Zu86llxm91xf-25" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=1;entryDx=0;entryDy=0;strokeWidth=2;jumpStyle=line;fontFamily=Overpass;" target="-Hxjeo09Zu86llxm91xf-26">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
         <mxCell id="-Hxjeo09Zu86llxm91xf-25" parent="1" style="rounded=0;whiteSpace=wrap;html=1;spacing=4;fillColor=#f8cecc;strokeColor=#b85450;fontSize=11;fontFamily=Overpass;" value="Match 2D roofprints edges to detected points (perpendicular sweeping)" vertex="1">
-          <mxGeometry height="60" width="120" x="690" y="40" as="geometry" />
+          <mxGeometry height="60" width="120" x="440" y="-140" as="geometry" />
         </mxCell>
         <mxCell id="-Hxjeo09Zu86llxm91xf-26" parent="1" style="rounded=1;whiteSpace=wrap;html=1;spacing=4;fillColor=#fff2cc;strokeColor=#d6b656;fontFamily=Overpass;" value="Footprints (2D polygons)" vertex="1">
-          <mxGeometry height="40" width="140" x="680" y="-20" as="geometry" />
+          <mxGeometry height="40" width="140" x="430" y="-200" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
