@@ -7,9 +7,9 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="Alexandre Bry">
-<meta name="dcterms.date" content="2025-11-24">
+<meta name="dcterms.date" content="2026-05-25">
 
-<title>2025/11/24 – MSc Thesis - Website</title>
+<title>2026/05/25 – MSc Thesis - Website</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -32,8 +32,7 @@ ul.task-list li input[type="checkbox"] {
 <script src="../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../">
-<link href="../weekly_notes/2025_12_01.html" rel="next">
-<link href="../weekly_notes/2025_11_17.html" rel="prev">
+<link href="../weekly_notes/2026_05_11.html" rel="prev">
 <script src="../site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
 <script src="../site_libs/quarto-html/axe/axe-check.js" type="module"></script>
@@ -49,6 +48,9 @@ ul.task-list li input[type="checkbox"] {
 <link href="../site_libs/bootstrap/bootstrap-f5706ebdaf6496508347bd3665b7ff5d.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
 <link href="../site_libs/bootstrap/bootstrap-dark-5c9c144ff9c7027cedcee2c38b4704c5.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
 <link href="../site_libs/bootstrap/bootstrap-f5706ebdaf6496508347bd3665b7ff5d.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
+<script src="../site_libs/quarto-contrib/glightbox/glightbox.min.js"></script>
+<link href="../site_libs/quarto-contrib/glightbox/glightbox.min.css" rel="stylesheet">
+<link href="../site_libs/quarto-contrib/glightbox/lightbox.css" rel="stylesheet">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -78,8 +80,12 @@ ul.task-list li input[type="checkbox"] {
 }</script>
 
 
-<meta property="og:title" content="2025/11/24 – MSc Thesis - Website">
+<meta property="og:title" content="2026/05/25 – MSc Thesis - Website">
+<meta property="og:image" content="https://alexandre-bry.github.io/MSc_Thesis-Report/images/2026_05_18/Validation_data-Diagrams.png">
 <meta property="og:site_name" content="MSc Thesis - Website">
+<meta property="og:image:alt" content="Visualisation">
+<meta property="og:image:height" content="1684">
+<meta property="og:image:width" content="1191">
 </head>
 
 <body class="nav-sidebar docked nav-fixed quarto-light"><script id="quarto-html-before-body" type="application/javascript">
@@ -297,7 +303,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../weekly_notes/2025_11_24.html">2025/11/24</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../weekly_notes/2026_05_25.html">2026/05/25</a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
     </div>
@@ -333,7 +339,7 @@ ul.task-list li input[type="checkbox"] {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../weekly_notes/2025_11_24.html" class="sidebar-item-text sidebar-link active">
+  <a href="../weekly_notes/2025_11_24.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">2025/11/24</span></a>
   </div>
 </li>
@@ -459,7 +465,7 @@ ul.task-list li input[type="checkbox"] {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../weekly_notes/2026_05_25.html" class="sidebar-item-text sidebar-link">
+  <a href="../weekly_notes/2026_05_25.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text">2026/05/25</span></a>
   </div>
 </li>
@@ -473,11 +479,16 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#previous-week" id="toc-previous-week" class="nav-link active" data-scroll-target="#previous-week">Previous week</a></li>
+  <li><a href="#results-since-previous-meeting" id="toc-results-since-previous-meeting" class="nav-link active" data-scroll-target="#results-since-previous-meeting">Results since previous meeting</a></li>
+  <li><a href="#material-for-discussion" id="toc-material-for-discussion" class="nav-link" data-scroll-target="#material-for-discussion">Material for discussion</a>
+  <ul class="collapse">
+  <li><a href="#criteria-to-evaluate-the-polygons" id="toc-criteria-to-evaluate-the-polygons" class="nav-link" data-scroll-target="#criteria-to-evaluate-the-polygons">Criteria to evaluate the polygons</a></li>
+  <li><a href="#visualization-of-the-results" id="toc-visualization-of-the-results" class="nav-link" data-scroll-target="#visualization-of-the-results">Visualization of the results</a></li>
+  </ul></li>
   <li><a href="#discussion" id="toc-discussion" class="nav-link" data-scroll-target="#discussion">Discussion</a></li>
-  <li><a href="#next-week" id="toc-next-week" class="nav-link" data-scroll-target="#next-week">Next week</a></li>
+  <li><a href="#work-until-next-meeting" id="toc-work-until-next-meeting" class="nav-link" data-scroll-target="#work-until-next-meeting">Work until next meeting</a></li>
   </ul>
-<div class="toc-actions"><ul><li><a href="https://github.com/alexandre-bry/MSc_Thesis-Report/edit/main/weekly_notes/2025_11_24.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/alexandre-bry/MSc_Thesis-Report/blob/main/weekly_notes/2025_11_24.qmd" class="toc-action"><i class="bi empty"></i>View source</a></li><li><a href="https://github.com/alexandre-bry/MSc_Thesis-Report/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
+<div class="toc-actions"><ul><li><a href="https://github.com/alexandre-bry/MSc_Thesis-Report/edit/main/weekly_notes/2026_05_25.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/alexandre-bry/MSc_Thesis-Report/blob/main/weekly_notes/2026_05_25.qmd" class="toc-action"><i class="bi empty"></i>View source</a></li><li><a href="https://github.com/alexandre-bry/MSc_Thesis-Report/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
@@ -485,7 +496,7 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">2025/11/24</h1>
+<h1 class="title">2026/05/25</h1>
 </div>
 
 
@@ -502,7 +513,7 @@ ul.task-list li input[type="checkbox"] {
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">November 24, 2025</p>
+      <p class="date">May 25, 2026</p>
     </div>
   </div>
   
@@ -514,30 +525,49 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<section id="previous-week" class="level2">
-<h2 class="anchored" data-anchor-id="previous-week">Previous week</h2>
+<section id="results-since-previous-meeting" class="level2">
+<h2 class="anchored" data-anchor-id="results-since-previous-meeting">Results since previous meeting</h2>
 <ul>
-<li>Looked at more articles about roofprint / footprint from LiDAR</li>
-<li>The keywords footprint and roofprint don’t seem really popular, but there are much more articles talking about “outline”, which in the case of aerial data seems to mean footprint</li>
-<li>Looked at a few articles about point cloud semantic segmentation</li>
+<li>Worked on the final MSc thesis report, mostly on its paper part</li>
+<li>Made manual annotations to create a ground-truth dataset of roofprints (no footprints for now)</li>
+<li>Implemented some scores to evaluate the method based on this ground-truth dataset</li>
 </ul>
+</section>
+<section id="material-for-discussion" class="level2">
+<h2 class="anchored" data-anchor-id="material-for-discussion">Material for discussion</h2>
+<section id="criteria-to-evaluate-the-polygons" class="level3">
+<h3 class="anchored" data-anchor-id="criteria-to-evaluate-the-polygons">Criteria to evaluate the polygons</h3>
+<p>I have currently implemented two criteria:</p>
+<ul>
+<li>Intersection over union (IoU)</li>
+<li>Chamfer distance</li>
+</ul>
+<p>Since the polygons are sometimes adjacent and the shared edges can be impossible to find using only geometrical criteria, I think that it could be beneficial to also compute these same criteria after dissolving the polygons which are connected in the ground-truth, in order to evaluate the method on the level of building blocks instead of parcels.</p>
+</section>
+<section id="visualization-of-the-results" class="level3">
+<h3 class="anchored" data-anchor-id="visualization-of-the-results">Visualization of the results</h3>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="../images/2026_05_18/Validation_data-Diagrams.png" class="lightbox" data-gallery="quarto-lightbox-gallery-1" title="Visualisation"><img src="../images/2026_05_18/Validation_data-Diagrams.png" class="img-fluid figure-img" alt="Visualisation"></a></p>
+<figcaption>Visualisation</figcaption>
+</figure>
+</div>
+</section>
 </section>
 <section id="discussion" class="level2">
 <h2 class="anchored" data-anchor-id="discussion">Discussion</h2>
-<ul>
-<li>Being able to use the direction of the LiDAR scan could be an interesting topic</li>
-</ul>
 </section>
-<section id="next-week" class="level2">
-<h2 class="anchored" data-anchor-id="next-week">Next week</h2>
-<ul>
-<li>Look at other papers:
-<ul>
-<li><a href="https://semantic3d.ethz.ch/">Semantic3D</a></li>
-<li>Tail distribution classification</li>
-<li>Bird’s eye view, projection for classification</li>
-<li>Process point clouds in 2D: <a href="https://arxiv.org/abs/1905.08748" class="uri">https://arxiv.org/abs/1905.08748</a></li>
+<section id="work-until-next-meeting" class="level2">
+<h2 class="anchored" data-anchor-id="work-until-next-meeting">Work until next meeting</h2>
+<ul class="task-list">
+<li><label><input type="checkbox">Prepare the presentation for the monthly meeting on May 18th</label></li>
+<li><label><input type="checkbox">Look at the two ideas to evaluate the algorithm:</label>
+<ul class="task-list">
+<li><label><input type="checkbox">Ground-truth dataset of roofprints and footprints</label></li>
+<li><label><input type="checkbox">Synthetic dataset of LoD 2.3 buildings</label></li>
 </ul></li>
+<li><label><input type="checkbox">Integrate roofer into the process to filter the points for the footprints</label></li>
+<li><label><input type="checkbox">Improve the footprint generation algorithm to handle the whole building at once</label></li>
 </ul>
 
 
@@ -961,19 +991,48 @@ ul.task-list li input[type="checkbox"] {
   </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="../weekly_notes/2025_11_17.html" class="pagination-link" aria-label="2025/11/17">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">2025/11/17</span>
+      <a href="../weekly_notes/2026_05_11.html" class="pagination-link" aria-label="2026/05/11">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">2026/05/11</span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="../weekly_notes/2025_12_01.html" class="pagination-link" aria-label="2025/12/01">
-        <span class="nav-page-text">2025/12/01</span> <i class="bi bi-arrow-right-short"></i>
-      </a>
   </div>
 </nav>
 </div> <!-- /content -->
+<footer class="footer"><div class="nav-footer"><div class="nav-footer-center"><div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/alexandre-bry/MSc_Thesis-Report/edit/main/weekly_notes/2026_05_25.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/alexandre-bry/MSc_Thesis-Report/blob/main/weekly_notes/2026_05_25.qmd" class="toc-action"><i class="bi empty"></i>View source</a></li><li><a href="https://github.com/alexandre-bry/MSc_Thesis-Report/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div></div></footer><script>var lightboxQuarto = GLightbox({"closeEffect":"zoom","descPosition":"bottom","loop":false,"openEffect":"zoom","selector":".lightbox"});
+(function() {
+  let previousOnload = window.onload;
+  window.onload = () => {
+    if (previousOnload) {
+      previousOnload();
+    }
+    lightboxQuarto.on('slide_before_load', (data) => {
+      const { slideIndex, slideNode, slideConfig, player, trigger } = data;
+      const href = trigger.getAttribute('href');
+      if (href !== null) {
+        const imgEl = window.document.querySelector(`a[href="${href}"] img`);
+        if (imgEl !== null) {
+          const srcAttr = imgEl.getAttribute("src");
+          if (srcAttr && srcAttr.startsWith("data:")) {
+            slideConfig.href = srcAttr;
+          }
+        }
+      } 
+    });
+  
+    lightboxQuarto.on('slide_after_load', (data) => {
+      const { slideIndex, slideNode, slideConfig, player, trigger } = data;
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(slideNode);
+      }
+    });
+  
+  };
+  
+})();
+          </script>
 
 
 
 
-<footer class="footer"><div class="nav-footer"><div class="nav-footer-center"><div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/alexandre-bry/MSc_Thesis-Report/edit/main/weekly_notes/2025_11_24.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/alexandre-bry/MSc_Thesis-Report/blob/main/weekly_notes/2025_11_24.qmd" class="toc-action"><i class="bi empty"></i>View source</a></li><li><a href="https://github.com/alexandre-bry/MSc_Thesis-Report/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div></div></footer></body></html>
+</body></html>
