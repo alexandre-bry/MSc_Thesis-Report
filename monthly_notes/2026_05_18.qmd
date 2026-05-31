@@ -51,3 +51,7 @@ Illustrations of self-intersections with the polygon deformation algorithm.
 
 Simple illustrations of the full polygon deformation algorithm.
 :::
+
+## Discussion
+
+Origine du batiment LiDAR HD -> créé via TerraScan
