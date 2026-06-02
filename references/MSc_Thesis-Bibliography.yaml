@@ -845,25 +845,6 @@ ignRechercheDefi:
     value: https://www.ign.fr/mag/la-recherche-au-defi-du-jumeau-numerique-de-la-france
     date: 2025-12-30
   note: '[Accessed 30-12-2025]'
-Peters22:
-  type: article
-  title: Automated {3D} reconstruction of {LoD2} and {LoD1} models for all 10 million buildings of the {Netherlands}
-  author:
-  - Peters, Ravi
-  - Dukai, Balázs
-  - Vitalis, Stelios
-  - van Liempt, Jordi
-  - Stoter, Jantien
-  date: 2022
-  page-range: 165-170
-  serial-number:
-    doi: 10.14358/PERS.21-00032R2
-  parent:
-    type: periodical
-    title: Photogrammetric Engineering and Remote Sensing
-    publisher: American Society for Photogrammetry, Remote Sensing
-    issue: 3
-    volume: 88
 Xu2020:
   type: article
   title: 'SqueezeSegV3: Spatially-Adaptive Convolution for Efficient Point-Cloud Segmentation'
@@ -900,16 +881,21 @@ Zolanvari2019:
   type: article
   title: 'DublinCity: Annotated LiDAR Point Cloud and its Applications'
   author:
-  - Zolanvari, Iman
+  - Zolanvari, S. M. Iman
   - Ruano, Susana
   - Rana, Aakanksha
   - Cummins, Alan
-  - Smolic, Aljosa
-  - Da Silva, Rogerio
+  - name: Silva
+    given-name: Rogerio Eduardo
+    prefix: da
   - Rahbar, Morteza
+  - Smolic, Aljosa
   date: 2019-09
+  serial-number:
+    doi: 10.48550/arXiv.1909.03613
   parent:
-    type: proceedings
+    type: periodical
+    publisher: arXiv
 Ye2020:
   type: article
   title: 'LASDU: A Large-Scale Aerial LiDAR Dataset for Semantic Labeling in Dense Urban Areas'
@@ -1149,6 +1135,28 @@ Boeters2015:
     publisher: Informa UK Limited
     issue: 12
     volume: 29
+Zhang2016a:
+  type: article
+  title: An Easy-to-Use Airborne LiDAR Data Filtering Method Based on Cloth Simulation
+  author:
+  - Zhang, Wuming
+  - Qi, Jianbo
+  - Wan, Peng
+  - Wang, Hongtao
+  - Xie, Donghui
+  - Wang, Xiaoyan
+  - Yan, Guangjian
+  date: 2016-06
+  page-range: '501'
+  serial-number:
+    doi: 10.3390/rs8060501
+    issn: 2072-4292
+  parent:
+    type: periodical
+    title: Remote Sensing
+    publisher: MDPI AG
+    issue: 6
+    volume: 8
 Liu2024:
   type: article
   title: Building outline extraction using adaptive tracing alpha shapes and contextual topological optimization from airborne LiDAR
@@ -1170,4 +1178,39 @@ Liu2024:
     title: Automation in Construction
     publisher: Elsevier BV
     volume: 160
+Paden2024:
+  type: article
+  title: Automatic high-detailed building reconstruction workflow for urban microscale simulations
+  author:
+  - Pađen, Ivan
+  - Peters, Ravi
+  - García-Sánchez, Clara
+  - Ledoux, Hugo
+  date: 2024-11
+  page-range: '111978'
+  serial-number:
+    doi: 10.1016/j.buildenv.2024.111978
+    issn: 0360-1323
+  parent:
+    type: periodical
+    title: Building and Environment
+    publisher: Elsevier BV
+    volume: 265
+Rottensteiner2012:
+  type: article
+  title: The ISPRS benchmark on urban object classification and 3d building reconstruction
+  author:
+  - Rottensteiner, Franz
+  - Sohn, Gunho
+  - Jung, Jaewook
+  - Gerke, Markus
+  - Baillard, Caroline
+  - Benitez, Sebastien
+  - Breitkopf, Uwe
+  date: 2012
+  serial-number:
+    doi: 10.15488/5042
+  parent:
+    type: periodical
+    publisher: 'Göttingen : Copernicus GmbH'
 
