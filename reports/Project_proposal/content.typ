@@ -42,7 +42,7 @@ This comes from the unprecedented precision that it brings compared to previous 
 In this context, one of the many components of the future digital twin is buildings.
 Many algorithms have been developed to try to reconstruct simple but accurate 3D building models from various data sources, including point clouds.
 Some researchers from @tudelft especially developed an algorithm called #gloss-ref-and-footnote("roofer") which produced great results and was then applied to the whole of the Netherlands.
-This successfully created the @3dbag, the first complete dataset of Dutch buildings in @lod 2.2 @Peters22.
+This successfully created the @3dbag, the first complete dataset of Dutch buildings in @lod 2.2 @Peters2022.
 This algorithm however requires two input data: a dense 3D point cloud and 2D building @roofprint:pl.
 In the Netherlands, the @ahn was used for the point cloud and the @bag was used for the @roofprint:pl.
 
