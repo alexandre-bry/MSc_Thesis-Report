@@ -35,7 +35,7 @@
   /// The font to use for the text.
   ///
   /// -> str | array
-  text-font: ("Source Serif 4", "Libertinus Serif"),
+  text-font: ("Source Serif 4", "Source Serif Pro", "Libertinus Serif"),
   /// The font to use for the math.
   ///
   /// -> str | array
@@ -120,9 +120,37 @@
   )
   for key in header-possible-keys {
     if header.at(key) == none { continue }
-    for (old, new) in replacements {
-      header.at(key) = header.at(key).replace(old, if new != none { new } else { "" })
+    if type(header.at(key)) == str {
+      header.at(key) = (header.at(key), )
     }
+    for (old, new) in replacements {
+      for elem in header.at(key) {
+        if (type(elem) != str) {
+          continue
+        }
+        let start = elem.position(old)
+        if (start == none) {
+          continue
+        }
+        let end = start + old.len()
+        if (new == none) {
+          new = ""
+        }
+        header.at(key) = (
+          elem.slice(0, start),
+          new,
+          elem.slice(end, elem.len())
+        ).flatten()
+      }
+    }
+  }
+  for key in header.keys() {
+    if header.at(key) == none { continue }
+    let concat-content = []
+    for elem in header.at(key) {
+      concat-content += elem
+    }
+    header.at(key) = concat-content
   }
   set page(
     header: [

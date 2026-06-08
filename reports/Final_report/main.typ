@@ -18,10 +18,8 @@
 /* -------------------------------------------------------------------------- */
 
 /* ---------------------------- Document settings --------------------------- */
-#let title = "From Points to Prints"
-#let subtitle = "Final MSc Thesis Report"
-#let authors-names = "Alexandre Bry"
-#let authors-data = ("Student number": "6277535", "Student email": "abry@tudelft.nl")
+
+#import "settings.typ": *
 
 /* -------------------------------------------------------------------------- */
 /*                           Actual document content                          */
@@ -32,6 +30,7 @@
   subtitle: subtitle,
   authors-names: authors-names,
   authors-data: authors-data,
+  base-font-size: 10.5pt,
 )
 
 #show: custom-style.custom-style
@@ -39,7 +38,80 @@
 /* ------------------------------- Cover page ------------------------------- */
 
 #[
+  #set par(justify: false)
+  
+  // First cover page
   #show: cover-container.with(full-page: true)
+  #set page(background: scale(270% ,box(
+    image("figures/Front_page.png"),
+    clip: true,
+    inset: (bottom: -2em, left: -1em)
+  )), margin: 1em)
+  // Title, subtitle and authors
+  #let title-content = cover.cover-group(
+    contents: (
+      cover.cover-text-block(
+        cover.cover-group(
+          contents: (
+            // Title
+            box(text(title, size: 44pt, weight: 400, fill: white), width: 100%),
+            // Subtitle
+            text(longtitle, size: 28pt, weight: 300, style: "italic", fill: white),
+            // Authors
+            text(
+              cover.authors-grid(
+                alignment: left,
+                authors-data: (:),
+                authors-names: authors-names,
+                row-gutter: 0.9em,
+                header: false,
+              ),
+              size: 24pt,
+              fill: white,
+            ),
+          ),
+          spaces: (0em, 3em, 2em, 0em),
+          dir: "v",
+          individual-alignments: (left, left, left),
+        ),
+        alignment: left,
+        background-color: luma(20%, 70%),
+        background-top-space: 2em,
+        background-bottom-space: 2em,
+        background-left-space: 100%,
+        background-right-space: 2em,
+      ),
+    ),
+    spaces: (3em, 9em),
+    dir: "h",
+    individual-alignments: (left,),
+    general-alignment: left,
+  )
+  #let logos-content = cover.cover-image-block(
+    cover.cover-text-block(
+      cover.cover-group(
+        contents: (
+          image("figures/TU_Delft_logo-cropped.svg", height: 2.3cm),
+          image("figures/IGN_logo-cropped.svg", height: 1.4cm),
+        ),
+        spaces: (3em, 8em, 3em),
+        dir: "h",
+        individual-alignments: (center, center + bottom),
+      ),
+      alignment: left,
+      background-color: luma(90%, 70%),
+      background-top-space: 1em,
+      background-bottom-space: 100%,
+      background-left-space: 1em,
+      background-right-space: 1em,
+    ),
+  )
+  #cover.cover-group(
+    contents: (title-content, logos-content),
+    spaces: (7em, 1fr, 0.5em),
+    dir: "v",
+    individual-alignments: (left, center),
+  )
 
   #set page(background: none, margin: (top: 1cm, bottom: 0cm, x: 2cm))
 
@@ -50,7 +122,8 @@
         size: 18pt,
         weight: "semibold",
         style: "italic",
-      )[Generation of building @roofprint:pl:noindex and @footprint:pl:noindex from @als:short:noindex point clouds]#v(
+        longtitle
+      )#v(
         1em,
       )],
     subtitle: text(size: 22pt)[#subtitle],
@@ -85,6 +158,8 @@
 #[
   #show: pre-content-container.with()
 
+  = Abstract
+  #include "paper/abstract.typ"
   #include "content/acknowledgements.typ"
   #include "content/outline.typ"
 ]

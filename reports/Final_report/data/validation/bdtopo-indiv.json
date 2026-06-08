@@ -1,0 +1,3232 @@
+[
+  {
+    "ground_truth_aggregate_id": "BATIMENT0000000337021065",
+    "ground_truth_ids": [
+      "BATIMENT0000000337021065"
+    ],
+    "custom_category": [
+      "isolated"
+    ],
+    "scored_ids": [
+      "BATIMENT0000000337021065"
+    ],
+    "geometry": "POLYGON Z ((676306.1 6852506.2 116.4, 676309.6 6852513.5 116.4, 676301.5 6852517.1 116.4, 676298.1 6852509.9 116.4, 676306.1 6852506.2 116.4))",
+    "ground_truth_area_m2": 98.03597388291769,
+    "iou": 0.7237649322546466,
+    "ground_truth_to_scored_boundary_distance_m": 0.7748886248124142,
+    "scored_to_ground_truth_boundary_distance_m": 0.7095056819243285,
+    "symmetric_boundary_distance_m": 0.7421971533683713,
+    "centroid_distance_m": 0.39791279901932103
+  },
+  {
+    "ground_truth_aggregate_id": "BATIMENT0000000337021055",
+    "ground_truth_ids": [
+      "BATIMENT0000000337021055"
+    ],
+    "custom_category": [
+      "isolated"
+    ],
+    "scored_ids": [
+      "BATIMENT0000000337021055"
+    ],
+    "geometry": "POLYGON Z ((676330.8 6852533.9 117, 676321.7 6852538.1 117, 676317.9 6852530 117, 676327 6852525.8 117, 676330.8 6852533.9 117))",
+    "ground_truth_area_m2": 112.14273526731998,
+    "iou": 0.7996059645439281,
+    "ground_truth_to_scored_boundary_distance_m": 0.5730171109463948,
+    "scored_to_ground_truth_boundary_distance_m": 0.5515139240004623,
+    "symmetric_boundary_distance_m": 0.5622655174734286,
+    "centroid_distance_m": 0.2835419023045902
+  },
+  {
+    "ground_truth_aggregate_id": "BATIMENT0000000337021146",
+    "ground_truth_ids": [
+      "BATIMENT0000000337021146"
+    ],
+    "custom_category": [
+      "isolated"
+    ],
+    "scored_ids": [
+      "BATIMENT0000000337021146"
+    ],
+    "geometry": "POLYGON Z ((676333.8 6852555.1 114.2, 676327.2 6852558.3 114.2, 676328.8 6852561.5 114.2, 676322.6 6852564.1 114.2, 676321.1 6852560.8 114.2, 676321.4 6852560.7 114.2, 676317.7 6852552.6 114.2, 676330 6852547.1 114.2, 676333.8 6852555.1 114.2))",
+    "ground_truth_area_m2": 162.08464609500174,
+    "iou": 0.8591100261200811,
+    "ground_truth_to_scored_boundary_distance_m": 0.4408529111209614,
+    "scored_to_ground_truth_boundary_distance_m": 0.4239140960348945,
+    "symmetric_boundary_distance_m": 0.432383503577928,
+    "centroid_distance_m": 0.31863171414398656
+  },
+  {
+    "ground_truth_aggregate_id": "BATIMENT0000000337021130",
+    "ground_truth_ids": [
+      "BATIMENT0000000337021130"
+    ],
+    "custom_category": [
+      "isolated"
+    ],
+    "scored_ids": [
+      "BATIMENT0000000337021130"
+    ],
+    "geometry": "POLYGON Z ((676302.8 6852565.9 114.9, 676295.7 6852569.1 114.9, 676291.2 6852558.9 114.9, 676298.3 6852555.7 114.9, 676302.8 6852565.9 114.9))",
+    "ground_truth_area_m2": 99.53054005066954,
+    "iou": 0.6034971402482684,
+    "ground_truth_to_scored_boundary_distance_m": 1.255108809760345,
+    "scored_to_ground_truth_boundary_distance_m": 1.1030302750158294,
+    "symmetric_boundary_distance_m": 1.179069542388087,
+    "centroid_distance_m": 1.986580781568009
+  },
+  {
+    "ground_truth_aggregate_id": "BATIMENT0000000337021119",
+    "ground_truth_ids": [
+      "BATIMENT0000000337021119"
+    ],
+    "custom_category": [
+      "isolated"
+    ],
+    "scored_ids": [
+      "BATIMENT0000000337021119"
+    ],
+    "geometry": "POLYGON Z ((676311.4 6852564.7 115.7, 676315.4 6852573.5 115.7, 676307.4 6852577.3 115.7, 676303.3 6852568.4 115.7, 676311.4 6852564.7 115.7))",
+    "ground_truth_area_m2": 96.00527885854055,
+    "iou": 0.8640044761321393,
+    "ground_truth_to_scored_boundary_distance_m": 0.3547994282918016,
+    "scored_to_ground_truth_boundary_distance_m": 0.34331380829459013,
+    "symmetric_boundary_distance_m": 0.3490566182931959,
+    "centroid_distance_m": 0.3441585139744625
+  },
+  {
+    "ground_truth_aggregate_id": "BATIMENT0000000337021131",
+    "ground_truth_ids": [
+      "BATIMENT0000000337021131"
+    ],
+    "custom_category": [
+      "isolated"
+    ],
+    "scored_ids": [
+      "BATIMENT0000000337021131"
+    ],
+    "geometry": "POLYGON Z ((676302.8 6852565.9 114.9, 676298.3 6852555.7 114.9, 676300.6 6852554.7 114.9, 676305.1 6852564.8 114.9, 676302.8 6852565.9 114.9))",
+    "ground_truth_area_m2": 22.41641895153253,
+    "iou": 0.0011336785923085724,
+    "ground_truth_to_scored_boundary_distance_m": 1.0002265710267715,
+    "scored_to_ground_truth_boundary_distance_m": 1.2677720207774366,
+    "symmetric_boundary_distance_m": 1.133999295902104,
+    "centroid_distance_m": 2.261155848884679
+  },
+  {
+    "ground_truth_aggregate_id": "BATIMENT0000000337021151",
+    "ground_truth_ids": [
+      "BATIMENT0000000337021151"
+    ],
+    "custom_category": [
+      "low_height"
+    ],
+    "scored_ids": [
+      "BATIMENT0000000337021151"
+    ],
+    "geometry": "POLYGON Z ((676311.5 6852545.4 111.3, 676312.8 6852548.3 111.3, 676308.2 6852550.3 111.3, 676306.9 6852547.5 111.3, 676311.5 6852545.4 111.3))",
+    "ground_truth_area_m2": 17.269511724687042,
+    "iou": 0.7654296598679652,
+    "ground_truth_to_scored_boundary_distance_m": 0.2705691032101857,
+    "scored_to_ground_truth_boundary_distance_m": 0.2560312466027613,
+    "symmetric_boundary_distance_m": 0.2633001749064735,
+    "centroid_distance_m": 0.3823621821958991
+  },
+  {
+    "ground_truth_aggregate_id": "BATIMENT0000000337021129",
+    "ground_truth_ids": [
+      "BATIMENT0000000337021129"
+    ],
+    "custom_category": [
+      "isolated"
+    ],
+    "scored_ids": [
+      "BATIMENT0000000337021129"
+    ],
+    "geometry": "POLYGON Z ((676297.2 6852550.4 112.8, 676291.8 6852552.9 112.8, 676288.2 6852543.8 112.8, 676293.2 6852541.6 112.8, 676297.2 6852550.4 112.8))",
+    "ground_truth_area_m2": 63.65233080273464,
+    "iou": 0.6636622111311022,
+    "ground_truth_to_scored_boundary_distance_m": 0.7865359120431193,
+    "scored_to_ground_truth_boundary_distance_m": 0.7358464232274372,
+    "symmetric_boundary_distance_m": 0.7611911676352783,
+    "centroid_distance_m": 1.3988528387972239
+  },
+  {
+    "ground_truth_aggregate_id": "BATIMENT0000000337021056",
+    "ground_truth_ids": [
+      "BATIMENT0000000337021056"
+    ],
+    "custom_category": [
+      "isolated"
+    ],
+    "scored_ids": [
+      "BATIMENT0000000337021056"
+    ],
+    "geometry": "POLYGON Z ((676285.8 6852526.3 116, 676289.9 6852535.5 116, 676282.4 6852538.9 116, 676278.2 6852529.8 116, 676285.8 6852526.3 116))",
+    "ground_truth_area_m2": 97.05036415183406,
+    "iou": 0.8392867369879742,
+    "ground_truth_to_scored_boundary_distance_m": 0.42882988426351215,
+    "scored_to_ground_truth_boundary_distance_m": 0.4037806244165132,
+    "symmetric_boundary_distance_m": 0.41630525434001264,
+    "centroid_distance_m": 0.5265329673814887
+  },
+  {
+    "ground_truth_aggregate_id": "BATIMENT0000000337021073",
+    "ground_truth_ids": [
+      "BATIMENT0000000337021073"
+    ],
+    "custom_category": [
+      "isolated"
+    ],
+    "scored_ids": [
+      "BATIMENT0000000337021073"
+    ],
+    "geometry": "POLYGON Z ((676275.4 6852515.6 117.4, 676284.8 6852511.3 117.4, 676289.2 6852521.2 117.4, 676278.9 6852525.8 117.4, 676276.6 6852520.5 117.4, 676277.4 6852520.1 117.4, 676275.4 6852515.6 117.4))",
+    "ground_truth_area_m2": 137.06485976550994,
+    "iou": 0.8025524639675715,
+    "ground_truth_to_scored_boundary_distance_m": 0.626843432076317,
+    "scored_to_ground_truth_boundary_distance_m": 0.6061683484820175,
+    "symmetric_boundary_distance_m": 0.6165058902791672,
+    "centroid_distance_m": 0.556007342065829
+  },
+  {
+    "ground_truth_aggregate_id": "BATIMENT0000000337021071",
+    "ground_truth_ids": [
+      "BATIMENT0000000337021071"
+    ],
+    "custom_category": [
+      "isolated"
+    ],
+    "scored_ids": [
+      "BATIMENT0000000337021071"
+    ],
+    "geometry": "POLYGON Z ((676321.5 6852521.2 112.6, 676319.3 6852523.4 112.6, 676316 6852515.9 112.6, 676319 6852515.8 112.6, 676321.5 6852521.2 112.6))",
+    "ground_truth_area_m2": 20.36893277889486,
+    "iou": 0.8950203466227802,
+    "ground_truth_to_scored_boundary_distance_m": 0.12254322971264835,
+    "scored_to_ground_truth_boundary_distance_m": 0.09740620348568994,
+    "symmetric_boundary_distance_m": 0.10997471659916914,
+    "centroid_distance_m": 0.12654113897283178
+  },
+  {
+    "ground_truth_aggregate_id": "BATIMENT0000000337021072",
+    "ground_truth_ids": [
+      "BATIMENT0000000337021072"
+    ],
+    "custom_category": [
+      "isolated"
+    ],
+    "scored_ids": [
+      "BATIMENT0000000337021072"
+    ],
+    "geometry": "POLYGON Z ((676319.3 6852523.4 112.6, 676312 6852526.6 112.6, 676308.6 6852518.9 112.6, 676316 6852515.9 112.6, 676319.3 6852523.4 112.6))",
+    "ground_truth_area_m2": 79.21287946711708,
+    "iou": 0.8354982004077921,
+    "ground_truth_to_scored_boundary_distance_m": 0.3958679834876098,
+    "scored_to_ground_truth_boundary_distance_m": 0.3715689738939794,
+    "symmetric_boundary_distance_m": 0.3837184786907946,
+    "centroid_distance_m": 0.3660072392789249
+  },
+  {
+    "ground_truth_aggregate_id": "BATIMENT0000000353654731",
+    "ground_truth_ids": [
+      "BATIMENT0000000353654731"
+    ],
+    "custom_category": [
+      "isolated"
+    ],
+    "scored_ids": [
+      "BATIMENT0000000353654731"
+    ],
+    "geometry": "POLYGON Z ((676306.3 6852501.4 115.7, 676302 6852491.7 115.8, 676312.8 6852486.7 115.8, 676315.2 6852492 115.8, 676314 6852492.4 115.8, 676316 6852497.1 115.8, 676306.3 6852501.4 115.7))",
+    "ground_truth_area_m2": 114.5172004612898,
+    "iou": 0.8607406570388106,
+    "ground_truth_to_scored_boundary_distance_m": 0.3898143919514478,
+    "scored_to_ground_truth_boundary_distance_m": 0.40402178837851727,
+    "symmetric_boundary_distance_m": 0.39691809016498253,
+    "centroid_distance_m": 0.5959076960242472
+  },
+  {
+    "ground_truth_aggregate_id": "BATIMENT0000000337021078",
+    "ground_truth_ids": [
+      "BATIMENT0000000337021078"
+    ],
+    "custom_category": [
+      "isolated"
+    ],
+    "scored_ids": [
+      "BATIMENT0000000337021078"
+    ],
+    "geometry": "POLYGON Z ((676303.4 6852487.9 113.5, 676293.8 6852492.2 113.5, 676292.6 6852489.6 113.5, 676290.6 6852490.5 113.5, 676290.4 6852490.2 113.5, 676289.2 6852487.7 113.5, 676287.1 6852483.5 113.5, 676286.7 6852482.6 113.5, 676294.2 6852479 113.5, 676297.5 6852486 113.5, 676301.6 6852484.1 113.5, 676303.4 6852487.9 113.5))",
+    "ground_truth_area_m2": 109.2724115522618,
+    "iou": 0.9100019249857436,
+    "ground_truth_to_scored_boundary_distance_m": 0.20830881563131023,
+    "scored_to_ground_truth_boundary_distance_m": 0.212002523236332,
+    "symmetric_boundary_distance_m": 0.21015566943382114,
+    "centroid_distance_m": 0.21193218807736214
+  },
+  {
+    "ground_truth_aggregate_id": "BATIMENT0000000337021076",
+    "ground_truth_ids": [
+      "BATIMENT0000000337021076"
+    ],
+    "custom_category": [
+      "isolated"
+    ],
+    "scored_ids": [
+      "BATIMENT0000000337021076"
+    ],
+    "geometry": "POLYGON Z ((676290.4 6852490.2 113, 676288.3 6852491.1 113, 676285 6852484.5 113, 676287.1 6852483.5 113, 676289.2 6852487.7 113, 676290.4 6852490.2 113))",
+    "ground_truth_area_m2": 23.759771472038032,
+    "iou": 0.7143924265313212,
+    "ground_truth_to_scored_boundary_distance_m": 0.3484457802180825,
+    "scored_to_ground_truth_boundary_distance_m": 0.3157502748517693,
+    "symmetric_boundary_distance_m": 0.3320980275349259,
+    "centroid_distance_m": 0.398122407130773
+  },
+  {
+    "ground_truth_aggregate_id": "BATIMENT0000000337021077",
+    "ground_truth_ids": [
+      "BATIMENT0000000337021077"
+    ],
+    "custom_category": [
+      "low_height"
+    ],
+    "scored_ids": [
+      "BATIMENT0000000337021077"
+    ],
+    "geometry": "POLYGON Z ((676288.5 6852494.6 111.4, 676287.4 6852492.2 111.4, 676289.7 6852491.2 111.4, 676290.9 6852493.5 111.4, 676288.5 6852494.6 111.4))",
+    "ground_truth_area_m2": 6.656947061598729,
+    "iou": 0.7902820126025024,
+    "ground_truth_to_scored_boundary_distance_m": 0.14537289062201741,
+    "scored_to_ground_truth_boundary_distance_m": 0.15767761693538343,
+    "symmetric_boundary_distance_m": 0.1515252537787004,
+    "centroid_distance_m": 0.21716832061573696
+  },
+  {
+    "ground_truth_aggregate_id": "BATIMENT0000000337021064",
+    "ground_truth_ids": [
+      "BATIMENT0000000337021064"
+    ],
+    "custom_category": [
+      "isolated"
+    ],
+    "scored_ids": [
+      "BATIMENT0000000337021064"
+    ],
+    "geometry": "POLYGON Z ((676281.8 6852509.7 116, 676273.8 6852513.3 116, 676270.4 6852505.6 116, 676278.3 6852502.1 116, 676281.8 6852509.7 116))",
+    "ground_truth_area_m2": 98.96581921619998,
+    "iou": 0.7382852037311199,
+    "ground_truth_to_scored_boundary_distance_m": 0.716881821574735,
+    "scored_to_ground_truth_boundary_distance_m": 0.696846969930459,
+    "symmetric_boundary_distance_m": 0.7068643957525971,
+    "centroid_distance_m": 0.21872338341869552
+  },
+  {
+    "ground_truth_aggregate_id": "BATIMENT0000000337021075",
+    "ground_truth_ids": [
+      "BATIMENT0000000337021075"
+    ],
+    "custom_category": [
+      "isolated"
+    ],
+    "scored_ids": [
+      "BATIMENT0000000337021075"
+    ],
+    "geometry": "POLYGON Z ((676261.7 6852491.2 113.5, 676258.1 6852492.8 113.5, 676256.5 6852489.5 113.5, 676265.3 6852485.4 113.5, 676262.4 6852478.9 113.5, 676275.6 6852473 113.5, 676277 6852476.5 113.5, 676278.3 6852479.1 113.5, 676277.2 6852479.6 113.5, 676272 6852482.1 113.5, 676272.3 6852482.8 113.5, 676268.1 6852484.8 113.5, 676269.4 6852487.6 113.5, 676266.1 6852489.2 113.5, 676261.7 6852491.2 113.5))",
+    "ground_truth_area_m2": 178.40658877398778,
+    "iou": 0.8341520467949993,
+    "ground_truth_to_scored_boundary_distance_m": 0.42652553833797513,
+    "scored_to_ground_truth_boundary_distance_m": 0.4096595248095056,
+    "symmetric_boundary_distance_m": 0.4180925315737404,
+    "centroid_distance_m": 0.248578948366279
+  },
+  {
+    "ground_truth_aggregate_id": "BATIMENT0000000337021074",
+    "ground_truth_ids": [
+      "BATIMENT0000000337021074"
+    ],
+    "custom_category": [
+      "isolated"
+    ],
+    "scored_ids": [
+      "BATIMENT0000000337021074"
+    ],
+    "geometry": "POLYGON Z ((676269.4 6852487.6 113.6, 676274.9 6852485.1 113.6, 676278.5 6852492.9 113.6, 676282.1 6852491.3 113.6, 676283.9 6852495.4 113.6, 676277.1 6852498.5 113.6, 676274.1 6852492.1 113.6, 676271 6852493.5 113.6, 676270.3 6852492 113.6, 676263.5 6852495.1 113.6, 676261.7 6852491.2 113.6, 676266.1 6852489.2 113.6, 676269.4 6852487.6 113.6))",
+    "ground_truth_area_m2": 137.87752662906507,
+    "iou": 0.8098470684623985,
+    "ground_truth_to_scored_boundary_distance_m": 0.4267923471182659,
+    "scored_to_ground_truth_boundary_distance_m": 0.41011898795811846,
+    "symmetric_boundary_distance_m": 0.4184556675381922,
+    "centroid_distance_m": 0.6721577486921967
+  },
+  {
+    "ground_truth_aggregate_id": "BATIMENT0000000337021083",
+    "ground_truth_ids": [
+      "BATIMENT0000000337021083"
+    ],
+    "custom_category": [
+      "low_height"
+    ],
+    "scored_ids": [
+      "BATIMENT0000000337021083"
+    ],
+    "geometry": "POLYGON Z ((676276.2 6852472.8 118.2, 676274.9 6852469.8 118.2, 676278.4 6852468.2 118.2, 676279.7 6852471.2 118.2, 676276.2 6852472.8 118.2))",
+    "ground_truth_area_m2": 13.567213181236117,
+    "iou": 0.23182164026345972,
+    "ground_truth_to_scored_boundary_distance_m": 1.1952748468050371,
+    "scored_to_ground_truth_boundary_distance_m": 1.1207260035155893,
+    "symmetric_boundary_distance_m": 1.158000425160313,
+    "centroid_distance_m": 2.286333305635633
+  },
+  {
+    "ground_truth_aggregate_id": "BATIMENT0000000337021082",
+    "ground_truth_ids": [
+      "BATIMENT0000000337021082"
+    ],
+    "custom_category": [
+      "low_height"
+    ],
+    "scored_ids": [
+      "BATIMENT0000000337021082"
+    ],
+    "geometry": "POLYGON Z ((676271.2 6852461.8 112, 676272.9 6852465.4 112, 676274.5 6852469.1 112, 676270.4 6852470.9 112, 676267.1 6852463.6 112, 676271.2 6852461.8 112))",
+    "ground_truth_area_m2": 47.237697166208356,
+    "iou": 0.5027362486317866,
+    "ground_truth_to_scored_boundary_distance_m": 1.104174773768147,
+    "scored_to_ground_truth_boundary_distance_m": 0.9739080937391719,
+    "symmetric_boundary_distance_m": 1.0390414337536595,
+    "centroid_distance_m": 1.521213503857772
+  },
+  {
+    "ground_truth_aggregate_id": "BATIMENT0000000337021088",
+    "ground_truth_ids": [
+      "BATIMENT0000000337021088"
+    ],
+    "custom_category": [
+      "isolated"
+    ],
+    "scored_ids": [
+      "BATIMENT0000000337021088"
+    ],
+    "geometry": "POLYGON Z ((676265.6 6852455.4 115.3, 676258.2 6852458.8 115.3, 676254.9 6852451.7 115.3, 676262.3 6852448.2 115.3, 676265.6 6852455.4 115.3))",
+    "ground_truth_area_m2": 81.77851443189626,
+    "iou": 0.6623850982074171,
+    "ground_truth_to_scored_boundary_distance_m": 0.915762998532146,
+    "scored_to_ground_truth_boundary_distance_m": 0.8328736298952004,
+    "symmetric_boundary_distance_m": 0.8743183142136732,
+    "centroid_distance_m": 1.2227930775670397
+  },
+  {
+    "ground_truth_aggregate_id": "BATIMENT0000000337021090",
+    "ground_truth_ids": [
+      "BATIMENT0000000337021090"
+    ],
+    "custom_category": [
+      "isolated"
+    ],
+    "scored_ids": [
+      "BATIMENT0000000337021090"
+    ],
+    "geometry": "POLYGON Z ((676283.3 6852452.1 112.9, 676292.2 6852448.1 112.9, 676293.8 6852451.7 112.9, 676295.9 6852450.7 112.9, 676299.2 6852458.4 112.9, 676290.4 6852462.2 112.9, 676287 6852454.8 112.9, 676284.9 6852455.8 112.9, 676283.3 6852452.1 112.9))",
+    "ground_truth_area_m2": 132.79552544281844,
+    "iou": 0.7478273854182179,
+    "ground_truth_to_scored_boundary_distance_m": 0.7482606592822961,
+    "scored_to_ground_truth_boundary_distance_m": 0.7279409941787984,
+    "symmetric_boundary_distance_m": 0.7381008267305473,
+    "centroid_distance_m": 0.9826519032600691
+  },
+  {
+    "ground_truth_aggregate_id": "BATIMENT0000000337021091",
+    "ground_truth_ids": [
+      "BATIMENT0000000337021091"
+    ],
+    "custom_category": [
+      "isolated"
+    ],
+    "scored_ids": [
+      "BATIMENT0000000337021091"
+    ],
+    "geometry": "POLYGON Z ((676305.9 6852470.5 113.4, 676296.3 6852474.8 113.4, 676291.6 6852464.8 113.4, 676300.5 6852460.8 113.4, 676303.4 6852466.9 113.4, 676304.1 6852466.6 113.4, 676305.9 6852470.5 113.4))",
+    "ground_truth_area_m2": 138.96746606554785,
+    "iou": 0.7295332171657526,
+    "ground_truth_to_scored_boundary_distance_m": 0.9386509812670537,
+    "scored_to_ground_truth_boundary_distance_m": 0.74103739007901,
+    "symmetric_boundary_distance_m": 0.8398441856730319,
+    "centroid_distance_m": 0.9070089011304101
+  },
+  {
+    "ground_truth_aggregate_id": "BATIMENT0000000337021085",
+    "ground_truth_ids": [
+      "BATIMENT0000000337021085"
+    ],
+    "custom_category": [
+      "isolated"
+    ],
+    "scored_ids": [
+      "BATIMENT0000000337021085"
+    ],
+    "geometry": "POLYGON Z ((676285.7 6852449.8 112.8, 676280 6852439.5 112.8, 676286.3 6852435.9 112.8, 676292.3 6852446.1 112.8, 676285.7 6852449.8 112.8))",
+    "ground_truth_area_m2": 98.12230995825884,
+    "iou": 0.6792381612269175,
+    "ground_truth_to_scored_boundary_distance_m": 0.9221344893474654,
+    "scored_to_ground_truth_boundary_distance_m": 0.8669576958309798,
+    "symmetric_boundary_distance_m": 0.8945460925892226,
+    "centroid_distance_m": 1.6120436877979496
+  },
+  {
+    "ground_truth_aggregate_id": "BATIMENT0000000337021092",
+    "ground_truth_ids": [
+      "BATIMENT0000000337021092"
+    ],
+    "custom_category": [
+      "low_height"
+    ],
+    "scored_ids": [
+      "BATIMENT0000000337021092"
+    ],
+    "geometry": "POLYGON Z ((676264.7 6852440.9 111.4, 676258.4 6852426.9 111.4, 676262.4 6852425.1 111.4, 676264.9 6852431.2 111.4, 676265.5 6852430.9 111.4, 676269.2 6852439 111.4, 676264.7 6852440.9 111.4))",
+    "ground_truth_area_m2": 82.62666220060426,
+    "iou": 0.7204721312227172,
+    "ground_truth_to_scored_boundary_distance_m": 0.6133415978785794,
+    "scored_to_ground_truth_boundary_distance_m": 0.6050587480985922,
+    "symmetric_boundary_distance_m": 0.6092001729885859,
+    "centroid_distance_m": 1.0343766359228808
+  },
+  {
+    "ground_truth_aggregate_id": "BATIMENT0000000337021093",
+    "ground_truth_ids": [
+      "BATIMENT0000000337021093"
+    ],
+    "custom_category": [
+      "low_height"
+    ],
+    "scored_ids": [
+      "BATIMENT0000000337021093"
+    ],
+    "geometry": "POLYGON Z ((676264.7 6852442.8 111.3, 676262.5 6852443.8 111.3, 676261.4 6852441.2 111.3, 676263.5 6852440.3 111.3, 676264.7 6852442.8 111.3))",
+    "ground_truth_area_m2": 11.921962537618663,
+    "iou": 0.5515031588922282,
+    "ground_truth_to_scored_boundary_distance_m": 0.4967083463182421,
+    "scored_to_ground_truth_boundary_distance_m": 0.3950559753497211,
+    "symmetric_boundary_distance_m": 0.4458821608339816,
+    "centroid_distance_m": 0.5002293066793174
+  },
+  {
+    "ground_truth_aggregate_id": "BATIMENT0000000337021094",
+    "ground_truth_ids": [
+      "BATIMENT0000000337021094"
+    ],
+    "custom_category": [
+      "low_height"
+    ],
+    "scored_ids": [
+      "BATIMENT0000000337021094"
+    ],
+    "geometry": "POLYGON Z ((676267 6852446 111, 676265.4 6852442.5 111, 676265.4 6852442.3 111, 676267.7 6852441.2 111, 676269.4 6852445 111, 676267 6852446 111))",
+    "ground_truth_area_m2": 11.658061532287821,
+    "iou": 0.36565272871629334,
+    "ground_truth_to_scored_boundary_distance_m": 0.7976405137542587,
+    "scored_to_ground_truth_boundary_distance_m": 0.7525754576545607,
+    "symmetric_boundary_distance_m": 0.7751079857044096,
+    "centroid_distance_m": 1.3192766621305732
+  },
+  {
+    "ground_truth_aggregate_id": "BATIMENT0000000337021097",
+    "ground_truth_ids": [
+      "BATIMENT0000000337021097"
+    ],
+    "custom_category": [
+      "isolated"
+    ],
+    "scored_ids": [
+      "BATIMENT0000000337021097"
+    ],
+    "geometry": "POLYGON Z ((676256.6 6852447.4 113.6, 676249.7 6852450.5 113.6, 676244.5 6852438.7 113.6, 676251.4 6852435.7 113.6, 676256.6 6852447.4 113.6))",
+    "ground_truth_area_m2": 109.28338883370259,
+    "iou": 0.8870058023792594,
+    "ground_truth_to_scored_boundary_distance_m": 0.2976833869768902,
+    "scored_to_ground_truth_boundary_distance_m": 0.29309802619607894,
+    "symmetric_boundary_distance_m": 0.2953907065864846,
+    "centroid_distance_m": 0.1335383144784037
+  },
+  {
+    "ground_truth_aggregate_id": "BATIMENT0000000337021099",
+    "ground_truth_ids": [
+      "BATIMENT0000000337021099"
+    ],
+    "custom_category": [
+      "isolated"
+    ],
+    "scored_ids": [
+      "BATIMENT0000000337021099"
+    ],
+    "geometry": "POLYGON Z ((676246.5 6852428.8 114.7, 676250.5 6852427 114.7, 676251 6852428.1 114.7, 676247 6852429.9 114.7, 676246.5 6852428.8 114.7))",
+    "ground_truth_area_m2": 6.590648934269399,
+    "iou": 0.10414368591404603,
+    "ground_truth_to_scored_boundary_distance_m": 0.6862439006443196,
+    "scored_to_ground_truth_boundary_distance_m": 0.5604798110796062,
+    "symmetric_boundary_distance_m": 0.6233618558619629,
+    "centroid_distance_m": 1.0904759778609006
+  },
+  {
+    "ground_truth_aggregate_id": "BATIMENT0000000337021100",
+    "ground_truth_ids": [
+      "BATIMENT0000000337021100"
+    ],
+    "custom_category": [
+      "isolated"
+    ],
+    "scored_ids": [
+      "BATIMENT0000000337021100"
+    ],
+    "geometry": "POLYGON Z ((676246.9 6852419.8 114.1, 676247.2 6852419.6 114.1, 676250.5 6852427 114.1, 676246.5 6852428.8 114.1, 676242.3 6852430.8 114.1, 676239 6852423.3 114.1, 676240.4 6852422.7 114.1, 676246.9 6852419.8 114.1))",
+    "ground_truth_area_m2": 88.03963948191341,
+    "iou": 0.7787653671032552,
+    "ground_truth_to_scored_boundary_distance_m": 0.5740771627810729,
+    "scored_to_ground_truth_boundary_distance_m": 0.5441439079530255,
+    "symmetric_boundary_distance_m": 0.5591105353670491,
+    "centroid_distance_m": 0.60510533619925
+  },
+  {
+    "ground_truth_aggregate_id": "BATIMENT0000000337021101",
+    "ground_truth_ids": [
+      "BATIMENT0000000337021101"
+    ],
+    "custom_category": [
+      "isolated"
+    ],
+    "scored_ids": [
+      "BATIMENT0000000337021101"
+    ],
+    "geometry": "POLYGON Z ((676246.9 6852419.8 116.5, 676240.4 6852422.7 116.5, 676236.6 6852414.1 116.5, 676242.9 6852411.1 116.5, 676246.9 6852419.8 116.5))",
+    "ground_truth_area_m2": 84.05241719720141,
+    "iou": 0.7955154917972664,
+    "ground_truth_to_scored_boundary_distance_m": 0.5069405304913819,
+    "scored_to_ground_truth_boundary_distance_m": 0.47739388538067895,
+    "symmetric_boundary_distance_m": 0.4921672079360304,
+    "centroid_distance_m": 0.3747894508193718
+  },
+  {
+    "ground_truth_aggregate_id": "BATIMENT0000000337021084",
+    "ground_truth_ids": [
+      "BATIMENT0000000337021084"
+    ],
+    "custom_category": [
+      "isolated"
+    ],
+    "scored_ids": [
+      "BATIMENT0000000337021084"
+    ],
+    "geometry": "POLYGON Z ((676266.6 6852424.2 115.4, 676263.6 6852417 115.4, 676271.4 6852413.6 115.4, 676274.5 6852420.6 115.4, 676266.6 6852424.2 115.4))",
+    "ground_truth_area_m2": 80.53967680647331,
+    "iou": 0.8245625340902898,
+    "ground_truth_to_scored_boundary_distance_m": 0.4602949287917433,
+    "scored_to_ground_truth_boundary_distance_m": 0.35671437521281185,
+    "symmetric_boundary_distance_m": 0.4085046520022776,
+    "centroid_distance_m": 0.3068613081613128
+  },
+  {
+    "ground_truth_aggregate_id": "BATIMENT0000000337021086",
+    "ground_truth_ids": [
+      "BATIMENT0000000337021086"
+    ],
+    "custom_category": [
+      "isolated"
+    ],
+    "scored_ids": [
+      "BATIMENT0000000337021086"
+    ],
+    "geometry": "POLYGON Z ((676281.4 6852431.4 114.4, 676273.4 6852435 114.4, 676269.4 6852426.2 114.4, 676277.4 6852422.5 114.4, 676281.4 6852431.4 114.4))",
+    "ground_truth_area_m2": 109.25143579781343,
+    "iou": 0.7816830907231128,
+    "ground_truth_to_scored_boundary_distance_m": 0.6227993814642548,
+    "scored_to_ground_truth_boundary_distance_m": 0.5953782424404922,
+    "symmetric_boundary_distance_m": 0.6090888119523735,
+    "centroid_distance_m": 0.409465764317949
+  },
+  {
+    "ground_truth_aggregate_id": "BATIMENT0000000337021087",
+    "ground_truth_ids": [
+      "BATIMENT0000000337021087"
+    ],
+    "custom_category": [
+      "isolated"
+    ],
+    "scored_ids": [
+      "BATIMENT0000000337021087"
+    ],
+    "geometry": "POLYGON Z ((676265.7 6852411.2 114.7, 676259.3 6852414.1 114.7, 676254.7 6852404.4 114.7, 676261.1 6852401.5 114.7, 676265.7 6852411.2 114.7))",
+    "ground_truth_area_m2": 92.02557991889138,
+    "iou": 0.819554737541659,
+    "ground_truth_to_scored_boundary_distance_m": 0.4861306982518269,
+    "scored_to_ground_truth_boundary_distance_m": 0.3948634724427819,
+    "symmetric_boundary_distance_m": 0.4404970853473044,
+    "centroid_distance_m": 0.3246041414709291
+  },
+  {
+    "ground_truth_aggregate_id": "BATIMENT0000000337021098",
+    "ground_truth_ids": [
+      "BATIMENT0000000337021098"
+    ],
+    "custom_category": [
+      "isolated"
+    ],
+    "scored_ids": [
+      "BATIMENT0000000337021098"
+    ],
+    "geometry": "POLYGON Z ((676242.6 6852406.2 111.9, 676246.8 6852404.3 111.9, 676247.6 6852403.9 111.9, 676249.1 6852407.3 111.9, 676244.1 6852409.6 111.9, 676242.6 6852406.2 111.9))",
+    "ground_truth_area_m2": 24.393822783202996,
+    "iou": 0.31107558165227983,
+    "ground_truth_to_scored_boundary_distance_m": 1.2261192805669965,
+    "scored_to_ground_truth_boundary_distance_m": 1.2172555164463164,
+    "symmetric_boundary_distance_m": 1.2216873985066563,
+    "centroid_distance_m": 1.8747501940617164
+  },
+  {
+    "ground_truth_aggregate_id": "BATIMENT0000000337020548",
+    "ground_truth_ids": [
+      "BATIMENT0000000337020548"
+    ],
+    "custom_category": [
+      "isolated"
+    ],
+    "scored_ids": [
+      "BATIMENT0000000337020548"
+    ],
+    "geometry": "POLYGON Z ((676246.8 6852404.3 113, 676242.6 6852406.2 113, 676236.6 6852408.9 113, 676235.3 6852405.9 113, 676238.2 6852404.5 113, 676232.9 6852393 113, 676240.2 6852389.6 113, 676246.8 6852404.3 113))",
+    "ground_truth_area_m2": 154.48956884154592,
+    "iou": 0.7082814356735031,
+    "ground_truth_to_scored_boundary_distance_m": 0.9112987758551583,
+    "scored_to_ground_truth_boundary_distance_m": 0.8984751195712057,
+    "symmetric_boundary_distance_m": 0.904886947713182,
+    "centroid_distance_m": 1.5458675293668938
+  },
+  {
+    "ground_truth_aggregate_id": "BATIMENT0000000337021413",
+    "ground_truth_ids": [
+      "BATIMENT0000000337021413"
+    ],
+    "custom_category": [
+      "isolated"
+    ],
+    "scored_ids": [
+      "BATIMENT0000000337021413"
+    ],
+    "geometry": "POLYGON Z ((676391.4 6852570.4 115, 676394.1 6852568.2 115, 676406.3 6852558.4 115, 676409 6852556.2 115, 676415.3 6852564 115, 676411.7 6852566.8 115, 676413.6 6852569 115, 676412.6 6852580.1 115, 676404.4 6852579.3 115, 676401.2 6852575.3 115, 676397.7 6852578.2 115, 676391.4 6852570.4 115))",
+    "ground_truth_area_m2": 358.4676027488664,
+    "iou": 0.8471070305992978,
+    "ground_truth_to_scored_boundary_distance_m": 0.7136385675028443,
+    "scored_to_ground_truth_boundary_distance_m": 0.7360159794032085,
+    "symmetric_boundary_distance_m": 0.7248272734530263,
+    "centroid_distance_m": 1.0032559293064465
+  },
+  {
+    "ground_truth_aggregate_id": "BATIMENT0000000337021360",
+    "ground_truth_ids": [
+      "BATIMENT0000000337021360"
+    ],
+    "custom_category": [
+      "isolated"
+    ],
+    "scored_ids": [
+      "BATIMENT0000000337021360"
+    ],
+    "geometry": "POLYGON Z ((676461.8 6852537.2 121.9, 676455.8 6852536.3 121.9, 676447.3 6852535 121.9, 676449.6 6852519.2 121.9, 676458.2 6852520.4 121.9, 676458.1 6852521 121.9, 676463.8 6852521.8 121.9, 676461.8 6852537.2 121.9))",
+    "ground_truth_area_m2": 244.93823776529425,
+    "iou": 0.9378086540582844,
+    "ground_truth_to_scored_boundary_distance_m": 0.2513239037030822,
+    "scored_to_ground_truth_boundary_distance_m": 0.24083646035503903,
+    "symmetric_boundary_distance_m": 0.24608018202906062,
+    "centroid_distance_m": 0.23895950463215895
+  },
+  {
+    "ground_truth_aggregate_id": "BATIMENT0000000337021359",
+    "ground_truth_ids": [
+      "BATIMENT0000000337021359"
+    ],
+    "custom_category": [
+      "isolated"
+    ],
+    "scored_ids": [
+      "BATIMENT0000000337021359"
+    ],
+    "geometry": "POLYGON Z ((676455.8 6852536.3 121.9, 676461.8 6852537.2 121.9, 676470.3 6852538.4 121.9, 676468.1 6852554.2 121.9, 676459.7 6852553.2 121.9, 676459.4 6852555.6 121.9, 676453.3 6852554.7 121.9, 676455.8 6852536.3 121.9))",
+    "ground_truth_area_m2": 264.27838701862754,
+    "iou": 0.9393983452709999,
+    "ground_truth_to_scored_boundary_distance_m": 0.24325478567660613,
+    "scored_to_ground_truth_boundary_distance_m": 0.23668567671020735,
+    "symmetric_boundary_distance_m": 0.23997023119340674,
+    "centroid_distance_m": 0.2291080227372676
+  },
+  {
+    "ground_truth_aggregate_id": "BATIMENT0000000337021414",
+    "ground_truth_ids": [
+      "BATIMENT0000000337021414"
+    ],
+    "custom_category": [
+      "isolated"
+    ],
+    "scored_ids": [
+      "BATIMENT0000000337021414"
+    ],
+    "geometry": "POLYGON Z ((676394.1 6852568.2 115.4, 676396.6 6852558.9 115.4, 676406.3 6852558.4 115.4, 676394.1 6852568.2 115.4))",
+    "ground_truth_area_m2": 36.03642829173289,
+    "iou": 0.4510714479872555,
+    "ground_truth_to_scored_boundary_distance_m": 0.8344825035004934,
+    "scored_to_ground_truth_boundary_distance_m": 0.9994766389907795,
+    "symmetric_boundary_distance_m": 0.9169795712456364,
+    "centroid_distance_m": 1.3360378617888713
+  },
+  {
+    "ground_truth_aggregate_id": "BATIMENT0000000337020940",
+    "ground_truth_ids": [
+      "BATIMENT0000000337020940"
+    ],
+    "custom_category": [
+      "isolated"
+    ],
+    "scored_ids": [
+      "BATIMENT0000000337020940"
+    ],
+    "geometry": "POLYGON Z ((676375.8 6852578.8 114.2, 676382.9 6852577.1 114.2, 676383.6 6852579.6 114.2, 676376.5 6852581.3 114.2, 676375.8 6852578.8 114.2))",
+    "ground_truth_area_m2": 33.624760960746876,
+    "iou": 0.5629065507234956,
+    "ground_truth_to_scored_boundary_distance_m": 0.7248044768608866,
+    "scored_to_ground_truth_boundary_distance_m": 0.6106766647297818,
+    "symmetric_boundary_distance_m": 0.6677405707953341,
+    "centroid_distance_m": 0.6615196538036451
+  },
+  {
+    "ground_truth_aggregate_id": "BATIMENT0000000337020938",
+    "ground_truth_ids": [
+      "BATIMENT0000000337020938"
+    ],
+    "custom_category": [
+      "isolated"
+    ],
+    "scored_ids": [
+      "BATIMENT0000000337020938"
+    ],
+    "geometry": "POLYGON Z ((676372.4 6852564.1 112.1, 676372.5 6852564.1 112.1, 676377.4 6852562.8 112.1, 676378.7 6852567.2 112.1, 676373.7 6852568.5 112.1, 676373.6 6852568.5 112.1, 676372.4 6852564.1 112.1))",
+    "ground_truth_area_m2": 22.95073560505668,
+    "iou": 0.9128466786999678,
+    "ground_truth_to_scored_boundary_distance_m": 0.10786739363968388,
+    "scored_to_ground_truth_boundary_distance_m": 0.11238432903942659,
+    "symmetric_boundary_distance_m": 0.11012586133955524,
+    "centroid_distance_m": 0.17155641465477994
+  },
+  {
+    "ground_truth_aggregate_id": "BATIMENT0000000337020939",
+    "ground_truth_ids": [
+      "BATIMENT0000000337020939"
+    ],
+    "custom_category": [
+      "isolated"
+    ],
+    "scored_ids": [
+      "BATIMENT0000000337020939"
+    ],
+    "geometry": "POLYGON Z ((676346.6 6852580.3 115, 676345.5 6852575.6 115, 676347.9 6852574.9 115, 676348 6852575.2 115, 676356.1 6852573.1 115, 676356.5 6852575.1 115, 676362.5 6852573.6 115, 676362 6852571.5 115, 676360.8 6852566.7 115, 676372.4 6852563.8 115, 676372.5 6852564.1 115, 676372.4 6852564.1 115, 676373.6 6852568.5 115, 676373.7 6852568.5 115, 676374.2 6852570.5 115, 676373.8 6852570.8 115, 676375.8 6852578.8 115, 676376.5 6852581.3 115, 676383.6 6852579.6 115, 676384.2 6852579.5 115, 676387.2 6852590.9 115, 676375.9 6852593.5 115, 676373.7 6852584.8 115, 676365.9 6852586.6 115, 676365.6 6852585.7 115, 676359.5 6852587.1 115, 676360.2 6852589.7 115, 676358.3 6852590.2 115, 676358.2 6852590 115, 676349.5 6852592.1 115, 676348.3 6852586.9 115, 676348.7 6852586.5 115, 676347.1 6852580.2 115, 676346.6 6852580.3 115))",
+    "ground_truth_area_m2": 627.2334580034744,
+    "iou": 0.9554575294006618,
+    "ground_truth_to_scored_boundary_distance_m": 0.1991153674373638,
+    "scored_to_ground_truth_boundary_distance_m": 0.1994241198801976,
+    "symmetric_boundary_distance_m": 0.1992697436587807,
+    "centroid_distance_m": 0.31605259810435404
+  },
+  {
+    "ground_truth_aggregate_id": "BATIMENT0000000337021147",
+    "ground_truth_ids": [
+      "BATIMENT0000000337021147"
+    ],
+    "custom_category": [
+      "isolated"
+    ],
+    "scored_ids": [
+      "BATIMENT0000000337021147"
+    ],
+    "geometry": "POLYGON Z ((676356.1 6852573.1 114.5, 676362 6852571.5 114.5, 676362.5 6852573.6 114.5, 676356.5 6852575.1 114.5, 676356.1 6852573.1 114.5))",
+    "ground_truth_area_m2": 10.55769196193989,
+    "iou": 0.8187430758341678,
+    "ground_truth_to_scored_boundary_distance_m": 0.1430105732740583,
+    "scored_to_ground_truth_boundary_distance_m": 0.1523175343360073,
+    "symmetric_boundary_distance_m": 0.1476640538050328,
+    "centroid_distance_m": 0.1753881352690298
+  },
+  {
+    "ground_truth_aggregate_id": "BATIMENT0000000353654796",
+    "ground_truth_ids": [
+      "BATIMENT0000000353654796"
+    ],
+    "custom_category": [
+      "isolated"
+    ],
+    "scored_ids": [
+      "BATIMENT0000000353654796"
+    ],
+    "geometry": "POLYGON Z ((676440.9 6852598.6 114.7, 676443 6852575 114.7, 676443.5 6852574 114.7, 676445 6852573.3 114.7, 676468.1 6852575.6 114.7, 676469 6852576.3 114.7, 676469.3 6852578.4 114.7, 676467.4 6852600.6 114.7, 676466.6 6852601.5 114.7, 676465.2 6852602.3 114.7, 676442.4 6852600.7 114.7, 676441.5 6852600 114.7, 676440.9 6852598.6 114.7), (676450.3 6852586.7 114.3, 676449.3 6852590.9 114.3, 676449.4 6852592.8 114.3, 676450.5 6852594.1 114.3, 676451.8 6852594.2 114.3, 676453.4 6852593.8 114.3, 676454.4 6852592.7 114.3, 676454.7 6852590.5 114.3, 676454.8 6852588 114.3, 676455.7 6852586.7 114.3, 676457.4 6852586 114.3, 676459.4 6852585.5 114.3, 676460.5 6852585.1 114.3, 676461.2 6852584 114.3, 676461.1 6852582.4 114.3, 676460.4 6852581.9 114.3, 676458.2 6852582.4 114.3, 676455.9 6852583.1 114.3, 676452.9 6852583.1 114.3, 676451.1 6852582.2 114.3, 676449.1 6852581.8 114.3, 676448.2 6852583.3 114.3, 676449.3 6852585.3 114.3, 676450.3 6852586.7 114.3))",
+    "ground_truth_area_m2": 618.1931321365395,
+    "iou": 0.9360683547392539,
+    "ground_truth_to_scored_boundary_distance_m": 0.27782346537118724,
+    "scored_to_ground_truth_boundary_distance_m": 0.27933035913199633,
+    "symmetric_boundary_distance_m": 0.27857691225159176,
+    "centroid_distance_m": 0.45699013258320675
+  },
+  {
+    "ground_truth_aggregate_id": "BATIMENT0000000337024951",
+    "ground_truth_ids": [
+      "BATIMENT0000000337024951"
+    ],
+    "custom_category": [
+      "low_height"
+    ],
+    "scored_ids": [
+      "BATIMENT0000000337024951"
+    ],
+    "geometry": "POLYGON Z ((676543.5 6851799.6 111.8, 676545 6851800.4 111.8, 676541.9 6851805.8 111.8, 676539 6851804.2 111.8, 676542.1 6851798.8 111.8, 676543.5 6851799.6 111.8))",
+    "ground_truth_area_m2": 19.436228729007606,
+    "iou": 0.7628765900529821,
+    "ground_truth_to_scored_boundary_distance_m": 0.2805686859876566,
+    "scored_to_ground_truth_boundary_distance_m": 0.29022719572719013,
+    "symmetric_boundary_distance_m": 0.28539794085742337,
+    "centroid_distance_m": 0.397029074802054
+  },
+  {
+    "ground_truth_aggregate_id": "BATIMENT0000000337024893",
+    "ground_truth_ids": [
+      "BATIMENT0000000337024893"
+    ],
+    "custom_category": [
+      "adjacent_house"
+    ],
+    "scored_ids": [
+      "BATIMENT0000000337024893"
+    ],
+    "geometry": "POLYGON Z ((676601.8 6851747 113.6, 676598.9 6851752.2 113.6, 676596.5 6851750.9 113.6, 676598.6 6851747.1 113.6, 676584.6 6851739 113.6, 676589.3 6851730.8 113.6, 676596.2 6851734.9 113.6, 676595.2 6851736.5 113.6, 676602.4 6851740.7 113.6, 676600.7 6851743.6 113.6, 676603 6851744.9 113.6, 676601.8 6851747 113.6))",
+    "ground_truth_area_m2": 170.06630985939148,
+    "iou": 0.8279292279020529,
+    "ground_truth_to_scored_boundary_distance_m": 0.4796476359684201,
+    "scored_to_ground_truth_boundary_distance_m": 0.46127044772510356,
+    "symmetric_boundary_distance_m": 0.4704590418467618,
+    "centroid_distance_m": 0.9594047122938375
+  },
+  {
+    "ground_truth_aggregate_id": "BATIMENT0000000337024953",
+    "ground_truth_ids": [
+      "BATIMENT0000000337024953"
+    ],
+    "custom_category": [
+      "low_height"
+    ],
+    "scored_ids": [
+      "BATIMENT0000000337024953"
+    ],
+    "geometry": "POLYGON Z ((676564.9 6851756.5 112.2, 676563.5 6851755.7 112.2, 676566.6 6851750.1 112.2, 676569.4 6851751.8 112.2, 676566.4 6851757.3 112.2, 676564.9 6851756.5 112.2))",
+    "ground_truth_area_m2": 19.14648423891173,
+    "iou": 0.8566685688013277,
+    "ground_truth_to_scored_boundary_distance_m": 0.1598614933959,
+    "scored_to_ground_truth_boundary_distance_m": 0.16680086661893567,
+    "symmetric_boundary_distance_m": 0.16333118000741784,
+    "centroid_distance_m": 0.21139735385446445
+  },
+  {
+    "ground_truth_aggregate_id": "BATIMENT0000000337024894",
+    "ground_truth_ids": [
+      "BATIMENT0000000337024894"
+    ],
+    "custom_category": [
+      "adjacent_house"
+    ],
+    "scored_ids": [
+      "BATIMENT0000000337024894"
+    ],
+    "geometry": "POLYGON Z ((676584 6851721.3 113.7, 676585.7 6851718.4 113.7, 676593.8 6851723.1 113.7, 676589.3 6851730.8 113.7, 676584.6 6851739 113.7, 676582 6851737.4 113.7, 676587 6851728.6 113.7, 676581.7 6851725.4 113.7, 676584 6851721.3 113.7))",
+    "ground_truth_area_m2": 110.64672297754643,
+    "iou": 0.7573835625557999,
+    "ground_truth_to_scored_boundary_distance_m": 0.5441887192206802,
+    "scored_to_ground_truth_boundary_distance_m": 0.541029026505263,
+    "symmetric_boundary_distance_m": 0.5426088728629717,
+    "centroid_distance_m": 0.8612894540535289
+  },
+  {
+    "ground_truth_aggregate_id": "BATIMENT0000000337024890",
+    "ground_truth_ids": [
+      "BATIMENT0000000337024890"
+    ],
+    "custom_category": [
+      "adjacent_house"
+    ],
+    "scored_ids": [
+      "BATIMENT0000000337024890"
+    ],
+    "geometry": "POLYGON Z ((676616.9 6851730 113.5, 676611.6 6851727.1 113.5, 676616 6851719.2 113.5, 676618.8 6851720.7 113.5, 676629.1 6851726.6 113.5, 676632.2 6851728.4 113.5, 676630.7 6851731.1 113.5, 676621.4 6851726 113.5, 676618.6 6851730.9 113.5, 676616.9 6851730 113.5))",
+    "ground_truth_area_m2": 111.05222332802657,
+    "iou": 0.853497361480077,
+    "ground_truth_to_scored_boundary_distance_m": 0.3139634259749921,
+    "scored_to_ground_truth_boundary_distance_m": 0.3093553578561425,
+    "symmetric_boundary_distance_m": 0.3116593919155673,
+    "centroid_distance_m": 0.6026168957474253
+  },
+  {
+    "ground_truth_aggregate_id": "BATIMENT0000000337024891",
+    "ground_truth_ids": [
+      "BATIMENT0000000337024891"
+    ],
+    "custom_category": [
+      "adjacent_house"
+    ],
+    "scored_ids": [
+      "BATIMENT0000000337024891"
+    ],
+    "geometry": "POLYGON Z ((676621.5 6851746.6 114.2, 676620.1 6851745.9 114.2, 676616.2 6851743.6 114.2, 676617.8 6851740.9 114.2, 676612.5 6851737.9 114.2, 676616.9 6851730 114.2, 676618.6 6851730.9 114.2, 676623.5 6851733.8 114.2, 676620.6 6851739.1 114.2, 676624.6 6851741.4 114.2, 676621.5 6851746.6 114.2))",
+    "ground_truth_area_m2": 108.79132231029874,
+    "iou": 0.8238610521702073,
+    "ground_truth_to_scored_boundary_distance_m": 0.42402769590427514,
+    "scored_to_ground_truth_boundary_distance_m": 0.4018633320982667,
+    "symmetric_boundary_distance_m": 0.4129455140012709,
+    "centroid_distance_m": 0.4658939692165912
+  },
+  {
+    "ground_truth_aggregate_id": "BATIMENT0000000337024892",
+    "ground_truth_ids": [
+      "BATIMENT0000000337024892"
+    ],
+    "custom_category": [
+      "adjacent_house"
+    ],
+    "scored_ids": [
+      "BATIMENT0000000337024892"
+    ],
+    "geometry": "POLYGON Z ((676598.9 6851752.2 113.4, 676601.8 6851747 113.4, 676604.3 6851748.4 113.4, 676606.1 6851745.3 113.4, 676612.1 6851748.7 113.4, 676612.9 6851747.4 113.4, 676611.7 6851746.6 113.4, 676614.1 6851742.4 113.4, 676616.2 6851743.6 113.4, 676620.1 6851745.9 113.4, 676613.9 6851756.5 113.4, 676605.7 6851751.9 113.4, 676603.9 6851755.2 113.4, 676598.9 6851752.2 113.4))",
+    "ground_truth_area_m2": 162.97764491219863,
+    "iou": 0.7742328846024144,
+    "ground_truth_to_scored_boundary_distance_m": 0.6111787048755746,
+    "scored_to_ground_truth_boundary_distance_m": 0.5974986180250234,
+    "symmetric_boundary_distance_m": 0.604338661450299,
+    "centroid_distance_m": 0.758824990953615
+  },
+  {
+    "ground_truth_aggregate_id": "BATIMENT0000000337024889",
+    "ground_truth_ids": [
+      "BATIMENT0000000337024889"
+    ],
+    "custom_category": [
+      "adjacent_house"
+    ],
+    "scored_ids": [
+      "BATIMENT0000000337024889"
+    ],
+    "geometry": "POLYGON Z ((676618.8 6851720.7 113, 676620.8 6851717.1 113, 676625.3 6851719.6 113, 676628 6851714.9 113, 676624.3 6851712.8 113, 676626.1 6851709.4 113, 676631.4 6851712.3 113, 676632.7 6851710 113, 676635.3 6851711.5 113, 676640.4 6851714.5 113, 676639.1 6851716.7 113, 676635.8 6851714.7 113, 676629.1 6851726.6 113, 676618.8 6851720.7 113))",
+    "ground_truth_area_m2": 165.27615065296547,
+    "iou": 0.8743077233686218,
+    "ground_truth_to_scored_boundary_distance_m": 0.2970582608280819,
+    "scored_to_ground_truth_boundary_distance_m": 0.29219437378949265,
+    "symmetric_boundary_distance_m": 0.2946263173087873,
+    "centroid_distance_m": 0.38953257773336597
+  },
+  {
+    "ground_truth_aggregate_id": "BATIMENT0000000337024885",
+    "ground_truth_ids": [
+      "BATIMENT0000000337024885"
+    ],
+    "custom_category": [
+      "adjacent_house"
+    ],
+    "scored_ids": [
+      "BATIMENT0000000337024885"
+    ],
+    "geometry": "POLYGON Z ((676624.8 6851688.7 114.5, 676620.9 6851695.4 114.5, 676618.5 6851699.8 114.5, 676610.8 6851695.4 114.5, 676614.8 6851688.3 114.5, 676619.8 6851691.2 114.5, 676623.9 6851684.1 114.5, 676626.6 6851685.7 114.5, 676624.8 6851688.7 114.5))",
+    "ground_truth_area_m2": 103.7383476006208,
+    "iou": 0.7303398433899885,
+    "ground_truth_to_scored_boundary_distance_m": 0.61682825035922,
+    "scored_to_ground_truth_boundary_distance_m": 0.6128877643258808,
+    "symmetric_boundary_distance_m": 0.6148580073425504,
+    "centroid_distance_m": 0.7194146498319344
+  },
+  {
+    "ground_truth_aggregate_id": "BATIMENT0000000337024887",
+    "ground_truth_ids": [
+      "BATIMENT0000000337024887"
+    ],
+    "custom_category": [
+      "adjacent_house"
+    ],
+    "scored_ids": [
+      "BATIMENT0000000337024887"
+    ],
+    "geometry": "POLYGON Z ((676620.9 6851695.4 114.7, 676624.8 6851688.7 114.7, 676629.8 6851691.5 114.7, 676632.3 6851687.4 114.7, 676637.8 6851690.6 114.7, 676634.9 6851695.7 114.7, 676632.4 6851694.3 114.7, 676629 6851700 114.7, 676620.9 6851695.4 114.7))",
+    "ground_truth_area_m2": 108.8485100309785,
+    "iou": 0.8208215571276416,
+    "ground_truth_to_scored_boundary_distance_m": 0.4271767598017935,
+    "scored_to_ground_truth_boundary_distance_m": 0.42707634992523524,
+    "symmetric_boundary_distance_m": 0.42712655486351436,
+    "centroid_distance_m": 0.4814256062335168
+  },
+  {
+    "ground_truth_aggregate_id": "BATIMENT0000000337024888",
+    "ground_truth_ids": [
+      "BATIMENT0000000337024888"
+    ],
+    "custom_category": [
+      "adjacent_house"
+    ],
+    "scored_ids": [
+      "BATIMENT0000000337024888"
+    ],
+    "geometry": "POLYGON Z ((676635.3 6851711.5 113, 676636.6 6851709.2 113, 676634.3 6851707.7 113, 676636.5 6851703.7 113, 676637.9 6851704.4 113, 676638.6 6851703 113, 676632.7 6851699.5 113, 676634.9 6851695.7 113, 676637.8 6851690.6 113, 676640.5 6851692.1 113, 676638.5 6851695.7 113, 676646.7 6851700.4 113, 676640.5 6851711.2 113, 676641.8 6851712 113, 676640.4 6851714.5 113, 676635.3 6851711.5 113))",
+    "ground_truth_area_m2": 161.20521714093505,
+    "iou": 0.8416411129954728,
+    "ground_truth_to_scored_boundary_distance_m": 0.38512818951061767,
+    "scored_to_ground_truth_boundary_distance_m": 0.3928776910277571,
+    "symmetric_boundary_distance_m": 0.38900294026918736,
+    "centroid_distance_m": 0.45298030010464757
+  },
+  {
+    "ground_truth_aggregate_id": "BATIMENT0000000337024952",
+    "ground_truth_ids": [
+      "BATIMENT0000000337024952"
+    ],
+    "custom_category": [
+      "low_height"
+    ],
+    "scored_ids": [
+      "BATIMENT0000000337024952"
+    ],
+    "geometry": "POLYGON Z ((676616.2 6851684.7 111.8, 676619.1 6851679.4 111.8, 676621.8 6851680.8 111.8, 676618.7 6851686.1 111.8, 676616.2 6851684.7 111.8))",
+    "ground_truth_area_m2": 17.97622854514895,
+    "iou": 0.7784124941982757,
+    "ground_truth_to_scored_boundary_distance_m": 0.25411106271011286,
+    "scored_to_ground_truth_boundary_distance_m": 0.241748689512873,
+    "symmetric_boundary_distance_m": 0.24792987611149292,
+    "centroid_distance_m": 0.5281264427753126
+  },
+  {
+    "ground_truth_aggregate_id": "BATIMENT0000000337024886",
+    "ground_truth_ids": [
+      "BATIMENT0000000337024886"
+    ],
+    "custom_category": [
+      "adjacent_house"
+    ],
+    "scored_ids": [
+      "BATIMENT0000000337024886"
+    ],
+    "geometry": "POLYGON Z ((676614.8 6851688.3 113.1, 676610.8 6851695.4 113.1, 676603.2 6851691.2 113.1, 676607.7 6851683.4 113.1, 676611.3 6851677 113.1, 676613.8 6851678.4 113.1, 676609.9 6851685.5 113.1, 676614.8 6851688.3 113.1))",
+    "ground_truth_area_m2": 107.92774403575231,
+    "iou": 0.7594978042175713,
+    "ground_truth_to_scored_boundary_distance_m": 0.5569909852831155,
+    "scored_to_ground_truth_boundary_distance_m": 0.5287365976887749,
+    "symmetric_boundary_distance_m": 0.5428637914859452,
+    "centroid_distance_m": 0.8081446737251625
+  },
+  {
+    "ground_truth_aggregate_id": "BATIMENT0000000337024538",
+    "ground_truth_ids": [
+      "BATIMENT0000000337024538"
+    ],
+    "custom_category": [
+      "adjacent_house"
+    ],
+    "scored_ids": [
+      "BATIMENT0000000337024538"
+    ],
+    "geometry": "POLYGON Z ((676593.1 6851670.3 113, 676588.3 6851678.9 113, 676586.6 6851681.9 113, 676578.9 6851677.6 113, 676583.1 6851670.3 113, 676588 6851673.2 113, 676592.1 6851666.1 113, 676594.6 6851667.6 113, 676593.1 6851670.3 113))",
+    "ground_truth_area_m2": 103.74616527038424,
+    "iou": 0.7646696702160667,
+    "ground_truth_to_scored_boundary_distance_m": 0.5101926176090035,
+    "scored_to_ground_truth_boundary_distance_m": 0.5117634861723276,
+    "symmetric_boundary_distance_m": 0.5109780518906655,
+    "centroid_distance_m": 0.6278425762976387
+  },
+  {
+    "ground_truth_aggregate_id": "BATIMENT0000000337024537",
+    "ground_truth_ids": [
+      "BATIMENT0000000337024537"
+    ],
+    "custom_category": [
+      "adjacent_house"
+    ],
+    "scored_ids": [
+      "BATIMENT0000000337024537"
+    ],
+    "geometry": "POLYGON Z ((676611.9 6851675.8 113, 676611.3 6851677 113, 676607.7 6851683.4 113, 676605.1 6851681.9 113, 676603.3 6851685 113, 676596.5 6851681.1 113, 676595.4 6851682.9 113, 676588.3 6851678.9 113, 676593.1 6851670.3 113, 676607 6851678.2 113, 676609.2 6851674.3 113, 676611.9 6851675.8 113))",
+    "ground_truth_area_m2": 166.81263076993247,
+    "iou": 0.880957927576466,
+    "ground_truth_to_scored_boundary_distance_m": 0.3181979892915587,
+    "scored_to_ground_truth_boundary_distance_m": 0.32041116070905945,
+    "symmetric_boundary_distance_m": 0.31930457500030907,
+    "centroid_distance_m": 0.6826348054817105
+  },
+  {
+    "ground_truth_aggregate_id": "BATIMENT0000000337024745",
+    "ground_truth_ids": [
+      "BATIMENT0000000337024745"
+    ],
+    "custom_category": [
+      "low_height"
+    ],
+    "scored_ids": [
+      "BATIMENT0000000337024745"
+    ],
+    "geometry": "POLYGON Z ((676584.4 6851666.5 111.6, 676587.3 6851661.4 111.6, 676590 6851662.9 111.6, 676587.1 6851668.1 111.6, 676584.4 6851666.5 111.6))",
+    "ground_truth_area_m2": 20.333158893663033,
+    "iou": 0.7726443572473525,
+    "ground_truth_to_scored_boundary_distance_m": 0.27960530490929647,
+    "scored_to_ground_truth_boundary_distance_m": 0.25415680819603254,
+    "symmetric_boundary_distance_m": 0.2668810565526645,
+    "centroid_distance_m": 0.3811589819107803
+  },
+  {
+    "ground_truth_aggregate_id": "BATIMENT0000000337024539",
+    "ground_truth_ids": [
+      "BATIMENT0000000337024539"
+    ],
+    "custom_category": [
+      "adjacent_house"
+    ],
+    "scored_ids": [
+      "BATIMENT0000000337024539"
+    ],
+    "geometry": "POLYGON Z ((676583.1 6851670.3 113.1, 676578.9 6851677.6 113.1, 676571.2 6851673.2 113.1, 676573.4 6851669.4 113.1, 676578.5 6851660.4 113.1, 676579.3 6851659 113.1, 676581.8 6851660.4 113.1, 676577.9 6851667.4 113.1, 676583.1 6851670.3 113.1))",
+    "ground_truth_area_m2": 104.50824061204527,
+    "iou": 0.7413765835532722,
+    "ground_truth_to_scored_boundary_distance_m": 0.5736146669723757,
+    "scored_to_ground_truth_boundary_distance_m": 0.5662137471264428,
+    "symmetric_boundary_distance_m": 0.5699142070494092,
+    "centroid_distance_m": 0.7327481000306408
+  },
+  {
+    "ground_truth_aggregate_id": "BATIMENT0000000337024540",
+    "ground_truth_ids": [
+      "BATIMENT0000000337024540"
+    ],
+    "custom_category": [
+      "adjacent_house"
+    ],
+    "scored_ids": [
+      "BATIMENT0000000337024540"
+    ],
+    "geometry": "POLYGON Z ((676571.2 6851673.2 113.1, 676569.9 6851675.5 113.1, 676562.2 6851671.1 113.1, 676560.9 6851673.5 113.1, 676555 6851670.1 113.1, 676560.5 6851660.7 113.1, 676567.4 6851664.7 113.1, 676570.8 6851658.8 113.1, 676573.7 6851660.3 113.1, 676569.7 6851667.3 113.1, 676573.4 6851669.4 113.1, 676571.2 6851673.2 113.1))",
+    "ground_truth_area_m2": 170.6853119034303,
+    "iou": 0.8267325999159354,
+    "ground_truth_to_scored_boundary_distance_m": 0.4767709183287439,
+    "scored_to_ground_truth_boundary_distance_m": 0.46363902578883204,
+    "symmetric_boundary_distance_m": 0.470204972058788,
+    "centroid_distance_m": 0.6180077875906755
+  },
+  {
+    "ground_truth_aggregate_id": "BATIMENT0000000337024895",
+    "ground_truth_ids": [
+      "BATIMENT0000000337024895"
+    ],
+    "custom_category": [
+      "adjacent_house"
+    ],
+    "scored_ids": [
+      "BATIMENT0000000337024895"
+    ],
+    "geometry": "POLYGON Z ((676566.9 6851718.3 113.5, 676571 6851711 113.5, 676574.7 6851713.1 113.5, 676572.4 6851717.1 113.5, 676577.2 6851719.9 113.5, 676579.5 6851715.9 113.5, 676581 6851716.7 113.5, 676581.8 6851715.3 113.5, 676586.1 6851717.8 113.5, 676585.7 6851718.4 113.5, 676584 6851721.3 113.5, 676581.9 6851720.1 113.5, 676579.3 6851724.6 113.5, 676581.4 6851725.8 113.5, 676577.5 6851732.9 113.5, 676574.9 6851731.2 113.5, 676576.8 6851727.8 113.5, 676565.3 6851721.1 113.5, 676566.9 6851718.3 113.5))",
+    "ground_truth_area_m2": 183.04453421620892,
+    "iou": 0.7613553136160579,
+    "ground_truth_to_scored_boundary_distance_m": 0.5883881093467715,
+    "scored_to_ground_truth_boundary_distance_m": 0.5869224801332916,
+    "symmetric_boundary_distance_m": 0.5876552947400315,
+    "centroid_distance_m": 0.9184044858454014
+  },
+  {
+    "ground_truth_aggregate_id": "BATIMENT0000000337024896",
+    "ground_truth_ids": [
+      "BATIMENT0000000337024896"
+    ],
+    "custom_category": [
+      "adjacent_house"
+    ],
+    "scored_ids": [
+      "BATIMENT0000000337024896"
+    ],
+    "geometry": "POLYGON Z ((676567.6 6851700 113.4, 676574.9 6851704.1 113.4, 676571 6851711 113.4, 676566.9 6851718.3 113.4, 676564.4 6851716.8 113.4, 676568.6 6851709.3 113.4, 676563.8 6851706.6 113.4, 676567.6 6851700 113.4))",
+    "ground_truth_area_m2": 103.46396039159964,
+    "iou": 0.6879468671824339,
+    "ground_truth_to_scored_boundary_distance_m": 0.7065909994549021,
+    "scored_to_ground_truth_boundary_distance_m": 0.7000228375867277,
+    "symmetric_boundary_distance_m": 0.703306918520815,
+    "centroid_distance_m": 0.6954379815493378
+  },
+  {
+    "ground_truth_aggregate_id": "BATIMENT0000000337024901",
+    "ground_truth_ids": [
+      "BATIMENT0000000337024901"
+    ],
+    "custom_category": [
+      "low_height"
+    ],
+    "scored_ids": [
+      "BATIMENT0000000337024901"
+    ],
+    "geometry": "POLYGON Z ((676557 6851715 113, 676560.2 6851709.5 113, 676562.9 6851711.1 113, 676559.8 6851716.6 113, 676557 6851715 113))",
+    "ground_truth_area_m2": 19.907851010958264,
+    "iou": 0.7077774298738481,
+    "ground_truth_to_scored_boundary_distance_m": 0.35820781743774055,
+    "scored_to_ground_truth_boundary_distance_m": 0.3633688233752075,
+    "symmetric_boundary_distance_m": 0.360788320406474,
+    "centroid_distance_m": 0.5335308158479387
+  },
+  {
+    "ground_truth_aggregate_id": "BATIMENT0000000337024954",
+    "ground_truth_ids": [
+      "BATIMENT0000000337024954"
+    ],
+    "custom_category": [
+      "low_height"
+    ],
+    "scored_ids": [
+      "BATIMENT0000000337024954"
+    ],
+    "geometry": "POLYGON Z ((676525.2 6851719.6 111.9, 676523.9 6851718.8 111.9, 676527.1 6851713.1 111.9, 676529.8 6851714.7 111.9, 676526.6 6851720.3 111.9, 676525.2 6851719.6 111.9))",
+    "ground_truth_area_m2": 19.53315995702777,
+    "iou": 0.8192806187804244,
+    "ground_truth_to_scored_boundary_distance_m": 0.20619074628462972,
+    "scored_to_ground_truth_boundary_distance_m": 0.21018841369329708,
+    "symmetric_boundary_distance_m": 0.2081895799889634,
+    "centroid_distance_m": 0.3055100235988428
+  },
+  {
+    "ground_truth_aggregate_id": "BATIMENT0000000337024899",
+    "ground_truth_ids": [
+      "BATIMENT0000000337024899"
+    ],
+    "custom_category": [
+      "adjacent_house"
+    ],
+    "scored_ids": [
+      "BATIMENT0000000337024899"
+    ],
+    "geometry": "POLYGON Z ((676559.8 6851695.4 113.4, 676558.7 6851697.4 113.4, 676556.3 6851696.1 113.4, 676554.1 6851700.1 113.4, 676556.5 6851701.4 113.4, 676552.4 6851708.8 113.4, 676549.8 6851707.3 113.4, 676551.4 6851704.5 113.4, 676539.9 6851697.5 113.4, 676544.1 6851690 113.4, 676545.6 6851687.2 113.4, 676549.2 6851689.4 113.4, 676546.9 6851693.4 113.4, 676551.5 6851696.1 113.4, 676553.8 6851692 113.4, 676555.6 6851693.1 113.4, 676556.3 6851691.7 113.4, 676560.6 6851694.1 113.4, 676559.8 6851695.4 113.4))",
+    "ground_truth_area_m2": 184.00634908005557,
+    "iou": 0.8137383374364491,
+    "ground_truth_to_scored_boundary_distance_m": 0.4519587554671558,
+    "scored_to_ground_truth_boundary_distance_m": 0.4493605021259453,
+    "symmetric_boundary_distance_m": 0.4506596287965505,
+    "centroid_distance_m": 0.5554611259348707
+  },
+  {
+    "ground_truth_aggregate_id": "BATIMENT0000000337024898",
+    "ground_truth_ids": [
+      "BATIMENT0000000337024898"
+    ],
+    "custom_category": [
+      "adjacent_house"
+    ],
+    "scored_ids": [
+      "BATIMENT0000000337024898"
+    ],
+    "geometry": "POLYGON Z ((676558.7 6851697.4 113.5, 676556.5 6851701.4 113.5, 676554.1 6851700.1 113.5, 676556.3 6851696.1 113.5, 676558.7 6851697.4 113.5))",
+    "ground_truth_area_m2": 13.080387235862382,
+    "iou": 0.48323327445980163,
+    "ground_truth_to_scored_boundary_distance_m": 0.6146932117721365,
+    "scored_to_ground_truth_boundary_distance_m": 0.5954417636232958,
+    "symmetric_boundary_distance_m": 0.6050674876977162,
+    "centroid_distance_m": 0.8827954606959494
+  },
+  {
+    "ground_truth_aggregate_id": "BATIMENT0000000337024897",
+    "ground_truth_ids": [
+      "BATIMENT0000000337024897"
+    ],
+    "custom_category": [
+      "adjacent_house"
+    ],
+    "scored_ids": [
+      "BATIMENT0000000337024897"
+    ],
+    "geometry": "POLYGON Z ((676558.7 6851697.4 113.6, 676559.8 6851695.4 113.6, 676567.6 6851700 113.6, 676563.8 6851706.6 113.6, 676558.8 6851703.6 113.6, 676554.6 6851711 113.6, 676552.1 6851709.5 113.6, 676552.4 6851708.8 113.6, 676556.5 6851701.4 113.6, 676558.7 6851697.4 113.6))",
+    "ground_truth_area_m2": 105.19870217491079,
+    "iou": 0.7435423595998133,
+    "ground_truth_to_scored_boundary_distance_m": 0.5739137559011558,
+    "scored_to_ground_truth_boundary_distance_m": 0.5788831915259766,
+    "symmetric_boundary_distance_m": 0.5763984737135661,
+    "centroid_distance_m": 0.7284167294362629
+  },
+  {
+    "ground_truth_aggregate_id": "BATIMENT0000000337024714",
+    "ground_truth_ids": [
+      "BATIMENT0000000337024714"
+    ],
+    "custom_category": [
+      "adjacent_house"
+    ],
+    "scored_ids": [
+      "BATIMENT0000000337024714"
+    ],
+    "geometry": "POLYGON Z ((676543.6 6851662.6 114.9, 676548.7 6851653.8 114.9, 676555.6 6851657.9 114.9, 676550.5 6851666.6 114.9, 676543.6 6851662.6 114.9))",
+    "ground_truth_area_m2": 89.22282699906947,
+    "iou": 0.8552102829575944,
+    "ground_truth_to_scored_boundary_distance_m": 0.3644954039149964,
+    "scored_to_ground_truth_boundary_distance_m": 0.3469039386409016,
+    "symmetric_boundary_distance_m": 0.355699671277949,
+    "centroid_distance_m": 0.5510914462442281
+  },
+  {
+    "ground_truth_aggregate_id": "BATIMENT0000000337024900",
+    "ground_truth_ids": [
+      "BATIMENT0000000337024900"
+    ],
+    "custom_category": [
+      "adjacent_house"
+    ],
+    "scored_ids": [
+      "BATIMENT0000000337024900"
+    ],
+    "geometry": "POLYGON Z ((676544.1 6851690 113.8, 676539.9 6851697.5 113.8, 676537.4 6851696.1 113.8, 676540.2 6851691 113.8, 676532.1 6851686.1 113.8, 676536.6 6851678.2 113.8, 676544.8 6851682.9 113.8, 676541.6 6851688.5 113.8, 676544.1 6851690 113.8))",
+    "ground_truth_area_m2": 127.23532515007061,
+    "iou": 0.8015257364109275,
+    "ground_truth_to_scored_boundary_distance_m": 0.47961793314085854,
+    "scored_to_ground_truth_boundary_distance_m": 0.47365172718432846,
+    "symmetric_boundary_distance_m": 0.4766348301625935,
+    "centroid_distance_m": 0.5725029302195916
+  },
+  {
+    "ground_truth_aggregate_id": "BATIMENT0000000337024902",
+    "ground_truth_ids": [
+      "BATIMENT0000000337024902"
+    ],
+    "custom_category": [
+      "isolated"
+    ],
+    "scored_ids": [
+      "BATIMENT0000000337024902"
+    ],
+    "geometry": "POLYGON Z ((676500.6 6851754.1 114, 676496.7 6851760.7 114, 676487.8 6851755.6 114, 676491.5 6851749 114, 676500.6 6851754.1 114))",
+    "ground_truth_area_m2": 88.83868919428897,
+    "iou": 0.8326264200758852,
+    "ground_truth_to_scored_boundary_distance_m": 0.420917662266861,
+    "scored_to_ground_truth_boundary_distance_m": 0.4112222895897552,
+    "symmetric_boundary_distance_m": 0.4160699759283081,
+    "centroid_distance_m": 0.3622348504623168
+  },
+  {
+    "ground_truth_aggregate_id": "BATIMENT0000000337024882",
+    "ground_truth_ids": [
+      "BATIMENT0000000337024882"
+    ],
+    "custom_category": [
+      "adjacent_house"
+    ],
+    "scored_ids": [
+      "BATIMENT0000000337024882"
+    ],
+    "geometry": "POLYGON Z ((676584.1 6851810.8 113.4, 676577.9 6851821.6 113.4, 676569.5 6851816.9 113.4, 676567.4 6851820.5 113.4, 676562.2 6851817.4 113.4, 676564 6851814.3 113.4, 676552.4 6851807.8 113.4, 676550.6 6851811 113.4, 676547.6 6851809.2 113.4, 676548.2 6851808.1 113.4, 676546 6851806.7 113.4, 676550.2 6851799.3 113.4, 676540.3 6851793.8 113.4, 676536.1 6851801.2 113.4, 676533.4 6851799.6 113.4, 676532.8 6851800.7 113.4, 676530 6851799.1 113.4, 676532.2 6851795.2 113.4, 676518.5 6851787.5 113.4, 676518.8 6851786.9 113.4, 676516.3 6851785.5 113.4, 676520.4 6851778.2 113.4, 676510.4 6851772.7 113.4, 676506.4 6851779.6 113.4, 676503.4 6851777.8 113.4, 676504.5 6851776 113.4, 676502.2 6851774.8 113.4, 676504 6851771.6 113.4, 676495.8 6851766.9 113.4, 676501.8 6851756.1 113.4, 676510.4 6851761 113.4, 676505.8 6851769.1 113.4, 676507.8 6851770.3 113.4, 676511.7 6851763.7 113.4, 676527.2 6851772.6 113.4, 676523.8 6851778.8 113.4, 676532.1 6851783.6 113.4, 676532.6 6851782.7 113.4, 676536.9 6851785.2 113.4, 676537.4 6851786.6 113.4, 676536.4 6851788.2 113.4, 676538.7 6851789.5 113.4, 676541.4 6851784.9 113.4, 676557 6851793.7 113.4, 676557 6851794.2 113.4, 676561.1 6851796.5 113.4, 676560.4 6851798 113.4, 676562.1 6851799 113.4, 676559.7 6851803.3 113.4, 676563.9 6851805.6 113.4, 676566.3 6851801.4 113.4, 676570.4 6851803.8 113.4, 676565.6 6851812.1 113.4, 676567.8 6851813.3 113.4, 676570 6851809.5 113.4, 676574.9 6851812.2 113.4, 676577.9 6851807 113.4, 676580 6851808.2 113.4, 676581.3 6851805.8 113.4, 676576 6851802.6 113.4, 676580.5 6851794.8 113.4, 676575.6 6851792 113.4, 676580.5 6851783.2 113.4, 676581 6851783.4 113.4, 676582.2 6851781.2 113.4, 676581.7 6851780.7 113.4, 676584.2 6851776.3 113.4, 676579.3 6851773.5 113.4, 676578.5 6851775.2 113.4, 676570.3 6851770.4 113.4, 676573.3 6851765 113.4, 676571.3 6851763.9 113.4, 676566.1 6851772.9 113.4, 676550.4 6851763.8 113.4, 676555.2 6851755.3 113.4, 676546.3 6851750.2 113.4, 676545.2 6851751.8 113.4, 676538 6851747.6 113.4, 676540 6851744.1 113.4, 676536.3 6851741.9 113.4, 676538.6 6851737.8 113.4, 676534.5 6851735.4 113.4, 676532 6851739.7 113.4, 676530.2 6851738.7 113.4, 676529.4 6851740 113.4, 676525 6851737.5 113.4, 676525.5 6851736.7 113.4, 676510.2 6851727.8 113.4, 676518.6 6851713.1 113.4, 676521.3 6851714.8 113.4, 676517.3 6851722 113.4, 676527.2 6851727.6 113.4, 676531.2 6851720.4 113.4, 676536.5 6851723.4 113.4, 676534.7 6851726.8 113.4, 676546.4 6851733.6 113.4, 676543.4 6851739 113.4, 676556.8 6851746.9 113.4, 676559 6851743 113.4, 676561.9 6851744.7 113.4, 676559.4 6851749.3 113.4, 676561.8 6851750.7 113.4, 676557.8 6851758 113.4, 676567.5 6851763.6 113.4, 676571.5 6851756.6 113.4, 676579.2 6851761.1 113.4, 676577 6851765.2 113.4, 676582.1 6851768.1 113.4, 676582.8 6851766.8 113.4, 676593.8 6851773.2 113.4, 676589.2 6851781.5 113.4, 676592.8 6851783.5 113.4, 676591.1 6851786.2 113.4, 676597.6 6851789.9 113.4, 676594.6 6851795.3 113.4, 676586.3 6851790.5 113.4, 676585 6851792.7 113.4, 676588.5 6851794.8 113.4, 676586.6 6851798.2 113.4, 676587.3 6851798.7 113.4, 676584.5 6851803.8 113.4, 676588.5 6851806.2 113.4, 676585.4 6851811.7 113.4, 676584.1 6851810.8 113.4))",
+    "ground_truth_area_m2": 2416.9440858853495,
+    "iou": 0.9134553187138061,
+    "ground_truth_to_scored_boundary_distance_m": 0.3064861699737126,
+    "scored_to_ground_truth_boundary_distance_m": 0.277308781944115,
+    "symmetric_boundary_distance_m": 0.2918974759589138,
+    "centroid_distance_m": 1.0049652357155303
+  },
+  {
+    "ground_truth_aggregate_id": "BATIMENT0000000337024955",
+    "ground_truth_ids": [
+      "BATIMENT0000000337024955"
+    ],
+    "custom_category": [
+      "low_height"
+    ],
+    "scored_ids": [
+      "BATIMENT0000000337024955"
+    ],
+    "geometry": "POLYGON Z ((676509.9 6851781.5 111.7, 676510.3 6851780.7 111.7, 676511.6 6851781.4 111.7, 676513 6851782.2 111.7, 676510 6851787.7 111.7, 676507.2 6851786.2 111.7, 676509.9 6851781.5 111.7))",
+    "ground_truth_area_m2": 19.018429006713575,
+    "iou": 0.8308219910255878,
+    "ground_truth_to_scored_boundary_distance_m": 0.1891640965606146,
+    "scored_to_ground_truth_boundary_distance_m": 0.19430758663079428,
+    "symmetric_boundary_distance_m": 0.19173584159570445,
+    "centroid_distance_m": 0.26144583960090023
+  },
+  {
+    "ground_truth_aggregate_id": "BATIMENT0000000337024713",
+    "ground_truth_ids": [
+      "BATIMENT0000000337024713"
+    ],
+    "custom_category": [
+      "adjacent_house"
+    ],
+    "scored_ids": [
+      "BATIMENT0000000337024713"
+    ],
+    "geometry": "POLYGON Z ((676555.6 6851657.9 112.9, 676548.7 6851653.8 112.9, 676547.9 6851653.3 112.9, 676549.8 6851649.8 112.9, 676553.8 6851652.1 112.9, 676556.6 6851647.2 112.9, 676553.2 6851645.1 112.9, 676554.1 6851643.4 112.9, 676551.7 6851642 112.9, 676554.1 6851637.9 112.9, 676557.7 6851639.8 112.9, 676556.1 6851642.5 112.9, 676559.9 6851644.8 112.9, 676561.4 6851642 112.9, 676568.9 6851646.3 112.9, 676567.3 6851649.2 112.9, 676564.5 6851647.6 112.9, 676557.7 6851659.1 112.9, 676555.6 6851657.9 112.9))",
+    "ground_truth_area_m2": 187.3618438697768,
+    "iou": 0.8834755816344442,
+    "ground_truth_to_scored_boundary_distance_m": 0.279912066258626,
+    "scored_to_ground_truth_boundary_distance_m": 0.26200855506279497,
+    "symmetric_boundary_distance_m": 0.27096031066071047,
+    "centroid_distance_m": 0.16057629627939624
+  },
+  {
+    "ground_truth_aggregate_id": "BATIMENT0000000337024711",
+    "ground_truth_ids": [
+      "BATIMENT0000000337024711"
+    ],
+    "custom_category": [
+      "adjacent_house"
+    ],
+    "scored_ids": [
+      "BATIMENT0000000337024711"
+    ],
+    "geometry": "POLYGON Z ((676561.4 6851642 112.9, 676559.9 6851644.8 112.9, 676556.1 6851642.5 112.9, 676557.7 6851639.8 112.9, 676561.4 6851642 112.9))",
+    "ground_truth_area_m2": 11.136923184770327,
+    "iou": 0.8070234191784262,
+    "ground_truth_to_scored_boundary_distance_m": 0.18434226665044484,
+    "scored_to_ground_truth_boundary_distance_m": 0.1907571141810327,
+    "symmetric_boundary_distance_m": 0.18754969041573877,
+    "centroid_distance_m": 0.06977361607710486
+  },
+  {
+    "ground_truth_aggregate_id": "BATIMENT0000000337024712",
+    "ground_truth_ids": [
+      "BATIMENT0000000337024712"
+    ],
+    "custom_category": [
+      "adjacent_house"
+    ],
+    "scored_ids": [
+      "BATIMENT0000000337024712"
+    ],
+    "geometry": "POLYGON Z ((676553.5 6851637.4 114.7, 676557.8 6851629.6 114.7, 676564.4 6851633.5 114.7, 676561.4 6851638.8 114.7, 676570.3 6851644 114.7, 676568.9 6851646.3 114.7, 676561.4 6851642 114.7, 676557.7 6851639.8 114.7, 676554.1 6851637.9 114.7, 676553.5 6851637.4 114.7))",
+    "ground_truth_area_m2": 106.98410355934806,
+    "iou": 0.8863086823803555,
+    "ground_truth_to_scored_boundary_distance_m": 0.23904556477204944,
+    "scored_to_ground_truth_boundary_distance_m": 0.21104587948929468,
+    "symmetric_boundary_distance_m": 0.22504572213067206,
+    "centroid_distance_m": 0.6566434810528989
+  },
+  {
+    "ground_truth_aggregate_id": "BATIMENT0000000337021070",
+    "ground_truth_ids": [
+      "BATIMENT0000000337021070"
+    ],
+    "custom_category": [
+      "low_height"
+    ],
+    "scored_ids": [
+      "BATIMENT0000000337021070"
+    ],
+    "geometry": "POLYGON Z ((676323.7 6852509.2 111.2, 676325 6852512.3 111.2, 676318.7 6852515.1 111.2, 676317.3 6852512.1 111.2, 676323.7 6852509.2 111.2))",
+    "ground_truth_area_m2": 25.631718477347004,
+    "iou": 0.8122625282191196,
+    "ground_truth_to_scored_boundary_distance_m": 0.24869600559202898,
+    "scored_to_ground_truth_boundary_distance_m": 0.23376365896129897,
+    "symmetric_boundary_distance_m": 0.24122983227666397,
+    "centroid_distance_m": 0.38004321602553526
+  },
+  {
+    "ground_truth_aggregate_id": "BATIMENT0000000337021069",
+    "ground_truth_ids": [
+      "BATIMENT0000000337021069"
+    ],
+    "custom_category": [
+      "low_height"
+    ],
+    "scored_ids": [
+      "BATIMENT0000000337021069"
+    ],
+    "geometry": "POLYGON Z ((676302.5 6852534.2 111, 676299.4 6852535.6 111, 676298.2 6852533.1 111, 676301.4 6852531.8 111, 676302.5 6852534.2 111))",
+    "ground_truth_area_m2": 10.332401514817064,
+    "iou": 0.0,
+    "ground_truth_to_scored_boundary_distance_m": 2.1104886719341414,
+    "scored_to_ground_truth_boundary_distance_m": 1.844259204816134,
+    "symmetric_boundary_distance_m": 1.9773739383751376,
+    "centroid_distance_m": 3.4972305879156593
+  },
+  {
+    "ground_truth_aggregate_id": "BATIMENT0000000337021066",
+    "ground_truth_ids": [
+      "BATIMENT0000000337021066"
+    ],
+    "custom_category": [
+      "low_height"
+    ],
+    "scored_ids": [
+      "BATIMENT0000000337021066"
+    ],
+    "geometry": "POLYGON Z ((676303.7 6852529.5 111.1, 676299.1 6852531.6 111.1, 676293.5 6852518.9 111.1, 676298 6852516.9 111.1, 676302.6 6852527 111.1, 676303.7 6852529.5 111.1))",
+    "ground_truth_area_m2": 78.05465466397769,
+    "iou": 0.5072387731674243,
+    "ground_truth_to_scored_boundary_distance_m": 1.2706943808702387,
+    "scored_to_ground_truth_boundary_distance_m": 1.3426853469165723,
+    "symmetric_boundary_distance_m": 1.3066898638934055,
+    "centroid_distance_m": 3.810755427295894
+  },
+  {
+    "ground_truth_aggregate_id": "BATIMENT0000000337021067",
+    "ground_truth_ids": [
+      "BATIMENT0000000337021067"
+    ],
+    "custom_category": [
+      "low_height"
+    ],
+    "scored_ids": [
+      "BATIMENT0000000337021067"
+    ],
+    "geometry": "POLYGON Z ((676302.6 6852527 111.5, 676307.1 6852524.9 111.5, 676308.3 6852527.5 111.5, 676304.6 6852529.1 111.5, 676303.7 6852529.5 111.5, 676302.6 6852527 111.5))",
+    "ground_truth_area_m2": 10.433169354660063,
+    "iou": 0.0,
+    "ground_truth_to_scored_boundary_distance_m": 2.7471133426620016,
+    "scored_to_ground_truth_boundary_distance_m": 3.173009852540839,
+    "symmetric_boundary_distance_m": 2.9600615976014204,
+    "centroid_distance_m": 4.19349162147348
+  },
+  {
+    "ground_truth_aggregate_id": "BATIMENT0000000337021068",
+    "ground_truth_ids": [
+      "BATIMENT0000000337021068"
+    ],
+    "custom_category": [
+      "low_height"
+    ],
+    "scored_ids": [
+      "BATIMENT0000000337021068"
+    ],
+    "geometry": "POLYGON Z ((676304.6 6852529.1 111.2, 676308.3 6852527.5 111.2, 676309.7 6852526.8 111.2, 676310.8 6852529.3 111.2, 676305.7 6852531.8 111.2, 676304.6 6852529.1 111.2))",
+    "ground_truth_area_m2": 15.36647504818945,
+    "iou": 0.0,
+    "ground_truth_to_scored_boundary_distance_m": 2.2787081507791602,
+    "scored_to_ground_truth_boundary_distance_m": 2.2602281055955893,
+    "symmetric_boundary_distance_m": 2.2694681281873748,
+    "centroid_distance_m": 3.6760261622614796
+  },
+  {
+    "ground_truth_aggregate_id": "BATIMENT0000000337021062",
+    "ground_truth_ids": [
+      "BATIMENT0000000337021062"
+    ],
+    "custom_category": [
+      "low_height"
+    ],
+    "scored_ids": [
+      "BATIMENT0000000337021062"
+    ],
+    "geometry": "POLYGON Z ((676291.6 6852498.3 112.2, 676295.3 6852496.6 112.2, 676297.1 6852500.6 112.2, 676293.3 6852502.3 112.2, 676291.6 6852498.3 112.2))",
+    "ground_truth_area_m2": 17.12235840489784,
+    "iou": 0.0,
+    "ground_truth_to_scored_boundary_distance_m": 2.6402734999327886,
+    "scored_to_ground_truth_boundary_distance_m": 2.720240721166666,
+    "symmetric_boundary_distance_m": 2.6802571105497273,
+    "centroid_distance_m": 4.874244282160493
+  },
+  {
+    "ground_truth_aggregate_id": "BATIMENT0000000337021154",
+    "ground_truth_ids": [
+      "BATIMENT0000000337021154"
+    ],
+    "custom_category": [
+      "low_height"
+    ],
+    "scored_ids": [
+      "BATIMENT0000000337021154"
+    ],
+    "geometry": "POLYGON Z ((676282.6 6852481.4 111, 676280.5 6852476.8 111, 676281.6 6852476.3 111, 676283.7 6852480.9 111, 676282.6 6852481.4 111))",
+    "ground_truth_area_m2": 26.955942351407245,
+    "iou": 0.22666616217098992,
+    "ground_truth_to_scored_boundary_distance_m": 1.8355999690633047,
+    "scored_to_ground_truth_boundary_distance_m": 0.6070861366578708,
+    "symmetric_boundary_distance_m": 1.2213430528605878,
+    "centroid_distance_m": 1.7371024232527303
+  },
+  {
+    "ground_truth_aggregate_id": "BATIMENT0000000337021080",
+    "ground_truth_ids": [
+      "BATIMENT0000000337021080"
+    ],
+    "custom_category": [
+      "low_height"
+    ],
+    "scored_ids": [
+      "BATIMENT0000000337021080"
+    ],
+    "geometry": "POLYGON Z ((676265.9 6852454 112.5, 676267.8 6852453.2 112.5, 676269.7 6852457.4 112.5, 676267.7 6852458.3 112.5, 676265.9 6852454 112.5))",
+    "ground_truth_area_m2": 7.619183546990329,
+    "iou": 0.25747746326937787,
+    "ground_truth_to_scored_boundary_distance_m": 0.8382063469539752,
+    "scored_to_ground_truth_boundary_distance_m": 0.9245374788907588,
+    "symmetric_boundary_distance_m": 0.8813719129223669,
+    "centroid_distance_m": 1.4460018152477778
+  },
+  {
+    "ground_truth_aggregate_id": "BATIMENT0000000337021081",
+    "ground_truth_ids": [
+      "BATIMENT0000000337021081"
+    ],
+    "custom_category": [
+      "low_height"
+    ],
+    "scored_ids": [
+      "BATIMENT0000000337021081"
+    ],
+    "geometry": "POLYGON Z ((676266.8 6852458.7 112.4, 676267.7 6852458.3 112.4, 676269.7 6852457.4 112.4, 676271 6852460.2 112.4, 676271.3 6852460.8 112.4, 676268.4 6852462.1 112.4, 676266.8 6852458.7 112.4))",
+    "ground_truth_area_m2": 12.151734369547244,
+    "iou": 0.27803834664098165,
+    "ground_truth_to_scored_boundary_distance_m": 0.8975374169637023,
+    "scored_to_ground_truth_boundary_distance_m": 1.0209663781311649,
+    "symmetric_boundary_distance_m": 0.9592518975474336,
+    "centroid_distance_m": 1.6552020797369482
+  },
+  {
+    "ground_truth_aggregate_id": "BATIMENT0000000337021079",
+    "ground_truth_ids": [
+      "BATIMENT0000000337021079"
+    ],
+    "custom_category": [
+      "low_height"
+    ],
+    "scored_ids": [
+      "BATIMENT0000000337021079"
+    ],
+    "geometry": "POLYGON Z ((676269.7 6852457.4 112.7, 676271.9 6852456.4 112.7, 676273.3 6852459.2 112.7, 676271 6852460.2 112.7, 676269.7 6852457.4 112.7))",
+    "ground_truth_area_m2": 6.582771559166752,
+    "iou": 0.19807883258347897,
+    "ground_truth_to_scored_boundary_distance_m": 0.9083154359341782,
+    "scored_to_ground_truth_boundary_distance_m": 0.8520657984308,
+    "symmetric_boundary_distance_m": 0.8801906171824891,
+    "centroid_distance_m": 1.5930734693414281
+  },
+  {
+    "ground_truth_aggregate_id": "BATIMENT0000000240751705",
+    "ground_truth_ids": [
+      "BATIMENT0000000240751705"
+    ],
+    "custom_category": [
+      "adjacent_tall"
+    ],
+    "scored_ids": [
+      "BATIMENT0000000240751705"
+    ],
+    "geometry": "POLYGON Z ((656429.3 6861349.1 76.7, 656421.1 6861348.3 76.7, 656421 6861348.8 76.7, 656416.4 6861348.2 76.7, 656416.9 6861343.1 76.7, 656401.8 6861342.5 76.7, 656403.9 6861327.6 76.7, 656414.3 6861328.2 76.7, 656414.2 6861329.2 76.7, 656420 6861329.6 76.7, 656420 6861330.5 76.7, 656424.9 6861330.8 76.7, 656430.3 6861337.6 76.7, 656429.3 6861349.1 76.7))",
+    "ground_truth_area_m2": 452.0188388871403,
+    "iou": 0.8513153016447655,
+    "ground_truth_to_scored_boundary_distance_m": 0.7870385647419716,
+    "scored_to_ground_truth_boundary_distance_m": 0.7436598540593549,
+    "symmetric_boundary_distance_m": 0.7653492094006633,
+    "centroid_distance_m": 1.176111006319515
+  },
+  {
+    "ground_truth_aggregate_id": "BATIMENT0000000240751704",
+    "ground_truth_ids": [
+      "BATIMENT0000000240751704"
+    ],
+    "custom_category": [
+      "adjacent_tall"
+    ],
+    "scored_ids": [
+      "BATIMENT0000000240751704"
+    ],
+    "geometry": "POLYGON Z ((656428.5 6861359.8 74.3, 656421.7 6861359.2 74.3, 656422.3 6861352.4 74.3, 656420.5 6861352.3 74.3, 656421 6861348.8 74.3, 656421.1 6861348.3 74.3, 656429.3 6861349.1 74.3, 656429.3 6861349.4 74.3, 656428.8 6861355.3 74.3, 656428.5 6861359.8 74.3))",
+    "ground_truth_area_m2": 77.42347760399468,
+    "iou": 0.747453339363667,
+    "ground_truth_to_scored_boundary_distance_m": 0.5835352407839391,
+    "scored_to_ground_truth_boundary_distance_m": 0.6078725543074819,
+    "symmetric_boundary_distance_m": 0.5957038975457105,
+    "centroid_distance_m": 1.2012351103572545
+  },
+  {
+    "ground_truth_aggregate_id": "BATIMENT0000000240751700",
+    "ground_truth_ids": [
+      "BATIMENT0000000240751700"
+    ],
+    "custom_category": [
+      "adjacent_tall"
+    ],
+    "scored_ids": [
+      "BATIMENT0000000240751700"
+    ],
+    "geometry": "POLYGON Z ((656425.7 6861393.9 62.4, 656414.2 6861392.9 62.4, 656416.3 6861379.2 62.4, 656426.8 6861380.5 62.4, 656425.7 6861393.9 62.4))",
+    "ground_truth_area_m2": 151.48244632964168,
+    "iou": 0.7861279832292771,
+    "ground_truth_to_scored_boundary_distance_m": 0.7062753155776267,
+    "scored_to_ground_truth_boundary_distance_m": 0.7598798453261801,
+    "symmetric_boundary_distance_m": 0.7330775804519034,
+    "centroid_distance_m": 1.2236925503745704
+  },
+  {
+    "ground_truth_aggregate_id": "BATIMENT0000000240751702",
+    "ground_truth_ids": [
+      "BATIMENT0000000240751702"
+    ],
+    "custom_category": [
+      "adjacent_tall"
+    ],
+    "scored_ids": [
+      "BATIMENT0000000240751702"
+    ],
+    "geometry": "POLYGON Z ((656427.6 6861370.1 74.2, 656420.6 6861369.6 74.2, 656420.8 6861367.2 74.2, 656418.2 6861367.1 74.2, 656419 6861361.8 74.2, 656419 6861361.6 74.2, 656421.4 6861361.7 74.2, 656421.7 6861359.2 74.2, 656428.5 6861359.8 74.2, 656427.6 6861370.1 74.2))",
+    "ground_truth_area_m2": 88.94075287518176,
+    "iou": 0.7353278297891328,
+    "ground_truth_to_scored_boundary_distance_m": 0.6752467289630225,
+    "scored_to_ground_truth_boundary_distance_m": 0.6643247623851809,
+    "symmetric_boundary_distance_m": 0.6697857456741017,
+    "centroid_distance_m": 1.2433864918695623
+  },
+  {
+    "ground_truth_aggregate_id": "BATIMENT0000000240751701",
+    "ground_truth_ids": [
+      "BATIMENT0000000240751701"
+    ],
+    "custom_category": [
+      "adjacent_tall"
+    ],
+    "scored_ids": [
+      "BATIMENT0000000240751701"
+    ],
+    "geometry": "POLYGON Z ((656426.8 6861380.5 74.1, 656416.3 6861379.2 74.1, 656416.4 6861378.6 74.1, 656416.8 6861375.9 74.1, 656419.9 6861376.1 74.1, 656420.1 6861374.3 74.1, 656419.4 6861373.8 74.1, 656419.5 6861372.2 74.1, 656420.4 6861371.8 74.1, 656417.5 6861371.6 74.1, 656417.9 6861369.4 74.1, 656420.6 6861369.6 74.1, 656427.6 6861370.1 74.1, 656426.8 6861380.5 74.1))",
+    "ground_truth_area_m2": 99.98836663980899,
+    "iou": 0.7355996079022226,
+    "ground_truth_to_scored_boundary_distance_m": 0.6310617856506167,
+    "scored_to_ground_truth_boundary_distance_m": 0.6029682974169636,
+    "symmetric_boundary_distance_m": 0.61701504153379,
+    "centroid_distance_m": 1.0920330763212271
+  },
+  {
+    "ground_truth_aggregate_id": "BATIMENT0000000240751703",
+    "ground_truth_ids": [
+      "BATIMENT0000000240751703"
+    ],
+    "custom_category": [
+      "adjacent_tall"
+    ],
+    "scored_ids": [
+      "BATIMENT0000000240751703"
+    ],
+    "geometry": "POLYGON Z ((656419 6861361.8 -1000, 656418.2 6861367.1 -1000, 656416.3 6861366.7 -1000, 656417.2 6861361.5 -1000, 656419 6861361.8 -1000))",
+    "ground_truth_area_m2": 13.891517864044184,
+    "iou": 0.41365431222980886,
+    "ground_truth_to_scored_boundary_distance_m": 0.7717021075468797,
+    "scored_to_ground_truth_boundary_distance_m": 0.512520028018149,
+    "symmetric_boundary_distance_m": 0.6421110677825144,
+    "centroid_distance_m": 1.2882489712154859
+  },
+  {
+    "ground_truth_aggregate_id": "BATIMENT0000000240751693",
+    "ground_truth_ids": [
+      "BATIMENT0000000240751693"
+    ],
+    "custom_category": [
+      "adjacent_tall"
+    ],
+    "scored_ids": [
+      "BATIMENT0000000240751693"
+    ],
+    "geometry": "POLYGON Z ((656402.5 6861389.2 -1000, 656402 6861389.2 -1000, 656400.5 6861388.9 -1000, 656401.3 6861384.7 -1000, 656403.1 6861384.9 -1000, 656402.5 6861389.2 -1000))",
+    "ground_truth_area_m2": 8.672143239676378,
+    "iou": 0.5777874836187413,
+    "ground_truth_to_scored_boundary_distance_m": 0.38449521250087576,
+    "scored_to_ground_truth_boundary_distance_m": 0.33528190623154064,
+    "symmetric_boundary_distance_m": 0.3598885593662082,
+    "centroid_distance_m": 1.1618861724551977
+  },
+  {
+    "ground_truth_aggregate_id": "BATIMENT0000000240751698",
+    "ground_truth_ids": [
+      "BATIMENT0000000240751698"
+    ],
+    "custom_category": [
+      "adjacent_tall"
+    ],
+    "scored_ids": [
+      "BATIMENT0000000240751698"
+    ],
+    "geometry": "POLYGON Z ((656414 6861406.3 -1000, 656413.6 6861411.8 -1000, 656412.7 6861412.4 -1000, 656411.2 6861412.2 -1000, 656412.1 6861406.1 -1000, 656414 6861406.3 -1000))",
+    "ground_truth_area_m2": 11.531995123226004,
+    "iou": 0.6789713592235018,
+    "ground_truth_to_scored_boundary_distance_m": 0.2874953697957683,
+    "scored_to_ground_truth_boundary_distance_m": 0.29602372860955234,
+    "symmetric_boundary_distance_m": 0.29175954920266034,
+    "centroid_distance_m": 0.6686545167597989
+  },
+  {
+    "ground_truth_aggregate_id": "BATIMENT0000000240751699",
+    "ground_truth_ids": [
+      "BATIMENT0000000240751699"
+    ],
+    "custom_category": [
+      "adjacent_tall"
+    ],
+    "scored_ids": [
+      "BATIMENT0000000240751699"
+    ],
+    "geometry": "POLYGON Z ((656424.6 6861407.3 71.7, 656418.7 6861406.7 71.7, 656418.9 6861404.2 71.7, 656416.9 6861404 71.7, 656416.6 6861406.5 71.7, 656414 6861406.3 71.7, 656412.1 6861406.1 71.7, 656412.9 6861400.9 71.7, 656416.8 6861401.1 71.7, 656417.3 6861394.6 71.7, 656414 6861394.4 71.7, 656414.2 6861392.9 71.7, 656425.7 6861393.9 71.7, 656424.6 6861407.3 71.7))",
+    "ground_truth_area_m2": 145.23797505311367,
+    "iou": 0.7241342377563661,
+    "ground_truth_to_scored_boundary_distance_m": 0.7089281812252896,
+    "scored_to_ground_truth_boundary_distance_m": 0.6169793939354234,
+    "symmetric_boundary_distance_m": 0.6629537875803565,
+    "centroid_distance_m": 1.3259600744306133
+  },
+  {
+    "ground_truth_aggregate_id": "BATIMENT0000000240752487",
+    "ground_truth_ids": [
+      "BATIMENT0000000240752487"
+    ],
+    "custom_category": [
+      "adjacent_tall"
+    ],
+    "scored_ids": [
+      "BATIMENT0000000240752487"
+    ],
+    "geometry": "POLYGON Z ((656409.3 6861424.6 71.4, 656411.2 6861412.2 71.4, 656412.7 6861412.4 71.4, 656413.6 6861411.8 71.4, 656414 6861406.3 71.4, 656416.6 6861406.5 71.4, 656416.9 6861404 71.4, 656418.9 6861404.2 71.4, 656418.7 6861406.7 71.4, 656424.6 6861407.3 71.4, 656423.9 6861421.2 71.4, 656417 6861425.7 71.4, 656409.3 6861424.6 71.4))",
+    "ground_truth_area_m2": 243.4998883637644,
+    "iou": 0.8986644292554483,
+    "ground_truth_to_scored_boundary_distance_m": 0.39179723580040204,
+    "scored_to_ground_truth_boundary_distance_m": 0.3561511282940585,
+    "symmetric_boundary_distance_m": 0.37397418204723026,
+    "centroid_distance_m": 0.7104744773550359
+  },
+  {
+    "ground_truth_aggregate_id": "BATIMENT0000000240751695",
+    "ground_truth_ids": [
+      "BATIMENT0000000240751695"
+    ],
+    "custom_category": [
+      "adjacent_tall"
+    ],
+    "scored_ids": [
+      "BATIMENT0000000240751695"
+    ],
+    "geometry": "POLYGON Z ((656409.3 6861424.6 71.3, 656400.9 6861423.1 71.3, 656402.6 6861410.6 71.3, 656407.5 6861411.4 71.3, 656407.4 6861412.3 71.3, 656410.2 6861412.8 71.3, 656411.2 6861412.2 71.3, 656409.3 6861424.6 71.3))",
+    "ground_truth_area_m2": 110.92509867774866,
+    "iou": 0.8071398666154059,
+    "ground_truth_to_scored_boundary_distance_m": 0.5906522215882231,
+    "scored_to_ground_truth_boundary_distance_m": 0.43094130418188986,
+    "symmetric_boundary_distance_m": 0.5107967628850565,
+    "centroid_distance_m": 1.3107596225753213
+  },
+  {
+    "ground_truth_aggregate_id": "BATIMENT0000000240751686",
+    "ground_truth_ids": [
+      "BATIMENT0000000240751686"
+    ],
+    "custom_category": [
+      "adjacent_tall"
+    ],
+    "scored_ids": [
+      "BATIMENT0000000240751686"
+    ],
+    "geometry": "POLYGON Z ((656373.4 6861413 69.7, 656369.8 6861412.6 69.7, 656370.4 6861408.1 69.7, 656370.6 6861406.5 69.7, 656374.2 6861406.9 69.7, 656373.4 6861413 69.7))",
+    "ground_truth_area_m2": 28.723515777616374,
+    "iou": 0.7642259951277172,
+    "ground_truth_to_scored_boundary_distance_m": 0.3655253309503911,
+    "scored_to_ground_truth_boundary_distance_m": 0.27053070249880357,
+    "symmetric_boundary_distance_m": 0.31802801672459735,
+    "centroid_distance_m": 0.4550807922334373
+  },
+  {
+    "ground_truth_aggregate_id": "BATIMENT0000000240751685",
+    "ground_truth_ids": [
+      "BATIMENT0000000240751685"
+    ],
+    "custom_category": [
+      "adjacent_tall"
+    ],
+    "scored_ids": [
+      "BATIMENT0000000240751685"
+    ],
+    "geometry": "POLYGON Z ((656360.1 6861415.8 61.6, 656361.5 6861408.5 61.6, 656361.9 6861406.7 61.6, 656365.5 6861407.3 61.6, 656365.9 6861404.3 61.6, 656366.5 6861404.5 61.6, 656369 6861388 61.6, 656369.7 6861388.1 61.6, 656370.6 6861381.7 61.6, 656367.9 6861381.3 61.6, 656367.1 6861386.4 61.6, 656364.7 6861386.1 61.6, 656365.6 6861379.1 61.6, 656374.2 6861380.6 61.6, 656370.6 6861406.3 61.6, 656369.9 6861406.1 61.6, 656369.9 6861405.3 61.6, 656368.7 6861405.1 61.6, 656368.3 6861407.8 61.6, 656370.4 6861408.1 61.6, 656369.8 6861412.6 61.6, 656369.1 6861417.4 61.6, 656360.1 6861415.8 61.6))",
+    "ground_truth_area_m2": 245.57224210910402,
+    "iou": 0.7425806054846196,
+    "ground_truth_to_scored_boundary_distance_m": 0.5586589910215133,
+    "scored_to_ground_truth_boundary_distance_m": 0.5593211039548834,
+    "symmetric_boundary_distance_m": 0.5589900474881984,
+    "centroid_distance_m": 2.670123628784863
+  },
+  {
+    "ground_truth_aggregate_id": "BATIMENT0000000240751687",
+    "ground_truth_ids": [
+      "BATIMENT0000000240751687"
+    ],
+    "custom_category": [
+      "adjacent_tall"
+    ],
+    "scored_ids": [
+      "BATIMENT0000000240751687"
+    ],
+    "geometry": "POLYGON Z ((656374.4 6861405.6 69.7, 656386.6 6861407.6 69.7, 656387.5 6861401.8 69.7, 656385.6 6861401.5 69.7, 656386.7 6861393.6 69.7, 656385.1 6861393.3 69.7, 656386.1 6861386.8 69.7, 656387.5 6861387 69.7, 656388.2 6861382.6 69.7, 656396.2 6861383.9 69.7, 656395.5 6861389.3 69.7, 656394.1 6861399.3 69.7, 656391 6861421.3 69.7, 656369.1 6861417.4 69.7, 656369.8 6861412.6 69.7, 656373.4 6861413 69.7, 656374.2 6861406.9 69.7, 656374.4 6861405.6 69.7), (656385.9 6861412.6 69.7, 656382.9 6861412.2 69.7, 656382.5 6861414.8 69.7, 656388.2 6861415.7 69.7, 656389 6861411.5 69.7, 656386 6861411 69.7, 656385.9 6861412.6 69.7))",
+    "ground_truth_area_m2": 464.01085969666906,
+    "iou": 0.8544122727283782,
+    "ground_truth_to_scored_boundary_distance_m": 0.40001651911697456,
+    "scored_to_ground_truth_boundary_distance_m": 0.9650915661155388,
+    "symmetric_boundary_distance_m": 0.6825540426162566,
+    "centroid_distance_m": 0.6986323938538562
+  },
+  {
+    "ground_truth_aggregate_id": "BATIMENT0000000240751689",
+    "ground_truth_ids": [
+      "BATIMENT0000000240751689"
+    ],
+    "custom_category": [
+      "adjacent_tall"
+    ],
+    "scored_ids": [
+      "BATIMENT0000000240751689"
+    ],
+    "geometry": "POLYGON Z ((656401 6861395.9 70.7, 656399.4 6861395.7 70.7, 656398.3 6861403.7 70.7, 656396.2 6861403.3 70.7, 656395.3 6861409.3 70.7, 656402.6 6861410.6 70.7, 656400.9 6861423.1 70.7, 656391 6861421.3 70.7, 656394.1 6861399.3 70.7, 656395.5 6861389.3 70.7, 656396.2 6861383.9 70.7, 656401.3 6861384.7 70.7, 656400.5 6861388.9 70.7, 656402 6861389.2 70.7, 656401 6861395.9 70.7))",
+    "ground_truth_area_m2": 257.97485643701026,
+    "iou": 0.8735253251579215,
+    "ground_truth_to_scored_boundary_distance_m": 0.3403633759787903,
+    "scored_to_ground_truth_boundary_distance_m": 0.31071470931847717,
+    "symmetric_boundary_distance_m": 0.32553904264863376,
+    "centroid_distance_m": 0.8244115052690916
+  },
+  {
+    "ground_truth_aggregate_id": "BATIMENT0000000240751688",
+    "ground_truth_ids": [
+      "BATIMENT0000000240751688"
+    ],
+    "custom_category": [
+      "adjacent_tall"
+    ],
+    "scored_ids": [
+      "BATIMENT0000000240751688"
+    ],
+    "geometry": "POLYGON Z ((656387.5 6861387 -1000, 656386.1 6861386.8 -1000, 656385.6 6861386.7 -1000, 656386.4 6861382.2 -1000, 656388.2 6861382.6 -1000, 656387.5 6861387 -1000))",
+    "ground_truth_area_m2": 8.168593337917933,
+    "iou": 0.5471010248130146,
+    "ground_truth_to_scored_boundary_distance_m": 0.37301313340331577,
+    "scored_to_ground_truth_boundary_distance_m": 0.4183251763677823,
+    "symmetric_boundary_distance_m": 0.39566915488554905,
+    "centroid_distance_m": 1.2808264065811936
+  },
+  {
+    "ground_truth_aggregate_id": "BATIMENT0000000356564539",
+    "ground_truth_ids": [
+      "BATIMENT0000000356564539"
+    ],
+    "custom_category": [
+      "adjacent_tall"
+    ],
+    "scored_ids": [
+      "BATIMENT0000000356564539"
+    ],
+    "geometry": "POLYGON Z ((656377.6 6861354.5 65.2, 656384.6 6861355.6 65.2, 656384.9 6861353.2 65.2, 656399.9 6861355.3 65.2, 656397.1 6861375.4 65.2, 656375.4 6861371.9 65.2, 656377.6 6861354.5 65.2))",
+    "ground_truth_area_m2": 449.0219092717226,
+    "iou": 0.9062946898120425,
+    "ground_truth_to_scored_boundary_distance_m": 0.5125754220076032,
+    "scored_to_ground_truth_boundary_distance_m": 0.49610144688897884,
+    "symmetric_boundary_distance_m": 0.5043384344482911,
+    "centroid_distance_m": 0.7107312854707823
+  },
+  {
+    "ground_truth_aggregate_id": "BATIMENT0000000240751692",
+    "ground_truth_ids": [
+      "BATIMENT0000000240751692"
+    ],
+    "custom_category": [
+      "adjacent_tall"
+    ],
+    "scored_ids": [
+      "BATIMENT0000000240751692"
+    ],
+    "geometry": "POLYGON Z ((656365.6 6861379.1 59, 656364.7 6861386.1 59, 656364.7 6861386.3 59, 656343.8 6861382.7 59, 656344.9 6861375.4 59, 656358.1 6861377.8 59, 656365.6 6861379.1 59))",
+    "ground_truth_area_m2": 161.81344603224875,
+    "iou": 0.7240206690034149,
+    "ground_truth_to_scored_boundary_distance_m": 0.887161474533424,
+    "scored_to_ground_truth_boundary_distance_m": 0.8776763337690281,
+    "symmetric_boundary_distance_m": 0.882418904151226,
+    "centroid_distance_m": 1.1503637684151895
+  },
+  {
+    "ground_truth_aggregate_id": "BATIMENT0000000240752418",
+    "ground_truth_ids": [
+      "BATIMENT0000000240752418"
+    ],
+    "custom_category": [
+      "low_height"
+    ],
+    "scored_ids": [
+      "BATIMENT0000000240752418"
+    ],
+    "geometry": "POLYGON Z ((656344.5 6861365.4 -1000, 656350.4 6861367 -1000, 656350.1 6861369.1 -1000, 656344.3 6861367.7 -1000, 656344.5 6861365.4 -1000))",
+    "ground_truth_area_m2": 19.394891460487408,
+    "iou": 0.6829117876313722,
+    "ground_truth_to_scored_boundary_distance_m": 0.35508524809889974,
+    "scored_to_ground_truth_boundary_distance_m": 0.34104675486102304,
+    "symmetric_boundary_distance_m": 0.34806600147996136,
+    "centroid_distance_m": 0.18788006617466546
+  },
+  {
+    "ground_truth_aggregate_id": "BATIMENT0000000240752586",
+    "ground_truth_ids": [
+      "BATIMENT0000000240752586"
+    ],
+    "custom_category": [
+      "adjacent_tall"
+    ],
+    "scored_ids": [
+      "BATIMENT0000000240752586"
+    ],
+    "geometry": "POLYGON Z ((656321.2 6861398.3 77.9, 656322.8 6861388.9 77.9, 656324 6861381.6 77.9, 656337.7 6861383.9 77.9, 656336.8 6861390 77.9, 656342.5 6861390.8 77.9, 656340.8 6861401.3 77.9, 656321.2 6861398.3 77.9))",
+    "ground_truth_area_m2": 308.66686008837974,
+    "iou": 0.8195957643438077,
+    "ground_truth_to_scored_boundary_distance_m": 0.8194312968296634,
+    "scored_to_ground_truth_boundary_distance_m": 0.8137965792326035,
+    "symmetric_boundary_distance_m": 0.8166139380311335,
+    "centroid_distance_m": 1.128355106306346
+  },
+  {
+    "ground_truth_aggregate_id": "BATIMENT0000000240752478",
+    "ground_truth_ids": [
+      "BATIMENT0000000240752478"
+    ],
+    "custom_category": [
+      "adjacent_tall"
+    ],
+    "scored_ids": [
+      "BATIMENT0000000240752478"
+    ],
+    "geometry": "POLYGON Z ((656319.2 6861408 62.8, 656319.9 6861403 62.8, 656320.4 6861403.1 62.8, 656329.4 6861404.5 62.8, 656329.3 6861405.2 62.8, 656329.2 6861405.2 62.8, 656329.1 6861406.6 62.8, 656328.7 6861409.6 62.8, 656319.2 6861408 62.8))",
+    "ground_truth_area_m2": 43.36270859563864,
+    "iou": 0.8286006535506593,
+    "ground_truth_to_scored_boundary_distance_m": 0.2934272648355173,
+    "scored_to_ground_truth_boundary_distance_m": 0.30141498620483836,
+    "symmetric_boundary_distance_m": 0.29742112552017785,
+    "centroid_distance_m": 0.16312468377465528
+  },
+  {
+    "ground_truth_aggregate_id": "BATIMENT0000000240752585",
+    "ground_truth_ids": [
+      "BATIMENT0000000240752585"
+    ],
+    "custom_category": [
+      "adjacent_tall"
+    ],
+    "scored_ids": [
+      "BATIMENT0000000240752585"
+    ],
+    "geometry": "POLYGON Z ((656320.4 6861403.1 60.5, 656320.9 6861399.8 60.5, 656321.2 6861398.3 60.5, 656340.8 6861401.3 60.5, 656340.3 6861404.8 60.5, 656340.1 6861406.2 60.5, 656329.4 6861404.5 60.5, 656320.4 6861403.1 60.5))",
+    "ground_truth_area_m2": 122.0025058541274,
+    "iou": 0.7839693439152422,
+    "ground_truth_to_scored_boundary_distance_m": 0.5300209796076649,
+    "scored_to_ground_truth_boundary_distance_m": 0.5164402942598298,
+    "symmetric_boundary_distance_m": 0.5232306369337474,
+    "centroid_distance_m": 0.5286290892425154
+  },
+  {
+    "ground_truth_aggregate_id": "BATIMENT0000000240752588",
+    "ground_truth_ids": [
+      "BATIMENT0000000240752588"
+    ],
+    "custom_category": [
+      "adjacent_tall"
+    ],
+    "scored_ids": [
+      "BATIMENT0000000240752588"
+    ],
+    "geometry": "POLYGON Z ((656340.3 6861404.8 77.1, 656340.8 6861401.3 77.1, 656342.5 6861390.8 77.1, 656363.5 6861394.5 77.1, 656361.7 6861406.8 77.1, 656361.9 6861406.7 77.1, 656361.5 6861408.5 77.1, 656340.3 6861404.8 77.1))",
+    "ground_truth_area_m2": 347.644413225207,
+    "iou": 0.8438070749174433,
+    "ground_truth_to_scored_boundary_distance_m": 0.8022129574239267,
+    "scored_to_ground_truth_boundary_distance_m": 0.7104724824853479,
+    "symmetric_boundary_distance_m": 0.7563427199546373,
+    "centroid_distance_m": 1.2223337081774988
+  },
+  {
+    "ground_truth_aggregate_id": "BATIMENT0000000240752587",
+    "ground_truth_ids": [
+      "BATIMENT0000000240752587"
+    ],
+    "custom_category": [
+      "adjacent_tall"
+    ],
+    "scored_ids": [
+      "BATIMENT0000000240752587"
+    ],
+    "geometry": "POLYGON Z ((656339.1 6861412 59.7, 656340.1 6861406.2 59.7, 656340.3 6861404.8 59.7, 656361.5 6861408.5 59.7, 656360.1 6861415.8 59.7, 656339.1 6861412 59.7))",
+    "ground_truth_area_m2": 141.7625777424921,
+    "iou": 0.8207590069687037,
+    "ground_truth_to_scored_boundary_distance_m": 0.5065997958588404,
+    "scored_to_ground_truth_boundary_distance_m": 0.5285183509836658,
+    "symmetric_boundary_distance_m": 0.5175590734212532,
+    "centroid_distance_m": 0.6708088859086727
+  },
+  {
+    "ground_truth_aggregate_id": "BATIMENT0000000240752583",
+    "ground_truth_ids": [
+      "BATIMENT0000000240752583"
+    ],
+    "custom_category": [
+      "adjacent_tall"
+    ],
+    "scored_ids": [
+      "BATIMENT0000000240752583"
+    ],
+    "geometry": "POLYGON Z ((656301.4 6861405.3 62.6, 656302.8 6861397.1 62.6, 656320.9 6861399.8 62.6, 656320.4 6861403.1 62.6, 656319.9 6861403 62.6, 656314.5 6861402.1 62.6, 656313.5 6861407.5 62.6, 656301.4 6861405.3 62.6))",
+    "ground_truth_area_m2": 127.62372385489495,
+    "iou": 0.7767870926361387,
+    "ground_truth_to_scored_boundary_distance_m": 0.5893573824574901,
+    "scored_to_ground_truth_boundary_distance_m": 0.5954694833952291,
+    "symmetric_boundary_distance_m": 0.5924134329263596,
+    "centroid_distance_m": 0.8502364501894716
+  },
+  {
+    "ground_truth_aggregate_id": "BATIMENT0000000240752572",
+    "ground_truth_ids": [
+      "BATIMENT0000000240752572"
+    ],
+    "custom_category": [
+      "adjacent_tall"
+    ],
+    "scored_ids": [
+      "BATIMENT0000000240752572"
+    ],
+    "geometry": "POLYGON Z ((656262.9 6861398.4 72.8, 656266.3 6861378.2 72.8, 656275 6861379.4 72.8, 656272.9 6861390.9 72.8, 656284 6861392.8 72.8, 656282.4 6861401.9 72.8, 656262.9 6861398.4 72.8))",
+    "ground_truth_area_m2": 292.462236215814,
+    "iou": 0.8367506438574951,
+    "ground_truth_to_scored_boundary_distance_m": 0.6229563883509013,
+    "scored_to_ground_truth_boundary_distance_m": 0.630479923793373,
+    "symmetric_boundary_distance_m": 0.6267181560721371,
+    "centroid_distance_m": 0.9889901758708024
+  },
+  {
+    "ground_truth_aggregate_id": "BATIMENT0000000240752574",
+    "ground_truth_ids": [
+      "BATIMENT0000000240752574"
+    ],
+    "custom_category": [
+      "adjacent_tall"
+    ],
+    "scored_ids": [
+      "BATIMENT0000000240752574"
+    ],
+    "geometry": "POLYGON Z ((656229.9 6861392.5 73.7, 656231.4 6861382.6 73.7, 656234.6 6861383.3 73.7, 656251.4 6861386.3 73.7, 656249.8 6861396.1 73.7, 656229.9 6861392.5 73.7))",
+    "ground_truth_area_m2": 213.64062342413916,
+    "iou": 0.764428224147071,
+    "ground_truth_to_scored_boundary_distance_m": 0.9141209517286863,
+    "scored_to_ground_truth_boundary_distance_m": 0.8967192887464946,
+    "symmetric_boundary_distance_m": 0.9054201202375904,
+    "centroid_distance_m": 1.2769242679928403
+  },
+  {
+    "ground_truth_aggregate_id": "BATIMENT0000000240751674",
+    "ground_truth_ids": [
+      "BATIMENT0000000240751674"
+    ],
+    "custom_category": [
+      "adjacent_tall"
+    ],
+    "scored_ids": [
+      "BATIMENT0000000240751674"
+    ],
+    "geometry": "POLYGON Z ((656249.8 6861396.1 58.4, 656251.4 6861386.3 58.4, 656253.1 6861386.7 58.4, 656253.4 6861385.4 58.4, 656254.2 6861385.6 58.4, 656257.3 6861368.9 58.4, 656261.9 6861369.6 58.4, 656262 6861369.1 58.4, 656267.7 6861370.1 58.4, 656266.3 6861378.2 58.4, 656262.9 6861398.4 58.4, 656249.8 6861396.1 58.4))",
+    "ground_truth_area_m2": 334.192327667797,
+    "iou": 0.8552967241769247,
+    "ground_truth_to_scored_boundary_distance_m": 0.6635669254913442,
+    "scored_to_ground_truth_boundary_distance_m": 0.5694633710692418,
+    "symmetric_boundary_distance_m": 0.6165151482802931,
+    "centroid_distance_m": 1.3322570192539793
+  },
+  {
+    "ground_truth_aggregate_id": "BATIMENT0000000240752575",
+    "ground_truth_ids": [
+      "BATIMENT0000000240752575"
+    ],
+    "custom_category": [
+      "adjacent_tall"
+    ],
+    "scored_ids": [
+      "BATIMENT0000000240752575"
+    ],
+    "geometry": "POLYGON Z ((656234.6 6861383.3 62.2, 656231.4 6861382.6 62.2, 656237.7 6861342.1 62.2, 656238.2 6861339.4 62.2, 656238.2 6861339.1 62.2, 656244.8 6861340.2 62.2, 656244.2 6861344.5 62.2, 656249.8 6861345.3 62.2, 656250.6 6861345.4 62.2, 656250.2 6861348.4 62.2, 656250.1 6861349 62.2, 656249.3 6861354.7 62.2, 656256.3 6861356.3 62.2, 656255.2 6861363 62.2, 656251.6 6861385.2 62.2, 656250.1 6861384.8 62.2, 656250.3 6861383.2 62.2, 656246.8 6861382.6 62.2, 656251.2 6861356.7 62.2, 656242.5 6861355.4 62.2, 656244 6861345 62.2, 656239.8 6861344.2 62.2, 656239.3 6861347.5 62.2, 656242.2 6861348 62.2, 656240.9 6861356.7 62.2, 656246.9 6861357.8 62.2, 656244.4 6861372 62.2, 656245.2 6861372.1 62.2, 656243.6 6861381.5 62.2, 656240.4 6861380.9 62.2, 656242.1 6861371.6 62.2, 656239.3 6861371.2 62.2, 656237.9 6861380.5 62.2, 656235.1 6861380 62.2, 656234.6 6861383.3 62.2))",
+    "ground_truth_area_m2": 613.1720233291483,
+    "iou": 0.766912277309751,
+    "ground_truth_to_scored_boundary_distance_m": 0.5487425385692315,
+    "scored_to_ground_truth_boundary_distance_m": 0.8207303375885378,
+    "symmetric_boundary_distance_m": 0.6847364380788846,
+    "centroid_distance_m": 0.5221854374374921
+  },
+  {
+    "ground_truth_aggregate_id": "BATIMENT0000000240752573",
+    "ground_truth_ids": [
+      "BATIMENT0000000240752573"
+    ],
+    "custom_category": [
+      "adjacent_tall"
+    ],
+    "scored_ids": [
+      "BATIMENT0000000240752573"
+    ],
+    "geometry": "POLYGON Z ((656266.3 6861378.2 60.9, 656267.7 6861370.1 60.9, 656268.5 6861365.4 60.9, 656269.6 6861359.2 60.9, 656275.3 6861360.5 60.9, 656289.3 6861363.6 60.9, 656297.8 6861365.5 60.9, 656295.6 6861378 60.9, 656290.7 6861377 60.9, 656291.8 6861371.3 60.9, 656277.1 6861368.5 60.9, 656275 6861379.4 60.9, 656266.3 6861378.2 60.9))",
+    "ground_truth_area_m2": 342.94651286956434,
+    "iou": 0.8111992618380478,
+    "ground_truth_to_scored_boundary_distance_m": 0.6683478267963358,
+    "scored_to_ground_truth_boundary_distance_m": 0.6649753200329166,
+    "symmetric_boundary_distance_m": 0.6666615734146262,
+    "centroid_distance_m": 0.9666848163644307
+  },
+  {
+    "ground_truth_aggregate_id": "BATIMENT0000000240751676",
+    "ground_truth_ids": [
+      "BATIMENT0000000240751676"
+    ],
+    "custom_category": [
+      "adjacent_tall"
+    ],
+    "scored_ids": [
+      "BATIMENT0000000240751676"
+    ],
+    "geometry": "POLYGON Z ((656282.4 6861401.9 58.7, 656284 6861392.8 58.7, 656284.5 6861392.9 58.7, 656284.9 6861391.4 58.7, 656284.9 6861391.2 58.7, 656286.6 6861391.5 58.7, 656286.4 6861393.2 58.7, 656286.6 6861393.2 58.7, 656286.4 6861394.5 58.7, 656287.5 6861394.7 58.7, 656290.7 6861377 58.7, 656295.6 6861378 58.7, 656291.3 6861403.5 58.7, 656282.4 6861401.9 58.7))",
+    "ground_truth_area_m2": 172.9209367043432,
+    "iou": 0.7946086030222035,
+    "ground_truth_to_scored_boundary_distance_m": 0.5401291414236654,
+    "scored_to_ground_truth_boundary_distance_m": 0.5371144822904788,
+    "symmetric_boundary_distance_m": 0.538621811857072,
+    "centroid_distance_m": 1.7332018311758233
+  },
+  {
+    "ground_truth_aggregate_id": "BATIMENT0000000240751675",
+    "ground_truth_ids": [
+      "BATIMENT0000000240751675"
+    ],
+    "custom_category": [
+      "adjacent_tall"
+    ],
+    "scored_ids": [
+      "BATIMENT0000000240751675"
+    ],
+    "geometry": "POLYGON Z ((656291.3 6861403.5 59.3, 656295.6 6861378 59.3, 656297.8 6861365.5 59.3, 656301.8 6861366.3 59.3, 656307.9 6861367.7 59.3, 656307.9 6861367.8 59.3, 656306.7 6861374.9 59.3, 656306.6 6861375.7 59.3, 656302.1 6861374.9 59.3, 656298.3 6861396.3 59.3, 656302.8 6861397.1 59.3, 656301.4 6861405.3 59.3, 656291.3 6861403.5 59.3))",
+    "ground_truth_area_m2": 311.81260712505116,
+    "iou": 0.837259776795357,
+    "ground_truth_to_scored_boundary_distance_m": 0.5088577599622086,
+    "scored_to_ground_truth_boundary_distance_m": 0.5038869307282484,
+    "symmetric_boundary_distance_m": 0.5063723453452285,
+    "centroid_distance_m": 0.9776210366186032
+  },
+  {
+    "ground_truth_aggregate_id": "BATIMENT0000000240752582",
+    "ground_truth_ids": [
+      "BATIMENT0000000240752582"
+    ],
+    "custom_category": [
+      "adjacent_tall"
+    ],
+    "scored_ids": [
+      "BATIMENT0000000240752582"
+    ],
+    "geometry": "POLYGON Z ((656302.8 6861397.1 79, 656304.9 6861385.3 79, 656317.9 6861387.7 79, 656322.8 6861388.9 79, 656321.2 6861398.3 79, 656320.9 6861399.8 79, 656302.8 6861397.1 79))",
+    "ground_truth_area_m2": 242.41251933095862,
+    "iou": 0.7579615638108413,
+    "ground_truth_to_scored_boundary_distance_m": 1.079022713536755,
+    "scored_to_ground_truth_boundary_distance_m": 0.9786736278156427,
+    "symmetric_boundary_distance_m": 1.028848170676199,
+    "centroid_distance_m": 1.4933954263665292
+  },
+  {
+    "ground_truth_aggregate_id": "BATIMENT0000000240752584",
+    "ground_truth_ids": [
+      "BATIMENT0000000240752584"
+    ],
+    "custom_category": [
+      "adjacent_tall"
+    ],
+    "scored_ids": [
+      "BATIMENT0000000240752584"
+    ],
+    "geometry": "POLYGON Z ((656306.7 6861374.9 62.6, 656307.9 6861367.8 62.6, 656322.5 6861371.3 62.6, 656325.5 6861372.1 62.6, 656324 6861381.6 62.6, 656322.8 6861388.9 62.6, 656317.9 6861387.7 62.6, 656319.5 6861377.4 62.6, 656306.7 6861374.9 62.6))",
+    "ground_truth_area_m2": 185.76132452954778,
+    "iou": 0.6513371451496371,
+    "ground_truth_to_scored_boundary_distance_m": 1.0624567582356577,
+    "scored_to_ground_truth_boundary_distance_m": 1.1529942373211224,
+    "symmetric_boundary_distance_m": 1.10772549777839,
+    "centroid_distance_m": 0.9569124162476939
+  },
+  {
+    "ground_truth_aggregate_id": "BATIMENT0000000240752579",
+    "ground_truth_ids": [
+      "BATIMENT0000000240752579"
+    ],
+    "custom_category": [
+      "adjacent_tall"
+    ],
+    "scored_ids": [
+      "BATIMENT0000000240752579"
+    ],
+    "geometry": "POLYGON Z ((656301.8 6861366.3 58.6, 656302.7 6861360.8 58.6, 656311 6861361.1 58.6, 656310.9 6861361.8 58.6, 656316.7 6861362.5 58.6, 656320.2 6861334.4 58.6, 656322.1 6861334.6 58.6, 656323.1 6861326.7 58.6, 656328.7 6861327.3 58.6, 656325.6 6861349.4 58.6, 656324 6861360.7 58.6, 656323.6 6861363.4 58.6, 656322.5 6861371.3 58.6, 656307.9 6861367.8 58.6, 656307.9 6861367.7 58.6, 656301.8 6861366.3 58.6))",
+    "ground_truth_area_m2": 412.08578630632496,
+    "iou": 0.8725685869639486,
+    "ground_truth_to_scored_boundary_distance_m": 0.4279507727421839,
+    "scored_to_ground_truth_boundary_distance_m": 0.4242310530015158,
+    "symmetric_boundary_distance_m": 0.42609091287184986,
+    "centroid_distance_m": 0.6808287931564956
+  },
+  {
+    "ground_truth_aggregate_id": "BATIMENT0000000240752570",
+    "ground_truth_ids": [
+      "BATIMENT0000000240752570"
+    ],
+    "custom_category": [
+      "adjacent_tall"
+    ],
+    "scored_ids": [
+      "BATIMENT0000000240752570"
+    ],
+    "geometry": "POLYGON Z ((656290.2 6861357.4 58, 656294.4 6861327.5 58, 656295.6 6861319.3 58, 656299 6861319.6 58, 656298.5 6861323.2 58, 656300.3 6861323.5 58, 656298.8 6861334.5 58, 656298.7 6861334.5 58, 656297.5 6861343 58, 656296.9 6861343 58, 656296.6 6861345.7 58, 656297.1 6861345.7 58, 656295.4 6861358.1 58, 656290.2 6861357.4 58))",
+    "ground_truth_area_m2": 234.01207117049276,
+    "iou": 0.7928886547614854,
+    "ground_truth_to_scored_boundary_distance_m": 0.5546938852426093,
+    "scored_to_ground_truth_boundary_distance_m": 0.5632237641696598,
+    "symmetric_boundary_distance_m": 0.5589588247061346,
+    "centroid_distance_m": 0.9472410308814694
+  },
+  {
+    "ground_truth_aggregate_id": "BATIMENT0000000240751672",
+    "ground_truth_ids": [
+      "BATIMENT0000000240751672"
+    ],
+    "custom_category": [
+      "adjacent_tall"
+    ],
+    "scored_ids": [
+      "BATIMENT0000000240751672"
+    ],
+    "geometry": "POLYGON Z ((656290.2 6861357.4 58, 656290.2 6861357.7 58, 656283.7 6861356.8 58, 656285.9 6861341.8 58, 656288 6861326.5 58, 656294.4 6861327.5 58, 656290.2 6861357.4 58))",
+    "ground_truth_area_m2": 200.4007543297605,
+    "iou": 0.772578300307757,
+    "ground_truth_to_scored_boundary_distance_m": 0.6877947458024309,
+    "scored_to_ground_truth_boundary_distance_m": 0.6980051270693426,
+    "symmetric_boundary_distance_m": 0.6928999364358868,
+    "centroid_distance_m": 1.4516530961124532
+  },
+  {
+    "ground_truth_aggregate_id": "BATIMENT0000000240751673",
+    "ground_truth_ids": [
+      "BATIMENT0000000240751673"
+    ],
+    "custom_category": [
+      "adjacent_tall"
+    ],
+    "scored_ids": [
+      "BATIMENT0000000240751673"
+    ],
+    "geometry": "POLYGON Z ((656255.2 6861363 63.7, 656256.3 6861356.3 63.7, 656269.6 6861359.2 63.7, 656268.5 6861365.4 63.7, 656255.2 6861363 63.7))",
+    "ground_truth_area_m2": 97.19157658960211,
+    "iou": 0.7465611741822189,
+    "ground_truth_to_scored_boundary_distance_m": 0.6721281178782829,
+    "scored_to_ground_truth_boundary_distance_m": 0.6471515381500299,
+    "symmetric_boundary_distance_m": 0.6596398280141564,
+    "centroid_distance_m": 0.893327468788061
+  },
+  {
+    "ground_truth_aggregate_id": "BATIMENT0000000240751666",
+    "ground_truth_ids": [
+      "BATIMENT0000000240751666"
+    ],
+    "custom_category": [
+      "adjacent_tall"
+    ],
+    "scored_ids": [
+      "BATIMENT0000000240751666"
+    ],
+    "geometry": "POLYGON Z ((656270.1 6861349.3 64.8, 656268.5 6861349 64.8, 656267.9 6861353.7 64.8, 656276.1 6861355 64.8, 656275.3 6861360.5 64.8, 656269.6 6861359.2 64.8, 656256.3 6861356.3 64.8, 656249.3 6861354.7 64.8, 656250.1 6861349 64.8, 656250.2 6861348.4 64.8, 656253.4 6861348.9 64.8, 656253.4 6861349.7 64.8, 656256.6 6861349.7 64.8, 656255.5 6861348 64.8, 656256 6861346.4 64.8, 656256.4 6861343.5 64.8, 656256 6861343.4 64.8, 656256.1 6861342.8 64.8, 656257.3 6861334.9 64.8, 656255.6 6861332.6 64.8, 656246.1 6861331 64.8, 656246.9 6861325.5 64.8, 656253.2 6861326.4 64.8, 656254.4 6861320.5 64.8, 656254.5 6861319.7 64.8, 656255 6861315.8 64.8, 656261 6861316.6 64.8, 656261.8 6861311 64.8, 656262.7 6861311.2 64.8, 656266.5 6861311.8 64.8, 656266 6861314.5 64.8, 656266.8 6861314.6 64.8, 656265.4 6861322.7 64.8, 656264.3 6861322.6 64.8, 656263.3 6861328.1 64.8, 656271.4 6861329.5 64.8, 656270.4 6861336.8 64.8, 656272 6861337.1 64.8, 656270.1 6861349.3 64.8))",
+    "ground_truth_area_m2": 741.2343977213076,
+    "iou": 0.824123889612006,
+    "ground_truth_to_scored_boundary_distance_m": 0.7700981353000252,
+    "scored_to_ground_truth_boundary_distance_m": 0.8130782421251476,
+    "symmetric_boundary_distance_m": 0.7915881887125864,
+    "centroid_distance_m": 1.322812904517572
+  },
+  {
+    "ground_truth_aggregate_id": "BATIMENT0000000240751668",
+    "ground_truth_ids": [
+      "BATIMENT0000000240751668"
+    ],
+    "custom_category": [
+      "adjacent_tall"
+    ],
+    "scored_ids": [
+      "BATIMENT0000000240751668"
+    ],
+    "geometry": "POLYGON Z ((656254.4 6861320.5 60.1, 656247.8 6861319.6 60.1, 656248.6 6861313.9 60.1, 656248.7 6861313.2 60.1, 656255.2 6861314.3 60.1, 656255 6861315.8 60.1, 656254.5 6861319.7 60.1, 656254.4 6861320.5 60.1))",
+    "ground_truth_area_m2": 47.958788948781766,
+    "iou": 0.7247767111680565,
+    "ground_truth_to_scored_boundary_distance_m": 0.5746489567843005,
+    "scored_to_ground_truth_boundary_distance_m": 0.5000849031399954,
+    "symmetric_boundary_distance_m": 0.537366929962148,
+    "centroid_distance_m": 0.8725251175202822
+  },
+  {
+    "ground_truth_aggregate_id": "BATIMENT0000000240751665",
+    "ground_truth_ids": [
+      "BATIMENT0000000240751665"
+    ],
+    "custom_category": [
+      "adjacent_tall"
+    ],
+    "scored_ids": [
+      "BATIMENT0000000240751665"
+    ],
+    "geometry": "POLYGON Z ((656249.7 6861306.2 60.4, 656250.5 6861300.7 60.4, 656254.8 6861301.5 60.4, 656253.4 6861311.1 60.4, 656249.1 6861310.4 60.4, 656249.7 6861306.2 60.4))",
+    "ground_truth_area_m2": 64.93705010339401,
+    "iou": 0.6556349561900645,
+    "ground_truth_to_scored_boundary_distance_m": 0.781959371704057,
+    "scored_to_ground_truth_boundary_distance_m": 0.6153136385779111,
+    "symmetric_boundary_distance_m": 0.6986365051409841,
+    "centroid_distance_m": 0.46487947250344563
+  },
+  {
+    "ground_truth_aggregate_id": "BATIMENT0000000240751669",
+    "ground_truth_ids": [
+      "BATIMENT0000000240751669"
+    ],
+    "custom_category": [
+      "adjacent_tall"
+    ],
+    "scored_ids": [
+      "BATIMENT0000000240751669"
+    ],
+    "geometry": "POLYGON Z ((656248.7 6861313.2 -1000, 656248.6 6861313.9 -1000, 656246.8 6861313.6 -1000, 656247.9 6861305.9 -1000, 656249.7 6861306.2 -1000, 656249.1 6861310.4 -1000, 656248.7 6861313.2 -1000))",
+    "ground_truth_area_m2": 17.437086764354532,
+    "iou": 0.4847849040323868,
+    "ground_truth_to_scored_boundary_distance_m": 0.5901138210426555,
+    "scored_to_ground_truth_boundary_distance_m": 0.5160240732962753,
+    "symmetric_boundary_distance_m": 0.5530689471694654,
+    "centroid_distance_m": 0.9980284944842672
+  },
+  {
+    "ground_truth_aggregate_id": "BATIMENT0000000240751663",
+    "ground_truth_ids": [
+      "BATIMENT0000000240751663"
+    ],
+    "custom_category": [
+      "adjacent_tall"
+    ],
+    "scored_ids": [
+      "BATIMENT0000000240751663"
+    ],
+    "geometry": "POLYGON Z ((656257.1 6861299.1 66.1, 656258.3 6861290.6 66.1, 656269.4 6861293.3 66.1, 656268.6 6861299.3 66.1, 656265.9 6861298.8 66.1, 656265.7 6861300.8 66.1, 656268.4 6861301.2 66.1, 656267.9 6861305.2 66.1, 656267 6861311.9 66.1, 656266.5 6861311.8 66.1, 656262.7 6861311.2 66.1, 656261.8 6861311 66.1, 656260.5 6861310.8 66.1, 656255.8 6861310 66.1, 656255.5 6861310 66.1, 656257.1 6861299.1 66.1), (656258.9 6861309.8 66.1, 656262 6861310.3 66.1, 656263 6861302.5 66.1, 656260 6861302 66.1, 656258.9 6861309.8 66.1))",
+    "ground_truth_area_m2": 211.74122000868292,
+    "iou": 0.6952793304937859,
+    "ground_truth_to_scored_boundary_distance_m": 0.8498040580618238,
+    "scored_to_ground_truth_boundary_distance_m": 0.7009632883082769,
+    "symmetric_boundary_distance_m": 0.7753836731850503,
+    "centroid_distance_m": 1.1918293167315355
+  },
+  {
+    "ground_truth_aggregate_id": "BATIMENT0000000240751664",
+    "ground_truth_ids": [
+      "BATIMENT0000000240751664"
+    ],
+    "custom_category": [
+      "adjacent_tall"
+    ],
+    "scored_ids": [
+      "BATIMENT0000000240751664"
+    ],
+    "geometry": "POLYGON Z ((656282.7 6861309.2 74, 656281.9 6861315.1 74, 656281.9 6861315.4 74, 656267 6861311.9 74, 656267.9 6861305.2 74, 656268.4 6861301.2 74, 656268.5 6861300.2 74, 656268.6 6861299.3 74, 656269.4 6861293.3 74, 656284.6 6861296.9 74, 656283.6 6861303.8 74, 656283.5 6861304.4 74, 656282.7 6861309.2 74))",
+    "ground_truth_area_m2": 295.2422177530778,
+    "iou": 0.833175248895453,
+    "ground_truth_to_scored_boundary_distance_m": 0.8488859859591743,
+    "scored_to_ground_truth_boundary_distance_m": 0.5921770811589868,
+    "symmetric_boundary_distance_m": 0.7205315335590805,
+    "centroid_distance_m": 1.1651691924675003
+  },
+  {
+    "ground_truth_aggregate_id": "BATIMENT0000000240751670",
+    "ground_truth_ids": [
+      "BATIMENT0000000240751670"
+    ],
+    "custom_category": [
+      "adjacent_tall"
+    ],
+    "scored_ids": [
+      "BATIMENT0000000240751670"
+    ],
+    "geometry": "POLYGON Z ((656295.6 6861319.3 76.5, 656289.1 6861318.5 76.5, 656289.8 6861313 76.5, 656284.2 6861312.2 76.5, 656285.2 6861304 76.5, 656283.6 6861303.8 76.5, 656284.6 6861296.9 76.5, 656290 6861298.2 76.5, 656293.8 6861299.2 76.5, 656298.3 6861300.2 76.5, 656295.6 6861319.3 76.5))",
+    "ground_truth_area_m2": 239.59252079294973,
+    "iou": 0.8149392818721414,
+    "ground_truth_to_scored_boundary_distance_m": 0.7382329493156325,
+    "scored_to_ground_truth_boundary_distance_m": 0.6444988514060209,
+    "symmetric_boundary_distance_m": 0.6913659003608268,
+    "centroid_distance_m": 1.4559779066462883
+  },
+  {
+    "ground_truth_aggregate_id": "BATIMENT0000000240752571",
+    "ground_truth_ids": [
+      "BATIMENT0000000240752571"
+    ],
+    "custom_category": [
+      "adjacent_tall"
+    ],
+    "scored_ids": [
+      "BATIMENT0000000240752571"
+    ],
+    "geometry": "POLYGON Z ((656295.6 6861319.3 74.5, 656298.3 6861300.2 74.5, 656311.2 6861303.4 74.5, 656308.8 6861320.9 74.5, 656307.8 6861320.7 74.5, 656306.3 6861321.7 74.5, 656305.1 6861320.4 74.5, 656299 6861319.6 74.5, 656295.6 6861319.3 74.5))",
+    "ground_truth_area_m2": 262.64332808669553,
+    "iou": 0.8388005683382713,
+    "ground_truth_to_scored_boundary_distance_m": 0.7106254616461433,
+    "scored_to_ground_truth_boundary_distance_m": 0.6442436547582495,
+    "symmetric_boundary_distance_m": 0.6774345582021963,
+    "centroid_distance_m": 1.4554555203843005
+  },
+  {
+    "ground_truth_aggregate_id": "BATIMENT0000000240751691",
+    "ground_truth_ids": [
+      "BATIMENT0000000240751691"
+    ],
+    "custom_category": [
+      "adjacent_tall"
+    ],
+    "scored_ids": [
+      "BATIMENT0000000240751691"
+    ],
+    "geometry": "POLYGON Z ((656339.8 6861330.8 83.9, 656340 6861329.9 83.9, 656342.9 6861311 83.9, 656366 6861316.6 83.9, 656364.8 6861325.5 83.9, 656362.9 6861340.1 83.9, 656347.1 6861336.4 83.9, 656348 6861332.7 83.9, 656339.8 6861330.8 83.9))",
+    "ground_truth_area_m2": 549.1501267930231,
+    "iou": 0.9176887100698844,
+    "ground_truth_to_scored_boundary_distance_m": 0.4892458900210354,
+    "scored_to_ground_truth_boundary_distance_m": 0.47621356605930776,
+    "symmetric_boundary_distance_m": 0.48272972804017156,
+    "centroid_distance_m": 0.8629308056179484
+  },
+  {
+    "ground_truth_aggregate_id": "BATIMENT0000000240752476",
+    "ground_truth_ids": [
+      "BATIMENT0000000240752476"
+    ],
+    "custom_category": [
+      "adjacent_tall"
+    ],
+    "scored_ids": [
+      "BATIMENT0000000240752476"
+    ],
+    "geometry": "POLYGON Z ((656328.7 6861327.3 75.9, 656331.4 6861308.2 75.9, 656342.9 6861311 75.9, 656340 6861329.9 75.9, 656335.2 6861329.4 75.9, 656328.7 6861327.3 75.9))",
+    "ground_truth_area_m2": 246.8387772485476,
+    "iou": 0.9119124797617145,
+    "ground_truth_to_scored_boundary_distance_m": 0.3565514965162254,
+    "scored_to_ground_truth_boundary_distance_m": 0.33255046103016933,
+    "symmetric_boundary_distance_m": 0.3445509787731974,
+    "centroid_distance_m": 0.5990220658816096
+  },
+  {
+    "ground_truth_aggregate_id": "BATIMENT0000000240752578",
+    "ground_truth_ids": [
+      "BATIMENT0000000240752578"
+    ],
+    "custom_category": [
+      "adjacent_tall"
+    ],
+    "scored_ids": [
+      "BATIMENT0000000240752578"
+    ],
+    "geometry": "POLYGON Z ((656308.6 6861322.7 83.1, 656308.8 6861320.9 83.1, 656311.2 6861303.4 83.1, 656331.4 6861308.2 83.1, 656328.7 6861327.3 83.1, 656323.1 6861326.7 83.1, 656314.9 6861325.7 83.1, 656314.9 6861325.4 83.1, 656311 6861324.9 83.1, 656311.3 6861323 83.1, 656308.6 6861322.7 83.1))",
+    "ground_truth_area_m2": 433.7528307639832,
+    "iou": 0.9172501246460183,
+    "ground_truth_to_scored_boundary_distance_m": 0.4502740951923094,
+    "scored_to_ground_truth_boundary_distance_m": 0.4313969247794438,
+    "symmetric_boundary_distance_m": 0.4408355099858766,
+    "centroid_distance_m": 0.6640640711280719
+  },
+  {
+    "ground_truth_aggregate_id": "BATIMENT0000000240752477",
+    "ground_truth_ids": [
+      "BATIMENT0000000240752477"
+    ],
+    "custom_category": [
+      "adjacent_tall"
+    ],
+    "scored_ids": [
+      "BATIMENT0000000240752477"
+    ],
+    "geometry": "POLYGON Z ((656324 6861360.7 56.4, 656325.6 6861349.4 58.6, 656337.6 6861350.9 56.4, 656337.2 6861355.5 56.4, 656336.4 6861362 56.4, 656324 6861360.7 56.4))",
+    "ground_truth_area_m2": 123.9969490950027,
+    "iou": 0.8570636232867567,
+    "ground_truth_to_scored_boundary_distance_m": 0.43187354607734413,
+    "scored_to_ground_truth_boundary_distance_m": 0.4589281414779035,
+    "symmetric_boundary_distance_m": 0.4454008437776238,
+    "centroid_distance_m": 0.7165303814061423
+  },
+  {
+    "ground_truth_aggregate_id": "BATIMENT0000000240751690",
+    "ground_truth_ids": [
+      "BATIMENT0000000240751690"
+    ],
+    "custom_category": [
+      "adjacent_tall"
+    ],
+    "scored_ids": [
+      "BATIMENT0000000240751690"
+    ],
+    "geometry": "POLYGON Z ((656365.6 6861379.1 62.8, 656358.1 6861377.8 62.8, 656359 6861371.1 62.8, 656362.9 6861340.1 62.8, 656364.8 6861325.5 62.8, 656366 6861316.6 62.8, 656382.5 6861320.5 62.8, 656381.3 6861329 62.8, 656380.9 6861332.2 62.8, 656380.4 6861336 62.8, 656379.4 6861342.2 62.8, 656378.5 6861349.5 62.8, 656377.6 6861354.5 62.8, 656375.4 6861371.9 62.8, 656374.9 6861375.7 62.8, 656374.2 6861380.6 62.8, 656365.6 6861379.1 62.8))",
+    "ground_truth_area_m2": 1040.2494159010198,
+    "iou": 0.9236795014461269,
+    "ground_truth_to_scored_boundary_distance_m": 0.5229364209156497,
+    "scored_to_ground_truth_boundary_distance_m": 0.5143544476515611,
+    "symmetric_boundary_distance_m": 0.5186454342836054,
+    "centroid_distance_m": 0.989326569783055
+  },
+  {
+    "ground_truth_aggregate_id": "BATIMENT0000000356564567",
+    "ground_truth_ids": [
+      "BATIMENT0000000356564567"
+    ],
+    "custom_category": [
+      "adjacent_tall"
+    ],
+    "scored_ids": [
+      "BATIMENT0000000356564567"
+    ],
+    "geometry": "POLYGON Z ((656380.4 6861336 57.8, 656385.6 6861337.7 57.8, 656384.9 6861343.2 57.8, 656379.4 6861342.2 57.8, 656380.4 6861336 57.8))",
+    "ground_truth_area_m2": 32.20826751048757,
+    "iou": 0.6459503139673807,
+    "ground_truth_to_scored_boundary_distance_m": 0.5906593453877865,
+    "scored_to_ground_truth_boundary_distance_m": 0.6282979314564855,
+    "symmetric_boundary_distance_m": 0.609478638422136,
+    "centroid_distance_m": 1.1563176241266346
+  },
+  {
+    "ground_truth_aggregate_id": "BATIMENT0000000356564586",
+    "ground_truth_ids": [
+      "BATIMENT0000000356564586"
+    ],
+    "custom_category": [
+      "adjacent_tall"
+    ],
+    "scored_ids": [
+      "BATIMENT0000000356564586"
+    ],
+    "geometry": "POLYGON Z ((656397.4 6861324.1 79, 656397.2 6861326.1 79, 656403.9 6861327.6 79, 656401.8 6861342.5 79, 656394.5 6861341.2 79, 656394.8 6861339.7 79, 656385.6 6861337.7 79, 656380.4 6861336 79, 656380.9 6861332.2 79, 656381.3 6861329 79, 656382.5 6861320.5 79, 656397.4 6861324.1 79))",
+    "ground_truth_area_m2": 361.16352245649324,
+    "iou": 0.8619406509128053,
+    "ground_truth_to_scored_boundary_distance_m": 0.6706451052727006,
+    "scored_to_ground_truth_boundary_distance_m": 0.6599699840724287,
+    "symmetric_boundary_distance_m": 0.6653075446725647,
+    "centroid_distance_m": 0.9589338953080977
+  },
+  {
+    "ground_truth_aggregate_id": "BATIMENT0000000240751661",
+    "ground_truth_ids": [
+      "BATIMENT0000000240751661"
+    ],
+    "custom_category": [
+      "adjacent_tall"
+    ],
+    "scored_ids": [
+      "BATIMENT0000000240751661"
+    ],
+    "geometry": "POLYGON Z ((656250.9 6861298 62.3, 656251.2 6861296.1 62.3, 656252.2 6861289.1 62.3, 656258.3 6861290.6 62.3, 656257.1 6861299.1 62.3, 656250.9 6861298 62.3))",
+    "ground_truth_area_m2": 58.16788692711032,
+    "iou": 0.7078720818148704,
+    "ground_truth_to_scored_boundary_distance_m": 0.6707199277697913,
+    "scored_to_ground_truth_boundary_distance_m": 0.5900521962493944,
+    "symmetric_boundary_distance_m": 0.6303860620095929,
+    "centroid_distance_m": 1.190643339717355
+  },
+  {
+    "ground_truth_aggregate_id": "BATIMENT0000000240751662",
+    "ground_truth_ids": [
+      "BATIMENT0000000240751662"
+    ],
+    "custom_category": [
+      "adjacent_tall"
+    ],
+    "scored_ids": [
+      "BATIMENT0000000240751662"
+    ],
+    "geometry": "POLYGON Z ((656227.8 6861296.2 78.5, 656228.1 6861294.8 78.5, 656228.8 6861290.8 78.5, 656229.8 6861285.3 78.5, 656252.2 6861289.1 78.5, 656251.2 6861296.1 78.5, 656250.9 6861298 78.5, 656250.6 6861300.3 78.5, 656250.3 6861300.2 78.5, 656250.1 6861301.4 78.5, 656249.2 6861301.3 78.5, 656249.4 6861300.1 78.5, 656236.2 6861297.7 78.5, 656235.8 6861299.8 78.5, 656231.1 6861299 78.5, 656231.6 6861296.9 78.5, 656227.8 6861296.2 78.5))",
+    "ground_truth_area_m2": 293.00593676675146,
+    "iou": 0.7893609342173952,
+    "ground_truth_to_scored_boundary_distance_m": 0.8990605179827149,
+    "scored_to_ground_truth_boundary_distance_m": 0.8364881227605445,
+    "symmetric_boundary_distance_m": 0.8677743203716297,
+    "centroid_distance_m": 1.3000556184812218
+  },
+  {
+    "ground_truth_aggregate_id": "BATIMENT0000000240751677",
+    "ground_truth_ids": [
+      "BATIMENT0000000240751677"
+    ],
+    "custom_category": [
+      "adjacent_tall"
+    ],
+    "scored_ids": [
+      "BATIMENT0000000240751677"
+    ],
+    "geometry": "POLYGON Z ((656209.9 6861298 68.1, 656211.2 6861288.4 68.1, 656212.2 6861282.6 68.1, 656218.8 6861283.6 68.1, 656217.8 6861289.9 68.1, 656214.3 6861289.4 68.1, 656213.9 6861292 68.1, 656217.4 6861292.5 68.1, 656216.6 6861297 68.1, 656216.1 6861300.4 68.1, 656214.8 6861300.3 68.1, 656215 6861298.6 68.1, 656209.9 6861298 68.1))",
+    "ground_truth_area_m2": 106.65356984131081,
+    "iou": 0.7822421532348705,
+    "ground_truth_to_scored_boundary_distance_m": 0.45989026469673666,
+    "scored_to_ground_truth_boundary_distance_m": 0.40116308966761377,
+    "symmetric_boundary_distance_m": 0.4305266771821752,
+    "centroid_distance_m": 1.0528888311412108
+  },
+  {
+    "ground_truth_aggregate_id": "BATIMENT0000000253247411",
+    "ground_truth_ids": [
+      "BATIMENT0000000253247411"
+    ],
+    "custom_category": [
+      "adjacent_tall"
+    ],
+    "scored_ids": [
+      "BATIMENT0000000253247411"
+    ],
+    "geometry": "POLYGON Z ((656170.7 6861295.8 80.5, 656172.3 6861283.1 80.5, 656211.2 6861288.4 80.5, 656209.9 6861298 80.5, 656209.4 6861301.9 80.5, 656194.5 6861299.8 80.5, 656194.3 6861301 80.5, 656182.9 6861299.3 80.5, 656183.1 6861297.9 80.5, 656182.4 6861297.8 80.5, 656170.7 6861295.8 80.5))",
+    "ground_truth_area_m2": 553.093084566049,
+    "iou": 0.8680945400615986,
+    "ground_truth_to_scored_boundary_distance_m": 0.7098330473850923,
+    "scored_to_ground_truth_boundary_distance_m": 0.6852114634985429,
+    "symmetric_boundary_distance_m": 0.6975222554418177,
+    "centroid_distance_m": 0.8948461831548052
+  },
+  {
+    "ground_truth_aggregate_id": "BATIMENT0000000240752596",
+    "ground_truth_ids": [
+      "BATIMENT0000000240752596"
+    ],
+    "custom_category": [
+      "adjacent_tall"
+    ],
+    "scored_ids": [
+      "BATIMENT0000000240752596"
+    ],
+    "geometry": "POLYGON Z ((656143 6861292.1 73, 656145.1 6861285.4 73, 656147.6 6861277.5 73, 656155 6861278.7 73, 656162.6 6861279.6 73, 656168.9 6861280.3 73, 656168.6 6861282.5 73, 656172.3 6861283.1 73, 656170.6 6861295.8 73, 656166.7 6861295.2 73, 656167 6861293.1 73, 656163.6 6861292.7 73, 656155.8 6861291.5 73, 656153.2 6861291.1 73, 656152.7 6861290.5 73, 656151.8 6861289.1 73, 656146.2 6861292.5 73, 656143 6861292.1 73))",
+    "ground_truth_area_m2": 345.7198978684983,
+    "iou": 0.8015568872922231,
+    "ground_truth_to_scored_boundary_distance_m": 0.8668936900150621,
+    "scored_to_ground_truth_boundary_distance_m": 0.8572587628664449,
+    "symmetric_boundary_distance_m": 0.8620762264407535,
+    "centroid_distance_m": 1.2681126683239787
+  },
+  {
+    "ground_truth_aggregate_id": "BATIMENT0000000240752593",
+    "ground_truth_ids": [
+      "BATIMENT0000000240752593"
+    ],
+    "custom_category": [
+      "adjacent_tall"
+    ],
+    "scored_ids": [
+      "BATIMENT0000000240752593"
+    ],
+    "geometry": "POLYGON Z ((656132 6861346.1 63.7, 656133.9 6861333.8 63.7, 656135.8 6861334.2 63.7, 656134.1 6861346.9 63.7, 656132 6861346.1 63.7))",
+    "ground_truth_area_m2": 23.64483428392906,
+    "iou": 0.7790803488230179,
+    "ground_truth_to_scored_boundary_distance_m": 0.17222944684428956,
+    "scored_to_ground_truth_boundary_distance_m": 0.2711882386622995,
+    "symmetric_boundary_distance_m": 0.22170884275329455,
+    "centroid_distance_m": 0.24044876224399825
+  },
+  {
+    "ground_truth_aggregate_id": "BATIMENT0000000240752594",
+    "ground_truth_ids": [
+      "BATIMENT0000000240752594"
+    ],
+    "custom_category": [
+      "adjacent_tall"
+    ],
+    "scored_ids": [
+      "BATIMENT0000000240752594"
+    ],
+    "geometry": "POLYGON Z ((656119.1 6861356.5 74.3, 656115.3 6861355.4 74.3, 656124.4 6861324.2 74.3, 656136.8 6861325.9 74.3, 656137 6861325.9 74.3, 656136.1 6861332.2 74.3, 656134.4 6861332 74.3, 656134.6 6861330.1 74.3, 656131 6861329.6 74.3, 656130.4 6861332 74.3, 656130.8 6861332.1 74.3, 656129.7 6861335.8 74.3, 656130.3 6861337.4 74.3, 656132 6861337.8 74.3, 656131.1 6861340.8 74.3, 656129.5 6861340.3 74.3, 656128.9 6861342.2 74.3, 656128.6 6861342.1 74.3, 656127.9 6861344.4 74.3, 656129.2 6861345.3 74.3, 656132 6861346.1 74.3, 656134.1 6861346.9 74.3, 656132.7 6861357.1 74.3, 656132.3 6861360.4 74.3, 656130.1 6861359.8 74.3, 656131.3 6861353.6 74.3, 656126.2 6861352.1 74.3, 656125.5 6861354.6 74.3, 656125.7 6861354.6 74.3, 656125.1 6861356.7 74.3, 656127.1 6861357.3 74.3, 656126.7 6861358.8 74.3, 656125 6861358.3 74.3, 656119.1 6861356.5 74.3))",
+    "ground_truth_area_m2": 410.7786509508302,
+    "iou": 0.8456474615176558,
+    "ground_truth_to_scored_boundary_distance_m": 0.49944578463036715,
+    "scored_to_ground_truth_boundary_distance_m": 0.4945132100632677,
+    "symmetric_boundary_distance_m": 0.49697949734681746,
+    "centroid_distance_m": 1.4513961856219728
+  },
+  {
+    "ground_truth_aggregate_id": "BATIMENT0000000253247424",
+    "ground_truth_ids": [
+      "BATIMENT0000000253247424"
+    ],
+    "custom_category": [
+      "adjacent_tall"
+    ],
+    "scored_ids": [
+      "BATIMENT0000000253247424"
+    ],
+    "geometry": "POLYGON Z ((656135.8 6861334.2 59.7, 656159.9 6861338.2 59.7, 656156.6 6861360.2 59.7, 656132.7 6861357.1 59.7, 656134.1 6861346.9 59.7, 656135.8 6861334.2 59.7))",
+    "ground_truth_area_m2": 528.9999768953321,
+    "iou": 0.9545292522616596,
+    "ground_truth_to_scored_boundary_distance_m": 0.2644952156961462,
+    "scored_to_ground_truth_boundary_distance_m": 0.27227654146895713,
+    "symmetric_boundary_distance_m": 0.2683858785825517,
+    "centroid_distance_m": 0.39347650879330415
+  },
+  {
+    "ground_truth_aggregate_id": "BATIMENT0000000253247420",
+    "ground_truth_ids": [
+      "BATIMENT0000000253247420"
+    ],
+    "custom_category": [
+      "adjacent_tall"
+    ],
+    "scored_ids": [
+      "BATIMENT0000000253247420"
+    ],
+    "geometry": "POLYGON Z ((656161.2 6861329.2 63.6, 656160.5 6861334.2 63.6, 656159.9 6861338.2 63.9, 656135.8 6861334.2 63.6, 656136.1 6861332.2 63.6, 656137 6861325.9 63.6, 656161.2 6861329.2 63.6))",
+    "ground_truth_area_m2": 238.49270608788817,
+    "iou": 0.8615126733205228,
+    "ground_truth_to_scored_boundary_distance_m": 0.5111265231808095,
+    "scored_to_ground_truth_boundary_distance_m": 0.4875367727806911,
+    "symmetric_boundary_distance_m": 0.4993316479807503,
+    "centroid_distance_m": 0.5704715140394865
+  },
+  {
+    "ground_truth_aggregate_id": "BATIMENT0000000240752589",
+    "ground_truth_ids": [
+      "BATIMENT0000000240752589"
+    ],
+    "custom_category": [
+      "adjacent_tall"
+    ],
+    "scored_ids": [
+      "BATIMENT0000000240752589"
+    ],
+    "geometry": "POLYGON Z ((656139 6861318.4 56.8, 656142.5 6861306.3 56.8, 656149.5 6861308.5 56.8, 656146.1 6861320.4 56.8, 656139 6861318.4 56.8))",
+    "ground_truth_area_m2": 94.83495185103276,
+    "iou": 0.803902862151622,
+    "ground_truth_to_scored_boundary_distance_m": 0.5131983445763365,
+    "scored_to_ground_truth_boundary_distance_m": 0.5037207057236547,
+    "symmetric_boundary_distance_m": 0.5084595251499956,
+    "centroid_distance_m": 1.2279204405415916
+  },
+  {
+    "ground_truth_aggregate_id": "BATIMENT0000000240752590",
+    "ground_truth_ids": [
+      "BATIMENT0000000240752590"
+    ],
+    "custom_category": [
+      "adjacent_tall"
+    ],
+    "scored_ids": [
+      "BATIMENT0000000240752590"
+    ],
+    "geometry": "POLYGON Z ((656124.4 6861324.2 72.3, 656136.2 6861283.8 72.3, 656140.4 6861281.2 72.3, 656146.1 6861277.5 72.3, 656147.6 6861277.5 72.3, 656145.1 6861285.4 72.3, 656143 6861292.1 72.3, 656146.2 6861292.5 72.3, 656144.1 6861293.8 72.3, 656145.4 6861296.1 72.3, 656142.5 6861306.3 72.3, 656139 6861318.4 72.3, 656136.8 6861325.9 72.3, 656124.4 6861324.2 72.3))",
+    "ground_truth_area_m2": 523.9285140271083,
+    "iou": 0.8956917622564224,
+    "ground_truth_to_scored_boundary_distance_m": 0.46865343891197997,
+    "scored_to_ground_truth_boundary_distance_m": 0.4843281754497914,
+    "symmetric_boundary_distance_m": 0.47649080718088566,
+    "centroid_distance_m": 0.9842758181378014
+  },
+  {
+    "ground_truth_aggregate_id": "BATIMENT0000000240752595",
+    "ground_truth_ids": [
+      "BATIMENT0000000240752595"
+    ],
+    "custom_category": [
+      "adjacent_tall"
+    ],
+    "scored_ids": [
+      "BATIMENT0000000240752595"
+    ],
+    "geometry": "POLYGON Z ((656162.7 6861300.1 57, 656162.8 6861299.3 57, 656163.6 6861292.7 57, 656167 6861293.1 57, 656166.7 6861295.2 57, 656170.6 6861295.8 57, 656170.6 6861296 57, 656169.8 6861301.3 57, 656162.7 6861300.1 57))",
+    "ground_truth_area_m2": 46.003507725709085,
+    "iou": 0.6561811525139472,
+    "ground_truth_to_scored_boundary_distance_m": 0.6629886084607767,
+    "scored_to_ground_truth_boundary_distance_m": 0.6545808046696174,
+    "symmetric_boundary_distance_m": 0.658784706565197,
+    "centroid_distance_m": 1.2119558364521739
+  },
+  {
+    "ground_truth_aggregate_id": "BATIMENT0000000240751683",
+    "ground_truth_ids": [
+      "BATIMENT0000000240751683"
+    ],
+    "custom_category": [
+      "adjacent_tall"
+    ],
+    "scored_ids": [
+      "BATIMENT0000000240751683"
+    ],
+    "geometry": "POLYGON Z ((656189.3 6861337.7 70.2, 656187.9 6861337.6 70.2, 656176.7 6861336.2 70.2, 656180 6861313.8 70.2, 656182.4 6861297.8 70.2, 656183.1 6861297.9 70.2, 656182.9 6861299.3 70.2, 656194.3 6861301 70.2, 656189.3 6861337.7 70.2))",
+    "ground_truth_area_m2": 482.2434043571568,
+    "iou": 0.9473903845205116,
+    "ground_truth_to_scored_boundary_distance_m": 0.2542851969043056,
+    "scored_to_ground_truth_boundary_distance_m": 0.24748462771294233,
+    "symmetric_boundary_distance_m": 0.250884912308624,
+    "centroid_distance_m": 0.2400676499111586
+  },
+  {
+    "ground_truth_aggregate_id": "BATIMENT0000000240751684",
+    "ground_truth_ids": [
+      "BATIMENT0000000240751684"
+    ],
+    "custom_category": [
+      "adjacent_tall"
+    ],
+    "scored_ids": [
+      "BATIMENT0000000240751684"
+    ],
+    "geometry": "POLYGON Z ((656214.4 6861310.7 57.2, 656208.2 6861309.7 57.2, 656208.8 6861305.3 57.2, 656215.1 6861306.1 57.2, 656214.4 6861310.7 57.2))",
+    "ground_truth_area_m2": 35.96218631256346,
+    "iou": 0.788808472888861,
+    "ground_truth_to_scored_boundary_distance_m": 0.3479689373433764,
+    "scored_to_ground_truth_boundary_distance_m": 0.3208281920618666,
+    "symmetric_boundary_distance_m": 0.3343985647026215,
+    "centroid_distance_m": 0.32926744405389585
+  },
+  {
+    "ground_truth_aggregate_id": "BATIMENT0000000240751667",
+    "ground_truth_ids": [
+      "BATIMENT0000000240751667"
+    ],
+    "custom_category": [
+      "adjacent_tall"
+    ],
+    "scored_ids": [
+      "BATIMENT0000000240751667"
+    ],
+    "geometry": "POLYGON Z ((656219.3 6861336.5 60.7, 656217.2 6861336.1 60.7, 656217.7 6861332 60.7, 656216.2 6861331.7 60.7, 656216.3 6861331.5 60.7, 656211.2 6861330.5 60.7, 656211.9 6861326.3 60.7, 656217.1 6861327 60.7, 656220.8 6861304.2 60.7, 656221.8 6861303.7 60.7, 656223.2 6861294.5 60.7, 656219.3 6861293.9 60.7, 656218.9 6861296 60.7, 656218 6861295.8 60.7, 656217.7 6861297.2 60.7, 656216.6 6861297 60.7, 656217.4 6861292.5 60.7, 656217.8 6861289.9 60.7, 656218.8 6861283.6 60.7, 656229.8 6861285.3 60.7, 656228.8 6861290.8 60.7, 656226.5 6861290.4 60.7, 656225.9 6861294.4 60.7, 656228.1 6861294.8 60.7, 656227.8 6861296.2 60.7, 656224.4 6861315.7 60.7, 656222.4 6861327 60.7, 656221.4 6861332.4 60.7, 656220 6861332.3 60.7, 656219.3 6861336.5 60.7))",
+    "ground_truth_area_m2": 387.3427254963196,
+    "iou": 0.7877782139322194,
+    "ground_truth_to_scored_boundary_distance_m": 0.57093194171013,
+    "scored_to_ground_truth_boundary_distance_m": 0.6978004687349136,
+    "symmetric_boundary_distance_m": 0.6343662052225219,
+    "centroid_distance_m": 0.5852798575835529
+  },
+  {
+    "ground_truth_aggregate_id": "BATIMENT0000000240752568",
+    "ground_truth_ids": [
+      "BATIMENT0000000240752568"
+    ],
+    "custom_category": [
+      "adjacent_tall"
+    ],
+    "scored_ids": [
+      "BATIMENT0000000240752568"
+    ],
+    "geometry": "POLYGON Z ((656222.4 6861327 59.9, 656224.4 6861315.7 59.9, 656226.1 6861316 59.9, 656224.4 6861325.8 59.9, 656243.4 6861329.4 59.9, 656245.2 6861319.5 59.9, 656247.7 6861320 59.9, 656247.6 6861321 59.9, 656247.3 6861323.1 59.9, 656246.9 6861325.5 59.9, 656246.1 6861331 59.9, 656222.4 6861327 59.9))",
+    "ground_truth_area_m2": 118.09264111376261,
+    "iou": 0.435482249119725,
+    "ground_truth_to_scored_boundary_distance_m": 0.7971513507508461,
+    "scored_to_ground_truth_boundary_distance_m": 0.5248339916991146,
+    "symmetric_boundary_distance_m": 0.6609926712249803,
+    "centroid_distance_m": 1.2431837961297152
+  },
+  {
+    "ground_truth_aggregate_id": "BATIMENT0000000240752569",
+    "ground_truth_ids": [
+      "BATIMENT0000000240752569"
+    ],
+    "custom_category": [
+      "adjacent_tall"
+    ],
+    "scored_ids": [
+      "BATIMENT0000000240752569"
+    ],
+    "geometry": "POLYGON Z ((656224.4 6861325.8 74.4, 656226.1 6861316 74.4, 656245.2 6861319.5 74.4, 656243.4 6861329.4 74.4, 656224.4 6861325.8 74.4))",
+    "ground_truth_area_m2": 171.79669852695497,
+    "iou": 0.6450460631443281,
+    "ground_truth_to_scored_boundary_distance_m": 1.3647598661735079,
+    "scored_to_ground_truth_boundary_distance_m": 1.400508845246083,
+    "symmetric_boundary_distance_m": 1.3826343557097953,
+    "centroid_distance_m": 1.9287937634221024
+  },
+  {
+    "ground_truth_aggregate_id": "BATIMENT0000000240751680",
+    "ground_truth_ids": [
+      "BATIMENT0000000240751680"
+    ],
+    "custom_category": [
+      "adjacent_tall"
+    ],
+    "scored_ids": [
+      "BATIMENT0000000240751680"
+    ],
+    "geometry": "POLYGON Z ((656214 6861344.9 -1000, 656210.5 6861344.4 -1000, 656211 6861341 -1000, 656214.6 6861341.5 -1000, 656214 6861344.9 -1000))",
+    "ground_truth_area_m2": 10.925939770503415,
+    "iou": 0.8070507841331898,
+    "ground_truth_to_scored_boundary_distance_m": 0.17613139554009377,
+    "scored_to_ground_truth_boundary_distance_m": 0.18899711562616509,
+    "symmetric_boundary_distance_m": 0.18256425558312944,
+    "centroid_distance_m": 0.2843552236313676
+  },
+  {
+    "ground_truth_aggregate_id": "BATIMENT0000000240752577",
+    "ground_truth_ids": [
+      "BATIMENT0000000240752577"
+    ],
+    "custom_category": [
+      "adjacent_tall"
+    ],
+    "scored_ids": [
+      "BATIMENT0000000240752577"
+    ],
+    "geometry": "POLYGON Z ((656216.3 6861379.6 60.9, 656222.5 6861339.6 60.9, 656237.7 6861342.1 60.9, 656231.4 6861382.5 60.9, 656216.3 6861379.6 60.9))",
+    "ground_truth_area_m2": 607.325975722724,
+    "iou": 0.9255467352881044,
+    "ground_truth_to_scored_boundary_distance_m": 0.42764426181535325,
+    "scored_to_ground_truth_boundary_distance_m": 0.4270672788031781,
+    "symmetric_boundary_distance_m": 0.42735577030926564,
+    "centroid_distance_m": 0.9101118377028631
+  },
+  {
+    "ground_truth_aggregate_id": "BATIMENT0000000240752581",
+    "ground_truth_ids": [
+      "BATIMENT0000000240752581"
+    ],
+    "custom_category": [
+      "adjacent_tall"
+    ],
+    "scored_ids": [
+      "BATIMENT0000000240752581"
+    ],
+    "geometry": "POLYGON Z ((656201.7 6861361.5 61, 656200.8 6861361.2 61, 656203.9 6861340 61, 656206.7 6861340.4 61, 656205.9 6861345.5 61, 656212.2 6861346.5 61, 656212.4 6861345.5 61, 656213.8 6861345.7 61, 656212.5 6861353.5 61, 656205.6 6861352.4 61, 656204.3 6861360.2 61, 656202 6861359.8 61, 656201.7 6861361.5 61))",
+    "ground_truth_area_m2": 128.2281914991427,
+    "iou": 0.7535301244429164,
+    "ground_truth_to_scored_boundary_distance_m": 0.524817065327666,
+    "scored_to_ground_truth_boundary_distance_m": 0.5573633316432243,
+    "symmetric_boundary_distance_m": 0.5410901984854452,
+    "centroid_distance_m": 0.7197815898025844
+  },
+  {
+    "ground_truth_aggregate_id": "BATIMENT0000000240751682",
+    "ground_truth_ids": [
+      "BATIMENT0000000240751682"
+    ],
+    "custom_category": [
+      "adjacent_tall"
+    ],
+    "scored_ids": [
+      "BATIMENT0000000240751682"
+    ],
+    "geometry": "POLYGON Z ((656182.9 6861371.5 77.7, 656172 6861369.5 77.7, 656172.1 6861368.4 77.7, 656176 6861340.7 77.7, 656176.7 6861336.2 77.7, 656187.9 6861337.6 77.7, 656182.9 6861371.5 77.7))",
+    "ground_truth_area_m2": 412.72706190895576,
+    "iou": 0.8220540563283818,
+    "ground_truth_to_scored_boundary_distance_m": 0.8824744132136694,
+    "scored_to_ground_truth_boundary_distance_m": 0.8071928231194738,
+    "symmetric_boundary_distance_m": 0.8448336181665717,
+    "centroid_distance_m": 1.1346218021980874
+  },
+  {
+    "ground_truth_aggregate_id": "BATIMENT0000000240752474",
+    "ground_truth_ids": [
+      "BATIMENT0000000240752474"
+    ],
+    "custom_category": [
+      "adjacent_tall"
+    ],
+    "scored_ids": [
+      "BATIMENT0000000240752474"
+    ],
+    "geometry": "POLYGON Z ((656154.3 6861376 75, 656155.7 6861366.4 77.7, 656172 6861369.5 77.7, 656182.9 6861371.5 77.7, 656187 6861372.2 77.7, 656187.2 6861371.2 77.7, 656191.1 6861371.9 77.7, 656191 6861372.7 77.7, 656198.9 6861374.1 77.7, 656197.5 6861382.4 77.7, 656154.3 6861376 75))",
+    "ground_truth_area_m2": 521.244379012126,
+    "iou": 0.7551525195496378,
+    "ground_truth_to_scored_boundary_distance_m": 1.2201890805193447,
+    "scored_to_ground_truth_boundary_distance_m": 1.0039301422759588,
+    "symmetric_boundary_distance_m": 1.1120596113976517,
+    "centroid_distance_m": 0.23071907315371984
+  },
+  {
+    "ground_truth_aggregate_id": "BATIMENT0000000240752580",
+    "ground_truth_ids": [
+      "BATIMENT0000000240752580"
+    ],
+    "custom_category": [
+      "adjacent_tall"
+    ],
+    "scored_ids": [
+      "BATIMENT0000000240752580"
+    ],
+    "geometry": "POLYGON Z ((656199.4 6861370.6 73.5, 656200.8 6861361.2 73.5, 656201.7 6861361.5 73.5, 656204.2 6861361.8 73.5, 656204.3 6861361.4 73.5, 656207.2 6861361.9 73.5, 656207.2 6861362.4 73.5, 656210.9 6861363.1 73.5, 656209.3 6861372.3 73.5, 656199.4 6861370.6 73.5))",
+    "ground_truth_area_m2": 115.18707862918662,
+    "iou": 0.7912063048649222,
+    "ground_truth_to_scored_boundary_distance_m": 0.6369751332183323,
+    "scored_to_ground_truth_boundary_distance_m": 0.569769009789156,
+    "symmetric_boundary_distance_m": 0.6033720715037442,
+    "centroid_distance_m": 0.9221798469218785
+  },
+  {
+    "ground_truth_aggregate_id": "BATIMENT0000000240751678",
+    "ground_truth_ids": [
+      "BATIMENT0000000240751678"
+    ],
+    "custom_category": [
+      "adjacent_tall"
+    ],
+    "scored_ids": [
+      "BATIMENT0000000240751678"
+    ],
+    "geometry": "POLYGON Z ((656206.6 6861388.3 58.9, 656208.2 6861379.3 58.9, 656209.3 6861372.3 58.9, 656210.9 6861363.1 58.9, 656212.5 6861353.5 58.9, 656213.8 6861345.7 58.9, 656214 6861344.9 58.9, 656214.6 6861341.5 58.9, 656215.5 6861335.9 58.9, 656217.2 6861336.1 58.9, 656219.3 6861336.5 58.9, 656220.7 6861336.7 58.9, 656222.9 6861337 58.9, 656222.5 6861339.6 58.9, 656216.3 6861379.6 58.9, 656214.8 6861389.8 58.9, 656206.6 6861388.3 58.9))",
+    "ground_truth_area_m2": 431.1011801229765,
+    "iou": 0.9222619780603016,
+    "ground_truth_to_scored_boundary_distance_m": 0.2753319985871347,
+    "scored_to_ground_truth_boundary_distance_m": 0.2887505323914871,
+    "symmetric_boundary_distance_m": 0.2820412654893109,
+    "centroid_distance_m": 1.396962880723086
+  },
+  {
+    "ground_truth_aggregate_id": "BATIMENT0000000240752576",
+    "ground_truth_ids": [
+      "BATIMENT0000000240752576"
+    ],
+    "custom_category": [
+      "adjacent_tall"
+    ],
+    "scored_ids": [
+      "BATIMENT0000000240752576"
+    ],
+    "geometry": "POLYGON Z ((656214.8 6861389.8 72.4, 656216.3 6861379.6 72.4, 656231.4 6861382.5 72.4, 656229.9 6861392.5 72.4, 656214.8 6861389.8 72.4))",
+    "ground_truth_area_m2": 152.74753391035932,
+    "iou": 0.8102863639928686,
+    "ground_truth_to_scored_boundary_distance_m": 0.6390681518693977,
+    "scored_to_ground_truth_boundary_distance_m": 0.6403969507952167,
+    "symmetric_boundary_distance_m": 0.6397325513323072,
+    "centroid_distance_m": 0.929121784664671
+  },
+  {
+    "ground_truth_aggregate_id": "BATIMENT0000000240751679",
+    "ground_truth_ids": [
+      "BATIMENT0000000240751679"
+    ],
+    "custom_category": [
+      "adjacent_tall"
+    ],
+    "scored_ids": [
+      "BATIMENT0000000240751679"
+    ],
+    "geometry": "POLYGON Z ((656196.8 6861386.6 77.7, 656197.5 6861382.4 77.7, 656198.9 6861374.1 77.7, 656199.2 6861372.2 77.7, 656200.6 6861372.4 77.7, 656200.2 6861375.5 77.7, 656200.7 6861375.6 77.7, 656200.4 6861377.5 77.7, 656202 6861377.8 77.7, 656204.7 6861378.3 77.7, 656204.7 6861378.7 77.7, 656208.2 6861379.3 77.7, 656206.6 6861388.3 77.7, 656196.8 6861386.6 77.7))",
+    "ground_truth_area_m2": 112.53569639312612,
+    "iou": 0.7420393274472913,
+    "ground_truth_to_scored_boundary_distance_m": 0.6820301950419231,
+    "scored_to_ground_truth_boundary_distance_m": 0.6126620252078796,
+    "symmetric_boundary_distance_m": 0.6473461101249014,
+    "centroid_distance_m": 1.433156190972338
+  },
+  {
+    "ground_truth_aggregate_id": "BATIMENT0000000240752591",
+    "ground_truth_ids": [
+      "BATIMENT0000000240752591"
+    ],
+    "custom_category": [
+      "adjacent_tall"
+    ],
+    "scored_ids": [
+      "BATIMENT0000000240752591"
+    ],
+    "geometry": "POLYGON Z ((656130.4 6861374.7 75, 656131.6 6861366.1 75, 656132.3 6861360.4 75, 656132.7 6861357.1 75, 656156.6 6861360.2 75, 656155.7 6861366.4 75, 656154.3 6861376 75, 656153.9 6861378.9 75, 656130.4 6861374.7 75))",
+    "ground_truth_area_m2": 437.174216469756,
+    "iou": 0.9036933942145039,
+    "ground_truth_to_scored_boundary_distance_m": 0.5209310072605676,
+    "scored_to_ground_truth_boundary_distance_m": 0.523184265663517,
+    "symmetric_boundary_distance_m": 0.5220576364620423,
+    "centroid_distance_m": 0.8073385252189054
+  },
+  {
+    "ground_truth_aggregate_id": "BATIMENT0000000240751706",
+    "ground_truth_ids": [
+      "BATIMENT0000000240751706"
+    ],
+    "custom_category": [
+      "adjacent_tall"
+    ],
+    "scored_ids": [
+      "BATIMENT0000000240751706"
+    ],
+    "geometry": "POLYGON Z ((656131.6 6861366.1 69.4, 656130.4 6861374.7 69.4, 656120.7 6861373 69.4, 656121.4 6861367.4 69.4, 656116.4 6861366.1 69.4, 656119 6861356.8 69.4, 656119.1 6861356.5 69.4, 656125 6861358.3 69.4, 656123.1 6861364.6 69.4, 656131.6 6861366.1 69.4))",
+    "ground_truth_area_m2": 151.77388153618986,
+    "iou": 0.7949721069769157,
+    "ground_truth_to_scored_boundary_distance_m": 0.5522436681417249,
+    "scored_to_ground_truth_boundary_distance_m": 0.5580957811685848,
+    "symmetric_boundary_distance_m": 0.5551697246551548,
+    "centroid_distance_m": 0.7958790015613629
+  }
+]

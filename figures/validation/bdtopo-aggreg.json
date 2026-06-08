@@ -1,0 +1,1328 @@
+[
+  {
+    "ground_truth_aggregate_id": "agg_11ae3e81b42a",
+    "ground_truth_ids": [
+      "BATIMENT0000000337021065"
+    ],
+    "custom_category": [
+      "isolated"
+    ],
+    "scored_ids": [
+      "BATIMENT0000000337021065"
+    ],
+    "geometry": "POLYGON Z ((676306.1 6852506.2 116.4, 676309.6 6852513.5 116.4, 676301.5 6852517.1 116.4, 676298.1 6852509.9 116.4, 676306.1 6852506.2 116.4))",
+    "ground_truth_area_m2": 98.03597388291769,
+    "iou": 0.7237649322546466,
+    "ground_truth_to_scored_boundary_distance_m": 0.7748886248124142,
+    "scored_to_ground_truth_boundary_distance_m": 0.7095056819243285,
+    "symmetric_boundary_distance_m": 0.7421971533683713,
+    "centroid_distance_m": 0.39791279901932103
+  },
+  {
+    "ground_truth_aggregate_id": "agg_f5d21cf1656e",
+    "ground_truth_ids": [
+      "BATIMENT0000000337021055"
+    ],
+    "custom_category": [
+      "isolated"
+    ],
+    "scored_ids": [
+      "BATIMENT0000000337021055"
+    ],
+    "geometry": "POLYGON Z ((676330.8 6852533.9 117, 676321.7 6852538.1 117, 676317.9 6852530 117, 676327 6852525.8 117, 676330.8 6852533.9 117))",
+    "ground_truth_area_m2": 112.14273526731998,
+    "iou": 0.7996059645439281,
+    "ground_truth_to_scored_boundary_distance_m": 0.5730171109463948,
+    "scored_to_ground_truth_boundary_distance_m": 0.5515139240004623,
+    "symmetric_boundary_distance_m": 0.5622655174734286,
+    "centroid_distance_m": 0.2835419023045902
+  },
+  {
+    "ground_truth_aggregate_id": "agg_5a24ff9a790a",
+    "ground_truth_ids": [
+      "BATIMENT0000000337021146"
+    ],
+    "custom_category": [
+      "isolated"
+    ],
+    "scored_ids": [
+      "BATIMENT0000000337021146"
+    ],
+    "geometry": "POLYGON Z ((676333.8 6852555.1 114.2, 676327.2 6852558.3 114.2, 676328.8 6852561.5 114.2, 676322.6 6852564.1 114.2, 676321.1 6852560.8 114.2, 676321.4 6852560.7 114.2, 676317.7 6852552.6 114.2, 676330 6852547.1 114.2, 676333.8 6852555.1 114.2))",
+    "ground_truth_area_m2": 162.08464609500174,
+    "iou": 0.8591100261200811,
+    "ground_truth_to_scored_boundary_distance_m": 0.4408529111209614,
+    "scored_to_ground_truth_boundary_distance_m": 0.4239140960348945,
+    "symmetric_boundary_distance_m": 0.432383503577928,
+    "centroid_distance_m": 0.31863171414398656
+  },
+  {
+    "ground_truth_aggregate_id": "agg_9f0fefd0f364",
+    "ground_truth_ids": [
+      "BATIMENT0000000337021130"
+    ],
+    "custom_category": [
+      "isolated"
+    ],
+    "scored_ids": [
+      "BATIMENT0000000337021130"
+    ],
+    "geometry": "POLYGON Z ((676302.8 6852565.9 114.9, 676295.7 6852569.1 114.9, 676291.2 6852558.9 114.9, 676298.3 6852555.7 114.9, 676302.8 6852565.9 114.9))",
+    "ground_truth_area_m2": 99.53054005066954,
+    "iou": 0.6034971402482684,
+    "ground_truth_to_scored_boundary_distance_m": 1.255108809760345,
+    "scored_to_ground_truth_boundary_distance_m": 1.1030302750158294,
+    "symmetric_boundary_distance_m": 1.179069542388087,
+    "centroid_distance_m": 1.986580781568009
+  },
+  {
+    "ground_truth_aggregate_id": "agg_24db2aa7961e",
+    "ground_truth_ids": [
+      "BATIMENT0000000337021119"
+    ],
+    "custom_category": [
+      "isolated"
+    ],
+    "scored_ids": [
+      "BATIMENT0000000337021119"
+    ],
+    "geometry": "POLYGON Z ((676311.4 6852564.7 115.7, 676315.4 6852573.5 115.7, 676307.4 6852577.3 115.7, 676303.3 6852568.4 115.7, 676311.4 6852564.7 115.7))",
+    "ground_truth_area_m2": 96.00527885854055,
+    "iou": 0.8640044761321393,
+    "ground_truth_to_scored_boundary_distance_m": 0.3547994282918016,
+    "scored_to_ground_truth_boundary_distance_m": 0.34331380829459013,
+    "symmetric_boundary_distance_m": 0.3490566182931959,
+    "centroid_distance_m": 0.3441585139744625
+  },
+  {
+    "ground_truth_aggregate_id": "agg_e64fca490117",
+    "ground_truth_ids": [
+      "BATIMENT0000000337021131"
+    ],
+    "custom_category": [
+      "isolated"
+    ],
+    "scored_ids": [
+      "BATIMENT0000000337021131"
+    ],
+    "geometry": "POLYGON Z ((676302.8 6852565.9 114.9, 676298.3 6852555.7 114.9, 676300.6 6852554.7 114.9, 676305.1 6852564.8 114.9, 676302.8 6852565.9 114.9))",
+    "ground_truth_area_m2": 22.41641895153253,
+    "iou": 0.0011336785923085724,
+    "ground_truth_to_scored_boundary_distance_m": 1.0002265710267715,
+    "scored_to_ground_truth_boundary_distance_m": 1.2677720207774366,
+    "symmetric_boundary_distance_m": 1.133999295902104,
+    "centroid_distance_m": 2.261155848884679
+  },
+  {
+    "ground_truth_aggregate_id": "agg_e9f1a6dfb58a",
+    "ground_truth_ids": [
+      "BATIMENT0000000337021151"
+    ],
+    "custom_category": [
+      "low_height"
+    ],
+    "scored_ids": [
+      "BATIMENT0000000337021151"
+    ],
+    "geometry": "POLYGON Z ((676311.5 6852545.4 111.3, 676312.8 6852548.3 111.3, 676308.2 6852550.3 111.3, 676306.9 6852547.5 111.3, 676311.5 6852545.4 111.3))",
+    "ground_truth_area_m2": 17.269511724687042,
+    "iou": 0.7654296598679652,
+    "ground_truth_to_scored_boundary_distance_m": 0.2705691032101857,
+    "scored_to_ground_truth_boundary_distance_m": 0.2560312466027613,
+    "symmetric_boundary_distance_m": 0.2633001749064735,
+    "centroid_distance_m": 0.3823621821958991
+  },
+  {
+    "ground_truth_aggregate_id": "agg_7e6828f41058",
+    "ground_truth_ids": [
+      "BATIMENT0000000337021129"
+    ],
+    "custom_category": [
+      "isolated"
+    ],
+    "scored_ids": [
+      "BATIMENT0000000337021129"
+    ],
+    "geometry": "POLYGON Z ((676297.2 6852550.4 112.8, 676291.8 6852552.9 112.8, 676288.2 6852543.8 112.8, 676293.2 6852541.6 112.8, 676297.2 6852550.4 112.8))",
+    "ground_truth_area_m2": 63.65233080273464,
+    "iou": 0.6636622111311022,
+    "ground_truth_to_scored_boundary_distance_m": 0.7865359120431193,
+    "scored_to_ground_truth_boundary_distance_m": 0.7358464232274372,
+    "symmetric_boundary_distance_m": 0.7611911676352783,
+    "centroid_distance_m": 1.3988528387972239
+  },
+  {
+    "ground_truth_aggregate_id": "agg_c8efb179405d",
+    "ground_truth_ids": [
+      "BATIMENT0000000337021056"
+    ],
+    "custom_category": [
+      "isolated"
+    ],
+    "scored_ids": [
+      "BATIMENT0000000337021056"
+    ],
+    "geometry": "POLYGON Z ((676285.8 6852526.3 116, 676289.9 6852535.5 116, 676282.4 6852538.9 116, 676278.2 6852529.8 116, 676285.8 6852526.3 116))",
+    "ground_truth_area_m2": 97.05036415183406,
+    "iou": 0.8392867369879742,
+    "ground_truth_to_scored_boundary_distance_m": 0.42882988426351215,
+    "scored_to_ground_truth_boundary_distance_m": 0.4037806244165132,
+    "symmetric_boundary_distance_m": 0.41630525434001264,
+    "centroid_distance_m": 0.5265329673814887
+  },
+  {
+    "ground_truth_aggregate_id": "agg_e11cde3e6a14",
+    "ground_truth_ids": [
+      "BATIMENT0000000337021073"
+    ],
+    "custom_category": [
+      "isolated"
+    ],
+    "scored_ids": [
+      "BATIMENT0000000337021073"
+    ],
+    "geometry": "POLYGON Z ((676275.4 6852515.6 117.4, 676284.8 6852511.3 117.4, 676289.2 6852521.2 117.4, 676278.9 6852525.8 117.4, 676276.6 6852520.5 117.4, 676277.4 6852520.1 117.4, 676275.4 6852515.6 117.4))",
+    "ground_truth_area_m2": 137.06485976550994,
+    "iou": 0.8025524639675715,
+    "ground_truth_to_scored_boundary_distance_m": 0.626843432076317,
+    "scored_to_ground_truth_boundary_distance_m": 0.6061683484820175,
+    "symmetric_boundary_distance_m": 0.6165058902791672,
+    "centroid_distance_m": 0.556007342065829
+  },
+  {
+    "ground_truth_aggregate_id": "agg_872713397a6e",
+    "ground_truth_ids": [
+      "BATIMENT0000000337021071",
+      "BATIMENT0000000337021072"
+    ],
+    "custom_category": [
+      "isolated",
+      "isolated"
+    ],
+    "scored_ids": [
+      "BATIMENT0000000337021071",
+      "BATIMENT0000000337021072"
+    ],
+    "geometry": "POLYGON Z ((676321.5 6852521.2 112.6, 676319 6852515.8 112.6, 676316 6852515.9 112.6, 676308.6 6852518.9 112.6, 676312 6852526.6 112.6, 676319.3 6852523.4 112.6, 676321.5 6852521.2 112.6))",
+    "ground_truth_area_m2": 99.58181224601194,
+    "iou": 0.8507641906657759,
+    "ground_truth_to_scored_boundary_distance_m": 0.41103786432598843,
+    "scored_to_ground_truth_boundary_distance_m": 0.3909638727139686,
+    "symmetric_boundary_distance_m": 0.4010008685199785,
+    "centroid_distance_m": 0.4413578319715756
+  },
+  {
+    "ground_truth_aggregate_id": "agg_7136eb36f414",
+    "ground_truth_ids": [
+      "BATIMENT0000000353654731"
+    ],
+    "custom_category": [
+      "isolated"
+    ],
+    "scored_ids": [
+      "BATIMENT0000000353654731"
+    ],
+    "geometry": "POLYGON Z ((676306.3 6852501.4 115.7, 676302 6852491.7 115.8, 676312.8 6852486.7 115.8, 676315.2 6852492 115.8, 676314 6852492.4 115.8, 676316 6852497.1 115.8, 676306.3 6852501.4 115.7))",
+    "ground_truth_area_m2": 114.5172004612898,
+    "iou": 0.8607406570388106,
+    "ground_truth_to_scored_boundary_distance_m": 0.3898143919514478,
+    "scored_to_ground_truth_boundary_distance_m": 0.40402178837851727,
+    "symmetric_boundary_distance_m": 0.39691809016498253,
+    "centroid_distance_m": 0.5959076960242472
+  },
+  {
+    "ground_truth_aggregate_id": "agg_aef68e3c3fe0",
+    "ground_truth_ids": [
+      "BATIMENT0000000337021078",
+      "BATIMENT0000000337021076"
+    ],
+    "custom_category": [
+      "isolated",
+      "isolated"
+    ],
+    "scored_ids": [
+      "BATIMENT0000000337021078",
+      "BATIMENT0000000337021076"
+    ],
+    "geometry": "POLYGON Z ((676290.6 6852490.5 113.5, 676292.6 6852489.6 113.5, 676293.8 6852492.2 113.5, 676303.4 6852487.9 113.5, 676301.6 6852484.1 113.5, 676297.5 6852486 113.5, 676294.2 6852479 113.5, 676286.7 6852482.6 113.5, 676287.1 6852483.5 113, 676285 6852484.5 113, 676288.3 6852491.1 113, 676290.4 6852490.2 113.5, 676290.6 6852490.5 113.5))",
+    "ground_truth_area_m2": 133.03218302429983,
+    "iou": 0.8780918283513443,
+    "ground_truth_to_scored_boundary_distance_m": 0.31627410155443725,
+    "scored_to_ground_truth_boundary_distance_m": 0.30563182093008284,
+    "symmetric_boundary_distance_m": 0.31095296124226,
+    "centroid_distance_m": 0.33811163382149917
+  },
+  {
+    "ground_truth_aggregate_id": "agg_a07d50457b64",
+    "ground_truth_ids": [
+      "BATIMENT0000000337021077",
+      "BATIMENT0000000337021062"
+    ],
+    "custom_category": [
+      "low_height",
+      "low_height"
+    ],
+    "scored_ids": [
+      "BATIMENT0000000337021077",
+      "BATIMENT0000000337021062"
+    ],
+    "geometry": "MULTIPOLYGON Z (((676290.9 6852493.5 111.4, 676289.7 6852491.2 111.4, 676287.4 6852492.2 111.4, 676288.5 6852494.6 111.4, 676290.9 6852493.5 111.4)), ((676293.3 6852502.3 112.2, 676297.1 6852500.6 112.2, 676295.3 6852496.6 112.2, 676291.6 6852498.3 112.2, 676293.3 6852502.3 112.2)))",
+    "ground_truth_area_m2": 23.779305466496574,
+    "iou": 0.13879963913804644,
+    "ground_truth_to_scored_boundary_distance_m": 0.8193951636467941,
+    "scored_to_ground_truth_boundary_distance_m": 1.8063932858496674,
+    "symmetric_boundary_distance_m": 1.3128942247482307,
+    "centroid_distance_m": 3.5119206292225176
+  },
+  {
+    "ground_truth_aggregate_id": "agg_a34bef64b72b",
+    "ground_truth_ids": [
+      "BATIMENT0000000337021064"
+    ],
+    "custom_category": [
+      "isolated"
+    ],
+    "scored_ids": [
+      "BATIMENT0000000337021064"
+    ],
+    "geometry": "POLYGON Z ((676281.8 6852509.7 116, 676273.8 6852513.3 116, 676270.4 6852505.6 116, 676278.3 6852502.1 116, 676281.8 6852509.7 116))",
+    "ground_truth_area_m2": 98.96581921619998,
+    "iou": 0.7382852037311199,
+    "ground_truth_to_scored_boundary_distance_m": 0.716881821574735,
+    "scored_to_ground_truth_boundary_distance_m": 0.696846969930459,
+    "symmetric_boundary_distance_m": 0.7068643957525971,
+    "centroid_distance_m": 0.21872338341869552
+  },
+  {
+    "ground_truth_aggregate_id": "agg_ad6ee370407c",
+    "ground_truth_ids": [
+      "BATIMENT0000000337021075",
+      "BATIMENT0000000337021074"
+    ],
+    "custom_category": [
+      "isolated",
+      "isolated"
+    ],
+    "scored_ids": [
+      "BATIMENT0000000337021075",
+      "BATIMENT0000000337021074"
+    ],
+    "geometry": "POLYGON Z ((676268.1 6852484.8 113.5, 676272.3 6852482.8 113.5, 676272 6852482.1 113.5, 676277.2 6852479.6 113.5, 676278.3 6852479.1 113.5, 676277 6852476.5 113.5, 676275.6 6852473 113.5, 676262.4 6852478.9 113.5, 676265.3 6852485.4 113.5, 676256.5 6852489.5 113.5, 676258.1 6852492.8 113.5, 676261.7 6852491.2 113.6, 676263.5 6852495.1 113.6, 676270.3 6852492 113.6, 676271 6852493.5 113.6, 676274.1 6852492.1 113.6, 676277.1 6852498.5 113.6, 676283.9 6852495.4 113.6, 676282.1 6852491.3 113.6, 676278.5 6852492.9 113.6, 676274.9 6852485.1 113.6, 676269.4 6852487.6 113.5, 676268.1 6852484.8 113.5))",
+    "ground_truth_area_m2": 316.28411540305285,
+    "iou": 0.8335711555245918,
+    "ground_truth_to_scored_boundary_distance_m": 0.4598040316446286,
+    "scored_to_ground_truth_boundary_distance_m": 0.4424029885253619,
+    "symmetric_boundary_distance_m": 0.4511035100849953,
+    "centroid_distance_m": 0.3117609754954216
+  },
+  {
+    "ground_truth_aggregate_id": "agg_ebfe47ca2422",
+    "ground_truth_ids": [
+      "BATIMENT0000000337021083",
+      "BATIMENT0000000337021154"
+    ],
+    "custom_category": [
+      "low_height",
+      "low_height"
+    ],
+    "scored_ids": [
+      "BATIMENT0000000337021083",
+      "BATIMENT0000000337021154"
+    ],
+    "geometry": "MULTIPOLYGON Z (((676279.7 6852471.2 118.2, 676278.4 6852468.2 118.2, 676274.9 6852469.8 118.2, 676276.2 6852472.8 118.2, 676279.7 6852471.2 118.2)), ((676283.7 6852480.9 111, 676281.6 6852476.3 111, 676280.5 6852476.8 111, 676282.6 6852481.4 111, 676283.7 6852480.9 111)))",
+    "ground_truth_area_m2": 40.523155532643365,
+    "iou": 0.22893737624752536,
+    "ground_truth_to_scored_boundary_distance_m": 1.236401885802207,
+    "scored_to_ground_truth_boundary_distance_m": 0.8880638400159268,
+    "symmetric_boundary_distance_m": 1.062232862909067,
+    "centroid_distance_m": 2.7543842415274096
+  },
+  {
+    "ground_truth_aggregate_id": "agg_14d24c1d46ca",
+    "ground_truth_ids": [
+      "BATIMENT0000000337021082",
+      "BATIMENT0000000337021080",
+      "BATIMENT0000000337021081",
+      "BATIMENT0000000337021079"
+    ],
+    "custom_category": [
+      "low_height",
+      "low_height",
+      "low_height",
+      "low_height"
+    ],
+    "scored_ids": [
+      "BATIMENT0000000337021082",
+      "BATIMENT0000000337021080",
+      "BATIMENT0000000337021081",
+      "BATIMENT0000000337021079"
+    ],
+    "geometry": "MULTIPOLYGON Z (((676265.9 6852454 112.5, 676267.7 6852458.3 112.5, 676266.8 6852458.7 112.4, 676268.4 6852462.1 112.4, 676271.3 6852460.8 112.4, 676271 6852460.2 112.4, 676273.3 6852459.2 112.7, 676271.9 6852456.4 112.7, 676269.7 6852457.4 112.5, 676267.8 6852453.2 112.5, 676265.9 6852454 112.5)), ((676270.4 6852470.9 112, 676274.5 6852469.1 112, 676272.9 6852465.4 112, 676271.2 6852461.8 112, 676267.1 6852463.6 112, 676270.4 6852470.9 112)))",
+    "ground_truth_area_m2": 73.59138664191268,
+    "iou": 0.46248043453678306,
+    "ground_truth_to_scored_boundary_distance_m": 0.9857362715059678,
+    "scored_to_ground_truth_boundary_distance_m": 0.9775517594781845,
+    "symmetric_boundary_distance_m": 0.9816440154920761,
+    "centroid_distance_m": 1.4943734922843948
+  },
+  {
+    "ground_truth_aggregate_id": "agg_ed5b800aef57",
+    "ground_truth_ids": [
+      "BATIMENT0000000337021088"
+    ],
+    "custom_category": [
+      "isolated"
+    ],
+    "scored_ids": [
+      "BATIMENT0000000337021088"
+    ],
+    "geometry": "POLYGON Z ((676265.6 6852455.4 115.3, 676258.2 6852458.8 115.3, 676254.9 6852451.7 115.3, 676262.3 6852448.2 115.3, 676265.6 6852455.4 115.3))",
+    "ground_truth_area_m2": 81.77851443189626,
+    "iou": 0.6623850982074171,
+    "ground_truth_to_scored_boundary_distance_m": 0.915762998532146,
+    "scored_to_ground_truth_boundary_distance_m": 0.8328736298952004,
+    "symmetric_boundary_distance_m": 0.8743183142136732,
+    "centroid_distance_m": 1.2227930775670397
+  },
+  {
+    "ground_truth_aggregate_id": "agg_9e83c9f3dd8d",
+    "ground_truth_ids": [
+      "BATIMENT0000000337021090"
+    ],
+    "custom_category": [
+      "isolated"
+    ],
+    "scored_ids": [
+      "BATIMENT0000000337021090"
+    ],
+    "geometry": "POLYGON Z ((676283.3 6852452.1 112.9, 676292.2 6852448.1 112.9, 676293.8 6852451.7 112.9, 676295.9 6852450.7 112.9, 676299.2 6852458.4 112.9, 676290.4 6852462.2 112.9, 676287 6852454.8 112.9, 676284.9 6852455.8 112.9, 676283.3 6852452.1 112.9))",
+    "ground_truth_area_m2": 132.79552544281844,
+    "iou": 0.7478273854182179,
+    "ground_truth_to_scored_boundary_distance_m": 0.7482606592822961,
+    "scored_to_ground_truth_boundary_distance_m": 0.7279409941787984,
+    "symmetric_boundary_distance_m": 0.7381008267305473,
+    "centroid_distance_m": 0.9826519032600691
+  },
+  {
+    "ground_truth_aggregate_id": "agg_38186caef70d",
+    "ground_truth_ids": [
+      "BATIMENT0000000337021091"
+    ],
+    "custom_category": [
+      "isolated"
+    ],
+    "scored_ids": [
+      "BATIMENT0000000337021091"
+    ],
+    "geometry": "POLYGON Z ((676305.9 6852470.5 113.4, 676296.3 6852474.8 113.4, 676291.6 6852464.8 113.4, 676300.5 6852460.8 113.4, 676303.4 6852466.9 113.4, 676304.1 6852466.6 113.4, 676305.9 6852470.5 113.4))",
+    "ground_truth_area_m2": 138.96746606554785,
+    "iou": 0.7295332171657526,
+    "ground_truth_to_scored_boundary_distance_m": 0.9386509812670537,
+    "scored_to_ground_truth_boundary_distance_m": 0.74103739007901,
+    "symmetric_boundary_distance_m": 0.8398441856730319,
+    "centroid_distance_m": 0.9070089011304101
+  },
+  {
+    "ground_truth_aggregate_id": "agg_538bc4646883",
+    "ground_truth_ids": [
+      "BATIMENT0000000337021085"
+    ],
+    "custom_category": [
+      "isolated"
+    ],
+    "scored_ids": [
+      "BATIMENT0000000337021085"
+    ],
+    "geometry": "POLYGON Z ((676285.7 6852449.8 112.8, 676280 6852439.5 112.8, 676286.3 6852435.9 112.8, 676292.3 6852446.1 112.8, 676285.7 6852449.8 112.8))",
+    "ground_truth_area_m2": 98.12230995825884,
+    "iou": 0.6792381612269175,
+    "ground_truth_to_scored_boundary_distance_m": 0.9221344893474654,
+    "scored_to_ground_truth_boundary_distance_m": 0.8669576958309798,
+    "symmetric_boundary_distance_m": 0.8945460925892226,
+    "centroid_distance_m": 1.6120436877979496
+  },
+  {
+    "ground_truth_aggregate_id": "agg_42f418febdf0",
+    "ground_truth_ids": [
+      "BATIMENT0000000337021092",
+      "BATIMENT0000000337021093",
+      "BATIMENT0000000337021094"
+    ],
+    "custom_category": [
+      "low_height",
+      "low_height",
+      "low_height"
+    ],
+    "scored_ids": [
+      "BATIMENT0000000337021092",
+      "BATIMENT0000000337021093",
+      "BATIMENT0000000337021094"
+    ],
+    "geometry": "MULTIPOLYGON Z (((676269.2 6852439 111.4, 676265.5 6852430.9 111.4, 676264.9 6852431.2 111.4, 676262.4 6852425.1 111.4, 676258.4 6852426.9 111.4, 676264.7 6852440.9 111.4, 676269.2 6852439 111.4)), ((676261.4 6852441.2 111.3, 676262.5 6852443.8 111.3, 676264.7 6852442.8 111.3, 676263.5 6852440.3 111.3, 676261.4 6852441.2 111.3)), ((676267.7 6852441.2 111, 676265.4 6852442.3 111, 676265.4 6852442.5 111, 676267 6852446 111, 676269.4 6852445 111, 676267.7 6852441.2 111)))",
+    "ground_truth_area_m2": 106.20668627051076,
+    "iou": 0.6539381634435398,
+    "ground_truth_to_scored_boundary_distance_m": 0.5764680169932747,
+    "scored_to_ground_truth_boundary_distance_m": 0.5856258816815857,
+    "symmetric_boundary_distance_m": 0.5810469493374302,
+    "centroid_distance_m": 1.2089245545303173
+  },
+  {
+    "ground_truth_aggregate_id": "agg_69038fac04ce",
+    "ground_truth_ids": [
+      "BATIMENT0000000337021097"
+    ],
+    "custom_category": [
+      "isolated"
+    ],
+    "scored_ids": [
+      "BATIMENT0000000337021097"
+    ],
+    "geometry": "POLYGON Z ((676256.6 6852447.4 113.6, 676249.7 6852450.5 113.6, 676244.5 6852438.7 113.6, 676251.4 6852435.7 113.6, 676256.6 6852447.4 113.6))",
+    "ground_truth_area_m2": 109.28338883370259,
+    "iou": 0.8870058023792594,
+    "ground_truth_to_scored_boundary_distance_m": 0.2976833869768902,
+    "scored_to_ground_truth_boundary_distance_m": 0.29309802619607894,
+    "symmetric_boundary_distance_m": 0.2953907065864846,
+    "centroid_distance_m": 0.1335383144784037
+  },
+  {
+    "ground_truth_aggregate_id": "agg_feffbb852c8c",
+    "ground_truth_ids": [
+      "BATIMENT0000000337021099",
+      "BATIMENT0000000337021100",
+      "BATIMENT0000000337021101"
+    ],
+    "custom_category": [
+      "isolated",
+      "isolated",
+      "isolated"
+    ],
+    "scored_ids": [
+      "BATIMENT0000000337021099",
+      "BATIMENT0000000337021100",
+      "BATIMENT0000000337021101"
+    ],
+    "geometry": "POLYGON Z ((676242.9 6852411.1 116.5, 676236.6 6852414.1 116.5, 676240.4 6852422.7 116.5, 676239 6852423.3 114.1, 676242.3 6852430.8 114.1, 676246.5 6852428.8 114.1, 676247 6852429.9 114.7, 676251 6852428.1 114.7, 676250.5 6852427 114.1, 676247.2 6852419.6 114.1, 676246.9 6852419.8 114.1, 676242.9 6852411.1 116.5))",
+    "ground_truth_area_m2": 178.6827056133842,
+    "iou": 0.809188548210037,
+    "ground_truth_to_scored_boundary_distance_m": 0.6056871546823542,
+    "scored_to_ground_truth_boundary_distance_m": 0.5868394018211869,
+    "symmetric_boundary_distance_m": 0.5962632782517705,
+    "centroid_distance_m": 0.22608267828725806
+  },
+  {
+    "ground_truth_aggregate_id": "agg_e41cf1a80974",
+    "ground_truth_ids": [
+      "BATIMENT0000000337021084"
+    ],
+    "custom_category": [
+      "isolated"
+    ],
+    "scored_ids": [
+      "BATIMENT0000000337021084"
+    ],
+    "geometry": "POLYGON Z ((676266.6 6852424.2 115.4, 676263.6 6852417 115.4, 676271.4 6852413.6 115.4, 676274.5 6852420.6 115.4, 676266.6 6852424.2 115.4))",
+    "ground_truth_area_m2": 80.53967680647331,
+    "iou": 0.8245625340902898,
+    "ground_truth_to_scored_boundary_distance_m": 0.4602949287917433,
+    "scored_to_ground_truth_boundary_distance_m": 0.35671437521281185,
+    "symmetric_boundary_distance_m": 0.4085046520022776,
+    "centroid_distance_m": 0.3068613081613128
+  },
+  {
+    "ground_truth_aggregate_id": "agg_6a8cf6d1ad68",
+    "ground_truth_ids": [
+      "BATIMENT0000000337021086"
+    ],
+    "custom_category": [
+      "isolated"
+    ],
+    "scored_ids": [
+      "BATIMENT0000000337021086"
+    ],
+    "geometry": "POLYGON Z ((676281.4 6852431.4 114.4, 676273.4 6852435 114.4, 676269.4 6852426.2 114.4, 676277.4 6852422.5 114.4, 676281.4 6852431.4 114.4))",
+    "ground_truth_area_m2": 109.25143579781343,
+    "iou": 0.7816830907231128,
+    "ground_truth_to_scored_boundary_distance_m": 0.6227993814642548,
+    "scored_to_ground_truth_boundary_distance_m": 0.5953782424404922,
+    "symmetric_boundary_distance_m": 0.6090888119523735,
+    "centroid_distance_m": 0.409465764317949
+  },
+  {
+    "ground_truth_aggregate_id": "agg_63e1c02a597b",
+    "ground_truth_ids": [
+      "BATIMENT0000000337021087"
+    ],
+    "custom_category": [
+      "isolated"
+    ],
+    "scored_ids": [
+      "BATIMENT0000000337021087"
+    ],
+    "geometry": "POLYGON Z ((676265.7 6852411.2 114.7, 676259.3 6852414.1 114.7, 676254.7 6852404.4 114.7, 676261.1 6852401.5 114.7, 676265.7 6852411.2 114.7))",
+    "ground_truth_area_m2": 92.02557991889138,
+    "iou": 0.819554737541659,
+    "ground_truth_to_scored_boundary_distance_m": 0.4861306982518269,
+    "scored_to_ground_truth_boundary_distance_m": 0.3948634724427819,
+    "symmetric_boundary_distance_m": 0.4404970853473044,
+    "centroid_distance_m": 0.3246041414709291
+  },
+  {
+    "ground_truth_aggregate_id": "agg_d986b13b71fa",
+    "ground_truth_ids": [
+      "BATIMENT0000000337021098",
+      "BATIMENT0000000337020548"
+    ],
+    "custom_category": [
+      "isolated",
+      "isolated"
+    ],
+    "scored_ids": [
+      "BATIMENT0000000337021098",
+      "BATIMENT0000000337020548"
+    ],
+    "geometry": "POLYGON Z ((676240.2 6852389.6 113, 676232.9 6852393 113, 676238.2 6852404.5 113, 676235.3 6852405.9 113, 676236.6 6852408.9 113, 676242.6 6852406.2 113, 676244.1 6852409.6 111.9, 676249.1 6852407.3 111.9, 676247.6 6852403.9 111.9, 676246.8 6852404.3 113, 676240.2 6852389.6 113))",
+    "ground_truth_area_m2": 178.8833916247489,
+    "iou": 0.7184764043477173,
+    "ground_truth_to_scored_boundary_distance_m": 0.8713696556082768,
+    "scored_to_ground_truth_boundary_distance_m": 0.8396147496183906,
+    "symmetric_boundary_distance_m": 0.8554922026133337,
+    "centroid_distance_m": 1.6726970542283974
+  },
+  {
+    "ground_truth_aggregate_id": "agg_465fe3d0505b",
+    "ground_truth_ids": [
+      "BATIMENT0000000337021413",
+      "BATIMENT0000000337021414"
+    ],
+    "custom_category": [
+      "isolated",
+      "isolated"
+    ],
+    "scored_ids": [
+      "BATIMENT0000000337021413",
+      "BATIMENT0000000337021414"
+    ],
+    "geometry": "POLYGON Z ((676396.6 6852558.9 115.4, 676394.1 6852568.2 115.4, 676391.4 6852570.4 115, 676397.7 6852578.2 115, 676401.2 6852575.3 115, 676404.4 6852579.3 115, 676412.6 6852580.1 115, 676413.6 6852569 115, 676411.7 6852566.8 115, 676415.3 6852564 115, 676409 6852556.2 115, 676406.3 6852558.4 115.4, 676396.6 6852558.9 115.4))",
+    "ground_truth_area_m2": 394.5040310405994,
+    "iou": 0.881429412368036,
+    "ground_truth_to_scored_boundary_distance_m": 0.5787470224970508,
+    "scored_to_ground_truth_boundary_distance_m": 0.605514056271488,
+    "symmetric_boundary_distance_m": 0.5921305393842694,
+    "centroid_distance_m": 0.777860066353752
+  },
+  {
+    "ground_truth_aggregate_id": "agg_a3bc4125d537",
+    "ground_truth_ids": [
+      "BATIMENT0000000337021360",
+      "BATIMENT0000000337021359"
+    ],
+    "custom_category": [
+      "isolated",
+      "isolated"
+    ],
+    "scored_ids": [
+      "BATIMENT0000000337021360",
+      "BATIMENT0000000337021359"
+    ],
+    "geometry": "POLYGON Z ((676463.8 6852521.8 121.9, 676458.1 6852521 121.9, 676458.2 6852520.4 121.9, 676449.6 6852519.2 121.9, 676447.3 6852535 121.9, 676455.8 6852536.3 121.9, 676453.3 6852554.7 121.9, 676459.4 6852555.6 121.9, 676459.7 6852553.2 121.9, 676468.1 6852554.2 121.9, 676470.3 6852538.4 121.9, 676461.8 6852537.2 121.9, 676463.8 6852521.8 121.9))",
+    "ground_truth_area_m2": 509.2166247839216,
+    "iou": 0.9424954340169455,
+    "ground_truth_to_scored_boundary_distance_m": 0.255893591265854,
+    "scored_to_ground_truth_boundary_distance_m": 0.2466671013279693,
+    "symmetric_boundary_distance_m": 0.25128034629691165,
+    "centroid_distance_m": 0.17825825588530253
+  },
+  {
+    "ground_truth_aggregate_id": "agg_e59301d24408",
+    "ground_truth_ids": [
+      "BATIMENT0000000337020940",
+      "BATIMENT0000000337020938",
+      "BATIMENT0000000337020939"
+    ],
+    "custom_category": [
+      "isolated",
+      "isolated",
+      "isolated"
+    ],
+    "scored_ids": [
+      "BATIMENT0000000337020940",
+      "BATIMENT0000000337020938",
+      "BATIMENT0000000337020939"
+    ],
+    "geometry": "POLYGON Z ((676378.7 6852567.2 112.1, 676377.4 6852562.8 112.1, 676372.5 6852564.1 112.1, 676372.4 6852563.8 115, 676360.8 6852566.7 115, 676362 6852571.5 115, 676362.5 6852573.6 115, 676356.5 6852575.1 115, 676356.1 6852573.1 115, 676348 6852575.2 115, 676347.9 6852574.9 115, 676345.5 6852575.6 115, 676346.6 6852580.3 115, 676347.1 6852580.2 115, 676348.7 6852586.5 115, 676348.3 6852586.9 115, 676349.5 6852592.1 115, 676358.2 6852590 115, 676358.3 6852590.2 115, 676360.2 6852589.7 115, 676359.5 6852587.1 115, 676365.6 6852585.7 115, 676365.9 6852586.6 115, 676373.7 6852584.8 115, 676375.9 6852593.5 115, 676387.2 6852590.9 115, 676384.2 6852579.5 115, 676383.6 6852579.6 114.2, 676382.9 6852577.1 114.2, 676375.8 6852578.8 115, 676373.8 6852570.8 115, 676374.2 6852570.5 115, 676373.7 6852568.5 115, 676378.7 6852567.2 112.1))",
+    "ground_truth_area_m2": 683.8089545692782,
+    "iou": 0.9449178211132047,
+    "ground_truth_to_scored_boundary_distance_m": 0.251505551448112,
+    "scored_to_ground_truth_boundary_distance_m": 0.247489747893808,
+    "symmetric_boundary_distance_m": 0.24949764967096,
+    "centroid_distance_m": 0.210886919271349
+  },
+  {
+    "ground_truth_aggregate_id": "agg_6dd408860f01",
+    "ground_truth_ids": [
+      "BATIMENT0000000337021147"
+    ],
+    "custom_category": [
+      "isolated"
+    ],
+    "scored_ids": [
+      "BATIMENT0000000337021147"
+    ],
+    "geometry": "POLYGON Z ((676356.1 6852573.1 114.5, 676362 6852571.5 114.5, 676362.5 6852573.6 114.5, 676356.5 6852575.1 114.5, 676356.1 6852573.1 114.5))",
+    "ground_truth_area_m2": 10.55769196193989,
+    "iou": 0.8187430758341678,
+    "ground_truth_to_scored_boundary_distance_m": 0.1430105732740583,
+    "scored_to_ground_truth_boundary_distance_m": 0.1523175343360073,
+    "symmetric_boundary_distance_m": 0.1476640538050328,
+    "centroid_distance_m": 0.1753881352690298
+  },
+  {
+    "ground_truth_aggregate_id": "agg_a6aa3d79cca3",
+    "ground_truth_ids": [
+      "BATIMENT0000000353654796"
+    ],
+    "custom_category": [
+      "isolated"
+    ],
+    "scored_ids": [
+      "BATIMENT0000000353654796"
+    ],
+    "geometry": "POLYGON Z ((676440.9 6852598.6 114.7, 676443 6852575 114.7, 676443.5 6852574 114.7, 676445 6852573.3 114.7, 676468.1 6852575.6 114.7, 676469 6852576.3 114.7, 676469.3 6852578.4 114.7, 676467.4 6852600.6 114.7, 676466.6 6852601.5 114.7, 676465.2 6852602.3 114.7, 676442.4 6852600.7 114.7, 676441.5 6852600 114.7, 676440.9 6852598.6 114.7), (676450.3 6852586.7 114.3, 676449.3 6852590.9 114.3, 676449.4 6852592.8 114.3, 676450.5 6852594.1 114.3, 676451.8 6852594.2 114.3, 676453.4 6852593.8 114.3, 676454.4 6852592.7 114.3, 676454.7 6852590.5 114.3, 676454.8 6852588 114.3, 676455.7 6852586.7 114.3, 676457.4 6852586 114.3, 676459.4 6852585.5 114.3, 676460.5 6852585.1 114.3, 676461.2 6852584 114.3, 676461.1 6852582.4 114.3, 676460.4 6852581.9 114.3, 676458.2 6852582.4 114.3, 676455.9 6852583.1 114.3, 676452.9 6852583.1 114.3, 676451.1 6852582.2 114.3, 676449.1 6852581.8 114.3, 676448.2 6852583.3 114.3, 676449.3 6852585.3 114.3, 676450.3 6852586.7 114.3))",
+    "ground_truth_area_m2": 618.1931321365395,
+    "iou": 0.9360683547392539,
+    "ground_truth_to_scored_boundary_distance_m": 0.27782346537118724,
+    "scored_to_ground_truth_boundary_distance_m": 0.27933035913199633,
+    "symmetric_boundary_distance_m": 0.27857691225159176,
+    "centroid_distance_m": 0.45699013258320675
+  },
+  {
+    "ground_truth_aggregate_id": "agg_29b62cf86bd6",
+    "ground_truth_ids": [
+      "BATIMENT0000000337024951"
+    ],
+    "custom_category": [
+      "low_height"
+    ],
+    "scored_ids": [
+      "BATIMENT0000000337024951"
+    ],
+    "geometry": "POLYGON Z ((676543.5 6851799.6 111.8, 676545 6851800.4 111.8, 676541.9 6851805.8 111.8, 676539 6851804.2 111.8, 676542.1 6851798.8 111.8, 676543.5 6851799.6 111.8))",
+    "ground_truth_area_m2": 19.436228729007606,
+    "iou": 0.7628765900529821,
+    "ground_truth_to_scored_boundary_distance_m": 0.2805686859876566,
+    "scored_to_ground_truth_boundary_distance_m": 0.29022719572719013,
+    "symmetric_boundary_distance_m": 0.28539794085742337,
+    "centroid_distance_m": 0.397029074802054
+  },
+  {
+    "ground_truth_aggregate_id": "agg_72350c34944b",
+    "ground_truth_ids": [
+      "BATIMENT0000000337024893",
+      "BATIMENT0000000337024894",
+      "BATIMENT0000000337024890",
+      "BATIMENT0000000337024891",
+      "BATIMENT0000000337024892",
+      "BATIMENT0000000337024889",
+      "BATIMENT0000000337024885",
+      "BATIMENT0000000337024887",
+      "BATIMENT0000000337024888",
+      "BATIMENT0000000337024886",
+      "BATIMENT0000000337024538",
+      "BATIMENT0000000337024537",
+      "BATIMENT0000000337024539",
+      "BATIMENT0000000337024540",
+      "BATIMENT0000000337024895",
+      "BATIMENT0000000337024896",
+      "BATIMENT0000000337024899",
+      "BATIMENT0000000337024898",
+      "BATIMENT0000000337024897",
+      "BATIMENT0000000337024900"
+    ],
+    "custom_category": [
+      "adjacent_house",
+      "adjacent_house",
+      "adjacent_house",
+      "adjacent_house",
+      "adjacent_house",
+      "adjacent_house",
+      "adjacent_house",
+      "adjacent_house",
+      "adjacent_house",
+      "adjacent_house",
+      "adjacent_house",
+      "adjacent_house",
+      "adjacent_house",
+      "adjacent_house",
+      "adjacent_house",
+      "adjacent_house",
+      "adjacent_house",
+      "adjacent_house",
+      "adjacent_house",
+      "adjacent_house"
+    ],
+    "scored_ids": [
+      "BATIMENT0000000337024893",
+      "BATIMENT0000000337024894",
+      "BATIMENT0000000337024890",
+      "BATIMENT0000000337024891",
+      "BATIMENT0000000337024892",
+      "BATIMENT0000000337024889",
+      "BATIMENT0000000337024885",
+      "BATIMENT0000000337024887",
+      "BATIMENT0000000337024888",
+      "BATIMENT0000000337024886",
+      "BATIMENT0000000337024538",
+      "BATIMENT0000000337024537",
+      "BATIMENT0000000337024539",
+      "BATIMENT0000000337024540",
+      "BATIMENT0000000337024895",
+      "BATIMENT0000000337024896",
+      "BATIMENT0000000337024899",
+      "BATIMENT0000000337024898",
+      "BATIMENT0000000337024897",
+      "BATIMENT0000000337024900"
+    ],
+    "geometry": "POLYGON Z ((676567.4 6851664.7 113.1, 676560.5 6851660.7 113.1, 676555 6851670.1 113.1, 676560.9 6851673.5 113.1, 676562.2 6851671.1 113.1, 676569.9 6851675.5 113.1, 676571.2 6851673.2 113.1, 676578.9 6851677.6 113.1, 676586.6 6851681.9 113, 676588.3 6851678.9 113, 676595.4 6851682.9 113, 676596.5 6851681.1 113, 676603.3 6851685 113, 676605.1 6851681.9 113, 676607.7 6851683.4 113, 676603.2 6851691.2 113.1, 676610.8 6851695.4 113.1, 676618.5 6851699.8 114.5, 676620.9 6851695.4 114.5, 676629 6851700 114.7, 676632.4 6851694.3 114.7, 676634.9 6851695.7 114.7, 676632.7 6851699.5 113, 676638.6 6851703 113, 676637.9 6851704.4 113, 676636.5 6851703.7 113, 676634.3 6851707.7 113, 676636.6 6851709.2 113, 676635.3 6851711.5 113, 676632.7 6851710 113, 676631.4 6851712.3 113, 676626.1 6851709.4 113, 676624.3 6851712.8 113, 676628 6851714.9 113, 676625.3 6851719.6 113, 676620.8 6851717.1 113, 676618.8 6851720.7 113, 676616 6851719.2 113.5, 676611.6 6851727.1 113.5, 676616.9 6851730 113.5, 676612.5 6851737.9 114.2, 676617.8 6851740.9 114.2, 676616.2 6851743.6 114.2, 676614.1 6851742.4 113.4, 676611.7 6851746.6 113.4, 676612.9 6851747.4 113.4, 676612.1 6851748.7 113.4, 676606.1 6851745.3 113.4, 676604.3 6851748.4 113.4, 676601.8 6851747 113.6, 676603 6851744.9 113.6, 676600.7 6851743.6 113.6, 676602.4 6851740.7 113.6, 676595.2 6851736.5 113.6, 676596.2 6851734.9 113.6, 676589.3 6851730.8 113.6, 676593.8 6851723.1 113.7, 676585.7 6851718.4 113.5, 676586.1 6851717.8 113.5, 676581.8 6851715.3 113.5, 676581 6851716.7 113.5, 676579.5 6851715.9 113.5, 676577.2 6851719.9 113.5, 676572.4 6851717.1 113.5, 676574.7 6851713.1 113.5, 676571 6851711 113.5, 676574.9 6851704.1 113.4, 676567.6 6851700 113.4, 676559.8 6851695.4 113.6, 676560.6 6851694.1 113.4, 676556.3 6851691.7 113.4, 676555.6 6851693.1 113.4, 676553.8 6851692 113.4, 676551.5 6851696.1 113.4, 676546.9 6851693.4 113.4, 676549.2 6851689.4 113.4, 676545.6 6851687.2 113.4, 676544.1 6851690 113.8, 676541.6 6851688.5 113.8, 676544.8 6851682.9 113.8, 676536.6 6851678.2 113.8, 676532.1 6851686.1 113.8, 676540.2 6851691 113.8, 676537.4 6851696.1 113.8, 676539.9 6851697.5 113.8, 676551.4 6851704.5 113.4, 676549.8 6851707.3 113.4, 676552.4 6851708.8 113.4, 676552.1 6851709.5 113.6, 676554.6 6851711 113.6, 676558.8 6851703.6 113.6, 676563.8 6851706.6 113.6, 676568.6 6851709.3 113.4, 676564.4 6851716.8 113.4, 676566.9 6851718.3 113.5, 676565.3 6851721.1 113.5, 676576.8 6851727.8 113.5, 676574.9 6851731.2 113.5, 676577.5 6851732.9 113.5, 676581.4 6851725.8 113.5, 676579.3 6851724.6 113.5, 676581.9 6851720.1 113.5, 676584 6851721.3 113.7, 676581.7 6851725.4 113.7, 676587 6851728.6 113.7, 676582 6851737.4 113.7, 676584.6 6851739 113.7, 676598.6 6851747.1 113.6, 676596.5 6851750.9 113.6, 676598.9 6851752.2 113.6, 676603.9 6851755.2 113.4, 676605.7 6851751.9 113.4, 676613.9 6851756.5 113.4, 676620.1 6851745.9 113.4, 676621.5 6851746.6 114.2, 676624.6 6851741.4 114.2, 676620.6 6851739.1 114.2, 676623.5 6851733.8 114.2, 676618.6 6851730.9 114.2, 676621.4 6851726 113.5, 676630.7 6851731.1 113.5, 676632.2 6851728.4 113.5, 676629.1 6851726.6 113.5, 676635.8 6851714.7 113, 676639.1 6851716.7 113, 676640.4 6851714.5 113, 676641.8 6851712 113, 676640.5 6851711.2 113, 676646.7 6851700.4 113, 676638.5 6851695.7 113, 676640.5 6851692.1 113, 676637.8 6851690.6 114.7, 676632.3 6851687.4 114.7, 676629.8 6851691.5 114.7, 676624.8 6851688.7 114.7, 676626.6 6851685.7 114.5, 676623.9 6851684.1 114.5, 676619.8 6851691.2 114.5, 676614.8 6851688.3 114.5, 676609.9 6851685.5 113.1, 676613.8 6851678.4 113.1, 676611.3 6851677 113.1, 676611.9 6851675.8 113, 676609.2 6851674.3 113, 676607 6851678.2 113, 676593.1 6851670.3 113, 676594.6 6851667.6 113, 676592.1 6851666.1 113, 676588 6851673.2 113, 676583.1 6851670.3 113, 676577.9 6851667.4 113.1, 676581.8 6851660.4 113.1, 676579.3 6851659 113.1, 676578.5 6851660.4 113.1, 676573.4 6851669.4 113.1, 676569.7 6851667.3 113.1, 676573.7 6851660.3 113.1, 676570.8 6851658.8 113.1, 676567.4 6851664.7 113.1))",
+    "ground_truth_area_m2": 2572.3117996532155,
+    "iou": 0.8531126731578477,
+    "ground_truth_to_scored_boundary_distance_m": 0.45977212483630187,
+    "scored_to_ground_truth_boundary_distance_m": 0.4570500772459066,
+    "symmetric_boundary_distance_m": 0.4584111010411043,
+    "centroid_distance_m": 0.7280033554529068
+  },
+  {
+    "ground_truth_aggregate_id": "agg_1c07869155ab",
+    "ground_truth_ids": [
+      "BATIMENT0000000337024953"
+    ],
+    "custom_category": [
+      "low_height"
+    ],
+    "scored_ids": [
+      "BATIMENT0000000337024953"
+    ],
+    "geometry": "POLYGON Z ((676564.9 6851756.5 112.2, 676563.5 6851755.7 112.2, 676566.6 6851750.1 112.2, 676569.4 6851751.8 112.2, 676566.4 6851757.3 112.2, 676564.9 6851756.5 112.2))",
+    "ground_truth_area_m2": 19.14648423891173,
+    "iou": 0.8566685688013277,
+    "ground_truth_to_scored_boundary_distance_m": 0.1598614933959,
+    "scored_to_ground_truth_boundary_distance_m": 0.16680086661893567,
+    "symmetric_boundary_distance_m": 0.16333118000741784,
+    "centroid_distance_m": 0.21139735385446445
+  },
+  {
+    "ground_truth_aggregate_id": "agg_6aba3cc130f9",
+    "ground_truth_ids": [
+      "BATIMENT0000000337024952"
+    ],
+    "custom_category": [
+      "low_height"
+    ],
+    "scored_ids": [
+      "BATIMENT0000000337024952"
+    ],
+    "geometry": "POLYGON Z ((676616.2 6851684.7 111.8, 676619.1 6851679.4 111.8, 676621.8 6851680.8 111.8, 676618.7 6851686.1 111.8, 676616.2 6851684.7 111.8))",
+    "ground_truth_area_m2": 17.97622854514895,
+    "iou": 0.7784124941982757,
+    "ground_truth_to_scored_boundary_distance_m": 0.25411106271011286,
+    "scored_to_ground_truth_boundary_distance_m": 0.241748689512873,
+    "symmetric_boundary_distance_m": 0.24792987611149292,
+    "centroid_distance_m": 0.5281264427753126
+  },
+  {
+    "ground_truth_aggregate_id": "agg_11fbb0c8d68a",
+    "ground_truth_ids": [
+      "BATIMENT0000000337024745"
+    ],
+    "custom_category": [
+      "low_height"
+    ],
+    "scored_ids": [
+      "BATIMENT0000000337024745"
+    ],
+    "geometry": "POLYGON Z ((676584.4 6851666.5 111.6, 676587.3 6851661.4 111.6, 676590 6851662.9 111.6, 676587.1 6851668.1 111.6, 676584.4 6851666.5 111.6))",
+    "ground_truth_area_m2": 20.333158893663033,
+    "iou": 0.7726443572473525,
+    "ground_truth_to_scored_boundary_distance_m": 0.27960530490929647,
+    "scored_to_ground_truth_boundary_distance_m": 0.25415680819603254,
+    "symmetric_boundary_distance_m": 0.2668810565526645,
+    "centroid_distance_m": 0.3811589819107803
+  },
+  {
+    "ground_truth_aggregate_id": "agg_91cb5262baac",
+    "ground_truth_ids": [
+      "BATIMENT0000000337024901"
+    ],
+    "custom_category": [
+      "low_height"
+    ],
+    "scored_ids": [
+      "BATIMENT0000000337024901"
+    ],
+    "geometry": "POLYGON Z ((676557 6851715 113, 676560.2 6851709.5 113, 676562.9 6851711.1 113, 676559.8 6851716.6 113, 676557 6851715 113))",
+    "ground_truth_area_m2": 19.907851010958264,
+    "iou": 0.7077774298738481,
+    "ground_truth_to_scored_boundary_distance_m": 0.35820781743774055,
+    "scored_to_ground_truth_boundary_distance_m": 0.3633688233752075,
+    "symmetric_boundary_distance_m": 0.360788320406474,
+    "centroid_distance_m": 0.5335308158479387
+  },
+  {
+    "ground_truth_aggregate_id": "agg_780aa0cb0bf7",
+    "ground_truth_ids": [
+      "BATIMENT0000000337024954"
+    ],
+    "custom_category": [
+      "low_height"
+    ],
+    "scored_ids": [
+      "BATIMENT0000000337024954"
+    ],
+    "geometry": "POLYGON Z ((676525.2 6851719.6 111.9, 676523.9 6851718.8 111.9, 676527.1 6851713.1 111.9, 676529.8 6851714.7 111.9, 676526.6 6851720.3 111.9, 676525.2 6851719.6 111.9))",
+    "ground_truth_area_m2": 19.53315995702777,
+    "iou": 0.8192806187804244,
+    "ground_truth_to_scored_boundary_distance_m": 0.20619074628462972,
+    "scored_to_ground_truth_boundary_distance_m": 0.21018841369329708,
+    "symmetric_boundary_distance_m": 0.2081895799889634,
+    "centroid_distance_m": 0.3055100235988428
+  },
+  {
+    "ground_truth_aggregate_id": "agg_dd2f0971cc4d",
+    "ground_truth_ids": [
+      "BATIMENT0000000337024714",
+      "BATIMENT0000000337024713",
+      "BATIMENT0000000337024711",
+      "BATIMENT0000000337024712"
+    ],
+    "custom_category": [
+      "adjacent_house",
+      "adjacent_house",
+      "adjacent_house",
+      "adjacent_house"
+    ],
+    "scored_ids": [
+      "BATIMENT0000000337024714",
+      "BATIMENT0000000337024713",
+      "BATIMENT0000000337024711",
+      "BATIMENT0000000337024712"
+    ],
+    "geometry": "POLYGON Z ((676570.3 6851644 114.7, 676561.4 6851638.8 114.7, 676564.4 6851633.5 114.7, 676557.8 6851629.6 114.7, 676553.5 6851637.4 114.7, 676554.1 6851637.9 114.7, 676551.7 6851642 112.9, 676554.1 6851643.4 112.9, 676553.2 6851645.1 112.9, 676556.6 6851647.2 112.9, 676553.8 6851652.1 112.9, 676549.8 6851649.8 112.9, 676547.9 6851653.3 112.9, 676548.7 6851653.8 114.9, 676543.6 6851662.6 114.9, 676550.5 6851666.6 114.9, 676555.6 6851657.9 114.9, 676557.7 6851659.1 112.9, 676564.5 6851647.6 112.9, 676567.3 6851649.2 112.9, 676568.9 6851646.3 112.9, 676570.3 6851644 114.7))",
+    "ground_truth_area_m2": 394.70569761296457,
+    "iou": 0.8947014864106978,
+    "ground_truth_to_scored_boundary_distance_m": 0.36779810244150674,
+    "scored_to_ground_truth_boundary_distance_m": 0.34980823514181036,
+    "symmetric_boundary_distance_m": 0.3588031687916585,
+    "centroid_distance_m": 0.37949201727999504
+  },
+  {
+    "ground_truth_aggregate_id": "agg_a27055a486f9",
+    "ground_truth_ids": [
+      "BATIMENT0000000337024902"
+    ],
+    "custom_category": [
+      "isolated"
+    ],
+    "scored_ids": [
+      "BATIMENT0000000337024902"
+    ],
+    "geometry": "POLYGON Z ((676500.6 6851754.1 114, 676496.7 6851760.7 114, 676487.8 6851755.6 114, 676491.5 6851749 114, 676500.6 6851754.1 114))",
+    "ground_truth_area_m2": 88.83868919428897,
+    "iou": 0.8326264200758852,
+    "ground_truth_to_scored_boundary_distance_m": 0.420917662266861,
+    "scored_to_ground_truth_boundary_distance_m": 0.4112222895897552,
+    "symmetric_boundary_distance_m": 0.4160699759283081,
+    "centroid_distance_m": 0.3622348504623168
+  },
+  {
+    "ground_truth_aggregate_id": "agg_6f50a1b14358",
+    "ground_truth_ids": [
+      "BATIMENT0000000337024882"
+    ],
+    "custom_category": [
+      "adjacent_house"
+    ],
+    "scored_ids": [
+      "BATIMENT0000000337024882"
+    ],
+    "geometry": "POLYGON Z ((676584.1 6851810.8 113.4, 676577.9 6851821.6 113.4, 676569.5 6851816.9 113.4, 676567.4 6851820.5 113.4, 676562.2 6851817.4 113.4, 676564 6851814.3 113.4, 676552.4 6851807.8 113.4, 676550.6 6851811 113.4, 676547.6 6851809.2 113.4, 676548.2 6851808.1 113.4, 676546 6851806.7 113.4, 676550.2 6851799.3 113.4, 676540.3 6851793.8 113.4, 676536.1 6851801.2 113.4, 676533.4 6851799.6 113.4, 676532.8 6851800.7 113.4, 676530 6851799.1 113.4, 676532.2 6851795.2 113.4, 676518.5 6851787.5 113.4, 676518.8 6851786.9 113.4, 676516.3 6851785.5 113.4, 676520.4 6851778.2 113.4, 676510.4 6851772.7 113.4, 676506.4 6851779.6 113.4, 676503.4 6851777.8 113.4, 676504.5 6851776 113.4, 676502.2 6851774.8 113.4, 676504 6851771.6 113.4, 676495.8 6851766.9 113.4, 676501.8 6851756.1 113.4, 676510.4 6851761 113.4, 676505.8 6851769.1 113.4, 676507.8 6851770.3 113.4, 676511.7 6851763.7 113.4, 676527.2 6851772.6 113.4, 676523.8 6851778.8 113.4, 676532.1 6851783.6 113.4, 676532.6 6851782.7 113.4, 676536.9 6851785.2 113.4, 676537.4 6851786.6 113.4, 676536.4 6851788.2 113.4, 676538.7 6851789.5 113.4, 676541.4 6851784.9 113.4, 676557 6851793.7 113.4, 676557 6851794.2 113.4, 676561.1 6851796.5 113.4, 676560.4 6851798 113.4, 676562.1 6851799 113.4, 676559.7 6851803.3 113.4, 676563.9 6851805.6 113.4, 676566.3 6851801.4 113.4, 676570.4 6851803.8 113.4, 676565.6 6851812.1 113.4, 676567.8 6851813.3 113.4, 676570 6851809.5 113.4, 676574.9 6851812.2 113.4, 676577.9 6851807 113.4, 676580 6851808.2 113.4, 676581.3 6851805.8 113.4, 676576 6851802.6 113.4, 676580.5 6851794.8 113.4, 676575.6 6851792 113.4, 676580.5 6851783.2 113.4, 676581 6851783.4 113.4, 676582.2 6851781.2 113.4, 676581.7 6851780.7 113.4, 676584.2 6851776.3 113.4, 676579.3 6851773.5 113.4, 676578.5 6851775.2 113.4, 676570.3 6851770.4 113.4, 676573.3 6851765 113.4, 676571.3 6851763.9 113.4, 676566.1 6851772.9 113.4, 676550.4 6851763.8 113.4, 676555.2 6851755.3 113.4, 676546.3 6851750.2 113.4, 676545.2 6851751.8 113.4, 676538 6851747.6 113.4, 676540 6851744.1 113.4, 676536.3 6851741.9 113.4, 676538.6 6851737.8 113.4, 676534.5 6851735.4 113.4, 676532 6851739.7 113.4, 676530.2 6851738.7 113.4, 676529.4 6851740 113.4, 676525 6851737.5 113.4, 676525.5 6851736.7 113.4, 676510.2 6851727.8 113.4, 676518.6 6851713.1 113.4, 676521.3 6851714.8 113.4, 676517.3 6851722 113.4, 676527.2 6851727.6 113.4, 676531.2 6851720.4 113.4, 676536.5 6851723.4 113.4, 676534.7 6851726.8 113.4, 676546.4 6851733.6 113.4, 676543.4 6851739 113.4, 676556.8 6851746.9 113.4, 676559 6851743 113.4, 676561.9 6851744.7 113.4, 676559.4 6851749.3 113.4, 676561.8 6851750.7 113.4, 676557.8 6851758 113.4, 676567.5 6851763.6 113.4, 676571.5 6851756.6 113.4, 676579.2 6851761.1 113.4, 676577 6851765.2 113.4, 676582.1 6851768.1 113.4, 676582.8 6851766.8 113.4, 676593.8 6851773.2 113.4, 676589.2 6851781.5 113.4, 676592.8 6851783.5 113.4, 676591.1 6851786.2 113.4, 676597.6 6851789.9 113.4, 676594.6 6851795.3 113.4, 676586.3 6851790.5 113.4, 676585 6851792.7 113.4, 676588.5 6851794.8 113.4, 676586.6 6851798.2 113.4, 676587.3 6851798.7 113.4, 676584.5 6851803.8 113.4, 676588.5 6851806.2 113.4, 676585.4 6851811.7 113.4, 676584.1 6851810.8 113.4))",
+    "ground_truth_area_m2": 2416.9440858853495,
+    "iou": 0.9134553187138061,
+    "ground_truth_to_scored_boundary_distance_m": 0.3064861699737126,
+    "scored_to_ground_truth_boundary_distance_m": 0.277308781944115,
+    "symmetric_boundary_distance_m": 0.2918974759589138,
+    "centroid_distance_m": 1.0049652357155303
+  },
+  {
+    "ground_truth_aggregate_id": "agg_dbc836a426e4",
+    "ground_truth_ids": [
+      "BATIMENT0000000337024955"
+    ],
+    "custom_category": [
+      "low_height"
+    ],
+    "scored_ids": [
+      "BATIMENT0000000337024955"
+    ],
+    "geometry": "POLYGON Z ((676509.9 6851781.5 111.7, 676510.3 6851780.7 111.7, 676511.6 6851781.4 111.7, 676513 6851782.2 111.7, 676510 6851787.7 111.7, 676507.2 6851786.2 111.7, 676509.9 6851781.5 111.7))",
+    "ground_truth_area_m2": 19.018429006713575,
+    "iou": 0.8308219910255878,
+    "ground_truth_to_scored_boundary_distance_m": 0.1891640965606146,
+    "scored_to_ground_truth_boundary_distance_m": 0.19430758663079428,
+    "symmetric_boundary_distance_m": 0.19173584159570445,
+    "centroid_distance_m": 0.26144583960090023
+  },
+  {
+    "ground_truth_aggregate_id": "agg_91dae81aa093",
+    "ground_truth_ids": [
+      "BATIMENT0000000337021070"
+    ],
+    "custom_category": [
+      "low_height"
+    ],
+    "scored_ids": [
+      "BATIMENT0000000337021070"
+    ],
+    "geometry": "POLYGON Z ((676323.7 6852509.2 111.2, 676325 6852512.3 111.2, 676318.7 6852515.1 111.2, 676317.3 6852512.1 111.2, 676323.7 6852509.2 111.2))",
+    "ground_truth_area_m2": 25.631718477347004,
+    "iou": 0.8122625282191196,
+    "ground_truth_to_scored_boundary_distance_m": 0.24869600559202898,
+    "scored_to_ground_truth_boundary_distance_m": 0.23376365896129897,
+    "symmetric_boundary_distance_m": 0.24122983227666397,
+    "centroid_distance_m": 0.38004321602553526
+  },
+  {
+    "ground_truth_aggregate_id": "agg_1f04cbed6f81",
+    "ground_truth_ids": [
+      "BATIMENT0000000337021069"
+    ],
+    "custom_category": [
+      "low_height"
+    ],
+    "scored_ids": [
+      "BATIMENT0000000337021069"
+    ],
+    "geometry": "POLYGON Z ((676302.5 6852534.2 111, 676299.4 6852535.6 111, 676298.2 6852533.1 111, 676301.4 6852531.8 111, 676302.5 6852534.2 111))",
+    "ground_truth_area_m2": 10.332401514817064,
+    "iou": 0.0,
+    "ground_truth_to_scored_boundary_distance_m": 2.1104886719341414,
+    "scored_to_ground_truth_boundary_distance_m": 1.844259204816134,
+    "symmetric_boundary_distance_m": 1.9773739383751376,
+    "centroid_distance_m": 3.4972305879156593
+  },
+  {
+    "ground_truth_aggregate_id": "agg_86808506a9e9",
+    "ground_truth_ids": [
+      "BATIMENT0000000337021066",
+      "BATIMENT0000000337021067",
+      "BATIMENT0000000337021068"
+    ],
+    "custom_category": [
+      "low_height",
+      "low_height",
+      "low_height"
+    ],
+    "scored_ids": [
+      "BATIMENT0000000337021066",
+      "BATIMENT0000000337021067",
+      "BATIMENT0000000337021068"
+    ],
+    "geometry": "POLYGON Z ((676298 6852516.9 111.1, 676293.5 6852518.9 111.1, 676299.1 6852531.6 111.1, 676303.7 6852529.5 111.1, 676304.6 6852529.1 111.5, 676305.7 6852531.8 111.2, 676310.8 6852529.3 111.2, 676309.7 6852526.8 111.2, 676308.3 6852527.5 111.5, 676307.1 6852524.9 111.5, 676302.6 6852527 111.5, 676298 6852516.9 111.1))",
+    "ground_truth_area_m2": 103.8542990668272,
+    "iou": 0.38725132885755653,
+    "ground_truth_to_scored_boundary_distance_m": 1.3634136709633384,
+    "scored_to_ground_truth_boundary_distance_m": 1.3975546698244163,
+    "symmetric_boundary_distance_m": 1.3804841703938773,
+    "centroid_distance_m": 3.503050942349243
+  },
+  {
+    "ground_truth_aggregate_id": "agg_5dfb20d8ec65",
+    "ground_truth_ids": [
+      "BATIMENT0000000240751705",
+      "BATIMENT0000000240751704",
+      "BATIMENT0000000240751700",
+      "BATIMENT0000000240751702",
+      "BATIMENT0000000240751701",
+      "BATIMENT0000000240751703",
+      "BATIMENT0000000240751693",
+      "BATIMENT0000000240751698",
+      "BATIMENT0000000240751699",
+      "BATIMENT0000000240752487",
+      "BATIMENT0000000240751695",
+      "BATIMENT0000000240751686",
+      "BATIMENT0000000240751685",
+      "BATIMENT0000000240751687",
+      "BATIMENT0000000240751689",
+      "BATIMENT0000000240751688",
+      "BATIMENT0000000356564539",
+      "BATIMENT0000000240751692",
+      "BATIMENT0000000240752586",
+      "BATIMENT0000000240752478",
+      "BATIMENT0000000240752585",
+      "BATIMENT0000000240752588",
+      "BATIMENT0000000240752587",
+      "BATIMENT0000000240752583",
+      "BATIMENT0000000240752572",
+      "BATIMENT0000000240752574",
+      "BATIMENT0000000240751674",
+      "BATIMENT0000000240752575",
+      "BATIMENT0000000240752573",
+      "BATIMENT0000000240751676",
+      "BATIMENT0000000240751675",
+      "BATIMENT0000000240752582",
+      "BATIMENT0000000240752584",
+      "BATIMENT0000000240752579",
+      "BATIMENT0000000240752570",
+      "BATIMENT0000000240751672",
+      "BATIMENT0000000240751673",
+      "BATIMENT0000000240751666",
+      "BATIMENT0000000240751668",
+      "BATIMENT0000000240751665",
+      "BATIMENT0000000240751669",
+      "BATIMENT0000000240751663",
+      "BATIMENT0000000240751664",
+      "BATIMENT0000000240751670",
+      "BATIMENT0000000240752571",
+      "BATIMENT0000000240751691",
+      "BATIMENT0000000240752476",
+      "BATIMENT0000000240752578",
+      "BATIMENT0000000240752477",
+      "BATIMENT0000000240751690",
+      "BATIMENT0000000356564567",
+      "BATIMENT0000000356564586",
+      "BATIMENT0000000240751661",
+      "BATIMENT0000000240751662",
+      "BATIMENT0000000240751677",
+      "BATIMENT0000000253247411",
+      "BATIMENT0000000240752596",
+      "BATIMENT0000000240752593",
+      "BATIMENT0000000240752594",
+      "BATIMENT0000000253247424",
+      "BATIMENT0000000253247420",
+      "BATIMENT0000000240752589",
+      "BATIMENT0000000240752590",
+      "BATIMENT0000000240752595",
+      "BATIMENT0000000240751683",
+      "BATIMENT0000000240751667",
+      "BATIMENT0000000240752568",
+      "BATIMENT0000000240752569",
+      "BATIMENT0000000240751680",
+      "BATIMENT0000000240752577",
+      "BATIMENT0000000240752581",
+      "BATIMENT0000000240751682",
+      "BATIMENT0000000240752474",
+      "BATIMENT0000000240752580",
+      "BATIMENT0000000240751678",
+      "BATIMENT0000000240752576",
+      "BATIMENT0000000240751679",
+      "BATIMENT0000000240752591",
+      "BATIMENT0000000240751706"
+    ],
+    "custom_category": [
+      "adjacent_tall",
+      "adjacent_tall",
+      "adjacent_tall",
+      "adjacent_tall",
+      "adjacent_tall",
+      "adjacent_tall",
+      "adjacent_tall",
+      "adjacent_tall",
+      "adjacent_tall",
+      "adjacent_tall",
+      "adjacent_tall",
+      "adjacent_tall",
+      "adjacent_tall",
+      "adjacent_tall",
+      "adjacent_tall",
+      "adjacent_tall",
+      "adjacent_tall",
+      "adjacent_tall",
+      "adjacent_tall",
+      "adjacent_tall",
+      "adjacent_tall",
+      "adjacent_tall",
+      "adjacent_tall",
+      "adjacent_tall",
+      "adjacent_tall",
+      "adjacent_tall",
+      "adjacent_tall",
+      "adjacent_tall",
+      "adjacent_tall",
+      "adjacent_tall",
+      "adjacent_tall",
+      "adjacent_tall",
+      "adjacent_tall",
+      "adjacent_tall",
+      "adjacent_tall",
+      "adjacent_tall",
+      "adjacent_tall",
+      "adjacent_tall",
+      "adjacent_tall",
+      "adjacent_tall",
+      "adjacent_tall",
+      "adjacent_tall",
+      "adjacent_tall",
+      "adjacent_tall",
+      "adjacent_tall",
+      "adjacent_tall",
+      "adjacent_tall",
+      "adjacent_tall",
+      "adjacent_tall",
+      "adjacent_tall",
+      "adjacent_tall",
+      "adjacent_tall",
+      "adjacent_tall",
+      "adjacent_tall",
+      "adjacent_tall",
+      "adjacent_tall",
+      "adjacent_tall",
+      "adjacent_tall",
+      "adjacent_tall",
+      "adjacent_tall",
+      "adjacent_tall",
+      "adjacent_tall",
+      "adjacent_tall",
+      "adjacent_tall",
+      "adjacent_tall",
+      "adjacent_tall",
+      "adjacent_tall",
+      "adjacent_tall",
+      "adjacent_tall",
+      "adjacent_tall",
+      "adjacent_tall",
+      "adjacent_tall",
+      "adjacent_tall",
+      "adjacent_tall",
+      "adjacent_tall",
+      "adjacent_tall",
+      "adjacent_tall",
+      "adjacent_tall",
+      "adjacent_tall"
+    ],
+    "scored_ids": [
+      "BATIMENT0000000240751705",
+      "BATIMENT0000000240751704",
+      "BATIMENT0000000240751700",
+      "BATIMENT0000000240751702",
+      "BATIMENT0000000240751701",
+      "BATIMENT0000000240751703",
+      "BATIMENT0000000240751693",
+      "BATIMENT0000000240751698",
+      "BATIMENT0000000240751699",
+      "BATIMENT0000000240752487",
+      "BATIMENT0000000240751695",
+      "BATIMENT0000000240751686",
+      "BATIMENT0000000240751685",
+      "BATIMENT0000000240751687",
+      "BATIMENT0000000240751689",
+      "BATIMENT0000000240751688",
+      "BATIMENT0000000356564539",
+      "BATIMENT0000000240751692",
+      "BATIMENT0000000240752586",
+      "BATIMENT0000000240752478",
+      "BATIMENT0000000240752585",
+      "BATIMENT0000000240752588",
+      "BATIMENT0000000240752587",
+      "BATIMENT0000000240752583",
+      "BATIMENT0000000240752572",
+      "BATIMENT0000000240752574",
+      "BATIMENT0000000240751674",
+      "BATIMENT0000000240752575",
+      "BATIMENT0000000240752573",
+      "BATIMENT0000000240751676",
+      "BATIMENT0000000240751675",
+      "BATIMENT0000000240752582",
+      "BATIMENT0000000240752584",
+      "BATIMENT0000000240752579",
+      "BATIMENT0000000240752570",
+      "BATIMENT0000000240751672",
+      "BATIMENT0000000240751673",
+      "BATIMENT0000000240751666",
+      "BATIMENT0000000240751668",
+      "BATIMENT0000000240751665",
+      "BATIMENT0000000240751669",
+      "BATIMENT0000000240751663",
+      "BATIMENT0000000240751664",
+      "BATIMENT0000000240751670",
+      "BATIMENT0000000240752571",
+      "BATIMENT0000000240751691",
+      "BATIMENT0000000240752476",
+      "BATIMENT0000000240752578",
+      "BATIMENT0000000240752477",
+      "BATIMENT0000000240751690",
+      "BATIMENT0000000356564567",
+      "BATIMENT0000000356564586",
+      "BATIMENT0000000240751661",
+      "BATIMENT0000000240751662",
+      "BATIMENT0000000240751677",
+      "BATIMENT0000000253247411",
+      "BATIMENT0000000240752596",
+      "BATIMENT0000000240752593",
+      "BATIMENT0000000240752594",
+      "BATIMENT0000000253247424",
+      "BATIMENT0000000253247420",
+      "BATIMENT0000000240752589",
+      "BATIMENT0000000240752590",
+      "BATIMENT0000000240752595",
+      "BATIMENT0000000240751683",
+      "BATIMENT0000000240751667",
+      "BATIMENT0000000240752568",
+      "BATIMENT0000000240752569",
+      "BATIMENT0000000240751680",
+      "BATIMENT0000000240752577",
+      "BATIMENT0000000240752581",
+      "BATIMENT0000000240751682",
+      "BATIMENT0000000240752474",
+      "BATIMENT0000000240752580",
+      "BATIMENT0000000240751678",
+      "BATIMENT0000000240752576",
+      "BATIMENT0000000240751679",
+      "BATIMENT0000000240752591",
+      "BATIMENT0000000240751706"
+    ],
+    "geometry": "POLYGON Z ((656168.9 6861280.3 73, 656162.6 6861279.6 73, 656155 6861278.7 73, 656147.6 6861277.5 73, 656146.1 6861277.5 72.3, 656140.4 6861281.2 72.3, 656136.2 6861283.8 72.3, 656124.4 6861324.2 72.3, 656115.3 6861355.4 74.3, 656119.1 6861356.5 74.3, 656119 6861356.8 69.4, 656116.4 6861366.1 69.4, 656121.4 6861367.4 69.4, 656120.7 6861373 69.4, 656130.4 6861374.7 69.4, 656153.9 6861378.9 75, 656154.3 6861376 75, 656197.5 6861382.4 77.7, 656196.8 6861386.6 77.7, 656206.6 6861388.3 77.7, 656214.8 6861389.8 58.9, 656229.9 6861392.5 72.4, 656249.8 6861396.1 73.7, 656262.9 6861398.4 58.4, 656282.4 6861401.9 58.7, 656291.3 6861403.5 58.7, 656301.4 6861405.3 59.3, 656313.5 6861407.5 62.6, 656314.5 6861402.1 62.6, 656319.9 6861403 62.8, 656319.2 6861408 62.8, 656328.7 6861409.6 62.8, 656329.1 6861406.6 62.8, 656329.2 6861405.2 62.8, 656329.3 6861405.2 62.8, 656329.4 6861404.5 62.8, 656340.1 6861406.2 60.5, 656339.1 6861412 59.7, 656360.1 6861415.8 59.7, 656369.1 6861417.4 61.6, 656391 6861421.3 69.7, 656400.9 6861423.1 70.7, 656409.3 6861424.6 71.4, 656417 6861425.7 71.4, 656423.9 6861421.2 71.4, 656424.6 6861407.3 71.4, 656425.7 6861393.9 71.7, 656426.8 6861380.5 62.4, 656427.6 6861370.1 74.1, 656428.5 6861359.8 74.2, 656428.8 6861355.3 74.3, 656429.3 6861349.4 74.3, 656429.3 6861349.1 74.3, 656430.3 6861337.6 76.7, 656424.9 6861330.8 76.7, 656420 6861330.5 76.7, 656420 6861329.6 76.7, 656414.2 6861329.2 76.7, 656414.3 6861328.2 76.7, 656403.9 6861327.6 76.7, 656397.2 6861326.1 79, 656397.4 6861324.1 79, 656382.5 6861320.5 79, 656366 6861316.6 62.8, 656342.9 6861311 75.9, 656331.4 6861308.2 75.9, 656311.2 6861303.4 83.1, 656298.3 6861300.2 74.5, 656293.8 6861299.2 76.5, 656290 6861298.2 76.5, 656284.6 6861296.9 76.5, 656269.4 6861293.3 74, 656258.3 6861290.6 62.3, 656252.2 6861289.1 62.3, 656229.8 6861285.3 78.5, 656218.8 6861283.6 60.7, 656212.2 6861282.6 68.1, 656211.2 6861288.4 68.1, 656172.3 6861283.1 80.5, 656168.6 6861282.5 73, 656168.9 6861280.3 73), (656231.4 6861382.5 72.4, 656237.7 6861342.1 60.9, 656231.4 6861382.6 62.2, 656229.9 6861392.5 73.7, 656231.4 6861382.5 72.4), (656222.5 6861339.6 60.9, 656222.9 6861337 58.9, 656220.7 6861336.7 58.9, 656219.3 6861336.5 58.9, 656220 6861332.3 60.7, 656221.4 6861332.4 60.7, 656222.4 6861327 60.7, 656246.1 6861331 59.9, 656255.6 6861332.6 64.8, 656257.3 6861334.9 64.8, 656256.1 6861342.8 64.8, 656256 6861343.4 64.8, 656256.4 6861343.5 64.8, 656256 6861346.4 64.8, 656255.5 6861348 64.8, 656256.6 6861349.7 64.8, 656253.4 6861349.7 64.8, 656253.4 6861348.9 64.8, 656250.2 6861348.4 64.8, 656250.6 6861345.4 62.2, 656249.8 6861345.3 62.2, 656244.2 6861344.5 62.2, 656244.8 6861340.2 62.2, 656238.2 6861339.1 62.2, 656238.2 6861339.4 62.2, 656237.7 6861342.1 62.2, 656222.5 6861339.6 60.9), (656170.7 6861295.8 80.5, 656182.4 6861297.8 80.5, 656180 6861313.8 70.2, 656176.7 6861336.2 70.2, 656176 6861340.7 77.7, 656172.1 6861368.4 77.7, 656172 6861369.5 77.7, 656155.7 6861366.4 77.7, 656156.6 6861360.2 75, 656159.9 6861338.2 59.7, 656160.5 6861334.2 63.6, 656161.2 6861329.2 63.6, 656137 6861325.9 74.3, 656136.8 6861325.9 74.3, 656139 6861318.4 72.3, 656146.1 6861320.4 56.8, 656149.5 6861308.5 56.8, 656142.5 6861306.3 56.8, 656145.4 6861296.1 72.3, 656144.1 6861293.8 72.3, 656146.2 6861292.5 72.3, 656151.8 6861289.1 73, 656152.7 6861290.5 73, 656153.2 6861291.1 73, 656155.8 6861291.5 73, 656163.6 6861292.7 73, 656162.8 6861299.3 57, 656162.7 6861300.1 57, 656169.8 6861301.3 57, 656170.6 6861296 57, 656170.6 6861295.8 57, 656172.3 6861283.1 73, 656170.7 6861295.8 80.5), (656276.1 6861355 64.8, 656267.9 6861353.7 64.8, 656268.5 6861349 64.8, 656270.1 6861349.3 64.8, 656272 6861337.1 64.8, 656270.4 6861336.8 64.8, 656271.4 6861329.5 64.8, 656263.3 6861328.1 64.8, 656264.3 6861322.6 64.8, 656265.4 6861322.7 64.8, 656266.8 6861314.6 64.8, 656266 6861314.5 64.8, 656266.5 6861311.8 64.8, 656267 6861311.9 66.1, 656281.9 6861315.4 74, 656281.9 6861315.1 74, 656282.7 6861309.2 74, 656283.5 6861304.4 74, 656283.6 6861303.8 74, 656285.2 6861304 76.5, 656284.2 6861312.2 76.5, 656289.8 6861313 76.5, 656289.1 6861318.5 76.5, 656295.6 6861319.3 76.5, 656294.4 6861327.5 58, 656288 6861326.5 58, 656285.9 6861341.8 58, 656283.7 6861356.8 58, 656290.2 6861357.7 58, 656290.2 6861357.4 58, 656295.4 6861358.1 58, 656297.1 6861345.7 58, 656296.6 6861345.7 58, 656296.9 6861343 58, 656297.5 6861343 58, 656298.7 6861334.5 58, 656298.8 6861334.5 58, 656300.3 6861323.5 58, 656298.5 6861323.2 58, 656299 6861319.6 58, 656305.1 6861320.4 74.5, 656306.3 6861321.7 74.5, 656307.8 6861320.7 74.5, 656308.8 6861320.9 74.5, 656308.6 6861322.7 83.1, 656311.3 6861323 83.1, 656311 6861324.9 83.1, 656314.9 6861325.4 83.1, 656314.9 6861325.7 83.1, 656323.1 6861326.7 83.1, 656322.1 6861334.6 58.6, 656320.2 6861334.4 58.6, 656316.7 6861362.5 58.6, 656310.9 6861361.8 58.6, 656311 6861361.1 58.6, 656302.7 6861360.8 58.6, 656301.8 6861366.3 58.6, 656297.8 6861365.5 59.3, 656289.3 6861363.6 60.9, 656275.3 6861360.5 60.9, 656276.1 6861355 64.8), (656127.1 6861357.3 74.3, 656125.1 6861356.7 74.3, 656125.7 6861354.6 74.3, 656125.5 6861354.6 74.3, 656126.2 6861352.1 74.3, 656131.3 6861353.6 74.3, 656130.1 6861359.8 74.3, 656132.3 6861360.4 74.3, 656131.6 6861366.1 75, 656123.1 6861364.6 69.4, 656125 6861358.3 69.4, 656126.7 6861358.8 74.3, 656127.1 6861357.3 74.3), (656128.6 6861342.1 74.3, 656128.9 6861342.2 74.3, 656129.5 6861340.3 74.3, 656131.1 6861340.8 74.3, 656132 6861337.8 74.3, 656130.3 6861337.4 74.3, 656129.7 6861335.8 74.3, 656130.8 6861332.1 74.3, 656130.4 6861332 74.3, 656131 6861329.6 74.3, 656134.6 6861330.1 74.3, 656134.4 6861332 74.3, 656136.1 6861332.2 74.3, 656135.8 6861334.2 63.6, 656133.9 6861333.8 63.7, 656132 6861346.1 63.7, 656129.2 6861345.3 74.3, 656127.9 6861344.4 74.3, 656128.6 6861342.1 74.3), (656218 6861295.8 60.7, 656218.9 6861296 60.7, 656219.3 6861293.9 60.7, 656223.2 6861294.5 60.7, 656221.8 6861303.7 60.7, 656220.8 6861304.2 60.7, 656217.1 6861327 60.7, 656211.9 6861326.3 60.7, 656211.2 6861330.5 60.7, 656216.3 6861331.5 60.7, 656216.2 6861331.7 60.7, 656217.7 6861332 60.7, 656217.2 6861336.1 60.7, 656215.5 6861335.9 58.9, 656214.6 6861341.5 58.9, 656211 6861341 -1000, 656210.5 6861344.4 -1000, 656214 6861344.9 -1000, 656213.8 6861345.7 58.9, 656212.4 6861345.5 61, 656212.2 6861346.5 61, 656205.9 6861345.5 61, 656206.7 6861340.4 61, 656203.9 6861340 61, 656200.8 6861361.2 61, 656199.4 6861370.6 73.5, 656209.3 6861372.3 73.5, 656208.2 6861379.3 58.9, 656204.7 6861378.7 77.7, 656204.7 6861378.3 77.7, 656202 6861377.8 77.7, 656200.4 6861377.5 77.7, 656200.7 6861375.6 77.7, 656200.2 6861375.5 77.7, 656200.6 6861372.4 77.7, 656199.2 6861372.2 77.7, 656198.9 6861374.1 77.7, 656191 6861372.7 77.7, 656191.1 6861371.9 77.7, 656187.2 6861371.2 77.7, 656187 6861372.2 77.7, 656182.9 6861371.5 77.7, 656187.9 6861337.6 77.7, 656189.3 6861337.7 70.2, 656194.3 6861301 70.2, 656194.5 6861299.8 80.5, 656209.4 6861301.9 80.5, 656209.9 6861298 80.5, 656215 6861298.6 68.1, 656214.8 6861300.3 68.1, 656216.1 6861300.4 68.1, 656216.6 6861297 68.1, 656217.7 6861297.2 60.7, 656218 6861295.8 60.7), (656247.6 6861321 59.9, 656247.7 6861320 59.9, 656245.2 6861319.5 74.4, 656226.1 6861316 59.9, 656224.4 6861315.7 59.9, 656227.8 6861296.2 60.7, 656231.6 6861296.9 78.5, 656231.1 6861299 78.5, 656235.8 6861299.8 78.5, 656236.2 6861297.7 78.5, 656249.4 6861300.1 78.5, 656249.2 6861301.3 78.5, 656250.1 6861301.4 78.5, 656250.3 6861300.2 78.5, 656250.6 6861300.3 78.5, 656250.9 6861298 78.5, 656257.1 6861299.1 66.1, 656255.5 6861310 66.1, 656255.8 6861310 66.1, 656260.5 6861310.8 66.1, 656261.8 6861311 66.1, 656261 6861316.6 64.8, 656255 6861315.8 64.8, 656255.2 6861314.3 60.1, 656248.7 6861313.2 60.1, 656249.1 6861310.4 -1000, 656253.4 6861311.1 60.4, 656254.8 6861301.5 60.4, 656250.5 6861300.7 60.4, 656249.7 6861306.2 60.4, 656247.9 6861305.9 -1000, 656246.8 6861313.6 -1000, 656248.6 6861313.9 -1000, 656247.8 6861319.6 60.1, 656254.4 6861320.5 60.1, 656253.2 6861326.4 64.8, 656246.9 6861325.5 64.8, 656247.3 6861323.1 59.9, 656247.6 6861321 59.9), (656217.4 6861292.5 60.7, 656213.9 6861292 68.1, 656214.3 6861289.4 68.1, 656217.8 6861289.9 68.1, 656217.4 6861292.5 60.7), (656228.8 6861290.8 60.7, 656228.1 6861294.8 78.5, 656225.9 6861294.4 60.7, 656226.5 6861290.4 60.7, 656228.8 6861290.8 60.7), (656204.3 6861360.2 61, 656205.6 6861352.4 61, 656212.5 6861353.5 61, 656210.9 6861363.1 58.9, 656207.2 6861362.4 73.5, 656207.2 6861361.9 73.5, 656204.3 6861361.4 73.5, 656204.2 6861361.8 73.5, 656201.7 6861361.5 73.5, 656202 6861359.8 61, 656204.3 6861360.2 61), (656268.6 6861299.3 66.1, 656268.5 6861300.2 74, 656268.4 6861301.2 74, 656265.7 6861300.8 66.1, 656265.9 6861298.8 66.1, 656268.6 6861299.3 66.1), (656262 6861310.3 66.1, 656258.9 6861309.8 66.1, 656260 6861302 66.1, 656263 6861302.5 66.1, 656262 6861310.3 66.1), (656234.6 6861383.3 73.7, 656235.1 6861380 62.2, 656237.9 6861380.5 62.2, 656239.3 6861371.2 62.2, 656242.1 6861371.6 62.2, 656240.4 6861380.9 62.2, 656243.6 6861381.5 62.2, 656245.2 6861372.1 62.2, 656244.4 6861372 62.2, 656246.9 6861357.8 62.2, 656240.9 6861356.7 62.2, 656242.2 6861348 62.2, 656239.3 6861347.5 62.2, 656239.8 6861344.2 62.2, 656244 6861345 62.2, 656242.5 6861355.4 62.2, 656251.2 6861356.7 62.2, 656246.8 6861382.6 62.2, 656250.3 6861383.2 62.2, 656250.1 6861384.8 62.2, 656251.6 6861385.2 62.2, 656255.2 6861363 62.2, 656268.5 6861365.4 60.9, 656267.7 6861370.1 60.9, 656262 6861369.1 58.4, 656261.9 6861369.6 58.4, 656257.3 6861368.9 58.4, 656254.2 6861385.6 58.4, 656253.4 6861385.4 58.4, 656253.1 6861386.7 58.4, 656251.4 6861386.3 58.4, 656234.6 6861383.3 73.7), (656340 6861329.9 75.9, 656339.8 6861330.8 83.9, 656348 6861332.7 83.9, 656347.1 6861336.4 83.9, 656362.9 6861340.1 83.9, 656359 6861371.1 62.8, 656358.1 6861377.8 62.8, 656344.9 6861375.4 59, 656343.8 6861382.7 59, 656364.7 6861386.3 59, 656364.7 6861386.1 59, 656367.1 6861386.4 61.6, 656367.9 6861381.3 61.6, 656370.6 6861381.7 61.6, 656369.7 6861388.1 61.6, 656369 6861388 61.6, 656366.5 6861404.5 61.6, 656365.9 6861404.3 61.6, 656365.5 6861407.3 61.6, 656361.9 6861406.7 77.1, 656361.7 6861406.8 77.1, 656363.5 6861394.5 77.1, 656342.5 6861390.8 77.1, 656336.8 6861390 77.9, 656337.7 6861383.9 77.9, 656324 6861381.6 77.9, 656325.5 6861372.1 62.6, 656322.5 6861371.3 62.6, 656323.6 6861363.4 58.6, 656324 6861360.7 56.4, 656336.4 6861362 56.4, 656337.2 6861355.5 56.4, 656337.6 6861350.9 56.4, 656325.6 6861349.4 58.6, 656328.7 6861327.3 58.6, 656335.2 6861329.4 75.9, 656340 6861329.9 75.9), (656306.6 6861375.7 59.3, 656306.7 6861374.9 59.3, 656319.5 6861377.4 62.6, 656317.9 6861387.7 62.6, 656304.9 6861385.3 79, 656302.8 6861397.1 79, 656298.3 6861396.3 59.3, 656302.1 6861374.9 59.3, 656306.6 6861375.7 59.3), (656287.5 6861394.7 58.7, 656286.4 6861394.5 58.7, 656286.6 6861393.2 58.7, 656286.4 6861393.2 58.7, 656286.6 6861391.5 58.7, 656284.9 6861391.2 58.7, 656284.9 6861391.4 58.7, 656284.5 6861392.9 58.7, 656284 6861392.8 72.8, 656272.9 6861390.9 72.8, 656275 6861379.4 72.8, 656277.1 6861368.5 60.9, 656291.8 6861371.3 60.9, 656290.7 6861377 60.9, 656287.5 6861394.7 58.7), (656385.6 6861337.7 57.8, 656394.8 6861339.7 79, 656394.5 6861341.2 79, 656401.8 6861342.5 79, 656416.9 6861343.1 76.7, 656416.4 6861348.2 76.7, 656421 6861348.8 76.7, 656420.5 6861352.3 74.3, 656422.3 6861352.4 74.3, 656421.7 6861359.2 74.3, 656421.4 6861361.7 74.2, 656419 6861361.6 74.2, 656419 6861361.8 74.2, 656417.2 6861361.5 -1000, 656416.3 6861366.7 -1000, 656418.2 6861367.1 74.2, 656420.8 6861367.2 74.2, 656420.6 6861369.6 74.2, 656417.9 6861369.4 74.1, 656417.5 6861371.6 74.1, 656420.4 6861371.8 74.1, 656419.5 6861372.2 74.1, 656419.4 6861373.8 74.1, 656420.1 6861374.3 74.1, 656419.9 6861376.1 74.1, 656416.8 6861375.9 74.1, 656416.4 6861378.6 74.1, 656416.3 6861379.2 74.1, 656414.2 6861392.9 62.4, 656414 6861394.4 71.7, 656417.3 6861394.6 71.7, 656416.8 6861401.1 71.7, 656412.9 6861400.9 71.7, 656412.1 6861406.1 71.7, 656411.2 6861412.2 -1000, 656410.2 6861412.8 71.3, 656407.4 6861412.3 71.3, 656407.5 6861411.4 71.3, 656402.6 6861410.6 71.3, 656395.3 6861409.3 70.7, 656396.2 6861403.3 70.7, 656398.3 6861403.7 70.7, 656399.4 6861395.7 70.7, 656401 6861395.9 70.7, 656402 6861389.2 70.7, 656402.5 6861389.2 -1000, 656403.1 6861384.9 -1000, 656401.3 6861384.7 -1000, 656396.2 6861383.9 69.7, 656388.2 6861382.6 69.7, 656386.4 6861382.2 -1000, 656385.6 6861386.7 -1000, 656386.1 6861386.8 -1000, 656385.1 6861393.3 69.7, 656386.7 6861393.6 69.7, 656385.6 6861401.5 69.7, 656387.5 6861401.8 69.7, 656386.6 6861407.6 69.7, 656374.4 6861405.6 69.7, 656374.2 6861406.9 69.7, 656370.6 6861406.5 69.7, 656370.4 6861408.1 69.7, 656368.3 6861407.8 61.6, 656368.7 6861405.1 61.6, 656369.9 6861405.3 61.6, 656369.9 6861406.1 61.6, 656370.6 6861406.3 61.6, 656374.2 6861380.6 61.6, 656374.9 6861375.7 62.8, 656375.4 6861371.9 62.8, 656397.1 6861375.4 65.2, 656399.9 6861355.3 65.2, 656384.9 6861353.2 65.2, 656384.6 6861355.6 65.2, 656377.6 6861354.5 65.2, 656378.5 6861349.5 62.8, 656379.4 6861342.2 62.8, 656384.9 6861343.2 57.8, 656385.6 6861337.7 57.8), (656386 6861411 69.7, 656389 6861411.5 69.7, 656388.2 6861415.7 69.7, 656382.5 6861414.8 69.7, 656382.9 6861412.2 69.7, 656385.9 6861412.6 69.7, 656386 6861411 69.7))",
+    "ground_truth_area_m2": 19894.83421574796,
+    "iou": 0.8829358397878203,
+    "ground_truth_to_scored_boundary_distance_m": 0.7636853390877366,
+    "scored_to_ground_truth_boundary_distance_m": 0.9409293147061284,
+    "symmetric_boundary_distance_m": 0.8523073268969326,
+    "centroid_distance_m": 0.78737827060805
+  },
+  {
+    "ground_truth_aggregate_id": "agg_2c70c8e7ca18",
+    "ground_truth_ids": [
+      "BATIMENT0000000240752418"
+    ],
+    "custom_category": [
+      "low_height"
+    ],
+    "scored_ids": [
+      "BATIMENT0000000240752418"
+    ],
+    "geometry": "POLYGON Z ((656344.5 6861365.4 -1000, 656350.4 6861367 -1000, 656350.1 6861369.1 -1000, 656344.3 6861367.7 -1000, 656344.5 6861365.4 -1000))",
+    "ground_truth_area_m2": 19.394891460487408,
+    "iou": 0.6829117876313722,
+    "ground_truth_to_scored_boundary_distance_m": 0.35508524809889974,
+    "scored_to_ground_truth_boundary_distance_m": 0.34104675486102304,
+    "symmetric_boundary_distance_m": 0.34806600147996136,
+    "centroid_distance_m": 0.18788006617466546
+  },
+  {
+    "ground_truth_aggregate_id": "agg_28730f0a66be",
+    "ground_truth_ids": [
+      "BATIMENT0000000240751684"
+    ],
+    "custom_category": [
+      "adjacent_tall"
+    ],
+    "scored_ids": [
+      "BATIMENT0000000240751684"
+    ],
+    "geometry": "POLYGON Z ((656214.4 6861310.7 57.2, 656208.2 6861309.7 57.2, 656208.8 6861305.3 57.2, 656215.1 6861306.1 57.2, 656214.4 6861310.7 57.2))",
+    "ground_truth_area_m2": 35.96218631256346,
+    "iou": 0.788808472888861,
+    "ground_truth_to_scored_boundary_distance_m": 0.3479689373433764,
+    "scored_to_ground_truth_boundary_distance_m": 0.3208281920618666,
+    "symmetric_boundary_distance_m": 0.3343985647026215,
+    "centroid_distance_m": 0.32926744405389585
+  }
+]

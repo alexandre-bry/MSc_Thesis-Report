@@ -1213,4 +1213,22 @@ Rottensteiner2012:
   parent:
     type: periodical
     publisher: 'Göttingen : Copernicus GmbH'
+Oosterom2005:
+  type: chapter
+  title: About Invalid, Valid and Clean Polygons
+  author:
+  - name: Oosterom
+    given-name: Peter
+    prefix: van
+  - Quak, Wilko
+  - Tijssen, Theo
+  date: 2005
+  page-range: 1-16
+  serial-number:
+    doi: 10.1007/3-540-26772-7_1
+    isbn: '9783540267720'
+  parent:
+    type: book
+    title: Developments in Spatial Data Handling
+    publisher: Springer Berlin Heidelberg
 

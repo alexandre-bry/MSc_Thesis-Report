@@ -1,4 +1,4 @@
-#import "@local/magic-isprs:0.1.0": isprs
+#import "@preview/magic-isprs:0.1.0": isprs
 
 
 // Glossary
@@ -6,13 +6,22 @@
 #import "../glossary/glossary-terms.typ": glossaryTerms
 #show: init-glossary.with(glossaryTerms)
 
-// #import "@preview/wordometer:0.1.5": total-words, word-count
-// #show: word-count.with(exclude: (<no-wc>, heading))
-// #[The paper contains #total-words words, excluding this sentence and headings!] <no-wc>
+#import "../common_imports.typ": *
+
+#import "@preview/wordometer:0.1.5": total-words, word-count
+#show: word-count.with(exclude: (<no-wc>, heading))
+#if not HIDE-ALL [
+  #[The paper contains #total-words words, excluding this sentence, headings and figures.] <no-wc>
+]
+
+#set text(lang: "en", region: "gb")
+#set list(marker: ([•], [--]))
+
+#import "../settings.typ": *
 
 // Theme
 #show: isprs.with(
-  title: [From Points to Prints: Generating Building Roofprints and Footprints from Airborne LiDAR Data and Initial Outlines],
+  title: [#title: #longtitle],
   abstract: include "abstract.typ",
   authors: (
     (
@@ -46,11 +55,12 @@
   keywords: (
     "Building roofprints",
     "Building footprints",
-    "Airborne LiDAR",
+    "Airborne lidar",
     "Roof overhangs",
+    "Semi-rigid polygon deformation"
   ),
   acknowledgements: none,
-  bibliography: bibliography("MSc_Thesis-Bibliography.yaml"),
+  bibliography: bibliography("../MSc_Thesis-Bibliography.yaml"),
   appendix: none,
   anonymous: false,
 )
@@ -62,8 +72,6 @@
 #include "methodology.typ"
 
 #include "results.typ"
-
-#include "discussion.typ"
 
 #include "conclusions.typ"
 

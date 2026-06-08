@@ -1,82 +1,88 @@
-#import "@preview/drafting:0.2.2": *
-
-#import "../../other-tools/styled-blocks.typ": block-discussion, block-todo
-#import "../glossary/glossary-terms.typ": gloss-ref-and-footnote, gloss-url
+#import "../common_imports.typ": *
 
 = Introduction <hea:introduction>
 
-#block-todo[Instructions][
-  General introduction chapter to the topics for non-experts in the specific topic (but with a general grounding in geomatics). The goal of this chapter is to gently introduce the research and make the full report readable for a non-expert. Thus, you explain the structure (thesis = scientific article+background) and briefly explain the “high-level storyline”, in such a way that a non-expert can understand it. Mention that Part 3 is a scientific article, and note which technical background sections are found in Part 2, and how the background sections in Part 2 relate to the article in Part 3.
-]
-
-#block-discussion[Ideas][
-  Relevance and context:
-
-  - First nation-wide point cloud dataset of France
-  - Similar to the Dutch AHN latest versions in nature (ALS) and in density
-  - Goal of creating a 3D digital model of France, requiring great roofprint data
-  - Current foot-/roofprint database in France has a few issues:
-    - Multiple sources (terrain measurements, aerial images detection, and sometimes unknown)
-    - Incorrect georeferencing (with a translation up to a few meters)
-  - Fully in the scope of Geomatics for the built environment:
-    - Handling of large point clouds
-    - Creation of building footprints
-    - Importance of geo-referencing for integration with the rest of the IGN data
-
-  Problem statement:
-
-  - Use the newly measured ALS point cloud data of France to produce high-quality boundaries for the buildings in France
-  - Try to integrate the existing footprints/roofprints into the method to facilitate the process and/or improve the results
-  - Assess the possibility of identifying and differentiating the footprint and the roofprint
-]
-
-In 2024, the #gloss-ref-and-footnote("ign") and two other French public entities have launched an initiative to bring together partners who can contribute to the development of a nation-wide digital twin @ignAppelCommuns.
-In the same blog post, the @ign mentions ecological planning and sustainable land use as some of the priorities this project should accommodate.
-In a different post, it is explained how the @lidarhd --- the first project to collect high-density point clouds on almost the whole territory of France --- is central to the future digital twin #cite(<ignRechercheDefi>).
+In 2024, the #gloss-ref-and-footnote("ign") and two other French public entities have launched an initiative to bring together partners who can contribute to the development of a nation-wide digital twin #citen(<ignAppelCommuns>).
+This initiative was officially launched in April 2026 under the name of @junn.
+The idea behind a digital twin is to gather in one interface many sources and types of data, in order to make them more discoverable, accessible and usable, and by doing so allow for simulations and discussions based on real, accurate and complex data.
+Ecological planning and sustainable land use are presented as some of the priorities this project should accommodate.
+In a different post, it is explained how the #gloss-ref-and-footnote("lidarhd") --- the first project to collect high-density point clouds on almost the whole territory of France --- is central to the future digital twin #citen(<ignRechercheDefi>).
 This comes from the unprecedented precision that it brings compared to previous data used and maintained by the @ign.
 
-In this context, one of the many components of the future digital twin is buildings.
-Many algorithms have been developed to try to reconstruct simple but accurate 3D building models from various data sources, including point clouds.
-Some researchers from @tudelft especially developed an algorithm called #gloss-ref-and-footnote("roofer") which produced great results and was then applied to the whole of the Netherlands.
-This successfully created the @3dbag, the first complete dataset of Dutch buildings in @lod 2.2 @Peters22.
-This algorithm however requires two input data: a dense 3D point cloud and 2D building @roofprint:pl.
-In the Netherlands, the @ahn was used for the point cloud and the @bag was used for the @roofprint:pl.
-
-This is where things become more technical and where the precision provided by @lidarhd becomes interesting.
-There are mainly two kinds of 2D building @outline:pl, which are often used interchangeably, even though they can be significantly different once reaching the scale of centimetres or decimetres:
-- #strong[@footprint:cap:pl]: the 2D outer boundary defined by the vertical projection of the #emph[outer walls/façades] of a building.
-- #strong[@roofprint:cap:pl]: the 2D outer boundary defined by the vertical projection of the #emph[roof] of a building.
-Usually, due to roof overhangs and gutters, the roof extends further than the walls, meaning that the @footprint is included in the @roofprint.
-In the rest of this document, I will use the terms @roofprint and @footprint when possible, and otherwise talk about @outline when talking about any of them or when the differentiation was not made.
-As an example, the roofprint is what matters in estimating solar energy potential --- in combination with other factors such as roof orientation and angle.
-But in many other applications --- such as taxes or energy consumption --- an accurate estimation of the area of buildings is necessary, which will be better with a @footprint.
-
-Adding this distinction to models is also what makes the difference between @lod 2.2 and @lod 2.3, as shown in @fig:lods-illustration.
-Since @roofer uses the points from the roof to reconstruct buildings, it requires a @roofprint to work properly, but therefore reconstructs the buildings in @lod 2.2.
-
 #figure(
-  image("../../../images/LoDs_illustration-Filip_Biljecki.jpg"),
-  caption: [Visual example of the refined @lod:pl for a residential building #cite(<Biljecki2016>, form: "normal").],
-  placement: auto,
+  image("../figures/LoDs_illustration-Filip_Biljecki.jpg", width: 70%),
+  caption: [Visual example of the refined @lod:pl:short for a residential building #cite(<Biljecki2016>, form: "normal").],
 ) <fig:lods-illustration>
 
+One of the many components of the future digital twin is buildings.
+Many algorithms have been developed to try to reconstruct structured and accurate 3D building models from various data sources, including point clouds.
+To characterise the properties of the buildings created by these different methods, @lod:pl have been extended by #citep(<Biljecki2016>) and are illustrated in @fig:lods-illustration.
+One of the current state-of-the-art algorithms was created by researchers at @tudelft and is called #gloss-ref-and-footnote("roofer") #citen(<Paden2024>).
+It was applied to the whole of the Netherlands to create the @3dbag, the first complete dataset of Dutch buildings in #lod-version(2.2) #citen(<Peters2022>).
+This algorithm however requires two input data: a dense @als 3D point cloud and 2D building @outline:pl.
+In the Netherlands, the @ahn was used as the point cloud and the @bag was used as the @outline:pl.
 
-Moreover, different sources of data often make it easier to get either of the two:
-- Experts on the field mostly use the walls and therefore measure the @footprint.
-- Experts working on aerial imagery can only use the roof as some walls will not be visible, meaning that they measure the @roofprint.
-- @als point clouds (such as the @lidarhd and the @ahn) give many points on the roofs and therefore make it easier to extract the @roofprint.
-- @tls and @mls point clouds give many points on the walls and therefore make it easier to extract the @footprint.
+However, talking about a building @outline is imprecise, as there are many different ways to create a 2D horizontal representation of a building.
+There are mainly two kinds of 2D building @outline:pl that we consider in this thesis:
+- the @footprint, defined as the horizontal 2D polygon obtained by projecting vertically the #emph[outer walls/façades] of a building,
+- the @roofprint, defined as the horizontal 2D polygon obtained by projecting vertically the #emph[roof] of a building and taking its outer boundary.
+
+#figure(
+  image("../figures/Footprint_roofprint_on_LoD_23.png", width: 40%),
+  caption: [
+    Visual definition of the @roofprint and @footprint on the #lod-version[2.3] building example by #citep(<Biljecki2016>).
+    The @roofprint in this picture displays the edges of the roof used for the definition and needs to be projected vertically to get the actual @roofprint.
+  ],
+) <fig:definition-roofprint-footprint>
+
+These definitions are illustrated in @fig:definition-roofprint-footprint.
+In the rest of this document, I will use the terms @roofprint and @footprint when possible, and otherwise use @outline for a more general term.
+Usually, due to roof overhangs and gutters, the roof extends further than the walls, meaning that the @footprint is included in the @roofprint.
+As an example, the @roofprint is what matters in estimating solar energy potential --- in combination with other factors such as roof orientation and angle.
+But in many other applications --- such as taxes or energy consumption --- an accurate estimation of the area and volume of buildings is necessary, which will be better with a @footprint.
+
+#let bd-topo-origins = (
+  lidarhd: 182114,
+  image: 5037996,
+  cadastre: 44221475,
+  other: 503203,
+)
+#let bd-topo-origins-percent(origin) = {
+  [#{ calc.round(100 * bd-topo-origins.at(origin) / bd-topo-origins.values().sum(), digits: 2) }%]
+}
 
 The @ign already has a dataset containing building @outline:pl, called @bdtopo.
-However this dataset has some issues, that can be explained by how it was historically built from different sources.
-First, some @outline:pl come from terrain measurements and are therefore @footprint:pl, while others come from aerial image detection and are therefore @roofprint:pl.
-The dataset contains a column specifying for each @outline which of the two it is, but it is missing for some buildings.
+However, this dataset has some issues, that can be explained by how it was historically built from different sources.
+First, most @outline:pl (#bd-topo-origins-percent("cadastre")) come from terrain measurements and are therefore @footprint:pl, while most of the rest (#bd-topo-origins-percent("image")) come from aerial image detection and are therefore @roofprint:pl.
+A small proportion was automatically generated from the @lidarhd (#bd-topo-origins-percent("lidarhd")) and the origin of the rest is not specified (#bd-topo-origins-percent("other")).
+The numbers specified above come from the 2026-03-15 version of the @bdtopo.
 Then, the georeferencing of these building @outline:pl is often wrong by up to a few meters.
 This makes combining them with correctly georeferenced point clouds more complicated.
 
 All in all, the current context combines:
 - newly available data with high precision and correct georeferencing (@lidarhd),
 - an objective to build a digital twin of France, including 3D buildings with algorithms which would benefit from or require correct building @outline:pl (such as @roofer),
-- an existing dataset that provides nation-wide and potentially great data but is however missing harmonization and precise georeferencing (@bdtopo),
+- an existing dataset that provides nation-wide and potentially great data but is however missing harmonisation and precise georeferencing (@bdtopo),
 - the example of the Netherlands where a great dataset of 3D building models was built from similar point cloud data (@3dbag from @ahn),
 - an interesting and not yet fully explored question of the possibility of extracting both an accurate @footprint and an accurate @roofprint from point clouds.
+
+Therefore, the research question of this thesis is:
+
+#block(
+  inset: (
+    x: 3em,
+  ),
+  [#text(
+    weight: 600,
+    emph[How to generate coherent building @roofprint:pl and @footprint:pl from high-density @als point clouds and existing imprecise @outline:pl?],
+  )],
+)
+
+A few more specific sub-questions are also addressed in this thesis:
+- How to identify and use the points on roof edges in @als point clouds?
+- How to identify and use the points in an @als point cloud that contain information about the façades despite their sparsity?
+- How to deform an imprecise @outline with global and local transformations while preserving the angles of the edges?
+
+The core of this report is structured as a research paper, targeted at an expert audience, which can be found in @hea:paper.
+To make its content accessible to non-experts, preliminary materials on several different topics are provided in @hea:preliminary-materials, although they still assume some GIS-related knowledge, to the level of the @tudelft Master of Geomatics.
+Finally, the report ends with a conclusion and a presentation of potential future work on the topic.

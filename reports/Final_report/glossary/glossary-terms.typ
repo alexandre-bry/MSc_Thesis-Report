@@ -37,17 +37,17 @@
     ),
     pytorch: (
       short: "PyTorch",
-      description: [An optimized tensor library for deep learning using GPUs and CPUs],
+      description: [An optimised tensor library for deep learning using GPUs and CPUs],
       url: "https://pytorch.org/",
     ),
     roofer: (
       short: "roofer",
-      description: [An algorithm to reconstruct a 3D building model from a point cloud and a 2D roofprint polygon in different @lod:pl up to 2.2.],
+      description: [An algorithm to reconstruct a 3D building model from a point cloud and a 2D @roofprint polygon in different @lod:pl up to 2.2.],
       url: "https://github.com/3DBAG/roofer",
     ),
     helios: (
       short: "HELIOS++",
-      long: "Heidelberg LiDAR Operations Simulator ++",
+      long: "Heidelberg Lidar Operations Simulator ++",
       description: [A general-purpose Python package for simulation of terrestrial, mobile and airborne laser scanning surveys.],
       url: "https://github.com/3dgeo-heidelberg/helios",
     ),
@@ -76,7 +76,7 @@
     "3dbag": (
       short: "3DBAG",
       article: "the",
-      description: [An open 3D building data set that is generated fully automatically based on LiDAR data and covers the whole of the Netherlands.],
+      description: [An open 3D building data set that is generated fully automatically based on @lidar data and covers the whole of the Netherlands.],
       url: "https://docs.3dbag.nl/en/",
     ),
     ahn: (
@@ -88,12 +88,18 @@
     bdtopo: (
       short: "BD TOPO",
       description: [The French dataset that contains (among many other types of objects) the buildings @outline:pl, combining @footprint:pl and @roofprint:pl.],
+      url: "https://www.data.gouv.fr/datasets/bd-topo-r"
     ),
     lidarhd: (
       short: "LiDAR HD",
       description: [The first project to collect high-density point clouds on the whole territory of France (except Guyane).],
-      url: "https://www.ign.fr/institut/programme-lidar-hd-vers-une-nouvelle-cartographie-3d-du-territoire",
+      url: "https://www.data.gouv.fr/datasets/nuages-de-points-lidar-hd",
     ),
+    junn : (
+      short: "JUNN",
+      description: [A French public project officially launched in 2026 aiming at creating a nationwide digital twin.],
+      url: "https://junn-france.fr/",
+    )
   ),
   "Vocabulary": (
     footprint: (
@@ -109,20 +115,29 @@
     outline: (
       short: "outline",
       plural: "outlines",
-      description: [Used to talk about either a roofprint or a footprint or when they are mixed and the differentiation cannot be made.],
+      description: [Purposefully vague term designing either a @roofprint or a @footprint or when they are mixed and the differentiation cannot be made.],
     ),
     lod: (
       short: "LoD",
       plural: "LoDs",
       long: "Level of Detail",
+      longplural: "Levels of Detail",
       description: [A concept to differentiate multi-scale representations of semantic 3D city models. It is in practice principally used to indicate the geometric detail of a model, primarily of buildings.],
       url: "https://3d.bk.tudelft.nl/lod/",
+    ),
+    lidar: (
+      short: "lidar",
+      long: "Light Detection and Ranging",
+      description: [
+        A method for determining ranges by targeting an object or a surface with a laser and measuring the time for the reflected light to return to the receiver. (Wikipedia)
+      ],
+      url: "https://en.wikipedia.org/wiki/Lidar"
     ),
     als: (
       short: "ALS",
       long: "Airborne Laser Scanning",
       description: [
-        Aircraft-mounted lidar that emits laser pulses toward the ground, capturing millions of georeferenced points for large-scale terrain and vegetation models.
+        Aircraft-mounted @lidar that emits laser pulses toward the ground, capturing millions of georeferenced points for large-scale terrain and vegetation models.
       ],
       url: "https://en.wikipedia.org/wiki/Lidar",
     ),
@@ -130,7 +145,7 @@
       short: "MLS",
       long: "Mobile Laser Scanning",
       description: [
-        Vehicle-mounted lidar that records dense point clouds while moving, used for detailed street-level 3-D mapping.
+        Vehicle-mounted @lidar that records dense point clouds while moving, used for detailed street-level 3-D mapping.
       ],
       url: "https://en.wikipedia.org/wiki/Lidar",
     ),
@@ -138,7 +153,7 @@
       short: "TLS",
       long: "Terrestrial Laser Scanning",
       description: [
-        Tripod-mounted static lidar that scans surroundings from fixed positions, ideal for high-resolution models of structures and heritage sites.
+        Tripod-mounted static @lidar that scans surroundings from fixed positions, ideal for high-resolution models of structures and heritage sites.
       ],
       url: "https://en.wikipedia.org/wiki/Lidar",
     ),
