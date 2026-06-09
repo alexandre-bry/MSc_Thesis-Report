@@ -1,0 +1,11 @@
+---
+title: "A1 (Kick-off)"
+date: 2026-01-13
+---
+
+The A1 corresponds to the kick-off of the MSc Thesis, presenting the topic and the planning of the project.
+It consists of a report and a presentation, both available below.
+
+{{< pdf file="2026_01_13-A1/MSc_Thesis-A1-Alexandre_BRY.pdf" width="100%" height="600px" >}}
+
+{{< revealjs file="../slides/2026_01-26-A1/_output/index.html" height="500px" width="100%" class="ratio ratio-16x9" full-screen-link="true" >}}   

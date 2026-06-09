@@ -37,7 +37,7 @@ website:
       style: "docked"
       contents:
         - reports/index.qmd
-        - reports/Project_proposal.qmd
+        - auto: "reports/*.qmd"
 
   back-to-top-navigation: true
   page-navigation: true

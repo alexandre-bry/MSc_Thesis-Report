@@ -72,6 +72,10 @@
 
 = Context
 
+#speaker-note[
+  Structure similar to the paper
+]
+
 == Roofprint vs. footprint
 
 #slide(
@@ -536,7 +540,7 @@ We modify the polygons by applying the following rules:
 ]
 
 
-= Roof edge points
+= Roofprints
 
 == Point cloud topology
 
@@ -558,7 +562,7 @@ We modify the polygons by applying the following rules:
   )
 ]
 
-== Edge points detection
+== Roofprints evidences
 
 #[
   #speaker-note[
@@ -688,23 +692,28 @@ We modify the polygons by applying the following rules:
 
 #slide[
   #v(1fr)
-  #let image-width = 60%
+  #let image-width = 5cm
   #subpar.grid(
-    columns: (1fr, 1fr, 1fr),
-    align: center + horizon,
-    figure(
-      image(
-        "../../images/results-2026_04_20/Criterion_toy_results/circle-half/alpha=0_00-initial.png",
-        width: image-width,
+    columns: (1fr,) * 4,
+    align: center + top,
+    row-gutter: 0.0cm,
+    column-gutter: 0.0cm,
+    grid.cell(
+      figure(
+        image(
+          "../../images/results-2026_04_20/Criterion_toy_results/circle-half/alpha=0_00-initial.png",
+          width: image-width,
+        ),
+        caption: [Initial state],
       ),
-      caption: [Initial state],
+      colspan: 4,
     ),
     figure(
       image(
         "../../images/results-2026_04_20/Criterion_toy_results/circle-half/alpha=0_00-final.png",
         width: image-width,
       ),
-      caption: [$alpha = 0.00$ (no regularization)],
+      caption: [$alpha = 0.00$ (no regularisation)],
     ),
     figure(
       image(
@@ -720,13 +729,6 @@ We modify the polygons by applying the following rules:
         width: image-width,
       ),
       caption: [$alpha = 0.20$],
-    ),
-    figure(
-      image(
-        "../../images/results-2026_04_20/Criterion_toy_results/circle-half/alpha=0_50-final.png",
-        width: image-width,
-      ),
-      caption: [$alpha = 0.50$],
     ),
     figure(
       image(
@@ -747,16 +749,21 @@ We modify the polygons by applying the following rules:
 
 #slide[
   #v(1fr)
-  #let image-width = 60%
+  #let image-width = 5cm
   #subpar.grid(
-    columns: (1fr, 1fr, 1fr),
-    align: center + horizon,
-    figure(
-      image(
-        "../../images/results-2026_04_20/Criterion_toy_results/square-half-small/alpha=0_00-initial.png",
-        width: image-width,
+    columns: (1fr,) * 4,
+    align: center + top,
+    row-gutter: 0.0cm,
+    column-gutter: 0.0cm,
+    grid.cell(
+      figure(
+        image(
+          "../../images/results-2026_04_20/Criterion_toy_results/square-half-small/alpha=0_00-initial.png",
+          width: image-width,
+        ),
+        caption: [Initial state],
       ),
-      caption: [Initial state],
+      colspan: 4,
     ),
     figure(
       image(
@@ -782,13 +789,6 @@ We modify the polygons by applying the following rules:
     ),
     figure(
       image(
-        "../../images/results-2026_04_20/Criterion_toy_results/square-half-small/alpha=0_50-final.png",
-        width: image-width,
-      ),
-      caption: [$alpha = 0.50$],
-    ),
-    figure(
-      image(
         "../../images/results-2026_04_20/Criterion_toy_results/square-half-small/alpha=1_00-final.png",
         width: image-width,
       ),
@@ -806,16 +806,21 @@ We modify the polygons by applying the following rules:
 
 #slide[
   #v(1fr)
-  #let image-width = 60%
+  #let image-width = 5cm
   #subpar.grid(
-    columns: (1fr, 1fr, 1fr),
-    align: center + horizon,
-    figure(
-      image(
-        "../../images/results-2026_04_20/Criterion_toy_results/weird_polygon-half/alpha=0_00-initial.png",
-        width: image-width,
+    columns: (1fr,) * 4,
+    align: center + top,
+    row-gutter: 0.0cm,
+    column-gutter: 0.0cm,
+    grid.cell(
+      figure(
+        image(
+          "../../images/results-2026_04_20/Criterion_toy_results/weird_polygon-half/alpha=0_00-initial.png",
+          width: image-width,
+        ),
+        caption: [Initial state],
       ),
-      caption: [Initial state],
+      colspan: 4,
     ),
     figure(
       image(
@@ -838,13 +843,6 @@ We modify the polygons by applying the following rules:
         width: image-width,
       ),
       caption: [$alpha = 0.20$],
-    ),
-    figure(
-      image(
-        "../../images/results-2026_04_20/Criterion_toy_results/weird_polygon-half/alpha=0_50-final.png",
-        width: image-width,
-      ),
-      caption: [$alpha = 0.50$],
     ),
     figure(
       image(
@@ -927,43 +925,55 @@ We modify the polygons by applying the following rules:
     This is fixed with the inward vectors, which prevent the points from the other building from counting in the score of the edge.
 ]
 
-= Footprint points
+= Footprints
 
-== Footprint points
+== Footprints evidences
 
 #{
-  speaker-note[
+  let current-speaker-notes = [
     - Process:
       + Build the roof in 3D using a 3D roof constructor (such as #link("https://github.com/3DBAG/roofer")[roofer]) with the roofprints as input
       + Select all the points *under* the 3D roof with a small horizontal buffer (for the scoring function) and a small vertical buffer (for roof points slightly below the roof)
-    - It seems very simple in practice but actually requires to use the complex roof reconstruction algorithms developed in the past few years.
+      - It seems very simple in practice but actually requires to use the complex roof reconstruction algorithms developed in the past few years.
+  ]
+  speaker-note[
+    #current-speaker-notes
   ]
   let fig-height = 85%
   let caption = [Illustration of the 3D roof structure and the selected points for the footprint computation.]
   v(1fr)
-  alternatives[#{
-      subpar.grid(
-        columns: (auto, auto),
-        align: center + horizon,
-        caption: caption,
-        image("../../images/2026_05_18/Example_building-3D_roof-1.png", height: fig-height),
-        image("../../images/2026_05_18/Example_building-Footprint_points-1.png", height: fig-height),
-      )
-    }
-  ][#{
-      subpar.grid(
-        columns: (auto, auto),
-        align: center + horizon,
-        caption: caption,
-        image("../../images/2026_05_18/Example_building-3D_roof-2.png", height: fig-height),
-        image("../../images/2026_05_18/Example_building-Footprint_points-2.png", height: fig-height),
-      )
-    }
+
+  subpar.grid(
+    columns: (auto, auto),
+    align: center + horizon,
+    caption: caption,
+    image("../../images/2026_05_18/Example_building-3D_roof-1.png", height: fig-height),
+    image("../../images/2026_05_18/Example_building-Footprint_points-1.png", height: fig-height),
+  )
+
+  v(1fr)
+
+
+  [---]
+
+
+  speaker-note[
+    #current-speaker-notes
   ]
+  let fig-height = 85%
+  let caption = [Illustration of the 3D roof structure and the selected points for the footprint computation.]
+  v(1fr)
+
+  subpar.grid(
+    columns: (auto, auto),
+    align: center + horizon,
+    caption: caption,
+    image("../../images/2026_05_18/Example_building-3D_roof-2.png", height: fig-height),
+    image("../../images/2026_05_18/Example_building-Footprint_points-2.png", height: fig-height),
+  )
+
   v(1fr)
 }
-
-= Creation of the footprints
 
 == Energy to minimise for footprints
 
@@ -1004,32 +1014,48 @@ We modify the polygons by applying the following rules:
 == Illustration with a real building
 
 #{
-  speaker-note[
+  let current-speaker-notes = [
     Example where it works well:
     - the footprint is *properly aligned* with the façade points
     - we can see *significant roof overhangs for façades oriented west/east* and no significant roof overhangs for north/south, as expected from the orientation of the slanted roof
   ]
+
+  speaker-note[
+    #current-speaker-notes
+  ]
   let fig-height = 95%
   v(1fr)
-  alternatives[
-    #subpar.grid(
-      columns: (auto, auto),
-      align: center + horizon,
-      caption: [Illustration of the computed footprints.],
-      image("../../images/2026_05_07/Example_building-Footprint-Classification.png", height: fig-height),
-      image("../../images/2026_05_07/Example_building-Footprint_with_roofprint-Classification.png", height: fig-height),
-    )
-  ][
-    #subpar.grid(
-      columns: (auto, auto),
-      align: center + horizon,
-      caption: [Illustration of the computed footprints.],
-      image("../../images/2026_05_07/Example_building-Footprint-Height.png", height: fig-height),
-      image("../../images/2026_05_07/Example_building-Footprint_with_roofprint-Height.png", height: fig-height),
-    )
+
+  subpar.grid(
+    columns: (auto, auto),
+    align: center + horizon,
+    caption: [Illustration of the computed footprints.],
+    image("../../images/2026_05_07/Example_building-Footprint-Classification.png", height: fig-height),
+    image("../../images/2026_05_07/Example_building-Footprint_with_roofprint-Classification.png", height: fig-height),
+  )
+
+  v(1fr)
+
+  [---]
+
+  speaker-note[
+    #current-speaker-notes
   ]
+  let fig-height = 95%
+  v(1fr)
+
+  subpar.grid(
+    columns: (auto, auto),
+    align: center + horizon,
+    caption: [Illustration of the computed footprints.],
+    image("../../images/2026_05_07/Example_building-Footprint-Height.png", height: fig-height),
+    image("../../images/2026_05_07/Example_building-Footprint_with_roofprint-Height.png", height: fig-height),
+  )
+
   v(1fr)
 }
+
+
 
 = Validation
 
@@ -1144,7 +1170,37 @@ We modify the polygons by applying the following rules:
 
 == Answers to the research questions
 
+#v(1fr)
+
+- *Roofprints*:
+  - High vertical gaps with neighbours
+  - Complex energy combining points, edge lengths and inward directions#pause
+- *Footprints*:
+  - Below the roof reconstructed with the roofprint
+  - Energy combining façade and ground points#pause
+- *Polygon deformation*:
+  - Incremental algorithm
+  - Preserve the quality, validity and adjacencies of the polygons#pause
+- All combined in a *single pipeline* generating *coherent roofprints and footprints* and allowing to estimate roof overhangs
+
+#v(1fr * phi)
+
 == Future work
+
+#v(1fr)
+
+- *Polygon deformation*:
+  - Continuity instead of binary decision on shifting or not each edge
+  - Preserve shared vertices#pause
+  - More complex operations: rotations of edges, insertion/deletion of vertices#pause
+- *Roofprints* and *footprints*:
+  - Classification of roofs and facades, but also balconies, chimneys, etc
+  - More robust decision-making for footprints due to the low amount of evidences#pause
+- *Other ideas*:
+  - More complex representations than 2D partitions to combine roofprints, footprints, balconies, etc
+  - Use aerial images to produce roofprints with clean angles
+
+#v(1fr * phi)
 
 = The end <touying:hidden>
 
@@ -1174,6 +1230,43 @@ We modify the polygons by applying the following rules:
   bib-content: bibliography("../../references/MSc_Thesis-Bibliography.bib", style: "apa", title: none),
 )
 
-// #show: appendix
+#show: appendix
 
-// #heading([Appendix], depth: 1, outlined: false)
+#heading([Appendix], depth: 1, outlined: false)
+
+== Results
+
+#slide[
+  #figure(
+    image("../../images/Final_report/Validation_992/Validation_dataset-Ozoir_north-BD_TOPO.png"),
+    caption: [BD TOPO.],
+  )
+][
+  #figure(
+    image("../../images/Final_report/Validation_992/Validation_dataset-Ozoir_north-Roofprints_3.png"),
+    caption: [Roofprints after 3 iterations.],
+  )
+]
+
+#slide[
+  #figure(
+    image("../../images/Final_report/Validation_992/Validation_dataset-Ozoir_south-BD_TOPO.png"),
+    caption: [BD TOPO.],
+  )
+][
+  #figure(
+    image("../../images/Final_report/Validation_992/Validation_dataset-Ozoir_south-Roofprints_3.png"),
+    caption: [Roofprints after 3 iterations.],
+  )
+]
+#slide[
+  #figure(
+    image("../../images/Final_report/Validation_992/Validation_dataset-Paris-BD_TOPO.png"),
+    caption: [BD TOPO.],
+  )
+][
+  #figure(
+    image("../../images/Final_report/Validation_992/Validation_dataset-Paris-Roofprints_3.png"),
+    caption: [Roofprints after 3 iterations.],
+  )
+]
