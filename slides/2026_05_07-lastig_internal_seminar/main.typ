@@ -271,7 +271,7 @@ This ensures that we *preserve some topology* while keeping a *lot of freedom* f
 
 == Illustrations of the polygon deformation algorithm
 
-Illustrations can be viewed by following this link: #link("https://alexandre-bry.github.io/MSc_Thesis-Report/monthly_notes/2026_04_20.html#gifs-that-could-not-be-included-in-the-slides")
+Illustrations can be viewed by following this link: #link("https://alexandre-bry.github.io/MSc_Thesis-Report/slides_pages/2026_04_20-monthly.html")
 
 == Criterion to score configurations
 
@@ -325,7 +325,7 @@ Illustrations can be viewed by following this link: #link("https://alexandre-bry
 
 == Illustrations of matching the edges to the points
 
-Illustrations can be viewed by following this link: #link("https://alexandre-bry.github.io/MSc_Thesis-Report/monthly_notes/2026_04_20.html#gifs-that-could-not-be-included-in-the-slides")
+Illustrations can be viewed by following this link: #link("https://alexandre-bry.github.io/MSc_Thesis-Report/slides_pages/2026_04_20-monthly.html")
 
 
 #slide[
@@ -693,6 +693,7 @@ Illustrations can be viewed by following this link: #link("https://alexandre-bry
   title: [Thank you for your attention!],
   subtitle: [Any questions?],
   contact: ("alexandre.bry@ign.fr",),
+  middle-line: true,
 )
 
 #bibliography-slide(

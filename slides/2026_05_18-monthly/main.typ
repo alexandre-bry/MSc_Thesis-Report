@@ -345,7 +345,7 @@ Simple algorithm to find a correct configuration given a line $l_0$ to move by a
 
 == Illustrations of the polygon deformation algorithm
 
-Illustrations can be viewed by following this link: #link("https://alexandre-bry.github.io/MSc_Thesis-Report/monthly_notes/2026_05_18.html#gifs-that-could-not-be-included-in-the-slides")
+Illustrations can be viewed by following this link: #link("https://alexandre-bry.github.io/MSc_Thesis-Report/slides_pages/2026_05_18-monthly.html")
 
 == Total energy to minimize
 
@@ -443,7 +443,7 @@ Where:
 
 == Illustrations of matching the edges to the points
 
-Illustrations can be viewed by following this link: #link("https://alexandre-bry.github.io/MSc_Thesis-Report/monthly_notes/2026_05_18.html#gifs-that-could-not-be-included-in-the-slides")
+Illustrations can be viewed by following this link: #link("https://alexandre-bry.github.io/MSc_Thesis-Report/slides_pages/2026_05_18-monthly.html")
 
 
 #slide[
@@ -841,9 +841,10 @@ Illustrations can be viewed by following this link: #link("https://alexandre-bry
 
 #ending-slide(
   title: [Thank you for your attention!],
-  subtitle: [
+  subtitle: none,
+  content: [
     #import "@preview/tiaoma:0.3.0"
-    #let slides-link = "https://alexandre-bry.github.io/MSc_Thesis-Report/monthly_notes/2026_05_18.html"
+    #let slides-link = "https://alexandre-bry.github.io/MSc_Thesis-Report/slides_pages/2026_05_18-monthly.html"
 
     Link to the slides:
 
@@ -857,7 +858,7 @@ Illustrations can be viewed by following this link: #link("https://alexandre-bry
       bg-color: theme-colors.header-text,
     ))
   ],
-  contact: ("alexandre.bry@ign.fr",),
+  contact: ("alexandre.bry@ign.fr", "abry@tudelft.nl"),
 )
 
 #bibliography-slide(

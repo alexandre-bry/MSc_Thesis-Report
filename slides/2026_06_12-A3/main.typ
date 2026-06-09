@@ -6,7 +6,7 @@
 #import "illustrations.typ": *
 
 #let handout = sys.inputs.at("handout", default: "false") == "true"
-#let notes = sys.inputs.at("notes", default: "false") == "true"
+#let notes = sys.inputs.at("notes", default: "true") == "true"
 #let theme = sys.inputs.at("theme", default: "tu-delft")
 
 #let variant = "light"
@@ -579,108 +579,112 @@ We modify the polygons by applying the following rules:
       image("../../images/results_A2/Edge_points/Scan_line-Vertical_gain-1.png"),
       image("../../images/results_A2/Edge_points/Scan_line-Vertical_gain-3.png"),
     ),
-    caption: [Two examples of the height differences obtained on a scan line. Black points are vegetation points, and for the other points the color represents the value of $Delta h$, with blue-green-yellow-red from low to high values.],
+    caption: [Two examples of the height differences obtained on a scan line. Black points are vegetation points, and for the other points the colour represents the value of $Delta h$, with blue-green-yellow-red from low to high values.],
   )
 ]
 
-== Total energy to minimize
-
-The energy that we try to minimize for each group of roofprints is the following:
-
-$
-  E = underbrace(- sum_(i in cal(P)) w_i max_(j in cal(L)) {"score"(p_i, l_j)}, "proximity to the points") + alpha underbrace(sum_(j in cal(L)) (|l_j| - |l_j^0|)^2, "similarity to the initial edges")
-$
-
-Where:
-
-- $cal(P)$ is the set of points, and $cal(L)$ is the set of edges (lines).
-  $cal(L)$ contains all the edges moved in any configuration and their neighbours.
-- $w_i$ is the weight of point $p_i$, which is independent of the lines.
-- $"score"(p_i, l_j)$ is the score of point $p_i$ for edge $l_j$, which is defined in the next slide.
-- $|l_j|$ is the length of edge $l_j$ in the current configuration, and $|l_j^0|$ is its initial length.
-- $alpha$ is a parameter to adjust between the two terms.
-
-#speaker-note[
-  #set text(size: 20pt)
-  - The energy is divided in two terms:
-    - The first term is a *proximity term* that both counts the number of points close to the edges while prioritizing points with higher weights.
-    - The second term is a *regularization term* that entices the edges to keep their initial length, to prioritize a shape closer to the initial one.
-  - Many regularization terms are possible, but we chose this one because it makes sure that by default, the edges will *keep their initial length* and otherwise *share the change equally* between them.
-    This is desired if we assume that the scaling that we need to perform is the same on both sides for a given direction, no matter the size of the edges, because the roof overhang is the same.
-]
+== Energy to minimise for roofprints
 
 #let figure-width = 6cm
-#slide(composer: (1fr, figure-width))[
+#slide(
+  repeat: 3,
+  composer: (1fr, figure-width),
+  ..(
+    self => [
+      #let (uncover, only, alternatives) = utils.methods(self)
+      #set text(size: 16pt)
 
-  #uncover("1-")[
-    The score of a point $p_i$ for an edge $l_j$ is defined as follows:
-    - The score is 0 if any of the following conditions is true:
-      - The orthogonal projection $p_(i perp j)$ of $p_i$ on the supporting line of $l_j$ is outside of the segment $l_j$.
-      - The distance from $p_i$ to $p_(i perp j)$ is greater than a certain threshold $epsilon$.
-      - The dot product of the inward vector $v_i$ of $p_i$ with the normal $n_j$ of $l_j$ oriented towards the inside of the building is negative.
-  ]
-  #uncover("2-")[
-    - Otherwise, the score is: $ "score"(p_i, l_j) = underbrace((v_i dot n_j), "alignment of\npoint and edge\n'normals'") times underbrace((1 - (|p_i - p_(i perp j)|) / epsilon), "proximity to the edge") >= 0 $
+      #only("1")[#speaker-note[
+        #set text(size: 17pt)
+        - The energy is divided in two terms:
+          - A *proximity term* that counts the number of points close to the edges while prioritizing points with higher weights.
+          - A *regularization term* that entices the edges to keep their initial length, to prioritize a shape closer to the initial one.
+        - We chose this regularization term to ensure that the edges will *keep their initial length* and otherwise *share the change equally* between them.
+          This is desired if we assume that the *roof overhang is the same on both sides* along a given direction.
+        - Notations:
+          - $cal(P)$ is the set of points, and $cal(L)$ is the set of edges (lines),
+          - $w_i$ is the weight of point $p_i$, which is independent of the lines,
+          - $"score"(p_i, l_j)$ is the score of point $p_i$ for edge $l_j$, which is defined in the next slide,
+          - $|l_j|$ is the length of edge $l_j$ in the current configuration, and $|l_j^0|$ is its initial length,
+          - $alpha$ is a parameter to adjust between the two terms.
+      ]]
 
-    We use $epsilon = 30 "centimetres"$.
-  ]
+      Total energy:
 
-  #speaker-note[
-    - Any point *outside the rectangle* defined by extruding the edge along its normal by $epsilon$ has a score of 0.
-      This geometric ensures that only points that are close enough to the edge will count.
-    - Then, the dot product between the inward vector and the normal of the edge ensures that points that are part of a parallel but opposite edge will not count, *preventing matching to the neighbour building*.
-  ]
-][
-  #uncover("1-")[#context {
-      let illustration = fig-edge-matching-criterion(
-        num-points-uniform: 100,
-        num-points-around: 40,
-        edge-start: (0, 0),
-        edge-end: (2, 6),
-        rand-seed: 1,
-      )
-      let fig = measure(illustration)
-      let factor = figure-width / fig.width * 100%
-      figure(
-        scale(
-          fig-edge-matching-criterion(
-            num-points-uniform: 50,
-            num-points-around: 30,
+      $
+        E = underbrace(- sum_(i in cal(P)) w_i max_(j in cal(L)) {"score"(p_i, l_j)}, "proximity to the points") + alpha underbrace(sum_(j in cal(L)) (|l_j| - |l_j^0|)^2, "similarity to the initial edges")
+      $
+
+      #pause
+
+      #only("2")[#speaker-note[
+        #set text(size: 20pt)
+        - Any point *outside the rectangle* defined by extruding the edge along its normal by $epsilon$ has a score of 0.
+          This geometric ensures that only points that are close enough to the edge will count.
+        - Then, the dot product between the inward vector and the normal of the edge ensures that points that are part of a parallel but opposite edge will not count, *preventing matching to the neighbour building*.
+        - Notations:
+          - $v_i$ is the inward vector of point $p_i$, which is defined in the next slide,
+          - $n_j$ is the normal of the edge $l_j$, pointing inwards,
+          - $p_(i perp j)$ is the projection of $p_i$ on the supporting line of $l_j$
+          - $epsilon$ is a parameter to adjust the size of the rectangle.
+      ]]
+
+      with the score of a pair of point $p_i$ and line $l_j$:
+
+      $
+        "score"(p_i, l_j) = underbrace((v_i dot n_j), "alignment of\npoint and edge\n'normals'") times underbrace((1 - (|p_i - p_(i perp j)|) / epsilon), "proximity to the edge") >= 0
+      $
+
+      #pause
+
+      #only("3")[#speaker-note[
+        #set text(size: 21pt)
+        - The idea behind this method is that points on the edge of the roof should have *many points towards the inside* of the building, and *few points towards the outside*.
+        - Using unit vectors and averaging them allows for all points in the neighbourhood to contribute equally, meaning that the result could be interpreted as proxy of the *direction of density imbalance*.
+          Therefore, the *magnitude* of the inward vector is an indication of the confidence of the direction.
+        - Notations:
+          - $cal(B)(p_i, delta)$ is the set of points with a distance less than $delta$ from point $p_i$
+          - $delta$ is a parameter to adjust the size of the neighbourhood.
+      ]]
+
+      with the inward direction:
+
+      $
+        v_i = 1/ (|cal(B)(p_i, delta)|) sum_(p_j in cal(B)(p_i, delta)) (p_j - p_i) / (|p_j - p_i|)
+      $
+    ],
+    [
+      #uncover("2-")[#context {
+          let illustration = fig-edge-matching-criterion(
+            num-points-uniform: 100,
+            num-points-around: 40,
             edge-start: (0, 0),
             edge-end: (2, 6),
             rand-seed: 1,
-          ),
-          factor,
-          reflow: true,
-        ),
-        caption: [Illustration of the proximity score for an isolated edge.],
-      )
-    }
-  ]
-]
+          )
+          let fig = measure(illustration)
+          let factor = figure-width / fig.width * 100%
+          figure(
+            scale(
+              fig-edge-matching-criterion(
+                num-points-uniform: 50,
+                num-points-around: 30,
+                edge-start: (0, 0),
+                edge-end: (2, 6),
+                rand-seed: 1,
+              ),
+              factor,
+              reflow: true,
+            ),
+            caption: [Illustration of the proximity score for an isolated edge.],
+          )
+        }
+      ]
+    ],
+  ),
+)
 
-== Definition of the inward direction
-
-#slide[
-  #speaker-note[
-    - The idea behind this method is that points on the edge of the roof should have *many points towards the inside* of the building, and *few points towards the outside*.#pause#pause#pause
-    - Using unit vectors and averaging them allows for all points in the neighbourhood to contribute equally, meaning that we are somewhat counting the *density of points* in each direction.
-      Therefore, the *magnitude* of the inward vector is an indication of the confidence of the direction.
-  ]
-
-  The goal of the *inward direction* is to be as close as possible to the 2D normal of the roof edge, pointing towards the inside of the building.#pause
-  To compute it for a given point $p_i$, we use the following method:
-  1. Identify all the points $p_j$ that are less than a certain distance $delta$ from $p_i$.#pause
-  2. For each point $p_j$, compute the vector from $p_i$ to $p_j$, and normalize it into a unit vector $u_(i -> j)$.#pause
-  3. Compute the inward vector $v_i$ as the average of the vectors $u_(i -> j)$: $ v_i = 1/ (|cal(B)(p_i, delta)|) sum_(p_j in cal(B)(p_i, delta)) (p_j - p_i) / (|p_j - p_i|) $
-
-  We use $delta = 2 "metres"$.
-]
-
-== Illustrations of matching the edges to the points
-
-Illustrations can be viewed by following this link: #link("https://alexandre-bry.github.io/MSc_Thesis-Report/monthly_notes/2026_05_18.html#gifs-that-could-not-be-included-in-the-slides")
-
+== Importance of the two terms on toy examples
 
 #slide[
   #v(1fr)
@@ -902,7 +906,7 @@ Illustrations can be viewed by following this link: #link("https://alexandre-bry
 
 #speaker-note[
   - Interestingly, this building unit is actually divided into *two parts in the BD TOPO*, even though we could expect 1 or 3 as well.
-  - In the old algorithm, we processed edges individually, resulting in assessing the segments that are displayed on the right.
+  - In the old algorithm, we processed edges individually, resulting in the segments that are displayed on the right.
   - The results give a better alignment, but there is still an issue to fix: the bottom left edge of the small top right building was *matched incorrectly*.
     This could be fixed by *matching the whole initial line once* instead of keeping it split between buildings.
 ]
@@ -912,13 +916,13 @@ Illustrations can be viewed by following this link: #link("https://alexandre-bry
 #subpar.grid(
   columns: (1fr, 1fr),
   align: center + horizon,
-  caption: [Comparison of the roofprints computed with the new algorithm without and with inward vectors.],
+  caption: [Comparison of the roofprints computed with the final algorithm without and with inward vectors.],
   image("../../images/results-2026_04_20/Interesting_building_1/New_algorithm_without_inward_vectors.png", height: 90%),
   image("../../images/results-2026_04_20/Interesting_building_1/New_algorithm_with_inward_vectors.png", height: 90%),
 )
 
 #speaker-note[
-  - The new algorithm allows *fix the issue* for the bottom left edge of the small top right building, thanks to its alignment with the almost collinear edge of the big building.
+  - Grouping the shared edges and processing all edges together *fixes the issue* for the bottom left edge of the small top right building.
   - However, for the same building without using the inward vectors, one edge ends up *matching the neighbouring building* instead.
     This is fixed with the inward vectors, which prevent the points from the other building from counting in the score of the edge.
 ]
@@ -929,8 +933,10 @@ Illustrations can be viewed by following this link: #link("https://alexandre-bry
 
 #{
   speaker-note[
-    + Build the roof in 3D using a 3D roof constructor (such as #link("https://github.com/3DBAG/roofer")[roofer]) with the roofprints as input
-    + Select all the points *under* the 3D roof with a small horizontal buffer (for the scoring function) and a small vertical buffer (for roof points slightly below the roof)
+    - Process:
+      + Build the roof in 3D using a 3D roof constructor (such as #link("https://github.com/3DBAG/roofer")[roofer]) with the roofprints as input
+      + Select all the points *under* the 3D roof with a small horizontal buffer (for the scoring function) and a small vertical buffer (for roof points slightly below the roof)
+    - It seems very simple in practice but actually requires to use the complex roof reconstruction algorithms developed in the past few years.
   ]
   let fig-height = 85%
   let caption = [Illustration of the 3D roof structure and the selected points for the footprint computation.]
@@ -959,33 +965,43 @@ Illustrations can be viewed by following this link: #link("https://alexandre-bry
 
 = Creation of the footprints
 
-== Creation of the footprints
+== Energy to minimise for footprints
 
 #speaker-note[
   #set text(size: 22pt)
-  #pause
   - The ideas behind the two terms of the score are simple:
-    - The proximity encourages finding a position with a concentration of points (likely to be the façade in 3D)
-    - The penalty term discourages positions that have points behind them (likely to be points on the façade or on the ground outside the building)#pause
+    - The *proximity term* encourages finding a position with a concentration of points (likely to be the façade in 3D)
+    - The *penalty term* discourages positions that have points behind them (likely to be points on the façade or on the ground outside the building)
   - The difference between ground points and other classes of points comes from the ground points being very good indicators for the penalty term but much less for the proximity, while the others are assumed to be potential facade points, which are good indicators for the proximity but not necessarily for the penalty term.
 ]
 
-- *Sweep each roof edge horizontally towards the inside* up to 1.5 metres and select the best scoring position #pause
-- The score has two components:
-  + A *proximity term* that counts the number of points close to the edge
-  + A *penalty term* that penalizes points that are behind the edge (inside the building)
+#[
+  #let x-axis-values = (-0.8, -0.3, 0, 0.3, 1.3, 1.3, 1.8)
+  #let y-axis-values-ground = (0, 0, -0.3, 0, 1.0, 0, 0)
+  #let y-axis-values-other = (0, 0, -1.0, 0, 0.3, 0, 0)
+  #let stroke = 2pt
+  // #show lq.selector(lq.label): set text(size: 8pt)
+  // #show lq.selector(lq.legend): set text(size: 8pt)
+  #show: lq.set-legend(position: bottom)
+  #v(1fr)
+  #figure(
+    lq.diagram(
+      width: 20cm,
+      height: 10cm,
+      xlabel: [Signed distance $d_s (p, e)$ from $p$ to $e$ (m)],
+      ylabel: [Energy],
+      xaxis: (ticks: x-axis-values.slice(1, -1), subticks: none),
+      // yaxis: (ticks: (-1, 0, 1), subticks: none),
 
-#pause
+      lq.plot(x-axis-values, y-axis-values-ground, mark: none, label: [Ground], stroke: stroke),
+      lq.plot(x-axis-values, y-axis-values-other, mark: none, label: [Other classes], stroke: stroke),
+    ),
+    caption: [Energy of a point $p$ for a footprint edge $e$.],
+  ) <fig:energy-footprints>
+  #v(1fr)
+]
 
-#{
-  import "../../figures/footprints/footprints-loss.typ": fig-footprints-loss
-
-  figure(
-    fig-footprints-loss(width: 65%, height: 60%, title: [Score of a point $p$ for a footprint edge $e$]),
-  )
-}
-
----
+== Illustration with a real building
 
 #{
   speaker-note[
@@ -1015,7 +1031,7 @@ Illustrations can be viewed by following this link: #link("https://alexandre-bry
   v(1fr)
 }
 
-= Results
+= Validation
 
 #import "../../figures/validation/validation.typ": (
   categories-infos, datasets-full, datasets-infos, datasets-labels, datasets-per-category, display-bars,
@@ -1060,6 +1076,8 @@ Illustrations can be viewed by following this link: #link("https://alexandre-bry
   ]
   #v(1fr)
 ]
+
+== Validation results
 
 #slide[
   #speaker-note[
@@ -1122,13 +1140,20 @@ Illustrations can be viewed by following this link: #link("https://alexandre-bry
 ]
 
 
+= Conclusion
+
+== Answers to the research questions
+
+== Future work
+
 = The end <touying:hidden>
 
 #ending-slide(
   title: [Thank you for your attention!],
-  subtitle: [
+  subtitle: none,
+  content: [
     #import "@preview/tiaoma:0.3.0"
-    #let slides-link = "https://alexandre-bry.github.io/MSc_Thesis-Report/monthly_notes/2026_05_18.html"
+    #let slides-link = "https://alexandre-bry.github.io/MSc_Thesis-Report/slides_pages/2026_06_12-A3.html"
 
     Link to the slides:
 
@@ -1142,7 +1167,7 @@ Illustrations can be viewed by following this link: #link("https://alexandre-bry
       bg-color: theme-colors.header-text,
     ))
   ],
-  contact: ("abry@tudelft.nl",),
+  contact: ("alexandre.bry@ign.fr", "abry@tudelft.nl"),
 )
 
 #bibliography-slide(

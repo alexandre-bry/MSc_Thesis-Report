@@ -555,4 +555,5 @@ Edge points are weighted using:
   title: [Thank you for your attention!],
   subtitle: [Any questions?],
   contact: ("alexandre.bry@ign.fr",),
+  middle-line: true,
 )

@@ -1,0 +1,13 @@
+---
+title: "2026/03/18 (TU Delft A2)"
+date: 2026-03-18
+tags: [monthly]
+meeting: []
+---
+
+## Slides
+
+| | With notes | Without notes |
+| --- | --- | --- |
+| With steps | [Slides](../slides/2026_03_18-A2/slides-animations-notes.pdf) | [Slides](../slides/2026_03_18-A2/slides-animations-no_notes.pdf) |
+| Without steps | [Slides](../slides/2026_03_18-A2/slides-handout-notes.pdf) | [Slides](../slides/2026_03_18-A2/slides-handout-no_notes.pdf) |

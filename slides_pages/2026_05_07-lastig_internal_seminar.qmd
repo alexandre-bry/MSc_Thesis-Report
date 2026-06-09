@@ -1,0 +1,13 @@
+---
+title: "2026/05/07 (LASTIG internal seminar)"
+date: 2026-05-07
+tags: [lastig]
+meeting: []
+---
+
+## Slides
+
+| | With notes | Without notes |
+| --- | --- | --- |
+| With steps | [Slides](../slides/2026_05_07-lastig_internal_seminar/slides-animations-notes.pdf) | [Slides](../slides/2026_05_07-lastig_internal_seminar/slides-animations-no_notes.pdf) |
+| Without steps | [Slides](../slides/2026_05_07-lastig_internal_seminar/slides-handout-notes.pdf) | [Slides](../slides/2026_05_07-lastig_internal_seminar/slides-handout-no_notes.pdf) |

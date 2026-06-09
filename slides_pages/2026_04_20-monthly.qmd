@@ -1,0 +1,55 @@
+---
+title: "2026/04/20 (monthly meeting)"
+date: 2026-04-20
+tags: [monthly]
+meeting: [Bruno Vallet, Ravi Peters, François Becirspahic, Florent Geniet, Emmanuel Séguin]
+---
+
+## Slides
+
+| | With notes | Without notes |
+| --- | --- | --- |
+| With steps | [Slides](../slides/2026_04_20-monthly/slides-animations-notes.pdf) | [Slides](../slides/2026_04_20-monthly/slides-animations-no_notes.pdf) |
+| Without steps | [Slides](../slides/2026_04_20-monthly/slides-handout-notes.pdf) | [Slides](../slides/2026_04_20-monthly/slides-handout-no_notes.pdf) |
+
+### GIFs that could not be included in the slides
+
+#### Illustrations of the polygon deformation algorithm
+
+:::: {#fig-illustrations-deformation layout="[[1,1]]"}
+
+![](../images/results-2026_04_20/Polygon_deformation/circle.gif){group="illustrations-deformation"}
+
+![](../images/results-2026_04_20/Polygon_deformation/polygon_simple.gif){group="illustrations-deformation"}
+
+Simple illustrations of the polygon deformation algorithm.
+:::
+
+:::: {#fig-illustrations-deformation-complex layout="[[1,1]]"}
+
+![](../images/results-2026_04_20/Polygon_deformation/polygon_simple_noisy-0.gif){group="illustrations-deformation-complex"}
+
+![](../images/results-2026_04_20/Polygon_deformation/polygon_2-0.gif){group="illustrations-deformation-complex"}
+
+More complex illustrations of the polygon deformation algorithm.
+:::
+
+:::: {#fig-illustrations-self-intersections layout="[[1,1]]"}
+
+![](../images/results-2026_04_20/Polygon_deformation/polygon_simple_noisy-4.gif){group="illustrations-self-intersections"}
+
+![](../images/results-2026_04_20/Polygon_deformation/polygon_3-13.gif){group="illustrations-self-intersections"}
+
+Illustrations of self-intersections with the polygon deformation algorithm.
+:::
+
+#### Illustrations of the deformation with the energy metric
+
+:::: {#fig-illustrations-matching-points layout="[[1,1]]"}
+
+![](../images/results-2026_04_20/Criterion_toy_results/circle-default/alpha=0_20-iterations.gif){group="illustrations-matching-points"}
+
+![](../images/results-2026_04_20/Criterion_toy_results/weird_polygon-default/alpha=0_20-iterations.gif){group="illustrations-matching-points"}
+
+Simple illustrations of the full polygon deformation algorithm.
+:::

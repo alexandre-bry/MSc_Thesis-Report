@@ -1,0 +1,13 @@
+---
+title: "2026/03/16 (monthly meeting)"
+date: 2026-03-16
+tags: [monthly]
+meeting: []
+---
+
+## Slides
+
+| | With notes | Without notes |
+| --- | --- | --- |
+| With steps | [Slides](../slides/2026_03_16-monthly/slides-animations-notes.pdf) | [Slides](../slides/2026_03_16-monthly/slides-animations-no_notes.pdf) |
+| Without steps | [Slides](../slides/2026_03_16-monthly/slides-handout-notes.pdf) | [Slides](../slides/2026_03_16-monthly/slides-handout-no_notes.pdf) |

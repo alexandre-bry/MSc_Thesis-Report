@@ -1019,6 +1019,8 @@
   config: (:),
   title: [Thank You],
   subtitle: [Questions?],
+  content: none,
+  middle-line: false,
   contact: (),
   colors: none,
 ) = touying-slide-wrapper(self => {
@@ -1049,13 +1051,15 @@
       tracking: tracking-tight,
     )[#title]
 
-    // // Accent line
-    // v(spacing-lg)
-    // accent-line(width: 48pt, colors: c)
-    // v(spacing-lg)
+    // Accent line
+    if middle-line {
+      v(spacing-lg)
+      accent-line(width: 48pt, colors: c)
+    }
 
     // Subtitle
     if subtitle != none {
+      v(spacing-lg)
       text(
         size: size-subtitle,
         weight: "regular",
@@ -1063,12 +1067,17 @@
       )[#subtitle]
     }
 
+    // Content
+    if content != none {
+      v(spacing-2xl, weak: true)
+      text(fill: c.text-muted, size: size-small)[#content]
+    }
+
     // Contact info
     if contact.len() > 0 {
       v(spacing-sm)
-      for item in contact {
-        text(fill: c.text-light, size: size-caption, weight: "light")[#item]
-      }
+      let contact-text = contact.join(", ")
+      text(fill: c.text-light, size: size-caption, weight: "light")[#contact-text]
     }
 
     v(1fr)
