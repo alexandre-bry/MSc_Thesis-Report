@@ -1,9 +1,0 @@
----
-title: "A3 (Green light)"
-date: 2026-06-12
----
-
-The A3 corresponds to the formal final assessment of the MSc Thesis.
-It consists of a report available below, and slides available [there](../slides_pages/2026_06_12-A3.qmd).
-
-{{< pdf file="2026_06_12-A3/MSc_Thesis-A3-Alexandre_BRY.pdf" width="100%" height="600px" >}}

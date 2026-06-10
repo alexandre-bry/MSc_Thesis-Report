@@ -13,9 +13,9 @@
 
 #show: slides-theme.with(
   config-info(
-    title: [From Points to Prints],
+    title: [From Points to Prints#linebreak()#text(size: 20pt)[Generating Building Roofprints and Footprints from Airborne Lidar Data and Inaccurate Outlines]],
     subtitle: [A3 Presentation],
-    author: [Alexandre Bry],
+    author: [Alexandre Bry, supervised by Hugo Ledoux, Ravi Peters and Bruno Vallet],
     date: datetime(day: 18, month: 5, year: 2026),
     institution: [TU Delft, IGN],
   ),
@@ -1014,24 +1014,21 @@ We modify the polygons by applying the following rules:
 == Illustration with a real building
 
 #{
-  let current-speaker-notes = [
+  speaker-note[
     Example where it works well:
     - the footprint is *properly aligned* with the façade points
     - we can see *significant roof overhangs for façades oriented west/east* and no significant roof overhangs for north/south, as expected from the orientation of the slanted roof
-  ]
-
-  speaker-note[
-    #current-speaker-notes
+    - the final footprint is *very close to the initial one from BD TOPO* in terms of shape, with a much better alignment on the point cloud
   ]
   let fig-height = 95%
   v(1fr)
 
   subpar.grid(
-    columns: (auto, auto),
+    columns: (1fr, 1fr),
     align: center + horizon,
     caption: [Illustration of the computed footprints.],
-    image("../../images/2026_05_07/Example_building-Footprint-Classification.png", height: fig-height),
-    image("../../images/2026_05_07/Example_building-Footprint_with_roofprint-Classification.png", height: fig-height),
+    image("../../images/2026_06_12/Footprints-Example_1-Points_Classification.png", height: fig-height),
+    image("../../images/2026_06_12/Footprints-Example_1-Points_Z.png", height: fig-height),
   )
 
   v(1fr)
@@ -1039,17 +1036,19 @@ We modify the polygons by applying the following rules:
   [---]
 
   speaker-note[
-    #current-speaker-notes
+    Example where it doesn't work well:
+    - many points were selected even though they are actually on the roof
+    - this resulted in some edges aligning on structures in the roof instead of on the façades
   ]
   let fig-height = 95%
   v(1fr)
 
   subpar.grid(
-    columns: (auto, auto),
+    columns: (1fr, 1fr),
     align: center + horizon,
     caption: [Illustration of the computed footprints.],
-    image("../../images/2026_05_07/Example_building-Footprint-Height.png", height: fig-height),
-    image("../../images/2026_05_07/Example_building-Footprint_with_roofprint-Height.png", height: fig-height),
+    image("../../images/2026_06_12/Footprints-Example_2-Points_Classification.png", height: fig-height),
+    image("../../images/2026_06_12/Footprints-Example_2-Points_Z.png", height: fig-height),
   )
 
   v(1fr)
@@ -1195,7 +1194,7 @@ We modify the polygons by applying the following rules:
   - More complex operations: rotations of edges, insertion/deletion of vertices#pause
 - *Roofprints* and *footprints*:
   - Classification of roofs and facades, but also balconies, chimneys, etc
-  - More robust decision-making for footprints due to the low amount of evidences#pause
+  - More robust decision-making process for footprints due to the low amount of evidences#pause
 - *Other ideas*:
   - More complex representations than 2D partitions to combine roofprints, footprints, balconies, etc
   - Use aerial images to produce roofprints with clean angles

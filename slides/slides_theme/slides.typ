@@ -247,9 +247,9 @@
     }
 
     // Accent line
-    v(spacing-xl)
+    v(spacing-lg)
     accent-line(width: 56pt, colors: c)
-    v(spacing-xl)
+    v(spacing-lg)
 
     // Author
     text(
