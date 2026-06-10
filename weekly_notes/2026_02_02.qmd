@@ -11,7 +11,7 @@ meeting: [Hugo Ledoux, Bruno Vallet]
 
 ### Feedback about A1
 
-This part contains the feedback received after the [A1 presentation](../reports/Project_proposal.qmd).
+This part contains the feedback received after the [A1 presentation](../reports/2026_01-26-A1.qmd).
 
 #### Ravi
 

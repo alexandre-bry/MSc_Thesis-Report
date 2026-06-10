@@ -7,7 +7,7 @@ meeting: [Hugo Ledoux, Bruno Vallet]
 
 ## Results since previous meeting
 
-- Improved the project proposal based on the feedback, and put it on this website [there](../reports/Project_proposal.qmd)
+- Improved the project proposal based on the feedback, and put it on this website [there](../reports/2026_01-26-A1.qmd)
 - Looked in more details into the definitions of footprint and roofprint
 
 ## Material for discussion
