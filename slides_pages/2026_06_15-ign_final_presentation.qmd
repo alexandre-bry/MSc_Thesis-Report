@@ -1,0 +1,13 @@
+---
+title: "2026/06/15 (LASTIG final presentation)"
+date: 2026-06-15
+tags: [monthly]
+meeting: []
+---
+
+## Slides
+
+| | With notes | Without notes |
+| --- | --- | --- |
+| With steps | [Slides](../slides/2026_06_15-ign_final_presentation/slides-animations-notes.pdf) | [Slides](../slides/2026_06_15-ign_final_presentation/slides-animations-no_notes.pdf) |
+| Without steps | [Slides](../slides/2026_06_15-ign_final_presentation/slides-handout-notes.pdf) | [Slides](../slides/2026_06_15-ign_final_presentation/slides-handout-no_notes.pdf) |

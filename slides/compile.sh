@@ -8,6 +8,8 @@ echo "Compiling $INPUT_FILE to $OUTPUT_DIR with theme $THEME..."
 
 ROOT="$(dirname $INPUT_FILE)/../.."
 
+mkdir -p "$OUTPUT_DIR"
+
 # Values that change
 HANDOUT_VALUES=("false" "true")
 NOTES_VALUES=("false" "true")
