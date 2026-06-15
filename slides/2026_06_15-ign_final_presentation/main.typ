@@ -1217,7 +1217,7 @@ We modify the polygons by applying the following rules:
     #v(spacing-md)
 
     #tiaoma.qrcode(slides-link, options: (
-      scale: 2.5,
+      scale: 2.2,
       fg-color: theme-colors.header-bg,
       bg-color: theme-colors.header-text,
     ))
