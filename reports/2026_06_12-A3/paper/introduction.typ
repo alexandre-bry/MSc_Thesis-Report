@@ -1,12 +1,15 @@
 #import "../common_imports.typ": *
 #show: isprs-heading
 
-#import "../data/validation/validation.typ": datasets-infos, datasets-full, datasets-per-category, datasets-labels, simple-categories, categories-infos, metrics-infos, display-table, display-bars, display-evolutions, nice-tables
+#import "../data/validation/validation.typ": (
+  categories-infos, datasets-full, datasets-infos, datasets-labels, datasets-per-category, display-bars,
+  display-evolutions, display-table, metrics-infos, nice-tables, simple-categories,
+)
 
 = Introduction
 
 The geometry of buildings in 2D maps and databases is generally represented through 2D polygons describing either the @footprint or the @roofprint of the building, while in 3D buildings are typically represented by surfacic or volumic polyedral models.
-@lod:pl have been extended by #cite(<Biljecki2016>, form:"prose") to characterise 16 different levels of precision of these models with generally increasing complexity and fidelity to the reality.
+To classify building models, 5 @lod:pl have been introduced by #citep(<Groger2012>), before being extended by #cite(<Biljecki2016>, form: "prose") into 16 different levels of precision of these models with generally increasing complexity and fidelity to the reality.
 These @lod:pl are illustrated in @fig:lods-illustration.
 As pointed out by the authors, the crucial properties of a building model depend completely on the application.
 For example, an accurate footprint is more important than a proper roof shape to estimate the exact internal area available in a building.
@@ -25,8 +28,8 @@ These choices are often data-driven: when measurements are made by experts direc
 When measurements are made from aerial data -- usually images or @lidar -- the roof is the simplest element to identify and annotate, leading to the creation of a @roofprint.
 Other decisions also have to be made when creating a single horizontal polygon for a building, the simplest example being the inclusion or exclusion of other overhanging objects such as balconies.
 
-The difference between the @roofprint and the @footprint is only meaningful when the roof extends beyond the façades of the building.
-These elements are called roof overhangs and can be found in many buildings in Europe.
+The difference between the @roofprint and the @footprint is only meaningful when the roof extends beyond the façades of the building or in cases of underpasses through the building.
+The parts of the roof beyond the façades are called roof overhangs and can be found in many buildings in Europe.
 These appear in the @lod classification at levels 2.3 and 3.1.
 Sometimes, as in the example of the @bdtopo, buildings are represented as a mix of @footprint:pl and @roofprint:pl.
 This awkward situations is explained by the fusion of two datasets that were historically created and maintained by two different French institutions.
@@ -43,7 +46,7 @@ Furthermore, the roof overhangs create occlusion which reduces further the amoun
 
 #[
   #import cetz.draw: *
-  
+
   #let building-color = blue
   #let building-stroke = building-color + 1pt
   #let pulse-color = green.darken(20%)
@@ -60,20 +63,20 @@ Furthermore, the roof overhangs create occlusion which reduces further the amoun
   #let limits-x = (0, 1.9, 3.9, 5.6, 7.4)
   #let scenarios = (
     (
-      data: ((limits-x.at(0), 0), 2, 0.8, 30deg, 0.4, pulse-start-y, pulses-1), 
-      label: ([Multi-echo hitting the ground], limits-x.at(0), limits-x.at(1))
+      data: ((limits-x.at(0), 0), 2, 0.8, 30deg, 0.4, pulse-start-y, pulses-1),
+      label: ([Multi-echo hitting the ground], limits-x.at(0), limits-x.at(1)),
     ),
     (
       data: ((limits-x.at(1), 0), 2, 0.8, 30deg, 0.4, pulse-start-y, pulses-2),
-      label: ([Single-echo with next point on the ground], limits-x.at(1), limits-x.at(2))
+      label: ([Single-echo with next point on the ground], limits-x.at(1), limits-x.at(2)),
     ),
     (
       data: ((limits-x.at(2), 0), 3, 0.8, 30deg, 0.2, pulse-start-y, pulses-1),
-      label: ([Multi-echo hitting the façade], limits-x.at(2), limits-x.at(3))
+      label: ([Multi-echo hitting the façade], limits-x.at(2), limits-x.at(3)),
     ),
     (
       data: ((limits-x.at(3), 0), 3, 0.8, 30deg, 0.2, pulse-start-y, pulses-2),
-      label: ([Single-echo with next point on the façade], limits-x.at(3), limits-x.at(4))
+      label: ([Single-echo with next point on the façade], limits-x.at(3), limits-x.at(4)),
     ),
   )
 
@@ -81,12 +84,18 @@ Furthermore, the roof overhangs create occlusion which reduces further the amoun
     let ((x1, y1), (x2, y2)) = l1
     let ((x3, y3), (x4, y4)) = l2
 
-    let intersec-x = ((x1*y2 - y1*x2)*(x3 - x4) - (x1 - x2)*(x3*y4 - y3*x4)) / ((x1 - x2)*(y3 - y4) - (y1 - y2)*(x3 - x4))
-    let intersec-y = ((x1*y2 - y1*x2)*(y3 - y4) - (y1 - y2)*(x3*y4 - y3*x4)) / ((x1 - x2)*(y3 - y4) - (y1 - y2)*(x3 - x4))
+    let intersec-x = (
+      ((x1 * y2 - y1 * x2) * (x3 - x4) - (x1 - x2) * (x3 * y4 - y3 * x4))
+        / ((x1 - x2) * (y3 - y4) - (y1 - y2) * (x3 - x4))
+    )
+    let intersec-y = (
+      ((x1 * y2 - y1 * x2) * (y3 - y4) - (y1 - y2) * (x3 * y4 - y3 * x4))
+        / ((x1 - x2) * (y3 - y4) - (y1 - y2) * (x3 - x4))
+    )
 
     return (intersec-x, intersec-y)
   }
-  
+
   #let optimal-pulse(roof-edge-xy, vertical-angle, start-y, facade-x, ground-y, color) = {
     let (roof-edge-x, roof-edge-y) = roof-edge-xy
     let start-x = roof-edge-x + (start-y - roof-edge-y) * calc.tan(vertical-angle)
@@ -109,12 +118,15 @@ Furthermore, the roof overhangs create occlusion which reduces further the amoun
 
     let hit-roof = false
     let roof-point = (0, 0)
-    if (start-shift-x <= 0 ) {
+    if (start-shift-x <= 0) {
       // Intersection with the roof edge
       hit-roof = true
-      roof-point = intersection-lines(roof-edge, ((start-x, start-y), (start-x + 1, start-y + 1 / calc.tan(vertical-angle))))
+      roof-point = intersection-lines(roof-edge, (
+        (start-x, start-y),
+        (start-x + 1, start-y + 1 / calc.tan(vertical-angle)),
+      ))
     }
-    
+
     let hit-bdg-grnd = false
     let bdg-grnd-point = (0, 0)
     if (start-shift-x >= 0) {
@@ -158,18 +170,18 @@ Furthermore, the roof overhangs create occlusion which reduces further the amoun
     )
     let overhang-points = (
       (sx + width, sy + height - width * roof-factor),
-      (sx + width + overhang, sy + height - (width + overhang) * roof-factor), 
+      (sx + width + overhang, sy + height - (width + overhang) * roof-factor),
     )
 
     let roof-edge = overhang-points
-    
+
     line(..house-points, close: true, stroke: building-stroke, fill: building-color)
     line(..overhang-points, stroke: building-stroke)
 
     for (vertical-angle, x-shifts) in pulses {
       for x-shift in x-shifts {
-        pulse(roof-edge, vertical-angle, pulse-height, x-shift, sx+width, sy)
-      }     
+        pulse(roof-edge, vertical-angle, pulse-height, x-shift, sx + width, sy)
+      }
     }
   }
 
@@ -213,46 +225,44 @@ Furthermore, the roof overhangs create occlusion which reduces further the amoun
         text-formatted,
         width: 100%,
         height: 100%,
-        inset: (left: 0.0em, right: 0.8em)
+        inset: (left: 0.0em, right: 0.8em),
       ),
     )
   }
-  
+
   #figure(
-    cetz.canvas(
-      {
-        for scenario in scenarios {
-          let (data, label) = scenario
-          house(..data)
-          scenario-label(..label)
-        }
-        legend((-0.5, 4), "north-west", 0.3)
+    cetz.canvas({
+      for scenario in scenarios {
+        let (data, label) = scenario
+        house(..data)
+        scenario-label(..label)
       }
-    ),
+      legend((-0.5, 4), "north-west", 0.3)
+    }),
     caption: [Illustration in profile view of the different scenarios for consecutive pulses around a roof edge.],
   ) <fig:illustration-vertical-gap>
 ]
 
 Therefore, with these methods, the façades are most often only a downwards extrusion of the roof.
-This results in incorrectly positioned façades, and the volume of the building is often overvalued. 
+This results in incorrectly positioned façades, and the volume of the building is often overvalued.
 Some applications like lighting simulations or texturing of the façades would benefit from correctly positioning both the end of the roof and the façades, which is not possible for building with overhangs in #lod-version(2.2).
-An illustration of the strengths and weaknesses of these methods is the @3dbag, which contains more than 10M buildings covering the whole of the Netherlands #cite(<Peters2022>, form: "normal") and was generated using the @ahn and the @bag as inputs, the Dutch equivalents of the @lidarhd and the @bdtopo respectively.
+An illustration of the capabilities of these methods is the @3dbag, which contains more than 10M buildings covering the whole of the Netherlands #cite(<Peters2022>, form: "normal") and was generated using the @ahn and the @bag as inputs, the Dutch equivalents of the @lidarhd and the @bdtopo respectively.
 The 3D models have very accurate roofs, but the façades depend on the input that was used, either a @footprint or a @roofprint.
 
 As explained in @hea:related-work, there is little research on the distinction between @footprint:pl and @roofprint:pl, as well as in the ability to produce both from @als data.
 This is also the case for modelling the roof overhangs to create #lod-version(2.3) buildings, which is the 3D counterpart of this 2D distinction.
 
 In this context, we propose in this paper a method to address at the same time the registration of building @outline:pl and the creation of both a @roofprint and a @footprint for each building in @hea:methodology.
-Our method takes as input building @outline:pl (which can be anything between a @footprint and a @roofprint) and high-density @als data, to create consecutively for each building a @roofprint and a @footprint coherent with the input point cloud (see @hea:input-data).
+Our method takes as input building @outline:pl (which can be anything between a @footprint and a @roofprint) and high-density @als data, to create consecutively for each building a @roofprint and a @footprint aligned with the input point cloud (see @hea:input-data).
 
 The method was tested on the two French datasets @bdtopo and @lidarhd with promising results displayed in @hea:experiments.
 These experiments displayed how the method is capable of repositioning the initial imprecise @outline:pl while deforming them if necessary.
 #{
   let format-averages-cat(category-key) = {
     let formattings = (
-      iou : avg => [#{calc.round(100 * avg, digits: 2)}%],
-      centroid_distance: avg => [#{calc.round(avg, digits: 3)}~m],
-      chamfer: avg => [#{calc.round(avg, digits: 3)}~m],
+      iou: avg => [#{ calc.round(100 * avg, digits: 2) }%],
+      centroid_distance: avg => [#{ calc.round(avg, digits: 3) }~m],
+      chamfer: avg => [#{ calc.round(avg, digits: 3) }~m],
     )
     let values = (:)
     for metric-infos in metrics-infos.values() {

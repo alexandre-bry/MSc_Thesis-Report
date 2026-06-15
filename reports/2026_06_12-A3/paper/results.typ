@@ -1,13 +1,16 @@
 #import "../common_imports.typ": *
 #show: isprs-heading
 
-#import "../data/validation/validation.typ": roofprints-iter-n-label, datasets-infos, datasets-full, datasets-per-category, datasets-labels, simple-categories, categories-infos, metrics-infos, display-table, display-bars, display-evolutions, nice-tables
+#import "../data/validation/validation.typ": (
+  categories-infos, datasets-full, datasets-infos, datasets-labels, datasets-per-category, display-bars,
+  display-evolutions, display-table, metrics-infos, nice-tables, roofprints-iter-n-label, simple-categories,
+)
 
 = Experiments with real-world data and discussion <hea:experiments>
 
 == Validation dataset
 
-To assess and validate the method, we created a validation dataset with accurate and precise @roofprint:pl.
+To assess and validate the method, we manually created a validation dataset with accurate and precise @roofprint:pl.
 Our main objectives with the creation of this dataset are as follows:
 + it should allow for one-to-one comparisons on individual buildings with the @bdtopo: the identifiers of the new dataset are the ones of the @bdtopo and hopefully correspond to the same actual buildings,
 + the @roofprint:pl should be aligned on the @lidarhd dataset, which is assumed to be the most precise and accurate data source available,
@@ -36,10 +39,10 @@ This was adapted individually to every building, with aerial photos helping to i
 
 However, we did not create a dataset for @footprint:pl.
 The main reason for this is the lack of time which meant having to prioritise some elements in the dataset compared to others.
-Multiple reasons lead us to dismissing @footprint:pl in the dataset to the benefit of @roofprint:pl:
+Multiple reasons lead us to dismissing @footprint:pl #review-ravi[could you nevertheless do a qualitative assesment, by look at some (common) success and failures cases?] in the dataset to the benefit of @roofprint:pl:
 - qualitatively, the method seemed more robust and accurate for @roofprint:pl than for @footprint:pl,
 - a @roofprint dataset with diverse buildings seemed more interesting than two smaller datasets for @roofprint:pl and @footprint:pl,
-- approximately #{calc.round(100 * bd-topo-origins.cadastre / bd-topo-origins.values().sum(), digits: 1)}% of the @bdtopo @outline:pl are already @footprint:pl.
+- approximately #{ calc.round(100 * bd-topo-origins.cadastre / bd-topo-origins.values().sum(), digits: 1) }% of the @bdtopo @outline:pl are already @footprint:pl.
 
 We then picked three areas with different types of buildings, to test the method in different situations.
 We split the buildings in four different categories (see @fig:validation-dataset):
@@ -51,13 +54,13 @@ We split the buildings in four different categories (see @fig:validation-dataset
 Note that these numbers are the exact numbers of @roofprint:pl, and buildings were split exactly as in the @bdtopo.
 This means that one @roofprint:pl may contain many building units, or one building unit may be split in multiple @roofprint:pl.
 For example, the #categories-infos.adjacent_houses.name contains two blocks, one of them being split in individual houses while the other one is not (as shown in @fig:validation-dataset-ozoir-south).
-Therefore the amount of building units is likely closer to #{datasets-per-category.adjacent_houses.at(0).len() + 20}.
+Therefore the amount of building units is likely closer to #{ datasets-per-category.adjacent_houses.at(0).len() + 20 }.
 
 #subpar.super(
   caption: [Validation dataset.],
   scope: "parent",
   placement: auto,
-  label: <fig:validation-dataset>
+  label: <fig:validation-dataset>,
 )[
   #let height = auto
   #grid(
@@ -65,7 +68,7 @@ Therefore the amount of building units is likely closer to #{datasets-per-catego
     gutter: 2mm,
     figure(
       image("../figures/Validation/Validation_dataset-Ozoir_north.png", height: height),
-      caption: [Area in Ozoir-la-Ferrière with isolated houses and small sheds.]
+      caption: [Area in Ozoir-la-Ferrière with isolated houses and small sheds.],
     ),
     [
       #figure(
@@ -75,7 +78,7 @@ Therefore the amount of building units is likely closer to #{datasets-per-catego
     ],
     figure(
       image("../figures/Validation/Validation_dataset-Paris.png", height: height),
-      caption: [Area in Paris with mainly adjacent blocks of flats.]
+      caption: [Area in Paris with mainly adjacent blocks of flats.],
     ),
   )
 ]
@@ -89,7 +92,10 @@ We use three different metrics to evaluate a given polygon $cal(P)$ compared to 
 + The Chamfer distance.
   Points are sampled on the two polygons with a step size $delta$, resulting in two point clouds $P$ and $Q$.
   The distance is then defined as:
-  $ "Chamfer"(cal(P), cal(Q)) = 1/2 (&sum_(p in P) min_(q in Q) |p - q| #h(10mm)\ + &sum_(q in Q) min_(p in P) |q - p|) $
+  $
+    "Chamfer"(cal(P), cal(Q)) = 1/2 ( & sum_(p in P) min_(q in Q) |p - q| #h(10mm) \
+                                    + & sum_(q in Q) min_(p in P) |q - p|)
+  $
 + The centroid distance, defined as the distance between the centroids of the two polygons.
 
 Overall, the different metrics show that our method reconstructs @roofprint:pl that really improve the initial @outline:pl from the @bdtopo.
@@ -110,29 +116,29 @@ As displayed in @fig:valid-res-table-all, all the metrics are significantly impr
   #for (category, caption) in categories-captions.pairs() {
     let dataset = datasets-per-category.at(category)
     let fig-cat = [
-        #figure(
-          display-table(dataset, datasets-labels, metrics-infos, text-size: 9pt),
-          caption: caption
-        ) #label("fig:valid-res-table-" + category)
-      ]
+      #figure(
+        display-table(dataset, datasets-labels, metrics-infos, text-size: 9pt),
+        caption: caption,
+      ) #label("fig:valid-res-table-" + category)
+    ]
     figures.push(fig-cat)
   }
-  
+
   #let fig-all = [
     #figure(
       display-table(datasets-full.values(), datasets-labels, metrics-infos, text-size: 9pt),
-      caption: [Whole dataset.]
+      caption: [Whole dataset.],
     ) <fig:valid-res-table-all>
   ]
-  
+
   #for category in simple-categories {
     let dataset = datasets-per-category.at(category)
     let fig-cat = [
-        #figure(
-          display-table(dataset, datasets-labels, metrics-infos, text-size: 9pt),
-          caption: [Category #categories-infos.at(category).name.]
-        ) #label("fig:valid-res-table-" + category)
-      ]
+      #figure(
+        display-table(dataset, datasets-labels, metrics-infos, text-size: 9pt),
+        caption: [Category #categories-infos.at(category).name.],
+      ) #label("fig:valid-res-table-" + category)
+    ]
     figures.push(fig-cat)
   }
 
@@ -157,11 +163,12 @@ Moreover, the final metrics are much worse for the #categories-infos.low_sheds.n
 First, buildings in this category usually have smaller areas, meaning that the same shift will result in lower #metrics-infos.iou.name values.
 Then, their initial position is significantly worse than for the other categories, as can be seen with the high values of #metrics-infos.centroid_distance.name for the #datasets-infos.bdtopo.name.
 Finally, the parameters that we used to run the method were targeting buildings which roof edges were at at least 2 metres above the ground, which is not always the case in this category.
+#review-ravi[shouldnt that be mentioned in 3.2.1? assuming this 2m filter is done prior to finding the roof edge points]
 
 To get a better understanding of what actually happens, we display the results in two different ways.
 First, @fig:valid-res-bar-low_sheds shows the distributions of these metrics at every iteration of the algorithm.
 Then, @fig:valid-res-evolutions-low_sheds shows the evolution of the metric for every single building in the #categories-infos.low_sheds.name category.
-This shows that most of the buildings for which it was initially correct get better, while for some of them there is no evolution, which is often explained by the algorithm having identified no useful point in their neighbourhood.
+This shows that most of the buildings for which it was initially correct get better, while for some of them there is no change, which is often explained by the algorithm having identified no useful point in their neighbourhood.
 It only gets really worse for 5 out of the #datasets-per-category.low_sheds.at(0).len() in that category.
 
 #[
@@ -181,11 +188,20 @@ It only gets really worse for 5 out of the #datasets-per-category.low_sheds.at(0
     let (min, max) = mins-maxs-bars.at(metric-infos.key)
     let steps = steps-bars.at(metric-infos.key)
     let fig-cat = [
-        #figure(
-          display-bars(datasets-per-category.low_sheds, datasets-labels, metric-infos, steps: steps, min: min, max: max, height: 6cm, width: 1.1cm),
-          caption: [#metric-infos.name.]
-        ) #label("fig:valid-res-bar-" + categories-infos.low_sheds.key + "-" + metric-infos.key)
-      ]
+      #figure(
+        display-bars(
+          datasets-per-category.low_sheds,
+          datasets-labels,
+          metric-infos,
+          steps: steps,
+          min: min,
+          max: max,
+          height: 6cm,
+          width: 1.1cm,
+        ),
+        caption: [#metric-infos.name.],
+      ) #label("fig:valid-res-bar-" + categories-infos.low_sheds.key + "-" + metric-infos.key)
+    ]
     figures.push(fig-cat)
   }
   #subpar.super(
@@ -214,11 +230,17 @@ It only gets really worse for 5 out of the #datasets-per-category.low_sheds.at(0
   #for (idx, metric-infos) in metrics-infos.values().enumerate() {
     let flip-color-map = flip-color-map-evolutions.at(metric-infos.key)
     let fig-cat = [
-        #figure(
-          display-evolutions(datasets-per-category.low_sheds, datasets-labels, metric-infos, flip-color-map: flip-color-map, height: 6cm),
-          caption: [#metric-infos.name.]
-        ) #label("fig:valid-res-evolutions-" + categories-infos.low_sheds.key + "-" + metric-infos.key)
-      ]
+      #figure(
+        display-evolutions(
+          datasets-per-category.low_sheds,
+          datasets-labels,
+          metric-infos,
+          flip-color-map: flip-color-map,
+          height: 6cm,
+        ),
+        caption: [#metric-infos.name.],
+      ) #label("fig:valid-res-evolutions-" + categories-infos.low_sheds.key + "-" + metric-infos.key)
+    ]
     figures.push(fig-cat)
   }
   #subpar.super(
@@ -271,7 +293,7 @@ When there is a large building close by, the polygon ends up fitting to this bui
         image("../figures/Validation/Validation_dataset-Ozoir_south-Roofprints_3.png", height: height),
         caption: [Validation and #datasets-infos.iter3.label.],
       ),
-      
+
       figure(
         image("../figures/Validation/Validation_dataset-Paris-BD_TOPO.png", height: height),
         caption: [Validation and @bdtopo.],

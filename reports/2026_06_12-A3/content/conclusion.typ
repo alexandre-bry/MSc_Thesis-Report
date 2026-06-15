@@ -2,10 +2,12 @@
 
 = Conclusion <hea:conclusion>
 
+#review-ravi[try to explicity get back to the research questions posed in the introduction]
+
 With this thesis, I proposed a method to generate @roofprint:pl and @footprint:pl sequentially from @als data.
 The same general idea is used for the two @outline:pl: first identify the points containing information about the @outline, and then iteratively deform the initial imprecise @outline to fit with the selected points.
 
-I showed how some simple topology-aware operations on @als point clouds are capable of identifying most of the points on roof edges.
+I showed how simple topology-aware operations on @als point clouds are capable of identifying most of the points on roof edges.
 I also showed how identifying points for the façades becomes significantly easier despite their sparsity once a 3D roof model is obtained using the @roofprint computed previously.
 Therefore, the order in which creating the @roofprint and the @footprint is of great importance.
 Being able to use at the same time the points on the ground and the points on the façades proved to be challenging but very promising, as the points hitting the ground under the roof are very valuable and sometimes the only available information about the façade.

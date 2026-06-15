@@ -14,9 +14,10 @@ However, most of these methods struggle to produce clean polygons directly and t
 This is also often true for methods that use images as an input (in combination or not with @als data), as going from rasters to clean and accurate polygons is not trivial.
 Therefore, starting from already clean polygonal @outline:pl to improve them can significantly improve the quality of the final @outline:pl.
 
-Regarding roof overhangs, the most common method to estimate them among the few related articles consists in sweeping vertical planes perpendicularly to the @roofprint edges or to the @footprint edges depending on what was computed first.
-Then, a best-fitting plane is determined among these planes with different criteria.
-In #cite(<Panday2012>, form: "prose"), a correlation score is computed for each plane, and the best result is kept only if it represents a sharp enough peak compared to its neighbours.
+Regarding roof overhangs, the most common method to estimate them among the few related articles consists in taking the vertical plane that passes through the existing edge, and sweep it in the perpendicular direction.
+Depending on what was computed first, the existing edge can be a @roofprint edges or a @footprint edge.
+Then, a best-fitting plane is determined among these planes with different criteria, by matching with the available data.
+In #cite(<Panday2012>, form: "prose"), a correlation score is computed for each plane using a point cloud, and the best result is kept only if it represents a sharp enough peak compared to its neighbours.
 For each edge of the @footprint, #cite(<Dahlke2015>, form: "prose") computes the median height on segments parallel to the edge using a precise 2.5D @dsm with a resolution between 5 and 20 cm.
 Then, they use the inflection point of the height variation as the @roofprint edge.
 In #cite(<Frommholz2017>, form: "prose"), the @roofprint is projected onto the 5 cm resolution @dsm and the zero-crossings of the second-order derivative of height variation are used to estimate the size of the roof overhang.
@@ -37,8 +38,10 @@ A first model identifies building pixels, followed by a residual auto-encoder to
 Registration of building outlines based on point cloud data has already been studied by #cite(<Boussik2026>, form: "prose").
 Different kinds of transformations were assessed: rigid transformations combining global translations and rotations, non-rigid transformations with individual displacements of the vertices, and semi-rigid transformations with individual displacements of edges along their normals.
 Semi-rigid transformations of the polygons gave the best results in their case studies and guided us towards this choice.
-However, compared to the way they cluster the edges beforehand based on angles, we softened the constraint by clustering dynamically when displacements break the validity of the polygon, therefore allowing for more precise modifications of the polygons in cases of rounded @outline:pl.
-As illustrated by #citep(<Oosterom2005>), the validity of polygons is a very complex topic, but in this paper, we focus on preventing rings from self-intersecting, and assume that the method can be extended with more complex validity checks if necessary.
+However, we introduced a different approach to clustering the edges to prevent self-intersections.
+In their method, they cluster the edges beforehand based on angles to prevent self-intersections for neighbour edges which are almost parallel.
+We softened the constraint by clustering dynamically when displacements break the validity of the polygon, therefore allowing for more precise modifications of the polygons in cases of rounded @outline:pl.
+As illustrated by #citep(<Oosterom2005>), the validity of polygons is a very complex topic, but in this paper, we focus solely on preventing rings from self-intersecting, and assume that the method can be extended with more complex validity checks if necessary.
 
 Regarding reference data, to the best of our knowledge, there is a lack of datasets featuring @als data combined with both @footprint:pl and @roofprint:pl, making it difficult to evaluate the results of the methods that we propose.
 The only mention of a similar dataset that we found is #cite(<Dai2025>, form: "prose") stating that they will release a dataset with more than 3000 building @footprint:pl based on the @als dataset called DALES #cite(<Varney2020>, form: "normal").

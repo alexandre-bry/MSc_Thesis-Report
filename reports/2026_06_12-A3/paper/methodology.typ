@@ -3,7 +3,7 @@
 
 = Methodology <hea:methodology>
 
-The method, shown in @fig:overview-pipeline, aims at generating two 2D polygons for each building --- one for the @roofprint and one for the @footprint --- from two main inputs: @als data and an initial building @outline.
+Our method, shown in @fig:overview-pipeline, aims at generating two 2D polygons for each building --- one for the @roofprint and one for the @footprint --- from two main inputs: @als data and an initial building @outline.
 Due to the nature of @als data, the density of points on roof surfaces is significantly higher than on façades, which is the reason why we first focus on the estimation of roofprints and then footprints.
 
 #figure(
@@ -47,9 +47,10 @@ Our method expects the point cloud to be precisely and accurately georeferenced,
     image("../figures/Comparison_BD_TOPO_LiDAR_HD-1.png", height: height),
     image("../figures/Comparison_BD_TOPO_LiDAR_HD-2.png", height: height),
     image("../figures/Comparison_BD_TOPO_LiDAR_HD-3.png", height: height),
+
     gutter: 0.1cm,
     caption: [A few examples of inputs with the expected strengths and weaknesses: great shape, approximate positioning and size. Buildings from the @bdtopo located in Ozoir-la-Ferrière.],
-    label: <fig:illustration-lidarhd-bdtopo-differences>
+    label: <fig:illustration-lidarhd-bdtopo-differences>,
   )
 ]
 
@@ -60,7 +61,7 @@ To compute the @roofprint:pl and @footprint:pl, a crucial part of the process is
 In both cases, the deformation of the polygon are conducted in 2D by dropping the vertical component of the points, but the process of selecting the points is inherently 3D.
 After selecting the points, the process to produce @roofprint:pl and @footprint:pl is explained in @hea:polygon-deformation.
 
-=== @roofprint:cap:pl evidences <hea:roofprint-points>
+=== @roofprint:cap evidence <hea:roofprint-points>
 
 To select points of interest for the @roofprint, we look for points at the edges of the roof.
 We use two properties of @als point clouds:
@@ -83,7 +84,7 @@ The second one are surfaces such as glass which create a return but also let the
 Elements with glass roof such as greenhouses or conservatories result in pulses very similar to roof edges, with one return on the roof and one on the ground.
 The third one are vertical façades, which can get several points below each other at different heights.
 
-=== @footprint:cap:pl evidences <hea:footprint-points>
+=== @footprint:cap evidence <hea:footprint-points>
 
 Points useful for the @footprint:pl are sparser and more difficult to identify than points on the roof.
 Therefore, we look for these points only once the @roofprint has already been computed to use it as a guide.
@@ -104,7 +105,7 @@ To be able to transform the initial @outline:pl into accurate @roofprint:pl and 
 + a global shift of the polygon in one direction to account for imprecise georeferencing,
 + individual displacements of edges to account for size and shape differences between @footprint:pl and @roofprint:pl.
 
-On the other hand, based on the previous work of #cite(<Boussik2026>, form:"prose"), some constraints are necessary to reduce the complexity of the search and to preserve the quality of the initial @outline:pl.
+On the other hand, based on the previous work of #cite(<Boussik2026>, form: "prose"), some constraints are necessary to reduce the complexity of the search and to preserve the quality of the initial @outline:pl.
 The three main constraints are the following:
 + edges cannot be rotated, as their angles are assumed to be accurate,
 + polygons should keep their shape and edges cannot be flipped (see @fig:flipping-edge) but can be reduced to a single point,
@@ -113,7 +114,7 @@ The three main constraints are the following:
 #[
   #import cetz.draw: *
 
-  #let scale = 0.8  
+  #let scale = 0.8
   #figure(
     [
       #set text(fill: blue.darken(10%), size: 8pt, style: "italic")
@@ -121,27 +122,27 @@ The three main constraints are the following:
         x: scale,
         y: scale,
         {
-          content((-3, 1), [Before], anchor: "south", padding: (bottom: 0.3),)
+          content((-3, 1), [Before], anchor: "south", padding: (bottom: 0.3))
           line((-5, 0.4), (-3, 0), (-3, 1.0), (-1, 0.9), stroke: black + 1pt)
           mark((-3, 0.55), (-3, 1.0), symbol: ">>", stroke: black + 0.5pt, fill: red, anchor: "center", scale: 1.5)
           line((-0.5, 0), (0.5, 0), mark: (end: ">"), stroke: blue, fill: blue)
-          content((3, 1), [After], anchor: "south", padding: (bottom: 0.3),)
+          content((3, 1), [After], anchor: "south", padding: (bottom: 0.3))
           line((1, 0.4), (3, 0), (3, -0.9), (5, -1.0))
           mark((3, -0.5), (3, -0.9), symbol: ">>", stroke: black + 0.5pt, fill: red, anchor: "center", scale: 1.5)
-          line((3, 0), (3, 1.0), (5, 0.9), stroke: (paint: black, thickness:1pt, dash: "dashed"))
-        }
+          line((3, 0), (3, 1.0), (5, 0.9), stroke: (paint: black, thickness: 1pt, dash: "dashed"))
+        },
       )
     ],
-    caption: [Illustration an edge being flipped by the translation of a neighbour edge.]
+    caption: [Illustration an edge being flipped by the translation of a neighbour edge.],
   ) <fig:flipping-edge>
 ]
 
 
 We therefore define the polygon deformation problem as an optimisation problem, combining two parts.
-First, we define an energy that the optimal polygon should minimise, which is based on the input point cloud.
+We present in @hea:matching_algo an iterative algorithm to incrementally solve this problem.
+The first element of this algorithm is a method to produce new propositions of polygons which satisfy the aforementioned constraints, explained in @hea:deformation-algo.
+The second element is an energy that the optimal polygon should minimise, which is based on the input point cloud.
 This energy is completely different for the @roofprint:pl and the @footprint:pl, as presented respectively in @hea:particularities-roofprints and @hea:particularities-footprints.
-Then, we propose in @hea:deformation-algo a method to produce new propositions of polygons which satisfy the aforementioned constraints.
-Finally, these two elements are combined in @hea:matching_algo into an iterative algorithm to incrementally improve the polygon. 
 
 === Matching algorithm <hea:matching_algo>
 
@@ -154,6 +155,8 @@ For each group of lines:
 
 A pseudocode implementation of the algorithm is shown in @alg:polygon-matching.
 This algorithm takes as input all the groups of lines $G$ and all the points $P$ that the polygons must be deformed on.
+Groups of lines contain the lines that correspond to shared edges: edges from different polygons that are aligned and intersect.
+This is explained further in @hea:deformation-algo.
 
 #[
   #import algorithmic: algorithm
@@ -164,17 +167,18 @@ This algorithm takes as input all the groups of lines $G$ and all the points $P$
       vstroke: .5pt + luma(200),
       {
         import algorithmic: *
+        let CommentIt(body) = Comment(text(style: "italic", body))
         Function(
           "matching_algorithm",
           ($G$, $P$),
           {
-            Comment[_The order to iterate over $G$ matters_]
+            CommentIt[The order to iterate over $G$ matters]
             For(
               [$g_0$ in $G$],
               {
                 Assign[$S$][a list of potential shifts perpendicular to the lines in $G$]
                 LineBreak
-                Comment[_Compute the deformed polygons and their energy_]
+                CommentIt[Compute the deformed polygons and their energy]
                 Assign[$"shifted_groups"$][empty dictionary]
                 Assign[$"energies"$][empty dictionary]
                 For(
@@ -182,32 +186,33 @@ This algorithm takes as input all the groups of lines $G$ and all the points $P$
                   {
                     Assign(
                       $"shifted_groups"[arrow(s)]$,
-                      FnInline("deformation_one_edge", [$g_0$, $arrow(s)$])
+                      FnInline("deformation_one_edge", [$g_0$, $arrow(s)$]),
                     )
                     Assign(
                       $"energies"[arrow(s)]$,
-                      FnInline("compute_energy", [$"shifted_groups"[arrow(s)]$, $arrow(s)$, $P$])
+                      FnInline("compute_energy", [$"shifted_groups"[arrow(s)]$, $arrow(s)$, $P$]),
                     )
-                  }
+                    CommentIt[*deformation_one_edge* is defined in @alg:polygon-deformation and *compute_energy* is defined in @hea:particularities-roofprints and @hea:particularities-footprints]
+                  },
                 )
                 LineBreak
-                Comment[_Select the best shift and apply it to the relevant lines_]
+                CommentIt[Select the best shift and apply it to the relevant lines]
                 Assign[$arrow(s)_("max")$][shift $arrow(s)$ with the lowest energy]
                 For(
                   [$g$ in $"shifted_groups"[arrow(s)_max]$],
                   {
                     [Shift all the lines in $g$ by $arrow(s)_max$]
-                  }
+                  },
                 )
-              }
+              },
             )
           },
         )
-      }
+      },
     ),
     kind: "algorithm",
     supplement: [Algorithm],
-    caption: [Polygon matching algorithm. This represents one iteration, which consecutively focuses on each group of lines to find its optimal shift.]
+    caption: [Polygon matching algorithm. This represents one iteration, which consecutively focuses on each group of lines to find its optimal shift.],
   ) <alg:polygon-matching>
 ]
 
@@ -239,14 +244,14 @@ The direction $d_i$ is the unit direction vector of $l_i$.
   )
 
   #let edge-with-name(v1, v2, label: none, name: none, stroke: auto) = {
-    on-layer(layers.edge, line(v1, v2, stroke: stroke, name: name, ))
+    on-layer(layers.edge, line(v1, v2, stroke: stroke, name: name))
     if label != none {
       content(
         (name + ".start", 50%, name + ".end"),
         angle: name + ".end",
         padding: .1,
         anchor: "south",
-        label
+        label,
       )
     }
   }
@@ -258,7 +263,7 @@ The direction $d_i$ is the unit direction vector of $l_i$.
         p,
         padding: .1,
         anchor: anchor,
-        label
+        label,
       )
     }
   }
@@ -278,15 +283,15 @@ The direction $d_i$ is the unit direction vector of $l_i$.
       panic("Expected the line to be a dictionary with 'x' or 'y' as a key")
     }
   }
-  
-  #let line-with-name(v1, v2, min: (-3, -1), max:(4.5, 2.5), label: none, name: none, color: blue, dashed: true) = {
+
+  #let line-with-name(v1, v2, min: (-3, -1), max: (4.5, 2.5), label: none, name: none, color: blue, dashed: true) = {
     let stroke = (paint: color)
     if dashed { stroke.insert("dash", "dashed") }
-    
+
     let (min-x, min-y) = min
     let (max-x, max-y) = max
     let (v1-x, v1-y) = v1
-    
+
     let dir = (v2.at(0) - v1.at(0), v2.at(1) - v1.at(1))
 
     let y-intersec-min-x = intersection(v1, dir, (x: min-x))
@@ -298,7 +303,7 @@ The direction $d_i$ is the unit direction vector of $l_i$.
     if dir.at(0) == 0.0 {
       points = ((v1-x, min-y), (v1-x, max-y))
     } else if dir.at(1) == 0.0 {
-      points = ((min-x, v1-y), (max-x, v1-y))      
+      points = ((min-x, v1-y), (max-x, v1-y))
     } else if dir.at(0) * dir.at(1) > 0.0 {
       let v1-ext-x = calc.max(x-intersec-min-y, min-x)
       let v1-ext-y = calc.max(y-intersec-min-x, min-y)
@@ -316,7 +321,7 @@ The direction $d_i$ is the unit direction vector of $l_i$.
     if (dir.at(0) < 0.0) {
       points = (points.at(1), points.at(0))
     }
-    
+
     on-layer(layers.line, line(points.at(0), points.at(1), stroke: stroke, name: name, mark: (end: ")>", fill: color)))
     if label != none {
       content(
@@ -324,32 +329,36 @@ The direction $d_i$ is the unit direction vector of $l_i$.
         angle: name + ".end",
         padding: .1,
         anchor: "north",
-        label
+        label,
       )
     }
   }
 
   #let edge-direction-with-name(v1, v2, label: none, name: none, stroke: red) = {
     let final-norm = 0.7
-    
+
     let dir = (v2.at(0) - v1.at(0), v2.at(1) - v1.at(1))
     let dir-norm = calc.sqrt(dir.at(0) * dir.at(0) + dir.at(1) * dir.at(1)) / final-norm
     let dir-unit = (dir.at(0) / dir-norm, dir.at(1) / dir-norm)
     let v2-new = (v1.at(0) + dir-unit.at(0), v1.at(1) + dir-unit.at(1))
-    
-    on-layer(layers.direction, line(v1, v2-new, stroke: stroke, name: name, mark: (end: ")>", fill: stroke, scale: 1.0)))
+
+    on-layer(layers.direction, line(v1, v2-new, stroke: stroke, name: name, mark: (
+      end: ")>",
+      fill: stroke,
+      scale: 1.0,
+    )))
     if label != none {
       content(
         (name + ".start", 50%, name + ".end"),
         angle: name + ".end",
         padding: .1,
         anchor: "south",
-        label
+        label,
       )
     }
   }
 
-  #let scale = 1.0 
+  #let scale = 1.0
   #figure(
     [
       #set text(size: 8pt)
@@ -358,32 +367,32 @@ The direction $d_i$ is the unit direction vector of $l_i$.
         y: scale,
         {
           edge-with-name((-3, 2), (-2, 1), label: $e_(i-2)$, name: "e_(i-2)", stroke: (dash: "dotted"))
-          
+
           point-with-name((-2, 1), label: $p_(i-1)$, name: "p_(i-1)")
-          
+
           line-with-name((-2, 1), (0, 0), label: text(fill: blue, $l_(i-1)$), name: "l_(i-1)")
           edge-with-name((-2, 1), (0, 0), label: $e_(i-1)$, name: "e_(i-1)")
           edge-direction-with-name((-2, 1), (0, 0), label: text(fill: red, $d_(i-1)$), name: "d_(i-1)", stroke: red)
-          
+
           point-with-name((0, 0), label: $p_(i)$, name: "p_(i)")
-          
+
           line-with-name((0, 0), (2, 0), label: text(fill: blue, $l_(i)$), name: "l_(i)")
           edge-with-name((0, 0), (2, 0), label: $e_(i)$, name: "e_(i)")
           edge-direction-with-name((0, 0), (2, 0), label: text(fill: red, $d_(i)$), name: "d_(i)", stroke: red)
-          
+
           point-with-name((2, 0), label: $p_(i+1)$, name: "p_(i+1)", anchor: "north-west")
-          
+
           line-with-name((2, 0), (3, 1.5), label: text(fill: blue, $l_(i+1)$), name: "l_(i+1)")
           edge-with-name((2, 0), (3, 1.5), label: $e_(i+1)$, name: "e_(i+1)")
           edge-direction-with-name((2, 0), (3, 1.5), label: text(fill: red, $d_(i+1)$), name: "d_(i+1)", stroke: red)
-          
+
           point-with-name((3, 1.5), label: $p_(i+2)$, name: "p_(i+2)", anchor: "north-west")
-          
+
           edge-with-name((3, 1.5), (4.5, 2), label: $e_(i+2)$, name: "e_(i+2)", stroke: (dash: "dotted"))
-        }
+        },
       )
     ],
-    caption: [Illustration of the mathematical objects for a few edges of a polygon.]
+    caption: [Illustration of the mathematical objects for a few edges of a polygon.],
   ) <fig:mathematical-definitions>
 ]
 
@@ -391,13 +400,7 @@ With these considerations, if we assume that two consecutive lines are never par
 These lines are however more convenient to handle compared to the points, as they can be translated freely along their normals without breaking the constraints.
 
 #let show-property(body) = {
-  align(center,
-    block(inset: (x: 1em),
-      text(style: "italic",
-        body
-      )
-    )
-  )
+  align(center, block(inset: (x: 1em), text(style: "italic", body)))
 }
 
 With this, the property that an edge $e_i$ should not be flipped can still be checked relatively easily by intersecting $l_i$ with both $l_(i-1)$ and $l_(i+1)$ and comparing the edge obtained with $d_i$.
@@ -448,8 +451,8 @@ Here are descriptions for the functions used in this pseudocode:
                     If(
                       [not #CallInline[check_p1][$arrow(s)$, $"shifted_groups"$, $l$] or not #CallInline[check_p2][$arrow(s)$, $"shifted_groups"$, $l$]],
                       Assign[$"to_shift"$][True],
-                      Break
-                    )
+                      Break,
+                    ),
                   ),
                   LineBreak,
                   Comment[_If necessary, shift the group $g$ and add its neighbours_],
@@ -461,23 +464,23 @@ Here are descriptions for the functions used in this pseudocode:
                       Assign[$g_"prev"$][#CallInline[get_group][$l_(i-1)$]],
                       Assign[$g_"next"$][#CallInline[get_group][$l_(i+1)$]],
                       CallInline[push][$"groups_to_process"$, ($g_"prev"$, $g_"next"$)],
-                    )
-                  )
+                    ),
+                  ),
                 )
               },
             )
             Return[$"shifted_groups"$]
           },
         )
-      }
+      },
     ),
     kind: "algorithm",
     supplement: [Algorithm],
-    caption: [Polygon deformation algorithm, responsible for computing the new configuration of all the adjacent polygons after one group of shared edges ($g_0$) was shifted (by $arrow(s)$).]
+    caption: [Polygon deformation algorithm, responsible for computing the new configuration of all the adjacent polygons after one group of shared edges ($g_0$) was shifted (by $arrow(s)$).#review-ravi[I would illustrate this algorithm; how it works visually. Maybe also algo 1]],
   ) <alg:polygon-deformation>
 ]
 
-@alg:polygon-deformation is not optimised for speed but rather simplified for clarity.
+The pseudocode in @alg:polygon-deformation is not optimised for speed but rather simplified for clarity.
 For a given line group $g$, we use its perpendicular unit vector $arrow(n)$ as the direction for the shift.
 Along this direction, we define a set of shifts to try in both directions, ${ k t arrow(n), k in [| -m, m |] }$, with user-defined values for the step size $t$ and maximum shift length $m s$.
 A full iteration of the algorithm in @alg:polygon-matching calls this function once for every pair of group $g$ and shift $arrow(s)$.
@@ -497,17 +500,17 @@ To compute it for a given point $p$, we use the following method:
 + compute the inward vector $v$ as the average of the vectors unit vectors from $p$ to $p_j$: $ v = 1/ (|cal(B)(p, delta)|) sum_(p_j in cal(B)(p, delta)) (p_j - p) / (|p_j - p|) $
 
 The idea behind this formula is that points on the edge of the roof should have in their neighbourhood many points towards the inside of the building, and few points towards the outside.
-Using unit vectors and averaging them gives all points in the neighbourhood the same weight, resulting in a value that could be interpreted as a proxy of the density imbalance direction.
+Using unit vectors and averaging them gives all points in the neighbourhood the same weight, resulting in a value that could be interpreted as a proxy of the direction in which the density of points is higher in the neighbourhood.
 Moreover, the magnitude of the inward vector is an indication of the confidence.
 
 With this inward direction, the score of a point $p_i$ for a line $l_j$ can be defined.
 It is 0 if any of the following conditions is true:
 - the orthogonal projection $p_(i perp j)$ of $p_i$ on the line $l_j$ is outside of the segment defined by $l_(i-1)$ and $l_(i+1)$, or
-- the distance from $p_i$ to $p_(i perp j)$ is greater than a certain threshold $epsilon$, or
+- the distance from $p_i$ to $p_(i perp j)$ is greater than a certain threshold $epsilon_r$, or
 - the dot product of the inward vector $v_i$ of $p_i$ with the normal $n_j$ of $l_j$ oriented towards the inside of the building is negative.
 Otherwise, the score is:
-$ 
-"score"(p_i, l_j) = underbrace((v_i dot n_j), "alignment of\npoint and edge\n'normals'") times underbrace((1 - (|p_i - p_(i perp j)|) / epsilon), "proximity to the edge") >= 0
+$
+  "score"(p_i, l_j) = underbrace((v_i dot n_j), "alignment of\npoint and edge\n'normals'") times underbrace((1 - (|p_i - p_(i perp j)|) / epsilon_r), "proximity to the edge") >= 0
 $
 
 We also associate an intrinsic weight to every point in the point cloud to give more value to the most promising points.
@@ -517,7 +520,7 @@ The weight $w_i$ is a product of two factors between 0 and 1:
 
 Finally, the energy to minimise can be defined as:
 $
-E = underbrace(- sum_(i in P) w_i max_(j in cal(L)) {"score"(p_i, l_j)}, "proximity to the points") + alpha underbrace(sum_(j in cal(L)) (|l_j| - |l_j^0|)^2, "similarity to the initial edges")
+  E = underbrace(- sum_(i in P) w_i max_(j in cal(L)) {"score"(p_i, l_j)}, "proximity to the points") + alpha underbrace(sum_(j in cal(L)) (|l_j| - |l_j^0|)^2, "similarity to the initial edges")
 $
 
 where:
@@ -525,13 +528,13 @@ where:
 - $|l_j|$ and $|l_j^0|$ are the length of edge $l_j$ in the current and initial configurations respectively,
 - $alpha$ is a parameter to adjust between the two terms.
 
-In this energy, 5 main parameters need to be tuned: $delta$ for the inward direction, $epsilon$ for the score of a point on a line, $alpha$ to balance the proximity and regularisation terms in the energy, and two parameters for the intrinsic weights of points.
+In this energy, 5 main parameters need to be tuned: $delta$ for the inward direction, $epsilon_r$ for the score of a point on a line, $alpha$ to balance the proximity and regularisation terms in the energy, and two parameters for the intrinsic weights of points.
 
 === Particularities for the @footprint:pl <hea:particularities-footprints>
 
 To compute the @footprint:pl, we also need to adapt the algorithm, but this time for different reasons.
 
-First, a constraint specific to @footprint:pl is that we want to force them to be included in the @roofprint:pl.
+First, a constraint specific to @footprint:pl is their respective @roofprint:pl to cover them.
 It is tempting to try to enforce this by allowing the polygon deformation algorithm to only shift edges towards the inside of the polygon.
 However, this would create two problems.
 Firstly, if two edges make an angle smaller than 90°, their inward directions are opposite, meaning that the first one could limit the movements of the second one.
@@ -550,7 +553,7 @@ As illustrated in @fig:illustration-facade-points-variation, the amount of such 
   #import cetz.draw: *
 
   #let scale = 0.4
-  
+
   #let building-color = color.red
   #let building-stroke = building-color + 1pt
 
@@ -559,7 +562,7 @@ As illustrated in @fig:illustration-facade-points-variation, the amount of such 
     (10deg, color.green.darken(10%)),
     (15deg, color.green.darken(-30%)),
   )
-  
+
   #let pulse(roof-edge-xy, vertical-angle, start-y, facade-x, ground-y, color) = {
     let (roof-edge-x, roof-edge-y) = roof-edge-xy
     let start-x = roof-edge-x + (start-y - roof-edge-y) * calc.tan(vertical-angle)
@@ -586,17 +589,17 @@ As illustrated in @fig:illustration-facade-points-variation, the amount of such 
     )
     let overhang-points = (
       (sx + width, sy + height - width * roof-factor),
-      (sx + width + overhang, sy + height - (width + overhang) * roof-factor), 
+      (sx + width + overhang, sy + height - (width + overhang) * roof-factor),
     )
 
     let roof-edge = overhang-points.at(1)
-    
+
     line(..house-points, close: true, stroke: color.blue, fill: color.blue)
     line(..overhang-points, stroke: color.blue)
 
     for pulse-instance in pulses {
       let (vertical-angle, color) = pulse-instance
-      pulse(roof-edge, vertical-angle, pulse-height, sx+width, sy, color)      
+      pulse(roof-edge, vertical-angle, pulse-height, sx + width, sy, color)
     }
   }
 
@@ -611,7 +614,7 @@ As illustrated in @fig:illustration-facade-points-variation, the amount of such 
       content(name + ".end", padding: 0.1, [#calc.round(angle.deg())°], anchor: anchor)
     }
   }
-  
+
   #figure(
     cetz.canvas(
       x: scale,
@@ -622,30 +625,36 @@ As illustrated in @fig:illustration-facade-points-variation, the amount of such 
         house((10, 0), 4, 2, 30deg, 0.2, 10, pulses)
         house((15, 0), 6, 2, 30deg, 0.5, 10, pulses)
         pulses-legend(pulses, (0, 10), "mid-west", 0.7)
-      }
+      },
     ),
-    caption: [Illustration in profile view of the highest possible hit on the façade depending on the building and the angle of the pulse.]
+    caption: [Illustration in profile view of the highest possible hit on the façade depending on the building and the angle of the pulse.],
   ) <fig:illustration-facade-points-variation>
 ]
 
 However, even when there is no point on a façade, a pulse can still hit the ground under the roof.
-Assuming that these hits happen outside of the building, which is the case unless the building is made of transparent materials, these points can be used to push the façade further towards the inside.
+In most cases, these hits happen outside of the building.
+Therefore, the corresponding points can be used to push the @footprint edges further towards the inside.
+But if the façade is made of transparent material, as happens with windows for example, the pulses can also hit the inside of the building.
+Often, in this case, the pulse returns two hits: one for the façade and one on the floor of the building.
+The first one is very useful because it indicates the position of the façade, while the second one is misleading because in our case we assume that ground points are outside of the building.
 
-Therefore, the energy that we use for @footprint:pl tries to combine these two elements:
+The energy that we use for @footprint:pl tries to combine the points on the façades and the points on the ground, by looking for:
 - a concentration of points close to the segment,
 - as little points as possible behind the façade.
 
+#review-ravi[This paragraph is not entirely clear to me. Eg what does the part about counting positively and negatively mean? Perhaps an illustration would help.]
 We use the energy illustrated in @fig:energy-footprints.
 The general idea is to count positively the points close enough to the edge (clustering), and negatively the points further towards the inside of the building (penalty).
 To achieve this, we use a signed distance defined as $d_s (p, e) = (p - p_(perp e)) dot e_perp$ where $p_(perp e)$ is the projection of $p$ on $e$ and $e_perp$ is the unit vector perpendicular to $e$ pointing towards the inside of the building.
 This distance is therefore positive if the point is towards the inside of the building and negative otherwise.
 On top of that, based on experiments and qualitative observations, the values of the energy are scaled differently for ground points.
 The intuition behind this is the following.
-For clustering, points on the façades are the most important.  
-For the penalty, we want to prioritise a high density of points instead of having a more inward candidate to win simply with the penalty.  
- 
+For clustering, points on the façades are the most important.
+For the penalty, we want to prioritise a high density of points instead of having a more inward candidate to win simply with the penalty.
+
 #[
   #let x-axis-values = (-0.8, -0.3, 0, 0.3, 1.3, 1.3, 1.8)
+  #let x-axis-labels = ((-0.3, $-epsilon_f$), (0, [0]), (0.3, $epsilon_f$), (1.3, $kappa_f$))
   #let y-axis-values-ground = (0, 0, -0.3, 0, 1.0, 0, 0)
   #let y-axis-values-other = (0, 0, -1.0, 0, 0.3, 0, 0)
   #let stroke = 1pt
@@ -658,9 +667,10 @@ For the penalty, we want to prioritise a high density of points instead of havin
       height: 3cm,
       xlabel: [Signed distance $d_s (p, e)$ from $p$ to $e$ (m)],
       ylabel: [Energy],
-      xaxis: (ticks: x-axis-values.slice(1, -1), subticks: none),
+      xaxis: (ticks: x-axis-labels, subticks: none),
+      // xaxis: (ticks: x-axis-values.slice(1, -1), subticks: none),
       // yaxis: (ticks: (-1, 0, 1), subticks: none),
-  
+
       lq.plot(x-axis-values, y-axis-values-ground, mark: none, label: [Ground], stroke: stroke),
       lq.plot(x-axis-values, y-axis-values-other, mark: none, label: [Other classes], stroke: stroke),
     ),

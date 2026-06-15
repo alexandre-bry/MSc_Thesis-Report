@@ -2,7 +2,7 @@
 title: "2026/06/15 (LASTIG final presentation)"
 date: 2026-06-15
 tags: [monthly]
-meeting: []
+meeting: [Forent Geniet, François Becirspahic, Emmanuel Séguin, Adja-Fatou Mboup, Florence Jacquinod, Mbae Abdou]
 ---
 
 ## Slides

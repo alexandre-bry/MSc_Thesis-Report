@@ -16,7 +16,7 @@ This comes from the unprecedented precision that it brings compared to previous 
 
 One of the many components of the future digital twin is buildings.
 Many algorithms have been developed to try to reconstruct structured and accurate 3D building models from various data sources, including point clouds.
-To characterise the properties of the buildings created by these different methods, @lod:pl have been extended by #citep(<Biljecki2016>) and are illustrated in @fig:lods-illustration.
+To characterise the properties of the buildings created by these different methods, 5 @lod:pl have been introduced by #citep(<Groger2012>), before being extended into 16 @lod:pl described by #citep(<Biljecki2016>) and are illustrated in @fig:lods-illustration.
 One of the current state-of-the-art algorithms was created by researchers at @tudelft and is called #gloss-ref-and-footnote("roofer") #citen(<Paden2024>).
 It was applied to the whole of the Netherlands to create the @3dbag, the first complete dataset of Dutch buildings in #lod-version(2.2) #citen(<Peters2022>).
 This algorithm however requires two input data: a dense @als 3D point cloud and 2D building @outline:pl.
@@ -53,18 +53,17 @@ But in many other applications --- such as taxes or energy consumption --- an ac
 
 The @ign already has a dataset containing building @outline:pl, called @bdtopo.
 However, this dataset has some issues, that can be explained by how it was historically built from different sources.
-First, most @outline:pl (#bd-topo-origins-percent("cadastre")) come from terrain measurements and are therefore @footprint:pl, while most of the rest (#bd-topo-origins-percent("image")) come from aerial image detection and are therefore @roofprint:pl.
-A small proportion was automatically generated from the @lidarhd (#bd-topo-origins-percent("lidarhd")) and the origin of the rest is not specified (#bd-topo-origins-percent("other")).
-The numbers specified above come from the 2026-03-15 version of the @bdtopo.
-Then, the georeferencing of these building @outline:pl is often wrong by up to a few meters.
+Most @outline:pl (#bd-topo-origins-percent("cadastre")) come from terrain measurements and are therefore @footprint:pl, but most of the rest (#bd-topo-origins-percent("image")) come from aerial image detection and are therefore @roofprint:pl.
+A small proportion was automatically generated from the @lidarhd (#bd-topo-origins-percent("lidarhd")) and the origin of the rest is not specified (#bd-topo-origins-percent("other"))#footnote[These numbers come from the 2026-03-15 version of the @bdtopo.].
+The georeferencing of these building @outline:pl is often wrong by up to a few meters.
 This makes combining them with correctly georeferenced point clouds more complicated.
 
 All in all, the current context combines:
-- newly available data with high precision and correct georeferencing (@lidarhd),
 - an objective to build a digital twin of France, including 3D buildings with algorithms which would benefit from or require correct building @outline:pl (such as @roofer),
-- an existing dataset that provides nation-wide and potentially great data but is however missing harmonisation and precise georeferencing (@bdtopo),
+- newly available data with high precision and correct georeferencing (@lidarhd),
 - the example of the Netherlands where a great dataset of 3D building models was built from similar point cloud data (@3dbag from @ahn),
-- an interesting and not yet fully explored question of the possibility of extracting both an accurate @footprint and an accurate @roofprint from point clouds.
+- an interesting and not yet fully explored question of the possibility of extracting both an accurate @footprint and an accurate @roofprint from point clouds,
+- an existing dataset that provides nation-wide and potentially great data but is however missing harmonisation and precise georeferencing (@bdtopo).
 
 Therefore, the research question of this thesis is:
 

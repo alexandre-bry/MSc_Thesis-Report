@@ -5,29 +5,29 @@
 
 == Conclusion
 
-To our knowledge, this method is innovative for several reasons.
+Our method is innovative for two reasons.
 First, we introduced a simple but efficient way to create new valid polygons from existing polygons with our polygon deformation algorithm.
-Our method successively leverages the strengths of existing @outline:pl while preserving a lot of freedom in the deformation of the polygons, allowing not only for global translations and scaling but also more complex local deformations.
+It successively leverages the strengths of existing @outline:pl while preserving a lot of freedom in the deformation of the polygons, allowing not only for global translations and scaling but also more complex local deformations.
 Then, we also introduced new and simple yet effective ways to extract information from @als point clouds for @roofprint:pl and @footprint:pl.
 Our identification of points on roof edges is promising and relying only on having a correct classification of high vegetation.
 As for the @footprint:pl, one of our most important conclusions is the necessity to clearly identify the roof first, because one of the main challenges of producing @footprint:pl is to identify points on the façades, and knowing the exact shape of the roof transforms this into a simple geometric operation.
 
-Then, we also underlined the importance of making correct distinctions between @roofprint:pl and @footprint:pl and more generally to define precisely what we include or not in our 2D representations of buildings.
-The complexity and diversity of buildings even sometimes in a single region requires careful definition of what is included or not in their 2D models. 
+More generally, we also underlined the importance of making correct distinctions between @roofprint:pl and @footprint:pl and more generally to define precisely what we include or not in our 2D representations of buildings.
+The complexity and diversity of buildings even sometimes in a single region requires careful definition of what is included or not in their 2D models.
 
 == Future work
 
-There are many elements of the method which could be improved to produce more robust and understandable results.
+There are many elements of the method which could be improved to produce more robust and predictable results.
 
 An interesting property of most buildings that is not used by this method is the symmetry.
 #cite(<Panday2012>, form: "prose") use it to assume that roof overhangs are the same on opposite sides when the roofs are slanted.
 This could help computing better estimations by increasing the amount of data that can be used, either by averaging the results on both sides, or by making a reasonable guess if a side is empty based on the other side.
 Symmetry is also applicable in many cases to other aspects of buildings such as the slopes of the roofs or the directions of the roof edges.
 
-Some improvements that would very likely improve the results and should be doable in a decent amount of time are related to the polygon deformation algorithm.
+Improvements that would improve the results are related to the polygon deformation algorithm.
 This still lacks three key properties to be fully satisfying: continuity, preservation of shared vertices and relations between disconnected polygons.
 First, discontinuity comes from having a binary decision on shifting or not each edge, instead of gradually shifting edges as little as possible when the polygon would become invalid.
-Then, vertices shared by two polygons are currently lost when their respective edges in each polygon are not shared.
+Secondly, vertices shared by two polygons are currently lost when their respective edges in each polygon are not shared.
 Solving this would imply adding new constraints to the deformation algorithm, as when a vertex is shared by three or more edges, moving one edge requires to move the two other edges by the exact same shift.
 Finally, nothing currently prevents two polygons to end up overlapping.
 This happens for example when a small building moves too far and ends up matching with the points of another larger building.
