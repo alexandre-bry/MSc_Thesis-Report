@@ -25,14 +25,14 @@ There are even cases, such as buildings with non-vertical façades, which comple
   #import cetz.draw: *
 
   #let building-color = blue
-  #let building-stroke = (paint: building-color, thickness: 3pt)
-  #let window-stroke = (paint: blue, thickness: 1pt)
+  #let building-stroke = (paint: building-color, thickness: 4pt)
+  #let window-stroke = (paint: blue, thickness: 1.5pt)
   #let balcony-color = green
-  #let balcony-stroke = (paint: balcony-color, thickness: 3pt)
+  #let balcony-stroke = (paint: balcony-color, thickness: 4pt)
   #let facade-color = orange
-  #let chosen-facade-color = red
-  #let facade-stroke = (paint: facade-color, thickness: 1pt, dash: "dashed")
-  #let chosen-facade-stroke = (paint: chosen-facade-color, thickness: 1pt, dash: "dashed")
+  #let chosen-facade-color = purple
+  #let facade-stroke = (paint: facade-color, thickness: 1.5pt, dash: "dashed")
+  #let chosen-facade-stroke = (paint: chosen-facade-color, thickness: 1.5pt, dash: "dashed")
   #let text-size = 10pt
   #let storey-height = 2.5
   #let building-width = 5
@@ -91,6 +91,7 @@ There are even cases, such as buildings with non-vertical façades, which comple
     balconies: range(1, 5),
     balcony-height: 0.4 * storey-height,
     balcony-width: 1.5,
+    footprint-width: 1.5,
     facades-extrusions: none,
     ..other,
   ) = {
@@ -202,6 +203,19 @@ There are even cases, such as buildings with non-vertical façades, which comple
         ),
       )
     }
+    let facade-total-x = footprint-width + base-point.at(0) + building-width
+    if footprint-width != none {
+      building.push(
+        (
+          line-string: (
+            shift-point(base-point, (facade-total-x, -2)),
+            shift-point(base-point, (facade-total-x, storey-height * storeys + 2)),
+          ),
+          stroke: chosen-facade-stroke,
+          layer: -1,
+        ),
+      )
+    }
 
     // Scale
     for (bdg-part-idx, bdg-part) in building.enumerate() {
@@ -248,8 +262,9 @@ There are even cases, such as buildings with non-vertical façades, which comple
     "simple-balconies": (
       storeys: 7,
       balconies: range(1, 7),
-      balcony-height: 1,
+      balcony-height: 1.5,
       balcony-width: 2,
+      footprint-width: 2,
       caption: [Same balcony at every storey.],
     ),
     "alternated-balconies": (
@@ -257,12 +272,14 @@ There are even cases, such as buildings with non-vertical façades, which comple
       balconies: range(5, 7, step: 1),
       balcony-height: 1.5,
       balcony-width: 2,
+      footprint-width: 0,
       caption: [Only a few balconies.],
     ),
     "extruded-facade": (
       storeys: 7,
       balconies: (),
       facades-extrusions: (0,) + (1.5,) * 6,
+      footprint-width: 1.5,
       caption: [Extruded façade.],
     ),
     "different-facades": (
@@ -270,6 +287,7 @@ There are even cases, such as buildings with non-vertical façades, which comple
       balconies: (4, 5, 6),
       balcony-width: 2,
       facades-extrusions: (2, 4, 4, 4, 2, 0, -2),
+      footprint-width: 4,
       caption: [Different façades with some balconies.],
     ),
   )
@@ -305,7 +323,8 @@ There are even cases, such as buildings with non-vertical façades, which comple
   #subpar.super(
     caption: [
       Illustration in profile view of the unclear definition of the façade with balconies.
-      The buildings are in blue with thin lines representing windows, the balconies in green and the potential façades in orange.
+      The buildings are in blue with thin lines representing windows and the balconies in green.
+      Dotted lines represent potential façades and the purple one is the one we chose in our definition.
     ],
     label: label(fig-label),
   )[
@@ -324,10 +343,9 @@ But then, since there is only a sparse distribution of points on the façades (i
 If the @footprint was known precisely, it would be possible to instead extrude it up to the roof, assuming that it is contained in the @roofprint.
 
 Therefore, our definitions for @footprint:pl and @roofprint:pl should be the ones that would lead to the most accurate reconstruction of the buildings in 3D.
-In practice, this means that the façades are defined as the most prevalent vertical surfaces, which will often be the end of the balcony when the exact same balcony is present at every storey.
-With this definition, the balconies have a significant advantage because in @als data, a balcony occludes the façade below it in the same way as roof overhangs.
-#review-ravi[So you include the balcony in the footprint? Not completely clear what is the conclusion here.]
-
+In practice, this means that the façades are defined as the most prevalent vertical surfaces, or in other terms, the vertical plane which has the largest intersection with the actual building (see @fig:balconies-in-roofprint-footprint).
+This will often be the end of the balcony when the exact same balcony is present at every storey such as in @fig:balconies-in-roofprint-footprint-simple-balconies.
+With this definition, the balconies have a significant advantage because in @als data, a balcony occludes the façade below it in the same way as roof overhangs, so they prevent the potential façade behind them to be seen.
 
 == @als:short:noindex point clouds <hea:als-point-clouds>
 
@@ -711,7 +729,7 @@ For these operations, the two most basic elements to work with are vertices and 
 Choosing between the two is crucial and completely depends on the applications.
 This choice and the number of constraints enforced in the movement determine how much freedom and how much complexity will be associated with the operation.
 Here are a few examples, among many different possibilities #review-ravi[illustrate/explain further. I dont understand especially the middle one. Do you mean translation with ‘moving’? And then you can move an edge by translating in x and y, so 2 dimensions? Just like a point? Or are there constraints applicable here? like the line must remain parallel to original edge?]:
-- translating a point freely gives 2 dimensions of freedom: either one dimension for each axis x and y, or a dimension for the angle and another one for the distance.
+- translating a point freely gives 2 dimensions of freedom: one dimension for each axis (x and y).
 - translating the line associated with an edge along its normal gives only 1 dimension of freedom: the distance between the initial and the final line.
 - translating and rotating the line associated with an edge gives 2 dimensions of freedom: one for the translation distance and one for the rotation angle.
 

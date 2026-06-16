@@ -68,7 +68,7 @@ We use two properties of @als point clouds:
 + the angle between the pulses and the vertical direction is small,
 + neighbour pulses in the same scan line or in consecutive scan lines can be identified and are very close.
 
-Together, these two properties imply that when the scanner hits the edge of the roof, assuming a scanning direction towards the outside of the building #review-florent[When is the scanning direction not towards the outside of the building ? Do you mean the direction not being parallel to the edge ?]#review-alexandre[Je veux dire que ça va vers l'extérieur plutôt que vers l'intérieur, et donc ça fait toit puis sol et pas sol puis toit], one of the two situations is very likely:
+Together, these two properties imply that when the scanner hits the edge of the roof, one of the two situations is very likely:
 - the pulse hits first the roof and then either the ground or the façade at a lower vertical position, or
 - the pulse hits only the roof and the next pulse hits either the façade or the ground at a lower vertical position.
 
@@ -414,6 +414,7 @@ The last constraint is to keep edges shared by adjacent polygons collinear.
 This is accomplished by grouping together the lines corresponding to these edges and shifting them by same amounts in the same directions.
 
 The proposed algorithm is detailed in @alg:polygon-deformation, taking as input a line group to shift $g_0$ and a shift to apply $arrow(s)$.
+It is also illustrated in @fig:illustration-polygon-deformation
 Its main idea is to propagate the shift through the connections between groups (both connections in polygons and between polygons), as long as $cal(P)_1$ or $cal(P)_2$ is not verified.
 Here are descriptions for the functions used in this pseudocode:
 - #algorithmic.CallInline[get_group][$l$]: returns the group of overlapping lines from different polygons which contains $l$,
@@ -476,7 +477,7 @@ Here are descriptions for the functions used in this pseudocode:
     ),
     kind: "algorithm",
     supplement: [Algorithm],
-    caption: [Polygon deformation algorithm, responsible for computing the new configuration of all the adjacent polygons after one group of shared edges ($g_0$) was shifted (by $arrow(s)$).#review-ravi[I would illustrate this algorithm; how it works visually. Maybe also algo 1]],
+    caption: [Polygon deformation algorithm, responsible for computing the new configuration of all the adjacent polygons after one group of shared edges ($g_0$) was shifted (by $arrow(s)$).],
   ) <alg:polygon-deformation>
 ]
 
@@ -486,6 +487,220 @@ Along this direction, we define a set of shifts to try in both directions, ${ k 
 A full iteration of the algorithm in @alg:polygon-matching calls this function once for every pair of group $g$ and shift $arrow(s)$.
 Moreover, if computing the resulting deformed polygon for increasing shifts such as ${ k t arrow(n), k in [| 1, m |] }$, the result obtained for $k t arrow(n)$ can be used as a starting point for $(k+1) t arrow(n)$, therefore increasing the computing speed.
 On a side note, the order in which the groups are processed in $"groups_to_process"$ does not matter: the algorithm will always terminate and return the same results.
+
+#[
+  #import cetz.draw: *
+
+  #let edge-stroke = (paint: blue, thickness: 1pt)
+  #let bad-edge-stroke = (paint: red, thickness: 1pt)
+  #let moved-edge-stroke = (paint: green, thickness: 1pt)
+  #let point-color = black
+
+  #let points = (
+    (-0.5, 0),
+    (0.75, 0),
+    (2.5, -1),
+    (1.75, -1.25),
+    (2, -3),
+    (-2, -2.5),
+    (-0.7, -0.8),
+  )
+
+  #let idx-mod(idx) = {
+    let len = points.len()
+    return calc.rem(idx, len)
+  }
+
+  #let shift-point(p, d) = {
+    let (x, y) = p
+    let (dx, dy) = d
+    return (x + dx, y + dy)
+  }
+
+  #let intersection-edges(l1, l2) = {
+    let ((x1, y1), (x2, y2)) = l1
+    let ((x3, y3), (x4, y4)) = l2
+
+    let intersec-x = (
+      ((x1 * y2 - y1 * x2) * (x3 - x4) - (x1 - x2) * (x3 * y4 - y3 * x4))
+        / ((x1 - x2) * (y3 - y4) - (y1 - y2) * (x3 - x4))
+    )
+    let intersec-y = (
+      ((x1 * y2 - y1 * x2) * (y3 - y4) - (y1 - y2) * (x3 * y4 - y3 * x4))
+        / ((x1 - x2) * (y3 - y4) - (y1 - y2) * (x3 - x4))
+    )
+
+    return (intersec-x, intersec-y)
+  }
+
+  #let points-to-edges(points) = {
+    let edges = ()
+    for idx in range(points.len()) {
+      edges.push((points.at(idx), points.at(idx-mod(idx + 1))))
+    }
+    return edges
+  }
+
+  #let compute-configuration(edges, shift, to-shifts) = {
+    if edges.len() != to-shifts.len() {
+      panic("The lines and to-shift arguments of configuration should have the same size.")
+    }
+
+    let shifted-edges = ()
+    for (edge, to-shift) in edges.zip(to-shifts) {
+      let shifted-edge = if to-shift {
+        let (p1, p2) = edge
+        (shift-point(p1, shift), shift-point(p2, shift))
+      } else {
+        edge
+      }
+      shifted-edges.push(shifted-edge)
+    }
+
+    let initial-points = ()
+    let shifted-points = ()
+    for idx in range(shifted-edges.len()) {
+      let intersection-initial = intersection-edges(edges.at(idx - 1), edges.at(idx))
+      initial-points.push(intersection-initial)
+
+      let intersection-shifted = intersection-edges(shifted-edges.at(idx - 1), shifted-edges.at(idx))
+      shifted-points.push(intersection-shifted)
+    }
+
+    return (initial-points, shifted-points)
+  }
+
+  #let display-configuration(config-name, initial-points, shifted-points, to-shifts, bad-directions) = {
+    for idx in range(0, shifted-points.len()) {
+      let to-shift = to-shifts.at(idx)
+      let is-bad = bad-directions.contains(idx)
+      let curr-edge-stroke = if to-shift { moved-edge-stroke } else { edge-stroke }
+      let arrow-stroke = if is-bad { bad-edge-stroke } else { edge-stroke }
+
+      let base-name = config-name + "-edge-" + str(idx)
+
+      let name-init = base-name + "-init"
+      let p0-init = initial-points.at(idx)
+      let p1-init = initial-points.at(idx-mod(idx + 1))
+
+      on-layer(0, line(p0-init, p1-init, stroke: curr-edge-stroke + ("dash": "dashed"), name: name-init))
+
+      let name-shifted = base-name + "-shifted"
+      let p0-shifted = shifted-points.at(idx)
+      let p1-shifted = shifted-points.at(idx-mod(idx + 1))
+
+      on-layer(1, line(p0-shifted, p1-shifted, stroke: curr-edge-stroke, name: name-shifted))
+      on-layer(2, circle(p0-shifted, radius: 0.08, stroke: none, fill: point-color))
+      on-layer(
+        3,
+        mark(
+          (name-shifted + ".start", 50%, name-shifted + ".end"),
+          name-shifted + ".end",
+          symbol: ")>",
+          anchor: "center",
+          stroke: arrow-stroke,
+          fill: arrow-stroke.paint,
+          scale: 0.7,
+        ),
+      )
+    }
+  }
+
+  #let shift = (0.0, -1.3)
+
+  #let edges = points-to-edges(points)
+  #let configurations-infos = (
+    "base": (
+      shift: shift,
+      to-shifts: (false, false, false, false, false, false, false),
+      bad-directions: (),
+      caption: [Initial state.],
+    ),
+    "step0": (
+      shift: shift,
+      to-shifts: (true, false, false, false, false, false, false),
+      bad-directions: (1, 6),
+      caption: [After shifting the focus edge.],
+    ),
+    "step1": (
+      shift: shift,
+      to-shifts: (true, true, false, false, false, false, true),
+      bad-directions: (2, 6),
+      caption: [First step of the resolution.],
+    ),
+    "step2": (
+      shift: shift,
+      to-shifts: (true, true, true, false, false, true, true),
+      bad-directions: (),
+      caption: [Second and final step of the resolution.],
+    ),
+  )
+
+  // Compute the configurations
+  #let configurations-points = (:)
+  #for (config-key, config-infos) in configurations-infos.pairs() {
+    let shift = config-infos.shift
+    let to-shifts = config-infos.to-shifts
+    let (initial-points, shifted-points) = compute-configuration(edges, shift, to-shifts)
+    configurations-points.insert(config-key, (initial: initial-points, shifted: shifted-points))
+  }
+
+  // Compute the bounding box of all
+  #let min = (calc.inf, calc.inf)
+  #let max = (-calc.inf, -calc.inf)
+  #for config-points in configurations-points.values() {
+    for points in config-points.values() {
+      for point in points {
+        min = (calc.min(min.at(0), point.at(0)), calc.min(min.at(1), point.at(1)))
+        max = (calc.max(max.at(0), point.at(0)), calc.max(max.at(1), point.at(1)))
+      }
+    }
+  }
+  // Add a margin
+  #let margin = 0.2
+  #{
+    min = (min.at(0) - margin, min.at(1) - margin)
+    max = (max.at(0) + margin, max.at(1) + margin)
+  }
+
+
+  #let scale-factor = 0.8
+  #let figures = ()
+  #for (idx, name) in configurations-infos.keys().enumerate() {
+    let config-infos = configurations-infos.at(name)
+    let config-points = configurations-points.at(name)
+    let shift = config-infos.shift
+    let to-shifts = config-infos.to-shifts
+    let bad-directions = config-infos.bad-directions
+    let caption = config-infos.caption
+    let initial-points = config-points.initial
+    let shifted-points = config-points.shifted
+
+    // Display the configuration
+    figures.push(figure(
+      cetz.canvas(x: scale-factor, y: scale-factor, {
+        display-configuration(name, initial-points, shifted-points, to-shifts, bad-directions)
+        rect(min, max, fill: none, stroke: none)
+      }),
+      caption: caption,
+    ))
+  }
+
+  #subpar.super(
+    caption: [
+      Illustration of the polygon deformation algorithm on an isolated polygon.
+      Temporarily flipped edges are indicated with red arrows, and shifted edges are green.
+    ],
+    label: <fig:illustration-polygon-deformation>,
+  )[
+    #std.grid(
+      columns: 2,
+      column-gutter: 0mm,
+      row-gutter: 5mm,
+      ..figures
+    )
+  ]
+]
 
 === Particularities for the @roofprint:pl <hea:particularities-roofprints>
 
