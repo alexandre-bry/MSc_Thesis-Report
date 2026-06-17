@@ -1,6 +1,6 @@
 #import "../common_imports.typ": *
 
-= Conclusion <hea:conclusion>
+= Conclusion <sec:conclusion>
 
 How to generate coherent building @roofprint:pl and @footprint:pl from high-density @als point clouds and existing imprecise @outline:pl?
 

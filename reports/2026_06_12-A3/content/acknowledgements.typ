@@ -1,6 +1,6 @@
 #import "../common_imports.typ": *
 
-= Acknowledgements <hea:acknowledgements>
+= Acknowledgements <sec:acknowledgements>
 
 First, I want to thank my two main supervisors Hugo Ledoux and Bruno Vallet for their steady support over the whole course of the thesis, and for their very valuable ideas and suggestions.
 The many discussions we had were crucial to take pragmatic and thoughtful decisions all along, and to keep my motivation high.

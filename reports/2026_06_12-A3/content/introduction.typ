@@ -1,6 +1,6 @@
 #import "../common_imports.typ": *
 
-= Introduction <hea:introduction>
+= Introduction <sec:introduction>
 
 In 2024, the #gloss-ref-and-footnote("ign") and two other French public entities have launched an initiative to bring together partners who can contribute to the development of a nation-wide digital twin #citen(<ignAppelCommuns>).
 This initiative was officially launched in April 2026 under the name of @junn.
@@ -82,6 +82,6 @@ A few more specific sub-questions are also addressed in this thesis:
 - How to identify and use the points in an @als point cloud that contain information about the façades despite their sparsity?
 - How to deform an imprecise @outline with global and local transformations while preserving the angles of the edges?
 
-The core of this report is structured as a research paper, targeted at an expert audience, which can be found in @hea:paper.
-To make its content accessible to non-experts, preliminary materials on several different topics are provided in @hea:preliminary-materials, although they still assume some GIS-related knowledge, to the level of the @tudelft Master of Geomatics.
+The core of this report is structured as a research paper, targeted at an expert audience, which can be found in @sec:paper.
+To make its content accessible to non-experts, preliminary materials on several different topics are provided in @sec:preliminary-materials, although they still assume some GIS-related knowledge, to the level of the @tudelft Master of Geomatics.
 Finally, the report ends with a conclusion and a presentation of potential future work on the topic.

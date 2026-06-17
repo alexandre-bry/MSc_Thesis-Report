@@ -6,7 +6,7 @@
   display-evolutions, display-table, metrics-infos, nice-tables, roofprints-iter-n-label, simple-categories,
 )
 
-= Experiments with real-world data and discussion <hea:experiments>
+= Experiments with real-world data and discussion <sec:experiments>
 
 == Validation dataset
 
@@ -162,8 +162,7 @@ What this shows is that the second and third iterations only worsen the results 
 Moreover, the final metrics are much worse for the #categories-infos.low_sheds.name category compared to the others, which comes from the combination of multiple factors.
 First, buildings in this category usually have smaller areas, meaning that the same shift will result in lower #metrics-infos.iou.name values.
 Then, their initial position is significantly worse than for the other categories, as can be seen with the high values of #metrics-infos.centroid_distance.name for the #datasets-infos.bdtopo.name.
-Finally, the parameters that we used to run the method were targeting buildings which roof edges were at at least 2 metres above the ground, which is not always the case in this category.
-#review-ravi[shouldnt that be mentioned in 3.2.1? assuming this 2m filter is done prior to finding the roof edge points]
+Finally, we used for this experiment $gamma_r = 2" m"$ (see @sec:roofprint-points) therefore targeting buildings which roof edges were at at least 2 metres above the ground, which is not always the case in this category.
 
 To get a better understanding of what actually happens, we display the results in two different ways.
 First, @fig:valid-res-bar-low_sheds shows the distributions of these metrics at every iteration of the algorithm.
@@ -309,7 +308,7 @@ When there is a large building close by, the polygon ends up fitting to this bui
 == Discussion
 
 The strengths of the method come from its ability to combine the strengths of the two data sources: the well estimated façade orientations and topology of the initial @outline:pl and the positioning accuracy of the @als point cloud.
-Thanks to its ability to not only shift the polygons but also deform them, the method can take any @outline as input, as long as it has the characteristics mentioned in @hea:input-data.
+Thanks to its ability to not only shift the polygons but also deform them, the method can take any @outline as input, as long as it has the characteristics mentioned in @sec:input-data.
 The method is robust to outliers and to partial occlusions thanks to considering the @outline:pl globally and not only individual edges.
 
 However, relying on the angles of the initial @outline:pl is not always desirable.

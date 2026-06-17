@@ -1,13 +1,13 @@
 #import "../common_imports.typ": *
 
-= Preliminary Materials <hea:preliminary-materials>
+= Preliminary Materials <sec:preliminary-materials>
 
-This chapter aims at introducing the knowledge and vocabulary necessary to understanding the core of the thesis (@hea:paper).
-It is intended for readers who are not expert in the topic at hand, however the @hea:paper is self-contained.
+This chapter aims at introducing the knowledge and vocabulary necessary to understanding the core of the thesis (@sec:paper).
+It is intended for readers who are not expert in the topic at hand, however the @sec:paper is self-contained.
 
 == @roofprint:short:noref:cap:pl and @footprint:short:noref:pl
 
-As presented in @hea:introduction, the difference between @roofprint:pl and @footprint:pl is central for this thesis.
+As presented in @sec:introduction, the difference between @roofprint:pl and @footprint:pl is central for this thesis.
 One of the reasons why both of them are important is that different sources of data often make it easier to get one of the two:
 - surveyors in the field mostly use the walls and therefore measure the @footprint,
 - experts working on aerial imagery can only use the roof as some walls will not be visible, meaning that they measure the @roofprint,
@@ -347,7 +347,7 @@ In practice, this means that the façades are defined as the most prevalent vert
 This will often be the end of the balcony when the exact same balcony is present at every storey such as in @fig:balconies-in-roofprint-footprint-simple-balconies.
 With this definition, the balconies have a significant advantage because in @als data, a balcony occludes the façade below it in the same way as roof overhangs, so they prevent the potential façade behind them to be seen.
 
-== @als:short:noindex point clouds <hea:als-point-clouds>
+== @als:short:noindex point clouds <sec:als-point-clouds>
 
 @als:both:cap point clouds are sets of points acquired by a @lidar sensor mounted on a flying vehicle.
 These @lidar sensors emit laser pulses at a very high frequency with a varying direction.
@@ -740,7 +740,7 @@ On top of that, these bounds are not independent for every point or edge.
 Moving one point has an influence on how far its neighbour can be moved at the same time without breaking the polygon.
 Therefore, the complexity of these operations increases when performing many of them at the same time, and depending on the type of operation, it can be very complex to express and manipulate these relations.
 
-For this thesis, the constraints that we imposed on the initial polygons were the following (more details in @hea:paper):
+For this thesis, the constraints that we imposed on the initial polygons were the following (more details in @sec:paper):
 - do not rotate any edge,
 - do not flip any edge (see @fig:flipping-edge).
 
@@ -1233,7 +1233,7 @@ This is called optimisation, and it usually needs two elements that will work to
 In this report, the best energy is assumed to be the lowest energy, so the goal of optimisation is to find the polygon that minimises the energy.
 There are infinitely many ways to create a formula for an energy, and these different ways will result in a different polygon being the best.
 For the optimisation of the @roofprint:pl, the energy should be something that is minimal when the polygon corresponds perfectly to the edges of the roof.
-More details are given in @hea:paper about the energy used in our method.
+More details are given in @sec:paper about the energy used in our method.
 
 Often, the energy can be a high-dimensional function, with many parameters to optimise together.
 In our case, with the constraints that we set on the polygons, there are usually $n$ variables to optimise at the same time if the polygon has $n$ vertices.

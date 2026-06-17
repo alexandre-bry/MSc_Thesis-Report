@@ -249,13 +249,13 @@ Some applications like lighting simulations or texturing of the façades would b
 An illustration of the capabilities of these methods is the @3dbag, which contains more than 10M buildings covering the whole of the Netherlands #cite(<Peters2022>, form: "normal") and was generated using the @ahn and the @bag as inputs, the Dutch equivalents of the @lidarhd and the @bdtopo respectively.
 The 3D models have very accurate roofs, but the façades depend on the input that was used, either a @footprint or a @roofprint.
 
-As explained in @hea:related-work, there is little research on the distinction between @footprint:pl and @roofprint:pl, as well as in the ability to produce both from @als data.
+As explained in @sec:related-work, there is little research on the distinction between @footprint:pl and @roofprint:pl, as well as in the ability to produce both from @als data.
 This is also the case for modelling the roof overhangs to create #lod-version(2.3) buildings, which is the 3D counterpart of this 2D distinction.
 
-In this context, we propose in this paper a method to address at the same time the registration of building @outline:pl and the creation of both a @roofprint and a @footprint for each building in @hea:methodology.
-Our method takes as input building @outline:pl (which can be anything between a @footprint and a @roofprint) and high-density @als data, to create consecutively for each building a @roofprint and a @footprint aligned with the input point cloud (see @hea:input-data).
+In this context, we propose in this paper a method to address at the same time the registration of building @outline:pl and the creation of both a @roofprint and a @footprint for each building in @sec:methodology.
+Our method takes as input building @outline:pl (which can be anything between a @footprint and a @roofprint) and high-density @als data, to create consecutively for each building a @roofprint and a @footprint aligned with the input point cloud (see @sec:input-data).
 
-The method was tested on the two French datasets @bdtopo and @lidarhd with promising results displayed in @hea:experiments.
+The method was tested on the two French datasets @bdtopo and @lidarhd with promising results displayed in @sec:experiments.
 These experiments displayed how the method is capable of repositioning the initial imprecise @outline:pl while deforming them if necessary.
 #{
   let format-averages-cat(category-key) = {

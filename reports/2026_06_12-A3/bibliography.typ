@@ -1,8 +1,8 @@
 = References <bibliography>
 
 #text(style: "italic")[
-  This section only contains the references mentioned outside of @hea:paper.
-  They are treated independently of the references in @hea:paper, meaning that there could be duplicates.
+  This section only contains the references mentioned outside of @sec:paper.
+  They are treated independently of the references in @sec:paper, meaning that there could be duplicates.
   #linebreak()
   #linebreak()
 ]

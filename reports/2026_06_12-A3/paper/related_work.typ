@@ -1,7 +1,7 @@
 #import "../common_imports.typ": *
 #show: isprs-heading
 
-= Related work <hea:related-work>
+= Related work <sec:related-work>
 
 The topic of roof overhangs reconstruction is not widely covered in the literature, with only a few papers addressing issues related to roof overhangs.
 The difference between @footprint:pl and @roofprint:pl is often not acknowledged, with the term @outline:pl often used interchangeably, or even @roofprint:pl being called @footprint:pl.

@@ -1,7 +1,7 @@
 #import "../common_imports.typ": *
 #show: isprs-heading
 
-= Methodology <hea:methodology>
+= Methodology <sec:methodology>
 
 Our method, shown in @fig:overview-pipeline, aims at generating two 2D polygons for each building --- one for the @roofprint and one for the @footprint --- from two main inputs: @als data and an initial building @outline.
 Due to the nature of @als data, the density of points on roof surfaces is significantly higher than on façades, which is the reason why we first focus on the estimation of roofprints and then footprints.
@@ -17,7 +17,7 @@ The pipeline can be summarised as follows:
 + identify points corresponding to façades and ground below the roof,
 + use these points to deform the @roofprint into a @footprint.
 
-== Input data <hea:input-data>
+== Input data <sec:input-data>
 
 Our method has only been tested with a high-density @als point cloud as the first input (about 10 points/m²) so the minimum density for accurate results is unknown.
 The point cloud should be semantically segmented and contain at least separate classes for vegetation and ground, while the rest is considered as potential building points.
@@ -35,7 +35,7 @@ The second input consists of building @outline:pl.
 These can be either @footprint:pl, @roofprint:pl, or a mix of both.
 They are expected to be roughly the correct size and roughly in the right location up to a few metres.
 However their main characteristic is that the directions of their edges and their connections to the other polygons (topology) are assumed to be perfect and will not be modified.
-These two requirements come from the constraints imposed on the optimisation process, as explained in @hea:polygon-deformation.
+These two requirements come from the constraints imposed on the optimisation process, as explained in @sec:polygon-deformation.
 
 Our method expects the point cloud to be precisely and accurately georeferenced, contrarily to the @outline:pl which are only expected to have an approximate position because they might come from another acquisition method such as imagery or field work.
 @fig:illustration-lidarhd-bdtopo-differences presents examples of the expected relations between the @als data and the initial @outline:pl.
@@ -55,13 +55,13 @@ Our method expects the point cloud to be precisely and accurately georeferenced,
 ]
 
 
-== Identification of @roofprint and @footprint location evidence <hea:identification-points>
+== Identification of @roofprint and @footprint location evidence <sec:identification-points>
 
 To compute the @roofprint:pl and @footprint:pl, a crucial part of the process is to extract evidences of their location.
 In both cases, the deformation of the polygon are conducted in 2D by dropping the vertical component of the points, but the process of selecting the points is inherently 3D.
-After selecting the points, the process to produce @roofprint:pl and @footprint:pl is explained in @hea:polygon-deformation.
+After selecting the points, the process to produce @roofprint:pl and @footprint:pl is explained in @sec:polygon-deformation.
 
-=== @roofprint:cap evidence <hea:roofprint-points>
+=== @roofprint:cap evidence <sec:roofprint-points>
 
 To select points of interest for the @roofprint, we look for points at the edges of the roof.
 We use two properties of @als point clouds:
@@ -75,8 +75,36 @@ Together, these two properties imply that when the scanner hits the edge of the 
 These different scenarios are illustrated in @fig:illustration-vertical-gap.
 In both cases, the roof edge is therefore characterised by a high vertical gap between points from the same pulse or from neighbouring pulses.
 Each pulse can have up to 4 neighbouring pulses: the previous and next pulses in the same scan line, and the closest pulse in the previous and next scan lines.
+The vertical gap is defined for each echo, but differently whether the echo is part of a single-echo or a multi-echo pulse.
+For single-echo pulses, it is the maximum vertical distance between the echo and all the other echoes of the neighbouring pulses.
+For multi-echo pulses, it is the maximum vertical distance between the echo and all the other echoes of the same pulse.
+The result on some scan lines of the @lidarhd is shown in @fig:examples-vertical-gap.
 
-This property can be used by setting a threshold defining the minimum vertical gap to be considered a point on a roof edge.
+#subpar.super(
+  caption: [
+    Examples of the vertical gap applied to a few scan lines.
+    Black points are vegetation points, and for the others the colour corresponds to the vertical
+  ],
+  label: <fig:examples-vertical-gap>,
+)[
+  #let height = auto
+  #grid(
+    columns: 1,
+    inset: 0.5pt,
+    stroke: black + 0.5pt,
+    figure(
+      image("../figures/Scan_line-Vertical_gain-1.png", height: height),
+    ),
+    figure(
+      image("../figures/Scan_line-Vertical_gain-2.png", height: height),
+    ),
+    figure(
+      image("../figures/Scan_line-Vertical_gain-3.png", height: height),
+    ),
+  )
+]
+
+This property can be used by setting a threshold defining the minimum vertical gap $gamma_r$ to be considered a point on a roof edge.
 However, there are three main types of points which would also get a high value with this criterion.
 The first one are vegetation points, and more precisely points coming from sparse vegetation.
 Sparse vegetation often results in many returns including a return for the ground, and therefore all the points above the ground could get a high vertical gap.
@@ -84,7 +112,7 @@ The second one are surfaces such as glass which create a return but also let the
 Elements with glass roof such as greenhouses or conservatories result in pulses very similar to roof edges, with one return on the roof and one on the ground.
 The third one are vertical façades, which can get several points below each other at different heights.
 
-=== @footprint:cap evidence <hea:footprint-points>
+=== @footprint:cap evidence <sec:footprint-points>
 
 Points useful for the @footprint:pl are sparser and more difficult to identify than points on the roof.
 Therefore, we look for these points only once the @roofprint has already been computed to use it as a guide.
@@ -99,7 +127,7 @@ This mostly includes four types of points (see @fig:illustration-vertical-gap):
 - points on a lower part of the roof, which can be used similarly to ground points,
 - points inside of the building which are rather misleading for our method.
 
-== Polygon deformation for @roofprint:pl and @footprint:pl <hea:polygon-deformation>
+== Polygon deformation for @roofprint:pl and @footprint:pl <sec:polygon-deformation>
 
 To be able to transform the initial @outline:pl into accurate @roofprint:pl and @footprint:pl, we need a deformation algorithm flexible enough to handle two different errors at the same time:
 + a global shift of the polygon in one direction to account for imprecise georeferencing,
@@ -139,31 +167,30 @@ The three main constraints are the following:
 
 
 We therefore define the polygon deformation problem as an optimisation problem, combining two parts.
-We present in @hea:matching_algo an iterative algorithm to incrementally solve this problem.
-The first element of this algorithm is a method to produce new propositions of polygons which satisfy the aforementioned constraints, explained in @hea:deformation-algo.
+We present in @sec:matching_algo an iterative algorithm to incrementally solve this problem.
+The first element of this algorithm is a method to produce new propositions of polygons which satisfy the aforementioned constraints, explained in @sec:deformation-algo.
 The second element is an energy that the optimal polygon should minimise, which is based on the input point cloud.
-This energy is completely different for the @roofprint:pl and the @footprint:pl, as presented respectively in @hea:particularities-roofprints and @hea:particularities-footprints.
+This energy is completely different for the @roofprint:pl and the @footprint:pl, as presented respectively in @sec:particularities-roofprints and @sec:particularities-footprints.
 
-=== Matching algorithm <hea:matching_algo>
+=== Matching algorithm <sec:matching_algo>
 
 The general idea behind the matching algorithm is simple.
 For each group of lines:
 + a set of potential shifts is defined,
-+ for each shift, the final configuration of the polygon is computed with the polygon deformation algorithm described in @hea:deformation-algo,
++ for each shift, the final configuration of the polygon is computed with the polygon deformation algorithm described in @sec:deformation-algo,
 + the best configuration is identified with a criterion and replaces the previous one,
 + a new group of lines is picked.
 
 A pseudocode implementation of the algorithm is shown in @alg:polygon-matching.
 This algorithm takes as input all the groups of lines $G$ and all the points $P$ that the polygons must be deformed on.
 Groups of lines contain the lines that correspond to shared edges: edges from different polygons that are aligned and intersect.
-This is explained further in @hea:deformation-algo.
+This is explained further in @sec:deformation-algo.
 
 #[
   #import algorithmic: algorithm
 
-  #show figure: set align(start)
   #figure(
-    algorithm(
+    align(start, algorithm(
       vstroke: .5pt + luma(200),
       {
         import algorithmic: *
@@ -192,7 +219,7 @@ This is explained further in @hea:deformation-algo.
                       $"energies"[arrow(s)]$,
                       FnInline("compute_energy", [$"shifted_groups"[arrow(s)]$, $arrow(s)$, $P$]),
                     )
-                    CommentIt[*deformation_one_edge* is defined in @alg:polygon-deformation and *compute_energy* is defined in @hea:particularities-roofprints and @hea:particularities-footprints]
+                    CommentIt[*deformation_one_edge* is defined in @alg:polygon-deformation and *compute_energy* is defined in @sec:particularities-roofprints and @sec:particularities-footprints]
                   },
                 )
                 LineBreak
@@ -209,10 +236,11 @@ This is explained further in @hea:deformation-algo.
           },
         )
       },
-    ),
+    )),
     kind: "algorithm",
     supplement: [Algorithm],
     caption: [Polygon matching algorithm. This represents one iteration, which consecutively focuses on each group of lines to find its optimal shift.],
+    placement: auto,
   ) <alg:polygon-matching>
 ]
 
@@ -224,9 +252,9 @@ Two simple strategies however emerged with their own advantages:
 
 This blueprint algorithm is then adapted to produce @roofprint:pl or @footprint:pl, because they use different evidences, with different distributions and different objectives, so the energy depends on the application.
 
-=== Deformation algorithm <hea:deformation-algo>
+=== Deformation algorithm <sec:deformation-algo>
 
-To satisfy all the properties listed at the beginning of @hea:polygon-deformation, our algorithm is designed as an iterative process where each iteration focuses on moving a specific edge along its normal while allowing the displacement of this edge to influence the whole polygon in order to avoid self-intersections and edge flips.
+To satisfy all the properties listed at the beginning of @sec:polygon-deformation, our algorithm is designed as an iterative process where each iteration focuses on moving a specific edge along its normal while allowing the displacement of this edge to influence the whole polygon in order to avoid self-intersections and edge flips.
 Let's assume that we have a polygon with $n$ vertices defined as a set of consecutive points ${ p_i, i in [| 0, n - 1 |] }$.
 For the rest of the paper, we assume that the indices of the objects are modulo $n$, meaning that $p_n$ refers to $p_0$.
 We consider the polygon as a set of oriented lines ${ l_i, i in [| 0, n-1 |] }$, where $l_i$ is the infinite line passing through $p_i$ and $p_(i+1)$ and oriented from $p_i$ to $p_(i+1)$.
@@ -409,25 +437,15 @@ This property is enough in practice in most cases to ensure that the final polyg
 However, to prevent all potential self-intersections, it is necessary to check for intersections between each shifted edge and all other edges, which is much more computationally extensive.
 Let's call this new property #show-property[$cal(P)_2(l_i)$: the edge defined by $l_(i-1)$, $l_i$ and $l_(i+1)$ does not intersect any other edge in the polygon.]
 
-These two properties are enough to create valid polygons that satisfy the first and second constraints mentioned in the introduction of @hea:polygon-deformation.
+These two properties are enough to create valid polygons that satisfy the first and second constraints mentioned in the introduction of @sec:polygon-deformation.
 The last constraint is to keep edges shared by adjacent polygons collinear.
 This is accomplished by grouping together the lines corresponding to these edges and shifting them by same amounts in the same directions.
-
-The proposed algorithm is detailed in @alg:polygon-deformation, taking as input a line group to shift $g_0$ and a shift to apply $arrow(s)$.
-It is also illustrated in @fig:illustration-polygon-deformation
-Its main idea is to propagate the shift through the connections between groups (both connections in polygons and between polygons), as long as $cal(P)_1$ or $cal(P)_2$ is not verified.
-Here are descriptions for the functions used in this pseudocode:
-- #algorithmic.CallInline[get_group][$l$]: returns the group of overlapping lines from different polygons which contains $l$,
-- #algorithmic.CallInline[check_p1][$arrow(s)$, $"shifted_groups"$, $l$]: returns a boolean stating whether the property $cal(P)_1(l)$ is verified for the current polygon if the groups in $"shifted_groups"$ are shifted by $arrow(s)$.
-- #algorithmic.CallInline[check_p2][$arrow(s)$, $"shifted_groups"$, $l$]: same as #algorithmic.CallInline[check_p1][$arrow(s)$, $"shifted_groups"$, $l$] but for $cal(P)_2(l)$.
-
 
 #[
   #import algorithmic: algorithm
 
-  #show figure: set align(start)
   #figure(
-    algorithm(
+    align(start, algorithm(
       vstroke: .5pt + luma(200),
       {
         import algorithmic: *
@@ -474,19 +492,13 @@ Here are descriptions for the functions used in this pseudocode:
           },
         )
       },
-    ),
+    )),
     kind: "algorithm",
     supplement: [Algorithm],
     caption: [Polygon deformation algorithm, responsible for computing the new configuration of all the adjacent polygons after one group of shared edges ($g_0$) was shifted (by $arrow(s)$).],
+    placement: auto,
   ) <alg:polygon-deformation>
 ]
-
-The pseudocode in @alg:polygon-deformation is not optimised for speed but rather simplified for clarity.
-For a given line group $g$, we use its perpendicular unit vector $arrow(n)$ as the direction for the shift.
-Along this direction, we define a set of shifts to try in both directions, ${ k t arrow(n), k in [| -m, m |] }$, with user-defined values for the step size $t$ and maximum shift length $m s$.
-A full iteration of the algorithm in @alg:polygon-matching calls this function once for every pair of group $g$ and shift $arrow(s)$.
-Moreover, if computing the resulting deformed polygon for increasing shifts such as ${ k t arrow(n), k in [| 1, m |] }$, the result obtained for $k t arrow(n)$ can be used as a starting point for $(k+1) t arrow(n)$, therefore increasing the computing speed.
-On a side note, the order in which the groups are processed in $"groups_to_process"$ does not matter: the algorithm will always terminate and return the same results.
 
 #[
   #import cetz.draw: *
@@ -499,12 +511,13 @@ On a side note, the order in which the groups are processed in $"groups_to_proce
   #let points = (
     (-0.5, 0),
     (0.75, 0),
-    (2.5, -1),
-    (1.75, -1.25),
+    (2, -0.75),
+    (1.5, -2.25),
     (2, -3),
-    (-2, -2.5),
-    (-0.7, -0.8),
+    (-1.5, -2.5),
+    (-0.25, -0.5),
   )
+  #let shift = (0.0, -1.4)
 
   #let idx-mod(idx) = {
     let len = points.len()
@@ -596,17 +609,15 @@ On a side note, the order in which the groups are processed in $"groups_to_proce
         mark(
           (name-shifted + ".start", 50%, name-shifted + ".end"),
           name-shifted + ".end",
-          symbol: ")>",
+          symbol: ">",
           anchor: "center",
           stroke: arrow-stroke,
           fill: arrow-stroke.paint,
-          scale: 0.7,
+          scale: 0.9,
         ),
       )
     }
   }
-
-  #let shift = (0.0, -1.3)
 
   #let edges = points-to-edges(points)
   #let configurations-infos = (
@@ -625,12 +636,12 @@ On a side note, the order in which the groups are processed in $"groups_to_proce
     "step1": (
       shift: shift,
       to-shifts: (true, true, false, false, false, false, true),
-      bad-directions: (2, 6),
+      bad-directions: (6,),
       caption: [First step of the resolution.],
     ),
     "step2": (
       shift: shift,
-      to-shifts: (true, true, true, false, false, true, true),
+      to-shifts: (true, true, false, false, false, true, true),
       bad-directions: (),
       caption: [Second and final step of the resolution.],
     ),
@@ -689,9 +700,10 @@ On a side note, the order in which the groups are processed in $"groups_to_proce
   #subpar.super(
     caption: [
       Illustration of the polygon deformation algorithm on an isolated polygon.
-      Temporarily flipped edges are indicated with red arrows, and shifted edges are green.
+      Flipped edges are indicated with red arrows, and shifted edges are green.
     ],
     label: <fig:illustration-polygon-deformation>,
+    placement: auto,
   )[
     #std.grid(
       columns: 2,
@@ -702,9 +714,24 @@ On a side note, the order in which the groups are processed in $"groups_to_proce
   ]
 ]
 
-=== Particularities for the @roofprint:pl <hea:particularities-roofprints>
+The proposed algorithm is detailed in @alg:polygon-deformation, taking as input a line group to shift $g_0$ and a shift to apply $arrow(s)$.
+It is also illustrated in @fig:illustration-polygon-deformation
+Its main idea is to propagate the shift through the connections between groups (both connections in polygons and between polygons), as long as $cal(P)_1$ or $cal(P)_2$ is not verified.
+Here are descriptions for the functions used in this pseudocode:
+- #algorithmic.CallInline[get_group][$l$]: returns the group of overlapping lines from different polygons which contains $l$,
+- #algorithmic.CallInline[check_p1][$arrow(s)$, $"shifted_groups"$, $l$]: returns a boolean stating whether the property $cal(P)_1(l)$ is verified for the current polygon if the groups in $"shifted_groups"$ are shifted by $arrow(s)$.
+- #algorithmic.CallInline[check_p2][$arrow(s)$, $"shifted_groups"$, $l$]: same as #algorithmic.CallInline[check_p1][$arrow(s)$, $"shifted_groups"$, $l$] but for $cal(P)_2(l)$.
 
-To compute the @roofprint, the algorithm given in @hea:matching_algo is adapted to use the points identified as explained in @hea:roofprint-points.
+The pseudocode in @alg:polygon-deformation is not optimised for speed but rather simplified for clarity.
+For a given line group $g$, we use its perpendicular unit vector $arrow(n)$ as the direction for the shift.
+Along this direction, we define a set of shifts to try in both directions, ${ k t arrow(n), k in [| -m, m |] }$, with user-defined values for the step size $t$ and maximum shift length $m s$.
+A full iteration of the algorithm in @alg:polygon-matching calls this function once for every pair of group $g$ and shift $arrow(s)$.
+Moreover, if computing the resulting deformed polygon for increasing shifts such as ${ k t arrow(n), k in [| 1, m |] }$, the result obtained for $k t arrow(n)$ can be used as a starting point for $(k+1) t arrow(n)$, therefore increasing the computing speed.
+On a side note, the order in which the groups are processed in $"groups_to_process"$ does not matter: the algorithm will always terminate and return the same results.
+
+=== Particularities for the @roofprint:pl <sec:particularities-roofprints>
+
+To compute the @roofprint, the algorithm given in @sec:matching_algo is adapted to use the points identified as explained in @sec:roofprint-points.
 The energy presented below is based on careful analyses of portions of @bdtopo and @lidarhd, as it is the central part of the optimisation.
 We use our properties which we expect to find in most @als point clouds with similar or higher density.
 
@@ -745,7 +772,7 @@ where:
 
 In this energy, 5 main parameters need to be tuned: $delta$ for the inward direction, $epsilon_r$ for the score of a point on a line, $alpha$ to balance the proximity and regularisation terms in the energy, and two parameters for the intrinsic weights of points.
 
-=== Particularities for the @footprint:pl <hea:particularities-footprints>
+=== Particularities for the @footprint:pl <sec:particularities-footprints>
 
 To compute the @footprint:pl, we also need to adapt the algorithm, but this time for different reasons.
 
@@ -857,11 +884,15 @@ The energy that we use for @footprint:pl tries to combine the points on the faç
 - a concentration of points close to the segment,
 - as little points as possible behind the façade.
 
-#review-ravi[This paragraph is not entirely clear to me. Eg what does the part about counting positively and negatively mean? Perhaps an illustration would help.]
+#review-alexandre[Add a figure that illustrates the idea of this energy with one edge and points on a balcony and on the façade behind it.]
 We use the energy illustrated in @fig:energy-footprints.
-The general idea is to count positively the points close enough to the edge (clustering), and negatively the points further towards the inside of the building (penalty).
+It is a combination of two terms: a proximity term and a penalty term.
+The proximity term counts the points close to the edge higher absolute values when they are closer to the edge, with a maximum value of 1 for points on the edge and 0 for points further than a certain distance $epsilon_f$ from the edge.
+The penalty term counts the points further towards the inside of the building.
 To achieve this, we use a signed distance defined as $d_s (p, e) = (p - p_(perp e)) dot e_perp$ where $p_(perp e)$ is the projection of $p$ on $e$ and $e_perp$ is the unit vector perpendicular to $e$ pointing towards the inside of the building.
 This distance is therefore positive if the point is towards the inside of the building and negative otherwise.
+We use this distance to add a penalty which goes from 0 when $d_s (p, e) = epsilon_f$ to a maximum value of 1 when $d_s (p, e) = gamma_f$.
+$epsilon_f$ and $gamma_f$ are parameters to tune based on the density and noise of the point cloud.
 On top of that, based on experiments and qualitative observations, the values of the energy are scaled differently for ground points.
 The intuition behind this is the following.
 For clustering, points on the façades are the most important.
@@ -869,7 +900,7 @@ For the penalty, we want to prioritise a high density of points instead of havin
 
 #[
   #let x-axis-values = (-0.8, -0.3, 0, 0.3, 1.3, 1.3, 1.8)
-  #let x-axis-labels = ((-0.3, $-epsilon_f$), (0, [0]), (0.3, $epsilon_f$), (1.3, $kappa_f$))
+  #let x-axis-labels = ((-0.3, $-epsilon_f$), (0, [0]), (0.3, $epsilon_f$), (1.3, $gamma_f$))
   #let y-axis-values-ground = (0, 0, -0.3, 0, 1.0, 0, 0)
   #let y-axis-values-other = (0, 0, -1.0, 0, 0.3, 0, 0)
   #let stroke = 1pt
