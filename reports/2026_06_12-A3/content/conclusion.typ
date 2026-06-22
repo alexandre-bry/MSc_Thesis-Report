@@ -30,5 +30,3 @@ This thesis overall fits perfectly into the programme of the MSc Geomatics for t
 Buildings and their different representations are at the core of some courses.
 The combination of different data sources is also at the core of the programme, in this case high-density @als point clouds, which are becoming increasingly available in several countries, with the existing building @outline:pl datasets, which many countries have in one form or another.
 Developing this whole method took a lot of the knowledge acquired during the master, such as how @lidar works and how it affects the structure and properties of @als point clouds, how validity of polygons is crucial to many applications, and how current methods to reconstruct 3D models of buildings work.
-
-#citen(<Albers2016>)
