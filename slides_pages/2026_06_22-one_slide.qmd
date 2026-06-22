@@ -1,0 +1,15 @@
+---
+title: "2026/06/22 (One slide summary)"
+date: 2026-06-22
+tags: [monthly]
+---
+
+## Square version
+
+[PDF version](../slides/2026_06_22-one_slide/summary-square.pdf)
+![Image](../slides/2026_06_22-one_slide/summary-square.png)
+
+## 16-9 version
+
+[PDF version](../slides/2026_06_22-one_slide/summary-16_9.pdf)
+![Image](../slides/2026_06_22-one_slide/summary-16_9.png)
