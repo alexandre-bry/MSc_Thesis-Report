@@ -228,7 +228,6 @@ There are even cases, such as buildings with non-vertical façades, which comple
       text-content.at(txt-cont-idx).end = scale-point(text-content.at(txt-cont-idx).end)
     }
 
-
     let bbox = (
       base-point,
       base-point,
@@ -888,146 +887,6 @@ In this case, if a vertex is shared by 3 non-collinear edges, keeping the vertex
     return (p.at(0) + dp.at(0), p.at(1) + dp.at(1))
   }
 
-  #let scale = 1.0
-
-  #figure(
-    [
-      #set text(fill: blue.darken(10%), size: 10pt, style: "italic")
-      #cetz.canvas(
-        x: scale,
-        y: scale,
-        {
-          // Black initial situation
-          let moving-edge = ((0.3, -1.5), (0, 0))
-          let segments-black = (
-            ((-2, 1), (0, 0)),
-            ((2, 1), (0, 0)),
-            moving-edge,
-          )
-          let shift-black = (0, 2)
-          for points in segments-black {
-            points = points.map(shift.with(dp: shift-black))
-            line(
-              ..points,
-              stroke: black,
-            )
-            for point in points {
-              circle(point, radius: 0.1, fill: black, stroke: none)
-            }
-          }
-
-          // Red line and arrow
-          let line-red = ((0.4, -2), (-0.3, 1.5))
-          let shift-red = (-0.75, -0.15)
-          let full-shift-red = shift(shift-red, dp: shift-black)
-          line-red = line-red.map(shift.with(dp: full-shift-red))
-          line(
-            ..line-red,
-            stroke: (paint: red, thickness: 1pt, dash: "dashed"),
-          )
-          let start-arrow = shift(
-            (
-              (moving-edge.at(0).at(0) + moving-edge.at(1).at(0)) / 2,
-              (moving-edge.at(0).at(1) + moving-edge.at(1).at(1)) / 2,
-            ),
-            dp: shift-black,
-          )
-          let end-arrow = shift(start-arrow, dp: shift-red)
-          line(start-arrow, end-arrow, mark: (end: ">"), stroke: red + 1.5pt, fill: red)
-
-          // Blue example
-          let segments-blue = (
-            ((-2, 1), (-0.88, 0.44)),
-            ((2, 1), (-0.71, -0.355)),
-            ((-0.45, -1.65), (-0.88, 0.44)),
-          )
-          let shift-blue = (-6, -2)
-          for points in segments-black {
-            points = points.map(shift.with(dp: shift-blue))
-            line(
-              ..points,
-              stroke: (paint: black, thickness: 1pt, dash: "dashed"),
-            )
-            for point in points {
-              circle(point, radius: 0.1, fill: black, stroke: none)
-            }
-          }
-          for points in segments-blue {
-            points = points.map(shift.with(dp: shift-blue))
-            line(
-              ..points,
-              stroke: blue,
-            )
-            for point in points {
-              circle(point, radius: 0.1, fill: blue, stroke: none)
-            }
-          }
-
-          // Orange example
-          let segments-orange = (
-            ((-2, 1), (-0.88, 0.44)),
-            ((1.12, 1.44), (-0.88, 0.44)),
-            ((-0.45, -1.65), (-0.88, 0.44)),
-          )
-          let shift-orange = (0, -2)
-          for points in segments-black {
-            points = points.map(shift.with(dp: shift-orange))
-            line(
-              ..points,
-              stroke: (paint: black, thickness: 1pt, dash: "dashed"),
-            )
-            for point in points {
-              circle(point, radius: 0.1, fill: black, stroke: none)
-            }
-          }
-          for points in segments-orange {
-            points = points.map(shift.with(dp: shift-orange))
-            line(
-              ..points,
-              stroke: orange,
-            )
-            for point in points {
-              circle(point, radius: 0.1, fill: orange, stroke: none)
-            }
-          }
-
-          // Green example
-          let segments-green = segments-black.map(s => s.map(shift.with(dp: shift-red)))
-          let shift-green = (6, -2)
-          for points in segments-black {
-            points = points.map(shift.with(dp: shift-green))
-            line(
-              ..points,
-              stroke: (paint: black, thickness: 1pt, dash: "dashed"),
-            )
-            for point in points {
-              circle(point, radius: 0.1, fill: black, stroke: none)
-            }
-          }
-          for points in segments-green {
-            points = points.map(shift.with(dp: shift-green))
-            line(
-              ..points,
-              stroke: green,
-            )
-            for point in points {
-              circle(point, radius: 0.1, fill: green, stroke: none)
-            }
-          }
-        },
-      )
-    ],
-    caption: [Illustration of an edge being shifted with one of its vertex shared by three edges. Three different results are shown: the left one displays the softer constraint on shared edges, while the two others show two different solutions to the harder constraint on shared vertices.],
-  ) <fig:topology-constraints-old>
-]
-
-#[
-  #import cetz.draw: *
-
-  #let shift(p, dp: (0, 0)) = {
-    return (p.at(0) + dp.at(0), p.at(1) + dp.at(1))
-  }
-
   #let fig-label = "fig:topology-constraints"
 
   #let figures = ()
@@ -1096,7 +955,6 @@ In this case, if a vertex is shared by 3 non-collinear edges, keeping the vertex
       (bbox.at(1).at(0) + margin, bbox.at(1).at(1) + margin),
     )
     let add-invisible-bbox() = { rect(..bbox, stroke: none, fill: none) }
-
 
     figures.push(
       std.grid.cell(
@@ -1208,7 +1066,7 @@ In this case, if a vertex is shared by 3 non-collinear edges, keeping the vertex
 
   #subpar.super(
     caption: [
-      Illustration of an edge being shifted with one of its vertex shared by three edges. Three different results are shown: @fig:topology-constraints-soft displays the softer constraint on shared edges, while the @fig:topology-constraints-hard-1 and @fig:topology-constraints-hard-2 show two different solutions to the harder constraint on shared vertices.
+      Illustration of an edge being shifted with one of its vertex shared by three edges. Three different results are shown: @fig:topology-constraints-soft displays the softer constraint on shared edges, while @fig:topology-constraints-hard-1 and @fig:topology-constraints-hard-2 show two different solutions to the harder constraint on shared vertices.
     ],
     label: label(fig-label),
   )[

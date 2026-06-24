@@ -16,8 +16,8 @@
     title: [From Points to Prints#linebreak()#text(size: 20pt)[Generating Building Roofprints and Footprints from Airborne Lidar Data and Inaccurate Outlines]],
     subtitle: [A4 Presentation],
     author: [Alexandre Bry, supervised by Hugo Ledoux (TUD), Ravi Peters (TUD) and Bruno Vallet (IGN)],
-    date: datetime(day: 18, month: 5, year: 2026),
-    institution: [TU Delft, IGN],
+    date: datetime(day: 26, month: 6, year: 2026),
+    institution: none,
   ),
   config-common(
     show-notes-on-second-screen: if notes { right } else { none },
@@ -58,15 +58,15 @@
 #title-slide(layout: "centered", logos: (
   place(
     bottom + left,
-    image("../../images/TU_Delft_logo-cropped.svg", width: 9em),
-    dx: -2em,
-    dy: 2em,
+    box(width: 9em, align(center + bottom, image("../../images/TU_Delft_logo-cropped.svg", width: 9em))),
+    dx: -3em,
+    dy: -1em,
   ),
   place(
     bottom + right,
-    image("../../images/IGN_logo-cropped.svg", width: 5em),
-    dx: 2em,
-    dy: 2em,
+    box(width: 9em, align(center + bottom, image("../../images/IGN_logo-cropped.svg", width: 5em))),
+    dx: 3em,
+    dy: -1em,
   ),
 ))
 
@@ -91,7 +91,12 @@
     caption: [Comparison between roofprints and footprints],
   )
   #v(1fr)
+
+  #speaker-note[
+    - Roofprints and footprints can serve different purposes, and knowing the difference between them is important when the roof overhangs are significant.
+  ]
 ][
+  #pause
   #v(1fr)
   #figure(
     image("../../images/LoDs_illustration-Filip_Biljecki-cropped_2_2_and_2_3.jpg", width: 100%),
@@ -100,10 +105,9 @@
   #v(1fr)
 
   #speaker-note[
-    - Roofprints and footprints can serve different purposes, and knowing the difference between them is important when the roof overhangs are significant.
-    - Since this difference is usually not available, it is unclear what the use cases could be, but we can think about:
+    - Since roof overhangs are usually not available, it is unclear what the use cases could be, but we can think about:
       - More accurate visualisation and texturing of 3D models
-      - More accurate simulations (wind, luminosity)
+      - More accurate simulations (wind, luminosity, visibility)
   ]
 ]
 
@@ -1097,6 +1101,7 @@
     inset: (x: 1.0em, y: 0.4em),
     table.header([Result of the thesis], [Benefit]),
     table.cell(rowspan: 2, [Roofprint and footprint]), [More precise computations with 2D data], [LoD2.2 -> LoD2.3],
+    pause,
     table.cell(rowspan: 2, [Better georeferencing]), [Better visualisation in context], [Better 3D roof models],
   ))
 ]
@@ -1132,6 +1137,112 @@
 #show: appendix
 
 #heading([Appendix], depth: 1, outlined: false)
+
+#import "../../figures/validation/validation.typ": (
+  categories-infos, datasets-full, datasets-infos, datasets-labels, datasets-per-category, display-bars,
+  display-evolutions, display-table, metrics-infos, nice-tables, roofprints-iter-n-label, simple-categories,
+)
+
+== Validation dataset
+
+#slide[
+  #speaker-note[
+    We made a validation dataset for roofprints with buildings in four different categories (see @fig:validation-dataset):
+    - #datasets-per-category.isolated_houses.at(0).len() #categories-infos.isolated_houses.name: medium houses and buildings having up to a few storeys, isolated from the buildings around,
+    - #datasets-per-category.adjacent_houses.at(0).len() #categories-infos.adjacent_houses.name: blocks of adjacent and medium houses and buildings having up to a few storeys,
+    - #datasets-per-category.low_sheds.at(0).len() #categories-infos.low_sheds.name: low buildings in height, usually in gardens,
+    - #datasets-per-category.adjacent_blocks_of_flats.at(0).len() #categories-infos.adjacent_blocks_of_flats.name: blocks of adjacent and high buildings.
+  ]
+
+  #v(1fr)
+  #subpar.super(
+    caption: [Validation dataset.],
+    label: <fig:validation-dataset>,
+  )[
+    #let height = auto
+    #grid(
+      columns: 3,
+      gutter: 2mm,
+      figure(
+        image("../../images/Final_report/Validation_992/Validation_dataset-Ozoir_north.png", height: height),
+        caption: [Area in Ozoir-la-Ferrière with isolated houses and small sheds.],
+      ),
+      [
+        #figure(
+          image("../../images/Final_report/Validation_992/Validation_dataset-Ozoir_south.png", height: height),
+          caption: [Area in Ozoir-la-Ferrière with mainly adjacent houses.],
+        ) <fig:validation-dataset-ozoir-south>
+      ],
+      figure(
+        image("../../images/Final_report/Validation_992/Validation_dataset-Paris.png", height: height),
+        caption: [Area in Paris with mainly adjacent blocks of flats.],
+      ),
+    )
+  ]
+  #v(1fr)
+]
+
+== Validation results
+
+#slide[
+  #speaker-note[
+    The different metrics on the validation dataset show that the do improve the outlines by a lot in all categories except #categories-infos.low_sheds.name where the results are bad for a few buildings and from correct to very good for the rest.
+  ]
+
+  #v(1fr)
+  #[
+    #show: nice-tables
+
+    #let text-size = 11pt
+    #let figures = ()
+
+    #let categories-captions = (
+      all: [Whole dataset.],
+      all_except_low_sheds: [Whole dataset except the #categories-infos.low_sheds.name category.],
+    )
+    #for (category, caption) in categories-captions.pairs() {
+      let dataset = datasets-per-category.at(category)
+      let fig-cat = [
+        #figure(
+          display-table(dataset, datasets-labels, metrics-infos, text-size: text-size),
+          caption: caption,
+        ) #label("fig:valid-res-table-" + category)
+      ]
+      figures.push(fig-cat)
+    }
+
+    #let fig-all = [
+      #figure(
+        display-table(datasets-full.values(), datasets-labels, metrics-infos, text-size: text-size),
+        caption: [Whole dataset.],
+      ) <fig:valid-res-table-all>
+    ]
+
+    #for category in simple-categories {
+      let dataset = datasets-per-category.at(category)
+      let fig-cat = [
+        #figure(
+          display-table(dataset, datasets-labels, metrics-infos, text-size: text-size),
+          caption: [Category #categories-infos.at(category).name.],
+        ) #label("fig:valid-res-table-" + category)
+      ]
+      figures.push(fig-cat)
+    }
+
+    #subpar.super(
+      caption: [Average metrics over different subsets of the validation dataset.],
+      label: <fig:valid-res-table>,
+    )[
+      #grid(
+        columns: 3,
+        column-gutter: 10mm,
+        row-gutter: 5mm,
+        ..figures
+      )
+    ]
+  ]
+  #v(1fr)
+]
 
 == Results
 
@@ -1181,3 +1292,4 @@
   - We start with the roofprint because aerial LiDAR data gives a much higher density of points on the roof than on the façades, making the roof much easier to identify.
   - Then, once the roofprint is accurately registered on the point cloud, we can use it to generate an accurate 3D roof model that allows to select all the points below the roof (hopefully façade and ground points), which are all the points that provide information about the façades and the roof overhangs.
 ]
+

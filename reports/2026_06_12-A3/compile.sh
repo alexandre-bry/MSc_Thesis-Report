@@ -5,7 +5,7 @@ THESIS_FILE="_thesis_only.pdf"
 PAPER_FILE="_paper_only.pdf"
 TEMP_FINAL_FILE="MSc_Thesis-A3-Alexandre_BRY.tmp.pdf"
 FINAL_FILE="MSc_Thesis-A3-Alexandre_BRY.pdf"
-PAPER_INSERTION_PAGE=17
+PAPER_INSERTION_PAGE=16
 
 # Compile the main thesis and paper documents to PDF
 echo "Compiling thesis document..."

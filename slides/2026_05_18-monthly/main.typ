@@ -17,7 +17,7 @@
     subtitle: [Monthly Meeting (4)],
     author: [Alexandre Bry],
     date: datetime(day: 18, month: 5, year: 2026),
-    institution: [IGN, TU Delft],
+    institution: none,
   ),
   config-common(
     show-notes-on-second-screen: if notes { right } else { none },
@@ -58,15 +58,15 @@
 #title-slide(layout: "centered", logos: (
   place(
     bottom + left,
-    image("../../images/IGN_logo-cropped.svg", width: 5em),
-    dx: -2em,
-    dy: 2em,
+    box(width: 9em, align(center + bottom, image("../../images/TU_Delft_logo-cropped.svg", width: 9em))),
+    dx: -3em,
+    dy: -1em,
   ),
   place(
     bottom + right,
-    image("../../images/TU_Delft_logo-cropped.svg", width: 9em),
-    dx: 2em,
-    dy: 2em,
+    box(width: 9em, align(center + bottom, image("../../images/IGN_logo-cropped.svg", width: 5em))),
+    dx: 3em,
+    dy: -1em,
   ),
 ))
 

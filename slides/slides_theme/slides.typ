@@ -192,6 +192,7 @@
   extra: none,
   colors: none,
   use-golden-ratio: false,
+  license: none,
 ) = touying-slide-wrapper(self => {
   let info = self.info
   let c = if colors != none { colors } else {
@@ -202,7 +203,7 @@
     self,
     config-common(freeze-slide-counter: true),
     config-page(
-      margin: spacing-3xl,
+      margin: (x: spacing-3xl, top: spacing-xl, bottom: spacing-sm),
       header: none,
       footer: none,
       fill: c.bg-base,
@@ -251,9 +252,9 @@
     }
 
     // Accent line
-    v(spacing-lg)
+    v(spacing-sm)
     accent-line(width: 56pt, colors: c)
-    v(spacing-lg)
+    v(spacing-sm)
 
     // Author
     text(
@@ -290,11 +291,17 @@
 
     // Extra content
     if extra != none {
-      v(spacing-lg)
+      v(spacing-md)
       extra
     }
 
     v(1fr)
+
+    // Optional license
+    if license != none {
+      v(spacing-md)
+      text(size: size-micro, fill: c.text-muted, license)
+    }
   }
 
   touying-slide(self: self, config: config, body)
@@ -535,13 +542,21 @@
   layout: "moloch",
   use-golden-ratio: true,
   graphic: none,
+  license: [This work is licensed under the #link("https://creativecommons.org/licenses/by/4.0/")[Creative Commons Attribution 4.0 International License (CC BY 4.0)].],
 ) = {
   if layout == "moloch" {
     title-slide-moloch(config: config, logos: logos, extra: extra, colors: colors)
   } else if layout == "split" {
     title-slide-split(config: config, logos: logos, extra: extra, colors: colors, graphic: graphic)
   } else {
-    title-slide-centered(config: config, logos: logos, extra: extra, colors: colors, use-golden-ratio: use-golden-ratio)
+    title-slide-centered(
+      config: config,
+      logos: logos,
+      extra: extra,
+      colors: colors,
+      use-golden-ratio: use-golden-ratio,
+      license: license,
+    )
   }
 }
 

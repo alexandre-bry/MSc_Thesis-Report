@@ -17,7 +17,7 @@
     subtitle: [IGN Final Presentation],
     author: [Alexandre Bry, supervised by Hugo Ledoux, Ravi Peters and Bruno Vallet],
     date: datetime(day: 18, month: 5, year: 2026),
-    institution: [TU Delft, IGN],
+    institution: none,
   ),
   config-common(
     show-notes-on-second-screen: if notes { right } else { none },
@@ -58,15 +58,15 @@
 #title-slide(layout: "centered", logos: (
   place(
     bottom + left,
-    image("../../images/TU_Delft_logo-cropped.svg", width: 9em),
-    dx: -2em,
-    dy: 2em,
+    box(width: 9em, align(center + bottom, image("../../images/TU_Delft_logo-cropped.svg", width: 9em))),
+    dx: -3em,
+    dy: -1em,
   ),
   place(
     bottom + right,
-    image("../../images/IGN_logo-cropped.svg", width: 5em),
-    dx: 2em,
-    dy: 2em,
+    box(width: 9em, align(center + bottom, image("../../images/IGN_logo-cropped.svg", width: 5em))),
+    dx: 3em,
+    dy: -1em,
   ),
 ))
 
@@ -953,9 +953,7 @@ We modify the polygons by applying the following rules:
 
   v(1fr)
 
-
   [---]
-
 
   speaker-note[
     #current-speaker-notes
