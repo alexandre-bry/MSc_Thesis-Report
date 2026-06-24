@@ -31,7 +31,7 @@ for handout in "${HANDOUT_VALUES[@]}"; do
 
     base_name="slides-${handout_part}-${notes_part}"
 
-    TEMP_FILE="$OUTPUT_DIR/${base_name}.pdf.tmp"
+    TEMP_FILE="$OUTPUT_DIR/${base_name}.tmp.pdf"
     FINAL_FILE="$OUTPUT_DIR/${base_name}.pdf"
 
     # 1. Compile to a temporary file

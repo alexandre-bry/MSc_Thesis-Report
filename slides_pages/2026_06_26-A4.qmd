@@ -1,0 +1,13 @@
+---
+title: "2026/06/26 (TU Delft A4)"
+date: 2026-06-26
+tags: [monthly]
+meeting: []
+---
+
+## Slides
+
+| | With notes | Without notes |
+| --- | --- | --- |
+| With steps | [Slides](../slides/2026_06_26-A4/slides-animations-notes.pdf) | [Slides](../slides/2026_06_26-A4/slides-animations-no_notes.pdf) |
+| Without steps | [Slides](../slides/2026_06_26-A4/slides-handout-notes.pdf) | [Slides](../slides/2026_06_26-A4/slides-handout-no_notes.pdf) |

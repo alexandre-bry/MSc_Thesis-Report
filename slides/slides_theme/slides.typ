@@ -91,7 +91,7 @@
       moloch-header-bar-touying(title, c)
 
       // Progress bar under header if frametitle position
-      if progressbar == "frametitle" {
+      if progressbar == "s" {
         v(-spacing-sm)
         make-progress-bar(c, height: 2pt, position: "frametitle")
       }
@@ -130,8 +130,12 @@
     }
   }
 
+  let no-header(self) = {}
+
   // Choose header based on style
-  let header-fn = if header-style == "moloch" { moloch-header } else { minimal-header }
+  let header-fn = if header-style == "moloch" { moloch-header } else if header-style == none { no-header } else {
+    minimal-header
+  }
 
   // Footer with optional progress bar
   let footer(self) = context {

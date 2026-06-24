@@ -18,7 +18,7 @@
 
 #set page(
   margin: 0em,
-  fill: gradient.linear(white, ign-color, angle: 30deg, space: color.linear-rgb),
+  fill: gradient.linear(white, tu-delft-color, angle: 30deg, space: color.linear-rgb),
   width: page-width,
   height: page-height,
 )
@@ -161,7 +161,7 @@
 
 #set page(
   margin: 0em,
-  fill: gradient.linear(white, ign-color, angle: 30deg, space: color.linear-rgb),
+  fill: gradient.linear(white, tu-delft-color, angle: 30deg, space: color.linear-rgb),
   width: page-width,
   height: page-height,
 )
