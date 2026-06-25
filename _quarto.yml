@@ -2,8 +2,8 @@ project:
   type: website
 
 website:
-  title: "MSc Thesis - Website"
-  description: "Website for the MSc Thesis of Alexandre Bry for the MSc Geomatics"
+  title: "MSc Thesis - Notes, Reports and Slides"
+  description: "Website with notes, reports and slides for the MSc Thesis of Alexandre Bry for the MSc Geomatics"
   repo-url: https://github.com/alexandre-bry/MSc_Thesis-Report
   repo-actions: [edit, source, issue]
   open-graph: true

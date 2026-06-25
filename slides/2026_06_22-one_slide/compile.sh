@@ -14,6 +14,7 @@ FILE_PAGES=(
 FILE_FORMATS=(
   "pdf"
   "png"
+  "svg"
 )
 
 for i in "${!FILE_NAMES[@]}"; do

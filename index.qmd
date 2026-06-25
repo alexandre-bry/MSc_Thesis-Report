@@ -1,5 +1,11 @@
 ---
-title: "MSc Thesis - Website"
+title: "MSc Thesis - Notes, Reports and Slides"
 ---
 
+![One-page summary of the MSc Thesis](slides/2026_06_22-one_slide/summary-square.svg)
+
 This website contains the notes and reports of my MSc Thesis with TU Delft and the IGN (*Institut national de l’information géographique et forestière*) from November 2025 to June 2026.
+
+The final reports and slides are also published in the TU Delft repository: <https://repository.tudelft.nl/record/uuid:101ba3d8-1988-4025-b041-fafb12d2d2f3>.
+
+The code produced during the project is available in the [MSc Thesis - Code](https://github.com/alexandre-bry/MSc_Thesis-Code) repository.

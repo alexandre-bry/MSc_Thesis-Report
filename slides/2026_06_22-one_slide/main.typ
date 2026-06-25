@@ -1,5 +1,6 @@
 #let ign-color = rgb("#8FBF4A")
 #let tu-delft-color = rgb("#00A6D6")
+#let main-color = ign-color
 
 #show link: set text(fill: blue.darken(20%), weight: "medium", style: "italic")
 
@@ -18,7 +19,7 @@
 
 #set page(
   margin: 0em,
-  fill: gradient.linear(white, tu-delft-color, angle: 30deg, space: color.linear-rgb),
+  fill: gradient.linear(white, main-color, angle: 30deg, space: color.linear-rgb),
   width: page-width,
   height: page-height,
 )
@@ -43,7 +44,7 @@
       size: 18pt,
       style: "italic",
       weight: "semibold",
-      [Supervised by Bruno Vallet, Hugo Ledoux],
+      [Supervised by Bruno Vallet, Hugo Ledoux, Ravi Peters],
     )]),
 )
 
@@ -161,7 +162,7 @@
 
 #set page(
   margin: 0em,
-  fill: gradient.linear(white, tu-delft-color, angle: 30deg, space: color.linear-rgb),
+  fill: gradient.linear(white, main-color, angle: 30deg, space: color.linear-rgb),
   width: page-width,
   height: page-height,
 )
@@ -186,7 +187,7 @@
       size: 18pt,
       style: "italic",
       weight: "semibold",
-      [Supervised by Bruno Vallet, Hugo Ledoux],
+      [Supervised by Bruno Vallet, Hugo Ledoux, Ravi Peters],
     )]),
 )
 

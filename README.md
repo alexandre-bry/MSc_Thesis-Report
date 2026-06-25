@@ -1,4 +1,4 @@
-# MSc Thesis - Website
+# MSc Thesis - Notes, Reports and Slides
 
 [![CC BY 4.0][cc-by-shield]][cc-by]
 
@@ -6,22 +6,10 @@
 
 This repository contains the notes taken during my MSc Thesis with TU Delft and the IGN (*Institut national de l'information géographique et forestière*) from November 2025 to June 2026.
 It also contains the source of the reports and slides made during the project.
-Everything is published at: <https://alexandre-bry.github.io/MSc_Thesis-Report/>.
 
-## Structure
+The final reports and slides are also published in the TU Delft repository: <https://repository.tudelft.nl/record/uuid:101ba3d8-1988-4025-b041-fafb12d2d2f3>.
 
-The current organization of the repository is the following:
-
-```tree
-.
-├── 404.html
-├── index.qmd
-├── _quarto.yml
-├── README.md
-├── references/
-│   └── MSc_Thesis-Bibliography.bib
-└── weekly_notes/
-```
+The code produced during the project is available in the [MSc Thesis - Code](https://github.com/alexandre-bry/MSc_Thesis-Code) repository.
 
 ## Publication
 
